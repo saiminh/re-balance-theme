@@ -30,10 +30,11 @@ get_header();
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 */
                 get_template_part( 'template-parts/content', 'page' );
-                ?>               
-					I want to:
-				<h2><a href="<?php home_url() ?>/move/">Move</a></h2>
-				<h2><a href="<?php home_url() ?>/breathe/">Breathe</a></h2>
+				?>     
+				<div class="choose-exercise-buttons">          
+					<button><a href="<?php home_url() ?>/move/">Move</a></button>
+					<button><a href="<?php home_url() ?>/breathe/">Breathe</a></button>
+				</div>
                 <?php
 
 			endwhile;

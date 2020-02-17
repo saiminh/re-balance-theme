@@ -1,8 +1,10 @@
 .archive {
     & article {
-        padding: 10px;
-        border: 1px solid #DDD;
+        padding: 1em;
         margin-bottom: 1em;
+        background: #FFF;
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
         & .entry-header {
             & h2 {

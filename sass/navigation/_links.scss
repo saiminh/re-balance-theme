@@ -1,5 +1,6 @@
 a {
 	color: $color__link;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -15,5 +16,22 @@ a {
 	&:hover,
 	&:active {
 		outline: 0;
+	}
+}
+
+.back-button {
+	background-color: $color__background-button;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+	padding: 8px 10px;
+	border-radius: 4px;
+	line-height: 1;
+	display: inline-block;
+	& svg {
+		width: 10px;
+		position: relative;
+		top: 1px;
+		& path{
+			stroke: $color__link;
+		}
 	}
 }

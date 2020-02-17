@@ -2,6 +2,13 @@
 	position: relative;
 }
 
+.site-branding {
+	position: relative;
+	max-width: 160px;
+	padding: 1em;
+	margin: 0 auto;
+}
+
 .main-navigation {
 	clear: both;
 	display: block;
@@ -113,15 +120,12 @@
 .menu-toggle {
 	border: none;
 	background-color: transparent;
+	box-shadow: none;
 	width: 30px;
 	height: 30px;
 	position: absolute;
 	top: 10px;
     right: 10px;
-
-	svg *{
-		fill: #000;
-	}
 
 	.navTrigger {
 	  cursor: pointer;

@@ -26,22 +26,9 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$rebalance_description = get_bloginfo( 'description', 'display' );
-			if ( $rebalance_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $rebalance_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
+			</a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
@@ -63,7 +50,7 @@
 	</header><!-- #masthead -->
 
 	<div id="swup" class="site-content transition-fade">
-		<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() ) : ?>
-			<a href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
+		<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() || is_singular( 'exercises' ) ) : ?>
+			<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
 		<?php endif; ?>
 		

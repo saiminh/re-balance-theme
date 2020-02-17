@@ -353,14 +353,15 @@ input,
 select,
 optgroup,
 textarea {
-  color: #404040;
+  color: #333;
   font-family: hero-new, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  font-weight: 300; }
 
 p {
   margin-bottom: 1.5em; }
@@ -414,16 +415,11 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #fff;
-  /* Fallback for when there is no custom background color defined. */ }
-
-#page {
-  max-width: 375px;
-  height: calc(100vh - 60px);
-  overflow: scroll;
-  margin: 10px auto;
-  padding: 10px;
-  border: 1px solid #DDD; }
+  background: #EEE;
+  /* Fallback for when there is no custom background color defined. */
+  min-height: 100vh;
+  padding: 0;
+  margin: 0; }
 
 hr {
   background-color: #ccc;
@@ -473,20 +469,20 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border: 1px solid;
-  border-color: #ccc #ccc #bbb;
+  border: 0px solid;
+  border-color: #E5947F;
   border-radius: 3px;
-  background: #e6e6e6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #FFF;
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
   line-height: 1;
-  padding: .6em 1em .4em; }
+  padding: .6em 1em;
+  font-size: 1.5rem; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa; }
+    border-color: #E5947F; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -494,7 +490,7 @@ input[type="submit"] {
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb; }
+    border-color: #E5947F; }
 
 input[type="text"],
 input[type="email"],
@@ -547,21 +543,42 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: #E5947F;
+  text-decoration: none; }
   a:visited {
-    color: purple; }
+    color: #E5947F; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #E5947F; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
     outline: 0; }
+
+.back-button {
+  background-color: #FFF;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 8px 10px;
+  border-radius: 4px;
+  line-height: 1;
+  display: inline-block; }
+  .back-button svg {
+    width: 10px;
+    position: relative;
+    top: 1px; }
+    .back-button svg path {
+      stroke: #E5947F; }
 
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
 .site-header {
   position: relative; }
+
+.site-branding {
+  position: relative;
+  max-width: 160px;
+  padding: 1em;
+  margin: 0 auto; }
 
 .main-navigation {
   clear: both;
@@ -618,13 +635,12 @@ a {
 .menu-toggle {
   border: none;
   background-color: transparent;
+  box-shadow: none;
   width: 30px;
   height: 30px;
   position: absolute;
   top: 10px;
   right: 10px; }
-  .menu-toggle svg * {
-    fill: #000; }
   .menu-toggle .navTrigger {
     cursor: pointer;
     width: 30px;
@@ -746,6 +762,37 @@ a {
   100% {
     transform: translateY(-9px) rotate(135deg); } }
 /*--------------------------------------------------------------
+## Page transitions
+--------------------------------------------------------------*/
+.transition-fade {
+  transition: all 0.6s cubic-bezier(0.08, 0.82, 0.17, 1);
+  opacity: 1;
+  transform: translate(0, 0); }
+  .transition-fade .page-title, .transition-fade h1.entry-title {
+    transition: all 0.7s cubic-bezier(0.08, 0.82, 0.17, 1);
+    transform: translate(0, 0); }
+  .transition-fade .entry-content {
+    transition: all 0.8s cubic-bezier(0.08, 0.82, 0.17, 1);
+    transform: translate(0, 0); }
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  transform: translate(100%, 0); }
+  html.is-animating .transition-fade .page-title, html.is-animating .transition-fade h1.entry-title {
+    transform: translate(100%, 0); }
+  html.is-animating .transition-fade .entry-content {
+    transform: translate(100%, 0); }
+
+html.is-animating.is-leaving .transition-fade {
+  transition: all .2s ease-in;
+  opacity: 0;
+  transform: translate(0, 0); }
+  html.is-animating.is-leaving .transition-fade .page-title, html.is-animating.is-leaving .transition-fade .entry-title {
+    transform: translate(0, 0); }
+  html.is-animating.is-leaving .transition-fade .entry-content {
+    transform: translate(0, 0); }
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -856,10 +903,6 @@ a {
 .sticky {
   display: block; }
 
-.post,
-.page {
-  margin-bottom: 1.5em; }
-
 .updated:not(.published) {
   display: none; }
 
@@ -872,47 +915,33 @@ a {
   clear: both;
   margin: 0 0 1.5em; }
 
-.transition-fade {
-  transition: all 0.6s cubic-bezier(0.08, 0.82, 0.17, 1);
-  opacity: 1;
-  transform: translate(0, 0); }
-  .transition-fade .page-title, .transition-fade h1.entry-title {
-    transition: all 0.7s cubic-bezier(0.08, 0.82, 0.17, 1);
-    transform: translate(0, 0); }
-  .transition-fade .entry-content {
-    transition: all 0.8s cubic-bezier(0.08, 0.82, 0.17, 1);
-    transform: translate(0, 0); }
-
-html.is-animating .transition-fade {
-  opacity: 1;
-  transform: translate(100%, 0); }
-  html.is-animating .transition-fade .page-title, html.is-animating .transition-fade h1.entry-title {
-    transform: translate(100%, 0); }
-  html.is-animating .transition-fade .entry-content {
-    transform: translate(100%, 0); }
-
-html.is-animating.is-leaving .transition-fade {
-  transition: all .2s ease-in;
-  opacity: 0;
-  transform: translate(0, 0); }
-  html.is-animating.is-leaving .transition-fade .page-title, html.is-animating.is-leaving .transition-fade .entry-title {
-    transform: translate(0, 0); }
-  html.is-animating.is-leaving .transition-fade .entry-content {
-    transform: translate(0, 0); }
+.home .entry-header,
+.choose-exercise-buttons {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 ## Archives
 --------------------------------------------------------------*/
 .archive article {
-  padding: 10px;
-  border: 1px solid #DDD;
-  margin-bottom: 1em; }
+  padding: 1em;
+  margin-bottom: 1em;
+  background: #FFF;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); }
   .archive article .entry-header h2 {
     margin-top: 0; }
   .archive article .post-thumbnail {
     float: right;
     width: 25%;
     margin-left: 1em; }
+
+/*--------------------------------------------------------------
+## Content Area
+--------------------------------------------------------------*/
+.site-content {
+  max-width: 1000px;
+  margin: 2em auto;
+  padding: 2em; }
 
 /*--------------------------------------------------------------
 ## Comments
