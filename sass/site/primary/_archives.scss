@@ -1,0 +1,19 @@
+.archive {
+    & article {
+        padding: 10px;
+        border: 1px solid #DDD;
+        margin-bottom: 1em;
+
+        & .entry-header {
+            & h2 {
+                margin-top: 0;
+            }
+        }
+
+        & .post-thumbnail {
+            float: right;
+            width: 25%;
+            margin-left: 1em;
+        }
+    }
+}
