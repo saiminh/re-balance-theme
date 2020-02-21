@@ -103,50 +103,52 @@
 			}
 		}
 	}( container ) );
+
+	function init() {
+		if (document.querySelector('#lblGreetings')) {
+			var myDate = new Date();
+			var hrs = myDate.getHours();
+			var greet;
+			if (hrs < 12)
+				greet = 'Good Morning';
+			else if (hrs >= 12 && hrs <= 17)
+				greet = 'Good Afternoon';
+			else if (hrs >= 17 && hrs <= 24)
+				greet = 'Good Evening';
+			document.querySelector('#lblGreetings').prepend(greet + ', ');
+		}
+	}
+	
+	const jsoptions = [
+		{
+		  from: '(.*)',
+		  to: '(.*)',
+		  in: function(next) {
+			document.querySelector('#swup').style.opacity = 0;
+			TweenLite.to(document.querySelector('#swup'), 0.5, {
+			  opacity: 1,
+			  onComplete: next
+			});
+		  },
+		  out: (next) => {
+			document.querySelector('#swup').style.opacity = 1;
+			TweenLite.to(document.querySelector('#swup'), 0.5, {
+			  opacity: 0,
+			  onComplete: next
+			});
+		  }
+		}
+	  ];
+	
+	const swup = new Swup({
+		animateHistoryBrowsing: true,
+		plugins: [new SwupBodyClassPlugin(), new SwupJsPlugin(jsoptions),]
+	});
+	
+	init();
+	
+	// this event runs for every page view after initial load
+	swup.on('contentReplaced', init);
+
 } )();
 
-function init() {
-    if (document.querySelector('#lblGreetings')) {
-        var myDate = new Date();
-		var hrs = myDate.getHours();
-		var greet;
-		if (hrs < 12)
-			greet = 'Good Morning';
-		else if (hrs >= 12 && hrs <= 17)
-			greet = 'Good Afternoon';
-		else if (hrs >= 17 && hrs <= 24)
-			greet = 'Good Evening';
-		jQuery('#lblGreetings').prepend(greet + ', ');
-    }
-}
-
-const jsoptions = [
-	{
-	  from: '(.*)',
-	  to: '(.*)',
-	  in: function(next) {
-		document.querySelector('#swup').style.opacity = 0;
-		TweenLite.to(document.querySelector('#swup'), 0.5, {
-		  opacity: 1,
-		  onComplete: next
-		});
-	  },
-	  out: (next) => {
-		document.querySelector('#swup').style.opacity = 1;
-		TweenLite.to(document.querySelector('#swup'), 0.5, {
-		  opacity: 0,
-		  onComplete: next
-		});
-	  }
-	}
-  ];
-
-const swup = new Swup({
-	animateHistoryBrowsing: true,
-	plugins: [new SwupBodyClassPlugin(), new SwupJsPlugin(jsoptions),]
-});
-
-init();
-
-// this event runs for every page view after initial load
-swup.on('contentReplaced', init);
