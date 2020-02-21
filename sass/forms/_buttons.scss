@@ -2,15 +2,20 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 0px solid;
+	border: 1px solid;
 	border-color: $color__border-button;
-	border-radius: 3px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
+	border-radius: 2px;
+	//box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	background: transparent; //$color__background-button;
+	color: $color__link;
 	line-height: 1;
-	padding: .6em 1em;
-	font-size: 1.5rem;
+	padding: .75em 1em;
+	font-size: 1.25rem;
+
+	& a,
+	& a:visited {
+	//	color: $color__text-main;
+	}
 
 	&:hover {
 		border-color: $color__border-button-hover;
@@ -20,4 +25,14 @@ input[type="submit"] {
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
+}
+
+input[type="submit"].search-submit {
+	border-radius: 0 50px 50px 0;
+	margin-left: -0.25em;
+	padding-right: 1.25em;
+	border-left: none;
+	//background-color: $color__border-button;
+	//color: #fdf1ee;
+	//width: 
 }

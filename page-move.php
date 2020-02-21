@@ -23,15 +23,12 @@ get_header();
 
 			get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
 		endwhile; // End of the loop.
 		?>
-        
-        <a href="<?php echo get_home_url(); ?>/exercise-type/shoulders">Shoulders</a>
+        <div class="move-bodyparts-map">
+            <?php get_template_part( 'inc/inline', 'ui-move-map.svg' ); ?>
+            <a class="move-bodypart-link move-bodypart-link--shoulders" href="<?php echo get_home_url(); ?>/exercise-type/shoulders">Shoulders</a>
+        </div>
 
         
 

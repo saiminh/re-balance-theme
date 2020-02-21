@@ -1,0 +1,46 @@
+#move-body-map {
+    height: 100%;
+    margin: 0 auto;
+    display: block;   
+    z-index: 1;
+}
+
+.st0-ui-move-map{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st1-ui-move-map{fill:rgba(255,255,255,0.2);stroke:#E5947F;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+.linktext {
+    font-size: .66em;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateX(2%);
+    transform-origin: 50% 50%;
+    transition: all .2s linear;
+
+    g:hover & {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.move-bodyparts-map {
+    height: calc(100vh - 120px);
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    overflow: visible;
+    transform: translateX(-50%);
+}
+
+.move-bodypart-link {
+    position: absolute;
+    font-size: 1.125em;
+    padding: .7em 1em;
+    border: 1px solid $color__link;
+    z-index: 2;
+    border-radius: 50px;
+}
+
+.move-bodypart-link--shoulders {
+     top: 18%;
+     left: 65%;
+}

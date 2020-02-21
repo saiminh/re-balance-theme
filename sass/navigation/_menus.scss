@@ -4,16 +4,29 @@
 
 .site-branding {
 	position: relative;
-	max-width: 160px;
-	padding: 1em;
+	height: 80px;
+	padding: 20px;
 	margin: 0 auto;
+
+	& a {
+		display: block;
+		height: 100%;
+	}
+
+	& svg {
+		display: block;
+		height: 100%;
+		margin: auto;
+	}
 }
 
 .main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
 
 	ul {
 		display: none;
@@ -72,6 +85,10 @@
 	a {
 		display: block;
 		text-decoration: none;
+		padding: 1em;
+		font-size: 1.25em;
+		color: #000;
+		font-weight: 600;
 	}
 
 	.current_page_item > a,

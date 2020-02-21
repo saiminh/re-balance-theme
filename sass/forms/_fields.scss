@@ -18,6 +18,10 @@ textarea {
 	border: 1px solid $color__border-input;
 	border-radius: 3px;
 	padding: 3px;
+	line-height: 1;
+	padding: .75em 1em;
+	font-size: 1.25rem;
+	background-color: transparent;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -30,4 +34,10 @@ select {
 
 textarea {
 	width: 100%;
+}
+
+input[type="search"].search-field {
+	border-radius: 50px 0 0 50px;
+	border-right-width: 0;
+	color: $color__border-input;
 }
