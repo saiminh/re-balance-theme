@@ -365,10 +365,10 @@ h1, h2, h3, h4, h5, h6 {
 
 h1.entry-title,
 h1.page-title {
-  font-family: lust-script-display, sans-serif;
   color: #93756d;
   color: #000;
-  font-size: 2.5em; }
+  font-size: 2.5em;
+  letter-spacing: -.01em; }
 
 .home .page-subtitle {
   font-size: 1.2em; }
@@ -1020,9 +1020,7 @@ a {
       padding-bottom: calc(21% - 1em);
       color: #000;
       left: 0;
-      font-size: 1.75em;
-      font-weight: 600;
-      letter-spacing: -0.01em; }
+      font-size: 1.75em; }
     .home .choose-exercise-links > div:after {
       content: '';
       position: absolute;
