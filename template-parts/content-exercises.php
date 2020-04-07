@@ -8,24 +8,31 @@
  */
 
 ?>
-
+<?php if ( !is_singular() ) : ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	
-		
+<?php else : ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('exercise-single-article'); ?>>
+<?php endif;?>
+
 		<?php if ( !is_singular() ) : ?>
 			<?php rebalance_post_thumbnail(); ?>
 		<div class="post-info">
-			<header class="entry-header">
+			<header class="entry-header">				
 				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			</header><!-- .entry-header -->
 		<div class="entry-summary">
-			<?php the_excerpt(); ?>
+				<p><?php printf( '<a href="%s" class="link">%s</a>', esc_url( get_permalink() ), esc_html( get_the_excerpt() ) ); ?></p>
+			
+			
 		</div><!-- .entry-summary -->
 
 		<?php else : ?>
 			<div class="post-info">
 			<header class="entry-header">
-				<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+			<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() || is_singular( 'exercises' ) ) : ?>
+					<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
+				<?php endif; ?>
+				<?php // the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			</header><!-- .entry-header -->
 		<?php
 			the_content();	

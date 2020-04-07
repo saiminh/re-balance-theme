@@ -1,20 +1,23 @@
-$color__background-body: #FFF;
+$color__brand-secondary: #C4E3F2;
+$color__brand-primary: #E5947F;
+
+$color__background-body: desaturate(lighten($color__brand-primary, 25%), 35%);
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #FFF;
+$color__background-button: lighten($color__brand-primary, 25%);
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #E5947F;
-$color__link-visited: #E5947F;
-$color__link-hover: #E5947F;
-$color__text-main: #333;
+$color__text-input: #000;
+$color__text-input-focus: #000;
+$color__link: $color__brand-primary;
+$color__link-visited: $color__brand-primary;
+$color__link-hover: $color__brand-primary;
+$color__text-main: #000;
 
-$color__border-button: #E5947F;
-$color__border-button-hover: #E5947F;
-$color__border-button-focus: #E5947F;
-$color__border-input: #E5947F;
+$color__border-button: $color__brand-primary;
+$color__border-button-hover: $color__brand-primary;
+$color__border-button-focus: $color__brand-primary;
+$color__border-input: $color__brand-primary;
 $color__border-abbr: #666;

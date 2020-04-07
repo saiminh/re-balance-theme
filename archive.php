@@ -15,12 +15,16 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
+				<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() || is_singular( 'exercises' ) ) : ?>
+					<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
+				<?php endif; ?>
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 
+			
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :

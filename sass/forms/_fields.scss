@@ -14,17 +14,35 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
-	border-radius: 3px;
-	padding: 3px;
-	line-height: 1;
-	padding: .75em 1em;
-	font-size: 1.25rem;
-	background-color: transparent;
+	color: $color__text-main;
+	border: 0px solid $color__border-input;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	line-height: 44px;
+	height: 44px;
+	padding: 1em 1em .7em .7em;
+	font-size: 16px;
+	background-color: lighten($color__brand-primary, 25%);
 
 	&:focus {
 		color: $color__text-input-focus;
+	}
+
+	&.search-field--home {
+		width: 100%;
+	}
+
+	&::placeholder {
+		color: $color__text-main;
+		opacity: 1;
+	}
+
+	@media screen and (min-width: 480px) {
+		padding: 1em 1.25em;
+		line-height: 60px;
+		height: 60px;
+		font-size: 1.25rem;
+		border-radius: 10px;
 	}
 }
 
@@ -36,8 +54,3 @@ textarea {
 	width: 100%;
 }
 
-input[type="search"].search-field {
-	border-radius: 50px 0 0 50px;
-	border-right-width: 0;
-	color: $color__border-input;
-}

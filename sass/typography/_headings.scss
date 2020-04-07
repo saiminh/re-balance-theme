@@ -5,13 +5,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1.entry-title,
 h1.page-title {
-	//font-family: $font__header;
-	color: #93756d;
 	color: #000;
-	font-size: 2.5em;
-	letter-spacing: -.01em;
-	//font-style: italic;
+	font-size: 1.75em;
 	//font-weight: 600;
+	position: relative;
+	top: .15em;
 }
 
 .home .page-subtitle {

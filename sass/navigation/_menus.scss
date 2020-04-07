@@ -1,12 +1,26 @@
 .site-header {
-	position: relative;
+	position: sticky;
+	top: 0;
+	background: #FFF;
+	z-index: 1000;
+	margin-left: -1em;
+	width: calc(100% + 2em);
+	
+	@media (min-width: 480px) {
+		margin-left: -2em;
+		width: calc(100% + 4em);
+	}
 }
 
 .site-branding {
 	position: relative;
-	height: 80px;
-	padding: 20px;
+	height: 70px;
+	padding: 20px 1rem;
 	margin: 0 auto;
+
+	@media (min-width: 480px) {
+		height: 80px;
+	}
 
 	& a {
 		display: block;
@@ -17,6 +31,8 @@
 		display: block;
 		height: 100%;
 		margin: auto;
+		position: relative;
+		top: 0;
 	}
 }
 
@@ -25,14 +41,27 @@
 	display: block;
 	width: 100%;
 	width: 100%;
-	max-width: 1000px;
+	//max-width: 800px;
 	margin: 0 auto;
 
 	ul {
-		display: none;
+		opacity: 0;
+		visibility: hidden;
+		//display: none;
+		position: absolute;
+		right: 0;
+		top: 60px;
+		background-color: lighten($color__brand-primary, 25%);
+		border-radius: 5px;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		overflow: hidden;
+		box-shadow: -3px 3px 4px rgba(0,0,0,0.05);
+		
+		@media (min-width: 480px) {
+			right: calc(1rem + 1px);
+		}
 
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -74,7 +103,6 @@
 	}
 
 	li {
-		float: left;
 		position: relative;
 
 		&:hover > a,
@@ -87,8 +115,9 @@
 		text-decoration: none;
 		padding: 1em;
 		font-size: 1.25em;
-		color: #000;
-		font-weight: 600;
+		font-weight: 300;
+		min-width: 250px;
+		border-bottom: 1px solid lighten($color__brand-primary, 22%);
 	}
 
 	.current_page_item > a,
@@ -99,18 +128,21 @@
 }
 
 /* Small menu. */
-.menu-toggle,
+
 .main-navigation.toggled ul {
-	display: block;
+	opacity: 1;
+	visibility: visible;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		//display: none;
-	}
-	.main-navigation ul {
-		//display: block;
-	}
+.main-navigation.toggled .navTrigger {
+	background-color: lighten($color__brand-primary, 25%);
+}
+
+.menu-name {
+	color: #000;
+	font-size: 10px;
+	font-weight: 600;
+	text-transform: uppercase;
 }
 
 .comment-navigation,
@@ -138,21 +170,32 @@
 	border: none;
 	background-color: transparent;
 	box-shadow: none;
-	width: 30px;
-	height: 30px;
+	width: 60px;
+	height: 70px;
 	position: absolute;
-	top: 10px;
-    right: 10px;
+	top: 0px;
+	right: calc(1rem - 15px);
+
+	@media (min-width: 480px) {
+		right: calc(2rem - 15px);
+	}
+	
+	&:hover {
+		transform: none;
+		box-shadow: none;
+	}
 
 	.navTrigger {
 	  cursor: pointer;
-	  width: 30px;
-	  height: 25px;
-	  margin: auto 0;
+	  width: 60px;
+	  height: 70px;
+	  margin: 0;
 	  position: absolute;
 	  right: 0;
 	  top: 0;
 	  bottom: 0;
+	  padding: 15px;
+	  border-radius: 5px 5px 0 0;
 	}
 	.navTrigger i {
 	  background-color: #000;
@@ -163,39 +206,39 @@
 	  height: 4px;
 	}
 	.navTrigger i:nth-child(1) {
-	  -webkit-animation: outT 0.8s backwards;
-	  animation: outT 0.8s backwards;
+	  -webkit-animation: outT 0.3s backwards;
+	  animation: outT 0.3s backwards;
 	  -webkit-animation-direction: reverse;
 	  animation-direction: reverse;
 	}
 	.navTrigger i:nth-child(2) {
 	  margin: 5px 0;
-	  -webkit-animation: outM 0.8s backwards;
-	  animation: outM 0.8s backwards;
+	  -webkit-animation: outM 0.3s backwards;
+	  animation: outM 0.3s backwards;
 	  -webkit-animation-direction: reverse;
 	  animation-direction: reverse;
 	}
 	.navTrigger i:nth-child(3) {
-	  -webkit-animation: outBtm 0.8s backwards;
-	  animation: outBtm 0.8s backwards;
+	  -webkit-animation: outBtm 0.3s backwards;
+	  animation: outBtm 0.3s backwards;
 	  -webkit-animation-direction: reverse;
 	  animation-direction: reverse;
     }
 
 	.toggled & .navTrigger i:nth-child(1) {
         background-color: #000;
-	  -webkit-animation: inT 0.8s forwards;
-	  animation: inT 0.8s forwards;
+	  -webkit-animation: inT 0.3s forwards;
+	  animation: inT 0.3s forwards;
 	}
 	.toggled & .navTrigger i:nth-child(2) {
         background-color: #000;
-	  -webkit-animation: inM 0.8s forwards;
-	  animation: inM 0.8s forwards;
+	  -webkit-animation: inM 0.3s forwards;
+	  animation: inM 0.3s forwards;
 	}
 	.toggled & .navTrigger i:nth-child(3) {
         background-color: #000;
-	  -webkit-animation: inBtm 0.8s forwards;
-	  animation: inBtm 0.8s forwards;
+	  -webkit-animation: inBtm 0.3s forwards;
+	  animation: inBtm 0.3s forwards;
 	}
 	@-webkit-keyframes inM {
 	  50% {

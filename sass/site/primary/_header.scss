@@ -5,3 +5,10 @@
 .site-description {
     display: none;
 }
+
+.entry-header {
+    & h1,
+    & h2 {
+        margin-top: 0;
+    }
+}

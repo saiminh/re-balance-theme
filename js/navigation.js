@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
-( function() {
+( function($) {
 	var container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -104,7 +104,13 @@
 		}
 	}( container ) );
 
+	$('.main-navigation a').on('click', function(){
+		$('.main-navigation').removeClass('toggled');
+	});
+
 	function init() {
+
+		//Date greeting
 		if (document.querySelector('#lblGreetings')) {
 			var myDate = new Date();
 			var hrs = myDate.getHours();
@@ -117,6 +123,17 @@
 				greet = 'Good Evening';
 			document.querySelector('#lblGreetings').prepend(greet + ', ');
 		}
+		//position move menus
+		if (document.querySelector('#move-body-map')) {
+			positionMoveMenus();
+		}
+		// initiate live search
+		if (typeof jQuery().searchwp_live_search == 'function') {
+			jQuery('input[data-swplive="true"]').searchwp_live_search();			
+		}
+				
+		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
+	
 	}
 	
 	const jsoptions = [
@@ -150,5 +167,104 @@
 	// this event runs for every page view after initial load
 	swup.on('contentReplaced', init);
 
-} )();
+
+	// Move Navigation stuff
+	
+	//Position sub menus
+	function positionMoveMenus() {
+		if ($('.move-bodyparts-map').length == 1) {
+			parentloc = $('.move-bodyparts-map').position();
+			headloc = $("#move-body-map #head").position();
+			headw = $("#move-body-map #head")[0].getBBox().width;
+		
+		
+			$('.move-bodypart-group--head').css(
+				{ 	top: headloc.top - parentloc.top, 
+					left: headloc.left - parentloc.left + headw }
+			);
+			bodyloc = $("#move-body-map #body").position();
+			bodyw = $("#move-body-map #body")[0].getBBox().width;
+			$('.move-bodypart-group--body').css(
+				{	top: bodyloc.top - parentloc.top, 
+					left: bodyloc.left - parentloc.left + (bodyw/1.5)}
+			);
+			legsloc = $("#move-body-map #legs").position();
+			legsw = $("#move-body-map #legs")[0].getBBox().width;
+			$('.move-bodypart-group--legs').css(
+				{	top: legsloc.top - parentloc.top, 
+					left: legsloc.left - parentloc.left + legsw}
+			);
+			feetloc = $("#move-body-map #feet").position();
+			feetw = $("#move-body-map #feet")[0].getBBox().width;
+			$('.move-bodypart-group--feet').css(
+				{	top: feetloc.top - parentloc.top, 
+					bottom: 'auto',
+					left: feetloc.left - parentloc.left + feetw}
+			);
+			handsloc = $("#move-body-map #hands").position();
+			handsw = $("#move-body-map #hands")[0].getBBox().width;
+			$('.move-bodypart-group--hands').css(
+				{	top: handsloc.top - parentloc.top, 
+					left: handsloc.left - parentloc.left + handsw}
+			);
+
+			$("#move-body-map #head").on('click', function(){		
+				TweenLite.to('.move-bodypart-group', .5, {
+					autoAlpha: 0
+				});
+				TweenLite.to('.move-bodypart-group--head', .5, {
+					autoAlpha: 1
+				});
+			});
+		
+			$("#move-body-map #body").on('click', function(){		
+				TweenLite.to('.move-bodypart-group', .5, {
+					autoAlpha: 0
+				});
+				TweenLite.to('.move-bodypart-group--body', .5, {
+					autoAlpha: 1
+				});
+			});
+			$("#move-body-map #feet").on('click', function(){		
+				TweenLite.to('.move-bodypart-group', .5, {
+					autoAlpha: 0
+				});
+				TweenLite.to('.move-bodypart-group--feet', .5, {
+					autoAlpha: 1
+				});
+			});
+			$("#move-body-map #legs").on('click', function(){		
+				TweenLite.to('.move-bodypart-group', .5, {
+					autoAlpha: 0
+				});
+				TweenLite.to('.move-bodypart-group--legs', .5, {
+					autoAlpha: 1
+				});
+			});
+			$("#move-body-map #hands .hand").on('click', function(){		
+		
+				handsloc = $(this).position();
+				handsw = $(this)[0].getBBox().width;
+				$('.move-bodypart-group--hands').css(
+					{	top: handsloc.top - parentloc.top, 
+						left: handsloc.left - parentloc.left + handsw}
+				);
+		
+				TweenLite.to('.move-bodypart-group', .5, {
+					autoAlpha: 0
+				});
+				TweenLite.to('.move-bodypart-group--hands', .5, {
+					autoAlpha: 1
+				});
+			});
+		} else {};
+	};
+	positionMoveMenus();
+	$(window).on('resize', function(){
+		positionMoveMenus();
+	});
+	
+		
+
+} )( jQuery );
 

@@ -3,11 +3,42 @@
 @import "fields";
 
 .front-page-search {
-    margin: 2em auto;
-    max-width: 600px;
-    text-align: center;
-    
+    position: relative;
+    margin: 0 auto 0 auto;
+    display: block;
+
+    @media (min-width: 480px) {
+        display: flex;
+        margin-bottom: 1em;
+    }
+
     & form {
+        width: 100%;
+        position: relative;
+
+        @media (min-width: 480px) {
+            width: calc(100% - 8rem - 10px);
+        }
+    }
+    .button.button--surprise {
         display: inline-block;
+        margin: auto 0 auto auto;
+        text-align: center;
+        position: relative;
+        font-size: .9rem;
+        top: 0;        
+
+        @media (max-width: 481px) {
+            //display: inline;            
+            background-color: transparent;
+            box-shadow: none;           
+            //text-decoration: underline;
+            padding: .75em 0 1.5em 0;
+            font-size: .8rem;
+        }
+
+        &:hover {
+            //transform: none;
+        }
     }
 }

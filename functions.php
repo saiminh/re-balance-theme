@@ -210,7 +210,7 @@ function create_types_hierarchical_taxonomy() {
  
   $labels = array(
     'name' => _x( 'Types', 'taxonomy general name' ),
-    'singular_name' => _x( 'Type', 'taxonomy singular name' ),
+    'singular_name' => _x( 'Exercise', 'taxonomy singular name' ),
     'search_items' =>  __( 'Search Types' ),
     'all_items' => __( 'All Types' ),
     'parent_item' => __( 'Parent Type' ),
@@ -238,7 +238,6 @@ function create_types_hierarchical_taxonomy() {
 }
 //hook into the init action and call create_types_hierarchical_taxonomy when it fires
 add_action( 'init', 'create_types_hierarchical_taxonomy', 0 );
-
 
 
 /**
@@ -281,6 +280,78 @@ function create_tag_taxonomies_for_exercises()
   ));
   flush_rewrite_rules(); 
 }
+
+
+/** Display posts by category */
+
+function postsbycategory($which_category = 'uncategorized') {
+	// the query
+	$the_query = new WP_Query( array( 'category_name' => $which_category, 'posts_per_page' => 10 ) ); 
+	 
+	// The Loop
+	if ( $the_query->have_posts() ) {
+		$catObj = get_category_by_slug($which_category); 
+		$catName = $catObj->name;
+		echo '<h2 class="posts-row-title">' . $catName .'</h2>';
+		echo '<div class="posts-row">';
+		//echo '<ul class="postsbycategory widget_recent_entries">';
+		while ( $the_query->have_posts() ) {
+			$the_query->the_post();
+			get_template_part( 'template-parts/content', get_post_type() );	
+				}
+	} else {
+		// no posts found
+		echo 'no posts found';
+	}
+	echo '</div>';
+	 
+	//return $string;
+	 
+	/* Restore original Post Data */
+	wp_reset_postdata();
+	}
+	// Add a shortcode
+	add_shortcode('categoryposts', 'postsbycategory');
+	 
+	// Enable shortcodes in text widgets
+	add_filter('widget_text', 'do_shortcode');
+
+
+	// Trying to include tags in search results
+
+	// search all taxonomies, based on: http://projects.jesseheap.com/all-projects/wordpress-plugin-tag-search-in-wordpress-23
+
+function atom_search_where($where){
+	global $wpdb;
+	if (is_search())
+	  $where .= "OR (t.name LIKE '%".get_search_query()."%' AND {$wpdb->posts}.post_status = 'publish')";
+	return $where;
+  }
+  
+  function atom_search_join($join){
+	global $wpdb;
+	if (is_search())
+	  $join .= "LEFT JOIN {$wpdb->term_relationships} tr ON {$wpdb->posts}.ID = tr.object_id INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id=tr.term_taxonomy_id INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id";
+	return $join;
+  }
+  
+  function atom_search_groupby($groupby){
+	global $wpdb;
+  
+	// we need to group on post ID
+	$groupby_id = "{$wpdb->posts}.ID";
+	if(!is_search() || strpos($groupby, $groupby_id) !== false) return $groupby;
+  
+	// groupby was empty, use ours
+	if(!strlen(trim($groupby))) return $groupby_id;
+  
+	// wasn't empty, append ours
+	return $groupby.", ".$groupby_id;
+  }
+  
+  add_filter('posts_where','atom_search_where');
+  add_filter('posts_join', 'atom_search_join');
+  add_filter('posts_groupby', 'atom_search_groupby');
 
 // /**
 //  * Get taxonomies terms links.

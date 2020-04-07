@@ -1,38 +1,59 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
+input[type="submit"],
+a.button {
+	border: none;
 	border-color: $color__border-button;
-	border-radius: 2px;
+	border-radius: 3px;
 	//box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	background: transparent; //$color__background-button;
+	background: $color__background-button;
 	color: $color__link;
 	line-height: 1;
 	padding: .75em 1em;
 	font-size: 1.25rem;
-
-	& a,
-	& a:visited {
-	//	color: $color__text-main;
-	}
+	box-shadow: -1px 1px 0 $color__brand-primary,
+				-2px 2px 0 $color__brand-primary;
+	transform: translate(0, 0);
+	transition: .15s all ease-in-out;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		box-shadow: -1px 1px 0 $color__brand-primary,
+					-2px 2px 0 $color__brand-primary,
+					-3px 3px 0 $color__brand-primary,
+					-4px 4px 0 $color__brand-primary,
+					-5px 5px 0 $color__brand-primary;
+		transform: translate(3px, -3px);
 	}
 
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;
 	}
-}
 
-input[type="submit"].search-submit {
-	border-radius: 0 50px 50px 0;
-	margin-left: -0.25em;
-	padding-right: 1.25em;
-	border-left: none;
-	//background-color: $color__border-button;
-	//color: #fdf1ee;
-	//width: 
+	&.search-submit--home {
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		left: calc(100% - 40px);
+		width: 40px;
+		box-sizing: border-box;
+		background: url('img/ui-magnifying-glass-01.svg') no-repeat 50% 50%;
+		background-size: 40%;
+		overflow: hidden;
+		text-indent: 60px;
+		border: none;
+		box-shadow: none;
+
+		&:hover {
+			transform: none;
+		}
+
+		@media (min-width: 480px) {
+			width: 60px;
+			left: calc(100% - 60px);
+			background-size: 60%;
+		}
+	}
 }

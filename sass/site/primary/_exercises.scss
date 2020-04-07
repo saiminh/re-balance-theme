@@ -1,0 +1,46 @@
+.exercise-single-article {
+    margin: 0 -1em;
+    padding: 1em;
+    //background-color: $color__brand-secondary;
+    min-height: calc(100vh - 80px);
+
+    @media (min-width: 480px) {
+        margin: 0 -2em;
+        padding: 2em;
+    }
+
+    & h2 {
+        font-weight: 600;
+        
+    }
+
+    & .wp-block-video {
+        //text-align: center;
+        margin: -1em -1em 0 -1em;
+        background-color: desaturate(darken($color__brand-primary, 20%), 60%);
+
+        @media (min-width: 480px) {
+            margin: -2em -2em 0 -2em;
+        }
+
+        & video {
+            display: block;
+            width: auto;
+            margin: 0 auto;
+        }
+    }
+
+    & .entry-footer {
+        //text-align: center;
+        margin-top: 1em;
+    }   
+    & .entry-footer .exercises-tag {
+        display: inline-block;
+        background-color: lighten($color__brand-primary, 25%);
+        padding: 4px 8px;
+        margin-bottom: 4px;
+    }
+    & .entry-footer .divider {
+        display: none;
+    }
+}

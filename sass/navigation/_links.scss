@@ -20,23 +20,52 @@ a {
 }
 
 .back-button {
-	background-color: $color__background-button;
-	//box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-	padding: .75em 1em .75em .75em;
+	background-color: lighten($color__brand-primary, 25%);
+	box-shadow: 0 0 $color__brand-primary;
+	padding: .75em;
+	margin-right: .5em;
 	border-radius: 0px 10px 10px 10px;
 	line-height: 1;
-	border: 1px solid $color__link;
-	position: sticky;
-	left: 0;
-	top: 0;
-	//border-width: 0 1px 1px 0;
 	display: inline-block;
+	z-index: 1001;
+	transition: all .1s ease-in-out;
+	position: fixed;
+	top: 1em;
+	left: 1em;
+	display: inline-block;
+	font-size: .9rem;
+
 	& svg {
-		width: 10px;
+		width: 7px;
 		position: relative;
 		top: 1px;
 		& path{
 			stroke: $color__link;
 		}
+		@media (min-width: 480px) {
+			width: 10px;
+		}
+	}
+
+	@media (min-width: 480px) {
+		left: 2em;
+		font-size: 1rem;
+		padding: .75em 1em .75em .75em;
+	}
+
+	@media (min-width: 800px) {
+		left: calc(50% - 400px + 2em);
+	}
+
+	&:hover {
+		transform: translate(3px, -3px);
+		box-shadow: -1px 1px 0 $color__brand-primary,
+					-2px 2px 0 $color__brand-primary,
+					-3px 3px 0 $color__brand-primary;
+	}
+
+	& + h1 {
+		display: inline-block;
 	}
 }
+

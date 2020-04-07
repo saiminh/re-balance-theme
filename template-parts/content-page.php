@@ -11,6 +11,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() || is_singular( 'exercises' ) ) : ?>
+			<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
+		<?php endif; ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

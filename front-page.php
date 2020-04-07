@@ -38,9 +38,13 @@ get_header();
 								//echo 'Username: ' . $current_user->user_login . "\n"; 
 								echo $current_user->display_name . "\n"; } 
 							else { wp_loginout(); } ?></h2>
-
-					<h1 class="page-title"><?php the_title(); ?></h1>
-			</header>
+				</header>
+				<div class="front-page-search">
+					<?php get_search_form( ); ?> 	
+					<a class="button button--surprise" href="<?php echo get_bloginfo('wpurl'); ?>/exercises/shoulder-pop/">Surprise me!</a>					
+				</div>
+								
+			
 				
 			
 
@@ -48,10 +52,7 @@ get_header();
 					<div class="choose-exercise-link--move"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></div>
 					<div class="choose-exercise-link--breathe"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></div>
 				</div>
-				<div class="front-page-search">
-				<?php get_search_form( ); ?> 
-				<a href="">Surprise me!</a>
-			</div>
+				
                 <?php
 
 			endwhile;

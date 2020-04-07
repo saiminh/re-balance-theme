@@ -14,7 +14,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
@@ -36,6 +36,7 @@
 
 		<div class="navTrigger">
 		<i></i><i></i><i></i>
+		<span class="menu-name">Menu</span>
 		</div>
 
 		</button>
@@ -49,8 +50,5 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="swup" class="site-content transition">
-		<?php if ( is_page( array('Breathe', 'Move') ) || is_archive() || is_singular( 'exercises' ) ) : ?>
-			<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
-		<?php endif; ?>
+	<div id="swup" class="site-content transition">		
 		
