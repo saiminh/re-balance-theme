@@ -199,7 +199,6 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype', 0 );
-
  
 //create a custom taxonomy name it topics for your posts
  
@@ -353,42 +352,29 @@ function atom_search_where($where){
   add_filter('posts_join', 'atom_search_join');
   add_filter('posts_groupby', 'atom_search_groupby');
 
-// /**
-//  * Get taxonomies terms links.
-//  *
-//  * @see get_object_taxonomies()
-//  */
-// function wpdocs_custom_taxonomies_terms_links() {
-//     // Get post by post ID.
-//     if ( ! $post = get_post() ) {
-//         return '';
-//     }
- 
-//     // Get post type by post.
-//     $post_type = $post->post_type;
- 
-//     // Get post type taxonomies.
-//     $taxonomies = get_object_taxonomies( $post_type, 'objects' );
- 
-//     $out = array();
- 
-//     foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
- 
-//         // Get the terms related to post.
-//         $terms = get_the_terms( $post->ID, $taxonomy_slug );
- 
-//         if ( ! empty( $terms ) ) {
-//             $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
-//             foreach ( $terms as $term ) {
-//                 $out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
-//                     esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
-//                     esc_html( $term->name )
-//                 );
-//             }
-//             $out[] = "\n</ul>\n";
-//         }
-//     }
-//     return implode( '', $out );
-// }
+
+// breadcrumbs
+
+function show_breadcrumb($name,$type){
+    $list = "";
+    $home = get_bloginfo("home");
+    if ($type && $name){
+        $ans = get_term_by('name', $name, $type);
+        $parentID=$ans->parent;
+        while ($parentID > 0){
+            $parent = get_term_by('id', $parentID, $type);
+            $url = $home."/".$type."/".$parent->slug;
+            $list = "<li><a href='".$url."'>".$parent->name."</a></li>".$list;
+            $parentID = $parent->parent;
+        }
+        $url = $home."/".$type."/".$ans->slug;
+        $list = $list."<li>".$ans->name."</li>";
+    }   
+  
+    if ($list) echo "<ul class='breadcrumbs'>".$list."</ul>";
+}
+  
+
+
 ?>
 

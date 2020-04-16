@@ -1,7 +1,7 @@
 $color__brand-secondary: #C4E3F2;
 $color__brand-primary: #E5947F;
 
-$color__background-body: desaturate(lighten($color__brand-primary, 25%), 35%);
+$color__background-body: #F6F6F6;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: lighten($color__brand-primary, 25%);
@@ -12,8 +12,8 @@ $color__text-screen: #21759b;
 $color__text-input: #000;
 $color__text-input-focus: #000;
 $color__link: $color__brand-primary;
-$color__link-visited: $color__brand-primary;
-$color__link-hover: $color__brand-primary;
+$color__link-visited: $color__link;
+$color__link-hover: $color__link;
 $color__text-main: #000;
 
 $color__border-button: $color__brand-primary;

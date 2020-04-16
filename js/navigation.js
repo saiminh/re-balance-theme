@@ -131,9 +131,29 @@
 		if (typeof jQuery().searchwp_live_search == 'function') {
 			jQuery('input[data-swplive="true"]').searchwp_live_search();			
 		}
-				
+		
+		// Hide Livesearch after page swotch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
-	
+		
+		// Exercise count
+		var nArticles = $(".archive article").length;
+		console.log(nArticles);
+		$(".breadcrumbs li:last-child").append(" ("+nArticles+")");
+
+		// Discreet toggle
+		$(".switch input").on("change", function(e) {
+			const isOn = e.currentTarget.checked;
+		  
+		  if (isOn) {
+			  if ( $("article.exercises-tag-discreet").length == 0 ) {
+				  $(".site-main").append('<div class="notification--nodiscreet">⚡ Sorry, there are no discreet exercises available in this selection!</div>');
+			  }
+			  $("article:not(.exercises-tag-discreet)").hide();
+		  } else {
+			  $("article:not(.exercises-tag-discreet)").show();
+			  $(".notification--nodiscreet").remove();
+		  }
+		});
 	}
 	
 	const jsoptions = [
@@ -142,6 +162,9 @@
 		  to: '(.*)',
 		  in: function(next) {
 			document.querySelector('#swup').style.opacity = 0;
+			TweenLite.to($('.loading-animation'), .15, {				
+				autoAlpha: 0
+			});
 			TweenLite.to(document.querySelector('#swup'), 0.5, {
 			  opacity: 1,
 			  onComplete: next
@@ -149,6 +172,9 @@
 		  },
 		  out: (next) => {
 			document.querySelector('#swup').style.opacity = 1;
+			TweenLite.to($('.loading-animation'), .15, {				
+				autoAlpha: 1
+			});
 			TweenLite.to(document.querySelector('#swup'), 0.5, {
 			  opacity: 0,
 			  onComplete: next
@@ -173,40 +199,40 @@
 	//Position sub menus
 	function positionMoveMenus() {
 		if ($('.move-bodyparts-map').length == 1) {
-			parentloc = $('.move-bodyparts-map').position();
-			headloc = $("#move-body-map #head").position();
-			headw = $("#move-body-map #head")[0].getBBox().width;
+			// parentloc = $('.move-bodyparts-map').position();
+			// headloc = $("#move-body-map #head").position();
+			// headw = $("#move-body-map #head")[0].getBBox().width;
 		
 		
-			$('.move-bodypart-group--head').css(
-				{ 	top: headloc.top - parentloc.top, 
-					left: headloc.left - parentloc.left + headw }
-			);
-			bodyloc = $("#move-body-map #body").position();
-			bodyw = $("#move-body-map #body")[0].getBBox().width;
-			$('.move-bodypart-group--body').css(
-				{	top: bodyloc.top - parentloc.top, 
-					left: bodyloc.left - parentloc.left + (bodyw/1.5)}
-			);
-			legsloc = $("#move-body-map #legs").position();
-			legsw = $("#move-body-map #legs")[0].getBBox().width;
-			$('.move-bodypart-group--legs').css(
-				{	top: legsloc.top - parentloc.top, 
-					left: legsloc.left - parentloc.left + legsw}
-			);
-			feetloc = $("#move-body-map #feet").position();
-			feetw = $("#move-body-map #feet")[0].getBBox().width;
-			$('.move-bodypart-group--feet').css(
-				{	top: feetloc.top - parentloc.top, 
-					bottom: 'auto',
-					left: feetloc.left - parentloc.left + feetw}
-			);
-			handsloc = $("#move-body-map #hands").position();
-			handsw = $("#move-body-map #hands")[0].getBBox().width;
-			$('.move-bodypart-group--hands').css(
-				{	top: handsloc.top - parentloc.top, 
-					left: handsloc.left - parentloc.left + handsw}
-			);
+			// $('.move-bodypart-group--head').css(
+			// 	{ 	top: headloc.top - parentloc.top, 
+			// 		left: headloc.left - parentloc.left + headw }
+			// );
+			// bodyloc = $("#move-body-map #body").position();
+			// bodyw = $("#move-body-map #body")[0].getBBox().width;
+			// $('.move-bodypart-group--body').css(
+			// 	{	top: bodyloc.top - parentloc.top, 
+			// 		left: bodyloc.left - parentloc.left + bodyw}
+			// );
+			// legsloc = $("#move-body-map #legs").position();
+			// legsw = $("#move-body-map #legs")[0].getBBox().width;
+			// $('.move-bodypart-group--legs').css(
+			// 	{	top: legsloc.top - parentloc.top, 
+			// 		left: legsloc.left - parentloc.left + legsw}
+			// );
+			// feetloc = $("#move-body-map #feet").position();
+			// feetw = $("#move-body-map #feet")[0].getBBox().width;
+			// $('.move-bodypart-group--feet').css(
+			// 	{	top: feetloc.top - parentloc.top, 
+			// 		bottom: 'auto',
+			// 		left: feetloc.left - parentloc.left + feetw}
+			// );
+			// handsloc = $("#move-body-map #hands").position();
+			// handsw = $("#move-body-map #hands")[0].getBBox().width;
+			// $('.move-bodypart-group--hands').css(
+			// 	{	top: handsloc.top - parentloc.top, 
+			// 		left: handsloc.left - parentloc.left + handsw}
+			// );
 
 			$("#move-body-map #head").on('click', function(){		
 				TweenLite.to('.move-bodypart-group', .5, {
@@ -243,12 +269,12 @@
 			});
 			$("#move-body-map #hands .hand").on('click', function(){		
 		
-				handsloc = $(this).position();
-				handsw = $(this)[0].getBBox().width;
-				$('.move-bodypart-group--hands').css(
-					{	top: handsloc.top - parentloc.top, 
-						left: handsloc.left - parentloc.left + handsw}
-				);
+				// handsloc = $(this).position();
+				// handsw = $(this)[0].getBBox().width;
+				// $('.move-bodypart-group--hands').css(
+				// 	{	top: handsloc.top - parentloc.top, 
+				// 		left: handsloc.left - parentloc.left + handsw}
+				// );
 		
 				TweenLite.to('.move-bodypart-group', .5, {
 					autoAlpha: 0
@@ -260,9 +286,9 @@
 		} else {};
 	};
 	positionMoveMenus();
-	$(window).on('resize', function(){
-		positionMoveMenus();
-	});
+	// $(window).on('resize', function(){
+	// 	positionMoveMenus();
+	// });
 	
 		
 

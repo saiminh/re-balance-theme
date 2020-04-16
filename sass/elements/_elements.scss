@@ -23,6 +23,11 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+.page-header {
+    position: relative;
+    overflow: auto;
+}
+
 @import "lists";
 
 img {

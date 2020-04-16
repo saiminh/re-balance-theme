@@ -1,5 +1,5 @@
 .site {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
     background-color: #FFF;
     padding: 0 1em;
@@ -8,6 +8,14 @@
 
     @media screen and (min-width: 480px) {
         padding: 0 2em;
+    }
+}
+
+.site-main {
+    padding-top: 1em;
+
+    .single-exercises & {
+        padding-top: 0;
     }
 }
 

@@ -48,7 +48,8 @@
 			) );
 			?>
 		</nav><!-- #site-navigation -->
+		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
 	</header><!-- #masthead -->
-
+	<div class="loading-animation"><div class="loader"></div></div>			
 	<div id="swup" class="site-content transition">		
 		
