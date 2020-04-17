@@ -143,15 +143,46 @@
 		// Discreet toggle
 		$(".switch input").on("change", function(e) {
 			const isOn = e.currentTarget.checked;
+			$("article.exercises-tag-discreet").append('<i class="discreet-checkmark"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="26.846" viewBox="0 0 36 26.846"><path id="Icon_awesome-check" data-name="Icon awesome-check" d="M12.227,30.9.527,19.2a1.8,1.8,0,0,1,0-2.546L3.073,14.1a1.8,1.8,0,0,1,2.546,0L13.5,21.986,30.382,5.1a1.8,1.8,0,0,1,2.546,0L35.473,7.65a1.8,1.8,0,0,1,0,2.546l-20.7,20.7A1.8,1.8,0,0,1,12.227,30.9Z"/></svg></i>');
 		  
 		  if (isOn) {
+				TweenLite.staggerTo(
+					$("article.exercises-tag-discreet"), .1, {
+						y: -10,
+						repeat: 1,
+						yoyo: true,
+						ease: Power3.out,						
+					}, .05
+				);
+				TweenLite.from(
+					$(".discreet-checkmark"), .5, {
+						autoAlpha: 0,
+						scale: .2,			
+						ease: "elastic.out(1.25, 0.3)",
+						delay: .5
+					}, .1
+				);
 			  if ( $("article.exercises-tag-discreet").length == 0 ) {
 				  $(".site-main").append('<div class="notification--nodiscreet">⚡ Sorry, there are no discreet exercises available in this selection!</div>');
 			  }
-			  $("article:not(.exercises-tag-discreet)").hide();
+			  TweenLite.to($("article:not(.exercises-tag-discreet)"), .3, 
+			  {
+				  autoAlpha: 0,
+				  yPercent: -20, 
+				  onComplete: function(){$("article:not(.exercises-tag-discreet)").hide();}
+			  });
+			  
+
 		  } else {
-			  $("article:not(.exercises-tag-discreet)").show();
-			  $(".notification--nodiscreet").remove();
+			
+			$("article:not(.exercises-tag-discreet)").show();
+			TweenLite.to($("article:not(.exercises-tag-discreet)"), .3, 
+			  {
+				  autoAlpha: 1,
+				  yPercent: 0
+			  })
+			$(".notification--nodiscreet").remove();
+			$(".discreet-checkmark").remove();
 		  }
 		});
 	}

@@ -150,3 +150,24 @@
         }
     }
 }
+
+.discreet-checkmark {
+    height: 24px;
+    width: 24px;
+    background-color: $color__brand-primary;
+    border-radius: 50%;
+    display: block;
+    position: absolute;       
+    top: .5em;
+    right: .5em;
+    font-size: 1rem;
+    
+    & svg {
+        width: 16px;
+        height: 16px;
+        left: 4px;
+        top: 0px;
+        fill: #FFF;
+        position: relative;
+    }
+}
