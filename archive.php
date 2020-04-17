@@ -25,7 +25,7 @@ get_header();
 				//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 				<div class="toggle-discreet">
-					<label class="switch"><input type="checkbox"><span class="toggle-label-text">Discreet</span><span class="slider round hide-off"></span> </label>		
+					<label class="switch"><input type="checkbox"><span class="toggle-label-text">Only Discreet</span><span class="slider round hide-off"></span> </label>		
 				</div>
 			</header><!-- .page-header -->
 			<main id="main" class="site-main">		
