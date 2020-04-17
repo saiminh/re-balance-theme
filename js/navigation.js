@@ -168,7 +168,7 @@
 			  TweenLite.to($("article:not(.exercises-tag-discreet)"), .3, 
 			  {
 				  autoAlpha: 0,
-				  yPercent: -20, 
+				  y: -20, 
 				  onComplete: function(){$("article:not(.exercises-tag-discreet)").hide();}
 			  });
 			  
@@ -176,10 +176,10 @@
 		  } else {
 			
 			$("article:not(.exercises-tag-discreet)").show();
-			TweenLite.to($("article:not(.exercises-tag-discreet)"), .3, 
+			TweenLite.staggerTo($("article:not(.exercises-tag-discreet)"), .3, 
 			  {
 				  autoAlpha: 1,
-				  yPercent: 0
+				  y: 0
 			  })
 			$(".notification--nodiscreet").remove();
 			$(".discreet-checkmark").remove();
