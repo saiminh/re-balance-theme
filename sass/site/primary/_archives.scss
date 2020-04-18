@@ -39,6 +39,7 @@
         flex-shrink: 0;
         scroll-snap-align: start;
         font-size: .8rem;
+        position: relative;
 
         @media (min-width: 640px) {
             width: calc(40% - .5em) ;
@@ -149,6 +150,19 @@
             }
         }
     }
+
+    &.show-discreet-exercises-only {
+        & article.post,
+        & article.exercises {
+            &:nth-child(3n) {
+                margin-right: .5em;
+            }
+            &.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
+            &.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 .discreet-checkmark {
@@ -171,3 +185,4 @@
         position: relative;
     }
 }
+

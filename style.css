@@ -1655,7 +1655,8 @@ a {
   margin-right: .5em;
   flex-shrink: 0;
   scroll-snap-align: start;
-  font-size: .8rem; }
+  font-size: .8rem;
+  position: relative; }
   @media (min-width: 640px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
@@ -1769,6 +1770,16 @@ a {
         padding-top: 37.5%;
         margin: -2em 2em -2em -2em;
         flex-shrink: 0; } }
+.blog.show-discreet-exercises-only article.post:nth-child(3n), .blog.show-discreet-exercises-only article.exercises:nth-child(3n),
+.archive.show-discreet-exercises-only article.post:nth-child(3n),
+.archive.show-discreet-exercises-only article.exercises:nth-child(3n) {
+  margin-right: .5em; }
+.blog.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
+.archive.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
+.archive.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
+.archive.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
+.archive.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet {
+  margin-right: 0; }
 
 .discreet-checkmark {
   height: 24px;
