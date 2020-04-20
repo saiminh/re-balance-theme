@@ -156,11 +156,12 @@
 	background-size: auto calc(70% - 4em);
 }
 
-.post-template-default article {
-	
-	@media (min-width: 480px) {
-		max-width: 40rem;
-		margin: 2em auto;
+.post-template-default,
+.page-template-default {
+	& article {
+		@media (min-width: 480px) {
+			max-width: 40rem;
+			margin: 2em auto;
+		}
 	}
-
 }
