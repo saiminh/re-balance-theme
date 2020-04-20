@@ -426,7 +426,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #F6F6F6;
+  background: #FFF;
   background-size: cover;
   min-height: 100vh;
   padding: 0;
@@ -816,7 +816,7 @@ a {
   z-index: 1000;
   margin-left: -1em;
   width: calc(100% + 2em);
-  border-bottom: 1px solid #F6F6F6; }
+  border-bottom: 1px solid #FFF; }
   @media (min-width: 480px) {
     .site-header {
       margin-left: -2em;
