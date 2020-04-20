@@ -1586,7 +1586,7 @@ a {
 
 @media (min-width: 480px) {
   .post-template-default article {
-    max-width: 33rem;
+    max-width: 40rem;
     margin: 2em auto; } }
 
 .exercise-single-article {
