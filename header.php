@@ -24,32 +24,68 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
-			</a>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-
-		<div class="navTrigger">
-		<i></i><i></i><i></i>
-		<span class="menu-name">Menu</span>
-		</div>
-
-		</button>
+	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
+	
+		<header id="masthead" class="site-header">
+			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
+				</a>
+			</div><!-- .site-branding -->
 			
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?> Back</a>
-	</header><!-- #masthead -->
+			
+
+			<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+			<div class="navTrigger">
+			<i></i><i></i><i></i>
+			<span class="menu-name">Menu</span>
+			</div>
+
+			</button>
+				
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+				?>
+			</nav><!-- #site-navigation -->		
+		</header><!-- #masthead -->
+		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
+	<?php else : ?>
+
+		<header id="masthead" class="site-header">
+			<div class="site-branding">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
+				</a>
+			</div><!-- .site-branding -->
+			
+			
+
+			<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+			<div class="navTrigger">
+			<i></i><i></i><i></i>
+			<span class="menu-name">Menu</span>
+			</div>
+
+			</button>
+				
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-2',
+					'menu_id'        => 'nonuser-menu',
+				) );
+				?>
+			</nav><!-- #site-navigation -->		
+		</header><!-- #masthead -->
+
+	<?php endif; ?>
+
 	<div class="loading-animation"><div class="loader"></div></div>			
 	<div id="swup" class="site-content transition">		
 		

@@ -112,6 +112,13 @@
         border-radius: 0;
         padding: 2em;
     }
+
+    @media (min-width: 1250px) {
+        height: calc(100vh - 2rem);
+        box-sizing: border-box;
+        margin: 0;
+        width: calc(100vw - 250px - 2rem);
+    }
 }
 
 .move-bodypart-link {

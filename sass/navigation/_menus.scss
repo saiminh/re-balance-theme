@@ -11,6 +11,19 @@
 		margin-left: -2em;
 		width: calc(100% + 4em);
 	}
+
+	@media (min-width: 1250px) {
+		margin-left: 0;
+		width: 250px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		border-bottom: none;
+		z-index: 1;
+		//border-right: 1px solid #EEE;
+		background-color: lighten($color__brand-primary, 28%);
+	}
 }
 
 .site-branding {
@@ -26,6 +39,10 @@
 	& a {
 		display: block;
 		height: 100%;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	& svg {
@@ -48,7 +65,6 @@
 	ul {
 		opacity: 0;
 		visibility: hidden;
-		//display: none;
 		position: absolute;
 		right: 0;
 		top: 60px;
@@ -62,6 +78,17 @@
 		
 		@media (min-width: 480px) {
 			right: calc(1rem + 1px);
+		}
+
+		@media screen and (min-width: 1250px) {
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+			right: 0;
+			top: 1rem;
+			background-color: transparent;
+			border-radius: 0;
+			box-shadow: none;
 		}
 
 		ul {
@@ -119,12 +146,36 @@
 		font-weight: 300;
 		min-width: 250px;
 		border-bottom: 1px solid lighten($color__brand-primary, 22%);
+
+		@media screen and (min-width: 1250px) {
+			font-size: 1.5em;
+			color: $color__text-main;
+			padding: 1.5rem 2rem;
+			border-bottom: none;
+			border-right: 0px solid $color__brand-primary;
+			transition: all .1s linear;
+
+			&:hover {
+				color: lighten($color__brand-primary, 10%);
+			//	border-right: 5px solid $color__brand-primary;
+				background-color: lighten($color__brand-primary, 27%);
+			}
+		}
 	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
+	
+	& .active_page_item > a {
+
+		&:focus {
+			outline: none;
+		}
+
+		@media screen and (min-width: 1250px) {
+			background-color: lighten($color__brand-primary, 27%);
+			border-right: 5px solid $color__brand-primary;
+			color: $color__brand-primary;
+			transition: all .3s linear;
+		}
 	}
 }
 
@@ -180,6 +231,10 @@
 	@media (min-width: 480px) {
 		right: calc(2rem - 15px);
 		top: 5px;
+	}
+
+	@media screen and (min-width: 1250px) {
+		display: none;
 	}
 	
 	&:hover {

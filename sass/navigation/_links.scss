@@ -22,10 +22,10 @@ a {
 .back-button {
 	background-color: lighten($color__brand-primary, 25%);
 	box-shadow: 0 0 $color__brand-primary;
-	padding: .75em;
+	padding: .85em;
 	margin-right: .5em;
-	border-radius: 0px 10px 10px 10px;
-	line-height: 1;
+	border-radius: 50%;
+	line-height: 0;
 	display: inline-block;
 	z-index: 1001;
 	transition: all .1s ease-in-out;
@@ -36,26 +36,25 @@ a {
 	font-size: .9rem;
 
 	& svg {
-		width: 7px;
-		position: relative;
-		top: 1px;
+		width: 18px;
+		height: 18px;
 		& path{
 			stroke: $color__link;
-		}
-		@media (min-width: 480px) {
-			width: 10px;
 		}
 	}
 
 	@media (min-width: 480px) {
 		left: 2em;
 		font-size: 1rem;
-		padding: .75em 1em .75em .75em;
+		padding: 1em;
 		top: 20px;
 	}
 
-	@media (min-width: 800px) {
-		left: calc(50% - 500px + 2em);
+	@media (min-width: 1250px) {
+		left: calc(250px + 1rem);
+		padding: .75rem;
+		top: .5rem;
+		z-index: 1;
 	}
 
 	&:hover {
@@ -68,6 +67,13 @@ a {
 	.home &, 
 	.blog & {
 		display: none;
+	}
+
+	@media (min-width: 1200px) {
+		.page-template-page-move &,
+		.page-template-page-breathe & {
+			display: none;
+		}
 	}
 }
 

@@ -69,6 +69,10 @@
             }
         }
 
+        @media (min-width: 1250px) {
+            z-index: 2;
+        }
+
         & .entry-title {
             font-size: 1.125em;
             margin-bottom: 1rem;

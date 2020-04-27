@@ -53,6 +53,10 @@
         font-size: 1rem; 
     }
 
+    @media (min-width: 1250px) {
+        right: 1rem;
+    }
+
     & .switch {
         position: relative;
         line-height: 1; 

@@ -45,6 +45,7 @@ if ( ! function_exists( 'rebalance_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'rebalance' ),
+			'menu-2' => esc_html__( 'NonUser', 'rebalance' ),
 		) );
 
 		/*
@@ -374,6 +375,8 @@ function show_breadcrumb($name,$type){
     if ($list) echo "<ul class='breadcrumbs'>".$list."</ul>";
 }
   
+
+
 
 
 ?>

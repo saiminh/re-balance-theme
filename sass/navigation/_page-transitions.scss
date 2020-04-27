@@ -4,6 +4,10 @@
     top: calc(48vh - 45px);
     opacity: 0;
     visibility: hidden;
+
+    @media (min-width: 1250px) {
+      left: calc(50% + 80px);
+    }
 }
 
 @keyframes lds-dual-ring {

@@ -34,12 +34,22 @@
 .home .page-subtitle {
 	font-size: .9em;
 	margin-top: 0;
+	font-weight: 300;
+	display: none; //!!! FOR NOW, maybe have it as a quick speech bubble animation later
 
 	@media (min-width: 480px) {
 		position: absolute;
-		top: 1.5rem;
+		top: -4.5rem;
 		z-index: 9999;
 		font-size: .9em;
+	}
+
+	@media (min-width: 1250px) {
+		position: relative;
+		top: 0;
+		text-align: left;
+		font-weight: 300;
+		font-size: 1rem;
 	}
 }
 
@@ -83,6 +93,10 @@
 				font-size: 1.5em;
 				padding: 20px;
 				padding-bottom: calc(100vh - 190px - 2em);
+			}
+
+			@media screen and (min-width: 1250px) {
+				padding-bottom: calc(100vh - 80px - 3rem - 1em ); 
 			}
 	
 		}

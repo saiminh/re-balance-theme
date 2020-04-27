@@ -11,7 +11,6 @@ html {
 body {
 	background: $color__background-body; // url('https://picsum.photos/1200/800?grayscale') no-repeat 0 0; /* Fallback for when there is no custom background color defined. */
 	background-size: cover;
-	min-height: 100vh;
 	padding: 0;
 	margin: 0;
 }
