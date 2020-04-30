@@ -193,18 +193,22 @@
 		
 		//Update navigation links
 
-		var theUrl = window.location.pathname,
+		var theUrl = window.location.href,
 			$theCurrent = document.querySelectorAll('.active_page_item'),
 			$newCurrentLink = document.querySelectorAll('.menu-item a[href*="' + theUrl + '"]');
-		
-		if($newCurrentLink.length > 0) {
+
+		if (window.location.pathname == '/') {
+		 	$newCurrentLink = document.querySelectorAll('.menu-item a[href="' + theUrl + '"]');
+		}
+
+		if ($newCurrentLink.length > 0) {
 			var $curPar = $newCurrentLink[0].closest('.menu-item');
 			if($curPar) {
 				$curPar.classList.add('active_page_item');
 			}
 		}
 		
-		if($theCurrent.length > 0) {
+		if ($theCurrent.length > 0) {
 			$theCurrent[0].classList.remove('active_page_item');
 		}
 			
