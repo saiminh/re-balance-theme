@@ -790,7 +790,7 @@ textarea {
     top: calc(50% - .07rem); }
     @media (min-width: 480px) {
       .swpm-registration-widget-form .swpm-registration-username-row:before, .swpm-registration-widget-form .swpm-registration-email-row:before, .swpm-registration-widget-form .swpm-registration-password-row:before, .swpm-registration-widget-form .swpm-registration-password-retype-row:before {
-        top: calc(50% - .6rem); } }
+        top: calc(50% - .07rem); } }
 .swpm-registration-widget-form .swpm-registration-username-row:before {
   content: url(img/ui-user.svg); }
 .swpm-registration-widget-form .swpm-registration-email-row:before {
