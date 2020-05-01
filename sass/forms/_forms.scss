@@ -133,3 +133,167 @@
     color: #e5947f;
     border: 1px solid #f1d3cb;
 }
+
+.swpm-registration-widget-form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.1);
+
+  @media (min-width: 480px) {
+    padding: 3rem;
+  }
+}
+
+.swpm-registration-widget-form tr > td {
+  display: block;
+}
+
+.swpm-registration-widget-form tr > td:last-child {
+  margin-bottom: 1rem;
+}
+.swpm-registration-firstname-row,
+.swpm-registration-lastname-row,
+.swpm-registration-membership-level-row {
+  display: none;
+}
+
+.swpm-registration-widget-form {
+  
+  & .swpm-registration-username-row,
+  & .swpm-registration-email-row,
+  & .swpm-registration-password-row,
+  & .swpm-registration-password-retype-row {
+
+    position: relative;
+    
+    & label {
+      position: absolute;
+      font-size: 1.25rem;
+      padding: 0.8rem 0rem .4rem 1.75rem;
+      color: #BBB;
+      
+      @media (min-width: 480px) {
+        padding: 1.55rem 0rem .4rem 1.75rem;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 1rem;
+      display: inline-block;
+      position: absolute;
+      top: calc(50% - .8rem);
+      
+      @media (min-width: 480px) {
+        top: calc(50% - .6rem);
+      }
+    }
+  }
+
+  & .swpm-registration-username-row:before {
+    content: url(img/ui-user.svg);
+  }
+  & .swpm-registration-email-row:before {
+    content: url(img/ui-email.svg);
+  }
+  & .swpm-registration-password-row:before {
+    content: url(img/ui-lock.svg);
+  }
+  & .swpm-registration-password-retype-row:before {
+    content: url(img/ui-lock-check.svg);
+    width: 1.4rem;
+  }
+}
+
+.swpm-registration-username-row,
+.swpm-registration-email-row,
+.swpm-registration-password-row,
+.swpm-registration-password-retype-row { 
+  
+  & input[type="text"], 
+  & input[type="password"] {
+    font-size: 1.25rem;
+    padding: 1.4rem 0rem .4rem 0;
+    border-radius: 0;
+    border-bottom: 1px solid lighten($color__brand-primary, 20%);
+    background-color:  transparent;
+    color: #BBB;
+    margin-left: 1.75rem;
+    width: calc(100% - 1.75rem);
+  }
+}
+button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
+
+  &.swpm-registration-submit {
+    width: 100%;
+    padding: 1.25em;
+    cursor: pointer;
+    // box-shadow: none;
+    // background-color: $color__brand-primary;
+    // color: #FFF;
+    // font-weight: 600;
+    // padding: 1.5rem;
+    // border-radius: 50px;
+  }
+}
+
+.swpm-registration-widget-form {
+
+  & .formError {
+    text-align: center;
+    min-width: 200px;
+    transform: translate(20px, calc(-100% + 20px));
+    left: auto!important;
+    margin-top: 0 !important;
+  }
+
+  & .formError .formErrorContent {
+    border: none;
+    padding: .5rem;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    font-size: .8rem;
+    background: $color__brand-primary;
+  }
+
+  
+  & .formError .formErrorArrow div {
+    border: none;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    background: $color__brand-primary;
+
+    &.line1,
+    &.line2 {
+      width: 0;
+    }
+  }
+
+  & .formError.greenPopup {
+    opacity: 1!important;
+    min-width: auto;
+    right: 0 !important;
+    transform: translate(0, 50%);
+
+    @media (min-width: 480px) {
+      transform: translate(0, 80%);
+    }
+  }
+
+  & .formError.greenPopup .formErrorArrow div { 
+    display: none;
+    right: 1rem !important;
+  }
+
+  & .formError.greenPopup .formErrorContent {
+    content: url(img/ui-check-green.svg);
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    background: transparent;
+
+  }
+}

@@ -211,6 +211,62 @@
 		if ($theCurrent.length > 0) {
 			$theCurrent[0].classList.remove('active_page_item');
 		}
+
+		// Simple Membership Registration Form make labels behave like placeholders
+		if ( $('.swpm-registration-widget-form').length ) {
+			var focusColor = "#D5D5D5", blurColor = "#B3B3B3";
+			function placeholder(fieldName) {
+				var named = document.getElementsByName(fieldName),
+					i;
+				for (i = 0; i < named.length; ++i) { // loop over all elements with this name
+					(function (n) { // catch in scope
+						var labels = [], tmp, j, fn, focus, blur;
+						if ('labels' in n && n.labels.length > 0) labels = n.labels; // if labels provided by browser use it
+						else { // get labels from form, filter to ones we want
+							tmp = n.form.getElementsByTagName('label');
+							for (j = 0;j < tmp.length; ++j) {
+								if (tmp[j].htmlFor === fieldName) {
+									labels.push(tmp[j]);
+								}
+							}
+						}
+						for (j = 0; j < labels.length; ++j) { // loop over each label
+							(function (label) { // catch label in scope
+								fn = function () {
+									if (this.value === '') {
+										label.style.visibility = 'visible';
+									} else {
+										label.style.visibility = 'hidden';
+									}
+								};
+								focus = function () {
+									label.style.color = focusColor;
+								};
+								blur = function () {
+									label.style.color = blurColor;
+								};
+							}(labels[j]));
+							n.addEventListener('click', fn); // add to relevant listeners
+							n.addEventListener('keydown', fn);
+							n.addEventListener('keypress', fn);
+							n.addEventListener('keyup', fn);
+							n.addEventListener('focus', fn);
+							n.addEventListener('focus', focus);
+							n.addEventListener('blur', fn);
+							n.addEventListener('blur', blur);
+						}
+					}(named[i]));
+				}
+			};
+			placeholder("user_name");
+			placeholder("email");
+			placeholder("password");
+			placeholder("password_re");
+			placeholder("first_name");
+			placeholder("last_name");
+		}
+		
+
 			
 
 	} // end init() function
