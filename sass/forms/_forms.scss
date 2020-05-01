@@ -166,6 +166,7 @@
   & .swpm-registration-password-retype-row {
 
     position: relative;
+    display: block;
     
     & label {
       position: absolute;
@@ -183,7 +184,7 @@
       width: 1rem;
       display: inline-block;
       position: absolute;
-      top: calc(50% - .8rem);
+      top: calc(50% - .07rem);
       
       @media (min-width: 480px) {
         top: calc(50% - .6rem);

@@ -772,7 +772,8 @@ textarea {
   display: none; }
 
 .swpm-registration-widget-form .swpm-registration-username-row, .swpm-registration-widget-form .swpm-registration-email-row, .swpm-registration-widget-form .swpm-registration-password-row, .swpm-registration-widget-form .swpm-registration-password-retype-row {
-  position: relative; }
+  position: relative;
+  display: block; }
   .swpm-registration-widget-form .swpm-registration-username-row label, .swpm-registration-widget-form .swpm-registration-email-row label, .swpm-registration-widget-form .swpm-registration-password-row label, .swpm-registration-widget-form .swpm-registration-password-retype-row label {
     position: absolute;
     font-size: 1.25rem;
@@ -786,7 +787,7 @@ textarea {
     width: 1rem;
     display: inline-block;
     position: absolute;
-    top: calc(50% - .8rem); }
+    top: calc(50% - .07rem); }
     @media (min-width: 480px) {
       .swpm-registration-widget-form .swpm-registration-username-row:before, .swpm-registration-widget-form .swpm-registration-email-row:before, .swpm-registration-widget-form .swpm-registration-password-row:before, .swpm-registration-widget-form .swpm-registration-password-retype-row:before {
         top: calc(50% - .6rem); } }
