@@ -1711,191 +1711,151 @@ a {
 
 .page-template-page-registration {
   background-color: #C4E3F2; }
-  .page-template-page-registration .swpm-registration-widget-form tr > td {
-    display: block; }
-  .page-template-page-registration .swpm-registration-widget-form tr > td:last-child {
-    margin-bottom: .7rem; }
-  .page-template-page-registration .swpm-registration-firstname-row,
-  .page-template-page-registration .swpm-registration-lastname-row,
-  .page-template-page-registration .swpm-registration-membership-level-row {
-    display: none; }
-  .page-template-page-registration .swpm-password-label, .page-template-page-registration .swpm-username-label {
-    position: relative; }
-    .page-template-page-registration .swpm-password-label:before, .page-template-page-registration .swpm-username-label:before {
-      content: '';
-      width: 1rem;
-      display: inline-block;
-      position: absolute;
-      top: 30px; }
-  .page-template-page-registration .swpm-registration-username-row, .page-template-page-registration .swpm-registration-email-row, .page-template-page-registration .swpm-registration-password-row, .page-template-page-registration .swpm-registration-password-retype-row {
-    position: relative;
-    display: block; }
-    .page-template-page-registration .swpm-registration-username-row:before, .page-template-page-registration .swpm-registration-email-row:before, .page-template-page-registration .swpm-registration-password-row:before, .page-template-page-registration .swpm-registration-password-retype-row:before {
-      content: '';
-      width: 1rem;
-      display: inline-block;
-      position: absolute;
-      top: calc(50% - .07rem); }
-  .page-template-page-registration .swpm-registration-username-row:before, .page-template-page-registration .swpm-username-label:before {
-    content: url(img/ui-user.svg); }
-  .page-template-page-registration .swpm-registration-email-row:before {
-    content: url(img/ui-email.svg); }
-  .page-template-page-registration .swpm-registration-password-row:before, .page-template-page-registration .swpm-password-label:before {
-    content: url(img/ui-lock.svg); }
-  .page-template-page-registration .swpm-registration-password-retype-row:before {
-    content: url(img/ui-lock-check.svg);
-    width: 1.4rem; }
-  .page-template-page-registration .swpm-registration-username-row input[type="text"], .page-template-page-registration .swpm-registration-username-row input[type="password"],
-  .page-template-page-registration .swpm-registration-email-row input[type="text"],
-  .page-template-page-registration .swpm-registration-email-row input[type="password"],
-  .page-template-page-registration .swpm-registration-password-row input[type="text"],
-  .page-template-page-registration .swpm-registration-password-row input[type="password"],
-  .page-template-page-registration .swpm-registration-password-retype-row input[type="text"],
-  .page-template-page-registration .swpm-registration-password-retype-row input[type="password"],
-  .page-template-page-registration .swpm-password-input input[type="text"],
-  .page-template-page-registration .swpm-password-input input[type="password"],
-  .page-template-page-registration .swpm-password-label input[type="text"],
-  .page-template-page-registration .swpm-password-label input[type="password"],
-  .page-template-page-registration .swpm-username-input input[type="text"],
-  .page-template-page-registration .swpm-username-input input[type="password"],
-  .page-template-page-registration .swpm-username-label input[type="text"],
-  .page-template-page-registration .swpm-username-label input[type="password"] {
-    font-size: 1.25rem;
-    padding: 1.4rem 0rem .4rem 0;
-    border-radius: 0;
-    border-bottom: 1px solid #f6dbd4;
-    background-color: transparent;
-    color: #BBB;
-    margin-left: 1.75rem;
-    width: calc(100% - 1.75rem); }
-  .page-template-page-registration .swpm-registration-username-row label,
-  .page-template-page-registration .swpm-registration-email-row label,
-  .page-template-page-registration .swpm-registration-password-row label,
-  .page-template-page-registration .swpm-registration-password-retype-row label,
-  .page-template-page-registration .swpm-password-input label,
-  .page-template-page-registration .swpm-password-label label,
-  .page-template-page-registration .swpm-username-input label,
-  .page-template-page-registration .swpm-username-label label {
+
+.swpm-registration-widget-form tr > td {
+  display: block; }
+
+.swpm-registration-widget-form tr > td:last-child {
+  margin-bottom: .7rem; }
+
+.swpm-registration-firstname-row,
+.swpm-registration-lastname-row,
+.swpm-registration-membership-level-row {
+  display: none; }
+
+.swpm-password-label,
+.swpm-username-label {
+  position: relative; }
+  .swpm-password-label:before,
+  .swpm-username-label:before {
+    content: '';
+    width: 1rem;
+    display: inline-block;
     position: absolute;
-    font-size: 1.25rem;
-    padding: 0.8rem 0rem .4rem 1.75rem;
-    color: #BBB; }
-    @media (min-width: 480px) {
-      .page-template-page-registration .swpm-registration-username-row label,
-      .page-template-page-registration .swpm-registration-email-row label,
-      .page-template-page-registration .swpm-registration-password-row label,
-      .page-template-page-registration .swpm-registration-password-retype-row label,
-      .page-template-page-registration .swpm-password-input label,
-      .page-template-page-registration .swpm-password-label label,
-      .page-template-page-registration .swpm-username-input label,
-      .page-template-page-registration .swpm-username-label label {
-        padding: 1.55rem 0rem .4rem 1.75rem; } }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError {
-    text-align: center;
-    min-width: 200px;
-    transform: translate(20px, calc(-100% + 20px));
-    left: auto !important;
-    margin-top: 0 !important; }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError .formErrorContent,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError .formErrorContent {
-    border: none;
-    padding: .5rem;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    font-size: .8rem;
-    background: #E5947F; }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError .formErrorArrow div,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError .formErrorArrow div {
-    border: none;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    background: #E5947F; }
-    .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError .formErrorArrow div.line1, .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError .formErrorArrow div.line2,
-    .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError .formErrorArrow div.line1,
-    .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError .formErrorArrow div.line2 {
-      width: 0; }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError.greenPopup,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError.greenPopup {
-    opacity: 1 !important;
-    min-width: auto;
-    right: 0 !important;
-    transform: translate(0, 50%); }
-    @media (min-width: 480px) {
-      .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError.greenPopup,
-      .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError.greenPopup {
-        transform: translate(0, 80%); } }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div {
-    display: none;
-    right: 1rem !important; }
-  .page-template-page-registration .swpm-registration-username-row .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-registration-email-row .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-registration-password-row .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-registration-password-retype-row .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-password-input .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-password-label .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-username-input .swpm-registration-widget-form .formError.greenPopup .formErrorContent,
-  .page-template-page-registration .swpm-username-label .swpm-registration-widget-form .formError.greenPopup .formErrorContent {
-    content: url(img/ui-check-green.svg);
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
-    background: transparent; }
-  .page-template-page-registration .swpm-join-us-link {
-    display: none; }
-  .page-template-page-registration .swpm-remember-me {
-    padding: 1rem 0; }
+    top: 30px; }
+
+.swpm-registration-username-row,
+.swpm-registration-email-row,
+.swpm-registration-password-row,
+.swpm-registration-password-retype-row {
+  position: relative;
+  display: block; }
+  .swpm-registration-username-row:before,
+  .swpm-registration-email-row:before,
+  .swpm-registration-password-row:before,
+  .swpm-registration-password-retype-row:before {
+    content: '';
+    width: 1rem;
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - .07rem); }
+
+.swpm-registration-username-row:before,
+.swpm-username-label:before {
+  content: url(img/ui-user.svg); }
+
+.swpm-registration-email-row:before {
+  content: url(img/ui-email.svg); }
+
+.swpm-registration-password-row:before,
+.swpm-password-label:before {
+  content: url(img/ui-lock.svg); }
+
+.swpm-registration-password-retype-row:before {
+  content: url(img/ui-lock-check.svg);
+  width: 1.4rem; }
+
+.swpm-registration-username-row input[type="text"], .swpm-registration-username-row input[type="password"],
+.swpm-registration-email-row input[type="text"],
+.swpm-registration-email-row input[type="password"],
+.swpm-registration-password-row input[type="text"],
+.swpm-registration-password-row input[type="password"],
+.swpm-registration-password-retype-row input[type="text"],
+.swpm-registration-password-retype-row input[type="password"],
+.swpm-password-input input[type="text"],
+.swpm-password-input input[type="password"],
+.swpm-password-label input[type="text"],
+.swpm-password-label input[type="password"],
+.swpm-username-input input[type="text"],
+.swpm-username-input input[type="password"],
+.swpm-username-label input[type="text"],
+.swpm-username-label input[type="password"] {
+  font-size: 1.25rem;
+  padding: 1.4rem 0rem .4rem 0;
+  border-radius: 0;
+  border-bottom: 1px solid #f6dbd4;
+  background-color: transparent;
+  color: #BBB;
+  margin-left: 1.75rem;
+  width: calc(100% - 1.75rem); }
+.swpm-registration-username-row label,
+.swpm-registration-email-row label,
+.swpm-registration-password-row label,
+.swpm-registration-password-retype-row label,
+.swpm-password-input label,
+.swpm-password-label label,
+.swpm-username-input label,
+.swpm-username-label label {
+  position: absolute;
+  font-size: 1.25rem;
+  padding: 0.8rem 0rem .4rem 1.75rem;
+  color: #BBB; }
+  @media (min-width: 480px) {
+    .swpm-registration-username-row label,
+    .swpm-registration-email-row label,
+    .swpm-registration-password-row label,
+    .swpm-registration-password-retype-row label,
+    .swpm-password-input label,
+    .swpm-password-label label,
+    .swpm-username-input label,
+    .swpm-username-label label {
+      padding: 1.55rem 0rem .4rem 1.75rem; } }
+
+.swpm-registration-widget-form .formError {
+  text-align: center;
+  min-width: 200px;
+  transform: translate(20px, calc(-100% + 20px));
+  left: auto !important;
+  margin-top: 0 !important; }
+.swpm-registration-widget-form .formError .formErrorContent {
+  border: none;
+  padding: .5rem;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-size: .8rem;
+  background: #E5947F; }
+.swpm-registration-widget-form .formError .formErrorArrow div {
+  border: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  background: #E5947F; }
+  .swpm-registration-widget-form .formError .formErrorArrow div.line1, .swpm-registration-widget-form .formError .formErrorArrow div.line2 {
+    width: 0; }
+.swpm-registration-widget-form .formError.greenPopup {
+  opacity: 1 !important;
+  min-width: auto;
+  right: 0 !important;
+  transform: translate(0, 50%); }
+  @media (min-width: 480px) {
+    .swpm-registration-widget-form .formError.greenPopup {
+      transform: translate(0, 80%); } }
+.swpm-registration-widget-form .formError.greenPopup .formErrorArrow div {
+  display: none;
+  right: 1rem !important; }
+.swpm-registration-widget-form .formError.greenPopup .formErrorContent {
+  content: url(img/ui-check-green.svg);
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  background: transparent; }
+
+.swpm-join-us-link {
+  display: none; }
+
+.swpm-remember-me {
+  padding: 1rem 0; }
 
 button.swpm-registration-submit, button.swpm-login-form-submit, input[type="button"].swpm-registration-submit, input[type="button"].swpm-login-form-submit, input[type="reset"].swpm-registration-submit, input[type="reset"].swpm-login-form-submit, input[type="submit"].swpm-registration-submit, input[type="submit"].swpm-login-form-submit, a.button.swpm-registration-submit, a.button.swpm-login-form-submit {
   width: 100%;

@@ -1,74 +1,75 @@
 .page-template-page-registration {
     background-color: $color__brand-secondary;
+}     
+.swpm-registration-widget-form tr > td {
+    display: block;
+}
       
-    .swpm-registration-widget-form tr > td {
-        display: block;
-    }
-      
-    .swpm-registration-widget-form tr > td:last-child {
-        margin-bottom: .7rem;
-    }
-    .swpm-registration-firstname-row,
-    .swpm-registration-lastname-row,
-    .swpm-registration-membership-level-row {
-        display: none;
-    }
+.swpm-registration-widget-form tr > td:last-child {
+    margin-bottom: .7rem;
+}
+ 
+.swpm-registration-firstname-row,
+.swpm-registration-lastname-row,
+.swpm-registration-membership-level-row {
+    display: none;
+}
 
-    & .swpm-password-label, 
-    & .swpm-username-label {
-        position: relative;
-        &:before {
-            content: '';
-            width: 1rem;
-            display: inline-block;
-            position: absolute;
-            top: 30px;
-        }
+.swpm-password-label, 
+.swpm-username-label {
+    position: relative;
+    &:before {
+        content: '';
+        width: 1rem;
+        display: inline-block;
+        position: absolute;
+        top: 30px;
     }
+}
 
         
-    & .swpm-registration-username-row,
-    & .swpm-registration-email-row,
-    & .swpm-registration-password-row,
-    & .swpm-registration-password-retype-row {
+.swpm-registration-username-row,
+.swpm-registration-email-row,
+.swpm-registration-password-row,
+.swpm-registration-password-retype-row {
+
+    position: relative;
+    display: block;
+
+    &:before {
+        content: '';
+        width: 1rem;
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - .07rem);
+    }
+}
     
-        position: relative;
-        display: block;
-    
-        &:before {
-            content: '';
-            width: 1rem;
-            display: inline-block;
-            position: absolute;
-            top: calc(50% - .07rem);
-        }
-    }
-    
-    & .swpm-registration-username-row:before,
-    & .swpm-username-label:before {
-        content: url(img/ui-user.svg);
-    }
-    & .swpm-registration-email-row:before {
-        content: url(img/ui-email.svg);
-    }
-    & .swpm-registration-password-row:before,
-    & .swpm-password-label:before {
-        content: url(img/ui-lock.svg);
-    }
-    & .swpm-registration-password-retype-row:before {
-        content: url(img/ui-lock-check.svg);
-        width: 1.4rem;
-    }
+.swpm-registration-username-row:before,
+.swpm-username-label:before {
+    content: url(img/ui-user.svg);
+}
+.swpm-registration-email-row:before {
+    content: url(img/ui-email.svg);
+}
+.swpm-registration-password-row:before,
+.swpm-password-label:before {
+    content: url(img/ui-lock.svg);
+}
+.swpm-registration-password-retype-row:before {
+    content: url(img/ui-lock-check.svg);
+    width: 1.4rem;
+}
       
-    .swpm-registration-username-row,
-    .swpm-registration-email-row,
-    .swpm-registration-password-row,
-    .swpm-registration-password-retype-row,
-    .swpm-password-input,
-    .swpm-password-label,
-    .swpm-username-input,
-    .swpm-username-label { 
-    
+.swpm-registration-username-row,
+.swpm-registration-email-row,
+.swpm-registration-password-row,
+.swpm-registration-password-retype-row,
+.swpm-password-input,
+.swpm-password-label,
+.swpm-username-input,
+.swpm-username-label { 
+
     & input[type="text"], 
     & input[type="password"] {
         font-size: 1.25rem;
@@ -91,77 +92,75 @@
             padding: 1.55rem 0rem .4rem 1.75rem;
         }
     }
-
-   
+}
       
-      .swpm-registration-widget-form {
-      
-        & .formError {
-          text-align: center;
-          min-width: 200px;
-          transform: translate(20px, calc(-100% + 20px));
-          left: auto!important;
-          margin-top: 0 !important;
-        }
-      
-        & .formError .formErrorContent {
-          border: none;
-          padding: .5rem;
-          box-shadow: none;
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          font-size: .8rem;
-          background: $color__brand-primary;
-        }
-      
-        
-        & .formError .formErrorArrow div {
-          border: none;
-          box-shadow: none;
-          -moz-box-shadow: none;
-          -webkit-box-shadow: none;
-          background: $color__brand-primary;
-      
-          &.line1,
-          &.line2 {
-            width: 0;
-          }
-        }
-      
-        & .formError.greenPopup {
-          opacity: 1!important;
-          min-width: auto;
-          right: 0 !important;
-          transform: translate(0, 50%);
-      
-          @media (min-width: 480px) {
-            transform: translate(0, 80%);
-          }
-        }
-      
-        & .formError.greenPopup .formErrorArrow div { 
-          display: none;
-          right: 1rem !important;
-        }
-      
-        & .formError.greenPopup .formErrorContent {
-          content: url(img/ui-check-green.svg);
-          width: 30px;
-          min-width: 30px;
-          height: 30px;
-          background: transparent;
-      
-        }
-      }
+.swpm-registration-widget-form {
+    
+    & .formError {
+        text-align: center;
+        min-width: 200px;
+        transform: translate(20px, calc(-100% + 20px));
+        left: auto!important;
+        margin-top: 0 !important;
     }
-    .swpm-join-us-link {
+    
+    & .formError .formErrorContent {
+        border: none;
+        padding: .5rem;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        font-size: .8rem;
+        background: $color__brand-primary;
+    }
+    
+    
+    & .formError .formErrorArrow div {
+        border: none;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        background: $color__brand-primary;
+    
+        &.line1,
+        &.line2 {
+        width: 0;
+        }
+    }
+    
+    & .formError.greenPopup {
+        opacity: 1!important;
+        min-width: auto;
+        right: 0 !important;
+        transform: translate(0, 50%);
+    
+        @media (min-width: 480px) {
+        transform: translate(0, 80%);
+        }
+    }
+    
+    & .formError.greenPopup .formErrorArrow div { 
         display: none;
+        right: 1rem !important;
     }
-    .swpm-remember-me {
-        padding: 1rem 0;
+    
+    & .formError.greenPopup .formErrorContent {
+        content: url(img/ui-check-green.svg);
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        background: transparent;
     }
 }
+.swpm-join-us-link {
+    display: none;
+}
+.swpm-remember-me {
+    padding: 1rem 0;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
+    
     &.swpm-registration-submit,
     &.swpm-login-form-submit {
         width: 100%;

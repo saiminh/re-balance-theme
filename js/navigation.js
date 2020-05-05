@@ -212,6 +212,11 @@
 			$theCurrent[0].classList.remove('active_page_item');
 		}
 
+		// Silly Hack to force reload for form pages because of the validation  
+		// used by Simple Membership Plugin which is loaded only on form pages
+		$('a[href$="membership-registration/"]').attr("data-no-swup", "");
+		
+
 		// Simple Membership Registration Form make labels behave like placeholders
 		if ( $('.swpm-registration-widget-form').length ) {
 			var focusColor = "#D5D5D5", blurColor = "#B3B3B3";
@@ -264,10 +269,7 @@
 			placeholder("password_re");
 			placeholder("first_name");
 			placeholder("last_name");
-		}
-		
-
-			
+		}				
 
 	} // end init() function
 	
