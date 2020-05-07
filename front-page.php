@@ -14,10 +14,10 @@
 
 get_header();
 ?>
-
+	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
+	
 
 			<header class="page-header">
 				<h2 class="page-subtitle" id="lblGreetings">
@@ -34,16 +34,23 @@ get_header();
 				<div class="choose-exercise-link--move"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></div>
 				<div class="choose-exercise-link--breathe"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></div>
 			</div>
-		<?php else : ?>
-			<?php
-				while ( have_posts() ) :
-					the_post();
-					the_content();
-				endwhile;
-				?>
-		<?php endif; ?>
-		</main><!-- #main -->
+			</main><!-- #main -->
 	</div><!-- #primary -->
+		<?php else : ?>
+		<div id="primary" class="content-area content-area--landing">
+			<main id="main" class="site-main">
+				
+				<?php
+					while ( have_posts() ) :
+						the_post();
+						the_content();
+					endwhile;
+					?>
+
+			</main><!-- #main -->
+		</div><!-- #primary -->
+		<?php endif; ?>
+		
 
 <?php
 get_sidebar();
