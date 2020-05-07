@@ -127,17 +127,17 @@
 		if (document.querySelector('#move-body-map')) {
 			positionMoveMenus();
 		}
+
 		// initiate live search
 		if (typeof jQuery().searchwp_live_search == 'function') {
 			jQuery('input[data-swplive="true"]').searchwp_live_search();			
 		}
-		
 		// Hide Livesearch after page swotch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
 		
 		// Exercise count
-		var nArticles = $(".archive article").length;		
-		$(".breadcrumbs li:last-child").append(" ("+nArticles+")");
+		// var nArticles = $(".archive article").length;		
+		// $(".breadcrumbs li:last-child").append(" ("+nArticles+")");
 
 		// Discreet toggle
 		$(".switch input").on("change", function(e) {
@@ -193,83 +193,29 @@
 		
 		//Update navigation links
 
-		var theUrl = window.location.href,
-			$theCurrent = document.querySelectorAll('.active_page_item'),
-			$newCurrentLink = document.querySelectorAll('.menu-item a[href*="' + theUrl + '"]');
+		// var theUrl = window.location.href,
+		// 	$theCurrent = document.querySelectorAll('.active_page_item'),
+		// 	$newCurrentLink = document.querySelectorAll('.menu-item a[href*="' + theUrl + '"]');
 
-		if (window.location.pathname == '/') {
-		 	$newCurrentLink = document.querySelectorAll('.menu-item a[href="' + theUrl + '"]');
-		}
+		// if (window.location.pathname == '/') {
+		//  	$newCurrentLink = document.querySelectorAll('.menu-item a[href="' + theUrl + '"]');
+		// }
 
-		if ($newCurrentLink.length > 0) {
-			var $curPar = $newCurrentLink[0].closest('.menu-item');
-			if($curPar) {
-				$curPar.classList.add('active_page_item');
-			}
-		}
+		// if ($newCurrentLink.length > 0) {
+		// 	var $curPar = $newCurrentLink[0].closest('.menu-item');
+		// 	if($curPar) {
+		// 		$curPar.classList.add('active_page_item');
+		// 	}
+		// }
 		
-		if ($theCurrent.length > 0) {
-			$theCurrent[0].classList.remove('active_page_item');
-		}
+		// if ($theCurrent.length > 0) {
+		// 	$theCurrent[0].classList.remove('active_page_item');
+		// }
 
 		// Silly Hack to force reload for form pages because of the validation  
 		// used by Simple Membership Plugin which is loaded only on form pages
-		$('a[href$="membership-registration/"]').attr("data-no-swup", "");
-		
-
-		// Simple Membership Registration Form make labels behave like placeholders
-		if ( $('.swpm-registration-widget-form').length ) {
-			var focusColor = "#D5D5D5", blurColor = "#B3B3B3";
-			function placeholder(fieldName) {
-				var named = document.getElementsByName(fieldName),
-					i;
-				for (i = 0; i < named.length; ++i) { // loop over all elements with this name
-					(function (n) { // catch in scope
-						var labels = [], tmp, j, fn, focus, blur;
-						if ('labels' in n && n.labels.length > 0) labels = n.labels; // if labels provided by browser use it
-						else { // get labels from form, filter to ones we want
-							tmp = n.form.getElementsByTagName('label');
-							for (j = 0;j < tmp.length; ++j) {
-								if (tmp[j].htmlFor === fieldName) {
-									labels.push(tmp[j]);
-								}
-							}
-						}
-						for (j = 0; j < labels.length; ++j) { // loop over each label
-							(function (label) { // catch label in scope
-								fn = function () {
-									if (this.value === '') {
-										label.style.visibility = 'visible';
-									} else {
-										label.style.visibility = 'hidden';
-									}
-								};
-								focus = function () {
-									label.style.color = focusColor;
-								};
-								blur = function () {
-									label.style.color = blurColor;
-								};
-							}(labels[j]));
-							n.addEventListener('click', fn); // add to relevant listeners
-							n.addEventListener('keydown', fn);
-							n.addEventListener('keypress', fn);
-							n.addEventListener('keyup', fn);
-							n.addEventListener('focus', fn);
-							n.addEventListener('focus', focus);
-							n.addEventListener('blur', fn);
-							n.addEventListener('blur', blur);
-						}
-					}(named[i]));
-				}
-			};
-			placeholder("user_name");
-			placeholder("email");
-			placeholder("password");
-			placeholder("password_re");
-			placeholder("first_name");
-			placeholder("last_name");
-		}				
+		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
+			
 
 	} // end init() function
 	
@@ -310,6 +256,16 @@
 	// this event runs for every page view after initial load
 	swup.on('contentReplaced', init);
 
+	// Mobile Menu search
+	$('.toggle-search').on('click', function(e){
+		e.preventDefault;
+		if( $('.site-header-search--toggled').length > 0 ){
+			$('.site-header-search--toggled').removeClass('site-header-search--toggled');
+		} else {
+			$('.site-header-search').addClass('site-header-search--toggled');
+			$('.search-field').focus();
+		}
+	})
 
 	// Move Navigation stuff
 	

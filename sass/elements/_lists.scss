@@ -24,3 +24,13 @@ dt {
 dd {
 	margin: 0 1.5em 1.5em;
 }
+
+.main-navigation ul {
+	margin: 0;
+	padding: 0;
+
+	& li {
+		margin: 0;
+		padding: 0;
+	}
+}

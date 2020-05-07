@@ -2,14 +2,37 @@
 
 @import "fields";
 
-.front-page-search {
-    position: relative;
-    margin: 0 auto 0 auto;
-    display: block;
+.home-search {
+  margin-bottom: 1rem;
+  position: relative; 
 
-    @media (min-width: 480px) {
-        display: flex;
-        margin-bottom: 1em;
+  @media (min-width: 1250px) {
+    display: none;
+  }
+}
+
+.site-header-search {
+    position: relative;
+    margin: 0 auto ;
+    display: none;
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFF;
+    padding: 2rem;
+
+    &.site-header-search--toggled {
+      display: block;
+    }
+    
+    @media (min-width: 1250px) {
+      display: block;
+      margin: 0 1rem 0 auto;
+      width: auto;
+      min-width: 340px;
+      position: static;
+      padding: 0;
     }
 
     & form {
@@ -17,7 +40,12 @@
         position: relative;
 
         @media (min-width: 480px) {
-            width: calc(100% - 8rem - 10px);
+
+        }
+
+        @media (min-width: 1250px) {
+          width: 100%;
+          margin: 0;
         }
     }
     .button.button--surprise {
@@ -44,9 +72,6 @@
 }
 
 .toggle-discreet {
-    position: absolute;
-    right: 0;
-    top: 1em;
     font-size: .8rem;
 
     @media (min-width: 480px) {
@@ -54,7 +79,6 @@
     }
 
     @media (min-width: 1250px) {
-        right: 1rem;
     }
 
     & .switch {
@@ -139,14 +163,31 @@
   padding: 2rem;
   border-radius: 6px;
   box-shadow: 0 3px 16px rgba(0,0,0,0.1);
-  max-width: 40rem;
-  margin: 0 auto;
+  max-width: 33rem;
+  margin: 1rem auto;
 
   @media (min-width: 480px) {
-    padding: 3rem;
+    padding: 2.5rem;
   }
 
   & > .wp-block-group__inner-container > *:first-child {
     margin-top: 0;
   }
+
+  & > .wp-block-group__inner-container > h2:first-child {
+    margin-bottom: 2rem;
+    margin-top: -2rem;
+    padding: 1rem 2.5rem;
+    border-bottom: 1px solid #EAEAEA;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+
+    @media (min-width: 480px) {
+      margin-top: -2.5rem;
+    }
+  }
+
+  & > .wp-block-group__inner-container > *:last-child {
+    margin-bottom: 0;
+  } 
 }

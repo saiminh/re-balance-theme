@@ -1,39 +1,42 @@
 .site-header {
-	position: sticky;
-	top: 0;
 	background: #FFF;
 	z-index: 1000;
-	margin-left: -1em;
-	width: calc(100% + 2em);
 	border-bottom: 1px solid $color__background-body;
+	margin: 0 -1rem;
 	
 	@media (min-width: 480px) {
-		margin-left: -2em;
-		width: calc(100% + 4em);
+		margin: 0 -1.5em;
 	}
 
 	@media (min-width: 1250px) {
-		margin-left: 0;
-		width: 250px;
-		position: fixed;
+		margin: 0 -2rem;
+		padding: 0 2rem;
+		position: relative;
 		top: 0;
 		left: 0;
 		bottom: 0;
 		border-bottom: none;
 		z-index: 1;
-		//border-right: 1px solid #EEE;
-		background-color: lighten($color__brand-primary, 28%);
+		display: flex;
+		align-items: center;
+		align-content: flex-start;
 	}
 }
 
 .site-branding {
 	position: relative;
 	height: 70px;
-	padding: 18px 1rem 14px 1rem;;
+	padding: 18px 1rem 14px 1rem;
 	margin: 0 auto;
 
 	@media (min-width: 480px) {
 		height: 80px;
+	}
+
+	@media screen and (min-width: 1250px) {		
+		margin:  0;
+		padding: 18px 0 14px 0;
+		display: inline-block;
 	}
 
 	& a {
@@ -58,34 +61,129 @@
 	clear: both;
 	display: block;
 	width: 100%;
-	width: 100%;
-	//max-width: 800px;
 	margin: 0 auto;
 
-	ul {
-		opacity: 0;
-		visibility: hidden;
-		position: absolute;
-		right: 0;
-		top: 60px;
-		background-color: lighten($color__brand-primary, 25%);
-		border-radius: 5px;
+	@media screen and (min-width: 1250px) {
+		display: flex;
+		width: 100%;
+		margin: 0 0 0 2rem;
+		align-items: center;
+		justify-content: flex-start;
+
+		&.main-navigation-nonuser {
+			margin: 0 auto 0 2rem;
+		}
+	}
+
+	& .menu-nonuser-menu-container,
+	& .menu-menu-1-container,
+	& .menu-movebreathe-container {
+
+		@media (min-width: 1250px) {
+			display: inline-block;
+		}
+	}
+
+	& .menu-movebreathe-container {		
+		position: fixed;
+		bottom: 0;
+		z-index: 999;
+		width: 260px;
+		height: 60px;
+		background-color: #666;
+		left: calc(50% - 125px);
+		border-radius: 25px 25px 0 0;
+
+		& ul {
+			display: block;
+			visibility: visible;
+			opacity: 1;
+			height: 60px;
+			padding: 0;
+		}
+
+		& a {
+			display: block;
+			border: none;
+			min-width: 0;
+			width: 120px;
+			margin: 0;
+			position: absolute;
+			left: 0;
+			text-align: center;
+			font-size: 1.125rem;
+		}
+
+		& ul li:nth-child(2):after {
+			content: '';
+			display: none;
+		}
+
+		& ul li:nth-child(2) a {
+			width: 30px;
+			height: 30px;
+			left: 115px;
+			top: 15px;
+
+			@media (min-width: 1250px) {
+				display: none;
+			}
+
+			& svg {
+				position: absolute;
+				width: 30px;
+				fill: #FFF;
+				top: 0;
+				left: 0;
+			}
+		}
+
+		& ul li:last-child a {
+			left: auto;
+			right: 0;
+		}
+
+		@media (min-width: 1250px) {
+			position: static;
+			margin-right: 2rem;
+			display: block;
+			width: auto;
+			background-color: transparent;
+			height: auto;
+
+			& ul {
+				height: auto;
+			}
+
+			& a {
+				position: static;
+				display: inline;
+				font-size: 1rem;
+				width: auto;
+				text-align: left;
+			}
+		}
+		
+		li:after {
+			color: $color__brand-primary;
+		}
+	} //END & .menu-movebreathe-container 
+
+	& ul {		
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
 		overflow: hidden;
-		box-shadow: -3px 3px 4px rgba(0,0,0,0.05);
+		padding: 1.5rem;
 		
 		@media (min-width: 480px) {
 			right: calc(1rem + 1px);
 		}
 
 		@media screen and (min-width: 1250px) {
-			opacity: 1;
-			visibility: visible;
+			padding: 0;
+			display: block;
 			position: relative;
+			top: 0;
 			right: 0;
-			top: 1rem;
 			background-color: transparent;
 			border-radius: 0;
 			box-shadow: none;
@@ -136,31 +234,43 @@
 		&:hover > a,
 		&.focus > a {
 		}
+
+		@media screen and (min-width: 1250px) {
+			display: inline-block;
+
+			&:after {
+				content: ' |';
+				color: #B2B2B2;
+			}
+
+			&:last-child:after {
+				content: '';
+			}
+		}
 	}
 
-	a {
+	a { //the actual menu links
 		display: block;
 		text-decoration: none;
-		padding: 1em;
+		padding: 1rem;
 		font-size: 1.25em;
 		font-weight: 300;
 		min-width: 250px;
 		border-bottom: 1px solid lighten($color__brand-primary, 22%);
 
 		@media screen and (min-width: 1250px) {
-			font-size: 1.5em;
+			display: inline-block;
+			font-size: 1rem;
 			color: $color__text-main;
-			padding: 1.5rem 2rem;
+			padding: 0 .5rem;
 			border-bottom: none;
-			border-right: 0px solid $color__brand-primary;
-			transition: all .1s linear;
+			min-width: 0;
 
-			&:hover {
-				color: lighten($color__brand-primary, 10%);
-			//	border-right: 5px solid $color__brand-primary;
-				background-color: lighten($color__brand-primary, 27%);
-			}
 		}
+	}
+
+	.menu-movebreathe-container a {
+		color: $color__brand-primary;
 	}
 
 	
@@ -179,15 +289,95 @@
 	}
 }
 
-/* Small menu. */
+.site-header-account,
+.site-header-login {
+	margin: 1rem;
+	display: none;
 
-.main-navigation.toggled ul {
-	opacity: 1;
-	visibility: visible;
+	@media (min-width: 1250px){
+		display: block;
+		margin: 0;
+	}
+
+	&:before {
+		content: url(img/ui-user.svg);
+		width: 16px;
+		display: inline-block;
+	}
+
+	& a {
+		color: $color__brand-primary;
+	}
+}
+
+.site-header-account,
+.site-header-login {
+	background-color: #eee;
+	padding: 1.5rem;
+	position: relative;
+	margin: 1.5rem;
+
+	@media (min-width: 1250px) {
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+	}
+
+	& .user-menu {
+		
+		@media (min-width: 1250px) {
+			padding: 1em;
+			border: 1px solid #EEE;
+			background-color: #FFF;
+			border-radius: 5px;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			display: none;
+		}
+	}
+
+	&:hover .user-menu {
+		display: inherit;
+	}
+}
+.site-header-login {
+	@media (min-width: 1250px){
+		margin: 0 0 0 auto;
+	}
+}
+
+
+/* Mobile menu. */
+
+
+.main-navigation  {
+	& ul,
+	& .site-header-account,
+	& .site-header-login {
+		display: none;
+
+		@media (min-width: 1250px) {
+			display: block;
+		}
+	}
+}
+
+.main-navigation.toggled  {
+
+	height: calc(100vh - 80px);
+
+	& ul,
+	& .site-header-account,
+	& .site-header-login {	
+		opacity: 1;
+		visibility: visible;
+		display: block;
+	}
 }
 
 .main-navigation.toggled .navTrigger {
-	background-color: lighten($color__brand-primary, 25%);
+	//background-color: lighten($color__brand-primary, 25%);
 }
 
 .menu-name {

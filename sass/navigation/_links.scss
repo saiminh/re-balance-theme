@@ -20,18 +20,18 @@ a {
 }
 
 .back-button {
-	background-color: lighten($color__brand-primary, 25%);
-	box-shadow: 0 0 $color__brand-primary;
+	background-color: transparent;
 	padding: .85em;
 	margin-right: .5em;
 	border-radius: 50%;
+	border: 2px solid $color__brand-primary;
 	line-height: 0;
 	display: inline-block;
 	z-index: 1001;
 	transition: all .1s ease-in-out;
-	position: absolute;
-	top: 17px;
-	left: 1em;
+	position: fixed;
+	top: 12px;
+	left: 1rem;
 	display: inline-block;
 	font-size: .9rem;
 
@@ -44,24 +44,18 @@ a {
 	}
 
 	@media (min-width: 480px) {
-		left: 2em;
+		left: 1.5rem;
 		font-size: 1rem;
 		padding: 1em;
-		top: 20px;
+		top: 10px;
 	}
 
 	@media (min-width: 1250px) {
-		left: calc(250px + 1rem);
-		padding: .75rem;
-		top: .5rem;
-		z-index: 1;
+		display: none;
 	}
 
 	&:hover {
-		transform: translate(3px, -3px);
-		box-shadow: -1px 1px 0 $color__brand-primary,
-					-2px 2px 0 $color__brand-primary,
-					-3px 3px 0 $color__brand-primary;
+		border: 2px solid $color__brand-primary;
 	}
 
 	.home &, 

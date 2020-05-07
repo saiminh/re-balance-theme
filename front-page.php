@@ -25,9 +25,9 @@ get_header();
 					<?php echo $current_user->display_name . "\n"; ?>
 				</h2>
 			</header>
-			<div class="front-page-search">
-				<?php get_search_form( ); ?> 	
-				<a class="button button--surprise" href="<?php echo get_bloginfo('wpurl'); ?>/exercises/shoulder-pop/">Surprise me!</a>					
+
+			<div class="home-search">
+				<?php get_search_form( ); ?> 						
 			</div>
 
 			<div class="choose-exercise-links">          

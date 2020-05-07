@@ -16,17 +16,17 @@ get_header();
 			
 			<header class="page-header">								
 				<?php
-					if ( is_tax( 'types' ) ) :
-						show_breadcrumb(single_tag_title("", false),"types");
-					elseif ( is_tax( 'exercises-tag' ) ) :
-						show_breadcrumb(single_tag_title("", false),"exercises-tag");
-					endif;
+					// if ( is_tax( 'types' ) ) :
+					// 	show_breadcrumb(single_tag_title("", false),"types");
+					// elseif ( is_tax( 'exercises-tag' ) ) :
+					// 	show_breadcrumb(single_tag_title("", false),"exercises-tag");
+					// endif;
 				//the_archive_title( '<h1 class="page-title">', '</h1>' );
 				//the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
-				<div class="toggle-discreet">
+				<!-- <div class="toggle-discreet">
 					<label class="switch"><input type="checkbox"><span class="toggle-label-text">Only Discreet</span><span class="slider round hide-off"></span> </label>		
-				</div>
+				</div> -->
 			</header><!-- .page-header -->
 			<main id="main" class="site-main">		
 			<?php if ( is_tax( 'types' ) ) : 
