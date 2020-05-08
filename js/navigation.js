@@ -265,7 +265,11 @@
 			$('.site-header-search').addClass('site-header-search--toggled');
 			$('.search-field').focus();
 		}
+		$('.site-header-search--toggled .search-field').on('blur', function(){
+			$('.site-header-search--toggled').removeClass('site-header-search--toggled');
+		});
 	})
+
 
 	// Move Navigation stuff
 	
