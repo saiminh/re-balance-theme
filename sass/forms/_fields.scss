@@ -22,7 +22,7 @@ textarea {
 	height: 44px;
 	padding: 1em 1em .7em .7em;
 	font-size: 16px;
-	background-color: lighten($color__brand-primary, 25%);
+	background-color: lighten($color__brand-primary, 20%);
 
 	&:focus {
 		color: $color__text-input-focus;

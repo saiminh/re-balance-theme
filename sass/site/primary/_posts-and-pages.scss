@@ -26,7 +26,7 @@
     content: '';
     width: 66.6%;
     height: 1px;
-    background-color: #E5947F;
+    background-color: #FF9B7A;
 	display: block;
 	margin: .5em auto;
 }
@@ -74,7 +74,7 @@
 		border-radius: 5px;
 
 		@media (min-width: 480px) {
-			width: calc(50% - 6px);
+			width: calc(33.3% - 6px);
 			margin-bottom: 0;
 		}
 
@@ -92,11 +92,11 @@
 			@media screen and (min-width: 480px) {
 				font-size: 1.5em;
 				padding: 20px;
-				padding-bottom: calc(100vh - 190px - 2em);
+				padding-bottom: calc(100vh - 225px - 2em);
 			}
 
 			@media screen and (min-width: 1250px) {
-				padding-bottom: calc(100vh - 80px - 3rem - 1em ); 
+				padding-bottom: calc(100vh - 80px - 6rem - 1em ); 
 			}
 	
 		}
@@ -109,7 +109,7 @@
 			bottom: 0;
 			right: 0;
 			transform: translateX(100%);
-			background-color: lighten(#E5947F, 25%);
+			background-color: lighten(#FF9B7A, 25%);
 			z-index: 0;
 			border-radius: 50%;
 			transition: all .1s ease-in-out ;
@@ -143,7 +143,8 @@
 	}
 }
 .choose-exercise-link--move a,
-.choose-exercise-link--breathe a {
+.choose-exercise-link--breathe a,
+.choose-exercise-link--surprise a {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -162,6 +163,11 @@
 
 .choose-exercise-link--breathe a {
 	background-image: url(img/ui-home-breathe.svg);
+	background-size: auto calc(70% - 4em);
+}
+
+.choose-exercise-link--surprise a {
+	background-image: url(img/ui-home-surprise.svg);
 	background-size: auto calc(70% - 4em);
 }
 

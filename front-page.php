@@ -33,6 +33,7 @@ get_header();
 			<div class="choose-exercise-links">          
 				<div class="choose-exercise-link--move"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></div>
 				<div class="choose-exercise-link--breathe"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></div>
+				<div class="choose-exercise-link--surprise"><a href="">Surprise</a></div>
 			</div>
 			</main><!-- #main -->
 	</div><!-- #primary -->

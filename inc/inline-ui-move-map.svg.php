@@ -1,9 +1,9 @@
 <svg version="1.1" id="move-body-map" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 292.6 496.5" style="enable-background:new 0 0 292.6 496.5;" xml:space="preserve">
 <style type="text/css">
-	.move-map-st0{fill:#E5947F;}
+	.move-map-st0{fill:#FF9B7A;}
 	.move-map-st1{fill:#FFFFFF;}
-	.move-map-st2{fill:#E5947F;stroke:#E5947F;stroke-width:1.16;stroke-linecap:round;stroke-linejoin:round;}
+	.move-map-st2{fill:#FF9B7A;stroke:#FF9B7A;stroke-width:1.16;stroke-linecap:round;stroke-linejoin:round;}
 </style>
 <g id="hands">
 	<path class="hand move-map-st1" d="M17.3,213.1L4,230l2.9,2.8l10.9-13l-11.6,14l2.4,2.4l12.2-12.7L10,234.6l2.8,2.6l11.9-10.8l-10.4,9.5l2.9,2.3

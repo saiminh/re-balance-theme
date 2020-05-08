@@ -94,7 +94,7 @@
 
 .move-bodyparts-map,
 .breathe-map {
-    height: calc(100vh - 70px - 2em);
+    height: calc(100vh - 160px - 2em);
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -105,20 +105,20 @@
     border-radius: 10px;
 
     @media (min-width: 800px) {
-        height: calc(100vh - 80px);
-        width: calc(100% + 4em);
-        margin-left: -2em;
-        margin-top: -1em;
-        border-radius: 0;
-        padding: 2em;
+        height: calc(100vh - 160px);
+        width: 100%;
     }
 
     @media (min-width: 1250px) {
-        height: calc(100vh - 2rem);
         box-sizing: border-box;
-        margin: 0;
-        width: calc(100vw - 250px - 2rem);
     }
+}
+
+.breathe-map-inner {
+    margin: -1rem auto;
+    max-width: 1000px;
+    position: relative;
+    height: calc(100% + 2rem);;
 }
 
 .move-bodypart-link {
@@ -244,7 +244,7 @@
 
 .breathe-map-illu--calm {
     width: 20%;
-    bottom: calc(5% + 1.5rem);
+    bottom: calc(3% + 1.5rem);
     left: 8.75%;
 }
 
@@ -260,7 +260,7 @@
 
 .breathe-map-illu--focus {
     width: 20%;
-    bottom: calc(5% + 1.5rem);
+    bottom: calc(3% + 1.5rem);
     left: 71.25%;
 }
 
