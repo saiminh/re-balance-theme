@@ -17,13 +17,16 @@
     display: none;
     position: fixed;
     top: 80px;
+    left: 0;
     bottom: 0;
     width: 100%;
     background-color: #FFF;
-    padding: 2rem;
+    padding: 1.5rem;
 
     &.site-header-search--toggled {
+      z-index: 998;
       display: block;
+      
     }
     
     @media (min-width: 1250px) {
