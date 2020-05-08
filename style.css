@@ -2233,14 +2233,46 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 
 .home.wpsmp-loggedout {
   background-color: #9ACFE9; }
+.home h1 {
+  font-size: 7vw; }
+  @media (min-width: 768px) {
+    .home h1 {
+      font-size: 4.5vw;
+      margin-bottom: .25em; } }
+.home h2 {
+  font-size: 5vw; }
+  @media (min-width: 768px) {
+    .home h2 {
+      font-size: 2.5vw;
+      margin-bottom: 1.5em; } }
+.home .wp-block-button {
+  display: block; }
+  @media (min-width: 768px) {
+    .home .wp-block-button {
+      display: inline-block; } }
+.home a.wp-block-button__link {
+  font-weight: 600;
+  font-size: 5vw;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .home a.wp-block-button__link {
+      font-size: 2.5vw; } }
 .home .content-area--landing {
   overflow: visible;
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  justify-content: space-between;
   height: calc(100vh - 80px); }
   .home .content-area--landing > * {
-    align-self: flex-end; }
+    width: 100%; }
+  @media (min-width: 768px) {
+    .home .content-area--landing {
+      overflow: visible;
+      align-content: center;
+      flex-direction: row; }
+      .home .content-area--landing > * {
+        align-self: center;
+        width: 63%; } }
   .home .content-area--landing h1, .home .content-area--landing h2, .home .content-area--landing div, .home .content-area--landing p {
     position: relative;
     z-index: 2; }
@@ -2252,25 +2284,11 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     width: 25vh;
     height: 25vh;
     margin: 1rem auto; }
-@media (min-width: 768px) {
-  .home .site-main h1 {
-    font-size: 4.5vw;
-    margin-bottom: .25em; }
-  .home .site-main h2 {
-    font-size: 2.5vw;
-    margin-bottom: 1.5em; }
-  .home .site-main a.wp-block-button__link {
-    font-weight: 600; }
-  .home .content-area--landing {
-    overflow: visible;
-    align-content: center;
-    flex-direction: row; }
-    .home .content-area--landing > * {
-      align-self: center;
-      width: 63%; }
-    .home .content-area--landing:before {
-      content: '';
-      display: none; }
+    @media (min-width: 768px) {
+      .home .content-area--landing:before {
+        content: '';
+        display: none; } }
+  @media (min-width: 768px) {
     .home .content-area--landing:after {
       position: absolute;
       top: 60px;
