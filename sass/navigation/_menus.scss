@@ -158,7 +158,6 @@
 				position: static;
 				display: inline;
 				font-size: 1rem;
-				width: auto;
 				text-align: left;
 			}
 		}
@@ -211,14 +210,6 @@
 			a {
 				width: 200px;
 			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
 		}
 
 		li:hover > ul,
@@ -230,9 +221,7 @@
 	li {
 		position: relative;
 
-		&:hover > a,
-		&.focus > a {
-		}
+		
 
 		@media screen and (min-width: 1250px) {
 			display: inline-block;
@@ -373,10 +362,6 @@
 		visibility: visible;
 		display: block;
 	}
-}
-
-.main-navigation.toggled .navTrigger {
-	//background-color: lighten($color__brand-primary, 25%);
 }
 
 .menu-name {

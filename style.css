@@ -980,7 +980,6 @@ a {
           position: static;
           display: inline;
           font-size: 1rem;
-          width: auto;
           text-align: left; } }
     .main-navigation .menu-movebreathe-container li:after {
       color: #FF9B7A; }
