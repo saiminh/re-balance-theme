@@ -360,7 +360,6 @@ textarea {
   line-height: 1.5; }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both;
   font-weight: 600; }
 
 h1.entry-title,
@@ -1847,30 +1846,27 @@ a {
     margin: 2em auto; } }
 
 .exercise-single-article {
-  margin: 0 -1em;
-  padding: 1em;
-  min-height: calc(100vh - 80px); }
-  @media (min-width: 480px) {
-    .exercise-single-article {
-      margin: 0 -2em;
-      padding: 2em; } }
+  margin-top: 1rem; }
   .exercise-single-article h2 {
     font-weight: 600; }
   .exercise-single-article .wp-block-video {
-    margin: -1em -1em 0 -1em;
-    background-color: #b9725b; }
-    @media (min-width: 480px) {
-      .exercise-single-article .wp-block-video {
-        margin: -2em -2em 0 -2em; } }
+    margin: 0;
+    background-color: #333;
+    min-width: 60%;
+    border-radius: 5px; }
     .exercise-single-article .wp-block-video video {
       display: block;
       width: auto;
       margin: 0 auto; }
+    @media (min-width: 768px) {
+      .exercise-single-article .wp-block-video {
+        float: left;
+        margin-right: 2rem; } }
   .exercise-single-article .entry-footer {
     margin-top: 1em; }
   .exercise-single-article .entry-footer .exercises-tag {
     display: inline-block;
-    background-color: #fffbfa;
+    background-color: #ffe8e0;
     padding: 4px 8px;
     margin-bottom: 4px; }
   .exercise-single-article .entry-footer .divider {
