@@ -19,6 +19,7 @@ a.wp-block-button__link {
 	transition: .15s all ease-in-out;
 
 	&:hover {
+		border-radius: 15px;
 		box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
 					-2px 2px 0 darken($color__brand-primary, 20%),
 					-3px 3px 0 darken($color__brand-primary, 20%),

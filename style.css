@@ -358,6 +358,14 @@ textarea {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1.5; }
+  @media (max-width: 320px) {
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 14px; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; }
@@ -511,6 +519,7 @@ a.wp-block-button__link {
   input[type="submit"]:hover,
   a.button:hover,
   a.wp-block-button__link:hover {
+    border-radius: 15px;
     box-shadow: -1px 1px 0 #ff4e14, -2px 2px 0 #ff4e14, -3px 3px 0 #ff4e14, -4px 4px 0 #ff4e14, -5px 5px 0 #ff4e14;
     transform: translate(3px, -3px); }
   button:active, button:focus,
@@ -2077,23 +2086,34 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .blog article.post:last-child, .blog article.exercises:last-child,
       .archive article.post:last-child,
       .archive article.exercises:last-child {
-        flex-grow: 0; }
-      .blog article.post .post-thumbnail, .blog article.exercises .post-thumbnail,
-      .archive article.post .post-thumbnail,
-      .archive article.exercises .post-thumbnail {
-        transform: scale(1);
-        transform-origin: 50% bottom;
-        transition: all .2s ease-in; }
-      .blog article.post:hover .post-thumbnail, .blog article.exercises:hover .post-thumbnail,
-      .archive article.post:hover .post-thumbnail,
-      .archive article.exercises:hover .post-thumbnail {
-        transform: scale(1.05);
-        transition: all .75s ease-out; } }
+        flex-grow: 0; } }
   @media (min-width: 1250px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
     .archive article.exercises {
       z-index: 2; } }
+  .blog article.post .post-thumbnail, .blog article.exercises .post-thumbnail,
+  .archive article.post .post-thumbnail,
+  .archive article.exercises .post-thumbnail {
+    display: block;
+    width: calc(100% + 4em);
+    padding-top: 80%;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: -1.5em -1.5em 1.5em -1.5em;
+    transform: scale(1);
+    transform-origin: 50% bottom;
+    transition: all .2s ease-in; }
+    @media (min-width: 769px) {
+      .blog article.post .post-thumbnail, .blog article.exercises .post-thumbnail,
+      .archive article.post .post-thumbnail,
+      .archive article.exercises .post-thumbnail {
+        margin: -2em -2em 2em -2em; } }
+  .blog article.post:hover .post-thumbnail, .blog article.exercises:hover .post-thumbnail,
+  .archive article.post:hover .post-thumbnail,
+  .archive article.exercises:hover .post-thumbnail {
+    transform: scale(1.05);
+    transition: all .75s ease-out; }
   .blog article.post .entry-title, .blog article.exercises .entry-title,
   .archive article.post .entry-title,
   .archive article.exercises .entry-title {
@@ -2141,18 +2161,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .archive article.exercises .entry-meta .divider,
     .archive article.exercises .entry-footer .divider {
       color: #FF9B7A; }
-.blog .post-thumbnail,
-.archive .post-thumbnail {
-  display: block;
-  width: calc(100% + 4em);
-  padding-top: 80%;
-  background-size: cover;
-  background-position: 50% 50%;
-  margin: -1.5em -1.5em 1.5em -1.5em; }
-  @media (min-width: 769px) {
-    .blog .post-thumbnail,
-    .archive .post-thumbnail {
-      margin: -2em -2em 2em -2em; } }
 .blog .sticky-post article,
 .archive .sticky-post article {
   width: 100%;
@@ -2176,7 +2184,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         width: calc(50% + 2rem);
         padding-top: 37.5%;
         margin: -2em 2em -2em -2em;
-        flex-shrink: 0; } }
+        flex-shrink: 0;
+        transform-origin: 100% 50%; } }
 .blog.show-discreet-exercises-only article.post:nth-child(3n), .blog.show-discreet-exercises-only article.exercises:nth-child(3n),
 .archive.show-discreet-exercises-only article.post:nth-child(3n),
 .archive.show-discreet-exercises-only article.exercises:nth-child(3n) {
@@ -2222,11 +2231,12 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .site-content {
   overflow-x: visible;
   overflow-y: scroll;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 71px);
   padding: 0 1rem; }
   @media screen and (min-width: 480px) {
     .site-content {
-      padding: 0 1.5rem; } }
+      padding: 0 1.5rem;
+      height: calc(100vh - 81px); } }
   @media screen and (min-width: 1250px) {
     .site-content {
       padding: 0 2rem; } }

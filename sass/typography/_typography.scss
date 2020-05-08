@@ -8,6 +8,10 @@ textarea {
 	font-family: $font__main;
 	@include font-size(1);
 	line-height: $font__line-height-body;
+
+	@media (max-width: 320px) {
+		font-size: 14px;
+	}
 }
 
 @import "headings";
