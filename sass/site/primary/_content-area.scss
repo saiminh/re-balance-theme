@@ -1,16 +1,8 @@
 .site { 
     margin: auto;
-    padding: 0 1em;
+    padding: 0;
     min-height: 100vh;
    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
-    @media screen and (min-width: 480px) {
-        padding: 0 1.5rem;
-    }
-
-    @media screen and (min-width: 1250px) {
-        padding: 0 2rem;
-    }
 }
 
 .site-main {
@@ -22,14 +14,25 @@
 }
 
 .site-content {
-     overflow-x: visible;
-     overflow-y: scroll;
-     height: calc(100vh - 80px);
+    overflow-x: visible;
+    overflow-y: scroll;
+    height: calc(100vh - 80px);
+    padding: 0 1rem;
+
+    @media screen and (min-width: 480px) {
+        padding: 0 1.5rem;
+    }
+
+    @media screen and (min-width: 1250px) {
+        padding: 0 2rem;
+    }
 }
 
 .home {
-    background-color: $color__brand-secondary;
     
+    &.wpsmp-loggedout {
+        background-color: $color__brand-secondary;
+    }
 
     & .content-area--landing {
         overflow: visible;

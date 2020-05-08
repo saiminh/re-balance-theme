@@ -437,6 +437,20 @@ function show_breadcrumb() {
 	}
 }
 
+// adding custom body classes
 
+function rebalance_bodyclass_names( $classes ) {
+	// if we are not in a mobile environment
+	if ( SwpmMemberUtils::is_member_logged_in()) {
+			// add 'desktop' to the $classes array
+			$classes[] = 'wpsmp-loggedin';
+			return $classes;
+	} else {
+			$classes[] = 'wpsmp-loggedout';
+			return $classes;
+	}
+}
+
+add_filter( 'body_class', 'rebalance_bodyclass_names' );
 ?>
 
