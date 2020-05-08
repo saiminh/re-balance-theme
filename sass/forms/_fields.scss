@@ -16,8 +16,10 @@ input[type="color"],
 textarea {
 	color: $color__text-main;
 	border: 0px solid $color__border-input;
+	-webkit-appearance: none;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	line-height: 44px;
 	height: 44px;
 	padding: 1em 1em .7em .7em;

@@ -581,8 +581,10 @@ input[type="color"],
 textarea {
   color: #000;
   border: 0px solid #FF9B7A;
+  -webkit-appearance: none;
   border-radius: 5px;
   -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   line-height: 44px;
   height: 44px;
   padding: 1em 1em .7em .7em;
