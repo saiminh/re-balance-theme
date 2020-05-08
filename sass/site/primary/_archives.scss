@@ -64,16 +64,17 @@
             }
 
             & .post-thumbnail {
-                background-size: 100%;
-                transition: all 1s ease-out;
+                transform: scale(1);
+                transform-origin: 50% bottom;
+                transition: all .2s ease-in;
             }
 
             &:hover {
               //  transform: translate(0, -10px);
                 //box-shadow: 0 3px 9px rgba(0,0,0,0.2);
                 & .post-thumbnail {
-                    background-size: 105%;
-                    transition: all .2s ease-in;
+                    transform: scale(1.05);
+                    transition: all .75s ease-out;
                 }
             }
         }
