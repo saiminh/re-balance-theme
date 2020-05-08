@@ -1525,9 +1525,6 @@ a {
   top: calc(48vh - 45px);
   opacity: 0;
   visibility: hidden; }
-  @media (min-width: 1250px) {
-    .loading-animation {
-      left: calc(50% + 80px); } }
 
 @keyframes lds-dual-ring {
   0% {
@@ -1552,10 +1549,12 @@ a {
   -ms-transform: translateZ(0);
   transform: translateZ(0); }
 
-.loader:before,
-.loader:after {
+.loader:before, .loader:after {
   position: absolute;
   content: ''; }
+  .home.wpsmp-loggedout .loader:before, .page-template-page-registration .loader:before,
+  .home.wpsmp-loggedout .loader:after, .page-template-page-registration .loader:after {
+    background: #C4E3F2; }
 
 .loader:before {
   width: 5.2em;

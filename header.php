@@ -50,18 +50,15 @@
 				
 			<div class="menu-movebreathe-container">
 				<ul id="movebreathe-menu" class="menu nav-menu">
-					<li id="menu-item-move" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://rebalance.local/move/">Move</a></li>
+					<li id="menu-item-move" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></li>
 					<li id="menu-item-search" class="menu-item menu-item-type-post_type menu-item-object-page">
 						<a class="toggle-search" href="#">
 					<svg class="ui-icon-magnifyingglass" id="magnifyer" x="0px" y="0px" viewBox="0 0 38 38">
-						<g>
 							<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="15.1" cy="15.1" r="14"/>
-							
-								<line fill="none" stroke="#FFFFFF" stroke-width="2.7225" stroke-linecap="round" stroke-miterlimit="10" x1="26.4" y1="26.4" x2="36.3" y2="36.3"/>
-						</g>
+							<line fill="none" stroke="#FFFFFF" stroke-width="2.7225" stroke-linecap="round" stroke-miterlimit="10" x1="26.4" y1="26.4" x2="36.3" y2="36.3"/>
 					</svg>
 					</a></li>
-					<li id="menu-item-breathe" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://rebalance.local/breathe/">Breathe</a></li>
+					<li id="menu-item-breathe" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></li>
 				</ul>
 			</div>	
 
