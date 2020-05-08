@@ -88,6 +88,7 @@
 			left: 0;
 			font-size: 1em;
 			line-height: 1;
+			transition: all .2s ease-in-out;
 
 			@media screen and (min-width: 480px) {
 				font-size: 1.5em;
@@ -123,22 +124,25 @@
 			transform: translateX(0%);
 		}
 
-		&:hover {
-			font-weight: 600;
-			transform: translate(5px, -5px);
+		&:hover {			
+			transform: scale(1.025);
 			border-radius: 10px;
-			color: #000;
-			box-shadow: -1px 1px 0 darken($color__brand-secondary, 10%), 
-						-2px 2px 0 darken($color__brand-secondary, 10%),
-						-3px 3px 0 darken($color__brand-secondary, 10%),
-						-4px 4px 0 darken($color__brand-secondary, 10%),
-						-5px 5px 0 darken($color__brand-secondary, 10%),
+			background-color: lighten($color__brand-secondary, 5%);
+			// box-shadow: -1px 1px 0 darken($color__brand-secondary, 10%), 
+			// 			-2px 2px 0 darken($color__brand-secondary, 10%),
+			// 			-3px 3px 0 darken($color__brand-secondary, 10%),
+			// 			-4px 4px 0 darken($color__brand-secondary, 10%),
+			// 			-5px 5px 0 darken($color__brand-secondary, 10%),
 						// -6px 6px 0 darken($color__brand-secondary, 10%),
 						// -7px 7px 0 darken($color__brand-secondary, 10%),
 						// -8px 8px 0 darken($color__brand-secondary, 10%),
 						// -9px 9px 0 darken($color__brand-secondary, 10%),
 						// -10px 10px 0 darken($color__brand-secondary, 10%);
-			//border-bottom: .5em solid darken($color__brand-secondary, 10%);
+
+			&:after {
+				
+			}
+
 		}
 	}
 }

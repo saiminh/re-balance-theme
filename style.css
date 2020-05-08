@@ -1781,7 +1781,8 @@ a {
       color: #fff;
       left: 0;
       font-size: 1em;
-      line-height: 1; }
+      line-height: 1;
+      transition: all .2s ease-in-out; }
       @media screen and (min-width: 480px) {
         .home .choose-exercise-links > div > a {
           font-size: 1.5em;
@@ -1806,11 +1807,9 @@ a {
     .home .choose-exercise-links > div:hover:after {
       transform: translateX(0%); }
     .home .choose-exercise-links > div:hover {
-      font-weight: 600;
-      transform: translate(5px, -5px);
+      transform: scale(1.025);
       border-radius: 10px;
-      color: #000;
-      box-shadow: -1px 1px 0 #70bbe0, -2px 2px 0 #70bbe0, -3px 3px 0 #70bbe0, -4px 4px 0 #70bbe0, -5px 5px 0 #70bbe0; }
+      background-color: #afd9ee; }
 
 .choose-exercise-link--move a,
 .choose-exercise-link--breathe a,
@@ -2070,8 +2069,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       width: calc((100% - 1em) / 3);
       font-size: 1rem;
       transition: all .1s ease-out;
-      transform: translate(0, 0);
-      box-shadow: 0 3px 9px rgba(0, 0, 0, 0);
       flex-grow: 0; }
       .blog article.post:nth-child(3n), .blog article.exercises:nth-child(3n),
       .archive article.post:nth-child(3n),
@@ -2081,11 +2078,16 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .archive article.post:last-child,
       .archive article.exercises:last-child {
         flex-grow: 0; }
-      .blog article.post:hover, .blog article.exercises:hover,
-      .archive article.post:hover,
-      .archive article.exercises:hover {
-        transform: translate(0, -10px);
-        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); } }
+      .blog article.post .post-thumbnail, .blog article.exercises .post-thumbnail,
+      .archive article.post .post-thumbnail,
+      .archive article.exercises .post-thumbnail {
+        background-size: 100%;
+        transition: all 1s ease-out; }
+      .blog article.post:hover .post-thumbnail, .blog article.exercises:hover .post-thumbnail,
+      .archive article.post:hover .post-thumbnail,
+      .archive article.exercises:hover .post-thumbnail {
+        background-size: 105%;
+        transition: all .2s ease-in; } }
   @media (min-width: 1250px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
