@@ -94,11 +94,26 @@
 		transform: translateX(-50%);
 		border-radius: 25px 25px 0 0;
 
+		@media (min-width: 1250px) {
+			position: static;
+			margin-right: 2rem;
+			display: block;
+			width: auto;
+			height: auto;
+			transform: none;
+
+		}
+
 		& ul {
 			display: flex;
 			visibility: visible;
 			opacity: 1;
 			padding: 0;
+
+			@media (min-width: 1250px) {
+				height: auto;
+				display: block;
+			}
 		}
 
 		& a {
@@ -114,6 +129,15 @@
 			text-align: center;
 			font-size: 1.125rem;
 			background-color: #666;
+
+			@media (min-width: 1250px) {
+				position: static;
+				display: inline;
+				font-size: 1rem;
+				padding: 0 .5rem;
+				text-align: left;
+				background-color: transparent;
+			}
 		}
 
 		& ul li:first-child a {
@@ -148,29 +172,6 @@
 		& ul li:last-child a {
 			left: auto;
 			right: 0;
-		}
-
-		@media (min-width: 1250px) {
-			position: static;
-			margin-right: 2rem;
-			display: block;
-			width: auto;
-			height: auto;
-			transform: none;
-
-			& ul {
-				height: auto;
-				display: block;
-			}
-
-			& a {
-				position: static;
-				display: inline;
-				font-size: 1rem;
-				padding: 0 .5rem;
-				text-align: left;
-				background-color: transparent;
-			}
 		}
 		
 		li:after {
@@ -232,16 +233,16 @@
 	}
 
 	li {
-		position: relative;
-
-		
+		position: relative;		
 
 		@media screen and (min-width: 1250px) {
 			display: inline-block;
+			float: left;
 
 			&:after {
-				content: ' |';
+				content: '|';
 				color: #B2B2B2;
+				margin: 0 .25rem;
 			}
 
 			&:last-child:after {
