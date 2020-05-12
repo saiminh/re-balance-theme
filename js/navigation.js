@@ -108,6 +108,21 @@
 		$('.main-navigation').removeClass('toggled');
 	});
 
+	$(function() {
+    var header = $(".site-header");
+  
+    $(window).scroll(function() {    
+        var scroll = $(window).scrollTop();
+        if (scroll >= 81) {
+            header.addClass("scrolled");
+        } else {
+            header.removeClass("scrolled");
+        }
+    });
+  
+	});
+
+
 	function init() {
 
 		//Date greeting

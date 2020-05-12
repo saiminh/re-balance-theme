@@ -880,15 +880,14 @@ a {
   @media (min-width: 1250px) {
     .site-header {
       padding: 0 2rem;
-      position: relative;
-      top: 0;
-      left: 0;
-      bottom: 0;
       border-bottom: none;
-      z-index: 1;
       display: flex;
       align-items: center;
-      align-content: flex-start; } }
+      align-content: flex-start;
+      transition: .1s all linear; } }
+  @media (min-width: 1250px) {
+    .site-header.scrolled {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); } }
 
 .site-branding {
   position: relative;
@@ -2084,9 +2083,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .blog article.post:hover, .blog article.exercises:hover,
   .archive article.post:hover,
   .archive article.exercises:hover {
-    transform: translateY(-7px);
     border-radius: 10px;
-    background-color: #ffede8; }
+    background-color: #ffefea; }
   @media (min-width: 640px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
@@ -2164,15 +2162,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .archive article.exercises .entry-footer {
     font-size: 0.75rem;
     border-top: 1px solid #ffd5c7;
-    padding-top: 1em;
-    margin-bottom: -.5rem; }
-    @media (min-width: 480px) {
-      .blog article.post .entry-meta, .blog article.post .entry-footer, .blog article.exercises .entry-meta, .blog article.exercises .entry-footer,
-      .archive article.post .entry-meta,
-      .archive article.post .entry-footer,
-      .archive article.exercises .entry-meta,
-      .archive article.exercises .entry-footer {
-        margin-bottom: -1rem; } }
+    padding-top: 1em; }
     .blog article.post .entry-meta .divider, .blog article.post .entry-footer .divider, .blog article.exercises .entry-meta .divider, .blog article.exercises .entry-footer .divider,
     .archive article.post .entry-meta .divider,
     .archive article.post .entry-footer .divider,
@@ -2250,12 +2240,17 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   padding: 0 1rem; }
   @media screen and (min-width: 480px) {
     .site-content {
-      margin-top: 71px;
+      margin-top: 81px;
       padding: 0 1.5rem; } }
   @media screen and (min-width: 1250px) {
     .site-content {
-      margin-top: 0;
       padding: 0 2rem; } }
+
+.site-footer {
+  padding-bottom: 60px; }
+  @media screen and (min-width: 1250px) {
+    .site-footer {
+      padding-bottom: 0; } }
 
 .home.wpsmp-loggedout {
   background-color: #9ACFE9; }

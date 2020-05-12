@@ -13,15 +13,17 @@
 
 	@media (min-width: 1250px) {
 		padding: 0 2rem;
-		position: relative;
-		top: 0;
-		left: 0;
-		bottom: 0;
 		border-bottom: none;
-		z-index: 1;
 		display: flex;
 		align-items: center;
 		align-content: flex-start;
+		transition: .1s all linear;
+	}
+
+	&.scrolled {
+		@media (min-width: 1250px) {
+			box-shadow: 0 0 10px rgba(0,0,0,0.05);
+		}
 	}
 }
 

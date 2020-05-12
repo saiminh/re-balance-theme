@@ -18,13 +18,20 @@
     padding: 0 1rem;
 
     @media screen and (min-width: 480px) {
-        margin-top: 71px;
+        margin-top: 81px;
         padding: 0 1.5rem;
     }
 
     @media screen and (min-width: 1250px) {
-        margin-top: 0;
         padding: 0 2rem;
+    }
+}
+
+.site-footer {
+    padding-bottom: 60px;
+
+    @media screen and (min-width: 1250px) {
+        padding-bottom: 0;
     }
 }
 
