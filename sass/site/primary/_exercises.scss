@@ -5,7 +5,8 @@
         font-weight: 600;
     }
 
-    & .wp-block-video {
+    & .wp-block-video,
+    & .wp-block-embed {
         margin: 0;
         background-color: #333;
         border-radius: 5px;

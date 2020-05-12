@@ -190,30 +190,6 @@
 		  }
 		});
 
-		
-		//Update navigation links
-
-		// var theUrl = window.location.href,
-		// 	$theCurrent = document.querySelectorAll('.active_page_item'),
-		// 	$newCurrentLink = document.querySelectorAll('.menu-item a[href*="' + theUrl + '"]');
-
-		// if (window.location.pathname == '/') {
-		//  	$newCurrentLink = document.querySelectorAll('.menu-item a[href="' + theUrl + '"]');
-		// }
-
-		// if ($newCurrentLink.length > 0) {
-		// 	var $curPar = $newCurrentLink[0].closest('.menu-item');
-		// 	if($curPar) {
-		// 		$curPar.classList.add('active_page_item');
-		// 	}
-		// }
-		
-		// if ($theCurrent.length > 0) {
-		// 	$theCurrent[0].classList.remove('active_page_item');
-		// }
-
-		// Silly Hack to force reload for form pages because of the validation  
-		// used by Simple Membership Plugin which is loaded only on form pages
 		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
 			
 
@@ -345,13 +321,6 @@
 				});
 			});
 			$("#move-body-map #hands .hand").on('click', function(){		
-		
-				// handsloc = $(this).position();
-				// handsw = $(this)[0].getBBox().width;
-				// $('.move-bodypart-group--hands').css(
-				// 	{	top: handsloc.top - parentloc.top, 
-				// 		left: handsloc.left - parentloc.left + handsw}
-				// );
 		
 				TweenLite.to('.move-bodypart-group', .5, {
 					autoAlpha: 0

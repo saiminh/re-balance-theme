@@ -1857,26 +1857,26 @@ a {
   margin-top: 1rem; }
   .exercise-single-article h2 {
     font-weight: 600; }
-  .exercise-single-article .wp-block-video {
+  .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed {
     margin: 0;
     background-color: #333;
     border-radius: 5px;
     width: calc(100vw - 2rem);
     height: calc( ( 100vw - 2rem ) * 0.5625); }
     @media (min-width: 768px) {
-      .exercise-single-article .wp-block-video {
+      .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed {
         float: left;
         margin-right: 2rem;
         width: 60vw;
         height: 33.75vw; } }
-    .exercise-single-article .wp-block-video video {
+    .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-embed video {
       display: block;
       margin: 0 auto;
       border-radius: 5px;
       width: calc(100vw - 2rem);
       height: calc( ( 100vw - 2rem ) * 0.5625); }
       @media (min-width: 768px) {
-        .exercise-single-article .wp-block-video video {
+        .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-embed video {
           width: 60vw;
           height: 33.75vw; } }
   .exercise-single-article .entry-footer {
