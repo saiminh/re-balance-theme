@@ -3,6 +3,9 @@
 	z-index: 1000;
 	border-bottom: 1px solid $color__background-body;
 	padding: 0 1rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
 	
 	@media (min-width: 480px) {
 		padding: 0 1.5rem;
@@ -87,17 +90,14 @@
 		position: fixed;
 		bottom: 0;
 		z-index: 999;
-		width: 260px;
-		height: 60px;
-		background-color: #666;
-		left: calc(50% - 125px);
+		left: 50%;
+		transform: translateX(-50%);
 		border-radius: 25px 25px 0 0;
 
 		& ul {
-			display: block;
+			display: flex;
 			visibility: visible;
 			opacity: 1;
-			height: 60px;
 			padding: 0;
 		}
 
@@ -106,11 +106,22 @@
 			border: none;
 			min-width: 0;
 			width: 120px;
+			height: 60px;
+			line-height: 60px;
+			padding: 0;
 			margin: 0;
-			position: absolute;
 			left: 0;
 			text-align: center;
 			font-size: 1.125rem;
+			background-color: #666;
+		}
+
+		& ul li:first-child a {
+			border-radius: 20px 0 0 0;
+		}
+		
+		& ul li:last-child a {
+			border-radius: 0 20px 0 0;
 		}
 
 		& ul li:nth-child(2):after {
@@ -119,10 +130,7 @@
 		}
 
 		& ul li:nth-child(2) a {
-			width: 30px;
-			height: 30px;
-			left: 115px;
-			top: 15px;
+			width: 50px;
 
 			@media (min-width: 1250px) {
 				display: none;
@@ -132,8 +140,8 @@
 				position: absolute;
 				width: 30px;
 				fill: #FFF;
-				top: 0;
-				left: 0;
+				top: 15px;
+				left: 10px;
 			}
 		}
 
@@ -147,18 +155,21 @@
 			margin-right: 2rem;
 			display: block;
 			width: auto;
-			background-color: transparent;
 			height: auto;
+			transform: none;
 
 			& ul {
 				height: auto;
+				display: block;
 			}
 
 			& a {
 				position: static;
 				display: inline;
 				font-size: 1rem;
+				padding: 0 .5rem;
 				text-align: left;
+				background-color: transparent;
 			}
 		}
 		
@@ -170,10 +181,12 @@
 	& ul {		
 		list-style: none;
 		overflow: hidden;
-		padding: 1.5rem;
+		padding: 1rem;
 		
 		@media (min-width: 480px) {
 			right: calc(1rem + 1px);
+			padding: 1.5rem;
+
 		}
 
 		@media screen and (min-width: 1250px) {
@@ -240,11 +253,11 @@
 	a { //the actual menu links
 		display: block;
 		text-decoration: none;
-		padding: 1rem;
-		font-size: 1.25em;
+		padding: .5em 0;
+		font-size: 1.33em;
 		font-weight: 300;
 		min-width: 250px;
-		border-bottom: 1px solid lighten($color__brand-primary, 22%);
+		border-bottom: none;
 
 		@media screen and (min-width: 1250px) {
 			display: inline-block;
@@ -281,12 +294,18 @@
 .site-header-login {
 	margin: 1rem;
 	display: none;
+	padding: 1.5rem;
+	position: relative;
+	border-radius: 6px;
+	background-color: #EEE;
 
-	@media (min-width: 1250px){
+	@media (min-width: 1250px) {
 		display: block;
+		background-color: transparent;
+		padding: 0;
 		margin: 0;
 	}
-
+	
 	&:before {
 		content: url(img/ui-user.svg);
 		width: 16px;
@@ -296,28 +315,18 @@
 	& a {
 		color: $color__brand-primary;
 	}
-}
-
-.site-header-account,
-.site-header-login {
-	background-color: #eee;
-	padding: 1.5rem;
-	position: relative;
-	margin: 1.5rem;
-
-	@media (min-width: 1250px) {
-		background-color: transparent;
-		padding: 0;
-		margin: 0;
-	}
 
 	& .user-menu {
+		border-top: 1px solid #ddd;
+		margin-top: 1rem;
 		
 		@media (min-width: 1250px) {
+			margin: 0;
 			padding: 1em;
 			border: 1px solid #EEE;
 			background-color: #FFF;
 			border-radius: 5px;
+			border-top: none;
 			position: absolute;
 			top: 100%;
 			right: 0;
@@ -361,6 +370,10 @@
 		opacity: 1;
 		visibility: visible;
 		display: block;
+	}
+
+	& #movebreathe-menu {
+		display: flex;
 	}
 }
 
