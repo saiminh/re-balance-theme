@@ -2079,7 +2079,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   flex-shrink: 0;
   scroll-snap-align: start;
   font-size: .8rem;
-  position: relative; }
+  position: relative;
+  transition: all .2s ease-in-out; }
+  .blog article.post:hover, .blog article.exercises:hover,
+  .archive article.post:hover,
+  .archive article.exercises:hover {
+    transform: translateY(-7px);
+    border-radius: 10px;
+    background-color: #ffede8; }
   @media (min-width: 640px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
@@ -2125,11 +2132,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .archive article.post .post-thumbnail,
       .archive article.exercises .post-thumbnail {
         margin: -2em -2em 2em -2em; } }
-  .blog article.post:hover .post-thumbnail, .blog article.exercises:hover .post-thumbnail,
-  .archive article.post:hover .post-thumbnail,
-  .archive article.exercises:hover .post-thumbnail {
-    transform: scale(1.05);
-    transition: all .75s ease-out; }
   .blog article.post .entry-title, .blog article.exercises .entry-title,
   .archive article.post .entry-title,
   .archive article.exercises .entry-title {

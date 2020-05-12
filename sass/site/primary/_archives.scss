@@ -40,6 +40,13 @@
         scroll-snap-align: start;
         font-size: .8rem;
         position: relative;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-7px);
+            border-radius: 10px;
+            background-color: lighten($color__brand-primary, 21.5%);
+        }
 
         @media (min-width: 640px) {
             width: calc(40% - .5em) ;
@@ -82,11 +89,6 @@
             @media (min-width: 769px) {
                 margin: -2em -2em 2em -2em;
             }    
-        }
-    
-        &:hover .post-thumbnail {
-            transform: scale(1.05);
-            transition: all .75s ease-out;
         }
 
         & .entry-title {
