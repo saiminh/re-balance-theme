@@ -1,7 +1,7 @@
 .site { 
     margin: auto;
     padding: 0;
-    min-height: 100vh;
+   // min-height: 100vh;
    // box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -14,10 +14,11 @@
 }
 
 .site-content {
-    margin-top: 81px;
+    margin-top: 71px;
     padding: 0 1rem;
 
     @media screen and (min-width: 480px) {
+        margin-top: 71px;
         padding: 0 1.5rem;
     }
 
