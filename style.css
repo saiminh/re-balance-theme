@@ -1503,6 +1503,9 @@ a {
   .breathe-map-illu:hover object {
     transform: scale(1.1); }
 
+.breathe-map-illu:visited {
+  color: #000; }
+
 .breathe-map-illu--justbreathe {
   width: 25%;
   left: 37.5%;

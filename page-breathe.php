@@ -24,24 +24,28 @@ get_header();
 
 					endwhile; // End of the loop.
 					?>
-					<a href="<?php echo get_home_url(); ?>/exercise-type/just-breathe" class="breathe-map-illu breathe-map-illu--justbreathe">
-						<object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-home-breathe.svg" alt="just breathe"></object>
+					<a href="<?php echo get_home_url(); ?>/exercise-type/just-breathe" class="breathe-map-illu breathe-map-illu--justbreathe">						
+						<?php get_template_part('inc/inline', 'ui-home-breathe.svg'); ?>
 						just breathe
 					</a>
 					<a href="<?php echo get_home_url(); ?>/exercise-type/first-aid" class="breathe-map-illu breathe-map-illu--firstaid">
-						<object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-firstaid.svg" alt="first aid"></object>
+						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-firstaid.svg" alt="first aid"></object> -->
+						<?php get_template_part('inc/inline', 'ui-breathe-firstaid.svg'); ?>
 						first aid
 					</a>
 					<a href="<?php echo get_home_url(); ?>/exercise-type/energize" class="breathe-map-illu breathe-map-illu--energize">
-						<object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-energize.svg" alt="energize"></object>
+						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-energize.svg" alt="energize"></object> -->
+						<?php get_template_part('inc/inline', 'ui-breathe-energize.svg'); ?>
 						energize
 					</a>
 					<a href="<?php echo get_home_url(); ?>/exercise-type/calm" class="breathe-map-illu breathe-map-illu--calm">
-						<object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-calm.svg" alt="calm"></object>
+						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-calm.svg" alt="calm"></object> -->
+						<?php get_template_part('inc/inline', 'ui-breathe-calm.svg'); ?>
 						calm
 					</a>
 					<a href="<?php echo get_home_url(); ?>/exercise-type/focus" class="breathe-map-illu breathe-map-illu--focus">
-						<object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-focus.svg" alt="focus"></object>
+						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-focus.svg" alt="focus"></object> -->
+						<?php get_template_part('inc/inline', 'ui-breathe-focus.svg'); ?>
 						focus
 					</a>
 				</div>
