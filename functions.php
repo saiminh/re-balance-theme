@@ -286,7 +286,7 @@ function create_tag_taxonomies_for_exercises()
 
 function postsbycategory($which_category = 'uncategorized') {
 	// the query
-	$the_query = new WP_Query( array( 'category_name' => $which_category, 'posts_per_page' => 10 ) ); 
+	$the_query = new WP_Query( array( 'category_name' => $which_category, 'posts_per_page' => 30 ) ); 
 	 
 	// The Loop
 	if ( $the_query->have_posts() ) {
@@ -457,6 +457,48 @@ function rebalance_bodyclass_names( $classes ) {
 }
 
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
+
+
+
+// My Own post navigation
+
+function rebalance_get_the_posts_navigation( $args = array() ) {
+	$navigation = '';
+
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages > 1 ) {
+			// Make sure the nav element has an aria-label attribute: fallback to the screen reader text.
+			if ( ! empty( $args['screen_reader_text'] ) && empty( $args['aria_label'] ) ) {
+					$args['aria_label'] = $args['screen_reader_text'];
+			}
+
+			$args = wp_parse_args(
+					$args,
+					array(
+							'prev_text'          => __( 'More exercises →' ),
+							'next_text'          => __( '← Back' ),
+							'screen_reader_text' => __( 'Exercise navigation' ),
+							'aria_label'         => __( 'Exercises' ),
+					)
+			);
+
+			$next_link = get_previous_posts_link( $args['next_text'] );
+			$prev_link = get_next_posts_link( $args['prev_text'] );
+
+			if ( $prev_link ) {
+					$navigation .= '<div class="nav-previous">' . $prev_link . '</div>';
+			}
+
+			if ( $next_link ) {
+					$navigation .= '<div class="nav-next">' . $next_link . '</div>';
+			}
+
+			$navigation = _navigation_markup( $navigation, 'posts-navigation', $args['screen_reader_text'], $args['aria_label'] );
+	}
+
+	return $navigation;
+}
+
 
 ?>
 

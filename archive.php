@@ -12,8 +12,7 @@ get_header();
 
 	<div id="primary" class="content-area">
 		
-		<?php if ( have_posts() ) : ?>
-			
+		<?php if ( have_posts() ) : ?>			
 		
 			<main id="main" class="site-main">		
 			<?php if ( is_tax( 'types' ) ) : 
@@ -49,8 +48,12 @@ get_header();
 					get_template_part( 'template-parts/content', get_post_type() );
 
 				endwhile;
-
-				the_posts_navigation();
+				
+				if ( is_tax() ) :
+					echo rebalance_get_the_posts_navigation();
+				else :
+					the_posts_navigation();
+				endif;
 
 			endif;
 

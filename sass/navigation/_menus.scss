@@ -394,17 +394,22 @@
 	.site-main & {
 		margin: 0 0 1.5em;
 		overflow: hidden;
+		width: 100%;
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
+		float: right;
+		padding: .5rem 1rem;
+		background-color: lighten($color__brand-primary, 20%);
+		border-radius: 5px;
 	}
 
 	.nav-next {
-		float: right;
+		float: left;
 		text-align: right;
-		width: 50%;
+		padding: .5rem 1rem;
+		background-color: lighten($color__brand-primary, 20%);
+		border-radius: 5px;
 	}
 }
 
