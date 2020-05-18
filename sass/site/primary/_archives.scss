@@ -44,8 +44,8 @@
         transition: all .2s ease-in-out;
 
         &:hover {
-            border-radius: 10px;
-            background-color: lighten($color__brand-primary, 22%);
+            border-radius: 30px;
+            //background-color: lighten($color__brand-primary, 22%);
         }
 
         @media (min-width: 640px) {

@@ -2105,8 +2105,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .archive article.exercises:hover,
   .search-results article.post:hover,
   .search-results article.exercises:hover {
-    border-radius: 10px;
-    background-color: #ffefea; }
+    border-radius: 30px; }
   @media (min-width: 640px) {
     .blog article.post, .blog article.exercises,
     .archive article.post,
