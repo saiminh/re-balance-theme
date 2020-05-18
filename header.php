@@ -81,6 +81,7 @@
 					echo "<div class='user-menu'>";
 					echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
 						'>Logout</a>";
+						echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
 					echo "</div>";
 				} 
 					else { 
@@ -139,38 +140,48 @@
 	<div class="statusbar">	
 		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
 		<?php
-			if ( is_tax( 'types' ) ) :
-				show_custax_breadcrumb(single_tag_title("", false),"types");
-			elseif ( is_tax( 'exercises-tag' ) ) :
-				show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
-			elseif ( has_term( '' , 'types' ) ) :
-				
+			if (is_search()) :
 				echo '<ul class="breadcrumbs">';
 				echo '<li><a href="';
 				echo get_option('home');
 				echo '">Home';
 				echo '</a></li>';
-				$rd_taxonomy = 'types'; // region taxonomy
-				$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
-				if( $rd_terms ) {
-					$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
-					$neworderterms = get_terms($rd_taxonomy, 'orderby=none&include=' . $term_array );
-					foreach( $neworderterms as $orderterm ) {
-						echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
-					}
-				}
-				echo '<li>';
-				the_title();
-				echo '</li></ul>';
-
-			elseif ( is_front_page() ) :
-				 global $current_user; wp_get_current_user(); 
-				 echo "<div id='lblGreetings'>";
-				 echo $current_user->display_name . "\n";
-				 echo "</div>";
+				echo '<li>Search</li></ul>';
 
 			else :
-				show_breadcrumb();
+				if ( is_tax( 'types' ) ) :
+					show_custax_breadcrumb(single_tag_title("", false),"types");
+				elseif ( is_tax( 'exercises-tag' ) ) :
+					show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
+				elseif ( has_term( '' , 'types' ) ) :
+					
+					echo '<ul class="breadcrumbs">';
+					echo '<li><a href="';
+					echo get_option('home');
+					echo '">Home';
+					echo '</a></li>';
+					$rd_taxonomy = 'types'; // region taxonomy
+					$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
+					if( $rd_terms ) {
+						$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
+						$neworderterms = get_terms($rd_taxonomy, 'orderby=none&include=' . $term_array );
+						foreach( $neworderterms as $orderterm ) {
+							echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
+						}
+					}
+					echo '<li>';
+					the_title();
+					echo '</li></ul>';
+
+				elseif ( is_front_page() ) :
+					global $current_user; wp_get_current_user(); 
+					echo "<div id='lblGreetings'>";
+					echo $current_user->display_name . "\n";
+					echo "</div>";
+
+				else :
+					show_breadcrumb();
+				endif;
 			endif;
 		?>
 		<?php if ( is_tax(  ) ) : ?>

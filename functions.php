@@ -378,7 +378,6 @@ function show_custax_breadcrumb($name,$type){
 //  breadcrumbs for default taxonomies
 function show_breadcrumb() {
 
-
 	if (!is_front_page()) {
 
 // Start the breadcrumb with a link to your homepage
@@ -431,6 +430,12 @@ function show_breadcrumb() {
 							echo '</li>';
 							rewind_posts();
 					}
+			}
+
+			if (is_search()){
+				echo '<li>';
+				echo 'Search';
+				echo '</li>';
 			}
 
 			echo '</ul>';
