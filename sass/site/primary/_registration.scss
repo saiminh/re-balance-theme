@@ -36,13 +36,6 @@
 .swpm-username-input,
 .swpm-username-label { 
 
-  //  position: relative;
-
-    & td:first-child {
-        // position: absolute;
-        // top: calc(60px + .5rem);
-    }
-
     & input[type="text"], 
     & input[type="password"] {    
          color: #333;
@@ -86,6 +79,10 @@
 
       
 .swpm-registration-widget-form {
+
+    & tr {
+        position: relative;
+    }
     
     & .formError {
         text-align: center;
@@ -122,11 +119,12 @@
     & .formError.greenPopup {
         opacity: 1!important;
         min-width: auto;
+        top: 0 !important;
         right: 0 !important;
-        transform: translate(0, 50%);
+        transform: translate(-50%, 150%);
     
         @media (min-width: 480px) {
-        transform: translate(0, 80%);
+        transform: translate(-50%, 150%);
         }
     }
     

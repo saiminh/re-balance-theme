@@ -2004,6 +2004,8 @@ a {
   width: 1rem;
   margin-right: .4rem; }
 
+.swpm-registration-widget-form tr {
+  position: relative; }
 .swpm-registration-widget-form .formError {
   text-align: center;
   min-width: 200px;
@@ -2029,11 +2031,12 @@ a {
 .swpm-registration-widget-form .formError.greenPopup {
   opacity: 1 !important;
   min-width: auto;
+  top: 0 !important;
   right: 0 !important;
-  transform: translate(0, 50%); }
+  transform: translate(-50%, 150%); }
   @media (min-width: 480px) {
     .swpm-registration-widget-form .formError.greenPopup {
-      transform: translate(0, 80%); } }
+      transform: translate(-50%, 150%); } }
 .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div {
   display: none;
   right: 1rem !important; }
