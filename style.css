@@ -2242,7 +2242,13 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         padding-top: 37.5%;
         margin: -2em 2em -2em -2em;
         flex-shrink: 0;
-        transform-origin: 100% 50%; } }
+        transform-origin: 100% 50%; }
+      .blog .sticky-post article .post-info,
+      .archive .sticky-post article .post-info,
+      .search-results .sticky-post article .post-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; } }
 .blog.show-discreet-exercises-only article.post:nth-child(3n), .blog.show-discreet-exercises-only article.exercises:nth-child(3n),
 .archive.show-discreet-exercises-only article.post:nth-child(3n),
 .archive.show-discreet-exercises-only article.exercises:nth-child(3n),

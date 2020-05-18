@@ -151,6 +151,12 @@
                     flex-shrink: 0;
                     transform-origin: 100% 50%;
                 }
+
+                & .post-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
             }
         }
     }

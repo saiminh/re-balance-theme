@@ -457,5 +457,7 @@ function rebalance_bodyclass_names( $classes ) {
 }
 
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
+
 ?>
+
 
