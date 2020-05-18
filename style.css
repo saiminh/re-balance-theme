@@ -1112,7 +1112,8 @@ a {
         position: absolute;
         top: 100%;
         right: 0;
-        display: none; } }
+        display: none;
+        line-height: 2; } }
   .site-header-account:hover .user-menu,
   .site-header-login:hover .user-menu {
     display: inherit; }
