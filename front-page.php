@@ -39,6 +39,7 @@ get_header();
 	</div><!-- #primary -->
 		<?php else : ?>
 		<div id="primary" class="content-area content-area--landing">
+			<?php get_template_part('inc/inline', 'ui-home-breathe.svg'); ?>
 			<main id="main" class="site-main">
 				
 				<?php

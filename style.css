@@ -2349,11 +2349,11 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       display: inline-block; } }
 .home a.wp-block-button__link {
   font-weight: 600;
-  font-size: 5vw;
+  font-size: 4.5vw;
   width: 100%; }
   @media (min-width: 768px) {
     .home a.wp-block-button__link {
-      font-size: 2.5vw; } }
+      font-size: 2vw; } }
 .home .content-area--landing {
   overflow: visible;
   display: flex;
@@ -2375,30 +2375,25 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     z-index: 2; }
   .home .content-area--landing h2 {
     font-weight: 300; }
-  .home .content-area--landing:before {
+  .home .content-area--landing svg {
     z-index: 1;
     content: url("img/ui-home-breathe.svg");
     width: 25vh;
-    height: 25vh;
-    margin: 1rem auto; }
+    height: 40vh;
+    margin: 1rem auto 0 auto; }
     @media (min-width: 768px) {
-      .home .content-area--landing:before {
+      .home .content-area--landing svg {
+        position: absolute;
+        top: 50px;
+        bottom: auto;
+        right: 2rem;
+        z-index: 999999999;
+        background-repeat: no-repeat;
+        background-size: auto 95%;
+        background-position: right top;
         content: '';
-        display: none; } }
-  @media (min-width: 768px) {
-    .home .content-area--landing:after {
-      position: absolute;
-      top: 60px;
-      bottom: auto;
-      right: 2rem;
-      z-index: 999999999;
-      background-image: url("img/ui-home-breathe.svg");
-      background-repeat: no-repeat;
-      background-size: auto 95%;
-      background-position: right top;
-      content: '';
-      width: 40%;
-      height: calc(100vh - 60px); } }
+        width: 40%;
+        height: calc(100vh - 80px); } }
 
 /*--------------------------------------------------------------
 ## Comments
