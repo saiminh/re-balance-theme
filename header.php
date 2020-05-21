@@ -164,7 +164,7 @@
 					$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
 					if( $rd_terms ) {
 						$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
-						$neworderterms = get_terms($rd_taxonomy, 'orderby=none&include=' . $term_array );
+						$neworderterms = get_terms($rd_taxonomy, 'orderby=parent&include=' . $term_array );
 						foreach( $neworderterms as $orderterm ) {
 							echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
 						}

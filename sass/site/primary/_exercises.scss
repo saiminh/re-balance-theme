@@ -47,7 +47,7 @@
         
     }
 
-    & .post-info > :not(.wp-block-video):not(.wp-block-embed-vimeo):not(.entry-footer) {
+    & .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
         
         @media (min-width: 768px) {
             margin-left: 66%;

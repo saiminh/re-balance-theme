@@ -1927,7 +1927,7 @@ a {
           width: 60vw;
           height: 33.75vw; } }
   @media (min-width: 768px) {
-    .exercise-single-article .post-info > :not(.wp-block-video):not(.wp-block-embed-vimeo):not(.entry-footer) {
+    .exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
       margin-left: 66%; } }
   @media (min-width: 768px) {
     .exercise-single-article .post-info > .entry-footer {
