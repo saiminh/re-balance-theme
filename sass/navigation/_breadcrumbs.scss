@@ -3,10 +3,14 @@
     position: relative;
     display: flex;
     justify-content:  space-between;
+}
 
+.exercises-template-default .statusbar {
     @media (min-width: 768px) {
         position: sticky;
-        top: 81px;
+        top: 80px;
+        margin-top: -1px;
+        background-color: #FFF;
     }
 }
 

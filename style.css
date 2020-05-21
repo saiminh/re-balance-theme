@@ -569,7 +569,7 @@ a.wp-block-button__link {
       a.wp-block-button__link.search-submit--home {
         width: 60px;
         left: calc(100% - 60px);
-        background-size: 60%; } }
+        background-size: 40%; } }
 
 input[type="text"],
 input[type="email"],
@@ -668,8 +668,8 @@ textarea {
     input[type="color"],
     textarea {
       padding: 1em 1.25em;
-      line-height: 60px;
-      height: 60px;
+      line-height: 50px;
+      height: 50px;
       font-size: 1rem;
       border-radius: 10px; } }
 
@@ -1311,10 +1311,13 @@ a {
   position: relative;
   display: flex;
   justify-content: space-between; }
-  @media (min-width: 768px) {
-    .statusbar {
-      position: sticky;
-      top: 81px; } }
+
+@media (min-width: 768px) {
+  .exercises-template-default .statusbar {
+    position: sticky;
+    top: 80px;
+    margin-top: -1px;
+    background-color: #FFF; } }
 
 .breadcrumbs {
   list-style: none;
@@ -1899,32 +1902,32 @@ a {
     font-weight: 600; }
     .exercise-single-article h2.has-text-align-center {
       text-align: left; }
-  .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
+  .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed-vimeo, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
     margin: 0;
     background-color: #333;
     border-radius: 5px;
     width: calc(100vw - 2rem);
     height: calc( ( 100vw - 2rem ) * 0.5625); }
     @media (min-width: 768px) {
-      .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
+      .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed-vimeo, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
         float: left;
         margin-right: 2rem;
         width: 60vw;
         height: 33.75vw;
         position: fixed;
         top: 133px; } }
-    .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
+    .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
       display: block;
       margin: 0 auto;
       border-radius: 5px;
       width: calc(100vw - 2rem);
       height: calc( ( 100vw - 2rem ) * 0.5625); }
       @media (min-width: 768px) {
-        .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
+        .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
           width: 60vw;
           height: 33.75vw; } }
   @media (min-width: 768px) {
-    .exercise-single-article .post-info > :not(.wp-block-video) {
+    .exercise-single-article .post-info > :not(.wp-block-video):not(.wp-block-embed-vimeo):not(.entry-footer) {
       margin-left: 66%; } }
   @media (min-width: 768px) {
     .exercise-single-article .post-info > .entry-footer {
