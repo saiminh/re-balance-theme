@@ -23,7 +23,11 @@
             margin-right: 2rem;
             width: 60vw;
             height: 33.75vw;
+            position: sticky;
+            top: 133px;
         }
+
+        
 
         & video,
         & iframe {
@@ -40,6 +44,13 @@
         }
 
         
+    }
+
+    & .post-info > :not(.wp-block-video) {
+        
+        @media (min-width: 768px) {
+            margin-left: 66%;
+        }
     }
 
     & .entry-footer {
