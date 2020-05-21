@@ -23,7 +23,7 @@
             margin-right: 2rem;
             width: 60vw;
             height: 33.75vw;
-            position: sticky;
+            position: fixed;
             top: 133px;
         }
 
@@ -53,10 +53,16 @@
         }
     }
 
-    & .entry-footer {
-        //text-align: center;
-        margin-top: 1em;
+    & .post-info > .entry-footer {
+
+        @media (min-width: 768px) {
+            position: fixed;           
+            margin-left: 0;
+            top: calc(133px + 33.75vw + 1rem);
+
+        }
     }   
+
     & .entry-footer .exercises-tag {
         display: inline-block;
         background-color: lighten($color__brand-primary, 20%);

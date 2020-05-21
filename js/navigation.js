@@ -142,6 +142,7 @@
 		if (document.querySelector('#move-body-map')) {
 			positionMoveMenus();
 		}
+		document.querySelector("html").scrollTop = "0";
 
 		// initiate live search
 		if (typeof jQuery().searchwp_live_search == 'function') {

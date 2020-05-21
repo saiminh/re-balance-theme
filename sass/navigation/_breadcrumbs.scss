@@ -16,9 +16,20 @@
     padding: 0;
     color: #DDD;
     font-size: .8rem;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: scroll;
+
+    .archive & {
+        max-width: 66%;
+    }
 
     @media (min-width: 480px) {
         font-size: 1rem;
+    }
+
+    @media (min-width: 640px) {
+        max-width: 80%;
     }
     
     & li {
