@@ -463,6 +463,16 @@ li > ol {
   margin-bottom: 0;
   margin-left: .5em; }
 
+article ul > li {
+  list-style: none;
+  padding-bottom: .75em; }
+  article ul > li:before {
+    content: "●";
+    color: #FF9B7A;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; }
+
 dt {
   font-weight: bold; }
 

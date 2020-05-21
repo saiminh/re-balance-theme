@@ -17,6 +17,18 @@ li > ol {
 	margin-left: .5em;
 }
 
+article ul > li {
+	list-style: none;
+	padding-bottom: .75em;
+	&:before {
+		content: "●";
+		color: $color__brand-primary;
+		display: inline-block; 
+		width: 1em;
+		margin-left: -1em;
+	}
+}
+
 dt {
 	font-weight: bold;
 }
