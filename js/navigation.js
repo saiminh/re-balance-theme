@@ -32,13 +32,33 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
+			gsap.to("#primary-menu, .site-header-account", {
+				duration: .2,
+				xPercent: 100,
+			//	yPercent: -20,
+				transformOrigin: "50% right",
+				ease: "sine.inOut",
+				onComplete: function(){
+					container.className = container.className.replace( ' toggled', '' );
+					button.setAttribute( 'aria-expanded', 'false' );
+					menu.setAttribute( 'aria-expanded', 'false' );
+					gsap.set("#primary-menu, .site-header-account", {
+						xPercent: 0,
+						yPercent: 0,
+					})
+				}
+			});
+			
 		} else {
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
+			gsap.from("#primary-menu, .site-header-account", {
+				duration: .1,
+				xPercent: 80,
+				transformOrigin: "50% right",
+				ease: "sine.inOut"
+			});
 		}
 	};
 
@@ -106,7 +126,7 @@
 
 	$('.main-navigation a').on('click', function(){
 		$('.main-navigation').removeClass('toggled');
-	});
+	})
 
 	$(function() {
     var header = $(".site-header");

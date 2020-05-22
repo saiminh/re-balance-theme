@@ -6,9 +6,11 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
+	height: 70px;
 	
 	@media (min-width: 480px) {
 		padding: 0 1.5rem;
+		height: 80px;
 	}
 
 	@media (min-width:  1100px) {
@@ -130,7 +132,7 @@
 			left: 0;
 			text-align: center;
 			font-size: 1.125rem;
-			background-color: #666;
+			background-color: darken($color__brand-primary, 0%);
 
 			@media (min-width:  1100px) {
 				position: static;
@@ -256,38 +258,33 @@
 	a { //the actual menu links
 		display: block;
 		text-decoration: none;
-		padding: .5em 0;
-		font-size: 1.33em;
+		padding: .75em;
+		font-size: 1rem;
 		font-weight: 300;
 		min-width: 250px;
-		border-bottom: none;
+		border-bottom: 1px solid #F3F3F3;
+		color: $color__text-main;
 
 		@media screen and (min-width:  1100px) {
 			display: inline-block;
-			font-size: 1rem;
-			color: $color__text-main;
 			padding: 0 .5rem;
 			border-bottom: none;
 			min-width: 0;
 
-			&:hover {
-				&:after {
-					content: '◟';
-					display: block;
-					position: absolute;
-					color: #FF9B7A;
-					top: 10px;
-					left: 50%;
-					font-size: 3rem;
-					transform: translateX(-100%) rotate(-45deg);
-				}
-			}
-
 		}
 	}
 
+	ul li:last-child a,
+	.user-menu a:last-child {
+		border-bottom: none;
+	}
+
 	.menu-movebreathe-container a {
-		color: $color__brand-primary;
+		color: #FFF;
+
+		@media (min-width: 1100px) {
+			color: $color__brand-primary;
+		}
 	}
 
 	
@@ -308,18 +305,16 @@
 
 .site-header-account,
 .site-header-login {
-	margin: 1rem;
-	display: none;
 	padding: 1.5rem;
 	position: relative;
-	border-radius: 6px;
+	border-radius: 0 0 0 6px;
 	background-color: #EEE;
 
 	@media (min-width:  1100px) {
 		display: block;
 		background-color: transparent;
 		padding: 0;
-		margin: 0;
+		border-radius: 6px;
 	}
 	
 	&:before {
@@ -333,7 +328,7 @@
 	}
 
 	& .user-menu {
-		border-top: 1px solid #ddd;
+		//border-top: 1px solid #ddd;
 		margin-top: 1rem;
 		
 		@media (min-width:  1100px) {
@@ -366,31 +361,39 @@
 
 
 .main-navigation  {
-	& ul,
+	
+	& ul:not(#movebreathe-menu),
 	& .site-header-account,
 	& .site-header-login {
-		display: none;
+		//display: none;
+		margin-top: -100vh;
+		margin-left: 100px;
+		margin-right: -50px;
 
 		@media (min-width:  1100px) {
 			display: block;
+			transform: none;
+			margin: 0;
 		}
 	}
 }
 
-.main-navigation.toggled  {
+@media (max-width: 1099px) {
+	.main-navigation.toggled  {
 
-	height: calc(100vh - 80px);
+		& ul:not(#movebreathe-menu),
+		& .site-header-account,
+		& .site-header-login {	
+			opacity: 1;
+			visibility: visible;
+			display: block;
+			margin-top: 0;
+			background-color: #FFF;
+		}
 
-	& ul,
-	& .site-header-account,
-	& .site-header-login {	
-		opacity: 1;
-		visibility: visible;
-		display: block;
-	}
-
-	& #movebreathe-menu {
-		display: flex;
+		& #movebreathe-menu {
+			display: flex;
+		}
 	}
 }
 
@@ -441,6 +444,7 @@
 	position: absolute;
 	top: .5rem;
 	right: calc(1rem - 7px);
+	z-index: 3;
 
 	@media (min-width: 480px) {
 		right: calc(2rem - 15px);

@@ -40,12 +40,10 @@
 
 			<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-
-			<div class="navTrigger">
-			<i></i><i></i><i></i>
-			<span class="menu-name">Menu</span>
-			</div>
-
+				<div class="navTrigger">
+				<i></i><i></i><i></i>
+				<span class="menu-name">Menu</span>
+				</div>
 			</button>
 				
 			<div class="menu-movebreathe-container">
