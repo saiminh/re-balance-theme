@@ -47,7 +47,14 @@
 						yPercent: 0,
 					})
 				}
-			});
+			})
+			
+			gsap.to(".content-area", {
+				duration: .2,
+				autoAlpha: 1,
+				scale: 1, 
+				transformOrigin: "50% 0"
+			})
 			
 		} else {
 			container.className += ' toggled';
@@ -58,7 +65,14 @@
 				xPercent: 80,
 				transformOrigin: "50% right",
 				ease: "sine.inOut"
-			});
+			})
+			
+			gsap.to(".content-area", {
+				duration: .2,
+				autoAlpha: .3,
+				scale: .9, 
+				transformOrigin: "50% 0"
+			})
 		}
 	};
 
