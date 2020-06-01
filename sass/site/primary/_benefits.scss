@@ -31,6 +31,9 @@
   }
 
   & > svg {
+    visibility: hidden;
+    opacity: 0; 
+    // ^ important to prevent rendering jump or these be shown elsewhere
     position: absolute;
     left: 0;
     height: 100%;

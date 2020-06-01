@@ -1631,8 +1631,8 @@ a {
 .loader:before, .loader:after {
   position: absolute;
   content: ''; }
-  .home.wpsmp-loggedout .loader:before, .page-template-page-registration .loader:before,
-  .home.wpsmp-loggedout .loader:after, .page-template-page-registration .loader:after {
+  .home.wpsmp-loggedout .loader:before, .page-template-page-registration .loader:before, .page-template-page-the-benefits .loader:before,
+  .home.wpsmp-loggedout .loader:after, .page-template-page-registration .loader:after, .page-template-page-the-benefits .loader:after {
     background: #9ACFE9; }
 
 .loader:before {
@@ -2143,6 +2143,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       padding: 2rem;
       display: flex; } }
   .illustration-stage > svg {
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     left: 0;
     height: 100%;

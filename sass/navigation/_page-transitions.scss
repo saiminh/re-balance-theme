@@ -40,7 +40,8 @@
   content: '';
 
   .home.wpsmp-loggedout &,
-  .page-template-page-registration & {
+  .page-template-page-registration &,
+  .page-template-page-the-benefits & {
     background: $color__brand-secondary;
   }
 }
