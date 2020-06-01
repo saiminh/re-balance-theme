@@ -13,7 +13,7 @@ get_header();
 		<main id="main" class="site-main">
       <div class="illustration-stage">
 
-      <svg id="illu-01" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 524" style="enable-background:new 0 0 445 524;" xml:space="preserve">
+      <svg id="illuOne" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 524" style="enable-background:new 0 0 445 524;" xml:space="preserve">
         <g id="illu01-sun">
           <circle id="illu01-sun--body" style="fill:#FFFFFF;" cx="218.5" cy="267.5" r="55.5"/>
           <g id="illu01-sun--rays">
@@ -99,7 +99,7 @@ get_header();
       </svg>
         <!-- End Illustraion 01 -->
 
-      <svg id="illu-02" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500;" xml:space="preserve">
+      <svg id="illuTwo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500;" xml:space="preserve">
         <g id="ofHXsL_1_">
           <g>
             <path style="fill:#010101;" d="M229.9,230.9c12.1-2.8,24.3-4.9,36.7-5.6c6.8-0.4,13.6-0.6,20.4-0.1c6,0.5,11.9,1,17.8,2.2
@@ -249,7 +249,7 @@ get_header();
         </g>
       </svg>
       <!-- End Illustration 02 -->
-      
+
       </div>
 
       <div class="content-scroll">
@@ -265,7 +265,6 @@ get_header();
       </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
 get_sidebar();
 get_footer();

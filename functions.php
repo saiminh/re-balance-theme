@@ -125,7 +125,7 @@ function rebalance_scripts() {
 	
 	wp_enqueue_style( 'rebalance-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'gsap', get_template_directory_uri() . '/js/gsap.min.js', array(), '20151215', true );
+	wp_enqueue_script( 'gsap', get_template_directory_uri() . '/js/gsap.min.js', array(), true );
 
 	wp_enqueue_script( 'swup', get_template_directory_uri() . '/js/swup.js', array(), '20151215', true );
 	

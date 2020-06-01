@@ -32,22 +32,29 @@
 
 	button.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			gsap.to("#primary-menu, .site-header-account", {
-				duration: .2,
-				xPercent: 100,
-			//	yPercent: -20,
-				transformOrigin: "50% right",
-				ease: "sine.inOut",
-				onComplete: function(){
+			if ($("#primary-menu, .site-header-account").length){
+				gsap.to("#primary-menu, .site-header-account", {
+					duration: .2,
+					xPercent: 100,
+				//	yPercent: -20,
+					transformOrigin: "50% right",
+					ease: "sine.inOut",
+					onComplete: function(){
+						container.className = container.className.replace( ' toggled', '' );
+						button.setAttribute( 'aria-expanded', 'false' );
+						menu.setAttribute( 'aria-expanded', 'false' );
+						gsap.set("#primary-menu, .site-header-account", {
+							xPercent: 0,
+							yPercent: 0,
+						})
+					}
+				})
+			} else {
+				
 					container.className = container.className.replace( ' toggled', '' );
 					button.setAttribute( 'aria-expanded', 'false' );
-					menu.setAttribute( 'aria-expanded', 'false' );
-					gsap.set("#primary-menu, .site-header-account", {
-						xPercent: 0,
-						yPercent: 0,
-					})
-				}
-			})
+					menu.setAttribute( 'aria-expanded', 'false' );									
+			}
 			
 			gsap.to(".content-area", {
 				duration: .2,
@@ -60,13 +67,15 @@
 			container.className += ' toggled';
 			button.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
-			gsap.from("#primary-menu, .site-header-account", {
-				duration: .1,
-				xPercent: 80,
-				transformOrigin: "50% right",
-				ease: "sine.inOut"
-			})
-			
+			if ($("#primary-menu, .site-header-account").length){
+				gsap.from("#primary-menu, .site-header-account", {
+					duration: .1,
+					xPercent: 80,
+					transformOrigin: "50% right",
+					ease: "sine.inOut"
+				})
+			}
+				
 			gsap.to(".content-area", {
 				duration: .2,
 				autoAlpha: .3,
@@ -241,31 +250,33 @@
 		});
 
 		// Membership registration links don't swup
-		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
-		
+		$('a[href$="membership-registration/"], a[href$="membership-registration"], a[href$="the-benefits"], a[href$="the-benefits/"]').attr("data-no-swup", "");
+		gsap.set("#illu-01, #illu-01 *, #illu-02, #illu-02 *, svg, svg *", {autoAlpha: 1, opacity: 1});
 		// Create timelines for benefits page to use in init
-		if ($("#illu-01").length) {
+		if (document.querySelector('#illuOne')) {						
+			
+			
 			//Animation: Raindrops falling
 			function raindrops(){
-				var tl = gsap.timeline({paused: true})					
-					.fromTo("#illu01-cloud", 
-						{ x: -700, y: 0, autoAlpha: 0 }, 
+				var tl = gsap.timeline({paused: true})			
+					.set("#illu01-cloud", { x: -700, y: 0, autoAlpha: 0 })	
+					.set("[id^='illu01-raindrop']", { autoAlpha: 0 })	
+					.set("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", { yPercent: 0, scaleY: 1 })
+					.set("#illu01-raindrop03, #illu01-raindrop05", { yPercent: 0, scaleY: 1 })
+					.to("#illu01-cloud", 
 						{ x: 0, y: 0, autoAlpha: 1, duration: 1 }, 0)
-					.fromTo("[id^='illu01-raindrop']", { autoAlpha: 0 }, { autoAlpha: 1, duration: .1 }, 1)
-					.fromTo("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", 
-						{ yPercent: 0, scaleY: 1 }, 
-						{ yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1)
-					.fromTo("#illu01-raindrop03, #illu01-raindrop05", 
-						{ yPercent: 0, scaleY: 1 }, 
-						{ yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1.15);
+					.to("[id^='illu01-raindrop']", { autoAlpha: 1, duration: .1 }, 1)
+					.to("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1.1)
+					.to("#illu01-raindrop03, #illu01-raindrop05", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1.25);
 				return tl;				
 			}
 
 			//Animation: Rotating sun
 			function sunrotate() {
 				var tl = gsap.timeline({paused: true})
-					.fromTo("#illu01-sun", { autoAlpha: 0}, { duration: .3, autoAlpha: 1 }, 0)
-					.fromTo("#illu01-sun", { xPercent: 0, yPercent: 0 }, { duration: 1, xPercent: -100, yPercent: -50 })
+					.set("#illu01-sun", {autoAlpha: 0, xPercent: 0, yPercent: 0 })
+					.to("#illu01-sun", { duration: .3, autoAlpha: 1 }, 0)
+					.to("#illu01-sun", { duration: 1, xPercent: -100, yPercent: -50 })
 					.to("#illu01-sun--rays", { duration: .5, transformOrigin: "50% 50%", scale: .9, repeat: -1, yoyo: true }, 0)
 					.to("#illu01-sun--rays", { duration: 1, rotationZ: 45, ease: "none", repeat: -1 }, 0);
 					return tl;
@@ -280,11 +291,11 @@
 			}
 			
 			//gsap.defaults({overwrite: "auto"});
-			var section_zero_tl = section_zero();
-			var section_one_tl = section_one();
-			var section_two_tl = section_two();
-			var section_three_tl = section_three();
-			var section_four_tl = section_four();
+			let section_zero_tl = section_zero();
+			let section_one_tl = section_one();
+			let section_two_tl = section_two();
+			let section_three_tl = section_three();
+			let section_four_tl = section_four();
 
 			function section_zero(){
 				var tl = gsap.timeline({paused: true})
@@ -295,18 +306,17 @@
 					.set("[id^='illu01-raindrop']", { autoAlpha: 0 })
 					.set("#illu01-head", { rotationZ: 0, yPercent: 0 })
 					.set("#illu01-smile", { scale: 1, transformOrigin: "50% 50%" })
-					.set("#illu-01", { autoAlpha: 0 })
-					.set("#illu-02", { autoAlpha: 0, yPercent: 30 })
-					.to("#illu-01", { autoAlpha: 1, duration: 1, onComplete: function(){console.log('zero complete')}}, 0);
+					.set("#illuOne", { autoAlpha: 0 })
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
+					.to("#illuOne", { autoAlpha: 1, duration: 1, onComplete: function(){console.log('zero complete')}}, 0);
 					return tl;
 			}
 
 			//Animation: When First Section is on screen
 			function section_one(){
 				var tl = gsap.timeline({paused: true})		
-				.call(function(){console.log("one start");}, 0)
-					.set("#illu-01", { autoAlpha: 1 })
-					.set("#illu-02", { autoAlpha: 0, yPercent: 30 })
+					.set("#illuOne", { autoAlpha: 1 })
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
 					.set("#illu01-head", { rotationZ: 0, yPercent: 0 })
 					.set("#illu01-smile", {scale: 1, transformOrigin: "50% 50%"})
 					.set("#illu01-sun", { autoAlpha: 0 })		
@@ -320,8 +330,8 @@
 
 			function section_two(){
 				var tl = gsap.timeline({paused: true})
-					.set("#illu-01", { autoAlpha: 1, yPercent: 0 })
-					.set("#illu-02", { autoAlpha: 0, yPercent: 30 })
+					.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
 					.set("#illu01-smile", {scale: -1, transformOrigin: "50% 50%"})
 					.set("#illu01-head", { rotationZ: 3, yPercent: 20 })
 					.set("#illu01-lightning-left, #illu01-lightning-right", {x: 0, y: 0, autoAlpha: 1})
@@ -339,10 +349,10 @@
 
 			function section_three(){
 				var tl = gsap.timeline({paused: true})
-					.set("#illu-01", { autoAlpha: 1, yPercent: 0 })
-					.set("#illu-02", { autoAlpha: 0, yPercent: 30 })
-					.to("#illu-01", { duration: .3, yPercent: -30, autoAlpha: 0 })
-					.to("#illu-02", { duration: .3, yPercent: 0, autoAlpha: 1 });
+					.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
+					.to("#illuOne", { duration: .3, yPercent: -30, autoAlpha: 0 })
+					.to("#illuTwo", { duration: .3, yPercent: 0, autoAlpha: 1 });
 					return tl;
 			}			
 			
@@ -350,45 +360,61 @@
 				var tl = gsap.timeline({paused: true});
 				return tl;
 			}
+
+			// scrNav function 
+			function scrNav() {
+				var sTop = $(window).scrollTop() + ( $(window).height() / 2 );
+				$('.section').each(function() {				
+					var id = $(this).attr('id'),
+							offset = $(this).offset().top-1,
+							height = $(this).height(),
+							thisTl = eval(id.toString()+"_tl");
+							
+					if(sTop >= offset && sTop <= offset + height) {
+						if (!thisTl.isActive() && ( thisTl.progress() != 1 ) ){
+							thisTl.play(0);							
+						}
+					}
+					else { //scrolled past back up
+						if(thisTl.isActive() && id == "section_two"){
+							thisTl.pause();
+						}											
+						else if ( thisTl.isActive() || thisTl.progress() == 1 ) {
+							thisTl.pause(0);
+						}	
+						else{}
+					}
+				});
+			}
+			scrNav();
+
+
+			$(window).on('scroll', function(){
+				scrNav();
+				});
 		
 		} else {
 			console.log('illu-01 doesnt exist');
 		}
 
-		// Benefits page function
 
-		// scrNav function 
-		function scrNav() {
-			var sTop = $(window).scrollTop() + ( $(window).height() / 2 );
-			$('.section').each(function() {
-				var id = $(this).attr('id'),
-						offset = $(this).offset().top-1,
-						height = $(this).height(),
-						tl = eval(id.toString()+"_tl");
-				if(sTop >= offset && sTop <= offset + height) {
-					console.log("My offset is: "+offset+" My height is: "+height+" sTop is: "+sTop);
-					if (!tl.isActive() && ( tl.progress() != 1 ) ){
-						tl.play(0);							
-					}
-				}
-				else { //scrolled past back up
-					if(id == "section_two"){
-						tl.pause();
-					}											
-					else {
-						tl.pause(0);
-					}	
-				}
-			});
-		}
-		scrNav();
-
-
-		$(window).on('scroll', function(){
-			scrNav();
-			});
 
 	} // end init() function
+
+	// Begin cleanup unload function
+	function unload() {
+		console.log("before onload");
+    if (document.querySelector('#illuOne')) {
+
+			$(window).off('scroll', function(){
+				scrNav();
+				});
+			console.log("Benefits onload");
+		}
+		console.log("after onload");
+	}
+	
+
 	
 	const jsoptions = [
 		{
@@ -396,20 +422,20 @@
 		  to: '(.*)',
 		  in: function(next) {
 			document.querySelector('#swup').style.opacity = 0;
-			TweenLite.to($('.loading-animation'), .15, {				
+			gsap.to($('.loading-animation'), .15, {				
 				autoAlpha: 0
 			});
-			TweenLite.to(document.querySelector('#swup'), 0.5, {
+			gsap.to(document.querySelector('#swup'), 0.5, {
 			  opacity: 1,
 			  onComplete: next
 			});
 		  },
 		  out: (next) => {
 			document.querySelector('#swup').style.opacity = 1;
-			TweenLite.to($('.loading-animation'), .15, {				
+			gsap.to($('.loading-animation'), .15, {				
 				autoAlpha: 1
 			});
-			TweenLite.to(document.querySelector('#swup'), 0.5, {
+			gsap.to(document.querySelector('#swup'), 0.5, {
 			  opacity: 0,
 			  onComplete: next
 			});
@@ -421,12 +447,12 @@
 		animateHistoryBrowsing: true,
 		plugins: [new SwupBodyClassPlugin(), new SwupJsPlugin(jsoptions),]
 	});
-	
+	// run swup the first time
 	init();
-	
 	// this event runs for every page view after initial load
 	swup.on('contentReplaced', init);
-
+	// to clean up 
+	swup.on('willReplaceContent', unload);
 	// Mobile Menu search
 	$('.toggle-search').on('click', function(e){
 		e.preventDefault;
