@@ -324,7 +324,7 @@
 					.add(lightning().play(0), 0)					
 					.add(raindrops().play(0), 0)
 					.to("#illu01-head", { duration: 1.5, rotationZ: 2, yPercent: 20 }, 1)
-					.to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, .6)
+					.to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, 1.25)
 				return tl;
 			}
 
@@ -340,8 +340,8 @@
 					.add(sunrotate().play(0), 0)
 					.to("#illu01-cloud", { duration: .25, y: -200, autoAlpha: 0 }, 0.1)
 					.to("[id^='illu01-raindrop']", { duration: .1, autoAlpha: 0 }, 0.1)
-					.to("#illu01-lightning-left", { duration: .25, x: -100, autoAlpha: 0 }, 0.1)
-					.to("#illu01-lightning-right", { duration: .25, x: 100, autoAlpha: 0 }, 0.1)
+					.to("#illu01-lightning-left", { duration: .25, x: -100, y: 0, autoAlpha: 0 }, 0.1)
+					.to("#illu01-lightning-right", { duration: .25, x: 100, y: 0, autoAlpha: 0 }, 0.1)
 					.to("#illu01-smile", { scaleY: 1, duration: .5, ease: "elastic.out( 1, 0.3)" }, 0)
 					.to("#illu01-head", { rotationZ: 0, yPercent: 0, duration: .3 }, 0.1)
 					return tl;
@@ -363,14 +363,14 @@
 
 			// scrNav function 
 			function scrNav() {
-				var sTop = $(window).scrollTop() + ( $(window).height() / 2 );
+				var sTop = Math.round($(window).scrollTop() + ( $(window).height() / 2 ));
 				$('.section').each(function() {				
 					var id = $(this).attr('id'),
-							offset = $(this).offset().top-1,
-							height = $(this).height(),
+							offset = Math.round($(this).offset().top-1),
+							height = Math.round($(this).outerHeight()),
 							thisTl = eval(id.toString()+"_tl");
-							
-					if(sTop >= offset && sTop <= offset + height) {
+						console.log("I am "+id+" Offset: "+offset+" Height: "+height+" sTop: "+sTop);
+					if(sTop >= offset && sTop < offset + height) {
 						if (!thisTl.isActive() && ( thisTl.progress() != 1 ) ){
 							thisTl.play(0);							
 						}
@@ -387,6 +387,32 @@
 				});
 			}
 			scrNav();
+
+			// for scroll snap within scroll-conatiner
+			// function scrNav() {
+			// 	var sTop = $(".content-scroll").scrollTop() + $(".content-scroll").height()/2;
+			// 	$('.section').each(function() {				
+			// 		var id = $(this).attr('id'),
+			// 				offset = ($(this).position().top)*(-1),
+			// 				height = $(this).outerHeight(),
+			// 				thisTl = eval(id.toString()+"_tl");
+			// 				console.log("I am "+id+" Offset: "+offset+" Height: "+height+" sTop: "+sTop);
+			// 		if( offset >= -1 && offset < height){//sTop >= offset && sTop <= offset + height) {
+			// 			if (!thisTl.isActive() && ( thisTl.progress() != 1 ) ){
+			// 				thisTl.play(0);							
+			// 			}
+			// 		}
+			// 		else { 
+			// 			if(thisTl.isActive() && id == "section_two"){
+			// 				thisTl.pause();
+			// 			}											
+			// 			else if ( thisTl.isActive() || thisTl.progress() == 1 ) {
+			// 				thisTl.pause(0);
+			// 			}	
+			// 			else{}
+			// 		}
+			// 	});
+			// }
 
 
 			$(window).on('scroll', function(){
