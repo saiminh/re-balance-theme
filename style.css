@@ -2145,6 +2145,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       padding: 2rem;
       display: flex; } }
   .illustration-stage > svg {
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     left: 0;
     height: 100%;
