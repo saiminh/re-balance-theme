@@ -1,6 +1,10 @@
 .page-template-page-the-benefits {
     background-color: #9ACFE9;
-    //font-size: 1.15rem;
+    font-size: 1.15rem;
+
+    @media (min-width: 1100px){
+      font-size: 1.2rem;
+    }
   }
 
   .page-template-page-the-benefits .site-content {

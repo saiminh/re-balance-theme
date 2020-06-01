@@ -2119,7 +2119,11 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   font-weight: 600; }
 
 .page-template-page-the-benefits {
-  background-color: #9ACFE9; }
+  background-color: #9ACFE9;
+  font-size: 1.15rem; }
+  @media (min-width: 1100px) {
+    .page-template-page-the-benefits {
+      font-size: 1.2rem; } }
 
 .page-template-page-the-benefits .site-content {
   padding: 0 1.5rem; }
