@@ -264,10 +264,10 @@
 					.set("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", { yPercent: 0, scaleY: 1 })
 					.set("#illu01-raindrop03, #illu01-raindrop05", { yPercent: 0, scaleY: 1 })
 					.to("#illu01-cloud", 
-						{ x: 0, y: 0, autoAlpha: 1, duration: 1 }, 0)
-					.to("[id^='illu01-raindrop']", { autoAlpha: 1, duration: .1 }, 1)
-					.to("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1.1)
-					.to("#illu01-raindrop03, #illu01-raindrop05", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, 1.25);
+						{ x: 0, y: 0, autoAlpha: 1, duration: .6 }, 0)
+					.to("[id^='illu01-raindrop']", { autoAlpha: 1, duration: .1 }, .6)
+					.to("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, .6)
+					.to("#illu01-raindrop03, #illu01-raindrop05", { yPercent: 420, scaleY: .5, repeat: -1, duration: .3 }, .75);
 				return tl;				
 			}
 
@@ -276,7 +276,7 @@
 				var tl = gsap.timeline({paused: true})
 					.set("#illu01-sun", {autoAlpha: 0, xPercent: 0, yPercent: 0 })
 					.to("#illu01-sun", { duration: .3, autoAlpha: 1 }, 0)
-					.to("#illu01-sun", { duration: 1, xPercent: -100, yPercent: -50 })
+					.to("#illu01-sun", { duration: 1, xPercent: -60, yPercent: -60 }, 0)
 					.to("#illu01-sun--rays", { duration: .5, transformOrigin: "50% 50%", scale: .9, repeat: -1, yoyo: true }, 0)
 					.to("#illu01-sun--rays", { duration: 1, rotationZ: 45, ease: "none", repeat: -1 }, 0);
 					return tl;
@@ -323,7 +323,7 @@
 					.set("[id^='illu01-raindrop']", { autoAlpha: 0 })
 					.add(lightning().play(0), 0)					
 					.add(raindrops().play(0), 0)
-					.to("#illu01-head", { duration: 3, rotationZ: 2, yPercent: 20 }, .6)
+					.to("#illu01-head", { duration: 1.5, rotationZ: 2, yPercent: 20 }, 1)
 					.to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, .6)
 				return tl;
 			}
@@ -402,17 +402,17 @@
 	} // end init() function
 
 	// Begin cleanup unload function
-	function unload() {
-		console.log("before onload");
-    if (document.querySelector('#illuOne')) {
+	// function unload() {
+	// 	console.log("before onload");
+  //   if (document.querySelector('#illuOne')) {
 
-			$(window).off('scroll', function(){
-				scrNav();
-				});
-			console.log("Benefits onload");
-		}
-		console.log("after onload");
-	}
+	// 		$(window).off('scroll', function(){
+	// 			scrNav();
+	// 			});
+	// 		console.log("Benefits onload");
+	// 	}
+	// 	console.log("after onload");
+	// }
 	
 
 	
@@ -452,7 +452,7 @@
 	// this event runs for every page view after initial load
 	swup.on('contentReplaced', init);
 	// to clean up 
-	swup.on('willReplaceContent', unload);
+	//swup.on('willReplaceContent', unload);
 	// Mobile Menu search
 	$('.toggle-search').on('click', function(e){
 		e.preventDefault;

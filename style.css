@@ -2163,7 +2163,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         align-self: center; } }
 
 @media (min-width: 768px) {
-  #illu-01 {
+  #illuOne {
     align-self: flex-start;
     left: 2rem; } }
 
