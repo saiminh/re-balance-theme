@@ -255,7 +255,8 @@
 		// Create timelines for benefits page to use in init
 		if (document.querySelector('#illuOne')) {						
 			
-			
+			gsap.registerPlugin(ScrollTrigger);
+		
 			//Animation: Raindrops falling
 			function raindrops(){
 				var tl = gsap.timeline({paused: true})			
@@ -289,6 +290,16 @@
 					.to("#illu01-lightning-right", { y: 0, x: 0, autoAlpha: 1, ease: "elastic.out( 1, 0.3)", duration: .5 }, .3);
 				return tl;
 			}
+
+			gsap.set("#illu01-lightning-left", { y: -300, x: -100, autoAlpha: 0 }, 0);
+			gsap.set("#illu01-lightning-right", { y: -300, x: 100, autoAlpha: 0 }, 0)
+			gsap.set("#illu01-cloud", { x: -700, autoAlpha: 0 }, 0)
+			gsap.set("#illu01-sun", { autoAlpha: 0 }, 0)
+			gsap.set("[id^='illu01-raindrop']", { autoAlpha: 0 }, 0)
+			gsap.set("#illu01-head", { rotationZ: 0, yPercent: 0 }, 0)
+			gsap.set("#illu01-smile", { scale: 1, transformOrigin: "50% 50%" }, 0)
+			gsap.set("#illuOne", { autoAlpha: 0 }, 0)
+			gsap.set("#illuTwo", { autoAlpha: 0, yPercent: 30 }, 0)
 			
 			//gsap.defaults({overwrite: "auto"});
 			let section_zero_tl = section_zero();
@@ -297,24 +308,46 @@
 			let section_three_tl = section_three();
 			let section_four_tl = section_four();
 
+			ScrollTrigger.defaults({
+				toggleActions: "restart pause restart pause",
+			});
+
 			function section_zero(){
-				var tl = gsap.timeline({paused: true})
-					.call(function(){console.log("zero start");}, 0)
-					.set("#illu01-lightning-left", { y: -300, x: -100, autoAlpha: 0 })
-					.set("#illu01-lightning-right", { y: -300, x: 100, autoAlpha: 0 })
-					.set("#illu01-cloud", { x: -700, autoAlpha: 0 })
-					.set("[id^='illu01-raindrop']", { autoAlpha: 0 })
-					.set("#illu01-head", { rotationZ: 0, yPercent: 0 })
-					.set("#illu01-smile", { scale: 1, transformOrigin: "50% 50%" })
-					.set("#illuOne", { autoAlpha: 0 })
-					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
+				var tl = gsap.timeline({
+					paused: true,
+					scrollTrigger: {
+						trigger: "#section_zero",
+						toggleActions: "restart pause restart pause",
+						start: "top center",
+						end: "bottom center"
+					}
+				})
+				//	.call(function(){console.log("zero start");}, 0)
+					.set("#illu01-lightning-left", { y: -300, x: -100, autoAlpha: 0 }, 0)
+					.set("#illu01-lightning-right", { y: -300, x: 100, autoAlpha: 0 }, 0)
+					.set("#illu01-cloud", { x: -700, autoAlpha: 0 }, 0)
+					.set("#illu01-sun", { autoAlpha: 0 }, 0)
+					.set("[id^='illu01-raindrop']", { autoAlpha: 0 }, 0)
+					.set("#illu01-head", { rotationZ: 0, yPercent: 0 }, 0)
+					.set("#illu01-smile", { scale: 1, transformOrigin: "50% 50%" }, 0)
+					.set("#illuOne", { autoAlpha: 0 }, 0)
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 }, 0)
 					.to("#illuOne", { autoAlpha: 1, duration: 1, onComplete: function(){console.log('zero complete')}}, 0);
 					return tl;
 			}
 
 			//Animation: When First Section is on screen
 			function section_one(){
-				var tl = gsap.timeline({paused: true})		
+				var tl = gsap.timeline({
+					paused: true,		
+					scrollTrigger: {
+						trigger: "#section_one",
+						toggleActions: "restart pause restart pause",
+						start: "top center",
+						end: "bottom center"
+						
+					}
+				})
 					.set("#illuOne", { autoAlpha: 1 })
 					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
 					.set("#illu01-head", { rotationZ: 0, yPercent: 0 })
@@ -324,12 +357,20 @@
 					.add(lightning().play(0), 0)					
 					.add(raindrops().play(0), 0)
 					.to("#illu01-head", { duration: 1.5, rotationZ: 2, yPercent: 20 }, 1)
-					.to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, 1.25)
+					.to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, 1.25);
 				return tl;
 			}
 
 			function section_two(){
-				var tl = gsap.timeline({paused: true})
+				var tl = gsap.timeline({
+					paused: true,
+					scrollTrigger: {
+						trigger: "#section_two",
+						toggleActions: "restart pause restart pause",
+						start: "top center",
+						end: "bottom center"
+					}
+				})
 					.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
 					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
 					.set("#illu01-smile", {scale: -1, transformOrigin: "50% 50%"})
@@ -343,12 +384,20 @@
 					.to("#illu01-lightning-left", { duration: .25, x: -100, y: 0, autoAlpha: 0 }, 0.1)
 					.to("#illu01-lightning-right", { duration: .25, x: 100, y: 0, autoAlpha: 0 }, 0.1)
 					.to("#illu01-smile", { scaleY: 1, duration: .5, ease: "elastic.out( 1, 0.3)" }, 0)
-					.to("#illu01-head", { rotationZ: 0, yPercent: 0, duration: .3 }, 0.1)
+					.to("#illu01-head", { rotationZ: 0, yPercent: 0, duration: .3 }, 0.1);
 					return tl;
 				}
 
 			function section_three(){
-				var tl = gsap.timeline({paused: true})
+				var tl = gsap.timeline({
+					paused: true,
+					scrollTrigger: {
+						trigger: "#section_three",
+						toggleActions: "restart pause restart pause",
+						start: "top center",
+						end: "bottom center"
+					}
+				})
 					.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
 					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
 					.to("#illuOne", { duration: .3, yPercent: -30, autoAlpha: 0 })
@@ -357,67 +406,19 @@
 			}			
 			
 			function section_four(){
-				var tl = gsap.timeline({paused: true});
+				var tl = gsap.timeline({
+					paused: true,
+					scrollTrigger: {
+						trigger: "#section_four",
+						toggleActions: "restart pause restart pause",
+						start: "top center",
+						end: "bottom center"
+					}
+				})
+					.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
+					.set("#illuTwo", { autoAlpha: 0, yPercent: 30 });
 				return tl;
 			}
-
-			// scrNav function 
-			function scrNav() {
-				var sTop = Math.round($(window).scrollTop() + ( $(window).height() / 2 ));
-				$('.section').each(function() {				
-					var id = $(this).attr('id'),
-							offset = Math.round($(this).offset().top-1),
-							height = Math.round($(this).outerHeight()),
-							thisTl = eval(id.toString()+"_tl");
-						console.log("I am "+id+" Offset: "+offset+" Height: "+height+" sTop: "+sTop);
-					if(sTop >= offset && sTop < offset + height) {
-						if (!thisTl.isActive() && ( thisTl.progress() != 1 ) ){
-							thisTl.play(0);							
-						}
-					}
-					else { //scrolled past back up
-						if(thisTl.isActive() && id == "section_two"){
-							thisTl.pause();
-						}											
-						else if ( thisTl.isActive() || thisTl.progress() == 1 ) {
-							thisTl.pause(0);
-						}	
-						else{}
-					}
-				});
-			}
-			scrNav();
-
-			// for scroll snap within scroll-conatiner
-			// function scrNav() {
-			// 	var sTop = $(".content-scroll").scrollTop() + $(".content-scroll").height()/2;
-			// 	$('.section').each(function() {				
-			// 		var id = $(this).attr('id'),
-			// 				offset = ($(this).position().top)*(-1),
-			// 				height = $(this).outerHeight(),
-			// 				thisTl = eval(id.toString()+"_tl");
-			// 				console.log("I am "+id+" Offset: "+offset+" Height: "+height+" sTop: "+sTop);
-			// 		if( offset >= -1 && offset < height){//sTop >= offset && sTop <= offset + height) {
-			// 			if (!thisTl.isActive() && ( thisTl.progress() != 1 ) ){
-			// 				thisTl.play(0);							
-			// 			}
-			// 		}
-			// 		else { 
-			// 			if(thisTl.isActive() && id == "section_two"){
-			// 				thisTl.pause();
-			// 			}											
-			// 			else if ( thisTl.isActive() || thisTl.progress() == 1 ) {
-			// 				thisTl.pause(0);
-			// 			}	
-			// 			else{}
-			// 		}
-			// 	});
-			// }
-
-
-			$(window).on('scroll', function(){
-				scrNav();
-				});
 		
 		} else {
 			console.log('illu-01 doesnt exist');
