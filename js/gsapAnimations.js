@@ -223,8 +223,8 @@ function animateBenefits(){
     scale: 1,
     scrollTrigger: {
       trigger: "#section_problemWithSitting",    
-      start: "top center",
-      end: "15% center",
+      start: "-10% center",
+      end: "0% center",
       scrub: true     
     }
   });
@@ -238,10 +238,10 @@ function animateBenefits(){
       trigger: "#section_problemWithSitting",
       scrub: true,
       ease: "none",
-      start: "top center",
-      end: "20% center"
+      start: "-10% center",
+      end: "10% center"
     },
-    yPercent: -200,
+    yPercent: 200,
     autoAlpha: 0,
     scale: 1.5
   });
@@ -257,8 +257,8 @@ function animateBenefits(){
       trigger: "#section_problemWithSitting",
       scrub: true,
       ease: "none",
-      start: "top center",
-      end: "20% center"
+      start: "-10% center",
+      end: "0% center"
     }
   });
 
