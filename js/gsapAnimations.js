@@ -115,12 +115,11 @@ function animateBenefits(){
       var nwc = counter.var.numberFormat(0);
       tal.innerHTML = nwc;
     },
-    ease:Circ.easeOut,
+    ease: "none",
     scrollTrigger: {
       trigger: "#section_stressAndBurnout",      
       start: "-15% center",
       end: "50% center",
-      ease: "power4.out",
       scrub: true
     }
   });
@@ -148,8 +147,8 @@ function animateBenefits(){
       trigger: "#section_moneyloss",
       scrub: .5,
       ease: "none",
-      start: "0% center",
-      end: "20% center"
+      start: "-20% center",
+      end: "0% center"
     }
   });
 
@@ -161,8 +160,8 @@ function animateBenefits(){
       trigger: "#section_moneyloss",
       scrub: .5,
       ease: "none",
-      start: "0% center",
-      end: "20% center"
+      start: "-20% center",
+      end: "0% center"
     },
     yPercent: 0,
     autoAlpha: 1,
