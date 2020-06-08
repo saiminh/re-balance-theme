@@ -363,7 +363,11 @@ get_header();
 
             <p>How many hours a day do you spend sitting?  7? 8? 10+ hours? Science has shown us that prolonged periods of sitting are bad for you. For those of us who work at a desk, this is a pretty inconvenient truth!</p>
             
-            <p>So what actually happens when we sit? Normally when our muscles move, they pump fresh blood and oxygen through the body, however when we’re in a stationary seated position our muscles aren’t moving as frequently, so blood flows more slowly through the body. As blood flow slows, so does the body. This means the organs and brain receive less oxygen leading to reduced focus and concentration. Muscles that move less frequently burn less fat, and this contributes to weight gain, and fatty acids are more easily able to clog arteries which increases the risk of high blood pressure and heart disease. Lastly, sitting with a poor and hunched posture causes the abdominal muscles to soften while the lower back tightens and rounds, hip flexors become short and tight, and tilting the head forwards towards your screen overextends the neck and shoulders causing tension and reducing flexibility in the spine. </p>
+            <p>So what actually happens when we sit? Normally when our muscles move, they pump fresh blood and oxygen through the body, however when we’re in a stationary seated position our muscles aren’t moving as frequently, so blood flows more slowly through the body. As blood flow slows, so does the body.</p>
+            
+            <p> This means the organs and brain receive less oxygen leading to reduced focus and concentration. Muscles that move less frequently burn less fat, and this contributes to weight gain, and fatty acids are more easily able to clog arteries which increases the risk of high blood pressure and heart disease.</p>
+            
+            <p>Lastly, sitting with a poor and hunched posture causes the abdominal muscles to soften while the lower back tightens and rounds, hip flexors become short and tight, and tilting the head forwards towards your screen overextends the neck and shoulders causing tension and reducing flexibility in the spine. </p>
 
           </div>
         </div>
