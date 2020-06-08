@@ -56,6 +56,7 @@ function animateBenefits(){
     gsap.set("#illuOne", { autoAlpha: 0 }, 0)
     gsap.set("#illu-workdays", { autoAlpha: 0, yPercent: 0 }, 0)
     gsap.set("#illu-moneyloss", { autoAlpha: 0, yPercent: 200 }, 0)
+    gsap.set("#lossnumber", { scale: 1 }, 0)
     gsap.set("#clock", {autoAlpha: 0}, 0)
     
     let section_one_tl = section_one();
@@ -118,11 +119,24 @@ function animateBenefits(){
     scrollTrigger: {
       trigger: "#section_stressAndBurnout",      
       start: "-15% center",
-      //end: "15% center",
+      end: "50% center",
       ease: "power4.out",
-      duration: 15
+      scrub: true
     }
   });
+
+  //bounce
+  gsap.fromTo("#number-workdays", {
+    scale: 1.2
+  },{
+    scale: 1,
+    ease: "elastic.out( 1, 0.3)",
+    duration: .8,
+    scrollTrigger: {
+      trigger: "#section_stressAndBurnout",      
+      start: "50% center"
+    }
+  })
 
   gsap.fromTo("#illu-workdays", {
     yPercent: 0,
@@ -180,12 +194,26 @@ function animateBenefits(){
     ease:Circ.easeOut,
     scrollTrigger: {
       trigger: "#section_moneyloss",
-      scrub: 1,
+      scrub: true,
       start: "0% center",
       end: "60% center",
       ease: "power4.out"
     }
   });
+
+  //bounce
+  gsap.fromTo("#lossnumber", {
+    scale: 1.3,
+    transformOrigin: "50% 100%"
+  },{
+    scale: 1,
+    ease: "elastic.out( 1, 0.3)",
+    duration: .8,
+    scrollTrigger: {
+      trigger: "#section_moneyloss",      
+      start: "60% center"
+    }
+  })
 
   //section_problemWithSitting
   
@@ -296,7 +324,8 @@ function animateBenefits(){
         .add(lightning().play(0), 0)					
         .add(raindrops().play(0), 0)
         .to("#illu01-head", { duration: 0.5, rotationZ: 2, yPercent: 20 }, .5)
-        .to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, .3);
+        .to("#illu01-smile", { scaleY: -1, duration: .5, ease: "elastic.out( 1, 0.3)"}, .3)
+        .set("#lossnumber", { scale: 1 }, 0);
       return tl;
     }
   
@@ -318,6 +347,7 @@ function animateBenefits(){
         .set("#illu01-lightning-left, #illu01-lightning-right", {x: 0, y: 0, autoAlpha: 1})
         .set("#illu01-cloud", { x: 0, y: 0, autoAlpha: 1 })
         .set("[id^='illu01-raindrop']", { x: 0, y: 0, autoAlpha: 1 })
+        .set("#lossnumber", { scale: 1 }, 0)
         .add(sunrotate().play(0), 0)
         .to("#illu01-cloud", { duration: .25, y: -200, autoAlpha: 0 }, 0.1)
         .to("[id^='illu01-raindrop']", { x: 0, y: -200, duration: .1, autoAlpha: 0 }, 0.1)
