@@ -14,12 +14,13 @@
 .illustration-stage {
   position: fixed;
   top: 70px;
-  padding: 1em 0;
+  padding: 20px 0 0 0;
   text-align: center;
   width: calc(100% - 3rem);
-  height: calc(50% - 80px);
+  height: calc(50% - 50px);
   background-color: #9ACFE9;
   z-index: 1;
+  overflow: hidden;
 
   @media (min-width: 768px){
     background-color: transparent;
@@ -28,6 +29,7 @@
     top: 80px;
     padding: 2rem;
     display: flex;
+    overflow: visible;
   }
 
   & > svg {
@@ -36,7 +38,7 @@
     // ^ important to prevent rendering jump or these be shown elsewhere
     position: absolute;
     left: 0;
-    height: 100%;
+    height: calc(100% - 20px);
     width: 100%;
     overflow: visible;
 
@@ -69,11 +71,9 @@
 
     & .section {
       scroll-snap-align: start;
-      padding: calc(22.5vh - 40px) 0;
       position: relative;
       
       @media (min-width: 768px){
-        padding: 0 0 calc(22.5vh - 40px) 0;
       }
     }
 }
@@ -103,7 +103,7 @@
 
 
 #section_one {
-  padding-top: calc(40vh - 1px);
+  padding-top: calc(30vh - 1px);
 
   @media (min-width: 768px){
     padding-top: 0;

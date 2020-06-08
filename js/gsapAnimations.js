@@ -8,6 +8,7 @@ function animateBenefits(){
   if (document.querySelector('#illuOne')) {						
     
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(DrawSVGPlugin);
   
     //Animation: Raindrops falling
     function raindrops(){
@@ -53,47 +54,227 @@ function animateBenefits(){
     gsap.set("#illu01-head", { rotationZ: 0, yPercent: 0 }, 0)
     gsap.set("#illu01-smile", { scale: 1, transformOrigin: "50% 50%" }, 0)
     gsap.set("#illuOne", { autoAlpha: 0 }, 0)
-    gsap.set("#illuTwo", { autoAlpha: 0, yPercent: 0 }, 0)
+    gsap.set("#illu-workdays", { autoAlpha: 0, yPercent: 0 }, 0)
+    gsap.set("#illu-moneyloss", { autoAlpha: 0, yPercent: 200 }, 0)
+    gsap.set("#clock", {autoAlpha: 0}, 0)
     
-    //gsap.defaults({overwrite: "auto"});
-   // let section_zero_tl = section_zero();
     let section_one_tl = section_one();
     let section_two_tl = section_two();
-    let section_three_tl = section_three();
-    let section_four_tl = section_four();
   
     ScrollTrigger.defaults({
       toggleActions: "restart pause restart pause",
     });
   
    gsap.fromTo("#illuOne", {
-      xPercent: 0
+      yPercent: 0
    }, {
      scrollTrigger: {
-        trigger: "#section_three",
+        trigger: "#section_stressAndBurnout",
         scrub: .5,
         ease: "none",
-        start: "top center",
-        end: "bottom center"
+        start: "-15% center",
+        end: "top center"
      },
-     xPercent: -300
+     yPercent: -120
    });
 
-   gsap.fromTo("#illuTwo", {
-    xPercent: 200,
-    autoAlpha: 0
+   gsap.fromTo("#illu-workdays", {
+    yPercent: 200,
+    autoAlpha: 0,
+    scale: 1
    }, {
     scrollTrigger: {
-       trigger: "#section_three",
+       trigger: "#section_stressAndBurnout",
        scrub: .5,
        ease: "none",
-       start: "top center",
-       end: "25% center"
+       start: "-20% center",
+       end: "0% center"
     },
-    xPercent: 0,
-    autoAlpha: 1
+    yPercent: 0,
+    autoAlpha: 1,
+    scale: 1
   });
+
+  Number.prototype.numberFormat = function(decimals, dec_point, thousands_sep) {
+    dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
+    thousands_sep = typeof thousands_sep !== 'undefined' ? thousands_sep : ',';
+
+    var parts = this.toFixed(decimals).split('.');
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_sep);
+
+    return parts.join(dec_point);
+  }
+
+  var counter = { var: 10000000 };
+  var tal = document.getElementById("number-workdays");
+    
+  gsap.to(counter, 5, {
+    var: 12800000, 
+    onUpdate: function () {
+      var nwc = counter.var.numberFormat(0);
+      tal.innerHTML = nwc;
+    },
+    ease:Circ.easeOut,
+    scrollTrigger: {
+      trigger: "#section_stressAndBurnout",      
+      start: "-15% center",
+      //end: "15% center",
+      ease: "power4.out",
+      duration: 15
+    }
+  });
+
+  gsap.fromTo("#illu-workdays", {
+    yPercent: 0,
+    scale: 1
+  },{
+    yPercent: -27,
+    scale: .6,
+    scrollTrigger: {
+      trigger: "#section_moneyloss",
+      scrub: .5,
+      ease: "none",
+      start: "0% center",
+      end: "20% center"
+    }
+  });
+
+  gsap.fromTo("#illu-moneyloss", {
+    yPercent: 200,
+    autoAlpha: 0,
+  }, {
+    scrollTrigger: {
+      trigger: "#section_moneyloss",
+      scrub: .5,
+      ease: "none",
+      start: "0% center",
+      end: "20% center"
+    },
+    yPercent: 0,
+    autoAlpha: 1,
+  });
+
+  gsap.fromTo("#losspath", {
+    drawSVG: "0%"
+  },{
+    drawSVG: "100%",
+    scrollTrigger: {
+      trigger: "#section_moneyloss",
+      scrub: 1,
+      ease: "power3.in",
+      start: "0% center",
+      end: "60% center",
+      markers: true
+    }    
+  });
+
+  var loss = { var: 2 };
+  var losstal = document.getElementById("lossnumber");
   
+  gsap.to(loss, 5, {
+    var: 600, 
+    onUpdate: function () {
+      var somethingelse = loss.var.numberFormat(0);
+      losstal.innerHTML = somethingelse;
+    },
+    ease:Circ.easeOut,
+    scrollTrigger: {
+      trigger: "#section_moneyloss",
+      scrub: 1,
+      start: "0% center",
+      end: "60% center",
+      ease: "power4.out"
+    }
+  });
+
+  //section_problemWithSitting
+  
+  gsap.fromTo("#illu-workdays", {
+    yPercent: -27,
+    scale: .6
+  },{
+    yPercent: 0,
+    scale: 1,
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",    
+      start: "top center",
+      end: "15% center",
+      scrub: true     
+    }
+  });
+
+  gsap.fromTo("#illu-moneyloss", {
+    yPercent: 0,
+    autoAlpha: 1,
+    scale: 1
+  }, {
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",
+      scrub: true,
+      ease: "none",
+      start: "top center",
+      end: "20% center"
+    },
+    yPercent: -200,
+    autoAlpha: 0,
+    scale: 1.5
+  });
+
+  gsap.fromTo("#calendar, #number-workdays", {
+    autoAlpha: 1,
+    scale: 1,
+    transformOrigin: "50% 0%"
+  },{
+    autoAlpha: 0,
+    scale: 0.3,
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",
+      scrub: true,
+      ease: "none",
+      start: "top center",
+      end: "20% center"
+    }
+  });
+
+  gsap.fromTo("#clock", {
+    autoAlpha: 0,
+    scale: .6
+  },{
+    autoAlpha: 1,
+    scale: 1,
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",
+      scrub: true,
+      ease: "none",
+      start: "top center",
+      end: "20% center"
+    }
+  });
+
+  gsap.to("#minutes", {
+    transformOrigin: "50% 100%",
+    rotate: 3600,
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",
+      scrub: true,
+      ease: "none",
+      start: "top center",
+      end: "130% center",
+    }
+  });
+
+  gsap.to("#hours", {
+    transformOrigin: "0% 100%",
+    rotate: 60,
+    scrollTrigger: {
+      trigger: "#section_problemWithSitting",
+      scrub: true,
+      ease: "none",
+      start: "top center",
+      end: "130% center",
+    }
+  });
+
     //Animation: When First Section is on screen
     function section_one(){
       var tl = gsap.timeline({
@@ -103,11 +284,11 @@ function animateBenefits(){
           toggleActions: "restart pause restart pause",
           start: "top center",
           end: "bottom center"
-          
         }
       })
+        .set("#illu-moneyloss", { autoAlpha: 0, yPercent: 200 })
         .set("#illuOne", { autoAlpha: 1 })
-        .set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
+        //.set("#illu-workdays", { autoAlpha: 0, yPercent: 30 })
         .set("#illu01-head", { rotationZ: 0, yPercent: 0 })
         .set("#illu01-smile", {scale: 1, transformOrigin: "50% 50%"})
         .set("#illu01-sun", { autoAlpha: 0 })		
@@ -129,8 +310,9 @@ function animateBenefits(){
           end: "bottom center"
         }
       })
+        .set("#illu-moneyloss", { autoAlpha: 0, yPercent: 200 })
         .set("#illuOne", { autoAlpha: 1, yPercent: 0 })
-        .set("#illuTwo", { autoAlpha: 0, yPercent: 0 })
+        .set("#illu-workdays", { autoAlpha: 0, yPercent: 0 })
         .set("#illu01-smile", {scale: -1, transformOrigin: "50% 50%"})
         .set("#illu01-head", { rotationZ: 3, yPercent: 20 })
         .set("#illu01-lightning-left, #illu01-lightning-right", {x: 0, y: 0, autoAlpha: 1})
@@ -145,38 +327,6 @@ function animateBenefits(){
         .to("#illu01-head", { rotationZ: 0, yPercent: 0, duration: .3 }, 0.1);
         return tl;
       }
-  
-    function section_three(){
-      var tl = gsap.timeline({
-        paused: true,
-        scrollTrigger: {
-          trigger: "#section_three",
-          toggleActions: "restart pause restart pause",
-          start: "top center",
-          end: "bottom center"
-        }
-      })
-        //.set("#illuOne", { autoAlpha: 1, yPercent: 0 })
-      //  .set("#illuTwo", { autoAlpha: 0, yPercent: 30 })
-        //.to("#illuOne", { duration: .3, yPercent: -30, autoAlpha: 0 })
-      //  .to("#illuTwo", { duration: .3, yPercent: 0, autoAlpha: 1 });
-        return tl;
-    }			
-    
-    function section_four(){
-      var tl = gsap.timeline({
-        paused: true,
-        scrollTrigger: {
-          trigger: "#section_four",
-          toggleActions: "restart pause restart pause",
-          start: "top center",
-          end: "bottom center"
-        }
-      })
-        .set("#illuOne", { autoAlpha: 1, yPercent: 0 })
-        .set("#illuTwo", { autoAlpha: 0, yPercent: 30 });
-      return tl;
-    }
   
   } else {
     console.log('illu-01 doesnt exist');

@@ -2131,12 +2131,13 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .illustration-stage {
   position: fixed;
   top: 70px;
-  padding: 1em 0;
+  padding: 20px 0 0 0;
   text-align: center;
   width: calc(100% - 3rem);
-  height: calc(50% - 80px);
+  height: calc(50% - 50px);
   background-color: #9ACFE9;
-  z-index: 1; }
+  z-index: 1;
+  overflow: hidden; }
   @media (min-width: 768px) {
     .illustration-stage {
       background-color: transparent;
@@ -2144,13 +2145,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       height: calc(100vh - 80px);
       top: 80px;
       padding: 2rem;
-      display: flex; } }
+      display: flex;
+      overflow: visible; } }
   .illustration-stage > svg {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     left: 0;
-    height: 100%;
+    height: calc(100% - 20px);
     width: 100%;
     overflow: visible; }
     @media (min-width: 768px) {
@@ -2174,11 +2176,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       margin-left: calc(33.333% + 2rem); } }
   .content-scroll .section {
     scroll-snap-align: start;
-    padding: calc(22.5vh - 40px) 0;
     position: relative; }
-    @media (min-width: 768px) {
-      .content-scroll .section {
-        padding: 0 0 calc(22.5vh - 40px) 0; } }
 
 .section .wp-block-group__inner-container {
   min-height: calc(50vh - 71px);
@@ -2194,7 +2192,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     margin-top: 0; }
 
 #section_one {
-  padding-top: calc(40vh - 1px); }
+  padding-top: calc(30vh - 1px); }
   @media (min-width: 768px) {
     #section_one {
       padding-top: 0; } }

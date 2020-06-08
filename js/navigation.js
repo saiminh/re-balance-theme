@@ -250,7 +250,7 @@
 		});
 
 		// Membership registration links don't swup
-		$('a[href$="membership-registration/"], a[href$="membership-registration"], a[href$="the-benefits"], a[href$="the-benefits/"]').attr("data-no-swup", "");
+		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
 	
 		animateBenefits();
 
