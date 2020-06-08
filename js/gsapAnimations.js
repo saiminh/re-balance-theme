@@ -177,8 +177,7 @@ function animateBenefits(){
       scrub: 1,
       ease: "power3.in",
       start: "0% center",
-      end: "60% center",
-      markers: true
+      end: "60% center"
     }    
   });
 
