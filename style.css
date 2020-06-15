@@ -2128,6 +2128,13 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   position: relative;
   padding: 0; }
 
+.page-template-page-the-benefits #section_rebalanceYourself em {
+  color: #FF9B7A; }
+
+.page-template-page-the-benefits em strong {
+  font-style: normal;
+  font-weight: 600; }
+
 .illustration-stage {
   position: fixed;
   top: 70px;
@@ -2165,6 +2172,10 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   #illuOne {
     align-self: flex-start;
     left: 2rem; } }
+
+#speechbubble, #body-howcombat, #body-howcombat #arm-left {
+  visibility: hidden;
+  opacity: 0; }
 
 .content-scroll {
   font-size: 1.15rem;

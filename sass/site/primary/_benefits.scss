@@ -1,5 +1,5 @@
 .page-template-page-the-benefits {
-    background-color: #9ACFE9;
+    background-color: $color__brand-secondary;
   }
 
   .page-template-page-the-benefits .site-content {
@@ -11,6 +11,19 @@
     padding: 0;
   }
 
+  .page-template-page-the-benefits em {
+    //color: #FFF;
+  }
+
+  .page-template-page-the-benefits #section_rebalanceYourself em {
+    color: $color__brand-primary;
+  }
+  
+  .page-template-page-the-benefits em strong {
+    font-style: normal;
+    font-weight: 600;
+  }
+
 .illustration-stage {
   position: fixed;
   top: 70px;
@@ -18,7 +31,7 @@
   text-align: center;
   width: calc(100% - 3rem);
   height: calc(50% - 50px);
-  background-color: #9ACFE9;
+  background-color: $color__brand-secondary;
   z-index: 1;
   overflow: hidden;
 
@@ -55,6 +68,11 @@
     align-self: flex-start;
     left: 2rem;
   }
+}
+
+#speechbubble, #body-howcombat, #body-howcombat #arm-left {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .content-scroll {
