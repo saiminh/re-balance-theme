@@ -14,7 +14,7 @@ function animateBenefits(){
 
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset",
-      markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
+      //markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
     });
 
     gsap.set("#clock", {autoAlpha: 0} );
