@@ -208,9 +208,56 @@ function animateBenefits(){
       .to("#illu-logo", { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
       .fromTo("body", { backgroundColor: "#9ACFE9" }, { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inout" }, 0  );
 
-  
+  } else if (document.querySelector('#world')) { 
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(DrawSVGPlugin);
+    
+    //gsap.defaults({ duration: 0.01 });
+
+    ScrollTrigger.defaults({
+      toggleActions: "restart complete restart reset",
+      //markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
+    });
+
+    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center "};
+
+    let section_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
+      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
+      .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" })
+      .to("#eyes", { xPercent: -20, yPercent: -30, duration: 1, ease: "power4.out" })
+      .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" })
+      .to("#eyes", { xPercent: -10, yPercent: 20, duration: 1, ease: "power4.out" })
+      .to("#eyelids", { yPercent: -30, duration: 5 }, 0)
+      .to("#eyelids", { yPercent: 10, duration: 3 }, 5);
+
+    let section_unbalancedWorld = gsap.timeline({ scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
+      .set("[id^='notification-']", { scale: 0, transformOrigin: "50% 50%" })
+      .to("#unbalancedWorld", { autoAlpha: 1, scale: 1.2, duration: 1 })
+      .to("#world", { scale: 1.3, transformOrigin: "50% 50%", duration: 6 }, 0)
+      .to("[id^='notification-']", { scale: 1, ease: "elastic.out(1, .3)", duration: 1,  stagger: 1}, 2)
+      .to("#eyes", { xPercent: -15, yPercent: 10, duration: 2, ease: "power4.out" }, 0)
+      .to("#eyelids", { yPercent: -20, duration: 2 }, 0)
+      .to("#eyelids", { yPercent: 0, duration: .2 }, 2)
+      .to("#eyelids", { yPercent: -30, duration: 5 }, 2.2)
+      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" }, 2)
+      .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" }, 3)
+      .to("#eyes", { xPercent: -20, yPercent: -30, duration: 1, ease: "power4.out" }, 4)
+      .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" }, 5)
+      .to("#eyes", { xPercent: -10, yPercent: 20, duration: 1, ease: "power4.out" }, 6)
+      .to("#eyelids", { yPercent: 10, duration: 3, onComplete: ()=>{ section_unbalancedWorldeyeloop.play(0) } }, 6);
+
+    let trigger_ourMissionIn = { trigger: "#section_ourMission", start: "0% center", end: "100% center" }
+    let section_ourMission = gsap.timeline({ scrollTrigger: trigger_ourMissionIn })
+      .to("#notification-todo", { xPercent: 100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
+      .to("#notification-traffic", { xPercent: -100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
+      .to("#notification-alarm", { xPercent: -100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
+      .to("#notification-meeting", { xPercent: 100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
+      .to("#world", { yPercent: -90, scale: .8, duration: 1 }, 0)
+      .fromTo("#ourMission", { yPercent: 100, autoAlpha: 0 }, { yPercent: 20, scale: .8, autoAlpha: 1,  duration: 1 }, 0)
+
   } else {
     console.log('illu-01 doesnt exist');
+    ScrollTrigger.getAll().forEach(element => element.kill());
   }
 }
 animateBenefits();
