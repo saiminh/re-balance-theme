@@ -263,7 +263,7 @@ get_header();
         </div>
 
 
-        <div class="wp-block-group section" id="section_stressAndBurnout">
+        <div class="wp-block-group section" id="section_whatsWrong">
           <div class="wp-block-group__inner-container">
 
             <h2>So What’s Wrong With The Way We Work?</h2>
