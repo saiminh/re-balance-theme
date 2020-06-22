@@ -1,21 +1,40 @@
+.cta-block {
+  padding: 1.5rem;
+  background-color: lighten($color__brand-primary, 20%);
+  border-radius: 5px;
+  text-align: center;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  & .wp-block-buttons .wp-block-button {
+    margin-bottom: 1rem;
+  }
+
+  & .already-member {
+    font-size: .9rem;
+    margin: 0;
+  }
+}
+
 .page-template-page-the-benefits {
     background-color: $color__brand-secondary;
   }
 
-  .page-template-page-the-benefits .site-content {
+  .page-template-page-the-benefits .site-content,
+  .page-template-page-about .site-content, {
     padding: 0 1.5rem;
   }
 
-  .page-template-page-the-benefits .site-main {
+  .page-template-page-the-benefits .site-main,
+  .page-template-page-about .site-main {
     position: relative;
     padding: 0;
   }
 
-  .page-template-page-the-benefits em {
-    //color: #FFF;
-  }
-
-  .page-template-page-the-benefits #section_rebalanceYourself em {
+  .page-template-page-the-benefits #section_rebalanceYourself em,
+  .page-template-page-about em {
     color: $color__brand-primary;
   }
   
@@ -34,6 +53,10 @@
   background-color: $color__brand-secondary;
   z-index: 1;
   overflow: hidden;
+
+  @media (min-width: 480px){
+    width: calc( 100% - 2rem );
+  } 
 
   @media (min-width: 768px){
     background-color: transparent;
@@ -61,6 +84,11 @@
       align-self: center;
     }
   }
+}
+
+.page-template-page-about .illustration-stage {
+  background-color: transparent;
+  overflow: visible;
 }
 
 #illuOne {
@@ -124,10 +152,6 @@
     padding-top: 0;
   }
 }
-#illu01-lightning-left {
-//  transform: translate(-300px, -300px);
-}
-
 
 #section_two {
   font-size: 1.5rem;
@@ -135,3 +159,51 @@
     color: #000;
   }
 }
+
+// About page
+
+.page-template-page-about{
+
+  & .site-content {
+    color: #FFF;
+  }
+}
+
+#section_unbalancedWorld {
+  padding-top: calc(30vh - 1px);
+
+  @media (min-width: 768px){
+    padding-top: 0;
+  }
+}
+
+#section_ourStory,
+#section_rebalance {
+  color: #000;
+
+  & em {
+    color: darken($color__brand-primary, 15%);  
+  }
+}
+
+#signup-form {
+
+}
+
+.background-stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background-color: $color__brand-secondary;
+
+  & .bg-galaxy {
+    margin-top: 70px;
+    min-width: 100vw;
+    min-height: 150vh;
+  }
+}
+

@@ -65,7 +65,7 @@ function animateBenefits(){
       .fromTo("#illu01-lightning-right", { y: 0, x: 0, autoAlpha: 1 }, { x: 200, y: 0, autoAlpha: 0, duration: .3 }, 0)
       .fromTo("#illu01-smile", { scaleY: -1, transformOrigin: "50% 50%" }, { scaleY: 1, duration: .5 }, 0);
      
-    let trigger_whatsWrong_in_scrub = { trigger: "#section_whatsWrong", start: "0% center", end: "25% center", id: "stress", scrub: .5 };
+    let trigger_whatsWrong_in_scrub = { trigger: "#section_whatsWrong", start: "0% center", end: "25% center", id: "stress", scrub: true };
     let trigger_whatsWrong_Count = { trigger: "#section_whatsWrong", start: "0% center", end: "90% center"};
 
     let section_stressIn_scrub = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in_scrub })      
@@ -231,41 +231,141 @@ function animateBenefits(){
       //markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
     });
 
-    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center "};
+    var mobhidetriggerarray = [];
+
+    function checkMQ(mq) {   
+
+      if (mq.matches) { // If media query matches
+        jQuery("h1, h2, p").each(function( index ){
+          let idname = "mobhidetrigger" + index;
+          console.log(idname);
+          mobhidetriggerarray.push(idname);
+          gsap.fromTo( jQuery(this), { autoAlpha: 1, scale: 1, rotationX: 0, transformOrigin: "50% 0%" }, { autoAlpha: 0, scale: 0, rotationX: 90, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
+        })            
+      } else {
+          if( ScrollTrigger.getById( "mobhidetrigger0") ) {
+           jQuery.each(mobhidetriggerarray, function( index, id ) {
+            console.log('kill: ' + id);
+              gsap.killTweensOf(ScrollTrigger.getById(id).animation);
+              ScrollTrigger.getById(id).kill(true);
+              gsap.set("h1, h2, p", {autoAlpha: 1, scale: 1, rotationX: 0, color: "red",  overwrite: true});
+              console.log('killed: ' + id);
+           })
+            // gsap.killTweensOf([ScrollTrigger.getById("mobhidetrigger").scroller, ScrollTrigger.getById("mobhidetrigger").animation]);
+            // gsap.set("h1, h2, p", {autoAlpha: 1, scale: 1, rotationX: 0, overwrite: true});
+            // ScrollTrigger.getById("mobhidetrigger").kill(true);           
+          }
+      }
+    }
+
+    var mq = window.matchMedia("(max-width: 767px)");
+    checkMQ(mq); // Call listener function at run time
+    mq.addListener(checkMQ); // Attach listener function on state changes     
+    //jQuery(window).resize(function(){checkMQ(mq)})
+    
+    gsap.fromTo(".bg-galaxy", { yPercent: -10 }, { yPercent: -20, scrollTrigger: {trigger: "#section_ourMission", start: "0% 70px", end: "100% top", scrub: true} })
+
+    gsap.fromTo(".bg-galaxy", { yPercent: 0 }, { yPercent: -10, scrollTrigger: {trigger: "#section_unbalancedWorld", start: "0% 70px", end: "100% top", scrub: true} }) 
+
+    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause() }};
 
     let section_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
-      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
+      .fromTo("#eyes", { xPercent: -2, yPercent: -40 }, { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" })
-      .to("#eyes", { xPercent: -20, yPercent: -30, duration: 1, ease: "power4.out" })
+      .to("#eyes", { xPercent: -20, yPercent: -20, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" })
-      .to("#eyes", { xPercent: -10, yPercent: 20, duration: 1, ease: "power4.out" })
-      .to("#eyelids", { yPercent: -30, duration: 5 }, 0)
-      .to("#eyelids", { yPercent: 10, duration: 3 }, 5);
+      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
+      .fromTo("#eyelids", { yPercent: 0 }, { yPercent: -30, duration: 5 }, 0)
+      .to("#eyelids", { yPercent: 0, duration: 3 }, 5);
 
     let section_unbalancedWorld = gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
       .set("[id^='notification-']", { scale: 0, xPercent: 0, yPercent: 0, autoAlpha: 1, transformOrigin: "50% 50%" })
-      .to("#unbalancedWorld", { autoAlpha: 1, scale: 1.2, duration: 1 })
-      .to("#world", { scale: 1.3, transformOrigin: "50% 50%", duration: 6 }, 0)
+      .to("#unbalancedWorld", { autoAlpha: 1, duration: 1 })
       .to("[id^='notification-']", { scale: 1, ease: "elastic.out(1, .3)", duration: 1,  stagger: 1}, 2)
       .to("#eyes", { xPercent: -15, yPercent: 10, duration: 2, ease: "power4.out" }, 0)
       .to("#eyelids", { yPercent: -20, duration: 2 }, 0)
       .to("#eyelids", { yPercent: 0, duration: .2 }, 2)
       .to("#eyelids", { yPercent: -30, duration: 5 }, 2.2)
-      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" }, 2)
-      .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" }, 3)
-      .to("#eyes", { xPercent: -20, yPercent: -30, duration: 1, ease: "power4.out" }, 4)
-      .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" }, 5)
-      .to("#eyes", { xPercent: -10, yPercent: 20, duration: 1, ease: "power4.out" }, 6)
-      .to("#eyelids", { yPercent: 10, duration: 3, onComplete: ()=>{ section_unbalancedWorldeyeloop.play(0) } }, 6);
+      .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" }, 2)
+      .to("#eyes", { xPercent: -20, yPercent: -20, duration: 1, ease: "power4.out" }, 3)
+      .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" }, 4)
+      .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" }, 5)
+      .to("#eyelids", { yPercent: 0, duration: 1, onComplete: ()=>{ section_unbalancedWorldeyeloop.play(0) } }, 7.2);
 
-    let trigger_ourMissionIn = { trigger: "#section_ourMission", start: "0% center", end: "100% center" }
+    let section_ourMissioneyeloop = gsap.timeline({ paused: true, repeat: -1 })
+      .fromTo("#bw-eyelids-lower", { yPercent: 0 }, { yPercent: -75, duration: .05 }, 2)
+      .fromTo("#bw-eyelids-upper", { yPercent: 0 }, { yPercent: 75, duration: .05 }, 2)
+      .to("#bw-eyelids-lower, #bw-eyelids-upper", { yPercent: 0, duration: .3 }, 2.05)
+      .fromTo("#bw-eyelids-lower", { yPercent: 0 }, { yPercent: -75, duration: .05 }, 2.35)
+      .fromTo("#bw-eyelids-upper", { yPercent: 0 }, { yPercent: 75, duration: .05 }, 2.35)
+      .to("#bw-eyelids-lower, #bw-eyelids-upper", { yPercent: 0, duration: .2 }, 2.4)
+      
+      
+
+    let trigger_ourMissionIn = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause() } }
+
     let section_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMissionIn })
       .to("#notification-todo", { xPercent: 100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-traffic", { xPercent: -100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-alarm", { xPercent: -100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-meeting", { xPercent: 100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
-      .to("#world", { yPercent: -90, scale: .8, duration: 1 }, 0)
-      .fromTo("#ourMission", { yPercent: 100, autoAlpha: 0 }, { yPercent: 20, scale: .8, autoAlpha: 1,  duration: 1 }, 0)
+      .to("#world", { transformOrigin: "50% 50%", yPercent: -50, scale: .8, duration: .5 }, 0)
+      .to("#eyes", { xPercent: -10, yPercent: 80, duration: 1, onComplete: ()=>{section_ourMissioneyeloop.play(0)} }, .5)
+      .to("#eyelids", { yPercent: 0, duration: 1 }, .5)
+      .fromTo("#bw-eyes", {  yPercent: 0 }, { yPercent: -50, duration: 1 }, 1.5)
+      .fromTo("#bw-arrow path", { stroke: "#000000" }, {  stroke: "#FFFFFF", duration: 1 }, 0)
+      .fromTo("#bw-arrow", { yPercent: 0 }, { yPercent: 50, repeat: -1, yoyo: true, duration: .2 }, 0)
+      .fromTo("#ourMission", { yPercent: 100, autoAlpha: 0 }, { yPercent: 23, scale: .8, autoAlpha: 1,  duration: 1 }, 0)
+      .fromTo("#bw-mouth", {
+        drawSVG: "50% 50%" },{
+        drawSVG: "100%", ease: "expo.inOut", duration: 1}, .5)
+
+    let trigger_ourStory_In = { trigger: "#section_ourStory", start: "0% center", end: "100% center", onEnter: ()=>{ section_ourMissioneyeloop.pause() } }
+
+    let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })
+      .to("#unbalancedWorld, #ourMission", { yPercent: -200, autoAlpha: 0, duration: 1.1 }, 0)
+      .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
+      .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
+      .fromTo("#er-underarm", { transformOrigin: "10% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
+      .fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
+      .addLabel("bulb", .3)
+      //.fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 0 }, { rotationZ: 58, duration: .4, ease: "back.out(1.7)" }, "bulb+=.3")
+      .fromTo("#er-bulb", { transformOrigin: "50% 90%", yPercent: 20, scaleY: 0 }, { yPercent: 0, scaleY: 1, ease: "back.out(1.7)", duration: .3 }, "bulb")
+      .fromTo("#ray-01", 
+        { transformOrigin: "50% 50%", yPercent: 0 }, 
+        { yPercent: -1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+      .fromTo("#ray-02", 
+        { transformOrigin: "50% 50%", rotationZ: 45, yPercent: 0, xPercent: 0 }, 
+        { yPercent: -800, xPercent: 800, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+      .fromTo("#ray-03", 
+        { transformOrigin: "50% 50%", rotationZ: 90, yPercent: 0, xPercent: 0 }, 
+        { yPercent: 0, xPercent: 1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+      .fromTo("#ray-04", 
+        { transformOrigin: "50% 50%", rotationZ: -45, yPercent: 0, xPercent: 0 }, 
+        { yPercent: -800, xPercent: -800, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+      .fromTo("#ray-05", 
+        { transformOrigin: "50% 50%", rotationZ: -90, yPercent: 0, xPercent: 0 }, 
+        { yPercent: 0, xPercent: -1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+      .fromTo("#er-bulb > circle",  { scaleY: 1 }, { scaleY: 6, duration: .2  }, "bulb+=.3")
+      .fromTo("#er-bulb > circle", { scaleY: 6 }, { scaleY: 1, duration: .3 }, "bulb+=.5" )
+      .fromTo("#er-bulb > circle", { autoAlpha: 1 }, { autoAlpha: 0, duration: .1, ease: "power3.out" }, "bulb+=.8" )
+      .fromTo(".bg-galaxy", { autoAlpha: 1 }, { autoAlpha: 0, duration: .3 }, "bulb+=.5" )
+
+    let triggerrebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
+    let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })     
+    .to("#ourStory", 
+     // { yPercent: 0, autoAlpha: 1 }, 
+      { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
+    .fromTo("[id^='letter-']", 
+      { rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
+      { rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
+    .fromTo("#illu-logo", 
+      { scale: .8, yPercent: 110, autoAlpha: 0 }, 
+      { yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
+    .fromTo("#illu-logo", 
+      { rotationZ: -25, transformOrigin: "50% 70%" }, 
+      { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
+
 
   } else {
     console.log('illu-01 doesnt exist');

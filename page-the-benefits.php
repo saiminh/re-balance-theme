@@ -271,7 +271,7 @@ get_header();
             <h3>Work-related Stress and Burnout</h3>
             
             <p>As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related stress, depression and burnout.</p>
-            <p><em> In the UK, work-related mental health conditions resulted in a loss of</em> <strong>12.8 million work days</strong> <em>in 2018, which is 54% of the total working days lost.</em></p>
+            <p><em> In the UK, work-related mental health conditions resulted in a loss of</em> <strong>12.8 million work days</strong> <em>in 2018, which is 54% of the total working days lost</em><?php echo do_shortcode("[mfn]Health and Safety Executive. (2019). <em>Work-related stress, anxiety or depression statistics in Great Britain, 2019</em>. Health and Safety Executive, <a href='https://www.hse.gov.uk/statistics/causdis/stress.pdf'>https://www.hse.gov.uk/statistics/causdis/stress.pdf</a>[/mfn]"); ?>.</p>
           
           </div>
         </div>
@@ -279,7 +279,7 @@ get_header();
         <div class="wp-block-group section" id="section_moneyloss">
             <div class="wp-block-group__inner-container">
 
-            <p>Similarly, a European funded project estimated the cost to Europe of workplace stress to be approximately <strong>€600 billion</strong> annually. This comprises the loss of <strong>€272 billion</strong> to employers resulting from absenteeism and presenteeism (being present at work but not productive); lost productivity costs of <strong>€242 billion</strong>; and social costs for healthcare (€63 billion), welfare and disability payments (€39 billion).</p>
+            <p>Similarly, a European funded project estimated the cost to Europe of workplace stress to be approximately <strong>€600 billion</strong> annually. This comprises the loss of <strong>€272 billion</strong> to employers resulting from absenteeism and presenteeism (being present at work but not productive); lost productivity costs of <strong>€242 billion</strong>; and social costs for healthcare (€63 billion), welfare and disability payments (€39 billion)<?php echo do_shortcode("[mfn]Hassard, J.,Teoh, K., Cox, T., Dewe, P., Cosmar, M., Gründler, R., Flemming, D., Cosemans, B., & Van den Broek, K. (2014). <em>Calculating the Cost of Work-Related Stress and Psychosocial Risks: European Risk Observatory.</em> European Agency for Safety and Health at Work, Luxembourg.[/mfn]"); ?>.</p>
             
             <p>While these figures are worrying, the upside is employers are recognising the need for change. Rebalance helps combat work-related mental health conditions by providing a wellbeing platform that helps organisations to invest in and prioritise their people: supporting employee mental health, boosting resilience, and reducing stress.</p>
             <p><em>Since the growth of companies is directly related to the health of their employees, this is beneficial for employers in reducing absenteeism and presenteeism, and increasing employee retention and engagement.</em></p>
@@ -296,7 +296,7 @@ get_header();
             
             <p>So what actually happens when we sit? Normally when our muscles move, they pump fresh blood and oxygen through the body, however when we’re in a stationary seated position our muscles aren’t moving as frequently, so blood flows more slowly through the body. <strong>As blood flow slows, so does the body.</strong></p>
             
-            <p> This means the organs and brain receive less oxygen leading to reduced focus and concentration. Muscles that move less frequently burn less fat, and this contributes to weight gain, and fatty acids are more easily able to clog arteries which increases the risk of high blood pressure and heart disease.</p>
+            <p> This means the organs and brain receive less oxygen leading to reduced focus and concentration. Muscles that move less frequently burn less fat, and this contributes to weight gain, and fatty acids are more easily able to clog arteries which increases the risk of high blood pressure and heart disease<?php echo do_shortcode("[mfn]Matthews, C. E., George, S. M., Moore, S. C., Bowles, H. R., Blair, A., Park, Y., Troiano, R. P., Hollenbeck., & Schatzkin, A. (2012). Amount of Time Spent in Sedentary Behaviors and Cause-Specific Mortality in US Adults. <em>American Journal of Clinical Nutrition,</em> 95(2), 437-445. doi:10.3945/ajcn.111.019620 [/mfn]"); ?>.</p>
             
             <p>Lastly, sitting with a poor and hunched posture causes the abdominal muscles to soften while the lower back tightens and rounds, hip flexors become short and tight, and tilting the head forwards towards your screen overextends the neck and shoulders causing tension and reducing flexibility in the spine. </p>
 
@@ -308,7 +308,7 @@ get_header();
             
             <h2>How Can You Combat This?</h2>
            
-            <p>Well the answer is fairly straightforward: your body is built to move! It’s best to incorporate activity into your day. Get up and walk for a few minutes, alternate between working at seated and standing desks, or rebalance the body with some mindful movements.</p>
+            <p>Well the answer is fairly straightforward: your body is built to move! It’s best to incorporate activity into your day<?php echo do_shortcode("[mfn]Hales, D. & Hales, J. (2018). <em>Personal Stress Management: From surviving to thriving.</em> Cengage: Boston, USA.[/mfn]"); ?>. Get up and walk for a few minutes, alternate between working at seated and standing desks, or rebalance the body with some mindful movements.</p>
             <p><strong>When you use Rebalance,</strong> <em>you have the added advantage of focussing your attention on combining movement with the breath, so this provides you with a mental break, as well as a physical one which improves overall health.</em></p>
 
           </div>
@@ -320,8 +320,8 @@ get_header();
             <h2>Take a Mindful Break</h2>
 
             <p>We often don’t feel that we have time to take a break. However interestingly, research shows the most productive employees don’t put in the longest hours, rather they take regular breaks. So why is this the case?</p>
-            <p>Our work repetitively uses the same region of the brain, the pre-frontal cortex which is responsible for concentration, decision making and problem solving. Just as repeatedly overloading the same muscle leads to fatigue, the same occurs with our mental energy, and as our energy is depleted we become less effective and efficient.</p>
-            <p><em>Taking an intentional break allows you to recharge your energy levels, improves your focus when you return to a task, and increases creative thinking and productivity.</em></p>
+            <p>Our work repetitively uses the same region of the brain, the pre-frontal cortex which is responsible for concentration, decision making and problem solving. Just as repeatedly overloading the same muscle leads to fatigue, the same occurs with our mental energy, and as our energy is depleted we become less effective and efficient<?php echo do_shortcode("[mfn]Trougaskos, J. P.,  Hideg, I., Cheng, B. H., & Beal, D. J. (2014). Lunch Breaks Unpacked: The Role of Autonomy as a Moderator of Recovery During Lunch. <em>Academy of Management Journal</em>, 57(2), 405-421. doi:10.5465/amj.2011.1072[/mfn]"); ?>.</p>
+            <p><em>Taking an intentional break allows you to recharge your energy levels, improves your focus when you return to a task, and increases creative thinking and productivity<?php echo do_shortcode("[mfn]Ariga, A. & Lleras, A. (2011). Brief and Rare Mental “Breaks” Keep you Focused: Deactivation and Reactivation of Task Goals Preempt Vigilance Decrements. <em>Cognition</em>, 118(3), 439-443. doi:10.1016/j.cognition.2010.12.007[/mfn]"); ?>.</em></p>
 
           </div>
         </div>
@@ -332,8 +332,17 @@ get_header();
             <h2>Rebalance Yourself</h2>
 
             <p>Rebalance enables you take a mindful break during your work day. Using just a few minutes of your time, we aim to give you an on-demand and approachable tool to help you look after yourself, combat the negative effects of prolonged sitting and work-related mental health conditions.</p>
-            <p><em>Whether you need to move and stretch out tight muscles, manage your stress, breathe to re-energise or regain your focus, it’s entirely up to you.</em> <strong>Rebalance is here to help!</strong></p>
+            <p><em>Whether you need to move and stretch out tight muscles, manage your stress, breathe to re-energise or regain your focus, it’s entirely up to you.</em></p>
 
+            <div class="cta-block">
+              <h3>Rebalance is here to help!</h3>
+              <div class="wp-block-buttons">
+                <div class="wp-block-button">
+                  <a href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>" class="wp-block-button__link">Start Your Free trial</a>
+                </div>
+              </div>
+              <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
+            </div>
           </div>
       </div>
       
