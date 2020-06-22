@@ -158,3 +158,16 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
         font-weight: 600;
     }
 }
+
+.swpm_message {
+    max-width: 33rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: lighten($color__brand-primary, 20%);
+    border-radius: 6px;
+    color: $color__brand-primary;
+
+    & > ul {
+        display: none;
+    }
+}

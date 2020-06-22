@@ -19,6 +19,7 @@ get_header();
                     the_content(); 
                 endwhile; 
             ?>
+            
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

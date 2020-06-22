@@ -2124,6 +2124,16 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   cursor: pointer;
   font-weight: 600; }
 
+.swpm_message {
+  max-width: 33rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffe8e0;
+  border-radius: 6px;
+  color: #FF9B7A; }
+  .swpm_message > ul {
+    display: none; }
+
 .cta-block {
   padding: 1.5rem;
   background-color: #ffe8e0;
