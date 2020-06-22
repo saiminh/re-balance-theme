@@ -166,6 +166,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
     background: lighten($color__brand-primary, 20%);
     border-radius: 6px;
     color: $color__brand-primary;
+    
 
     & > ul {
         display: none;
