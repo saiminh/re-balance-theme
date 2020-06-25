@@ -511,7 +511,20 @@ function my_wp_mail_filter( $args ) {
 	$new_wp_mail = array(
 		'to'          => $args['to'],
 		'subject'     => $args['subject'],
-		'message'     => '<body width="100%" bgcolor="#9ACFE9" style="margin: 0; mso-line-height-rule: exactly;"><div style="max-width: 600px; margin: auto;" class="email-container"><table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;"><tr><td style="text-align: center; padding: 30px; background-color: #FFFFFF;"><img src="https://re-balance.io/wp-content/themes/rebalance-wptheme/img/rebalance-logo.png" alt="rebalance" style="width: 200px; height: 55px; border: none; font-size:12px; font-style: italic; margin-bottom: 10px;" /></td></tr><tr><td style="padding: 30px; font-family: hero-new, sans-serif; font-size: 18px; line-height: 26px; color: #333333; background-color: #FFFFFF;">'.$args['message'].'</td></tr><tr><td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: hero-new,  sans-serif; line-height:18px; text-align: center; background-color: #FFFFFF; color: #888888; border-top: 1px solid #EEEEEE;">This Email address was sent by <a href="www.re-balance.io" style="color: #FF9B7A; text-decoration: none;">www.re-balance.io</a></td></tr></table></div></body>',
+		'message'     => '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="x-apple-disable-message-reformatting"><!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. --><!--[if mso]>
+					<style>
+							* {
+									font-family: sans-serif !important;
+							}
+					</style>
+			<![endif]--><!-- CSS Reset --><style>@import url("https://use.typekit.net/vzx1etu.css");body,html{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0!important}table,td{mso-table-lspace:0!important;mso-table-rspace:0!important}table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important}table table table{table-layout:auto}img{-ms-interpolation-mode:bicubic}[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}.aBn,.x-gmail-data-detectors,.x-gmail-data-detectors *{border-bottom:0!important;cursor:default!important}.button-link{text-decoration:none!important}@media only screen and (min-device-width:375px) and (max-device-width:413px){.email-container{min-width:375px!important}}</style><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --><!--[if gte mso 9]>
+		<xml>
+			<o:OfficeDocumentSettings>
+				<o:AllowPNG/>
+				<o:PixelsPerInch>96</o:PixelsPerInch>
+			</o:OfficeDocumentSettings>
+		</xml>
+		<![endif]--><!-- Progressive Enhancements --><style>@media screen and (max-width:600px){.email-container p{font-size:17px!important;line-height:24px!important}}</style></head><body width="100%" bgcolor="#9ACFE9" style="margin: 0; mso-line-height-rule: exactly;"><div style="max-width: 600px; margin: auto;" class="email-container"><table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;"><tr><td style="text-align: center; padding: 30px; background-color: #FFFFFF;"><img src="https://re-balance.io/wp-content/themes/rebalance-wptheme/img/rebalance-logo.png" alt="rebalance" style="width: 200px; height: 55px; border: none; font-size:12px; font-style: italic; margin-bottom: 10px;" /></td></tr><tr><td style="padding: 30px; font-family: hero-new, sans-serif; font-size: 18px; line-height: 26px; color: #333333; background-color: #FFFFFF;">'.$args['message'].'</td></tr><tr><td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: hero-new,  sans-serif; line-height:18px; text-align: center; background-color: #FFFFFF; color: #888888; border-top: 1px solid #EEEEEE;">This Email address was sent by <a href="www.re-balance.io" style="color: #FF9B7A; text-decoration: none;">www.re-balance.io</a></td></tr></table></div></body>',
 		'headers'     => $args['headers'],
 		'attachments' => $args['attachments'],
 	);
