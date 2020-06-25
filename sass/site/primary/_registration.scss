@@ -86,7 +86,11 @@
     
     & .formError {
         text-align: center;
-        min-width: 200px;
+        min-width: 200px;        
+    }
+
+    & .formError.user_nameformError,
+    & .formError.emailformError {
         transform: translate(20px, calc(-100% + 20px));
         left: auto!important;
         margin-top: 0 !important;
@@ -99,7 +103,7 @@
         -moz-box-shadow: none;
         -webkit-box-shadow: none;
         font-size: .8rem;
-        background: $color__brand-primary;
+        background: red;
     }
     
     
@@ -108,7 +112,7 @@
         box-shadow: none;
         -moz-box-shadow: none;
         -webkit-box-shadow: none;
-        background: $color__brand-primary;
+        background: red;
     
         &.line1,
         &.line2 {
@@ -165,10 +169,19 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
     padding: 1.5rem;
     background: lighten($color__brand-primary, 20%);
     border-radius: 6px;
-    color: $color__brand-primary;
+    color: $color__text-main;
 
 
     & > ul {
-        display: none;
+        margin: 1em 0 0 1em;
+
+        &:empty {
+            margin: 0;
+        }
+        
+        & > li {
+            font-style: italic;
+            color: red;
+        }
     }
 }

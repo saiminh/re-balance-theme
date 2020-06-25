@@ -505,6 +505,20 @@ function rebalance_get_the_posts_navigation( $args = array() ) {
 	return $navigation;
 }
 
+add_filter( 'wp_mail', 'my_wp_mail_filter' );
+function my_wp_mail_filter( $args ) {
+	
+	$new_wp_mail = array(
+		'to'          => $args['to'],
+		'subject'     => $args['subject'],
+		'message'     => '<body width="100%" bgcolor="#9ACFE9" style="margin: 0; mso-line-height-rule: exactly;"><div style="max-width: 600px; margin: auto;" class="email-container"><table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;"><tr><td style="text-align: center; padding: 30px; background-color: #FFFFFF;"><img src="https://re-balance.io/wp-content/themes/rebalance-wptheme/img/rebalance-logo.png" alt="rebalance" style="width: 200px; height: 55px; border: none; font-size:12px; font-style: italic; margin-bottom: 10px;" /></td></tr><tr><td style="padding: 30px; font-family: hero-new, sans-serif; font-size: 18px; line-height: 26px; color: #333333; background-color: #FFFFFF;">'.$args['message'].'</td></tr><tr><td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: hero-new,  sans-serif; line-height:18px; text-align: center; background-color: #FFFFFF; color: #888888; border-top: 1px solid #EEEEEE;">This Email address was sent by <a href="www.re-balance.io" style="color: #FF9B7A; text-decoration: none;">www.re-balance.io</a></td></tr></table></div></body>',
+		'headers'     => $args['headers'],
+		'attachments' => $args['attachments'],
+	);
+	
+	return $new_wp_mail;
+}
+
 
 ?>
 

@@ -2073,7 +2073,8 @@ a {
   position: relative; }
 .swpm-registration-widget-form .formError {
   text-align: center;
-  min-width: 200px;
+  min-width: 200px; }
+.swpm-registration-widget-form .formError.user_nameformError, .swpm-registration-widget-form .formError.emailformError {
   transform: translate(20px, calc(-100% + 20px));
   left: auto !important;
   margin-top: 0 !important; }
@@ -2084,13 +2085,13 @@ a {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   font-size: .8rem;
-  background: #FF9B7A; }
+  background: red; }
 .swpm-registration-widget-form .formError .formErrorArrow div {
   border: none;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  background: #FF9B7A; }
+  background: red; }
   .swpm-registration-widget-form .formError .formErrorArrow div.line1, .swpm-registration-widget-form .formError .formErrorArrow div.line2 {
     width: 0; }
 .swpm-registration-widget-form .formError.greenPopup {
@@ -2130,9 +2131,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   padding: 1.5rem;
   background: #ffe8e0;
   border-radius: 6px;
-  color: #FF9B7A; }
+  color: #000; }
   #swpm_message > ul {
-    display: none; }
+    margin: 1em 0 0 1em; }
+    #swpm_message > ul:empty {
+      margin: 0; }
+    #swpm_message > ul > li {
+      font-style: italic;
+      color: red; }
 
 .cta-block {
   padding: 1.5rem;
