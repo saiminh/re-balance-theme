@@ -5,6 +5,11 @@
     justify-content:  space-between;
 }
 
+.page-template-page-about .statusbar,
+.page-template-page-the-benefits .statusbar {
+    display: none;
+}
+
 .exercises-template-default .statusbar {
     @media (min-width: 768px) {
         position: sticky;
