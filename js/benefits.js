@@ -1,6 +1,6 @@
 
 // Create timelines for benefits page to use in init
-if (jQuery("#illu-01").length) {
+if (jQuery("#illuOne").length) {
   //Animation: Raindrops falling
   function raindrops(){
     var tl = gsap.timeline({paused: true})					
