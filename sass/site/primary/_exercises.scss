@@ -39,8 +39,8 @@
             height: calc( ( 100vw - 2rem ) * 0.5625);
 
             @media (min-width: 768px) {
-                width: 60vw;
-                height: 33.75vw;
+                width: 60vw!important;
+                height: 33.75vw!important;
             }
         }
 
