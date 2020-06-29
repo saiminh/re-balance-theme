@@ -30,7 +30,7 @@ function animateBenefits(){
     let section_OneIn = gsap.timeline({ paused: true, scrollTrigger: triggerOne })
       .set("#illu-mindfulbreak, #illu-workdays, #illu-moneyloss, #cloudrain, #clock, #illu01-lightning-left, #illu01-lightning-right", { autoAlpha: 0 })
       .set("#woman-on-desk", { autoAlpha: 1, scale: 1 })
-      .set("#illu01-head", { rotationZ: 0, yPercent: 0 })
+      .set("#illu01-head", { rotationZ: 0, y: 0, yPercent: 0 })
       .set("#illu01-smile", { scaleY: 1 })
       .fromTo("#illuOne", { 
         yPercent: 0, autoAlpha: 0 }, {
@@ -44,7 +44,7 @@ function animateBenefits(){
       .fromTo("#illu01-lightning-right", 
         { y: -300, x: 100, autoAlpha: 0 }, 
         { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .8)
-      .fromTo("#illu01-head", { rotationZ: 0, yPercent: 0 }, {  rotationZ: 2, yPercent: 20, duration: 1 }, 1.5)
+      .fromTo("#illu01-head", { rotationZ: 0, y: 0, yPercent: 0 }, {  rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
       .fromTo("#illu01-smile", { scaleY: 1, transformOrigin: "50% 50%" }, { scaleY: -1, duration: .5 }, .9);
 
     let triggerTwo = { trigger: "#section_two", start: "0% center", end: "100% center" };
@@ -57,7 +57,7 @@ function animateBenefits(){
 
     let section_TwoIn = gsap.timeline({ paused: true, scrollTrigger: triggerTwo })
       .call( function(){ section_OneIn.pause() } )
-      .fromTo("#illu01-head", { rotationZ: 2, yPercent: 20 }, { rotationZ: 0, yPercent: 0, duration: .3 }, 0)
+      .fromTo("#illu01-head", { rotationZ: 2, y: 0, yPercent: 20 }, { rotationZ: 0, y: 0,  yPercent: 0, duration: .3 }, 0)
       .fromTo("#cloudrain", { 
         xPercent: 0, yPercent: 0, autoAlpha: 1 }, { 
         xPercent: 0, yPercent: -400, autoAlpha: 0, duration: .5 }, 0)
@@ -70,7 +70,7 @@ function animateBenefits(){
 
     let section_stressIn_scrub = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in_scrub })      
       .fromTo("#illuOne", { autoAlpha: 1, yPercent: 0 }, { autoAlpha: 0, yPercent: -110, duration: .75 }, 0)
-      .fromTo("#illu-workdays", { yPercent: 100, autoAlpha: 0, scale: 1 }, { yPercent: 0, autoAlpha: 1, scale: 1, duration: 1 }, 0);
+      .fromTo("#illu-workdays", { y: 0, yPercent: 100, autoAlpha: 0, scale: 1 }, { y: 0, yPercent: 0, autoAlpha: 1, scale: 1, duration: 1 }, 0);
 
     //Function for counting up
     Number.prototype.numberFormat = function(decimals, dec_point, thousands_sep) {
@@ -198,24 +198,23 @@ function animateBenefits(){
     let triggermindfulBreakflash = { trigger: "#section_mindfulBreak", start: "0% center", end: "90% center" };
     let braincharging = gsap.timeline({ paused: true, trigger: triggermindfulBreakflash })    
       .fromTo("#flash", { autoAlpha: 1 }, { autoAlpha: 0, duration: .5, repeat: -1, yoyo: true, ease: "power" }, .5)
-      .to("body", { backgroundColor: "#9ACFE9"}, 0);
+      //.to("body", { backgroundColor: "#9ACFE9"}, 0);
     
     let triggerrebalanceYourselfIn = { trigger: "#section_rebalanceYourself", start: "0% center", end: "100% center" };
     let rebalanceYourselfIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourselfIn })     
     .fromTo("#illu-mindfulbreak", 
       { yPercent: 0, autoAlpha: 1 }, 
-      { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
+      { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
-      { rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
-      { rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
+      { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
+      { y: 0, x: 0, rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
     .fromTo("#illu-logo", 
-      { scale: .8, yPercent: 110, autoAlpha: 0 }, 
-      { yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
+      { scale: .8, y: 0, yPercent: 110, autoAlpha: 0 }, 
+      { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
-    .fromTo("body, .illustration-stage", 
-      { backgroundColor: "#9ACFE9" }, 
+    .to("body, .illustration-stage", 
       { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inout" }, 0  );
 
     
@@ -312,7 +311,7 @@ function animateBenefits(){
       .fromTo("#bw-eyes", {  yPercent: 0 }, { yPercent: -50, duration: 1 }, 1.5)
       .fromTo("#bw-arrow path", { stroke: "#000000" }, {  stroke: "#FFFFFF", duration: 1 }, 0)
       .fromTo("#bw-arrow", { yPercent: 0 }, { yPercent: 50, repeat: -1, yoyo: true, duration: .2 }, 0)
-      .fromTo("#ourMission", { yPercent: 100, autoAlpha: 0 }, { yPercent: 23, scale: .8, autoAlpha: 1,  duration: 1 }, 0)
+      .fromTo("#ourMission", { scale: .8, yPercent: 100, autoAlpha: 0 }, { scale: .8, y: 0, yPercent: 23, autoAlpha: 1,  duration: 1 }, 0)
       .fromTo("#bw-mouth", {
         drawSVG: "50% 50%" },{
         drawSVG: "100%", ease: "expo.inOut", duration: 1}, .5)
@@ -321,7 +320,7 @@ function animateBenefits(){
 
     let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })
       .to("#unbalancedWorld, #ourMission", { yPercent: -200, autoAlpha: 0, duration: 1.1 }, 0)
-      .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
+      .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
       .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
       .fromTo("#er-underarm", { transformOrigin: "10% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
       .fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
@@ -356,11 +355,11 @@ function animateBenefits(){
      // { yPercent: 0, autoAlpha: 1 }, 
       { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
-      { rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
-      { rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
+      { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
+      { y: 0, x: 0, rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
     .fromTo("#illu-logo", 
       { scale: .8, yPercent: 110, autoAlpha: 0 }, 
-      { yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
+      { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)

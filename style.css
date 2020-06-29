@@ -2280,7 +2280,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     margin-top: 70px;
     min-width: 100vw;
     min-height: 150vh;
-    background: url("img/benefits-galaxy-bg.jpg") no-repeat 0 0;
+    background: url("img/benefits-galaxy-bg.jpg") no-repeat right top;
     background-size: cover; }
 
 /*--------------------------------------------------------------

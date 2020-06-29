@@ -36,7 +36,6 @@
 				gsap.to("#primary-menu, .site-header-account", {
 					duration: .2,
 					xPercent: 100,
-				//	yPercent: -20,
 					transformOrigin: "50% right",
 					ease: "sine.inOut",
 					onComplete: function(){
@@ -45,7 +44,6 @@
 						menu.setAttribute( 'aria-expanded', 'false' );
 						gsap.set("#primary-menu, .site-header-account", {
 							xPercent: 0,
-							yPercent: 0,
 						})
 					}
 				})
@@ -59,8 +57,6 @@
 			gsap.to(".site-main > *", {
 				duration: .2,
 				autoAlpha: 1,
-				scale: 1, 
-				transformOrigin: "50% 0"
 			})
 			
 		} else {
@@ -79,8 +75,6 @@
 			gsap.to(".site-main > *", {
 				duration: .2,
 				autoAlpha: .3,
-				scale: .9, 
-				transformOrigin: "50% 0"
 			})
 		}
 	};
@@ -149,6 +143,10 @@
 
 	$('.main-navigation a').on('click', function(){
 		$('.main-navigation').removeClass('toggled');
+		gsap.to(".site-main > *", {
+			duration: .2,
+			autoAlpha: 1,
+		})
 	})
 
 	$(function() {
@@ -191,7 +189,7 @@
 		if (typeof jQuery().searchwp_live_search == 'function') {
 			jQuery('input[data-swplive="true"]').searchwp_live_search();			
 		}
-		// Hide Livesearch after page swotch
+		// Hide Livesearch after page switch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
 		
 		// Exercise count
@@ -251,7 +249,9 @@
 
 		// Membership registration links don't swup
 		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
-	
+		
+		gsap.set("body", {clearProps: "all"});
+
 		animateBenefits();
 
 
