@@ -2179,18 +2179,18 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   padding: 20px 0 0 0;
   text-align: center;
   width: calc(100% - 3rem);
-  height: calc(50% - 50px);
+  height: 250px;
   background-color: #9ACFE9;
   z-index: 1;
   overflow: hidden; }
   @media (min-width: 480px) {
     .illustration-stage {
-      width: calc( 100% - 2rem ); } }
-  @media (min-width: 768px) {
+      width: calc(100% - 2rem); } }
+  @media (min-width: 769px) {
     .illustration-stage {
       background-color: transparent;
       width: 33.333%;
-      height: calc(100vh - 80px);
+      height: 280px;
       top: 80px;
       padding: 2rem;
       display: flex;
@@ -2203,29 +2203,16 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     height: calc(100% - 20px);
     width: 100%;
     overflow: visible; }
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
       .illustration-stage > svg {
         width: 100%;
         height: auto;
         align-self: center; } }
 
-.page-template-page-about .illustration-stage {
-  background-color: transparent;
-  overflow: visible; }
-
-@media (min-width: 768px) {
-  #illuOne {
-    align-self: flex-start;
-    left: 2rem; } }
-
-#speechbubble, #body-howcombat, #body-howcombat #arm-left {
-  visibility: hidden;
-  opacity: 0; }
-
 .content-scroll {
   font-size: 1.15rem;
   height: calc(100vh - 80px); }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     .content-scroll {
       font-size: 1.3rem;
       padding: 0 4rem;
@@ -2240,16 +2227,25 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   display: flex;
   flex-direction: column;
   justify-content: center; }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     .section .wp-block-group__inner-container {
       min-height: calc(100vh - 80px);
       padding: 20vh 0; } }
   .section .wp-block-group__inner-container p {
     margin-top: 0; }
 
+@media (min-width: 769px) {
+  #illuOne {
+    align-self: flex-start;
+    left: 2rem; } }
+
+#speechbubble, #body-howcombat, #body-howcombat #arm-left {
+  visibility: hidden;
+  opacity: 0; }
+
 #section_one {
   padding-top: calc(30vh - 1px); }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     #section_one {
       padding-top: 0; } }
 
@@ -2258,12 +2254,16 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   #section_two strong {
     color: #000; }
 
+.page-template-page-about .illustration-stage {
+  background-color: transparent;
+  overflow: visible; }
+
 .page-template-page-about .site-content {
   color: #FFF; }
 
 #section_unbalancedWorld {
   padding-top: calc(30vh - 1px); }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     #section_unbalancedWorld {
       padding-top: 0; } }
 

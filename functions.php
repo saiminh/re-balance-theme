@@ -518,7 +518,7 @@ function my_wp_mail_filter( $args ) {
 							}
 					</style>
 			<![endif]--><!-- CSS Reset --><style>@import url("https://use.typekit.net/vzx1etu.css");body,html{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0!important}table,td{mso-table-lspace:0!important;mso-table-rspace:0!important}table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important}table table table{table-layout:auto}img{-ms-interpolation-mode:bicubic}[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}.aBn,.x-gmail-data-detectors,.x-gmail-data-detectors *{border-bottom:0!important;cursor:default!important}.button-link{text-decoration:none!important}@media only screen and (min-device-width:375px) and (max-device-width:413px){.email-container{min-width:375px!important}}@media (prefers-color-scheme: dark ){
-				.dark-img { display:block!important; width: auto!important; overflow: visible!important; float: none!important; max-height:inherit!important; max-width:inherit!important; line-height: auto!important; margin-top:0px!important; visibility:inherit!important; }
+				.dark-img { display:block!important; width: auto!important; height: auto!important; overflow: visible!important; float: none!important; max-height:inherit!important; max-width:inherit!important; line-height: auto!important; margin-top:0px!important; visibility:inherit!important; }
 				.light-img { display:none; display:none !important; }				
 			}</style><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --><!--[if gte mso 9]>
 		<xml>
