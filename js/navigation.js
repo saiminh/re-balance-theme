@@ -56,7 +56,7 @@
 					menu.setAttribute( 'aria-expanded', 'false' );									
 			}
 			
-			gsap.to(".content-area", {
+			gsap.to(".site-main > *", {
 				duration: .2,
 				autoAlpha: 1,
 				scale: 1, 
@@ -76,7 +76,7 @@
 				})
 			}
 				
-			gsap.to(".content-area", {
+			gsap.to(".site-main > *", {
 				duration: .2,
 				autoAlpha: .3,
 				scale: .9, 

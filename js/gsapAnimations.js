@@ -240,7 +240,7 @@ function animateBenefits(){
           let idname = "mobhidetrigger" + index;
           console.log(idname);
           mobhidetriggerarray.push(idname);
-          gsap.fromTo( jQuery(this), { autoAlpha: 1, scale: 1, rotationX: 0, transformOrigin: "50% 0%" }, { autoAlpha: 0, scale: 0, rotationX: 90, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
+          gsap.fromTo( jQuery(this), { autoAlpha: 1,transformOrigin: "50% 0%" }, { autoAlpha: 0, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
         })            
       } else {
           if( ScrollTrigger.getById( "mobhidetrigger0") ) {
@@ -248,12 +248,9 @@ function animateBenefits(){
             console.log('kill: ' + id);
               gsap.killTweensOf(ScrollTrigger.getById(id).animation);
               ScrollTrigger.getById(id).kill(true);
-              gsap.set("h1, h2, p", {autoAlpha: 1, scale: 1, rotationX: 0, color: "red",  overwrite: true});
+              gsap.set("h1, h2, p", {autoAlpha: 1, overwrite: true});
               console.log('killed: ' + id);
-           })
-            // gsap.killTweensOf([ScrollTrigger.getById("mobhidetrigger").scroller, ScrollTrigger.getById("mobhidetrigger").animation]);
-            // gsap.set("h1, h2, p", {autoAlpha: 1, scale: 1, rotationX: 0, overwrite: true});
-            // ScrollTrigger.getById("mobhidetrigger").kill(true);           
+           })                 
           }
       }
     }
@@ -302,9 +299,9 @@ function animateBenefits(){
       
       
 
-    let trigger_ourMissionIn = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause() } }
+    let trigger_ourMission_In = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause() } }
 
-    let section_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMissionIn })
+    let section_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMission_In })
       .to("#notification-todo", { xPercent: 100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-traffic", { xPercent: -100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-alarm", { xPercent: -100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
@@ -350,6 +347,8 @@ function animateBenefits(){
       .fromTo("#er-bulb > circle", { scaleY: 6 }, { scaleY: 1, duration: .3 }, "bulb+=.5" )
       .fromTo("#er-bulb > circle", { autoAlpha: 1 }, { autoAlpha: 0, duration: .1, ease: "power3.out" }, "bulb+=.8" )
       .fromTo(".bg-galaxy", { autoAlpha: 1 }, { autoAlpha: 0, duration: .3 }, "bulb+=.5" )
+      .fromTo(".content-scroll", { color: "#FFFFFF"}, { color: "#000000", duration: .3 }, "bulb+=.5")
+      .fromTo(".page-template-page-about em", { color: "#FF9B7A"}, { color: "#C1765C", duration: .3 }, "bulb+=.5")
 
     let triggerrebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
     let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })     

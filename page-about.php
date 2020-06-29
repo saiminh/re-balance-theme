@@ -12,7 +12,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       <div class="background-stage">
-        <img class="bg-galaxy" src="<?php echo get_template_directory_uri(  ) ;?>/img/benefits-galaxy-bg.jpg" alt="The background depicts a photograph of a galaxy">
+        <div class="bg-galaxy" alt="The background depicts a photograph of a galaxy"></div>
       </div>
       <div class="illustration-stage">      
       <svg id="unbalancedWorld" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1018.1 795.4" style="enable-background:new 0 0 1018.1 795.4" xml:space="preserve">

@@ -2190,7 +2190,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .illustration-stage {
       background-color: transparent;
       width: 33.333%;
-      height: 280px;
+      height: calc(100% - 5rem);
       top: 80px;
       padding: 2rem;
       display: flex;
@@ -2267,13 +2267,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     #section_unbalancedWorld {
       padding-top: 0; } }
 
-#section_ourStory,
-#section_rebalance {
-  color: #000; }
-  #section_ourStory em,
-  #section_rebalance em {
-    color: #ff612e; }
-
 .background-stage {
   position: fixed;
   top: 0;
@@ -2286,7 +2279,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .background-stage .bg-galaxy {
     margin-top: 70px;
     min-width: 100vw;
-    min-height: 150vh; }
+    min-height: 150vh;
+    background: url("img/benefits-galaxy-bg.jpg") no-repeat 0 0;
+    background-size: cover; }
 
 /*--------------------------------------------------------------
 ## Archives
