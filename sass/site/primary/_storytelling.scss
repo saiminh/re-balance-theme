@@ -193,8 +193,7 @@
     margin-top: 70px;
     min-width: 100vw;
     min-height: 150vh;
-    background: url("img/benefits-galaxy-bg.jpg") no-repeat right top;
-    background-size: cover
+    object-fit: cover;
   }
 }
 

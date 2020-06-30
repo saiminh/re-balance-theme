@@ -11,9 +11,9 @@
 
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">

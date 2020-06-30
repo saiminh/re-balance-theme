@@ -275,33 +275,140 @@
 	
 	const jsoptions = [
 		{
-		  from: '(.*)',
-		  to: '(.*)',
+		  from: '(.*)', to: '(.*)',
 		  in: function(next) {
-			document.querySelector('#swup').style.opacity = 0;
-			gsap.to($('.loading-animation'), .15, {				
-				autoAlpha: 0
-			});
-			gsap.to(document.querySelector('#swup'), 0.5, {
-			  opacity: 1,
-			  onComplete: next
-			});
+				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
 		  },
 		  out: (next) => {
-			document.querySelector('#swup').style.opacity = 1;
-			gsap.to($('.loading-animation'), .15, {				
-				autoAlpha: 1
-			});
-			gsap.to(document.querySelector('#swup'), 0.5, {
-			  opacity: 0,
-			  onComplete: next
-			});
+				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15 });
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 		  }
+		},
+		{
+			from: '(.*)', to: '/exercises/:id',
+			in: function(next) {
+				gsap.set('.post-info > *', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				gsap.to('.post-info > *', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15 });
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
+			}
+		},
+		{
+			from: '/exercises/:id', to: '(.*)',
+			in: function(next) {
+				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('.post-info > *', { autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: 0.3 });
+				gsap.to('.post-info > *', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
+			}
+		},
+		{
+			from: '/exercises/:id', to: '/exercises/:id',
+			in: function(next) {
+				gsap.set('.post-info > *', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				gsap.to('.post-info > *', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('.post-info > *', { autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: 0.3 });
+				gsap.to('.post-info > *', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
+			}
+		},
+		{
+			from: '(.*)', to: '/about',
+			in: function(next) {
+				gsap.set('#swup', { autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+			},
+			out: (next) => {
+				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3 });
+			}
+		},
+		{
+			from: '(.*)', to: '/the-benefits',
+			in: function(next) {
+				gsap.set('#swup', { autoAlpha: 0 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+			},
+			out: (next) => {
+				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3 });
+			}
+		},
+		{
+			from: '/about', to: '(.*)',
+			in: function(next) {
+				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('#swup', { autoAlpha: 1 });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+			}
+		},
+		{
+			from: '/the-benefits', to: '(.*)',
+			in: function(next) {
+				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('#swup', { autoAlpha: 1 });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+			}
+		},
+		{
+			from: '/about', to: '/the-benefits',
+			in: function(next) {
+				gsap.set('#swup', { autoAlpha: 0 });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('#swup', { autoAlpha: 1 });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+			}
+		},
+		{
+			from: '/the-benefits', to: '/about',
+			in: function(next) {
+				gsap.set('#swup', { autoAlpha: 0 });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+			},
+			out: (next) => {
+				gsap.set('#swup', { autoAlpha: 1 });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
+				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+			}
 		}
 	  ];
 	
 	const swup = new Swup({
 		animateHistoryBrowsing: true,
+		cache: false,
 		plugins: [new SwupBodyClassPlugin(), new SwupJsPlugin(jsoptions),]
 	});
 	// run swup the first time
@@ -310,6 +417,9 @@
 	swup.on('contentReplaced', init);
 	// to clean up 
 	//swup.on('willReplaceContent', unload);
+
+
+
 	// Mobile Menu search
 	$('.toggle-search').on('click', function(e){
 		e.preventDefault;

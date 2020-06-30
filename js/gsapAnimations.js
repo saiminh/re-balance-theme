@@ -3,7 +3,7 @@
 // ----------------------------------------------------------
 
 function animateBenefits(){
-  
+  ScrollTrigger.getAll().forEach(element => element.kill());
   // Create timelines for benefits page to use in init
   if (document.querySelector('#illuOne')) {						
     
@@ -213,12 +213,7 @@ function animateBenefits(){
       { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
-      { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
-    .to("body", 
-      { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inOut" }, 0  )
-    .fromTo(".illustration-stage", 
-      { backgroundColor: "#9ACFE9" },
-      { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inOut" }, 0  );
+      { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);
 
     
 
@@ -240,7 +235,7 @@ function animateBenefits(){
       if (mq.matches) { // If media query matches
         jQuery("h1, h2, p").each(function( index ){
           let idname = "mobhidetrigger" + index;
-          console.log(idname);
+          //console.log(idname);
           mobhidetriggerarray.push(idname);
           gsap.fromTo( jQuery(this), { autoAlpha: 1,transformOrigin: "50% 0%" }, { autoAlpha: 0, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
         })            
@@ -251,7 +246,7 @@ function animateBenefits(){
               gsap.killTweensOf(ScrollTrigger.getById(id).animation);
               ScrollTrigger.getById(id).kill(true);
               gsap.set("h1, h2, p", {autoAlpha: 1, overwrite: true});
-              console.log('killed: ' + id);
+             // console.log('killed: ' + id);
            })                 
           }
       }
@@ -369,8 +364,7 @@ function animateBenefits(){
 
 
   } else {
-    console.log('illu-01 doesnt exist');
-    ScrollTrigger.getAll().forEach(element => element.kill());
+    
   }
 }
 animateBenefits();
