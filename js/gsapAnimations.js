@@ -214,8 +214,11 @@ function animateBenefits(){
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
-    .to("body, .illustration-stage", 
-      { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inout" }, 0  );
+    .to("body", 
+      { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inOut" }, 0  )
+    .fromTo(".illustration-stage", 
+      { backgroundColor: "#9ACFE9" },
+      { backgroundColor: "#FFFFFF", duration: 1, ease: "power4.inOut" }, 0  );
 
     
 
