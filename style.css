@@ -2295,14 +2295,19 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none; }
+  scrollbar-width: none;
+  width: calc(100vw - 1rem); }
   .posts-row > header:first-child {
     display: none; }
+  @media (min-width: 480px) {
+    .posts-row {
+      width: calc(100vw - 1.5rem); } }
   @media (min-width: 769px) {
     .posts-row {
       overflow: visible;
       flex-wrap: wrap;
-      justify-content: space-evenly; } }
+      justify-content: flex-start;
+      width: calc(100% + .5em); } }
 
 .exercises-tag,
 .exercises-tag:visited {
@@ -2348,16 +2353,10 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .search-results article.post,
     .search-results article.exercises {
       padding: 2em;
-      width: calc((100% - 1em) / 3);
+      width: calc((100% - 1.5em) / 3);
       font-size: 1rem;
       transition: all .1s ease-out;
       flex-grow: 0; }
-      .blog article.post:nth-child(3n), .blog article.exercises:nth-child(3n),
-      .archive article.post:nth-child(3n),
-      .archive article.exercises:nth-child(3n),
-      .search-results article.post:nth-child(3n),
-      .search-results article.exercises:nth-child(3n) {
-        margin-right: 0; }
       .blog article.post:last-child, .blog article.exercises:last-child,
       .archive article.post:last-child,
       .archive article.exercises:last-child,
@@ -2491,22 +2490,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         display: flex;
         flex-direction: column;
         justify-content: center; } }
-.blog.show-discreet-exercises-only article.post:nth-child(3n), .blog.show-discreet-exercises-only article.exercises:nth-child(3n),
-.archive.show-discreet-exercises-only article.post:nth-child(3n),
-.archive.show-discreet-exercises-only article.exercises:nth-child(3n),
-.search-results.show-discreet-exercises-only article.post:nth-child(3n),
-.search-results.show-discreet-exercises-only article.exercises:nth-child(3n) {
-  margin-right: .5em; }
-.blog.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet, .blog.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.archive.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.archive.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.archive.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.archive.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.search-results.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.search-results.show-discreet-exercises-only article.post.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.search-results.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet,
-.search-results.show-discreet-exercises-only article.exercises.exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet ~ .exercises-tag-discreet {
-  margin-right: 0; }
 
 .discreet-checkmark {
   height: 24px;
