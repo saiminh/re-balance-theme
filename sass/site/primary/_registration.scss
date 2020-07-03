@@ -1,39 +1,39 @@
-.page-template-page-registration .site-content {
-    background-color: $color__brand-secondary;
+.page-template-page-registration {
+    background-color: red;
+    background: linear-gradient(180deg, $color__brand-secondary 0%, $color__brand-secondary 80%, #FFF 100%) no-repeat;
+    background-attachment: fixed;
 } 
-.swpm-registration-widget-form {
+.swpm-registration-widget-form,
+.swpm-login-widget-form {
     position: relative;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    &:after {
-        content: '';
-        width: calc(100% + 4rem);
-        height: 1px;
-        background-color: #EEE;
-        position: absolute;
-        bottom: 0;
-        left: -2rem
-    }
+    padding-bottom: 0;
+    margin-bottom: -0.5rem;
 }
 
-.swpm-registration-widget-form form {
-    max-width: 400px;
-    margin: 0 auto 1rem auto;
+.swpm-registration-widget-form form,
+.swpm-login-widget-form form {
+    // max-width: 400px;
+    // margin: 0 auto 1rem auto;
+}
+
+.swpm-registration-widget-form + p {
+    text-align: center;
+    @media (min-width: 768px) {
+        position: absolute;
+        transform: translate(175px, -53px);
+    }
 }
 
 .swpm-registration-widget-form tr > td {
     display: block;
-}
-      
+}  
 .swpm-registration-widget-form tr > td:last-child {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     position: relative;
 }
- 
 .swpm-registration-membership-level-row {
     display: none;
 }
-
 .swpm-password-label, 
 .swpm-username-label {
     position: relative;
@@ -45,7 +45,6 @@
         top: 30px;
     }
 }
-      
 .swpm-registration-username-row,
 .swpm-registration-email-row,
 .swpm-registration-password-row,
@@ -59,9 +58,6 @@
 
     & td {
         position: relative;       
-    }
-    & td:first-child {
-       
     }
     & input[type="text"], 
     & input[type="password"] {    
@@ -77,27 +73,28 @@
     }
     & label {
         font-size: .9rem;
-        color: #999;
+        color: #666;
         position: relative;
         display: block;
-        margin-bottom: .25rem;    
+        margin-bottom: .1rem;    
 
         &:before {
             content: '';
             width: .9rem;
             display: inline-block;
             margin-right: .5rem;
-            opacity: .4;
+            opacity: .5;
         }        
     }
 }
-
 .swpm-registration-firstname-row,
 .swpm-registration-lastname-row {
-    width: calc(50% - .5rem);
-    display: inline-block;
-    float: left;
 
+    @media (min-width: 768px) {
+        width: calc(50% - .5rem);
+        display: inline-block;
+        float: left;
+    }
     & label:before {
         content: none;
         width: 0;
@@ -106,18 +103,10 @@
 .swpm-registration-firstname-row {
     margin-right: 1rem;
 }
-
-.swpm-registration-password-row td:first-child,
-.swpm-registration-firstname-row td:first-child {
-    //padding-top: 2rem;
-}
-
 #swpm-registration-form td[style="text-align: center;"],
 #swpm-registration-form div[align="center"] {
     text-align: left!important;
 }
-
-
 .swpm-registration-username-row label:before,
 .swpm-username-label label:before {
     content: url(img/ui-user.svg);
@@ -214,6 +203,25 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
 
         @media (min-width: 768px) {
             width: auto;
+        }
+    }
+}
+
+.swpm-registration-submit-section {
+    position: relative;
+    padding-top: 1.5rem;
+    &:before {
+        content: '';
+        width: calc(100% + 3rem);
+        height: 1px;
+        background-color: #EEE;
+        position: absolute;
+        top: 0;
+        left: -1.5rem;
+    
+        @media (min-width: 480px) {
+            left: -2rem;
+            width: calc(100% + 4rem);
         }
     }
 }

@@ -811,18 +811,27 @@ textarea {
 
 .form-container {
   background: #fff;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 6px;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
-  max-width: 40rem;
-  margin: 1rem auto; }
+  max-width: 500px;
+  margin: 1rem -.5rem; }
+  @media (min-width: 480px) {
+    .form-container {
+      margin: 1rem auto;
+      padding: 2rem; } }
   .form-container > .wp-block-group__inner-container > *:first-child {
     margin-top: 0; }
   .form-container > .wp-block-group__inner-container > h2:first-child {
-    margin: -2rem -2rem 2rem -2rem;
-    padding: 2rem;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    padding: 1.5rem;
     border-bottom: 1px solid #EEE;
-    border-radius: 5px 5px 0 0; }
+    border-radius: 5px 5px 0 0;
+    font-size: 1.25rem; }
+    @media (min-width: 480px) {
+      .form-container > .wp-block-group__inner-container > h2:first-child {
+        margin: -2rem -2rem 1rem -2rem;
+        padding: 1.5rem 2rem; } }
   .form-container > .wp-block-group__inner-container > *:last-child {
     margin-bottom: 0; }
 
@@ -905,6 +914,13 @@ a {
       align-items: center;
       align-content: flex-start;
       transition: .1s all linear; } }
+  .site-header:before {
+    content: "";
+    width: 100vw;
+    height: 50px;
+    background-color: #FFF;
+    position: absolute;
+    bottom: 100%; }
   @media (min-width: 1100px) {
     .site-header.scrolled {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); } }
@@ -1986,31 +2002,29 @@ a {
   .exercise-single-article .entry-footer .divider {
     display: none; }
 
-.page-template-page-registration .site-content {
-  background-color: #9ACFE9; }
+.page-template-page-registration {
+  background-color: red;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 80%, #FFF 100%) no-repeat;
+  background-attachment: fixed; }
 
-.swpm-registration-widget-form {
+.swpm-registration-widget-form,
+.swpm-login-widget-form {
   position: relative;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem; }
-  .swpm-registration-widget-form:after {
-    content: '';
-    width: calc(100% + 4rem);
-    height: 1px;
-    background-color: #EEE;
-    position: absolute;
-    bottom: 0;
-    left: -2rem; }
+  padding-bottom: 0;
+  margin-bottom: -0.5rem; }
 
-.swpm-registration-widget-form form {
-  max-width: 400px;
-  margin: 0 auto 1rem auto; }
+.swpm-registration-widget-form + p {
+  text-align: center; }
+  @media (min-width: 768px) {
+    .swpm-registration-widget-form + p {
+      position: absolute;
+      transform: translate(175px, -53px); } }
 
 .swpm-registration-widget-form tr > td {
   display: block; }
 
 .swpm-registration-widget-form tr > td:last-child {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   position: relative; }
 
 .swpm-registration-membership-level-row {
@@ -2077,10 +2091,10 @@ a {
 .swpm-username-input label,
 .swpm-username-label label {
   font-size: .9rem;
-  color: #999;
+  color: #666;
   position: relative;
   display: block;
-  margin-bottom: .25rem; }
+  margin-bottom: .1rem; }
   .swpm-registration-username-row label:before,
   .swpm-registration-email-row label:before,
   .swpm-registration-password-row label:before,
@@ -2095,17 +2109,18 @@ a {
     width: .9rem;
     display: inline-block;
     margin-right: .5rem;
-    opacity: .4; }
+    opacity: .5; }
 
-.swpm-registration-firstname-row,
-.swpm-registration-lastname-row {
-  width: calc(50% - .5rem);
-  display: inline-block;
-  float: left; }
-  .swpm-registration-firstname-row label:before,
-  .swpm-registration-lastname-row label:before {
-    content: none;
-    width: 0; }
+@media (min-width: 768px) {
+  .swpm-registration-firstname-row,
+  .swpm-registration-lastname-row {
+    width: calc(50% - .5rem);
+    display: inline-block;
+    float: left; } }
+.swpm-registration-firstname-row label:before,
+.swpm-registration-lastname-row label:before {
+  content: none;
+  width: 0; }
 
 .swpm-registration-firstname-row {
   margin-right: 1rem; }
@@ -2182,6 +2197,22 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   @media (min-width: 768px) {
     button.swpm-registration-submit, button.swpm-login-form-submit, input[type="button"].swpm-registration-submit, input[type="button"].swpm-login-form-submit, input[type="reset"].swpm-registration-submit, input[type="reset"].swpm-login-form-submit, input[type="submit"].swpm-registration-submit, input[type="submit"].swpm-login-form-submit, a.button.swpm-registration-submit, a.button.swpm-login-form-submit {
       width: auto; } }
+
+.swpm-registration-submit-section {
+  position: relative;
+  padding-top: 1.5rem; }
+  .swpm-registration-submit-section:before {
+    content: '';
+    width: calc(100% + 3rem);
+    height: 1px;
+    background-color: #EEE;
+    position: absolute;
+    top: 0;
+    left: -1.5rem; }
+    @media (min-width: 480px) {
+      .swpm-registration-submit-section:before {
+        left: -2rem;
+        width: calc(100% + 4rem); } }
 
 #swpm_message {
   max-width: 40rem;
