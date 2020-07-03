@@ -7,24 +7,23 @@ a.wp-block-button__link {
 	border: none;
 	border-color: $color__border-button;
 	border-radius: 3px;
-	//box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	background: $color__brand-primary;
 	color: #FFF;
 	line-height: 1;
-	padding: .75em 1em;
+	padding: .8em 1.75em;
 	font-size: 1.25rem;
 	box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
-				-2px 2px 0 darken($color__brand-primary, 20%);
+							-2px 2px 0 darken($color__brand-primary, 20%);
 	transform: translate(0, 0);
 	transition: .15s all ease-in-out;
 
 	&:hover {
 		border-radius: 15px;
 		box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
-					-2px 2px 0 darken($color__brand-primary, 20%),
-					-3px 3px 0 darken($color__brand-primary, 20%),
-					-4px 4px 0 darken($color__brand-primary, 20%),
-					-5px 5px 0 darken($color__brand-primary, 20%);
+								-2px 2px 0 darken($color__brand-primary, 20%),
+								-3px 3px 0 darken($color__brand-primary, 20%),
+								-4px 4px 0 darken($color__brand-primary, 20%),
+								-5px 5px 0 darken($color__brand-primary, 20%);
 		transform: translate(3px, -3px);
 	}
 

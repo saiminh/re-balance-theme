@@ -527,7 +527,7 @@ a.wp-block-button__link {
   background: #FF9B7A;
   color: #FFF;
   line-height: 1;
-  padding: .75em 1em;
+  padding: .8em 1.75em;
   font-size: 1.25rem;
   box-shadow: -1px 1px 0 #ff4e14, -2px 2px 0 #ff4e14;
   transform: translate(0, 0);
@@ -616,7 +616,7 @@ textarea {
   height: 44px;
   padding: 1em;
   font-size: 16px;
-  background-color: #ffe8e0; }
+  background-color: #EEE; }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="url"]:focus,
@@ -689,8 +689,7 @@ textarea {
       padding: 1em 1.25em;
       line-height: 50px;
       height: 50px;
-      font-size: 1rem;
-      border-radius: 10px; } }
+      font-size: 1rem; } }
 
 select {
   border: 1px solid #FF9B7A; }
@@ -803,9 +802,9 @@ textarea {
 .notification--nodiscreet {
   text-align: center;
   background: #fbede9;
-  max-width: 43em;
-  margin: 2em auto;
-  padding: 2em 1em;
+  max-width: 43rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
   border-radius: 5px;
   color: #FF9B7A;
   border: 1px solid #f1d3cb; }
@@ -815,15 +814,15 @@ textarea {
   padding: 2rem;
   border-radius: 6px;
   box-shadow: 0 3px 16px rgba(0, 0, 0, 0.1);
-  max-width: 33rem;
+  max-width: 40rem;
   margin: 1rem auto; }
-  @media (min-width: 480px) {
-    .form-container {
-      padding: 2.5rem; } }
   .form-container > .wp-block-group__inner-container > *:first-child {
     margin-top: 0; }
   .form-container > .wp-block-group__inner-container > h2:first-child {
-    margin: 0 0 1em 0; }
+    margin: -2rem -2rem 2rem -2rem;
+    padding: 2rem;
+    border-bottom: 1px solid #EEE;
+    border-radius: 5px 5px 0 0; }
   .form-container > .wp-block-group__inner-container > *:last-child {
     margin-bottom: 0; }
 
@@ -1987,17 +1986,33 @@ a {
   .exercise-single-article .entry-footer .divider {
     display: none; }
 
-.page-template-page-registration {
+.page-template-page-registration .site-content {
   background-color: #9ACFE9; }
+
+.swpm-registration-widget-form {
+  position: relative;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem; }
+  .swpm-registration-widget-form:after {
+    content: '';
+    width: calc(100% + 4rem);
+    height: 1px;
+    background-color: #EEE;
+    position: absolute;
+    bottom: 0;
+    left: -2rem; }
+
+.swpm-registration-widget-form form {
+  max-width: 400px;
+  margin: 0 auto 1rem auto; }
 
 .swpm-registration-widget-form tr > td {
   display: block; }
 
 .swpm-registration-widget-form tr > td:last-child {
-  margin-bottom: .7rem; }
+  margin-bottom: 1rem;
+  position: relative; }
 
-.swpm-registration-firstname-row,
-.swpm-registration-lastname-row,
 .swpm-registration-membership-level-row {
   display: none; }
 
@@ -2012,6 +2027,17 @@ a {
     position: absolute;
     top: 30px; }
 
+.swpm-registration-username-row td,
+.swpm-registration-email-row td,
+.swpm-registration-password-row td,
+.swpm-registration-password-retype-row td,
+.swpm-registration-firstname-row td,
+.swpm-registration-lastname-row td,
+.swpm-password-input td,
+.swpm-password-label td,
+.swpm-username-input td,
+.swpm-username-label td {
+  position: relative; }
 .swpm-registration-username-row input[type="text"], .swpm-registration-username-row input[type="password"],
 .swpm-registration-email-row input[type="text"],
 .swpm-registration-email-row input[type="password"],
@@ -2019,6 +2045,10 @@ a {
 .swpm-registration-password-row input[type="password"],
 .swpm-registration-password-retype-row input[type="text"],
 .swpm-registration-password-retype-row input[type="password"],
+.swpm-registration-firstname-row input[type="text"],
+.swpm-registration-firstname-row input[type="password"],
+.swpm-registration-lastname-row input[type="text"],
+.swpm-registration-lastname-row input[type="password"],
 .swpm-password-input input[type="text"],
 .swpm-password-input input[type="password"],
 .swpm-password-label input[type="text"],
@@ -2027,19 +2057,27 @@ a {
 .swpm-username-input input[type="password"],
 .swpm-username-label input[type="text"],
 .swpm-username-label input[type="password"] {
-  color: #333;
+  height: 45px;
   width: 100%;
-  height: 50px;
-  line-height: 50px;
-  color: #FF9B7A; }
+  line-height: 45px;
+  color: #000;
+  font-size: 1.25rem;
+  border-radius: 3px;
+  padding: 0 .75rem;
+  background-color: #fff7f4;
+  border: 1px solid #ffe0d6; }
 .swpm-registration-username-row label,
 .swpm-registration-email-row label,
 .swpm-registration-password-row label,
 .swpm-registration-password-retype-row label,
+.swpm-registration-firstname-row label,
+.swpm-registration-lastname-row label,
 .swpm-password-input label,
 .swpm-password-label label,
 .swpm-username-input label,
 .swpm-username-label label {
+  font-size: .9rem;
+  color: #999;
   position: relative;
   display: block;
   margin-bottom: .25rem; }
@@ -2047,6 +2085,8 @@ a {
   .swpm-registration-email-row label:before,
   .swpm-registration-password-row label:before,
   .swpm-registration-password-retype-row label:before,
+  .swpm-registration-firstname-row label:before,
+  .swpm-registration-lastname-row label:before,
   .swpm-password-input label:before,
   .swpm-password-label label:before,
   .swpm-username-input label:before,
@@ -2054,7 +2094,25 @@ a {
     content: '';
     width: .9rem;
     display: inline-block;
-    margin-right: .5rem; }
+    margin-right: .5rem;
+    opacity: .4; }
+
+.swpm-registration-firstname-row,
+.swpm-registration-lastname-row {
+  width: calc(50% - .5rem);
+  display: inline-block;
+  float: left; }
+  .swpm-registration-firstname-row label:before,
+  .swpm-registration-lastname-row label:before {
+    content: none;
+    width: 0; }
+
+.swpm-registration-firstname-row {
+  margin-right: 1rem; }
+
+#swpm-registration-form td[style="text-align: center;"],
+#swpm-registration-form div[align="center"] {
+  text-align: left !important; }
 
 .swpm-registration-username-row label:before,
 .swpm-username-label label:before {
@@ -2100,20 +2158,16 @@ a {
 .swpm-registration-widget-form .formError.greenPopup {
   opacity: 1 !important;
   min-width: auto;
-  top: 0 !important;
-  right: 0 !important;
-  transform: translate(-50%, 150%); }
-  @media (min-width: 480px) {
-    .swpm-registration-widget-form .formError.greenPopup {
-      transform: translate(-50%, 150%); } }
+  top: 50% !important;
+  right: 25px !important; }
 .swpm-registration-widget-form .formError.greenPopup .formErrorArrow div {
   display: none;
   right: 1rem !important; }
 .swpm-registration-widget-form .formError.greenPopup .formErrorContent {
   content: url(img/ui-check-green.svg);
-  width: 30px;
-  min-width: 30px;
-  height: 30px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   background: transparent; }
 
 .swpm-join-us-link {
@@ -2124,12 +2178,13 @@ a {
 
 button.swpm-registration-submit, button.swpm-login-form-submit, input[type="button"].swpm-registration-submit, input[type="button"].swpm-login-form-submit, input[type="reset"].swpm-registration-submit, input[type="reset"].swpm-login-form-submit, input[type="submit"].swpm-registration-submit, input[type="submit"].swpm-login-form-submit, a.button.swpm-registration-submit, a.button.swpm-login-form-submit {
   width: 100%;
-  padding: 1.25em;
-  cursor: pointer;
-  font-weight: 600; }
+  cursor: pointer; }
+  @media (min-width: 768px) {
+    button.swpm-registration-submit, button.swpm-login-form-submit, input[type="button"].swpm-registration-submit, input[type="button"].swpm-login-form-submit, input[type="reset"].swpm-registration-submit, input[type="reset"].swpm-login-form-submit, input[type="submit"].swpm-registration-submit, input[type="submit"].swpm-login-form-submit, a.button.swpm-registration-submit, a.button.swpm-login-form-submit {
+      width: auto; } }
 
 #swpm_message {
-  max-width: 33rem;
+  max-width: 40rem;
   margin: 2rem auto;
   padding: 1.5rem;
   background: #ffe8e0;

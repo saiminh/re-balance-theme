@@ -149,9 +149,9 @@
 .notification--nodiscreet {
     text-align: center;
     background: #fbede9;
-    max-width: 43em;
-    margin: 2em auto;
-    padding: 2em 1em;
+    max-width: 43rem;
+    margin: 2rem auto;
+    padding: 2rem 1rem;
     border-radius: 5px;
     color: #FF9B7A;
     border: 1px solid #f1d3cb;
@@ -162,11 +162,11 @@
   padding: 2rem;
   border-radius: 6px;
   box-shadow: 0 3px 16px rgba(0,0,0,0.1);
-  max-width: 33rem;
+  max-width: 40rem;
   margin: 1rem auto;
 
   @media (min-width: 480px) {
-    padding: 2.5rem;
+    //padding: 2.5rem;
   }
 
   & > .wp-block-group__inner-container > *:first-child {
@@ -174,7 +174,17 @@
   }
 
   & > .wp-block-group__inner-container > h2:first-child {
-    margin: 0 0 1em 0;
+    margin: -2rem -2rem 2rem -2rem;
+    padding: 2rem;
+    //background-color: $color__brand-primary;
+    //color: #FFF;
+    
+    border-bottom: 1px solid #EEE;
+    border-radius: 5px 5px 0 0;
+    @media (min-width: 480px) {
+      // margin: -2.5rem -2.5rem 2.5rem -2.5rem;
+      // padding: 2.5rem;
+    }
   }
 
   & > .wp-block-group__inner-container > *:last-child {
