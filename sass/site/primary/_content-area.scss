@@ -39,7 +39,7 @@
 .home {
     
     &.wpsmp-loggedout {
-        background-color: $color__brand-secondary;
+        @include bg-gradient-01;
     }
 
     & h1 {

@@ -319,7 +319,7 @@ function animateBenefits(){
     let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })
       .to("#unbalancedWorld, #ourMission", { yPercent: -200, autoAlpha: 0, duration: 1.1 }, 0)
       .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
-      .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
+      .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { transformOrigin: "11% 63%", rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
       .fromTo("#er-underarm", { transformOrigin: "10% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
       .fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
       .addLabel("bulb", .3)

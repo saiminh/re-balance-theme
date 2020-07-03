@@ -21,3 +21,15 @@ $color__border-button-hover: $color__brand-primary;
 $color__border-button-focus: $color__brand-primary;
 $color__border-input: $color__brand-primary;
 $color__border-abbr: #666;
+
+@mixin bg-gradient-01 {
+  background-color: $color__brand-secondary;
+  background: linear-gradient(
+      180deg, 
+      $color__brand-secondary 0%, 
+      $color__brand-secondary 30%, 
+      lighten($color__brand-primary, 20%) 90%, 
+      #FFF 100%
+  ) no-repeat;
+  background-attachment: fixed;
+}

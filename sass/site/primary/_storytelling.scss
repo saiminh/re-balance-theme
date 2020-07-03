@@ -19,7 +19,7 @@
 }
 
 .page-template-page-the-benefits {
-    background-color: $color__brand-secondary;
+    @include bg-gradient-01;
   }
 
   .page-template-page-the-benefits .site-content,
@@ -156,6 +156,10 @@
 
 // About page
 
+.page-template-page-about {
+  @include bg-gradient-01;
+}
+
 .page-template-page-about .illustration-stage {
   background-color: transparent;
   overflow: visible;
@@ -173,12 +177,6 @@
   }
 }
 
-#section_ourStory,
-#section_rebalance {
- 
-}
-
-
 .background-stage {
   position: fixed;
   top: 0;
@@ -187,7 +185,6 @@
   height: 100vh;
   z-index: -1;
   overflow: hidden;
-  background-color: $color__brand-secondary;
 
   & .bg-galaxy {
     margin-top: 70px;

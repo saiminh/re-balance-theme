@@ -130,7 +130,11 @@
 
 	<?php endif; ?>
 	
-	<div class="loading-animation"><div class="loader"></div></div>			
+	<div class="loading-animation"><div class="loader">
+		<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+		<circle cx="50" cy="50" r="45" fill="none" stroke="#ff9b7a" stroke-width="6" />
+		</svg>
+	</div></div>			
 	
 	<div id="swup" class="site-content transition">		
 	

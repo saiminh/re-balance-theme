@@ -1,6 +1,12 @@
 .page-template-page-registration {
-    background-color: red;
-    background: linear-gradient(180deg, $color__brand-secondary 0%, $color__brand-secondary 80%, #FFF 100%) no-repeat;
+    background-color: $color__brand-secondary;
+    background: linear-gradient(
+        180deg, 
+        $color__brand-secondary 0%, 
+        $color__brand-secondary 30%, 
+        lighten($color__brand-primary, 20%) 90%, 
+        #FFF 100%
+    ) no-repeat;
     background-attachment: fixed;
 } 
 .swpm-registration-widget-form,
@@ -10,17 +16,12 @@
     margin-bottom: -0.5rem;
 }
 
-.swpm-registration-widget-form form,
-.swpm-login-widget-form form {
-    // max-width: 400px;
-    // margin: 0 auto 1rem auto;
-}
-
 .swpm-registration-widget-form + p {
     text-align: center;
+   
     @media (min-width: 768px) {
         position: absolute;
-        transform: translate(175px, -53px);
+        transform: translate(175px, -45px);
     }
 }
 

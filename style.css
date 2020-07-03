@@ -1631,76 +1631,9 @@ a {
   left: calc(50% - 45px);
   top: calc(48vh - 45px);
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 1000; }
 
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
-.loader,
-.loader:before,
-.loader:after {
-  border-radius: 50%; }
-
-.loader {
-  color: #FF9B7A;
-  font-size: 9px;
-  text-indent: -99999em;
-  margin: 0 auto;
-  position: relative;
-  width: 10em;
-  height: 10em;
-  box-shadow: inset 0 0 0 6px;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0); }
-
-.loader:before, .loader:after {
-  position: absolute;
-  content: ''; }
-  .home.wpsmp-loggedout .loader:before, .page-template-page-registration .loader:before, .page-template-page-the-benefits .loader:before,
-  .home.wpsmp-loggedout .loader:after, .page-template-page-registration .loader:after, .page-template-page-the-benefits .loader:after {
-    background: #9ACFE9; }
-
-.loader:before {
-  width: 5.2em;
-  height: 10.2em;
-  background: #FFF;
-  border-radius: 10.2em 0 0 10.2em;
-  top: -0.1em;
-  left: -0.1em;
-  -webkit-transform-origin: 5.1em 5.1em;
-  transform-origin: 5.1em 5.1em;
-  -webkit-animation: load2 1s infinite ease 1.5s;
-  animation: load2 1s infinite ease 1.66s; }
-
-.loader:after {
-  width: 5.2em;
-  height: 10.2em;
-  background: #FFF;
-  border-radius: 0 10.2em 10.2em 0;
-  top: -0.1em;
-  left: 4.9em;
-  -webkit-transform-origin: 0.1em 5.1em;
-  transform-origin: 0.1em 5.1em;
-  -webkit-animation: load2 1s infinite ease;
-  animation: load2 1s infinite ease; }
-
-@-webkit-keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-@keyframes load2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg); } }
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -2003,8 +1936,8 @@ a {
     display: none; }
 
 .page-template-page-registration {
-  background-color: red;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 80%, #FFF 100%) no-repeat;
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
   background-attachment: fixed; }
 
 .swpm-registration-widget-form,
@@ -2018,7 +1951,7 @@ a {
   @media (min-width: 768px) {
     .swpm-registration-widget-form + p {
       position: absolute;
-      transform: translate(175px, -53px); } }
+      transform: translate(175px, -45px); } }
 
 .swpm-registration-widget-form tr > td {
   display: block; }
@@ -2243,7 +2176,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     margin: 0; }
 
 .page-template-page-the-benefits {
-  background-color: #9ACFE9; }
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
+  background-attachment: fixed; }
 
 .page-template-page-the-benefits .site-content,
 .page-template-page-about .site-content {
@@ -2343,6 +2278,11 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   #section_two strong {
     color: #000; }
 
+.page-template-page-about {
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
+  background-attachment: fixed; }
+
 .page-template-page-about .illustration-stage {
   background-color: transparent;
   overflow: visible; }
@@ -2363,8 +2303,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  overflow: hidden;
-  background-color: #9ACFE9; }
+  overflow: hidden; }
   .background-stage .bg-galaxy {
     margin-top: 70px;
     min-width: 100vw;
@@ -2625,7 +2564,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       padding-bottom: 0; } }
 
 .home.wpsmp-loggedout {
-  background-color: #9ACFE9; }
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
+  background-attachment: fixed; }
 .home h1 {
   font-size: 7vw; }
   @media (min-width: 768px) {

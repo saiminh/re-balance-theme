@@ -5,6 +5,9 @@
  * navigation support for dropdown menus.
  */
 ( function($) {
+	
+	gsap.registerPlugin(DrawSVGPlugin);
+
 	var container, button, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
@@ -271,19 +274,30 @@
 	// 	console.log("after onload");
 	// }
 	
+	function ani_loader_in(){
+		gsap.to('.loading-animation', { transformOrigin: "50% 0%", autoAlpha: 0, duration: .5 });			
+	};
 
-	
+	function ani_loader_out(){
+		gsap.to('.loading-animation', { autoAlpha: 1, duration: .5, delay: .3 });	
+		let tl = gsap.timeline({ repeat: -1 });
+		tl.fromTo('.loader svg circle', { drawSVG: "100% 100%" }, { drawSVG: "0% 100%", duration: 1.5, ease: "none" }, 0)
+		tl.fromTo('.loader svg circle', { drawSVG: "0% 100%" }, { drawSVG: "0% 0%", duration: 1.5, ease: "none" })
+		tl.fromTo('.loader svg circle', { transformOrigin: "50% 50%", rotationZ: 0 }, { rotationZ: -720, duration: 3, ease: "none" }, 0)
+		return tl;
+	};
+
 	const jsoptions = [
 		{
 		  from: '(.*)', to: '(.*)',
 		  in: function(next) {
 				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				ani_loader_in();
 				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
 		  },
 		  out: (next) => {
 				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15 });
+				ani_loader_out();
 				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 		  }
 		},
@@ -291,12 +305,12 @@
 			from: '(.*)', to: '/exercises/:id',
 			in: function(next) {
 				gsap.set('.post-info > *', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				ani_loader_in();
 				gsap.to('.post-info > *', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
 			},
 			out: (next) => {
 				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15 });
+				ani_loader_out();
 				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 			}
 		},
@@ -304,12 +318,12 @@
 			from: '/exercises/:id', to: '(.*)',
 			in: function(next) {
 				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				ani_loader_in();
 				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
 			},
 			out: (next) => {
 				gsap.set('.post-info > *', { autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: 0.3 });
+				ani_loader_out()
 				gsap.to('.post-info > *', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 			}
 		},
@@ -317,12 +331,12 @@
 			from: '/exercises/:id', to: '/exercises/:id',
 			in: function(next) {
 				gsap.set('.post-info > *', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15 });
+				ani_loader_in();
 				gsap.to('.post-info > *', { xPercent: 0, autoAlpha: 1, ease: "circ.out", duration: 0.3, onComplete: next });
 			},
 			out: (next) => {
 				gsap.set('.post-info > *', { autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: 0.3 });
+				ani_loader_out()
 				gsap.to('.post-info > *', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 			}
 		},
@@ -330,78 +344,79 @@
 			from: '(.*)', to: '/about',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
-				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+				ani_loader_in();
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next  });
 			},
 			out: (next) => {
 				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
-				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3 });
+				ani_loader_out();
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next  });
 			}
 		},
 		{
 			from: '(.*)', to: '/the-benefits',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
-				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
+				ani_loader_in();
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next  });
 			},
 			out: (next) => {
 				gsap.set('#swup .site-main', { xPercent: 0, autoAlpha: 1 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
-				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3 });
+				ani_loader_out();
+				gsap.to('#swup .site-main', { xPercent: -20, autoAlpha: 0, ease: "circ.in", duration: 0.3, onComplete: next });
 			}
 		},
 		{
 			from: '/about', to: '(.*)',
 			in: function(next) {
 				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3, onComplete: next  });
+				ani_loader_in();
 			},
 			out: (next) => {
 				gsap.set('#swup', { autoAlpha: 1 });
-				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3, onComplete: next  });
+				ani_loader_out();
 			}
 		},
 		{
 			from: '/the-benefits', to: '(.*)',
 			in: function(next) {
 				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
-				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3, onComplete: next  });
+				ani_loader_in();
 			},
 			out: (next) => {
 				gsap.set('#swup', { autoAlpha: 1 });
-				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3, onComplete: next  });
+				ani_loader_out();
 			}
 		},
 		{
 			from: '/about', to: '/the-benefits',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
-				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next });				
+				ani_loader_in();
+				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3 });
 			},
 			out: (next) => {
 				gsap.set('#swup', { autoAlpha: 1 });
-				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3, onComplete: next });
+				ani_loader_out();
 			}
 		},
 		{
 			from: '/the-benefits', to: '/about',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
-				gsap.to('#swup', { autoAlpha: 1, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 0, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next  });
+				ani_loader_in();
 			},
 			out: (next) => {
 				gsap.set('#swup', { autoAlpha: 1 });
-				gsap.to('#swup', { autoAlpha: 0, duration: 0.3 });
-				gsap.to('.loading-animation', { autoAlpha: 1, duration: .15, delay: .3, onComplete: next });
+				gsap.to('#swup', { autoAlpha: 0, duration: 0.3, onComplete: next });
+				ani_loader_out();
 			}
 		}
 	  ];
