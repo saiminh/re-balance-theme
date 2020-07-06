@@ -121,8 +121,11 @@
 			) );
 			?>
 
+			<div class="site-header-signup">
+				<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
+			</div>
 			<div class="site-header-login">
-				Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
+				<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
 			</div>
 
 			</nav><!-- #site-navigation -->				

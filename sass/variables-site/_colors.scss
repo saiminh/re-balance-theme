@@ -32,4 +32,7 @@ $color__border-abbr: #666;
       #FFF 100%
   ) no-repeat;
   background-attachment: fixed;
+  @media (orientation: portrait) {
+    background-attachment: scroll;
+  }
 }

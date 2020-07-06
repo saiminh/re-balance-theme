@@ -16,12 +16,32 @@
     margin-bottom: -0.5rem;
 }
 
-.swpm-registration-widget-form + p {
+.swpm-registration-widget-form + p,
+.swpm-forgot-pass-link {
     text-align: center;
    
     @media (min-width: 768px) {
+        text-align: left;
         position: absolute;
-        transform: translate(175px, -45px);
+        transform: translate(175px, -50px);
+        max-width: 255px;
+        width: calc(100% - 175px)
+    }
+}
+
+.swpm-login-widget-form + p {
+    margin: 1.5rem -1.5rem -1.5rem -1.5rem !important;
+    border-top: 1px solid #EEE;
+    padding: 1rem;
+    text-align: center;
+
+    @media (min-width: 480px) {
+        margin: 2rem -2rem -2rem -2rem !important;
+    }
+
+    @media (min-width: 768px) {
+        text-align: left;
+        padding-left: 2rem;
     }
 }
 
@@ -208,7 +228,8 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
     }
 }
 
-.swpm-registration-submit-section {
+.swpm-registration-submit-section,
+.swpm-login-submit {
     position: relative;
     padding-top: 1.5rem;
     &:before {

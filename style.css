@@ -521,16 +521,14 @@ input[type="reset"],
 input[type="submit"],
 a.button,
 a.wp-block-button__link {
-  border: none;
+  border: 2px solid;
   border-color: #FF9B7A;
   border-radius: 3px;
-  background: #FF9B7A;
-  color: #FFF;
+  background: transparent;
+  color: #FF9B7A;
   line-height: 1;
   padding: .8em 1.75em;
   font-size: 1.25rem;
-  box-shadow: -1px 1px 0 #ff4e14, -2px 2px 0 #ff4e14;
-  transform: translate(0, 0);
   transition: .15s all ease-in-out; }
   button:hover,
   input[type="button"]:hover,
@@ -538,9 +536,8 @@ a.wp-block-button__link {
   input[type="submit"]:hover,
   a.button:hover,
   a.wp-block-button__link:hover {
-    border-radius: 15px;
-    box-shadow: -1px 1px 0 #ff4e14, -2px 2px 0 #ff4e14, -3px 3px 0 #ff4e14, -4px 4px 0 #ff4e14, -5px 5px 0 #ff4e14;
-    transform: translate(3px, -3px); }
+    color: #FF9B7A;
+    border-radius: 15px; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
@@ -1117,32 +1114,32 @@ a {
       transition: all .3s linear; } }
 
 .site-header-account,
-.site-header-login {
+.site-header-login,
+.site-header-signup {
   padding: 1.5rem;
   position: relative;
   border-radius: 0 0 0 6px;
   background-color: #EEE; }
   @media (min-width: 1100px) {
     .site-header-account,
-    .site-header-login {
+    .site-header-login,
+    .site-header-signup {
       display: block;
       background-color: transparent;
       padding: 0;
       border-radius: 6px; } }
-  .site-header-account:before,
-  .site-header-login:before {
-    content: url(img/ui-user.svg);
-    width: 16px;
-    display: inline-block; }
   .site-header-account a,
-  .site-header-login a {
+  .site-header-login a,
+  .site-header-signup a {
     color: #FF9B7A; }
   .site-header-account .user-menu,
-  .site-header-login .user-menu {
+  .site-header-login .user-menu,
+  .site-header-signup .user-menu {
     margin-top: 1rem; }
     @media (min-width: 1100px) {
       .site-header-account .user-menu,
-      .site-header-login .user-menu {
+      .site-header-login .user-menu,
+      .site-header-signup .user-menu {
         margin: 0;
         padding: 1em;
         border: 1px solid #EEE;
@@ -1155,41 +1152,60 @@ a {
         display: none;
         line-height: 2; } }
   .site-header-account:hover .user-menu,
-  .site-header-login:hover .user-menu {
+  .site-header-login:hover .user-menu,
+  .site-header-signup:hover .user-menu {
     display: inherit; }
 
-@media (min-width: 1100px) {
-  .site-header-login {
-    margin: 0 0 0 auto; } }
+.site-header-login {
+  padding-top: 0; }
+  @media (min-width: 1100px) {
+    .site-header-login {
+      margin: 0 0 0 auto; } }
+
+.site-header-signup {
+  padding-bottom: .5rem; }
+  @media (min-width: 1100px) {
+    .site-header-signup {
+      padding: 0; } }
 
 /* Mobile menu. */
-.main-navigation ul:not(#movebreathe-menu), .main-navigation .site-header-account, .main-navigation .site-header-login {
+.main-navigation ul:not(#movebreathe-menu), .main-navigation .site-header-account, .main-navigation .site-header-signup, .main-navigation .site-header-login {
   margin-top: -100vh;
   margin-left: 100px;
   margin-right: -50px; }
   @media (min-width: 1100px) {
-    .main-navigation ul:not(#movebreathe-menu), .main-navigation .site-header-account, .main-navigation .site-header-login {
+    .main-navigation ul:not(#movebreathe-menu), .main-navigation .site-header-account, .main-navigation .site-header-signup, .main-navigation .site-header-login {
       display: block;
       transform: none;
       margin: 0; } }
+.main-navigation .site-header-signup .button {
+  padding: .5rem 1rem;
+  border-bottom: 2px solid;
+  display: inline-block;
+  min-width: auto; }
+@media (min-width: 1100px) {
+  .main-navigation .site-header-signup {
+    margin: 0 0 0 auto; } }
 @media (min-width: 1100px) {
   .main-navigation .site-header-login {
-    margin: 0 0 0 auto; } }
+    margin: 0 0 0 0; } }
 
 @media (max-width: 1099px) {
-  .main-navigation.toggled ul:not(#movebreathe-menu), .main-navigation.toggled .site-header-account, .main-navigation.toggled .site-header-login {
+  .main-navigation.toggled ul:not(#movebreathe-menu), .main-navigation.toggled .site-header-account, .main-navigation.toggled .site-header-signup, .main-navigation.toggled .site-header-login {
     opacity: 1;
     visibility: visible;
     display: block;
     margin-top: 0;
     background-color: #FFF;
-    border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 6px;
     border: 1px solid #EEE;
     border-bottom-width: 0; }
   .main-navigation.toggled .site-header-account, .main-navigation.toggled .site-header-login {
     border-radius: 0 0 0 6px;
     border-bottom-width: 1px;
     border-top-width: 0; }
+  .main-navigation.toggled .site-header-signup {
+    border-radius: 6px 0 0 0; }
   .main-navigation.toggled #movebreathe-menu {
     display: flex; } }
 .site-main .comment-navigation,
@@ -1946,12 +1962,30 @@ a {
   padding-bottom: 0;
   margin-bottom: -0.5rem; }
 
-.swpm-registration-widget-form + p {
+.swpm-registration-widget-form + p,
+.swpm-forgot-pass-link {
   text-align: center; }
   @media (min-width: 768px) {
-    .swpm-registration-widget-form + p {
+    .swpm-registration-widget-form + p,
+    .swpm-forgot-pass-link {
+      text-align: left;
       position: absolute;
-      transform: translate(175px, -45px); } }
+      transform: translate(175px, -50px);
+      max-width: 255px;
+      width: calc(100% - 175px); } }
+
+.swpm-login-widget-form + p {
+  margin: 1.5rem -1.5rem -1.5rem -1.5rem !important;
+  border-top: 1px solid #EEE;
+  padding: 1rem;
+  text-align: center; }
+  @media (min-width: 480px) {
+    .swpm-login-widget-form + p {
+      margin: 2rem -2rem -2rem -2rem !important; } }
+  @media (min-width: 768px) {
+    .swpm-login-widget-form + p {
+      text-align: left;
+      padding-left: 2rem; } }
 
 .swpm-registration-widget-form tr > td {
   display: block; }
@@ -2131,10 +2165,12 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     button.swpm-registration-submit, button.swpm-login-form-submit, input[type="button"].swpm-registration-submit, input[type="button"].swpm-login-form-submit, input[type="reset"].swpm-registration-submit, input[type="reset"].swpm-login-form-submit, input[type="submit"].swpm-registration-submit, input[type="submit"].swpm-login-form-submit, a.button.swpm-registration-submit, a.button.swpm-login-form-submit {
       width: auto; } }
 
-.swpm-registration-submit-section {
+.swpm-registration-submit-section,
+.swpm-login-submit {
   position: relative;
   padding-top: 1.5rem; }
-  .swpm-registration-submit-section:before {
+  .swpm-registration-submit-section:before,
+  .swpm-login-submit:before {
     content: '';
     width: calc(100% + 3rem);
     height: 1px;
@@ -2143,7 +2179,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     top: 0;
     left: -1.5rem; }
     @media (min-width: 480px) {
-      .swpm-registration-submit-section:before {
+      .swpm-registration-submit-section:before,
+      .swpm-login-submit:before {
         left: -2rem;
         width: calc(100% + 4rem); } }
 
@@ -2179,6 +2216,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
   background-attachment: fixed; }
+  @media (orientation: portrait) {
+    .page-template-page-the-benefits {
+      background-attachment: scroll; } }
 
 .page-template-page-the-benefits .site-content,
 .page-template-page-about .site-content {
@@ -2282,6 +2322,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
   background-attachment: fixed; }
+  @media (orientation: portrait) {
+    .page-template-page-about {
+      background-attachment: scroll; } }
 
 .page-template-page-about .illustration-stage {
   background-color: transparent;
@@ -2567,6 +2610,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
   background-attachment: fixed; }
+  @media (orientation: portrait) {
+    .home.wpsmp-loggedout {
+      background-attachment: scroll; } }
 .home h1 {
   font-size: 7vw; }
   @media (min-width: 768px) {

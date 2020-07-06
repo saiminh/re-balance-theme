@@ -4,27 +4,28 @@ input[type="reset"],
 input[type="submit"],
 a.button,
 a.wp-block-button__link {
-	border: none;
-	border-color: $color__border-button;
+	border: 2px solid;
+	border-color: $color__brand-primary;
 	border-radius: 3px;
-	background: $color__brand-primary;
-	color: #FFF;
+	background: transparent;
+	color: $color__brand-primary;
 	line-height: 1;
 	padding: .8em 1.75em;
 	font-size: 1.25rem;
-	box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
-							-2px 2px 0 darken($color__brand-primary, 20%);
-	transform: translate(0, 0);
-	transition: .15s all ease-in-out;
+	// box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
+	// 						-2px 2px 0 darken($color__brand-primary, 20%);
+	// transform: translate(0, 0);
+  transition: .15s all ease-in-out;
 
 	&:hover {
+		color: $color__brand-primary;
 		border-radius: 15px;
-		box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
-								-2px 2px 0 darken($color__brand-primary, 20%),
-								-3px 3px 0 darken($color__brand-primary, 20%),
-								-4px 4px 0 darken($color__brand-primary, 20%),
-								-5px 5px 0 darken($color__brand-primary, 20%);
-		transform: translate(3px, -3px);
+		// box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
+		// 						-2px 2px 0 darken($color__brand-primary, 20%),
+		// 						-3px 3px 0 darken($color__brand-primary, 20%),
+		// 						-4px 4px 0 darken($color__brand-primary, 20%),
+		// 						-5px 5px 0 darken($color__brand-primary, 20%);
+		// transform: translate(3px, -3px);
 	}
 
 	&:active,
