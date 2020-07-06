@@ -23,16 +23,26 @@ $color__border-input: $color__brand-primary;
 $color__border-abbr: #666;
 
 @mixin bg-gradient-01 {
-  background-color: $color__brand-secondary;
-  background: linear-gradient(
-      180deg, 
-      $color__brand-secondary 0%, 
-      $color__brand-secondary 30%, 
-      lighten($color__brand-primary, 20%) 90%, 
-      #FFF 100%
-  ) no-repeat;
-  background-attachment: fixed;
-  @media (orientation: portrait) {
-    background-attachment: scroll;
+  &:after {
+    content:"";
+    position:fixed; /* stretch a fixed position to the whole screen */
+    top:0;
+    height:100vh; /* fix for mobile browser address bar appearing disappearing */
+    left:0;
+    right:0;
+    z-index:-1; /* needed to keep in the background */
+    background-color: $color__brand-secondary;
+    background: linear-gradient(
+        180deg, 
+        $color__brand-secondary 0%, 
+        $color__brand-secondary 30%, 
+        lighten($color__brand-primary, 20%) 90%, 
+        #FFF 100%
+    ) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
   }
 }

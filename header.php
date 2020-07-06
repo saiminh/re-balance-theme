@@ -181,7 +181,11 @@
 				elseif ( is_front_page() ) :
 					global $current_user; wp_get_current_user(); 
 					echo "<div id='lblGreetings'>";
-					echo $current_user->display_name . "\n";
+					if ( $current_user->first_name ) :
+						echo $current_user->first_name . "\n";
+					else :
+						echo $current_user->display_name . "\n";
+					endif;
 					echo "</div>";
 
 				else :

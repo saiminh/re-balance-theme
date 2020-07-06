@@ -2199,6 +2199,18 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       font-style: italic;
       color: red; }
 
+.exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
+.swpm-post-not-logged-in-msg {
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffe8e0;
+  border-radius: 6px;
+  color: #000; }
+
+.swpm-profile-update-success {
+  color: #FF9B7A; }
+
 .cta-block {
   padding: 1.5rem;
   background-color: #ffe8e0;
@@ -2212,13 +2224,23 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     font-size: .9rem;
     margin: 0; }
 
-.page-template-page-the-benefits {
+.page-template-page-the-benefits:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
-  background-attachment: fixed; }
-  @media (orientation: portrait) {
-    .page-template-page-the-benefits {
-      background-attachment: scroll; } }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .page-template-page-the-benefits .site-content,
 .page-template-page-about .site-content {
@@ -2240,19 +2262,18 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .illustration-stage {
   position: fixed;
   top: 70px;
+  left: 0;
   padding: 20px 0 0 0;
   text-align: center;
-  width: calc(100% - 3rem);
+  width: 100%;
   height: 250px;
   background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 80%, rgba(154, 207, 233, 0) 100%) no-repeat;
   z-index: 1;
   overflow: hidden; }
-  @media (min-width: 480px) {
-    .illustration-stage {
-      width: calc(100% - 2rem); } }
   @media (min-width: 769px) {
     .illustration-stage {
-      background-color: transparent;
+      background: transparent;
       width: 33.333%;
       height: calc(100% - 5rem);
       top: 80px;
@@ -2318,17 +2339,30 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   #section_two strong {
     color: #000; }
 
-.page-template-page-about {
+.page-template-page-about:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
-  background-attachment: fixed; }
-  @media (orientation: portrait) {
-    .page-template-page-about {
-      background-attachment: scroll; } }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .page-template-page-about .illustration-stage {
-  background-color: transparent;
+  background: linear-gradient(180deg, #1a202e 0%, #1a202e 80%, rgba(26, 32, 46, 0) 100%) no-repeat;
   overflow: visible; }
+  @media (min-width: 769px) {
+    .page-template-page-about .illustration-stage {
+      background: transparent !important; } }
 
 .page-template-page-about .site-content {
   color: #FFF; }
@@ -2341,16 +2375,18 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 
 .background-stage {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  height: calc(100vh - 250px);
+  z-index: 0;
   overflow: hidden; }
+  @media (min-width: 769px) {
+    .background-stage {
+      height: calc(100vh - 80px); } }
   .background-stage .bg-galaxy {
-    margin-top: 70px;
     min-width: 100vw;
-    min-height: 150vh;
+    min-height: 150%;
     object-fit: cover; }
 
 /*--------------------------------------------------------------
@@ -2389,7 +2425,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .search-results article.exercises {
   width: 66%;
   background-color: #ffe8e0;
-  padding: 1.5em;
+  padding: 1.5rem 1.5rem .75rem 1.5rem;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: .5em;
@@ -2420,7 +2456,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .archive article.exercises,
     .search-results article.post,
     .search-results article.exercises {
-      padding: 2em;
+      padding: 2rem 2rem .75rem 2rem;
       width: calc((100% - 1.5em) / 3);
       font-size: 1rem;
       transition: all .1s ease-out;
@@ -2510,8 +2546,37 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .search-results article.exercises .entry-meta,
   .search-results article.exercises .entry-footer {
     font-size: 0.75rem;
-    border-top: 1px solid #ffd5c7;
-    padding-top: 1em; }
+    padding-top: 1em;
+    position: relative; }
+    .blog article.post .entry-meta:before, .blog article.post .entry-footer:before, .blog article.exercises .entry-meta:before, .blog article.exercises .entry-footer:before,
+    .archive article.post .entry-meta:before,
+    .archive article.post .entry-footer:before,
+    .archive article.exercises .entry-meta:before,
+    .archive article.exercises .entry-footer:before,
+    .search-results article.post .entry-meta:before,
+    .search-results article.post .entry-footer:before,
+    .search-results article.exercises .entry-meta:before,
+    .search-results article.exercises .entry-footer:before {
+      content: '';
+      width: calc( 100% + 3rem);
+      height: 1px;
+      background-color: #ffd5c7;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -1.5rem; }
+      @media (min-width: 769px) {
+        .blog article.post .entry-meta:before, .blog article.post .entry-footer:before, .blog article.exercises .entry-meta:before, .blog article.exercises .entry-footer:before,
+        .archive article.post .entry-meta:before,
+        .archive article.post .entry-footer:before,
+        .archive article.exercises .entry-meta:before,
+        .archive article.exercises .entry-footer:before,
+        .search-results article.post .entry-meta:before,
+        .search-results article.post .entry-footer:before,
+        .search-results article.exercises .entry-meta:before,
+        .search-results article.exercises .entry-footer:before {
+          width: calc( 100% + 4rem);
+          left: -2rem; } }
     .blog article.post .entry-meta .divider, .blog article.post .entry-footer .divider, .blog article.exercises .entry-meta .divider, .blog article.exercises .entry-footer .divider,
     .archive article.post .entry-meta .divider,
     .archive article.post .entry-footer .divider,
@@ -2606,13 +2671,23 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .site-footer {
       padding-bottom: 0; } }
 
-.home.wpsmp-loggedout {
+.home.wpsmp-loggedout:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
   background-color: #9ACFE9;
   background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
-  background-attachment: fixed; }
-  @media (orientation: portrait) {
-    .home.wpsmp-loggedout {
-      background-attachment: scroll; } }
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 .home h1 {
   font-size: 7vw; }
   @media (min-width: 768px) {

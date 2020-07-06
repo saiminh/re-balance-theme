@@ -46,20 +46,23 @@
 .illustration-stage {
   position: fixed;
   top: 70px;
+  left: 0;
   padding: 20px 0 0 0;
   text-align: center;
-  width: calc(100% - 3rem);
+  width: 100%;
   height: 250px;
   background-color: $color__brand-secondary;
+  background: linear-gradient(
+      180deg, 
+      $color__brand-secondary 0%, 
+      $color__brand-secondary 80%, 
+      transparentize($color__brand-secondary, 1) 100%
+  ) no-repeat;
   z-index: 1;
   overflow: hidden;
 
-  @media (min-width: 480px){
-    width: calc(100% - 2rem);
-  } 
-
   @media (min-width: 769px){
-    background-color: transparent;
+    background: transparent;
     width: 33.333%;
     height: calc(100% - 5rem);
     top: 80px;
@@ -161,8 +164,17 @@
 }
 
 .page-template-page-about .illustration-stage {
-  background-color: transparent;
+  background: linear-gradient(
+      180deg, 
+      rgba(26, 32, 46, 1) 0%, 
+      rgba(26, 32, 46, 1) 80%, 
+      rgba(26, 32, 46, 0) 100%
+  ) no-repeat;
   overflow: visible;
+
+  @media (min-width: 769px){
+    background: transparent!important;  
+  }
 }
 
 .page-template-page-about .site-content {
@@ -179,17 +191,20 @@
 
 .background-stage {
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  height: calc(100vh - 250px);
+  z-index: 0;
   overflow: hidden;
 
+  @media (min-width: 769px){
+    height: calc(100vh - 80px);
+  }
+
   & .bg-galaxy {
-    margin-top: 70px;
     min-width: 100vw;
-    min-height: 150vh;
+    min-height: 150%;
     object-fit: cover;
   }
 }

@@ -228,34 +228,33 @@ function animateBenefits(){
       //markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
     });
 
-    var mobhidetriggerarray = [];
+    // Below was the sad attempt at scroll hiding text with gsap
+    // var mobhidetriggerarray = [];
+    // function checkMQ(mq) {   
+    //   if (mq.matches) { // If media query matches
+    //     jQuery("h1, h2, p").each(function( index ){
+    //       let idname = "mobhidetrigger" + index;
+    //       //console.log(idname);
+    //       mobhidetriggerarray.push(idname);
+    //       gsap.fromTo( jQuery(this), { autoAlpha: 1,transformOrigin: "50% 0%" }, { autoAlpha: 0, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
+    //     })            
+    //   } else {
+    //       if( ScrollTrigger.getById( "mobhidetrigger0") ) {
+    //        jQuery.each(mobhidetriggerarray, function( index, id ) {
+    //         console.log('kill: ' + id);
+    //           gsap.killTweensOf(ScrollTrigger.getById(id).animation);
+    //           ScrollTrigger.getById(id).kill(true);
+    //           gsap.set("h1, h2, p", {autoAlpha: 1, overwrite: true});
+    //          // console.log('killed: ' + id);
+    //        })                 
+    //       }
+    //   }
+    // }
 
-    function checkMQ(mq) {   
-
-      if (mq.matches) { // If media query matches
-        jQuery("h1, h2, p").each(function( index ){
-          let idname = "mobhidetrigger" + index;
-          //console.log(idname);
-          mobhidetriggerarray.push(idname);
-          gsap.fromTo( jQuery(this), { autoAlpha: 1,transformOrigin: "50% 0%" }, { autoAlpha: 0, scrollTrigger: { trigger: jQuery(this), start: "0% 50%", end: "100% 50%", scrub: true }, id: idname } )
-        })            
-      } else {
-          if( ScrollTrigger.getById( "mobhidetrigger0") ) {
-           jQuery.each(mobhidetriggerarray, function( index, id ) {
-            console.log('kill: ' + id);
-              gsap.killTweensOf(ScrollTrigger.getById(id).animation);
-              ScrollTrigger.getById(id).kill(true);
-              gsap.set("h1, h2, p", {autoAlpha: 1, overwrite: true});
-             // console.log('killed: ' + id);
-           })                 
-          }
-      }
-    }
-
-    var mq = window.matchMedia("(max-width: 767px)");
-    checkMQ(mq); // Call listener function at run time
-    mq.addListener(checkMQ); // Attach listener function on state changes     
-    //jQuery(window).resize(function(){checkMQ(mq)})
+    // var mq = window.matchMedia("(max-width: 767px)");
+    // checkMQ(mq); // Call listener function at run time
+    // mq.addListener(checkMQ); // Attach listener function on state changes     
+    // //jQuery(window).resize(function(){checkMQ(mq)})
     
     gsap.fromTo(".bg-galaxy", { yPercent: -10 }, { yPercent: -20, scrollTrigger: {trigger: "#section_ourMission", start: "0% 70px", end: "100% top", scrub: true} })
 
@@ -346,6 +345,7 @@ function animateBenefits(){
       .fromTo(".bg-galaxy", { autoAlpha: 1 }, { autoAlpha: 0, duration: .3 }, "bulb+=.5" )
       .fromTo(".content-scroll", { color: "#FFFFFF"}, { color: "#000000", duration: .3 }, "bulb+=.5")
       .fromTo(".page-template-page-about em", { color: "#FF9B7A"}, { color: "#C1765C", duration: .3 }, "bulb+=.5")
+      .fromTo(".page-template-page-about .illustration-stage", { background: "linear-gradient(rgba(26, 32, 46, 1) 0%, rgba(26, 32, 46, 1) 80%, rgba(26, 32, 46, 0) 100%) no-repeat" }, { background: "linear-gradient(rgba(154, 207, 233, 1) 0%, rgba(154, 207, 233, 1) 80%, rgba(154, 207, 233, 0) 100% ) no-repeat" , duration: .3 }, "bulb+=.5")
 
     let triggerrebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
     let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })     
