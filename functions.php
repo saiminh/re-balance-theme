@@ -505,35 +505,29 @@ function rebalance_get_the_posts_navigation( $args = array() ) {
 	return $navigation;
 }
 
+// adding support for html emails
+add_filter( 'wp_mail_content_type','mycustom_set_content_type' );
+function mycustom_set_content_type() {
+				return "text/html";
+}
+
+// also filter the password reset email for compatibility with the HTML format
+add_filter( 'retrieve_password_message', 'mycustom_retrieve_password_message', 10, 1 );
+function mycustom_retrieve_password_message( $message ) {
+				$message = str_replace('<','',$message);
+				$message = str_replace('>','',$message);
+				$message = str_replace("\n",'<br>',$message);
+				return $message;
+}
+
+// adding the html to the wp_mail function
 add_filter( 'wp_mail', 'my_wp_mail_filter' );
 function my_wp_mail_filter( $args ) {
 	
 	$new_wp_mail = array(
 		'to'          => $args['to'],
 		'subject'     => $args['subject'],
-		'message'     => '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="x-apple-disable-message-reformatting"><!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. --><!--[if mso]>
-					<style>
-							* {
-									font-family: sans-serif !important;
-							}
-					</style>
-			<![endif]--><!-- CSS Reset --><style>@import url("https://use.typekit.net/vzx1etu.css");body,html{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0!important}table,td{mso-table-lspace:0!important;mso-table-rspace:0!important}table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important}table table table{table-layout:auto}img{-ms-interpolation-mode:bicubic}[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}.aBn,.x-gmail-data-detectors,.x-gmail-data-detectors *{border-bottom:0!important;cursor:default!important}.button-link{text-decoration:none!important}@media only screen and (min-device-width:375px) and (max-device-width:413px){.email-container{min-width:375px!important}}
-				.button-container { background-color: #FF9B7A !important; }
-				.button-container a { color: #FFFFFF !important; }
-				@media (prefers-color-scheme: dark ){
-				.dark-img { display:block!important; width: auto!important; height: auto!important; overflow: visible!important; float: none!important; max-height:inherit!important; max-width:inherit!important; line-height: auto!important; margin-top:0px!important; visibility:inherit!important; }
-				.light-img { display:none; display:none !important; }				
-				.button-container { background-color: #FF9B7A !important; }
-				.button-container a { color: #FFFFFF !important; }
-			}</style><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --><!--[if gte mso 9]>
-		<xml>
-			<o:OfficeDocumentSettings>
-				<o:AllowPNG/>
-				<o:PixelsPerInch>96</o:PixelsPerInch>
-			</o:OfficeDocumentSettings>
-		</xml>
-		<![endif]--><!-- Progressive Enhancements --><style>@media screen and (max-width:600px){.email-container, td {font-size:16px!important;line-height:23px!important}}</style>
-		</head>
+		'message'     => '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="x-apple-disable-message-reformatting"><!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. --><!--[if mso]><style>*{font-family: sans-serif !important;}</style><![endif]--><!-- CSS Reset --><style>@import url("https://use.typekit.net/vzx1etu.css");body,html{margin:0 auto!important;padding:0!important;height:100%!important;width:100%!important}*{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}div[style*="margin: 16px 0"]{margin:0!important}table,td{mso-table-lspace:0!important;mso-table-rspace:0!important}table{border-spacing:0!important;border-collapse:collapse!important;table-layout:fixed!important;margin:0 auto!important}table table table{table-layout:auto}img{-ms-interpolation-mode:bicubic}[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}.aBn,.x-gmail-data-detectors,.x-gmail-data-detectors *{border-bottom:0!important;cursor:default!important}.button-link{text-decoration:none!important}@media only screen and (min-device-width:375px) and (max-device-width:413px){.email-container{min-width:375px!important}}.button-container { background-color: #FF9B7A !important; }.button-container a { color: #FFFFFF !important; }@media (prefers-color-scheme: dark ){.dark-img { display:block!important; width: auto!important; height: auto!important; overflow: visible!important; float: none!important; max-height:inherit!important; max-width:inherit!important; line-height: auto!important;margin-top:0px!important; visibility:inherit!important;}.light-img { display:none; display:none !important;}.button-container{background-color: #FF9B7A !important;}.button-container a { color: #FFFFFF !important;}}</style><!-- What it does: Makes background images in 72ppi Outlook render at correct size. --><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><!-- Progressive Enhancements --><style>@media screen and (max-width:600px){.email-container, td {font-size:16px!important;line-height:23px!important}}</style></head>
 		<body width="100%" bgcolor="#9ACFE9" style="margin: 0; mso-line-height-rule: exactly;">
 			<div style="max-width: 600px; margin: auto;" class="email-container"><table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;"><tr><td class="logo-container" style="text-align: center; padding: 30px; background-color: #FFFFFF;">
 		<img class="light-img" src="https://re-balance.io/wp-content/themes/rebalance-wptheme/img/rebalance-logo.png" alt="rebalance" style="width: 200px; height: 55px; border: none; font-size:12px; font-style: italic; margin-bottom: 10px;" />
