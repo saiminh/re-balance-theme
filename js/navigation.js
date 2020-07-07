@@ -207,10 +207,6 @@
 		// Hide Livesearch after page switch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
 		
-		// Exercise count
-		// var nArticles = $(".archive article").length;		
-		// $(".breadcrumbs li:last-child").append(" ("+nArticles+")");
-
 		// Discreet toggle
 		$(".switch input").on("change", function(e) {
 			const isOn = e.currentTarget.checked;
@@ -272,19 +268,6 @@
 
 
 	} // end init() function
-
-	// Begin cleanup unload function
-	// function unload() {
-	// 	console.log("before onload");
-  //   if (document.querySelector('#illuOne')) {
-
-	// 		$(window).off('scroll', function(){
-	// 			scrNav();
-	// 			});
-	// 		console.log("Benefits onload");
-	// 	}
-	// 	console.log("after onload");
-	// }
 	
 	function ani_loader_in(){
 		gsap.to('.loading-animation', { transformOrigin: "50% 0%", autoAlpha: 0, duration: .5 });			

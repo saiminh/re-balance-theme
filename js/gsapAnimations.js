@@ -3,7 +3,7 @@
 // ----------------------------------------------------------
 
 function animateBenefits(){
-  ScrollTrigger.getAll().forEach(element => element.kill());
+  //ScrollTrigger.getAll().forEach(element => element.kill());
   // Create timelines for benefits page to use in init
   if (document.querySelector('#illuOne')) {						
     
@@ -196,9 +196,8 @@ function animateBenefits(){
           scrollTrigger: { trigger: "#section_mindfulBreak", start: "0% center", end: "12% center", scrub: true } });
 
     let triggermindfulBreakflash = { trigger: "#section_mindfulBreak", start: "0% center", end: "90% center" };
-    let braincharging = gsap.timeline({ paused: true, trigger: triggermindfulBreakflash })    
-      .fromTo("#flash", { autoAlpha: 1 }, { autoAlpha: 0, duration: .5, repeat: -1, yoyo: true, ease: "power" }, .5)
-      //.to("body", { backgroundColor: "#9ACFE9"}, 0);
+    let braincharging = gsap.timeline({ paused: true, scrollTrigger: triggermindfulBreakflash })    
+      .fromTo("#flash", { autoAlpha: 1 }, { autoAlpha: 0, duration: .5, repeat: -1, yoyo: true, ease: "power" });
     
     let triggerrebalanceYourselfIn = { trigger: "#section_rebalanceYourself", start: "0% center", end: "100% center" };
     let rebalanceYourselfIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourselfIn })     
@@ -230,12 +229,7 @@ function animateBenefits(){
 
     gsap.fromTo(".bg-galaxy", { yPercent: 0 }, { yPercent: -10, ease: "none", scrollTrigger: {trigger: "#section_unbalancedWorld", start: "0% 70px", end: "100% top", scrub: true} }) 
 
-    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause(); 
-      console.log('trigger_unbalancedWorldIn'); 
-      if ( !section_unbalancedWorld.isActive() ) {
-        section_unbalancedWorld.play(0);
-      }
-    }};
+    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause(); console.log('trigger_unbalancedWorldIn'); }};
 
     let section_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
       .fromTo("#eyes", { xPercent: -2, yPercent: -40 }, { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
@@ -246,7 +240,8 @@ function animateBenefits(){
       .fromTo("#eyelids", { yPercent: 0 }, { yPercent: -30, duration: 5 }, 0)
       .to("#eyelids", { yPercent: 0, duration: 3 }, 5);
 
-    let section_unbalancedWorld = gsap.timeline({ paused: false }).timeScale(2)
+    let section_unbalancedWorld = gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
+      .set("#eyes", { xPercent: 0, yPercent: 0 })
       .set("[id^='notification-']", { scale: 0, xPercent: 0, yPercent: 0, autoAlpha: 1, transformOrigin: "50% 50%" })
       .to("#unbalancedWorld", { autoAlpha: 1, duration: 1 })
       .to("[id^='notification-']", { scale: 1, ease: "elastic.out(1, .3)", duration: 1,  stagger: 1}, 2)
@@ -323,9 +318,9 @@ function animateBenefits(){
       .fromTo(".page-template-page-about .illustration-stage", { background: "linear-gradient(rgba(26, 32, 46, 1) 0%, rgba(26, 32, 46, 1) 80%, rgba(26, 32, 46, 0) 100%) no-repeat" }, { background: "linear-gradient(rgba(154, 207, 233, 1) 0%, rgba(154, 207, 233, 1) 80%, rgba(154, 207, 233, 0) 100% ) no-repeat" , duration: .3 }, "bulb+=.5")
 
     let triggerrebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
-    let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })     
-    .to("#ourStory", 
-     // { yPercent: 0, autoAlpha: 1 }, 
+    let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })         
+    .fromTo("#ourStory > *", 
+      { yPercent: 0, autoAlpha: 1 }, 
       { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
       { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
@@ -339,7 +334,6 @@ function animateBenefits(){
 
 
   } else {
-    
+    console.log('nothing to gsap here');
   }
 }
-animateBenefits();
