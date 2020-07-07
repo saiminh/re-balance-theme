@@ -256,9 +256,9 @@ function animateBenefits(){
     // mq.addListener(checkMQ); // Attach listener function on state changes     
     // //jQuery(window).resize(function(){checkMQ(mq)})
     
-    gsap.fromTo(".bg-galaxy", { yPercent: -10 }, { yPercent: -20, scrollTrigger: {trigger: "#section_ourMission", start: "0% 70px", end: "100% top", scrub: true} })
+    gsap.fromTo(".bg-galaxy", { yPercent: -10 }, { yPercent: -20, ease: "none", scrollTrigger: {trigger: "#section_ourMission", start: "0% 70px", end: "100% top", scrub: true} })
 
-    gsap.fromTo(".bg-galaxy", { yPercent: 0 }, { yPercent: -10, scrollTrigger: {trigger: "#section_unbalancedWorld", start: "0% 70px", end: "100% top", scrub: true} }) 
+    gsap.fromTo(".bg-galaxy", { yPercent: 0 }, { yPercent: -10, ease: "none", scrollTrigger: {trigger: "#section_unbalancedWorld", start: "0% 70px", end: "100% top", scrub: true} }) 
 
     let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause() }};
 

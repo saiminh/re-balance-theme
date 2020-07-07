@@ -5,7 +5,7 @@ input[type="submit"],
 a.button,
 a.wp-block-button__link {
 	border: 2px solid;
-	border-color: $color__brand-primary;
+	//border-color: $color__brand-primary;
 	border-radius: 3px;
 	background: transparent;
 	color: $color__brand-primary;
@@ -26,6 +26,10 @@ a.wp-block-button__link {
 		// 						-4px 4px 0 darken($color__brand-primary, 20%),
 		// 						-5px 5px 0 darken($color__brand-primary, 20%);
 		// transform: translate(3px, -3px);
+	}
+
+	&:visited {
+		color: $color__brand-primary;
 	}
 
 	&:active,

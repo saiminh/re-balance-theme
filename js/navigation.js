@@ -4,6 +4,18 @@
  * Handles toggling the navigation menu for small screens and enables TAB key
  * navigation support for dropdown menus.
  */
+
+	var images = new Array();
+	function preload() {
+		for (i = 0; i < preload.arguments.length; i++) {
+			images[i] = new Image()
+			images[i].src = preload.arguments[i]
+		}
+	};
+	preload(
+		"https://re-balance.io/wp-content/themes/rebalance-wptheme/img/benefits-galaxy-bg.jpg"
+	);
+
 ( function($) {
 	
 	gsap.registerPlugin(DrawSVGPlugin);

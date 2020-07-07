@@ -522,7 +522,6 @@ input[type="submit"],
 a.button,
 a.wp-block-button__link {
   border: 2px solid;
-  border-color: #FF9B7A;
   border-radius: 3px;
   background: transparent;
   color: #FF9B7A;
@@ -538,6 +537,13 @@ a.wp-block-button__link {
   a.wp-block-button__link:hover {
     color: #FF9B7A;
     border-radius: 15px; }
+  button:visited,
+  input[type="button"]:visited,
+  input[type="reset"]:visited,
+  input[type="submit"]:visited,
+  a.button:visited,
+  a.wp-block-button__link:visited {
+    color: #FF9B7A; }
   button:active, button:focus,
   input[type="button"]:active,
   input[type="button"]:focus,
