@@ -334,6 +334,7 @@ get_header();
             <p>Rebalance enables you take a mindful break during your work day. Using just a few minutes of your time, we aim to give you an on-demand and approachable tool to help you look after yourself, combat the negative effects of prolonged sitting and work-related mental health conditions.</p>
             <p><em>Whether you need to move and stretch out tight muscles, manage your stress, breathe to re-energise or regain your focus, it’s entirely up to you.</em></p>
 
+            <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
               <h3>Rebalance is here to help!</h3>
               <div class="wp-block-buttons">
@@ -343,6 +344,8 @@ get_header();
               </div>
               <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
             </div>
+            <?php endif; ?>
+
           </div>
       </div>
       

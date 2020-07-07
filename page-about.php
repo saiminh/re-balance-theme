@@ -219,6 +219,7 @@ get_header();
             <p>It aims to help users connect to themselves by offering approachable movement and breathing exercises that can be incorporated into the workday, allowing individuals to press pause in their otherwise busy day.</p>
             <p>Using just a few minutes of your time, we aim to give you a tool to help you look after yourself, unwind some tension, improve your mood, and increase your productivity and focus. By doing so, we aim to help organisations support their employees in taking a mindful break during the day to improve their mental, emotional and physical wellbeing.</p>
 
+            <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
               <h3>Rebalance is here to help!</h3>
               <div class="wp-block-buttons">
@@ -228,7 +229,8 @@ get_header();
               </div>
               <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
             </div>
-
+            <?php endif; ?>
+            
           </div>
       </div>
       
