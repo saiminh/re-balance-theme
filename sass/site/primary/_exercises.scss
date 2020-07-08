@@ -18,7 +18,13 @@
         border-radius: 5px;
         width: calc(100vw - 2rem);
         height: calc( ( 100vw - 2rem ) * 0.5625);
+        position: relative;
         
+        @media (min-width: 480px) {
+            width: calc(100vw - 3rem);
+            height: calc( ( 100vw - 3rem ) * 0.5625);
+        }
+
         @media (min-width: 768px) {
             float: left;
             margin-right: 2rem;

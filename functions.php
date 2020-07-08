@@ -544,6 +544,19 @@ function my_wp_mail_filter( $args ) {
 	return $new_wp_mail;
 }
 
+// Adding the shortcode for SWPM plugin to hide only embeds 
+add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
+function my_embed_oembed_html($html, $url, $attr, $post_id) {
+	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
+		$loginlink = '/membership-login';
+		$signuplink = '/membership-registration';
+		return '[swpm_protected for="3-4" custom_msg="Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '[/swpm_protected]';
+	}
+	else {
+		return $html;
+	}
+}
+
 
 ?>
 
