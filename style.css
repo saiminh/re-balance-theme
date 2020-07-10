@@ -740,6 +740,7 @@ label {
   background: red;
   width: 100%;
   position: relative;
+  top: 7px;
   color: #fff;
   min-width: 120px;
   border-radius: 6px; }
