@@ -120,8 +120,8 @@ function animateBenefits(){
       .to(loss, 5, { 
         var: 600, 
         onUpdate: function(){
-          var somethingelse = loss.var.numberFormat(0);
-          losstal.innerHTML = somethingelse;
+          var lossnumberdisplay = loss.var.numberFormat(0);
+          losstal.innerHTML = lossnumberdisplay;
         }, 
         ease: "none", duration: 3,
         onComplete: function(){

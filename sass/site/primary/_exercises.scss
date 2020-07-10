@@ -8,7 +8,6 @@
             text-align: left;
         }
     }
-
     & .wp-block-video,
     & .wp-block-embed-vimeo,
     & .wp-block-embed,
@@ -24,7 +23,6 @@
             width: calc(100vw - 3rem);
             height: calc( ( 100vw - 3rem ) * 0.5625);
         }
-
         @media (min-width: 768px) {
             float: left;
             margin-right: 2rem;
@@ -33,9 +31,6 @@
             position: fixed;
             //top: 133px;
         }
-
-        
-
         & video,
         & iframe {
             display: block;
@@ -49,27 +44,21 @@
                 height: 33.75vw!important;
             }
         }
-
-        
     }
-
     & .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
         
         @media (min-width: 768px) {
             margin-left: 66%;
         }
     }
-
     & .post-info > .entry-footer {
 
         @media (min-width: 768px) {
             position: fixed;           
             margin-left: 0;
             top: calc(133px + 33.75vw + 1rem);
-
         }
     }   
-
     & .entry-footer .exercises-tag {
         display: inline-block;
         background-color: lighten($color__brand-primary, 20%);
