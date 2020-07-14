@@ -36,7 +36,7 @@ get_header();
 					<a href="<?php echo get_home_url(); ?>/exercise-type/energize" class="breathe-map-illu breathe-map-illu--energize">
 						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-energize.svg" alt="energize"></object> -->
 						<?php get_template_part('inc/inline', 'ui-breathe-energize.svg'); ?>
-						energize
+						energise
 					</a>
 					<a href="<?php echo get_home_url(); ?>/exercise-type/calm" class="breathe-map-illu breathe-map-illu--calm">
 						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-calm.svg" alt="calm"></object> -->
