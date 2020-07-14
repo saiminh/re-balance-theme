@@ -33,7 +33,7 @@ a {
 	top: 12px;
 	left: 1rem;
 	display: inline-block;
-	font-size: .9rem;
+	@include font-size(0.9);
 
 	& svg {
 		width: 18px;
@@ -42,10 +42,9 @@ a {
 			stroke: $color__link;
 		}
 	}
-
 	@media (min-width: 480px) {
 		left: 1.5rem;
-		font-size: 1rem;
+		@include font-size(1);
 		padding: 1em;
 		top: 10px;
 	}

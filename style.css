@@ -355,17 +355,9 @@ optgroup,
 textarea {
   color: #000;
   font-family: hero-new, sans-serif;
-  font-size: 4.5vw;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5; }
-  @media (min-width: 768px) {
-    body,
-    button,
-    input,
-    select,
-    optgroup,
-    textarea {
-      font-size: 16px;
-      font-size: 1rem; } }
   @media (max-width: 320px) {
     body,
     button,
@@ -373,17 +365,21 @@ textarea {
     select,
     optgroup,
     textarea {
-      font-size: 14px; } }
+      font-size: 14px;
+      font-size: 0.875rem; } }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.333334; }
 
 h1 {
-  font-size: 9vw; }
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 2.5rem; } }
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.5em; }
+
+h3 {
+  font-size: 1.3em; }
 
 h1.entry-title,
 h1.page-title {
@@ -393,25 +389,33 @@ h1.page-title {
   top: .15em; }
 
 .home .page-subtitle {
-  font-size: 1.2em; }
+  font-size: 19.2px;
+  font-size: 1.2rem; }
 
 .home h1 {
-  font-size: 9vw; }
+  font-size: 40px;
+  font-size: 2.5rem; }
   @media (min-width: 768px) {
     .home h1 {
+      font-size: 48px;
       font-size: 3rem;
       margin-bottom: .25em; } }
 
 .home h2 {
-  font-size: 6vw;
+  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.5; }
   @media (min-width: 768px) {
     .home h2 {
-      font-size: 1.6666rem;
+      font-size: 26.656px;
+      font-size: 1.666rem;
       margin-bottom: 1.5em; } }
 
+.has-medium-font-size {
+  font-size: 1.25em; }
+
 .has-large-font-size {
-  font-size: 1.5rem; }
+  font-size: 1.5em; }
 
 p {
   margin-bottom: 1.5em; }
@@ -428,24 +432,18 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 4.21875vw;
+  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
-  @media (min-width: 768px) {
-    pre {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 4.21875vw; }
-  @media (min-width: 768px) {
-    code, kbd, tt, var {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
+  font-size: 15px;
+  font-size: 0.9375rem; }
 
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -456,13 +454,15 @@ mark, ins {
   text-decoration: none; }
 
 big {
-  font-size: 125%; }
+  font-size: 20px;
+  font-size: 1.25rem; }
 
 .modern-footnotes-footnote a {
   color: inherit; }
 
 .modern-footnotes-footnote__note--tooltip {
-  font-size: 12px; }
+  font-size: 12px;
+  font-size: 0.75rem; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -562,6 +562,7 @@ a.wp-block-button__link {
   color: #FF9B7A;
   line-height: 1;
   padding: .8em 1.75em;
+  font-size: 20px;
   font-size: 1.25rem;
   transition: .15s all ease-in-out; }
   button:hover,
@@ -648,6 +649,7 @@ textarea {
   width: 100%;
   line-height: 45px;
   color: #000;
+  font-size: 20px;
   font-size: 1.25rem;
   border-radius: 3px;
   padding: 0 .75rem;
@@ -725,6 +727,7 @@ textarea {
       padding: 1em;
       line-height: 50px;
       height: 50px;
+      font-size: 16px;
       font-size: 1rem; } }
 
 select {
@@ -736,7 +739,8 @@ textarea {
   line-height: 1.5; }
 
 label {
-  font-size: .9rem;
+  font-size: 14.4px;
+  font-size: 0.9rem;
   font-weight: 300;
   color: #666;
   position: relative;
@@ -770,7 +774,8 @@ label {
 .parsley-type,
 .parsley-required {
   padding: .5rem;
-  font-size: .8rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   text-align: center;
   background: red;
   width: 100%;
@@ -832,20 +837,24 @@ label {
     margin: auto 0 auto auto;
     text-align: center;
     position: relative;
-    font-size: .9rem;
+    font-size: 14.4px;
+    font-size: 0.9rem;
     top: 0; }
     @media (max-width: 481px) {
       .site-header-search .button.button--surprise {
         background-color: transparent;
         box-shadow: none;
         padding: .75em 0 1.5em 0;
-        font-size: .8rem; } }
+        font-size: 12.8px;
+        font-size: 0.8rem; } }
 
 .toggle-discreet {
-  font-size: .8rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   /* Rounded sliders */ }
   @media (min-width: 480px) {
     .toggle-discreet {
+      font-size: 16px;
       font-size: 1rem; } }
   .toggle-discreet .switch {
     position: relative;
@@ -921,6 +930,7 @@ label {
     padding: 1.5rem;
     border-bottom: 1px solid #EEE;
     border-radius: 5px 5px 0 0;
+    font-size: 20px;
     font-size: 1.25rem; }
     @media (min-width: 480px) {
       .form-container h2 {
@@ -973,7 +983,8 @@ a {
   top: 12px;
   left: 1rem;
   display: inline-block;
-  font-size: .9rem; }
+  font-size: 14.4px;
+  font-size: 0.9rem; }
   .back-button svg {
     width: 18px;
     height: 18px; }
@@ -982,6 +993,7 @@ a {
   @media (min-width: 480px) {
     .back-button {
       left: 1.5rem;
+      font-size: 16px;
       font-size: 1rem;
       padding: 1em;
       top: 10px; } }
@@ -1019,14 +1031,22 @@ a {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); } }
 
 .site-header-inner {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1280px;
-  margin: 0 auto; }
+  padding-left: 1rem;
+  padding-right: 1rem; }
   @media (min-width: 480px) {
     .site-header-inner {
-      padding: 0 1.5rem; } }
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; } }
   @media (min-width: 1100px) {
     .site-header-inner {
-      padding: 0 2rem;
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  @media (min-width: 1100px) {
+    .site-header-inner {
       display: flex;
       align-items: center;
       align-content: flex-start; } }
@@ -1108,12 +1128,14 @@ a {
       margin: 0;
       left: 0;
       text-align: center;
+      font-size: 18px;
       font-size: 1.125rem;
       background-color: #ff9b7a; }
       @media (min-width: 1100px) {
         .main-navigation .menu-movebreathe-container a {
           position: static;
           display: inline;
+          font-size: 16px;
           font-size: 1rem;
           padding: 0 .5rem;
           text-align: left;
@@ -1194,6 +1216,7 @@ a {
     text-decoration: none;
     padding: .75em .75em .75em 0;
     margin-left: .75em;
+    font-size: 16px;
     font-size: 1rem;
     font-weight: 300;
     min-width: 250px;
@@ -1338,6 +1361,7 @@ a {
 .menu-name {
   color: #000;
   font-size: 9px;
+  font-size: 0.5625rem;
   font-weight: 300;
   position: absolute;
   left: 50%;
@@ -1510,7 +1534,8 @@ a {
   margin: 0;
   padding: 0;
   color: #DDD;
-  font-size: .8rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   white-space: nowrap;
   max-width: 100%;
   overflow-x: scroll; }
@@ -1518,6 +1543,7 @@ a {
     max-width: 66%; }
   @media (min-width: 480px) {
     .breadcrumbs {
+      font-size: 16px;
       font-size: 1rem; } }
   @media (min-width: 640px) {
     .breadcrumbs {
@@ -1551,6 +1577,7 @@ a {
   text-align: center; }
   @media (min-width: 480px) {
     .exercise-portal-header {
+      font-size: 16px;
       font-size: 1rem;
       right: 2rem;
       left: 2rem; } }
@@ -1635,7 +1662,8 @@ a {
 
 .move-bodypart-link {
   display: block;
-  font-size: 1em;
+  font-size: 16px;
+  font-size: 1rem;
   text-transform: capitalize;
   transition: all .2s ease-in-out;
   position: relative;
@@ -1693,10 +1721,12 @@ a {
 .breathe-map-illu {
   position: absolute;
   text-align: center;
-  font-size: .8rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   color: #000; }
   @media (min-width: 480px) {
     .breathe-map-illu {
+      font-size: 16px;
       font-size: 1rem; } }
   .breathe-map-illu svg {
     transition: transform .3s ease-in-out;
@@ -1783,7 +1813,8 @@ a {
     clip-path: none;
     color: #21759b;
     display: block;
-    font-size: 3.9375vw;
+    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: bold;
     height: auto;
     left: 5px;
@@ -1794,10 +1825,6 @@ a {
     width: auto;
     z-index: 100000;
     /* Above WP toolbar. */ }
-    @media (min-width: 768px) {
-      .screen-reader-text:focus {
-        font-size: 14px;
-        font-size: 0.875rem; } }
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
@@ -1901,7 +1928,8 @@ a {
   margin: .5em auto; }
 
 .home .page-subtitle {
-  font-size: .9em;
+  font-size: 14.4px;
+  font-size: 0.9rem;
   margin-top: 0;
   font-weight: 300;
   display: none; }
@@ -1909,14 +1937,14 @@ a {
     .home .page-subtitle {
       position: absolute;
       top: -4.5rem;
-      z-index: 9999;
-      font-size: .9em; } }
+      z-index: 9999; } }
   @media (min-width: 1100px) {
     .home .page-subtitle {
       position: relative;
       top: 0;
       text-align: left;
       font-weight: 300;
+      font-size: 16px;
       font-size: 1rem; } }
 
 .home .choose-exercise-links {
@@ -1947,12 +1975,14 @@ a {
       padding-bottom: calc(100% - 2em);
       color: #fff;
       left: 0;
-      font-size: 1em;
+      font-size: 16px;
+      font-size: 1rem;
       line-height: 1;
       transition: all .2s ease-in-out; }
       @media screen and (min-width: 480px) {
         .home .choose-exercise-links > div > a {
-          font-size: 1.5em;
+          font-size: 24px;
+          font-size: 1.5rem;
           padding: 20px;
           padding-bottom: calc(100vh - 225px - 2em); } }
       @media screen and (min-width: 1100px) {
@@ -2158,6 +2188,7 @@ a {
   width: 100%;
   line-height: 45px;
   color: #000;
+  font-size: 20px;
   font-size: 1.25rem;
   border-radius: 3px;
   padding: 0 .75rem;
@@ -2337,7 +2368,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .cta-block .wp-block-buttons .wp-block-button {
     margin-bottom: 1rem; }
   .cta-block .already-member {
-    font-size: .9rem;
+    font-size: 14.4px;
+    font-size: 0.9rem;
     margin: 0; }
 
 .page-template-page-the-benefits:after {
@@ -2366,10 +2398,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .page-template-page-about .site-main {
   position: relative;
   padding: 0; }
-
-.page-template-page-the-benefits #section_rebalanceYourself em,
-.page-template-page-about em {
-  color: #FF9B7A; }
 
 .page-template-page-the-benefits em strong {
   font-style: normal;
@@ -2407,14 +2435,16 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     @media (min-width: 769px) {
       .illustration-stage > svg {
         width: 100%;
+        left: 2rem;
         height: auto;
         align-self: center; } }
 
 .content-scroll {
-  font-size: 1.15rem;
-  height: calc(100vh - 80px); }
+  font-size: 18.4px;
+  font-size: 1.15rem; }
   @media (min-width: 769px) {
     .content-scroll {
+      font-size: 20.8px;
       font-size: 1.3rem;
       padding: 0 4rem;
       margin-left: calc(33.333% + 2rem); } }
@@ -2543,7 +2573,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   margin-right: .5em;
   flex-shrink: 0;
   scroll-snap-align: start;
-  font-size: .8rem;
+  font-size: 12.8px;
+  font-size: 0.8rem;
   position: relative;
   transition: all .2s ease-in-out; }
   @media (min-width: 1100px) {
@@ -2560,6 +2591,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .search-results article.post,
     .search-results article.exercises {
       width: calc(40% - .5em);
+      font-size: 16px;
       font-size: 1rem; } }
   @media (min-width: 769px) {
     .blog article.post, .blog article.exercises,
@@ -2569,7 +2601,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .search-results article.exercises {
       padding: 2rem 2rem .75rem 2rem;
       width: calc((100% - 1.5em) / 3);
-      font-size: 1rem;
       transition: all .1s ease-out;
       flex-grow: 0; }
       .blog article.post:last-child, .blog article.exercises:last-child,
@@ -2595,7 +2626,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     padding-top: 80%;
     background-size: cover;
     background-position: 50% 50%;
-    margin: -1.5em -1.5em 1.5em -1.5em;
+    margin: -1.5rem -1.5rem 1.5rem -1.5rem;
     transform: scale(1);
     transform-origin: 50% bottom;
     transition: all .2s ease-in; }
@@ -2605,13 +2636,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .archive article.exercises .post-thumbnail,
       .search-results article.post .post-thumbnail,
       .search-results article.exercises .post-thumbnail {
-        margin: -2em -2em 2em -2em; } }
+        margin: -2rem -2rem 2rem -2rem; } }
   .blog article.post .entry-title, .blog article.exercises .entry-title,
   .archive article.post .entry-title,
   .archive article.exercises .entry-title,
   .search-results article.post .entry-title,
   .search-results article.exercises .entry-title {
-    font-size: 1.125em;
+    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: 1rem; }
     .blog article.post .entry-title a, .blog article.exercises .entry-title a,
     .archive article.post .entry-title a,
@@ -2656,6 +2688,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .search-results article.post .entry-footer,
   .search-results article.exercises .entry-meta,
   .search-results article.exercises .entry-footer {
+    font-size: 12px;
     font-size: 0.75rem;
     padding-top: 1em;
     position: relative; }
@@ -2702,13 +2735,15 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .archive .sticky-post article,
 .search-results .sticky-post article {
   width: 100%;
+  font-size: 16px;
   font-size: 1rem;
   margin-bottom: 1rem; }
-  @media (min-width: 480px) {
+  @media (min-width: 768px) {
     .blog .sticky-post article,
     .archive .sticky-post article,
     .search-results .sticky-post article {
       display: flex;
+      font-size: 19.2px;
       font-size: 1.2rem; }
       .blog .sticky-post article .entry-text,
       .archive .sticky-post article .entry-text,
@@ -2719,7 +2754,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .blog .sticky-post article .entry-title,
       .archive .sticky-post article .entry-title,
       .search-results .sticky-post article .entry-title {
-        font-size: 1.5em; }
+        font-size: 24px;
+        font-size: 1.5rem; }
       .blog .sticky-post article .post-thumbnail,
       .archive .sticky-post article .post-thumbnail,
       .search-results .sticky-post article .post-thumbnail {
@@ -2744,6 +2780,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   position: absolute;
   top: .5em;
   right: .5em;
+  font-size: 16px;
   font-size: 1rem; }
   .discreet-checkmark svg {
     width: 16px;
@@ -2766,18 +2803,26 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     padding-top: 0; }
 
 .site-content {
-  margin-top: 71px;
-  padding: 0 1rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 71px;
   margin-left: auto;
   margin-right: auto; }
+  @media (min-width: 480px) {
+    .site-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; } }
+  @media (min-width: 1100px) {
+    .site-content {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
   @media screen and (min-width: 480px) {
     .site-content {
-      margin-top: 81px;
-      padding: 0 1.5rem; } }
-  @media screen and (min-width: 1100px) {
-    .site-content {
-      padding: 0 2rem; } }
+      margin-top: 81px; } }
 
 .site-footer {
   padding-bottom: 60px; }
@@ -2808,12 +2853,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .home .wp-block-button {
       display: inline-block; } }
 .home a.wp-block-button__link {
-  font-weight: 600;
-  font-size: 4.5vw;
   width: 100%; }
-  @media (min-width: 768px) {
-    .home a.wp-block-button__link {
-      font-size: 1.333rem; } }
 .home .content-area--landing {
   overflow: visible;
   display: flex;
@@ -2848,10 +2888,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         bottom: auto;
         right: 2rem;
         z-index: 999999999;
-        background-repeat: no-repeat;
-        background-size: auto 95%;
-        background-position: right top;
-        content: '';
         width: 40%;
         height: calc(100vh - 80px); } }
 
@@ -2863,6 +2899,46 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 
 .bypostauthor {
   display: block; }
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  font-size: 16px;
+  font-size: 1rem;
+  position: relative;
+  z-index: 2; }
+
+.site-info {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+  line-height: 2; }
+  @media (min-width: 480px) {
+    .site-info {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem; } }
+  @media (min-width: 1100px) {
+    .site-info {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  @media (min-width: 1100px) {
+    .site-info {
+      text-align: left; } }
+
+.site-info-element {
+  margin-right: 1.5em; }
+
+.site-info-element:last-child {
+  margin-right: 0; }
 
 /*--------------------------------------------------------------
 # Simple WP Membership styles
@@ -2886,6 +2962,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   border-radius: 5px; }
 
 .swpm-partial-protection-text {
+  font-size: 16px;
   font-size: 1rem;
   padding: 1.5rem;
   margin: 0 2rem;

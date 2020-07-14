@@ -4,10 +4,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 9vw;
-	@media (min-width: 768px) {
-		font-size: 2.5rem;
-	}
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.5em;
+}
+
+h3 {
+	font-size: 1.3em;
 }
 
 h1.entry-title,
@@ -19,23 +24,23 @@ h1.page-title {
 }
 
 .home .page-subtitle {
-	font-size: 1.2em;
+	@include font-size(1.2);
 }
 
 .home h1 {
-	font-size: 9vw;
+	@include font-size(2.5);
 
 	@media (min-width: 768px) {
-			font-size: 3rem;
+		@include font-size(3);
 			margin-bottom: .25em;
 	}
 }
 .home h2 {
-	font-size: 6vw;
+	@include font-size(1.5);
 	line-height: 1.5;
 
 	@media (min-width: 768px) {
-			font-size: 1.6666rem;
+			@include font-size(1.666);	
 			margin-bottom: 1.5em;
 	}
 }

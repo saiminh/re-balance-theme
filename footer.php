@@ -14,7 +14,14 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		
+		<div class="site-info">
+				<span class="site-info-element">
+					© <?php echo date("Y"); ?> Re.Balance BV
+				</span>
+				<a class="site-info-element" href="/contact/">Contact</a>
+				<a class="site-info-element" href="/about/">About</a>
+				<a class="site-info-element" href="/privacy-policy/">Terms & Conditions</a>
+			</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

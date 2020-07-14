@@ -24,7 +24,7 @@
     margin: 0;
     padding: 0;
     color: #DDD;
-    font-size: .8rem;
+    @include font-size(0.8);
     white-space: nowrap;
     max-width: 100%;
     overflow-x: scroll;
@@ -34,7 +34,7 @@
     }
 
     @media (min-width: 480px) {
-        font-size: 1rem;
+        @include font-size(1);
     }
 
     @media (min-width: 640px) {

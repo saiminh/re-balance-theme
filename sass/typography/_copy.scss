@@ -1,5 +1,8 @@
+.has-medium-font-size {
+	font-size: 1.25em;
+}
 .has-large-font-size {
-	font-size: 1.5rem;
+	font-size: 1.5em;
 }
 p {
 	margin-bottom: 1.5em;
@@ -36,11 +39,11 @@ mark, ins {
 	text-decoration: none;
 }
 big {
-	font-size: 125%;
+	@include font-size(1.25);
 }
 .modern-footnotes-footnote a {
 	color: inherit;
 }
 .modern-footnotes-footnote__note--tooltip {
-	font-size: 12px;
+	@include font-size(0.75);
 }

@@ -1,10 +1,7 @@
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
-	font-size: $sizeValue * 4.5vw;
-	@media (min-width: 768px) {
 		font-size: ($sizeValue * 16) * 1px;
 		font-size: $sizeValue * 1rem;
-	}
 }
 
 // Center block
@@ -29,4 +26,20 @@
 // Column width with margin
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+// Content block with max width, centered, sides padding
+@mixin content-block {
+	@include center-block;
+	max-width: $max-page-width;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	@media (min-width: 480px) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+	@media (min-width: 1100px) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }

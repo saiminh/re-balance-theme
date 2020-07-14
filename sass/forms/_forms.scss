@@ -56,7 +56,7 @@
         margin: auto 0 auto auto;
         text-align: center;
         position: relative;
-        font-size: .9rem;
+        @include font-size(0.9);
         top: 0;        
 
         @media (max-width: 481px) {
@@ -65,33 +65,27 @@
             box-shadow: none;           
             //text-decoration: underline;
             padding: .75em 0 1.5em 0;
-            font-size: .8rem;
+            @include font-size(0.8);
         }
     }
 }
 
 .toggle-discreet {
-    font-size: .8rem;
+  @include font-size(0.8);
 
     @media (min-width: 480px) {
-        font-size: 1rem; 
+      @include font-size(1);
     }
-
-    @media (min-width:  1100px) {
-    }
-
     & .switch {
         position: relative;
         line-height: 1; 
       }
-
     & .toggle-label-text {
         display: inline-block;
         position: relative;
         color: $color__brand-primary;
         cursor: pointer;
     }
-      
     &  .switch input { 
         opacity: 0;
         width: 0;
@@ -179,7 +173,7 @@
     padding: 1.5rem;
     border-bottom: 1px solid #EEE;
     border-radius: 5px 5px 0 0;
-    font-size: 1.25rem;
+    @include font-size(1.25);
     
     @media (min-width: 480px) {
       margin: -2rem -2rem 1rem -2rem;

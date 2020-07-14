@@ -85,7 +85,7 @@
          width: 100%;
          line-height: 45px;
          color: $color__text-main;
-         font-size: 1.25rem;       
+         @include font-size(1.25);       
          border-radius: 3px;  
          padding: 0 .75rem;
          background-color: lighten($color__brand-primary, 24%);

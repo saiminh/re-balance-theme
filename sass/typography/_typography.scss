@@ -10,7 +10,7 @@ textarea {
 	line-height: $font__line-height-body;
 
 	@media (max-width: 320px) {
-		font-size: 14px;
+		@include font-size(0.875);
 	}
 }
 
