@@ -17,6 +17,9 @@
 .site-content {
     margin-top: 71px;
     padding: 0 1rem;
+    max-width: $max-page-width;
+    margin-left: auto;
+    margin-right: auto;
 
     @media screen and (min-width: 480px) {
         margin-top: 81px;
@@ -42,23 +45,6 @@
         @include bg-gradient-01;
     }
 
-    & h1 {
-        font-size: 7vw;
-
-        @media (min-width: 768px) {
-            font-size: 4.5vw;
-            margin-bottom: .25em;
-        }
-    }
-    & h2 {
-        font-size: 5vw;
-
-        @media (min-width: 768px) {
-            font-size: 2.5vw;
-            margin-bottom: 1.5em;
-        }
-    }
-
     & .wp-block-button {
         display: block;
 
@@ -73,7 +59,7 @@
         width: 100%;
 
         @media (min-width: 768px) {
-            font-size: 2vw;
+            font-size: 1.333rem;
         }
     }
 

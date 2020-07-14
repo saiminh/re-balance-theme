@@ -355,9 +355,17 @@ optgroup,
 textarea {
   color: #000;
   font-family: hero-new, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 4.5vw;
   line-height: 1.5; }
+  @media (min-width: 768px) {
+    body,
+    button,
+    input,
+    select,
+    optgroup,
+    textarea {
+      font-size: 16px;
+      font-size: 1rem; } }
   @media (max-width: 320px) {
     body,
     button,
@@ -368,18 +376,39 @@ textarea {
       font-size: 14px; } }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600; }
+  font-weight: 600;
+  line-height: 1.333334; }
+
+h1 {
+  font-size: 9vw; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.5rem; } }
 
 h1.entry-title,
 h1.page-title {
   color: #000;
-  font-size: 1.75em;
   font-weight: 600;
   position: relative;
   top: .15em; }
 
 .home .page-subtitle {
   font-size: 1.2em; }
+
+.home h1 {
+  font-size: 9vw; }
+  @media (min-width: 768px) {
+    .home h1 {
+      font-size: 3rem;
+      margin-bottom: .25em; } }
+
+.home h2 {
+  font-size: 6vw;
+  line-height: 1.5; }
+  @media (min-width: 768px) {
+    .home h2 {
+      font-size: 1.6666rem;
+      margin-bottom: 1.5em; } }
 
 .has-large-font-size {
   font-size: 1.5rem; }
@@ -399,18 +428,24 @@ address {
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  font-size: 4.21875vw;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
+  @media (min-width: 768px) {
+    pre {
+      font-size: 15px;
+      font-size: 0.9375rem; } }
 
 code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem; }
+  font-size: 4.21875vw; }
+  @media (min-width: 768px) {
+    code, kbd, tt, var {
+      font-size: 15px;
+      font-size: 0.9375rem; } }
 
 abbr, acronym {
   border-bottom: 1px dotted #666;
@@ -902,6 +937,10 @@ label {
   .form-container > .wp-block-group__inner-container > *:last-child {
     margin-bottom: 0; }
 
+.wp-block-column .form-container {
+  margin: 0 0 1rem 0;
+  max-width: 100%; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -964,33 +1003,33 @@ a {
   background: #FFF;
   z-index: 1000;
   border-bottom: 1px solid #FFF;
-  padding: 0 1rem;
   position: fixed;
   top: 0;
   width: 100%;
   height: 70px; }
   @media (min-width: 480px) {
     .site-header {
-      padding: 0 1.5rem;
       height: 80px; } }
   @media (min-width: 1100px) {
     .site-header {
-      padding: 0 2rem;
       border-bottom: none;
-      display: flex;
-      align-items: center;
-      align-content: flex-start;
       transition: .1s all linear; } }
-  .site-header:before {
-    content: "";
-    width: 100vw;
-    height: 50px;
-    background-color: #FFF;
-    position: absolute;
-    bottom: 100%; }
   @media (min-width: 1100px) {
     .site-header.scrolled {
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); } }
+
+.site-header-inner {
+  max-width: 1280px;
+  margin: 0 auto; }
+  @media (min-width: 480px) {
+    .site-header-inner {
+      padding: 0 1.5rem; } }
+  @media (min-width: 1100px) {
+    .site-header-inner {
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      align-content: flex-start; } }
 
 .site-branding {
   position: relative;
@@ -1744,8 +1783,7 @@ a {
     clip-path: none;
     color: #21759b;
     display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
+    font-size: 3.9375vw;
     font-weight: bold;
     height: auto;
     left: 5px;
@@ -1756,6 +1794,10 @@ a {
     width: auto;
     z-index: 100000;
     /* Above WP toolbar. */ }
+    @media (min-width: 768px) {
+      .screen-reader-text:focus {
+        font-size: 14px;
+        font-size: 0.875rem; } }
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
@@ -2408,11 +2450,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     #section_one {
       padding-top: 0; } }
 
-#section_two {
-  font-size: 1.5rem; }
-  #section_two strong {
-    color: #000; }
-
 .page-template-page-about:after {
   content: "";
   position: fixed;
@@ -2730,7 +2767,10 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 
 .site-content {
   margin-top: 71px;
-  padding: 0 1rem; }
+  padding: 0 1rem;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto; }
   @media screen and (min-width: 480px) {
     .site-content {
       margin-top: 81px;
@@ -2762,18 +2802,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-.home h1 {
-  font-size: 7vw; }
-  @media (min-width: 768px) {
-    .home h1 {
-      font-size: 4.5vw;
-      margin-bottom: .25em; } }
-.home h2 {
-  font-size: 5vw; }
-  @media (min-width: 768px) {
-    .home h2 {
-      font-size: 2.5vw;
-      margin-bottom: 1.5em; } }
 .home .wp-block-button {
   display: block; }
   @media (min-width: 768px) {
@@ -2785,7 +2813,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   width: 100%; }
   @media (min-width: 768px) {
     .home a.wp-block-button__link {
-      font-size: 2vw; } }
+      font-size: 1.333rem; } }
 .home .content-area--landing {
   overflow: visible;
   display: flex;

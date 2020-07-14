@@ -201,4 +201,9 @@
   & > .wp-block-group__inner-container > *:last-child {
     margin-bottom: 0;
   } 
+} // end .form-container
+
+.wp-block-column .form-container {
+  margin: 0 0 1rem 0;
+  max-width: 100%;
 }

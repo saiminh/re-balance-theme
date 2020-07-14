@@ -30,65 +30,65 @@
 	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
 	
 		<header id="masthead" class="site-header">
-			<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
-				</a>
-			</div><!-- .site-branding -->
+			<div class="site-header-inner">
+				<div class="site-branding">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
+					</a>
+				</div><!-- .site-branding -->
 			
 			
 
-			<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<div class="navTrigger">
-				<i></i><i></i><i></i>
-				<span class="menu-name">Menu</span>
-				</div>
-			</button>
-				
-			<div class="menu-movebreathe-container">
-				<ul id="movebreathe-menu" class="menu nav-menu">
-					<li id="menu-item-move" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></li>
-					<li id="menu-item-search" class="menu-item menu-item-type-post_type menu-item-object-page">
-						<a class="toggle-search" href="#">
-					<svg class="ui-icon-magnifyingglass" id="magnifyer" x="0px" y="0px" viewBox="0 0 38 38">
-							<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="15.1" cy="15.1" r="14"/>
-							<line fill="none" stroke="#FFFFFF" stroke-width="2.7225" stroke-linecap="round" stroke-miterlimit="10" x1="26.4" y1="26.4" x2="36.3" y2="36.3"/>
-					</svg>
-					</a></li>
-					<li id="menu-item-breathe" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></li>
-				</ul>
-			</div>	
+				<nav id="site-navigation" class="main-navigation">
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+						<div class="navTrigger">
+						<i></i><i></i><i></i>
+						<span class="menu-name">Menu</span>
+						</div>
+					</button>			
+					<div class="menu-movebreathe-container">
+						<ul id="movebreathe-menu" class="menu nav-menu">
+							<li id="menu-item-move" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></li>
+							<li id="menu-item-search" class="menu-item menu-item-type-post_type menu-item-object-page">
+								<a class="toggle-search" href="#">
+							<svg class="ui-icon-magnifyingglass" id="magnifyer" x="0px" y="0px" viewBox="0 0 38 38">
+									<circle fill="none" stroke="#FFFFFF" stroke-miterlimit="10" cx="15.1" cy="15.1" r="14"/>
+									<line fill="none" stroke="#FFFFFF" stroke-width="2.7225" stroke-linecap="round" stroke-miterlimit="10" x1="26.4" y1="26.4" x2="36.3" y2="36.3"/>
+							</svg>
+							</a></li>
+							<li id="menu-item-breathe" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></li>
+						</ul>
+					</div>	
 
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+				?>
 
-			<div class="site-header-search">
-				<?php get_search_form( ); ?> 						
-			</div>
-		
-			<div class="site-header-account">
-				<?php global $current_user; wp_get_current_user(); ?>
-				<?php if ( is_user_logged_in() ) { 
-					//echo 'Username: ' . $current_user->user_login . "\n"; 
-					echo $current_user->display_name . "\n";
-					echo "<div class='user-menu'>";
-					echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
-						'>Logout</a>";
-						echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
-					echo "</div>";
-				} 
-					else { 
-						wp_loginout(); } ?> 
-			</div>
+					<div class="site-header-search">
+						<?php get_search_form( ); ?> 						
+					</div>
+			
+					<div class="site-header-account">
+						<?php global $current_user; wp_get_current_user(); ?>
+						<?php if ( is_user_logged_in() ) { 
+							//echo 'Username: ' . $current_user->user_login . "\n"; 
+							echo $current_user->display_name . "\n";
+							echo "<div class='user-menu'>";
+							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
+								'>Logout</a>";
+								echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
+							echo "</div>";
+						} 
+							else { 
+								wp_loginout(); } ?> 
+					</div>
 
 
-			</nav><!-- #site-navigation -->		
-		
+				</nav><!-- #site-navigation -->		
+			</div> <!-- .site-header-inner -->
 			
 		
 		</header><!-- #masthead -->
@@ -96,6 +96,7 @@
 		<?php else : ?>
 
 		<header id="masthead" class="site-header">
+		<div class="site-header-inner">
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
@@ -128,7 +129,8 @@
 				<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
 			</div>
 
-			</nav><!-- #site-navigation -->				
+			</nav><!-- #site-navigation -->		
+		<!-- </div> .site-header-inner		 -->
 		</header><!-- #masthead -->
 
 	<?php endif; ?>
