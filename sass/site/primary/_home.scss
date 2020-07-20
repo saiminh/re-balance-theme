@@ -1,0 +1,49 @@
+.home {
+    @include font-size(1.2);
+}
+.home.wpsmp-loggedout {
+    @include bg-gradient-01;
+    &:after {
+        position: absolute;
+    }
+}
+.home .wp-block-button {
+    display: block;
+    @media (min-width: 768px) {
+        display: inline-block;
+    }
+}
+.home a.wp-block-button__link {
+    width: 100%;
+}
+.hero {   
+    & svg {
+        margin: 1rem auto;
+        max-height: 160px;
+        display: block;
+        overflow: visible;
+        @media (min-width: 375px) {
+            max-height: 200px;
+        }
+        @media (min-width: 768px) {
+            min-width: 25vw;
+            flex-basis: 33.3%;
+            max-height: none;
+            min-height: calc(100vh - 80px);
+        }
+    }
+}
+.hero > .wp-block-group__inner-container {
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;     
+        align-items: center;   
+    }
+}
+.home .site-main {
+    margin: 0 auto;
+    padding: 0;
+    @media (min-width: 768px){
+        width: 85%;
+    }
+}

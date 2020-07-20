@@ -392,24 +392,43 @@ h1.page-title {
   font-size: 19.2px;
   font-size: 1.2rem; }
 
-.home h1 {
-  font-size: 40px;
-  font-size: 2.5rem; }
+.hero-header {
+  font-size: 32px;
+  font-size: 2rem;
+  margin-top: 0; }
+  @media (min-width: 480px) {
+    .hero-header {
+      font-size: 40px;
+      font-size: 2.5rem; } }
   @media (min-width: 768px) {
-    .home h1 {
-      font-size: 48px;
-      font-size: 3rem;
+    .hero-header {
+      font-size: 44.8px;
+      font-size: 2.8rem;
       margin-bottom: .25em; } }
 
-.home h2 {
-  font-size: 24px;
-  font-size: 1.5rem;
-  line-height: 1.5; }
+.hero-subheader {
+  font-size: 21.328px;
+  font-size: 1.333rem;
+  line-height: 1.5;
+  font-weight: 300; }
+  @media (min-width: 480px) {
+    .hero-subheader {
+      font-size: 24px;
+      font-size: 1.5rem; } }
   @media (min-width: 768px) {
-    .home h2 {
+    .hero-subheader {
       font-size: 26.656px;
       font-size: 1.666rem;
       margin-bottom: 1.5em; } }
+
+.eyebrow {
+  margin-bottom: 0;
+  font-size: 1.125em;
+  font-weight: 300;
+  color: #FF9B7A; }
+
+.eyebrow + h1, .eyebrow + h2, .eyebrow + h3 {
+  margin-top: 0.25em; }
 
 .has-medium-font-size {
   font-size: 1.25em; }
@@ -418,7 +437,12 @@ h1.page-title {
   font-size: 1.5em; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  font-size: 1.125em;
+  line-height: 1.6; }
+
+li {
+  font-size: 1.125em; }
 
 dfn, cite, em, i {
   font-style: italic; }
@@ -507,11 +531,13 @@ li > ol {
   margin-bottom: 0;
   margin-left: .5em; }
 
-article ul > li {
+article ul > li,
+.home .site-content ul > li {
   list-style: none;
   padding-bottom: .75em; }
-  article ul > li:before {
-    content: "●";
+  article ul > li:before,
+  .home .site-content ul > li:before {
+    content: "•";
     color: #FF9B7A;
     display: inline-block;
     width: 1em;
@@ -923,8 +949,6 @@ label {
     .form-container {
       margin: 1rem auto;
       padding: 2rem; } }
-  .form-container > .wp-block-group__inner-container > *:first-child {
-    margin-top: 0; }
   .form-container h2 {
     margin: -1.5rem -1.5rem 1rem -1.5rem;
     padding: 1.5rem;
@@ -1900,6 +1924,67 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+.home {
+  font-size: 19.2px;
+  font-size: 1.2rem; }
+
+.home.wpsmp-loggedout:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+.home.wpsmp-loggedout:after {
+  position: absolute; }
+
+.home .wp-block-button {
+  display: block; }
+  @media (min-width: 768px) {
+    .home .wp-block-button {
+      display: inline-block; } }
+
+.home a.wp-block-button__link {
+  width: 100%; }
+
+.hero svg {
+  margin: 1rem auto;
+  max-height: 160px;
+  display: block;
+  overflow: visible; }
+  @media (min-width: 375px) {
+    .hero svg {
+      max-height: 200px; } }
+  @media (min-width: 768px) {
+    .hero svg {
+      min-width: 25vw;
+      flex-basis: 33.3%;
+      max-height: none;
+      min-height: calc(100vh - 80px); } }
+
+@media (min-width: 768px) {
+  .hero > .wp-block-group__inner-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center; } }
+
+.home .site-main {
+  margin: 0 auto;
+  padding: 0; }
+  @media (min-width: 768px) {
+    .home .site-main {
+      width: 85%; } }
+
 .sticky {
   display: block; }
 
@@ -2071,7 +2156,9 @@ a {
         margin-right: 2rem;
         width: 60vw;
         height: 33.75vw;
-        position: fixed; } }
+        position: fixed;
+        max-width: 768px;
+        max-height: 432px; } }
     .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
       display: block;
       margin: 0 auto;
@@ -2081,7 +2168,9 @@ a {
       @media (min-width: 768px) {
         .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
           width: 60vw !important;
-          height: 33.75vw !important; } }
+          height: 33.75vw !important;
+          max-width: 768px !important;
+          max-height: 432px !important; } }
   @media (min-width: 768px) {
     .exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
       margin-left: 66%; } }
@@ -2384,7 +2473,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   z-index: -1;
   /* needed to keep in the background */
   background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2492,7 +2581,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   z-index: -1;
   /* needed to keep in the background */
   background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
+  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2824,72 +2913,15 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .site-content {
       margin-top: 81px; } }
 
+@media screen and (min-width: 768px) {
+  .single-exercises .site-content {
+    padding-bottom: 4rem; } }
+
 .site-footer {
   padding-bottom: 60px; }
   @media screen and (min-width: 1100px) {
     .site-footer {
       padding-bottom: 0; } }
-
-.home.wpsmp-loggedout:after {
-  content: "";
-  position: fixed;
-  /* stretch a fixed position to the whole screen */
-  top: 0;
-  height: 100vh;
-  /* fix for mobile browser address bar appearing disappearing */
-  left: 0;
-  right: 0;
-  z-index: -1;
-  /* needed to keep in the background */
-  background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-.home .wp-block-button {
-  display: block; }
-  @media (min-width: 768px) {
-    .home .wp-block-button {
-      display: inline-block; } }
-.home a.wp-block-button__link {
-  width: 100%; }
-.home .content-area--landing {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: calc(100vh - 80px); }
-  .home .content-area--landing > * {
-    width: 100%; }
-  @media (min-width: 768px) {
-    .home .content-area--landing {
-      overflow: visible;
-      align-content: center;
-      flex-direction: row; }
-      .home .content-area--landing > * {
-        align-self: center;
-        width: 63%; } }
-  .home .content-area--landing h1, .home .content-area--landing h2, .home .content-area--landing div, .home .content-area--landing p {
-    position: relative;
-    z-index: 2; }
-  .home .content-area--landing h2 {
-    font-weight: 300; }
-  .home .content-area--landing svg {
-    z-index: 1;
-    content: url("img/ui-home-breathe.svg");
-    width: 25vh;
-    height: 40vh;
-    margin: 1rem auto 0 auto; }
-    @media (min-width: 768px) {
-      .home .content-area--landing svg {
-        position: absolute;
-        top: 50px;
-        bottom: auto;
-        right: 2rem;
-        z-index: 999999999;
-        width: 40%;
-        height: calc(100vh - 80px); } }
 
 /*--------------------------------------------------------------
 ## Comments
@@ -2912,6 +2944,15 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   font-size: 1rem;
   position: relative;
   z-index: 2; }
+
+@media (min-width: 768px) {
+  .single-exercises .site-footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #FFF;
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 1rem; } }
 
 .site-info {
   display: block;

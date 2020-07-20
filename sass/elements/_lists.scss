@@ -17,11 +17,12 @@ li > ol {
 	margin-left: .5em;
 }
 
-article ul > li {
+article ul > li,
+.home .site-content ul > li {
 	list-style: none;
 	padding-bottom: .75em;
 	&:before {
-		content: "●";
+		content: "•";
 		color: $color__brand-primary;
 		display: inline-block; 
 		width: 1em;

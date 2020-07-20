@@ -245,7 +245,7 @@ get_header();
             <?php // while ( have_posts() ) : the_post();the_content(); endwhile; ?>         
         <div class="wp-block-group section" id="section_one">
           <div class="wp-block-group__inner-container">
-            
+          <h3 class="eyebrow">Rebalance</h3>
             <h1>The Benefits</h1>
             
             <p>Are your days so busy that you struggle to find time for a break? Feel exhausted, stressed, or overwhelmed by a seemingly never ending to-do list? Do you have a tight neck and shoulders, stiff hips, or a sore lower back? Or perhaps you lose focus during the afternoon slump?</p>

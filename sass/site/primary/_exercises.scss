@@ -29,7 +29,8 @@
             width: 60vw;
             height: 33.75vw;
             position: fixed;
-            //top: 133px;
+            max-width: 768px;
+            max-height: 432px;
         }
         & video,
         & iframe {
@@ -42,6 +43,8 @@
             @media (min-width: 768px) {
                 width: 60vw!important;
                 height: 33.75vw!important;
+                max-width: 768px!important;
+                max-height: 432px!important;
             }
         }
     }

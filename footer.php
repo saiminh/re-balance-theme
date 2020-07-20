@@ -20,7 +20,7 @@
 				</span>
 				<a class="site-info-element" href="/contact/">Contact</a>
 				<a class="site-info-element" href="/about/">About</a>
-				<a class="site-info-element" href="/privacy-policy/">Terms & Conditions</a>
+				<a class="site-info-element" href="/privacy-policy/">Terms&nbsp;&&nbsp;Conditions</a>
 			</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

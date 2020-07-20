@@ -285,7 +285,7 @@ function animateBenefits(){
 
     let trigger_ourStory_In = { trigger: "#section_ourStory", start: "0% center", end: "100% center", onEnter: ()=>{ section_ourMissioneyeloop.pause() } }
 
-    let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })
+    let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })      
       .to("#unbalancedWorld, #ourMission", { yPercent: -200, autoAlpha: 0, duration: 1.1 }, 0)
       .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
       .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { transformOrigin: "11% 63%", rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
@@ -294,9 +294,10 @@ function animateBenefits(){
       .addLabel("bulb", .3)
       //.fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 0 }, { rotationZ: 58, duration: .4, ease: "back.out(1.7)" }, "bulb+=.3")
       .fromTo("#er-bulb", { transformOrigin: "50% 90%", yPercent: 20, scaleY: 0 }, { yPercent: 0, scaleY: 1, ease: "back.out(1.7)", duration: .3 }, "bulb")
+      .set("[id^='ray-']", {y: -15}, "bulb+=.3" )
       .fromTo("#ray-01", 
         { transformOrigin: "50% 50%", yPercent: 0 }, 
-        { yPercent: -1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
+        { yPercent: -1200, duration:.3, ease: "power3.in" }, "bulb+=.3" )
       .fromTo("#ray-02", 
         { transformOrigin: "50% 50%", rotationZ: 45, yPercent: 0, xPercent: 0 }, 
         { yPercent: -800, xPercent: 800, duration:.3, ease: "power3.in" }, "bulb+=.3" )
@@ -330,9 +331,31 @@ function animateBenefits(){
       { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
-      { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0)
+      { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);
 
 
+  } else if (document.querySelector('.home-hero')) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.defaults({
+        toggleActions: "restart complete reverse reset"//,
+      });
+
+      let breathemanbreathes = gsap.timeline( { paused: false, repeat: -1, yoyo: true } )
+        .to("#breatheman-chest", { transformOrigin: "50% 100%", scale: 1.05, yPercent: -5, duration: 2 }, 0)
+        .to("#breatheman-neck", { transformOrigin: "50% 100%", scaleY: .8, yPercent: -15, duration: 1.9 }, 0.1)   
+        .to("#breatheman-head", { transformOrigin: "50% 100%", yPercent: -3, duration: 1.9 }, 0.3)  
+        .to("#breatheman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, duration: 1.7 }, 0.3)    
+        .to("#breatheman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, duration: 1.8 }, 0.2);    
+
+      gsap.fromTo("#home-benefits-block svg", { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      
+      gsap.fromTo("#home-benefits-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+
+      gsap.fromTo("#home-about-block svg", { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      
+      gsap.fromTo("#home-about-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+  
   } else {
     console.log('nothing to gsap here');
   }

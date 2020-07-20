@@ -1,3 +1,4 @@
+
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
 		font-size: ($sizeValue * 16) * 1px;
@@ -41,5 +42,30 @@
 	@media (min-width: 1100px) {
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+}
+
+@mixin bg-gradient-01 {
+	&:after {
+		content:"";
+		position:fixed; /* stretch a fixed position to the whole screen */
+		top:0;
+		height:100vh; /* fix for mobile browser address bar appearing disappearing */
+		left:0;
+		right:0;
+		z-index:-1; /* needed to keep in the background */
+		background-color: $color__brand-secondary;
+		background: linear-gradient(
+				180deg, 
+				$color__brand-secondary 0%, 
+				$color__brand-secondary 30%, 
+				lighten($color__brand-primary, 20%) 80%, 
+				#FFF 100%
+		) no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
 	}
 }
