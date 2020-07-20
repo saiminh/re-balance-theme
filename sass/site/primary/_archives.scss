@@ -176,7 +176,16 @@
         }
     }
 }
-
+.pre-entry-meta {
+    @include font-size(.9);
+    color: #666;
+    margin-bottom: .5em;
+    
+}
+.single .pre-entry-meta {
+    @include font-size(1);
+    margin-bottom: .2em;
+}
 .discreet-checkmark {
     height: 24px;
     width: 24px;

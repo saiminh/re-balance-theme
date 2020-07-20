@@ -972,7 +972,7 @@ label {
 
 .wp-block-column .form-container {
   margin: 0 0 1rem 0;
-  max-width: 100%; }
+  max-width: 640px; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -1542,7 +1542,8 @@ a {
   justify-content: space-between; }
 
 .page-template-page-about .statusbar,
-.page-template-page-the-benefits .statusbar {
+.page-template-page-the-benefits .statusbar,
+.page-template-page-registration .statusbar {
   display: none; }
 
 @media (min-width: 768px) {
@@ -1977,11 +1978,7 @@ a {
     align-items: center; } }
 
 .home.wpsmp-loggedout .site-main {
-  margin: 0 auto;
   padding: 0; }
-  @media (min-width: 768px) {
-    .home.wpsmp-loggedout .site-main {
-      width: 85%; } }
 
 .sticky {
   display: block; }
@@ -2858,6 +2855,17 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         flex-direction: column;
         justify-content: center; } }
 
+.pre-entry-meta {
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: .5em; }
+
+.single .pre-entry-meta {
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: .2em; }
+
 .discreet-checkmark {
   height: 24px;
   width: 24px;
@@ -2888,6 +2896,15 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   padding-top: 1em; }
   .single-exercises .site-main {
     padding-top: 0; }
+
+.home.wpsmp-loggedout .site-main,
+.page-template-page-registration .site-main {
+  margin-left: auto;
+  margin-right: auto; }
+  @media (min-width: 768px) {
+    .home.wpsmp-loggedout .site-main,
+    .page-template-page-registration .site-main {
+      width: 85%; } }
 
 .site-content {
   display: block;

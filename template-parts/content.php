@@ -15,6 +15,12 @@
 		rebalance_post_thumbnail(); 
 	endif; ?>
 	<div class="entry-text">
+		<div class="pre-entry-meta">
+			<?php // rebalance_entry_footer(); 
+					rebalance_posted_on();
+					rebalance_posted_by();
+			?>
+		</div>	
 		<header class="entry-header">
 			<?php
 			if ( 'post' === get_post_type() ) :
@@ -28,10 +34,8 @@
 			endif; ?>
 		</header><!-- .entry-header -->
 
-		
-
 		<div class="entry-content">
-
+			
 			<?php if ( is_singular() ):
 			the_content( sprintf(
 				wp_kses(
@@ -58,14 +62,7 @@
 			?>
 		</div><!-- .entry-content -->
 
-		<footer class="entry-footer">
-
-			<?php // rebalance_entry_footer(); 
-				
-					rebalance_posted_on();
-					//rebalance_posted_by();
-					
-			?>
+		<footer class="sentry-footer">		
 		</footer><!-- .entry-footer -->
 	</div>
 		
