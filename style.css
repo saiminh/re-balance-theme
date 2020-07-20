@@ -436,12 +436,11 @@ h1.page-title {
 .has-large-font-size {
   font-size: 1.5em; }
 
-p {
+article p {
   margin-bottom: 1.5em;
   font-size: 1.125em;
   line-height: 1.6; }
-
-li {
+article li {
   font-size: 1.125em; }
 
 dfn, cite, em, i {

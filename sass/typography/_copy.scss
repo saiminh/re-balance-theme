@@ -4,13 +4,15 @@
 .has-large-font-size {
 	font-size: 1.5em;
 }
-p {
-	margin-bottom: 1.5em;
-	font-size: 1.125em;
-	line-height: 1.6;
-}
-li {
-	font-size: 1.125em;
+article {
+	p {
+		margin-bottom: 1.5em;
+		font-size: 1.125em;
+		line-height: 1.6;
+	}
+	li {
+		font-size: 1.125em;
+	}
 }
 dfn, cite, em, i {
 	font-style: italic;
