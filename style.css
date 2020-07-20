@@ -1924,29 +1924,28 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.home {
+.home.wpsmp-loggedout {
   font-size: 19.2px;
   font-size: 1.2rem; }
-
-.home.wpsmp-loggedout:after {
-  content: "";
-  position: fixed;
-  /* stretch a fixed position to the whole screen */
-  top: 0;
-  height: 100vh;
-  /* fix for mobile browser address bar appearing disappearing */
-  left: 0;
-  right: 0;
-  z-index: -1;
-  /* needed to keep in the background */
-  background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-.home.wpsmp-loggedout:after {
-  position: absolute; }
+  .home.wpsmp-loggedout:after {
+    content: "";
+    position: fixed;
+    /* stretch a fixed position to the whole screen */
+    top: 0;
+    height: 100vh;
+    /* fix for mobile browser address bar appearing disappearing */
+    left: 0;
+    right: 0;
+    z-index: -1;
+    /* needed to keep in the background */
+    background-color: #9ACFE9;
+    background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+  .home.wpsmp-loggedout:after {
+    position: absolute; }
 
 .home .wp-block-button {
   display: block; }
@@ -1978,11 +1977,11 @@ a {
     flex-direction: row-reverse;
     align-items: center; } }
 
-.home .site-main {
+.home.wpsmp-loggedout .site-main {
   margin: 0 auto;
   padding: 0; }
   @media (min-width: 768px) {
-    .home .site-main {
+    .home.wpsmp-loggedout .site-main {
       width: 85%; } }
 
 .sticky {

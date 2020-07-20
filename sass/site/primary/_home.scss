@@ -1,7 +1,5 @@
-.home {
-    @include font-size(1.2);
-}
 .home.wpsmp-loggedout {
+    @include font-size(1.2);
     @include bg-gradient-01;
     &:after {
         position: absolute;
@@ -40,7 +38,7 @@
         align-items: center;   
     }
 }
-.home .site-main {
+.home.wpsmp-loggedout .site-main {
     margin: 0 auto;
     padding: 0;
     @media (min-width: 768px){
