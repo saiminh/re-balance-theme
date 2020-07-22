@@ -786,6 +786,10 @@ select {
   background-size: .65em auto;
   background-color: #fff7f4; }
 
+option {
+  color: #333;
+  font-size: 1rem; }
+
 .swpm-edit-profile-form select {
   width: auto; }
 
