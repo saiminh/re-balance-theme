@@ -2,8 +2,6 @@
 // Benefits page animations
 // ----------------------------------------------------------
 
-const { func } = require("prop-types");
-
 function animateBenefits(){
   ScrollTrigger.getAll().forEach(element => element.kill());
   // Create timelines for benefits page to use in init
