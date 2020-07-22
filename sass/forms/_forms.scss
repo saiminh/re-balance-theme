@@ -79,12 +79,21 @@
     & .switch {
         position: relative;
         line-height: 1; 
+        margin: 0;
+        @include font-size(0.8);
+        @media (min-width: 480px) {
+          @include font-size(1);
+        }
       }
     & .toggle-label-text {
         display: inline-block;
         position: relative;
         color: $color__brand-primary;
         cursor: pointer;
+        @include font-size(0.8);
+        @media (min-width: 480px) {
+          @include font-size(1);
+        }
     }
     &  .switch input { 
         opacity: 0;
