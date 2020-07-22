@@ -58,7 +58,7 @@
 		background: linear-gradient(
 				180deg, 
 				$color__brand-secondary 0%, 
-				$color__brand-secondary 30%, 
+				lighten($color__brand-secondary, 10%) 20%, 
 				lighten($color__brand-primary, 20%) 80%, 
 				#FFF 100%
 		) no-repeat;

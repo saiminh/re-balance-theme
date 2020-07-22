@@ -2,6 +2,8 @@
 // Benefits page animations
 // ----------------------------------------------------------
 
+const { func } = require("prop-types");
+
 function animateBenefits(){
   ScrollTrigger.getAll().forEach(element => element.kill());
   // Create timelines for benefits page to use in init
@@ -348,13 +350,22 @@ function animateBenefits(){
         .to("#breatheman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, duration: 1.7 }, 0.3)    
         .to("#breatheman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, duration: 1.8 }, 0.2);    
 
-      gsap.fromTo("#home-benefits-block svg", { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      gsap.fromTo("#home-benefits-block img", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
       
       gsap.fromTo("#home-benefits-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
 
-      gsap.fromTo("#home-about-block svg", { autoAlpha: 0, yPercent: 100 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      gsap.fromTo("#home-about-block img", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
       
       gsap.fromTo("#home-about-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      
+      gsap.fromTo("#home-example-video-block-breathe figure", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-example-video-block-breathe", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      
+      gsap.fromTo("#home-example-video-block-breathe div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-example-video-block-breathe", start: "0% 70%", end: "100% 70%", scrub: false } } );
+
+      gsap.fromTo("#home-example-video-block-move figure", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-example-video-block-move", start: "0% 70%", end: "100% 70%", scrub: false } } );
+      
+      gsap.fromTo("#home-example-video-block-move div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-example-video-block-move", start: "0% 70%", end: "100% 70%", scrub: false } } );
+
   
   } else {
     console.log('nothing to gsap here');

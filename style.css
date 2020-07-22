@@ -774,7 +774,7 @@ select {
   -webkit-appearance: none;
   appearance: none;
   border: 1px solid #ffe0d6;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #FF9B7A;
   height: 40px;
   padding: 0 2rem 0 .5rem;
@@ -1956,8 +1956,8 @@ a {
 ## Posts and pages
 --------------------------------------------------------------*/
 .home.wpsmp-loggedout {
-  font-size: 19.2px;
-  font-size: 1.2rem; }
+  font-size: 17.6px;
+  font-size: 1.1rem; }
   .home.wpsmp-loggedout:after {
     content: "";
     position: fixed;
@@ -1970,13 +1970,32 @@ a {
     z-index: -1;
     /* needed to keep in the background */
     background-color: #9ACFE9;
-    background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
+    background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover; }
-  .home.wpsmp-loggedout:after {
-    position: absolute; }
+  @media (min-width: 768px) {
+    .home.wpsmp-loggedout {
+      font-size: 19.2px;
+      font-size: 1.2rem; } }
+
+#home-benefits-block,
+#home-about-block {
+  align-items: center; }
+  #home-benefits-block .wp-block-column,
+  #home-about-block .wp-block-column {
+    flex-basis: 66.6%; }
+  #home-benefits-block .wp-block-column:first-child,
+  #home-about-block .wp-block-column:first-child {
+    flex-basis: 33.3%;
+    text-align: center; }
+
+@media (min-width: 768px) {
+  .home-example-video-block .wp-block-column *:first-child {
+    margin-top: 0; }
+    .home-example-video-block .wp-block-column *:first-child.wp-block-embed-vimeo {
+      margin-top: 10px; } }
 
 .home .wp-block-button {
   display: block; }
@@ -2010,6 +2029,33 @@ a {
 
 .home.wpsmp-loggedout .site-main {
   padding: 0; }
+
+.home-about-block-illu {
+  max-width: 100%;
+  max-height: 26rem; }
+
+.home-benefits-block-illu {
+  margin-left: -10%; }
+
+.home-example-video-block {
+  margin-top: 4em; }
+  .home-example-video-block .wp-embed-aspect-16-9 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 0px 10px #ffe8e0; }
+    .home-example-video-block .wp-embed-aspect-16-9 iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
 
 .sticky {
   display: block; }
@@ -2499,7 +2545,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   z-index: -1;
   /* needed to keep in the background */
   background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2607,7 +2653,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   z-index: -1;
   /* needed to keep in the background */
   background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
