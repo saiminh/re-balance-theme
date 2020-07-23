@@ -431,10 +431,10 @@ h1.page-title {
   margin-top: 0.25em; }
 
 .has-medium-font-size {
-  font-size: 1.25em; }
+  font-size: 1.5em; }
 
 .has-large-font-size {
-  font-size: 1.5em; }
+  font-size: 2em; }
 
 article p {
   margin-bottom: 1.5em;
@@ -447,7 +447,23 @@ dfn, cite, em, i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
+  margin: 0 0 0 2em;
+  font-weight: 600; }
+
+.wp-block-pullquote {
+  text-align: left;
+  font-size: 1.5em;
+  padding: 1em 0;
+  position: relative; }
+  .wp-block-pullquote:before {
+    content: '“';
+    font-size: 3.333em;
+    line-height: 1;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .wp-block-pullquote p {
+    margin: 0; }
 
 address {
   margin: 0 0 1.5em; }

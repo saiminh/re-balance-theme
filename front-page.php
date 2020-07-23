@@ -106,13 +106,13 @@ get_header();
 						</figure>
 					</div>
 					<div class="wp-block-column">
-						<h2>Try it: One minute quick fix</h2>
-						<p>This pattern immediately calms your body’s ‘fight/flight/freeze’ stress response. It might not completely cure a bad day, but it definitely helps!</p>
-						<h3>Benefits:</h3>
+						<h2>Take a Breath</h2>
+						<p>Try our One Minute Quick Fix breathwork exercise. This uses an even breathing pattern which immediately calms your nervous system, reducing stress and anxiety. </p>
+						<!-- <h3>Benefits:</h3>
 						<ul>
 							<li>Reduces stress, anxiety, anger and frustration</li>
 							<li>Moves your nervous system into a relaxed state of ‘rest and digest’</li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 				<div id="home-example-video-block-move" class="home-example-video-block wp-block-columns">
@@ -122,8 +122,9 @@ get_header();
 						</figure>
 					</div>
 					<div class="wp-block-column">
-						<h2>Try it: One minute shoulder moves</h2>						
-						<h3>Benefits:</h3>
+						<h2>Got a Minute to Move?</h2>	
+						<p>Try our One Minute Shoulder Moves. Begin by synchronising the breath with energising shoulder shrugs, then stretch between your shoulder blades to release tension in the area.</p>					
+						<!-- <h3>Benefits:</h3>
 						<ul>
 							<li>Release tension in the shoulder region</li>
 							<li>Synchronise the breath with short energising movements</li>
@@ -131,7 +132,7 @@ get_header();
 						<h3>Precautions:</h3>
 						<ul>
 							<li>Perform slowly and with caution if you have a shoulder injury or chronic shoulder pain</li>
-						</ul>
+						</ul> -->
 					</div>
 				</div>
 
