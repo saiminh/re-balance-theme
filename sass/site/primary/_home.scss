@@ -1,6 +1,8 @@
 .home.wpsmp-loggedout {
-    @include font-size(1.1);
     @include bg-gradient-01;
+}
+.home.wpsmp-loggedout .site-content {
+    @include font-size(1.1);
     @media (min-width: 768px) {
         @include font-size(1.2);
     }

@@ -1,13 +1,5 @@
 .page-template-page-registration {
-    background-color: $color__brand-secondary;
-    background: linear-gradient(
-        180deg, 
-        $color__brand-secondary 0%, 
-        $color__brand-secondary 30%, 
-        lighten($color__brand-primary, 20%) 90%, 
-        #FFF 100%
-    ) no-repeat;
-    background-attachment: fixed;
+    @include bg-gradient-01;
 } 
 .swpm-registration-widget-form,
 .swpm-login-widget-form {

@@ -1988,28 +1988,29 @@ a {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.home.wpsmp-loggedout {
+.home.wpsmp-loggedout:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.home.wpsmp-loggedout .site-content {
   font-size: 17.6px;
   font-size: 1.1rem; }
-  .home.wpsmp-loggedout:after {
-    content: "";
-    position: fixed;
-    /* stretch a fixed position to the whole screen */
-    top: 0;
-    height: 100vh;
-    /* fix for mobile browser address bar appearing disappearing */
-    left: 0;
-    right: 0;
-    z-index: -1;
-    /* needed to keep in the background */
-    background-color: #9ACFE9;
-    background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; }
   @media (min-width: 768px) {
-    .home.wpsmp-loggedout {
+    .home.wpsmp-loggedout .site-content {
       font-size: 19.2px;
       font-size: 1.2rem; } }
 
@@ -2292,10 +2293,23 @@ a {
   .exercise-single-article .entry-footer .divider {
     display: none; }
 
-.page-template-page-registration {
+.page-template-page-registration:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
   background-color: #9ACFE9;
-  background: linear-gradient(180deg, #9ACFE9 0%, #9ACFE9 30%, #ffe8e0 90%, #FFF 100%) no-repeat;
-  background-attachment: fixed; }
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 .swpm-registration-widget-form,
 .swpm-login-widget-form {
@@ -2862,7 +2876,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .search-results article.exercises .entry-summary a,
   .search-results article.exercises .entry-content,
   .search-results article.exercises .entry-content a {
-    color: #666; }
+    color: #333; }
   .blog article.post .entry-summary p:first-child, .blog article.post .entry-content p:first-child, .blog article.exercises .entry-summary p:first-child, .blog article.exercises .entry-content p:first-child,
   .archive article.post .entry-summary p:first-child,
   .archive article.post .entry-content p:first-child,
