@@ -2555,7 +2555,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       color: red; }
 
 .exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
-.swpm-post-not-logged-in-msg {
+.swpm-post-not-logged-in-msg,
+.swpm-expired-msg {
   max-width: 40rem;
   margin: 2rem auto;
   padding: 1.5rem;

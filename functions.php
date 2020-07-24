@@ -451,19 +451,20 @@ function show_breadcrumb() {
 // adding custom body classes
 
 function rebalance_bodyclass_names( $classes ) {
-	// if we are not in a mobile environment
+	$usypusy = SwpmAuth::get_instance();
 	if ( SwpmMemberUtils::is_member_logged_in()) {
-			// add 'desktop' to the $classes array
+		if ($usypusy->is_expired_account()){
+			$classes[] = 'wpsmp-loggedin-expired';
+		}
 			$classes[] = 'wpsmp-loggedin';
 			return $classes;
-	} else {
+	}  else {
 			$classes[] = 'wpsmp-loggedout';
 			return $classes;
 	}
 }
 
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
-
 
 
 // My Own post navigation
@@ -550,7 +551,7 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
 		$loginlink = '/membership-login';
 		$signuplink = '/membership-registration';
-		return '[swpm_protected for="3-4" custom_msg="Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '[/swpm_protected]';
+		return '[swpm_protected for="3-4" custom_msg="Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '[/swpm_protected][swpm_protected visible_to="expired"]Only the expired members will be able to see this message.[/swpm_protected]';
 	}
 	else {
 		return $html;
