@@ -5,7 +5,6 @@
   right: 0;
   bottom: 0;
 }
-
 .swpm-partial-protection::before {
   content: '';
   background-image: url(https://i.giphy.com/media/iF3M9gPPCdulq/200.webp);
@@ -17,17 +16,24 @@
   z-index: 0;
   border-radius: 5px;
 }
-
 .swpm-partial-protection-text {
   @include font-size(1);
   padding: 1.5rem;
-  margin: 0 2rem;
+  margin: 1.5rem;
   background: lighten( $color__brand-primary, 20% );
   border-radius: 3px;
-  text-align: center;
-  display: block;
+  display: inline-block;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  top: calc(50% - 1.5rem);
+  left: calc(50% - 1.5rem);
+  transform: translate(-50%, -50%);
   z-index: 1;
+}
+.swpm-profile-update-success {
+  color: $color__brand-primary;
+}
+.swpm-partial-protection-header {
+  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
+  border-bottom: 1px solid #E8D4C8;
+  padding: 1rem 1.5rem;
 }

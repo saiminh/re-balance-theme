@@ -466,7 +466,6 @@ function rebalance_bodyclass_names( $classes ) {
 
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
 
-
 // My Own post navigation
 
 function rebalance_get_the_posts_navigation( $args = array() ) {
@@ -551,7 +550,19 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
 		$loginlink = '/membership-login';
 		$signuplink = '/membership-registration';
-		return '[swpm_protected for="3-4" custom_msg="Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '[/swpm_protected][swpm_protected visible_to="expired"]Only the expired members will be able to see this message.[/swpm_protected]';
+		$userauth = SwpmAuth::get_instance();
+		$text = SwpmUtils::_('<h4 class="swpm-partial-protection-header">Your account has expired.</h4>') .  SwpmMiscUtils::get_renewal_link();
+		$error_msg = '<div class="swpm-partial-protection"><span class="swpm-partial-protection-text">'.$text.'</span></div>';
+		if ($userauth->is_expired_account()){
+			return $error_msg;
+		}
+		else {
+			return '
+				[swpm_protected for="3-4" custom_msg="
+					Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '
+				[/swpm_protected] 				
+			';
+		}
 	}
 	else {
 		return $html;

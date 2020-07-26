@@ -75,11 +75,13 @@
 						<?php global $current_user; wp_get_current_user(); ?>
 						<?php if ( is_user_logged_in() ) { 
 							//echo 'Username: ' . $current_user->user_login . "\n"; 
-							echo $current_user->display_name . "\n";
-							echo "<div class='user-menu'>";
+							echo '<div class="user-name">'.$current_user->display_name . "</div>";
+							echo '<div class="user-menu">';							
+							echo '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">'.do_shortcode( '[swpm_show_member_info column="membership_level_name"]' ).'</span></div>';
+							echo '<div class="user-menu-expires">Expiry date: <span class="user-menu-expire-date">'.do_shortcode( '[swpm_show_member_info column="expiry_date"]' ).'</span></div>';
+							echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
 							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
-								'>Logout</a>";
-								echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
+							'>Logout</a>";
 							echo "</div>";
 						} 
 							else { 
@@ -121,12 +123,13 @@
 				'menu_id'        => 'nonuser-menu',
 			) );
 			?>
-
-			<div class="site-header-signup">
-				<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
-			</div>
-			<div class="site-header-login">
-				<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
+			<div class="site-header-account">
+				<div class="site-header-login">
+					<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
+				</div>
+				<div class="site-header-signup">
+					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
+				</div>
 			</div>
 
 			</nav><!-- #site-navigation -->		
