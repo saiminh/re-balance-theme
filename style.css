@@ -3036,12 +3036,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     padding-top: 0; }
 
 .home.wpsmp-loggedout .site-main,
-.page-template-page-registration .site-main {
+.page-template-page-registration .site-main,
+.page-template-page-profile .site-main {
   margin-left: auto;
   margin-right: auto; }
   @media (min-width: 768px) {
     .home.wpsmp-loggedout .site-main,
-    .page-template-page-registration .site-main {
+    .page-template-page-registration .site-main,
+    .page-template-page-profile .site-main {
       width: 85%; } }
 
 .site-content {
@@ -3176,6 +3178,54 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   margin: -1.5rem -1.5rem 1.5rem -1.5rem;
   border-bottom: 1px solid #E8D4C8;
   padding: 1rem 1.5rem; }
+
+.page-template-page-profile:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+.page-template-page-profile .statusbar {
+  display: none; }
+@media (min-width: 768px) {
+  .page-template-page-profile .profile-content {
+    display: flex;
+    align-items: flex-start; } }
+.page-template-page-profile .membership-status {
+  padding: 1.5rem;
+  background-color: #ffe8e0;
+  border-radius: 5px;
+  margin: 1rem -.5rem; }
+  @media (min-width: 480px) {
+    .page-template-page-profile .membership-status {
+      margin: 1rem auto; } }
+  @media (min-width: 768px) {
+    .page-template-page-profile .membership-status {
+      margin: 1rem 1.5rem 1rem 0; } }
+  .page-template-page-profile .membership-status :last-child {
+    margin-bottom: 0; }
+  @media (min-width: 768px) {
+    .page-template-page-profile .membership-status dt {
+      clear: both;
+      float: left; } }
+  .page-template-page-profile .membership-status dd {
+    margin: 0 0 .5rem .25rem; }
+    @media (min-width: 768px) {
+      .page-template-page-profile .membership-status dd {
+        float: left; } }
+.page-template-page-profile .form-container {
+  max-width: none; }
 
 /*--------------------------------------------------------------
 # Infinite scroll

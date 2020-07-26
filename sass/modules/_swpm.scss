@@ -37,3 +37,47 @@
   border-bottom: 1px solid #E8D4C8;
   padding: 1rem 1.5rem;
 }
+
+//Profile page
+.page-template-page-profile {
+  @include bg-gradient-01;
+  .statusbar {
+    display: none;
+  }
+  .profile-content {
+    @media (min-width: 768px) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+ .membership-status {
+  padding: 1.5rem;
+  background-color: lighten($color__brand-primary, 20%);
+  border-radius: 5px;
+  margin: 1rem -.5rem;
+    @media (min-width: 480px) {
+      margin: 1rem auto;
+    }
+    @media (min-width: 768px) {
+      margin: 1rem 1.5rem 1rem 0;
+    }
+    & :last-child{
+      margin-bottom: 0;
+    }
+    & dt {
+      @media (min-width: 768px) {
+        clear: both;
+        float: left;
+      }
+    }
+    & dd {
+      margin: 0 0 .5rem .25rem;
+      @media (min-width: 768px) {
+        float: left;
+      }
+    }
+  }
+  .form-container {
+    max-width: none;
+  }
+}
