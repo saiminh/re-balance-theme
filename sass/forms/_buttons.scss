@@ -62,4 +62,9 @@ a.wp-block-button__link {
 			background-size: 40%;
 		}
 	}
+	&.button-small {
+		@include font-size(1);
+		padding: .5em 1.25em;
+		line-height: 2.5rem;
+	}
 }

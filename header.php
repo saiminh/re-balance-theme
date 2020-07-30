@@ -94,8 +94,17 @@
 			
 		
 		</header><!-- #masthead -->
-	
-		<?php else : ?>
+								
+		<?php //Check if SWPM account has expired and display notification
+			if ( membership_is_expired() ){
+				$extramsg = '<p>Thank you for using Rebalance, we hope you enjoyed your time with it! Find out more on how to renew your subscription:</p>
+				<a href="/membership-renewal" class="button button-small">Renew my subscription</a>';
+				echo get_the_expired_notification(true, $extramsg );
+			}
+		?>
+
+
+	<?php else : ?>
 
 		<header id="masthead" class="site-header">
 		<div class="site-header-inner">
@@ -134,7 +143,7 @@
 
 			</nav><!-- #site-navigation -->		
 		<!-- </div> .site-header-inner		 -->
-		</header><!-- #masthead -->
+		</header><!-- #masthead -->		
 
 	<?php endif; ?>
 	

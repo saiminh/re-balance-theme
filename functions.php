@@ -544,17 +544,39 @@ function my_wp_mail_filter( $args ) {
 	return $new_wp_mail;
 }
 
+// SWMP functions for easier access
+
+function membership_is_expired() {
+	$userauth = SwpmAuth::get_instance();
+	if ($userauth->is_expired_account()) { return true; } else { return false; };
+}
+
+function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
+	$loginlink = '/membership-login';
+	$signuplink = '/membership-registration';
+	$headline = '<h4 class="'.$class.'-header"><svg class="alarm-clock" style="width: 1.25em; height: auto; position: relative; top: 2px; margin-right: .5em;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 245.681 245.681">
+	<path d="M191.727,211.986c15.715-16.843,25.349-39.431,25.349-64.229c0-17.99-5.07-34.816-13.852-49.131   c6.861-6.979,10.83-16.461,10.83-26.381c0-17.439-11.938-32.141-28.07-36.37C183.499,15.686,166.257,0,145.408,0h-45.135   C79.424,0,62.182,15.686,59.696,35.874c-16.132,4.229-28.07,18.931-28.07,36.37c0,9.919,3.969,19.401,10.83,26.382   c-8.782,14.315-13.852,31.141-13.852,49.131c0,24.798,9.633,47.386,25.349,64.229l-14.137,19.392   c-2.929,4.017-2.046,9.646,1.971,12.574c1.6,1.167,3.455,1.729,5.294,1.729c2.778,0,5.519-1.282,7.28-3.699l13.128-18.009   c15.552,11.325,34.683,18.019,55.351,18.019s39.799-6.693,55.351-18.019l13.128,18.009c1.762,2.417,4.502,3.699,7.28,3.699   c1.838,0,3.694-0.563,5.294-1.729c4.017-2.928,4.899-8.558,1.971-12.574L191.727,211.986z M196.054,72.244   c0,4.266-1.409,8.376-3.911,11.73c-8.876-9.637-19.73-17.422-31.912-22.709c3.592-5.288,9.642-8.618,16.225-8.618   C187.263,52.647,196.054,61.438,196.054,72.244z M100.273,18h45.135c10.833,0,19.927,7.565,22.292,17.689   c-10.778,2.597-20.014,9.887-24.977,19.95c-6.412-1.383-13.063-2.118-19.882-2.118s-13.47,0.735-19.882,2.118   c-4.963-10.063-14.199-17.354-24.977-19.95C80.346,25.565,89.44,18,100.273,18z M49.626,72.244   c0-10.806,8.791-19.597,19.598-19.597c6.583,0,12.632,3.33,16.225,8.618c-12.182,5.287-23.036,13.072-31.912,22.709   C51.036,80.621,49.626,76.509,49.626,72.244z M46.605,147.757c0-42.036,34.199-76.235,76.235-76.235s76.235,34.199,76.235,76.235   s-34.199,76.234-76.235,76.234S46.605,189.793,46.605,147.757z"/>
+		<path d="M165.37,144.256h-34.629v-43.322c0-4.971-4.029-9-9-9s-9,4.029-9,9v52.322c0,4.971,4.029,9,9,9h43.629c4.971,0,9-4.029,9-9   S170.34,144.256,165.37,144.256z"/>
+	</svg>Your account has expired.</h4>';
+	$text = SwpmUtils::_('') .  SwpmMiscUtils::get_renewal_link();
+	if ( $message ){
+		$text = $message;
+	}
+	if ( $closebtn ){
+		$text .= '<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "/></svg></div>';
+	}
+	$error_msg = '<div class="'.$class.'"><span class="'.$class.'-text">'.$headline.$text.'</span></div>';
+	
+		return $error_msg;
+}
+
+
 // Adding the shortcode for SWPM plugin to hide only embeds 
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 function my_embed_oembed_html($html, $url, $attr, $post_id) {
 	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
-		$loginlink = '/membership-login';
-		$signuplink = '/membership-registration';
-		$userauth = SwpmAuth::get_instance();
-		$text = SwpmUtils::_('<h4 class="swpm-partial-protection-header">Your account has expired.</h4>') .  SwpmMiscUtils::get_renewal_link();
-		$error_msg = '<div class="swpm-partial-protection"><span class="swpm-partial-protection-text">'.$text.'</span></div>';
-		if ($userauth->is_expired_account()){
-			return $error_msg;
+		if ( membership_is_expired() ){
+			return get_the_expired_notification(false, '', 'swpm-partial-protection');
 		}
 		else {
 			return '

@@ -181,6 +181,12 @@
 
 	function init() {
 
+		//close messages
+
+		$('.close').on('click', function(){
+			$(this).parents('.notification, .swpm-partial-protection').hide();
+		})
+
 		//Date greeting
 		if (document.querySelector('#lblGreetings')) {
 			var myDate = new Date();
@@ -349,7 +355,7 @@
 			}
 		},
 		{
-			from: '(.*)', to: '/the-benefits',
+			from: '(.*)', to: '/why-rebalance',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
 				ani_loader_in();
@@ -375,7 +381,7 @@
 			}
 		},
 		{
-			from: '/the-benefits', to: '(.*)',
+			from: '/why-rebalance', to: '(.*)',
 			in: function(next) {
 				gsap.set('#swup .site-main', { xPercent: 20, autoAlpha: 0 });
 				gsap.to('#swup .site-main', { xPercent: 0, autoAlpha: 1, ease: "circ.in", duration: 0.3, onComplete: next  });
@@ -388,7 +394,7 @@
 			}
 		},
 		{
-			from: '/about', to: '/the-benefits',
+			from: '/about', to: '/why-rebalance',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
 				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next });				
@@ -402,7 +408,7 @@
 			}
 		},
 		{
-			from: '/the-benefits', to: '/about',
+			from: '/why-rebalance', to: '/about',
 			in: function(next) {
 				gsap.set('#swup', { autoAlpha: 0 });
 				gsap.to('#swup', { autoAlpha: 1, duration: 0.3, onComplete: next  });

@@ -240,12 +240,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
 }
 
 #swpm_message {
-    max-width: 40rem;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: lighten($color__brand-primary, 20%);
-    border-radius: 6px;
-    color: $color__text-main;
+    @include notification;
 
 
     & > ul {
@@ -260,14 +255,4 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
             color: red;
         }
     }
-}
-.exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
-.swpm-post-not-logged-in-msg,
-.swpm-expired-msg {
-    max-width: 40rem;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    background: lighten($color__brand-primary, 20%);
-    border-radius: 6px;
-    color: $color__text-main;
 }

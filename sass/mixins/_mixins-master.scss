@@ -69,3 +69,13 @@
 
 	}
 }
+
+@mixin notification {
+	width: calc(100% - 1rem);
+	max-width: 40rem;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	background: lighten($color__brand-primary, 20%);
+	border-radius: 6px;
+	color: $color__text-main;	
+}

@@ -424,6 +424,7 @@ h1.page-title {
 .eyebrow {
   margin-bottom: 0;
   font-size: 1.125em;
+  line-height: 1.5;
   font-weight: 300;
   color: #FF9B7A; }
 
@@ -669,6 +670,16 @@ a.wp-block-button__link {
         width: 60px;
         left: calc(100% - 60px);
         background-size: 40%; } }
+  button.button-small,
+  input[type="button"].button-small,
+  input[type="reset"].button-small,
+  input[type="submit"].button-small,
+  a.button.button-small,
+  a.wp-block-button__link.button-small {
+    font-size: 16px;
+    font-size: 1rem;
+    padding: .5em 1.25em;
+    line-height: 2.5rem; }
 
 input[type="text"],
 input[type="email"],
@@ -2556,6 +2567,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         width: calc(100% + 4rem); } }
 
 #swpm_message {
+  width: calc(100% - 1rem);
   max-width: 40rem;
   margin: 2rem auto;
   padding: 1.5rem;
@@ -2569,16 +2581,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     #swpm_message > ul > li {
       font-style: italic;
       color: red; }
-
-.exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
-.swpm-post-not-logged-in-msg,
-.swpm-expired-msg {
-  max-width: 40rem;
-  margin: 2rem auto;
-  padding: 1.5rem;
-  background: #ffe8e0;
-  border-radius: 6px;
-  color: #000; }
 
 .cta-block {
   padding: 1.5rem;
@@ -3174,10 +3176,36 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .swpm-profile-update-success {
   color: #FF9B7A; }
 
-.swpm-partial-protection-header {
+.swpm-partial-protection-header,
+.notification-header {
   margin: -1.5rem -1.5rem 1.5rem -1.5rem;
   border-bottom: 1px solid #E8D4C8;
-  padding: 1rem 1.5rem; }
+  padding: 1rem 4rem 1rem 1.5rem; }
+
+.exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
+.swpm-post-not-logged-in-msg,
+.swpm-expired-msg,
+.notification {
+  width: calc(100% - 1rem);
+  max-width: 40rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffe8e0;
+  border-radius: 6px;
+  color: #000; }
+
+.notification {
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  top: 80px;
+  transform: translate(-50%, 0%);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  border: 2px solid white; }
+  @media (min-width: 768px) {
+    .notification {
+      top: calc(50% - 3rem);
+      transform: translate(-50%, -50%); } }
 
 .page-template-page-profile:after {
   content: "";
@@ -3226,6 +3254,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
         float: left; } }
 .page-template-page-profile .form-container {
   max-width: none; }
+
+.close-x {
+  cursor: pointer; }
 
 /*--------------------------------------------------------------
 # Infinite scroll
