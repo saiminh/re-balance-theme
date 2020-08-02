@@ -51,7 +51,7 @@ get_header();
 								<p class="hero-subheader">Move&nbsp;more. Breathe&nbsp;consciously. Rebalance&nbsp;your&nbsp;work&nbsp;life.</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
-										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
+										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free 14-day Trial</a>
 									</div>
 								</div>
 								<p>

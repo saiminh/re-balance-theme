@@ -137,7 +137,7 @@
 					<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
 				</div>
 				<div class="site-header-signup">
-					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
+					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free 14-day trial</a>
 				</div>
 			</div>
 
