@@ -175,7 +175,7 @@ get_header();
             <?php // while ( have_posts() ) : the_post();the_content(); endwhile; ?>         
         <div class="wp-block-group section" id="section_unbalancedWorld">
           <div class="wp-block-group__inner-container">
-            <h2 class="eyebrow">The Benefits</h2>
+            <!-- <h2 class="eyebrow">The Benefits</h2> -->
             <h1>An Unbalanced World</h1>
 
             <p><em>Many of us move through the world with packed calendars, racing from home to work, in and out of meetings, with ever-increasing responsibilities, it’s hard to find the time to just slow down, take a breath and look after ourselves.</em></p> 

@@ -83,8 +83,14 @@
     @media (min-width: 768px) {
       margin: 1rem 1.5rem 1rem 0;
     }
-    & :last-child{
+    & :last-child {
       margin-bottom: 0;
+    }
+    & :first-child {
+      margin-top: 0;
+    }
+    & dl {
+      overflow: auto;      
     }
     & dt {
       @media (min-width: 768px) {

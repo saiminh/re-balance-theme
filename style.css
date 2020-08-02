@@ -3243,6 +3243,10 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       margin: 1rem 1.5rem 1rem 0; } }
   .page-template-page-profile .membership-status :last-child {
     margin-bottom: 0; }
+  .page-template-page-profile .membership-status :first-child {
+    margin-top: 0; }
+  .page-template-page-profile .membership-status dl {
+    overflow: auto; }
   @media (min-width: 768px) {
     .page-template-page-profile .membership-status dt {
       clear: both;
