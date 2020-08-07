@@ -113,7 +113,9 @@
     }
 }
 .swpm-registration-firstname-row {
-    margin-right: 1rem;
+    @media (min-width: 600px){
+        margin-right: 1rem;
+    }
 }
 #swpm-registration-form td[style="text-align: center;"],
 #swpm-registration-form div[align="center"] {
@@ -138,7 +140,22 @@
 
       
 .swpm-registration-widget-form {
-
+//changing the order of the fields:
+    & tbody {
+        display: flex;
+        flex-wrap: wrap;
+        & tr {
+            order: 3
+        }
+        & tr.swpm-registration-firstname-row,
+        & tr.swpm-registration-lastname-row {
+            order: 1
+        }
+        & tr.swpm-registration-lastname-row,
+        & tr.swpm-registration-email-row {
+            margin-bottom: 2rem;
+        }
+    }
     & tr {
         position: relative;
     }

@@ -2471,8 +2471,9 @@ a {
   content: none;
   width: 0; }
 
-.swpm-registration-firstname-row {
-  margin-right: 1rem; }
+@media (min-width: 600px) {
+  .swpm-registration-firstname-row {
+    margin-right: 1rem; } }
 
 #swpm-registration-form td[style="text-align: center;"],
 #swpm-registration-form div[align="center"] {
@@ -2494,6 +2495,15 @@ a {
   width: 1rem;
   margin-right: .4rem; }
 
+.swpm-registration-widget-form tbody {
+  display: flex;
+  flex-wrap: wrap; }
+  .swpm-registration-widget-form tbody tr {
+    order: 3; }
+  .swpm-registration-widget-form tbody tr.swpm-registration-firstname-row, .swpm-registration-widget-form tbody tr.swpm-registration-lastname-row {
+    order: 1; }
+  .swpm-registration-widget-form tbody tr.swpm-registration-lastname-row, .swpm-registration-widget-form tbody tr.swpm-registration-email-row {
+    margin-bottom: 2rem; }
 .swpm-registration-widget-form tr {
   position: relative; }
 .swpm-registration-widget-form .formError {
