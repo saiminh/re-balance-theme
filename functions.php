@@ -584,7 +584,7 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 		}
 		else {
 			return '
-				[swpm_protected for="3-4" custom_msg="
+				[swpm_protected custom_msg="
 					Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '
 				[/swpm_protected] 				
 			';
