@@ -544,13 +544,17 @@ function my_wp_mail_filter( $args ) {
 	return $new_wp_mail;
 }
 
-// SWMP functions for easier access
-
-function membership_is_expired() {
-	$userauth = SwpmAuth::get_instance();
-	if ($userauth->is_expired_account()) { return true; } else { return false; };
+// conditionals for memberships 
+//if user is logged in 
+function rebalance_member_is_logged_in() {
+	if ( SwpmMemberUtils::is_member_logged_in()){ return true; } else { return false; }
 }
-
+// if membership is expired
+function rebalance_membership_is_expired() {
+	$userauth = SwpmAuth::get_instance();
+	if ($userauth->is_expired_account()) { return true; } else { return false; }
+}
+//notification for expired 
 function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
 	$loginlink = '/membership-login';
 	$signuplink = '/membership-registration';
@@ -575,7 +579,7 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 function my_embed_oembed_html($html, $url, $attr, $post_id) {
 	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
-		if ( membership_is_expired() ){
+		if ( rebalance_membership_is_expired() ){
 			return get_the_expired_notification(false, '', 'swpm-partial-protection');
 		}
 		else {

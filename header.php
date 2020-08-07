@@ -27,7 +27,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
 
-	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
+	<?php if ( rebalance_member_is_logged_in() ) : ?>
 	
 		<header id="masthead" class="site-header">
 			<div class="site-header-inner">
@@ -96,7 +96,7 @@
 		</header><!-- #masthead -->
 								
 		<?php //Check if SWPM account has expired and display notification
-			if ( membership_is_expired() ){
+			if ( rebalance_membership_is_expired() ){
 				$extramsg = '<p>Thank you for using Rebalance, we hope you enjoyed your time with it! Find out more on how to renew your subscription:</p>
 				<a href="/membership-renewal" class="button button-small">Renew my subscription</a>';
 				echo get_the_expired_notification(true, $extramsg );
@@ -137,8 +137,9 @@
 					<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
 				</div>
 				<div class="site-header-signup">
-					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free 14-day trial</a>
+					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
 				</div>
+				
 			</div>
 
 			</nav><!-- #site-navigation -->		
@@ -155,7 +156,7 @@
 	
 	<div id="swup" class="site-content transition">		
 	
-	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
+	<?php if ( rebalance_member_is_logged_in() ) : ?>
 	<div class="statusbar">	
 		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
 		<?php

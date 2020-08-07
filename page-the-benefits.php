@@ -339,7 +339,7 @@ get_header();
               <h3>Rebalance is here to help!</h3>
               <div class="wp-block-buttons">
                 <div class="wp-block-button">
-                  <a href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>" class="wp-block-button__link">Start Your Free trial</a>
+                  <a href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>" class="wp-block-button__link">Start Your Free 14-day Trial</a>
                 </div>
               </div>
               <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
