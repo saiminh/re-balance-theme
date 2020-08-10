@@ -33,8 +33,7 @@ get_header();
 						<?php get_template_part('inc/inline', 'ui-breathe-firstaid.svg'); ?>
 						first aid
 					</a>
-					<a href="<?php echo get_home_url(); ?>/exercise-type/energize" class="breathe-map-illu breathe-map-illu--energize">
-						<!-- <object type="image/svg+xml" data="<?php echo get_template_directory_uri(); ?>/img/ui-breathe-energize.svg" alt="energize"></object> -->
+					<a href="<?php echo get_home_url(); ?>/exercise-type/energise" class="breathe-map-illu breathe-map-illu--energize">
 						<?php get_template_part('inc/inline', 'ui-breathe-energize.svg'); ?>
 						energise
 					</a>
