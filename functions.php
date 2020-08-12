@@ -619,7 +619,7 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 			$pattern = "#https://vimeo.com/#";
 			$vimeoid = preg_replace($pattern, "", $url);			
 			$t = vimeo_duration($vimeoid);
-			echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
+		//	echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 			return '
 				[swpm_protected custom_msg="
 					Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '
@@ -631,7 +631,7 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 		$pattern = "#https://vimeo.com/#";
 		$vimeoid = preg_replace($pattern, "", $url);			
 		$t = vimeo_duration($vimeoid);
-		echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
+		//echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 		// To get the vimeo to display on the archive uncomment below
 		//return $html;
 	}
