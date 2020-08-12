@@ -2291,7 +2291,8 @@ a {
         height: 33.75vw;
         position: fixed;
         max-width: 768px;
-        max-height: 432px; } }
+        max-height: 432px;
+        margin-top: -.25rem; } }
     .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
       display: block;
       margin: 0 auto;
@@ -2319,6 +2320,15 @@ a {
     margin-bottom: 4px; }
   .exercise-single-article .entry-footer .divider {
     display: none; }
+
+.video-duration {
+  color: #FF9B7A;
+  line-height: 1;
+  font-size: 1rem;
+  margin-bottom: -.5rem; }
+  @media (max-width: 767px) {
+    .video-duration {
+      margin-bottom: .75rem; } }
 
 .page-template-page-registration:after {
   content: "";

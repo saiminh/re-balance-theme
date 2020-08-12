@@ -31,6 +31,7 @@
             position: fixed;
             max-width: 768px;
             max-height: 432px;
+            margin-top: -.25rem;
         }
         & video,
         & iframe {
@@ -70,5 +71,15 @@
     }
     & .entry-footer .divider {
         display: none;
+    }
+}
+
+.video-duration {
+    color: $color__brand-primary;
+    line-height: 1;
+    font-size: 1rem;    
+    margin-bottom: -.5rem;
+    @media (max-width: 767px) {
+        margin-bottom: .75rem;
     }
 }

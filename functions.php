@@ -575,26 +575,85 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 }
 
 
+
+function vimeo_duration ($id) {
+	try {
+	$authorization = '2751521c22dd5849e3d252470ed2d33e';
+	$ch = curl_init();
+	
+	curl_setopt_array($ch, array(
+			CURLOPT_URL => "https://api.vimeo.com/videos/$id?fields=duration",
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => "",
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 30,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => "GET",
+			CURLOPT_HTTPHEADER => array(
+					"authorization: Bearer {$authorization}",
+					"cache-control: no-cache",
+			),
+	));
+	
+			$res = curl_exec($ch);
+			$obj = json_decode($res, true);
+			return $obj['duration'];
+	
+	} catch (Exception $e) {
+		# returning 0 if the Vimeo API fails for some reason.
+		return "0";
+	}
+}				
+
+
+
 // Adding the shortcode for SWPM plugin to hide only embeds 
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 function my_embed_oembed_html($html, $url, $attr, $post_id) {
-	if ( in_array( get_post()->post_type, [ 'exercises' ] ) ) {
+	if ( in_array( get_post()->post_type, [ 'exercises' ] ) and is_single() ) {
 		if ( rebalance_membership_is_expired() ){
 			return get_the_expired_notification(false, '', 'swpm-partial-protection');
 		}
 		else {
+			// display the time of the video
+			$pattern = "#https://vimeo.com/#";
+			$vimeoid = preg_replace($pattern, "", $url);			
+			$t = vimeo_duration($vimeoid);
+			echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 			return '
 				[swpm_protected custom_msg="
 					Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '
-				[/swpm_protected] 				
-			';
+				[/swpm_protected]';			
 		}
 	}
 	else {
-		return $html;
+		// If we're in the archive we only want to show the duration of the video
+		$pattern = "#https://vimeo.com/#";
+		$vimeoid = preg_replace($pattern, "", $url);			
+		$t = vimeo_duration($vimeoid);
+		echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
+		// To get the vimeo to display on the archive uncomment below
+		//return $html;
 	}
 }
 
+// This is to get the vimeo post, then extract the id with the function above and display only the duration in the post thumnail view:  
+function get_first_embed_media($post_id) {
+	$post = get_post($post_id);
+	$content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
+	$embeds = get_media_embedded_in_content( $content );
+	if( !empty($embeds) ) {
+			//check what is the first embed containg vimeo
+			foreach( $embeds as $embed ) {
+					if( strpos( $embed, 'vimeo' ) ) {
+							return $embed;
+					}
+			}
+	} else {
+			//No video embedded found
+			return false;
+	}
+}
 
 ?>
 
