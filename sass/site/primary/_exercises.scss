@@ -31,7 +31,7 @@
             position: fixed;
             max-width: 768px;
             max-height: 432px;
-            margin-top: -.25rem;
+            margin-top: -.6rem;
         }
         & video,
         & iframe {
@@ -75,11 +75,18 @@
 }
 
 .video-duration {
-    color: $color__brand-primary;
+    color: #FFF;
+    background-color: $color__brand-primary;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 3px;
     line-height: 1;
-    font-size: 1rem;    
+    font-size: .75rem;    
     margin-bottom: -.5rem;
     @media (max-width: 767px) {
-        margin-bottom: .75rem;
+        margin-bottom: .5rem;
     }
+}
+.archive .video-duration {
+    margin-bottom: .5rem;
 }

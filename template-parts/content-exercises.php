@@ -18,13 +18,13 @@
 	<?php rebalance_post_thumbnail(); ?>
 <div class="post-info">
 	<header class="entry-header">				
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
-<div class="entry-summary">
 	<?php 		
 		$thisid = get_the_ID(  );
 		echo get_first_embed_media($thisid);
 	?>
+		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	</header><!-- .entry-header -->
+<div class="entry-summary">
 		<p><?php printf( '<a href="%s" class="link">%s</a>', esc_url( get_permalink() ), esc_html( get_the_excerpt() ) ); ?></p>
 	
 	

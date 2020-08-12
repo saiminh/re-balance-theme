@@ -578,7 +578,7 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 
 function vimeo_duration ($id) {
 	try {
-	$authorization = '2751521c22dd5849e3d252470ed2d33e';
+	$authorization = 'a8551ce418b6b633a01d7e456fdf262b';
 	$ch = curl_init();
 	
 	curl_setopt_array($ch, array(
@@ -610,30 +610,35 @@ function vimeo_duration ($id) {
 // Adding the shortcode for SWPM plugin to hide only embeds 
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
 function my_embed_oembed_html($html, $url, $attr, $post_id) {
-	if ( in_array( get_post()->post_type, [ 'exercises' ] ) and is_single() ) {
+	if ( in_array( get_post()->post_type, [ 'exercises' ] ) and is_single() and !is_admin() ) {
 		if ( rebalance_membership_is_expired() ){
 			return get_the_expired_notification(false, '', 'swpm-partial-protection');
 		}
 		else {
 			// display the time of the video
 			$pattern = "#https://vimeo.com/#";
-			$vimeoid = preg_replace($pattern, "", $url);			
+			$vimeoidslash = preg_replace($pattern, "", $url);			
+			$vimeoid = preg_replace("#/#", ":", $vimeoidslash);			
 			$t = vimeo_duration($vimeoid);
-		//	echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
+			echo '<div class="video-duration">Time: '.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 			return '
 				[swpm_protected custom_msg="
 					Please <a href=\''.$loginlink.'\'>log in</a> to view this exercise or <a href=\''.$signuplink.'\'>sign up</a> for a free trial"]' . $html . '
 				[/swpm_protected]';			
 		}
 	}
-	else {
+	elseif ( in_array( get_post()->post_type, [ 'exercises' ] ) and !is_single() and !is_admin() ) { 
 		// If we're in the archive we only want to show the duration of the video
 		$pattern = "#https://vimeo.com/#";
-		$vimeoid = preg_replace($pattern, "", $url);			
-		$t = vimeo_duration($vimeoid);
-		//echo '<div class="video-duration">'.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
+		$vimeoidslash = preg_replace($pattern, "", $url);			
+		$vimeoid = preg_replace("#/#", ":", $vimeoidslash);			
+		$t = vimeo_duration($vimeoid);	
+		echo '<div class="video-duration">Time: '.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 		// To get the vimeo to display on the archive uncomment below
 		//return $html;
+	}
+	else {
+		return $html;
 	}
 }
 
