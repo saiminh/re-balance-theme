@@ -30,8 +30,7 @@
             height: 33.75vw;
             position: fixed;
             max-width: 768px;
-            max-height: 432px;
-            margin-top: -.6rem;
+            max-height: 432px;            
         }
         & video,
         & iframe {
@@ -47,6 +46,11 @@
                 max-width: 768px!important;
                 max-height: 432px!important;
             }
+        }
+    }
+    & .wp-block-embed-vimeo {
+        @media (min-width: 768px) {
+            margin-top: -1.2rem;
         }
     }
     & .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
