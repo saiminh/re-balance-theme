@@ -210,7 +210,8 @@
 		?>
 		<?php if ( is_tax(  ) ) : ?>
 		<div class="toggle-discreet">
-			<label class="switch"><input type="checkbox"><span class="toggle-label-text">Only Discreet</span><span class="slider round hide-off"></span> </label>		
+			<label class="switch"><input type="checkbox"><span class="toggle-label-text">Discreet Moves</span><span class="slider round hide-off"></span> </label>		
+			<div class="onboarding">Click here to hide all exercises with large, indiscreet movements</div>
 		</div>
 		<?php endif; ?>
 	</div>

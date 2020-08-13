@@ -59,6 +59,8 @@
   @media (min-width: 769px){
     background: transparent;
     width: 33.333%;
+    max-width: 450px;
+    left: auto;
     height: calc(100% - 5rem);
     top: 80px;
     padding: 2rem;
@@ -128,8 +130,7 @@
 
 #illuOne {
   @media (min-width: 769px){
-    align-self: flex-start;
-    left: 2rem;
+    margin-top: -2rem;
   }
 }
 

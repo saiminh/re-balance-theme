@@ -159,6 +159,32 @@
     color: #FF9B7A;
     border: 1px solid #f1d3cb;
 }
+.onboarding {
+  position: absolute;
+  top: 100%;
+  right: -1rem;
+  max-width: 300px;
+  height: auto;
+  z-index: 9;
+  background: $color__brand-primary; 
+  color: #FFF;
+  padding: .75rem;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+  display: none;
+  @include font-size(.75);
+  text-align: center;
+  &:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 10px solid transparent;
+    border-bottom-color: $color__brand-primary;
+    position: absolute;
+    bottom: 100%;
+    right: 2rem;
+  }
+}
 
 .form-container {
   background: #fff;

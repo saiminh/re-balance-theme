@@ -182,7 +182,6 @@
 	function init() {
 
 		//close messages
-
 		$('.close').on('click', function(){
 			$(this).parents('.notification, .swpm-partial-protection').hide();
 		})
@@ -213,6 +212,23 @@
 		// Hide Livesearch after page switch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
 		
+		// Discreet onboarding 
+		if (localStorage.getItem('popState', 'value') != 'shown') {
+			$(".onboarding").delay(2000).fadeIn();
+			localStorage.setItem('popState', 'shown');
+			console.log('localstorage item set.');
+		} else {
+				console.log('No modal for you.');
+		}
+
+		$('.onboarding-close').on('click', function(e) {
+			$('.onboarding').fadeOut(); // Now the pop up is hiden.
+		});
+
+		$('.onboarding').on('click', function(e) {
+			$('.onboarding').fadeOut();
+		});
+
 		// Discreet toggle
 		$(".switch input").on("change", function(e) {
 			const isOn = e.currentTarget.checked;
