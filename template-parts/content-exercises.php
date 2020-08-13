@@ -43,17 +43,6 @@ endif; ?>
 
 		<?php // echo wpdocs_custom_taxonomies_terms_links(); ?> 
 		<footer class="entry-footer">
-			<?php 
-				global $post;
-				$terms = wp_get_post_terms($post->ID, 'exercises-tag');
-				if ($terms) {
-					$output = array();
-					foreach ($terms as $term) {
-						$output[] = '<a class="exercises-tag" href="' .get_term_link( $term->slug, 'exercises-tag') .'">' .$term->name .'</a>';
-					}
-					echo join( ' <span class="divider">•</span> ', $output );
-				};
-			?>
 			<?php rebalance_entry_footer(); ?>
 		</footer><!-- .entry-footer -->
 	</div>

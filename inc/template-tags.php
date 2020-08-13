@@ -58,11 +58,16 @@ if ( ! function_exists( 'rebalance_entry_footer' ) ) :
 	function rebalance_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
+
+			rebalance_posted_on();
+			rebalance_posted_by();
+
+
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'rebalance' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'rebalance' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( ' in %1$s', 'rebalance' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
@@ -74,24 +79,36 @@ if ( ! function_exists( 'rebalance_entry_footer' ) ) :
 			
 		}
 
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			comments_popup_link(
-				sprintf(
-					wp_kses(
-						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rebalance' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					get_the_title()
-				)
-			);
-			echo '</span>';
+		if( 'exercises' === get_post_type() ) {
+				global $post;
+				$terms = wp_get_post_terms($post->ID, 'exercises-tag');
+				if ($terms) {
+					$output = array();
+					foreach ($terms as $term) {
+						$output[] = '<a class="exercises-tag" href="' .get_term_link( $term->slug, 'exercises-tag') .'">' .$term->name .'</a>';
+					}
+					echo join( ' <span class="divider">•</span> ', $output );
+				};
 		}
+
+		// if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		// 	echo '<span class="comments-link">';
+		// 	comments_popup_link(
+		// 		sprintf(
+		// 			wp_kses(
+		// 				/* translators: %s: post title */
+		// 				__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'rebalance' ),
+		// 				array(
+		// 					'span' => array(
+		// 						'class' => array(),
+		// 					),
+		// 				)
+		// 			),
+		// 			get_the_title()
+		// 		)
+		// 	);
+		// 	echo '</span>';
+		// }
 
 		edit_post_link(
 			sprintf(
