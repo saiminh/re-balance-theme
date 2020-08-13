@@ -39,7 +39,16 @@ get_header();
 
 			endwhile;
 
-			the_posts_navigation();
+			the_posts_navigation( 
+				$args = 
+					array(
+						'prev_text'          => __( 'More results' ),
+						'next_text'          => __( 'Previous results' ),
+						'screen_reader_text' => __( 'Posts navigation' ),
+						'aria_label'         => __( 'Posts' ),
+						'class'              => 'posts-navigation',
+					)
+			);
 
 		else :
 
