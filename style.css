@@ -449,7 +449,10 @@ dfn, cite, em, i {
 
 blockquote {
   margin: 0 0 0 2em;
-  font-weight: 600; }
+  color: #FF9B7A; }
+  @media (min-width: 768px) {
+    blockquote {
+      margin: 0 -2em 0 2em; } }
 
 .wp-block-pullquote {
   text-align: left;

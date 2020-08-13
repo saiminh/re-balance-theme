@@ -19,7 +19,10 @@ dfn, cite, em, i {
 }
 blockquote {
 	margin: 0 0 0 2em;
-	font-weight: 600;
+	color: $color__brand-primary;
+	@media(min-width: 768px) {
+		margin: 0 -2em 0 2em;
+	}
 }
 .wp-block-pullquote {
 	text-align: left;
