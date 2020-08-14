@@ -5,8 +5,7 @@
     justify-content:  space-between;
 }
 .post-template-default .statusbar {
-    position: absolute;
-    z-index: 2;
+    display: none;
 }
 
 .page-template-page-about .statusbar,
