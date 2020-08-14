@@ -4,6 +4,10 @@
     display: flex;
     justify-content:  space-between;
 }
+.post-template-default .statusbar {
+    position: absolute;
+    z-index: 2;
+}
 
 .page-template-page-about .statusbar,
 .page-template-page-the-benefits .statusbar,
