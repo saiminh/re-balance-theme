@@ -2310,7 +2310,7 @@ a {
       .post-template-default .entry-header,
       .page-template-default .entry-header {
         background-position: calc(80vw + 5.5rem) bottom, 30vw;
-        background-size: calc(50vw - 5.5rem), 100vw;
+        background-size: calc(50vw - 5.5rem), 100vw calc( ( 50vw - 5.5rem ) * 0.75 );
         margin: -3rem calc(-80vw + 22.5rem) 0;
         padding: 0 calc(80vw - 22.5rem) 0;
         min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
