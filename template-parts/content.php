@@ -14,24 +14,29 @@
 	if ( !is_singular() ) : 
 		rebalance_post_thumbnail(); 
 	endif; ?>
-	<div class="entry-text">
-		<div class="pre-entry-meta">
-			<?php // rebalance_entry_footer(); 
-					rebalance_posted_on();
-					rebalance_posted_by();
-			?>
-		</div>	
-		<header class="entry-header">
-			<?php
-			if ( 'post' === get_post_type() ) :
-			
-				if ( is_singular() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :			
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );			
-				endif;
-				
-			endif; ?>
+	<div class="entry-text">		
+		<?php if( is_singular() ) : ?>
+		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 100%);">			
+		<?php else : ?>
+		<header class="entry-header">		
+		<?php endif; ?>
+			<div class="entry-header-text">
+				<div class="pre-entry-meta">
+				<?php // rebalance_entry_footer(); 
+						rebalance_posted_by();
+						rebalance_posted_on();						
+				?>
+				</div>
+				<?php
+				if ( 'post' === get_post_type() ) :
+					if ( is_singular() ) :
+						the_title( '<h1 class="entry-title">', '</h1>' );
+					else :			
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );			
+					endif;
+				endif; ?>
+					
+			</div>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">

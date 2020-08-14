@@ -385,8 +385,7 @@ h1.entry-title,
 h1.page-title {
   color: #000;
   font-weight: 600;
-  position: relative;
-  top: .15em; }
+  position: relative; }
 
 .home .page-subtitle {
   font-size: 19.2px;
@@ -2282,11 +2281,75 @@ a {
   background-image: url(img/ui-home-surprise.svg);
   background-size: auto calc(70% - 4em); }
 
-@media (min-width: 480px) {
-  .post-template-default article,
-  .page-template-default article {
-    max-width: 40rem;
-    margin: 2em auto; } }
+.post-template-default,
+.page-template-default {
+  overflow-x: hidden; }
+  @media (min-width: 480px) {
+    .post-template-default article,
+    .page-template-default article {
+      max-width: 45rem;
+      margin: 2rem auto; } }
+  .post-template-default .entry-header,
+  .page-template-default .entry-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% bottom;
+    background-size: 100%;
+    margin: -1rem -1rem 0 -1rem;
+    padding: 0rem 1rem;
+    min-height: 110vw; }
+    @media (min-width: 480px) {
+      .post-template-default .entry-header,
+      .page-template-default .entry-header {
+        background-position: 50% bottom;
+        margin: -3rem -1.5rem 0 -1.5rem; } }
+    @media (min-width: 768px) {
+      .post-template-default .entry-header,
+      .page-template-default .entry-header {
+        background-position: calc(80vw + 5.5rem) bottom, 30vw;
+        background-size: calc(50vw - 5.5rem), 100vw;
+        margin: -3rem calc(-80vw + 22.5rem) 0;
+        padding: 0 calc(80vw - 22.5rem) 0;
+        min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
+        border-radius: 0 0 50% 50%; } }
+    .post-template-default .entry-header .entry-header-text,
+    .page-template-default .entry-header .entry-header-text {
+      position: sticky;
+      top: calc(71px + 1rem);
+      padding-top: calc( ( 50vw - 29rem ) * 0.375); }
+      @media (min-width: 768px) {
+        .post-template-default .entry-header .entry-header-text,
+        .page-template-default .entry-header .entry-header-text {
+          top: calc(81px + 2rem); } }
+    @media (min-width: 768px) {
+      .post-template-default .entry-header h1.entry-title,
+      .page-template-default .entry-header h1.entry-title {
+        font-size: 2.5rem;
+        padding-right: 33.3%;
+        margin: 0;
+        padding-bottom: 1em; } }
+    .post-template-default .entry-header .posted-on,
+    .page-template-default .entry-header .posted-on {
+      color: #FFF; }
+      .post-template-default .entry-header .posted-on a,
+      .page-template-default .entry-header .posted-on a {
+        color: #FFF; }
+    @media (min-width: 768px) {
+      .post-template-default .entry-header .attachment-post-thumbnail,
+      .page-template-default .entry-header .attachment-post-thumbnail {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: 80%; } }
+
+.byline {
+  display: block;
+  font-weight: 600; }
+
+.posted-on {
+  display: block;
+  padding-bottom: 1em; }
 
 .exercise-single-article {
   margin-top: 1rem; }
@@ -2901,12 +2964,13 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     display: block;
     width: calc(100% + 4em);
     padding-top: 80%;
-    background-size: cover;
-    background-position: 50% 50%;
+    background-size: 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-color: #9ACFE9;
     margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-    transform: scale(1);
-    transform-origin: 50% bottom;
-    transition: all .2s ease-in; }
+    position: relative;
+    z-index: 1; }
     @media (min-width: 769px) {
       .blog article.post .post-thumbnail, .blog article.exercises .post-thumbnail,
       .archive article.post .post-thumbnail,
@@ -3038,7 +3102,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .search-results .sticky-post article .post-thumbnail {
         width: calc(50% + 2rem);
         padding-top: 37.5%;
-        margin: -2em 2em -2em -2em;
+        margin: -2rem 2rem -1rem -2rem;
         flex-shrink: 0;
         transform-origin: 100% 50%; }
       .blog .sticky-post article .post-info,
@@ -3086,7 +3150,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   padding: 0; }
 
 .site-main {
-  padding-top: 1em; }
+  padding-top: 1rem; }
   .single-exercises .site-main {
     padding-top: 0; }
 

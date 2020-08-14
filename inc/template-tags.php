@@ -42,7 +42,7 @@ if ( ! function_exists( 'rebalance_posted_by' ) ) :
 	function rebalance_posted_by() {
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'rebalance' ),
+			esc_html_x( '%s', 'post author', 'rebalance' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
@@ -150,7 +150,7 @@ if ( ! function_exists( 'rebalance_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a style="background-image: url(<?php the_post_thumbnail_url('medium_large'); ?>)" class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<a style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 100%); " class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<!-- <?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
