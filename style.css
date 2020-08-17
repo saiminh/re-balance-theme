@@ -2284,16 +2284,46 @@ a {
   background-image: url(img/ui-home-surprise.svg);
   background-size: auto calc(70% - 4em); }
 
-.post-template-default,
 .page-template-default {
   overflow-x: hidden; }
   @media (min-width: 480px) {
-    .post-template-default article,
     .page-template-default article {
       max-width: 45rem;
       margin: 2rem auto; } }
-  .post-template-default .entry-header,
   .page-template-default .entry-header {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% bottom;
+    background-size: 100%; }
+    @media (min-width: 480px) {
+      .page-template-default .entry-header {
+        background-position: 50% bottom; } }
+    @media (min-width: 768px) {
+      .page-template-default .entry-header {
+        background-position: calc(80vw + 5.5rem) bottom, 30vw;
+        background-size: calc(50vw - 5.5rem), 100vw calc( ( 50vw - 5.5rem ) * 0.75 );
+        border-radius: 0 0 50% 50%; } }
+    @media (min-width: 768px) {
+      .page-template-default .entry-header h1.entry-title {
+        font-size: 2.5rem;
+        padding-right: 33.3%;
+        margin: 0;
+        padding-bottom: 1em; } }
+    @media (min-width: 768px) {
+      .page-template-default .entry-header .attachment-post-thumbnail {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: 80%; } }
+
+.post-template-default {
+  overflow-x: hidden; }
+  @media (min-width: 480px) {
+    .post-template-default article {
+      max-width: 45rem;
+      margin: 2rem auto; } }
+  .post-template-default .entry-header {
     position: relative;
     background-repeat: no-repeat;
     background-position: 50% bottom;
@@ -2302,44 +2332,36 @@ a {
     padding: 0rem 1rem;
     min-height: 110vw; }
     @media (min-width: 480px) {
-      .post-template-default .entry-header,
-      .page-template-default .entry-header {
+      .post-template-default .entry-header {
         background-position: 50% bottom;
         margin: -3rem -1.5rem 0 -1.5rem; } }
     @media (min-width: 768px) {
-      .post-template-default .entry-header,
-      .page-template-default .entry-header {
+      .post-template-default .entry-header {
         background-position: calc(80vw + 5.5rem) bottom, 30vw;
         background-size: calc(50vw - 5.5rem), 100vw calc( ( 50vw - 5.5rem ) * 0.75 );
         margin: -3rem calc(-80vw + 22.5rem) 0;
         padding: 0 calc(80vw - 22.5rem) 0;
         min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
         border-radius: 0 0 50% 50%; } }
-    .post-template-default .entry-header .entry-header-text,
-    .page-template-default .entry-header .entry-header-text {
+    .post-template-default .entry-header .entry-header-text {
       position: sticky;
       top: calc(71px + 1rem);
       padding-top: calc( ( 50vw - 29rem ) * 0.375); }
       @media (min-width: 768px) {
-        .post-template-default .entry-header .entry-header-text,
-        .page-template-default .entry-header .entry-header-text {
+        .post-template-default .entry-header .entry-header-text {
           top: calc(81px + 2rem); } }
     @media (min-width: 768px) {
-      .post-template-default .entry-header h1.entry-title,
-      .page-template-default .entry-header h1.entry-title {
+      .post-template-default .entry-header h1.entry-title {
         font-size: 2.5rem;
         padding-right: 33.3%;
         margin: 0;
         padding-bottom: 1em; } }
-    .post-template-default .entry-header .posted-on,
-    .page-template-default .entry-header .posted-on {
+    .post-template-default .entry-header .posted-on {
       color: #FFF; }
-      .post-template-default .entry-header .posted-on a,
-      .page-template-default .entry-header .posted-on a {
+      .post-template-default .entry-header .posted-on a {
         color: #FFF; }
     @media (min-width: 768px) {
-      .post-template-default .entry-header .attachment-post-thumbnail,
-      .page-template-default .entry-header .attachment-post-thumbnail {
+      .post-template-default .entry-header .attachment-post-thumbnail {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -2967,7 +2989,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     display: block;
     width: calc(100% + 4em);
     padding-top: 80%;
-    background-size: 100%;
+    background-size: cover;
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-color: #9ACFE9;
