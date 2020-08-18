@@ -16,7 +16,7 @@
 	endif; ?>
 	<div class="entry-text">		
 		<?php if( is_singular() ) : ?>
-		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 100%);">			
+		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #ffe8e0 0%, #c4e3f2 80%, #9ACFE9 100%);">			
 		<?php else : ?>
 		<header class="entry-header">		
 		<?php endif; ?>

@@ -238,19 +238,29 @@
 			margin: -3rem -1.5rem 0 -1.5rem;
 		}
 		@media (min-width: 768px) {
-			background-position: calc(80vw + 5.5rem) bottom, 30vw;
-			background-size: calc(50vw - 5.5rem), 100vw calc( ( 50vw - 5.5rem ) * 0.75 );
+			background-position: 80vw bottom, 30vw;
+			background-size: auto 100%, 100vw 100%;
 			margin: -3rem calc(-80vw + 22.5rem) 0;
 			padding: 0 calc(80vw - 22.5rem) 0;
-			min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
+			//min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
+			min-height: calc(50vh - 80px);
 			border-radius: 0 0 50% 50%;
+		}
+		@media (min-width: 1281px) {
+			background-position: calc(80vw + 5.5rem) bottom, 30vw;
 		}
 		& .entry-header-text {
 			position: sticky;
 			top: calc(71px + 1rem);
-			padding-top: calc( ( 50vw - 29rem ) * 0.375);
+			padding-top: 1em;
+			padding-bottom: 1em;
 			@media (min-width: 768px) {
 				top: calc(81px + 2rem);
+				padding-top: calc( ( 640px - 29rem ) * 0.375);
+			}
+			@media (min-width: 1281px) {
+				width: calc( 1280px - 3rem - 33.333%);
+				margin-left: calc( ( 1280px - 49rem ) / -2 );
 			}
 		}
 		& h1.entry-title {
