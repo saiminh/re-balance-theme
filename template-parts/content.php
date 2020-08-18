@@ -10,35 +10,44 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 	
-	if ( !is_singular() ) : 
+	<?php if ( !is_singular() ) : 
 		rebalance_post_thumbnail(); 
-	endif; ?>
+		endif;
+	?>
 	<div class="entry-text">		
-		<?php if( is_singular() ) : ?>
-		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #ffe8e0 0%, #c4e3f2 80%, #9ACFE9 100%);">			
-		<?php else : ?>
-		<header class="entry-header">		
-		<?php endif; ?>
+
+	<?php if( is_singular() &&'post' === get_post_type() ) : ?>
+		<!-- Blog post header:  -->
+		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #ffe8e0 0%, #c4e3f2 80%, #9ACFE9 100%);">		
 			<div class="entry-header-text">
 				<div class="pre-entry-meta">
-				<?php // rebalance_entry_footer(); 
+					<?php 
 						rebalance_posted_by();
-						rebalance_posted_on();						
-				?>
+						rebalance_posted_on();
+					?>
 				</div>
-				<?php
-				if ( 'post' === get_post_type() ) :
-					if ( is_singular() ) :
+				<?php the_title( '<h1 class="entry-title">', '</h1>' );	?>					
+			</div>	
+		</header>
+
+	<?php else : ?>
+		<!-- Page or Archive entry header:  -->
+		<header class="entry-header">		
+			<div class="entry-header-text">				
+				<?php				
+					if ( is_singular() ) : //Page Header
 						the_title( '<h1 class="entry-title">', '</h1>' );
-					else :			
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );			
-					endif;
-				endif; ?>
-					
+					else : //Archive entry header
+						echo '<div class="pre-entry-meta">';							
+								rebalance_posted_by();
+								rebalance_posted_on();							
+						echo '</div>';
+						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );	
+					endif;							
+				?>					
 			</div>
 		</header><!-- .entry-header -->
-
+	<?php endif; ?>
 		<div class="entry-content">
 			
 			<?php if ( is_singular() ):
