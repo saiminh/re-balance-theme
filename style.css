@@ -2337,11 +2337,11 @@ a {
         margin: -3rem -1.5rem 0 -1.5rem; } }
     @media (min-width: 768px) {
       .post-template-default .entry-header {
-        background-position: 80vw bottom, 30vw;
+        background-position: 70% bottom, 30vw;
         background-size: auto 100%, 100vw 100%;
         margin: -3rem calc(-80vw + 22.5rem) 0;
         padding: 0 calc(80vw - 22.5rem) 0;
-        min-height: calc(50vh - 80px);
+        min-height: calc(60vh - 80px);
         border-radius: 0 0 50% 50%; } }
     @media (min-width: 1281px) {
       .post-template-default .entry-header {
