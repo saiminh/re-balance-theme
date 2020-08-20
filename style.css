@@ -2339,7 +2339,7 @@ a {
       .post-template-default .entry-header {
         background-position: 70% bottom, 30vw;
         background-size: auto 100%, 100vw 100%;
-        margin: -3rem calc(-80vw + 22.5rem) 0;
+        margin: -3rem calc(-80vw + 22.5rem) 2rem;
         padding: 0 calc(80vw - 22.5rem) 0;
         min-height: calc(60vh - 80px);
         border-radius: 0 0 50% 50%; } }
@@ -2348,9 +2348,7 @@ a {
         background-position: calc(80vw + 5.5rem) bottom, 30vw; } }
     .post-template-default .entry-header .entry-header-text {
       position: sticky;
-      top: calc(70px + 0rem);
-      padding-top: 1em;
-      padding-bottom: 1em;
+      top: 70px;
       margin: 0 -1rem;
       padding: 1rem 1.5rem;
       background: linear-gradient(180deg, #ffe8e0 0%, #e3e5e7 80%, #d8e4eb00 100%);
@@ -2360,8 +2358,7 @@ a {
           background: none;
           top: calc(81px + 2rem);
           margin: 0;
-          padding: 0;
-          padding-top: calc( ( 640px - 29rem ) * 0.375); } }
+          padding: 0; } }
       @media (min-width: 1281px) {
         .post-template-default .entry-header .entry-header-text {
           width: calc( 1280px - 3rem - 33.333%);
