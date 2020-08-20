@@ -17,6 +17,9 @@
     margin-bottom: 0;
     padding-bottom: 1rem;
   }
+  @media screen and (min-aspect-ratio: 10/6) {
+    position: static;     
+  }
 }
 
 .site-info {

@@ -24,13 +24,17 @@
             height: calc( ( 100vw - 3rem ) * 0.5625);
         }
         @media (min-width: 768px) {
-            float: left;
             margin-right: 2rem;
             width: 60vw;
             height: 33.75vw;
             position: fixed;
             max-width: 768px;
             max-height: 432px;            
+        }
+        @media screen and (min-aspect-ratio: 10/6) {
+            float: left;
+            position: relative;
+            margin-bottom: 1rem;
         }
         & video,
         & iframe {
@@ -60,11 +64,15 @@
         }
     }
     & .post-info > .entry-footer {
-
         @media (min-width: 768px) {
             position: fixed;           
             margin-left: 0;
-            top: calc(133px + 33.75vw + 1rem);
+            top: calc(120px + 33.75vw);
+        }
+        @media screen and (min-aspect-ratio: 10/6) {
+            position: relative;
+            clear: left;
+            top: 0;
         }
     }   
     & .entry-footer .exercises-tag {

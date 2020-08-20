@@ -2408,13 +2408,17 @@ a {
         height: calc( ( 100vw - 3rem ) * 0.5625); } }
     @media (min-width: 768px) {
       .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed-vimeo, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
-        float: left;
         margin-right: 2rem;
         width: 60vw;
         height: 33.75vw;
         position: fixed;
         max-width: 768px;
         max-height: 432px; } }
+    @media screen and (min-aspect-ratio: 10 / 6) {
+      .exercise-single-article .wp-block-video, .exercise-single-article .wp-block-embed-vimeo, .exercise-single-article .wp-block-embed, .exercise-single-article .wp-block-embed__wrapper {
+        float: left;
+        position: relative;
+        margin-bottom: 1rem; } }
     .exercise-single-article .wp-block-video video, .exercise-single-article .wp-block-video iframe, .exercise-single-article .wp-block-embed-vimeo video, .exercise-single-article .wp-block-embed-vimeo iframe, .exercise-single-article .wp-block-embed video, .exercise-single-article .wp-block-embed iframe, .exercise-single-article .wp-block-embed__wrapper video, .exercise-single-article .wp-block-embed__wrapper iframe {
       display: block;
       margin: 0 auto;
@@ -2437,7 +2441,12 @@ a {
     .exercise-single-article .post-info > .entry-footer {
       position: fixed;
       margin-left: 0;
-      top: calc(133px + 33.75vw + 1rem); } }
+      top: calc(120px + 33.75vw); } }
+  @media screen and (min-aspect-ratio: 10 / 6) {
+    .exercise-single-article .post-info > .entry-footer {
+      position: relative;
+      clear: left;
+      top: 0; } }
   .exercise-single-article .entry-footer .exercises-tag {
     display: inline-block;
     background-color: #ffe8e0;
@@ -3225,10 +3234,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     .site-content {
       margin-top: 81px; } }
 
-@media screen and (min-width: 768px) {
-  .single-exercises .site-content {
-    padding-bottom: 4rem; } }
-
 .site-footer {
   padding-bottom: 60px; }
   @media screen and (min-width: 1100px) {
@@ -3265,6 +3270,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
     width: 100%;
     margin-bottom: 0;
     padding-bottom: 1rem; } }
+@media screen and (min-aspect-ratio: 10 / 6) {
+  .single-exercises .site-footer {
+    position: static; } }
 
 .site-info {
   display: block;
