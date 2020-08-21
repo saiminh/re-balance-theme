@@ -1,38 +1,99 @@
 .site-footer {
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-bottom: 3rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0,0,0,0.125);
+  background-color: desaturate($color__brand-primary, 80%);
+  color: #FFF;
   @include font-size(1);
   position: relative;
   z-index: 2;
-}
-
-.single-exercises .site-footer {
-  @media (min-width: 768px) {
-    position: fixed;
-    bottom: 0;
-    background-color: #FFF;
-    width: 100%;
-    margin-bottom: 0;
+  @media (min-width: 1100px) {
     padding-bottom: 1rem;
   }
-  @media screen and (min-aspect-ratio: 10/6) {
-    position: static;     
+
+  & a, & a:link, a:visited {
+    color: #FFF;
   }
 }
 
-.site-info {
+.site-footer-container {
   @include content-block;
-  text-align: center;
-  line-height: 2;
-  @media (min-width: 1100px) {
-    text-align: left;
+  @media (min-width: 768px){
+    display: flex;
+    //justify-content: space-between;
   }
 }
+.site-footer-container > div {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  & h3 {
+    margin: 0 auto .5rem auto;
+  }
+}
+
+.site-info {  
+  flex-grow: 1;
+}
 .site-info-element {
-  margin-right: 1.5em;
+  line-height: 2.5;
+  display: block; 
+}
+a.site-info-element {  
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 .site-info-element:last-child {
   margin-right: 0;
+}
+.newsletter-signup-form { 
+  max-width: 45rem;
+  @media (min-width: 768px){
+    flex-basis: 66.666%;
+    margin-right: 2rem;
+  }
+ 
+  & label {
+    margin: 0 0 .25rem;
+    color: #FFF;
+  }
+  & form.mailpoet_form {
+    padding: 0!important;
+  }
+  & input[type="email"] {
+    width: 100%!important;
+    font-size: 1rem;
+    height: 50px;
+    padding: 0 1rem!important;
+    @media (min-width: 768px) {
+      width: calc(70% - .5rem)!important;
+      float: left;
+      margin-right: .5rem!important;
+    }
+  }
+  & input[type="submit"] {
+    padding: 0 1rem!important;
+    border: 2px solid!important;
+    border-radius: 3px!important;
+    width: 100%!important;
+    color: #FFF;    
+    font-size: 1rem;
+    height: 50px;
+    @media (min-width: 768px) {
+      width: 30%!important;
+      min-width: 115px;
+      max-width: 150px;
+      position: relative;
+      top: -1rem!important;
+    }
+  }
+  .mailpoet_validate_success {
+    color: #047500;
+    font-weight: 600;
+    &:before {
+      content: url(img/ui-check-green.svg);
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+      background: transparent;
+    }
+  }
 }
