@@ -123,7 +123,7 @@ abbr[title] {
  */
 b,
 strong {
-  font-weight: bolder; }
+  font-weight: 600; }
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
@@ -595,14 +595,15 @@ a.button,
 a.wp-block-button__link {
   border: 2px solid;
   border-radius: 3px;
-  border-color: inherit !important;
+  border-color: #FF9B7A !important;
   background: transparent;
   color: #FF9B7A;
   line-height: 1;
   padding: .8em 1.75em;
   font-size: 20px;
   font-size: 1.25rem;
-  transition: .15s all ease-in-out; }
+  transition: .15s all ease-in-out;
+  cursor: pointer; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -2745,6 +2746,56 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       font-style: italic;
       color: red; }
 
+.mailpoet_page-template-default:after,
+.page-template-page-newsletter:after {
+  content: "";
+  position: fixed;
+  /* stretch a fixed position to the whole screen */
+  top: 0;
+  height: 100vh;
+  /* fix for mobile browser address bar appearing disappearing */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  /* needed to keep in the background */
+  background-color: #9ACFE9;
+  background: linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 80%, #FFF 100%) no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.mailpoet-manage-subscription .mailpoet_paragraph label + br {
+  display: none; }
+
+.mailpoet-manage-subscription .mailpoet_paragraph:last-child {
+  margin-top: 2rem;
+  position: relative; }
+  .mailpoet-manage-subscription .mailpoet_paragraph:last-child:before {
+    content: '';
+    width: calc(100% + 3rem);
+    height: 1px;
+    background-color: #EEE;
+    position: absolute;
+    top: -1rem;
+    left: -1.5rem; }
+    @media (min-width: 480px) {
+      .mailpoet-manage-subscription .mailpoet_paragraph:last-child:before {
+        width: calc(100% + 4rem);
+        left: -2rem; } }
+
+.mailpoet_submit {
+  margin-bottom: -.5rem; }
+  @media (min-width: 480px) {
+    .mailpoet_submit {
+      margin-bottom: -1rem; } }
+
+.mailpoet_segment_label {
+  margin-top: 1rem; }
+
+.mailpoet-change-email-info {
+  display: none; }
+
 .cta-block {
   padding: 1.5rem;
   background-color: #ffe8e0;
@@ -3256,8 +3307,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   margin-top: 1rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
-  background-color: #cab6af;
-  color: #FFF;
+  background-color: #FFF;
+  color: #666;
   font-size: 16px;
   font-size: 1rem;
   position: relative;
@@ -3265,8 +3316,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   @media (min-width: 1100px) {
     .site-footer {
       padding-bottom: 1rem; } }
-  .site-footer a, .site-footer a:link, .site-footer a:visited {
-    color: #FFF; }
 
 .site-footer-container {
   display: block;
@@ -3301,7 +3350,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   display: block; }
 
 a.site-info-element {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+  border-bottom: 1px solid #EEE; }
 
 .site-info-element:last-child {
   margin-right: 0; }
@@ -3314,7 +3363,7 @@ a.site-info-element {
       margin-right: 2rem; } }
   .newsletter-signup-form label {
     margin: 0 0 .25rem;
-    color: #FFF; }
+    color: #666; }
   .newsletter-signup-form form.mailpoet_form {
     padding: 0 !important; }
   .newsletter-signup-form input[type="email"] {
@@ -3332,7 +3381,6 @@ a.site-info-element {
     border: 2px solid !important;
     border-radius: 3px !important;
     width: 100% !important;
-    color: #FFF;
     font-size: 1rem;
     height: 50px; }
     @media (min-width: 768px) {
@@ -3342,6 +3390,8 @@ a.site-info-element {
         max-width: 150px;
         position: relative;
         top: -1rem !important; } }
+    .newsletter-signup-form input[type="submit"]:hover {
+      border-radius: 15px !important; }
   .newsletter-signup-form .mailpoet_validate_success {
     color: #047500;
     font-weight: 600; }

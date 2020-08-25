@@ -663,6 +663,21 @@ function get_first_embed_media($post_id) {
 	}
 }
 
+//Mailpoet stuff
+
+add_filter( 'mailpoet_manage_subscription_page_form_fields', 'mp_remove_manage_fields', 10);
+function mp_remove_manage_fields( $form ) {	
+
+	unset($form[0]); // First Name
+	unset($form[1]); // Last Name
+	unset($form[3]); // List Selection Dropdown
+
+
+
+	return $form;
+}
+
+
 ?>
 
 
