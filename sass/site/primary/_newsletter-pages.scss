@@ -2,11 +2,12 @@
 .page-template-page-newsletter {
   @include bg-gradient-01;
 }
-
+.mailpoet_paragraph {
+  position: relative;
+}
 .mailpoet-manage-subscription .mailpoet_paragraph label + br {
   display: none
 }
-
 .mailpoet-manage-subscription .mailpoet_paragraph:last-child {
   margin-top: 2rem;
   position: relative;
@@ -35,4 +36,12 @@
 }
 .mailpoet-change-email-info {
   display: none;
+}
+.mailpoet_form .parsley-errors-list{
+  position: absolute;
+  top: 0;
+  left: 5em;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.4;
 }

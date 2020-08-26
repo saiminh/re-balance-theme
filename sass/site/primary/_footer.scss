@@ -2,7 +2,7 @@
   margin-top: 1rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
-  background-color: #FFF;
+  background-color: #EEE;
   color: #666;
   @include font-size(1);
   position: relative;
@@ -10,17 +10,11 @@
   @media (min-width: 1100px) {
     padding-bottom: 1rem;
   }
-
-  & a, & a:link, a:visited {
-    //color: #FFF;
-  }
 }
-
 .site-footer-container {
   @include content-block;
   @media (min-width: 768px){
     display: flex;
-    //justify-content: space-between;
   }
 }
 .site-footer-container > div {
@@ -30,7 +24,6 @@
     margin: 0 auto .5rem auto;
   }
 }
-
 .site-info {  
   flex-grow: 1;
 }
@@ -39,7 +32,7 @@
   display: block; 
 }
 a.site-info-element {  
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid #DFDFDF;
 }
 .site-info-element:last-child {
   margin-right: 0;

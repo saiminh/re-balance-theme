@@ -369,22 +369,20 @@ textarea {
       font-size: 0.875rem; } }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  line-height: 1.333334; }
+  font-weight: 300;
+  line-height: 1.5; }
 
 h1 {
   font-size: 2em; }
 
 h2 {
-  font-size: 1.5em; }
+  font-size: 1.6666em; }
 
 h3 {
-  font-size: 1.3em; }
+  font-size: 1.3333em; }
 
 h1.entry-title,
 h1.page-title {
-  color: #000;
-  font-weight: 600;
   position: relative; }
 
 .home .page-subtitle {
@@ -2349,18 +2347,24 @@ a {
       .post-template-default .entry-header {
         background-position: calc(80vw + 5.5rem) bottom, 30vw; } }
     .post-template-default .entry-header .entry-header-text {
+      position: -webkit-sticky;
       position: sticky;
       top: 70px;
       margin: 0 -1rem;
       padding: 1rem 1.5rem;
-      background: linear-gradient(180deg, #ffe8e0 0%, #e3e5e7 80%, #d8e4eb00 100%);
-      color: #e3e5e7; }
+      background: linear-gradient(180deg, #ffe8e0 0%, #e3e5e7 80%, #d8e4eb00 100%); }
       @media (min-width: 768px) {
         .post-template-default .entry-header .entry-header-text {
+          position: relative;
           background: none;
-          top: calc(81px + 2rem);
+          top: 0;
           margin: 0;
-          padding: 0; } }
+          padding: 1rem 0;
+          height: calc(60vh - 80px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-self: flex-start; } }
       @media (min-width: 1281px) {
         .post-template-default .entry-header .entry-header-text {
           width: calc( 1280px - 3rem - 33.333%);
@@ -2508,7 +2512,9 @@ a {
       position: absolute;
       transform: translate(175px, -50px);
       max-width: 255px;
-      width: calc(100% - 175px); } }
+      width: calc(100% - 175px);
+      font-size: 16px;
+      font-size: 1rem; } }
 
 .swpm-login-widget-form + p {
   margin: 1.5rem -1.5rem -1.5rem -1.5rem !important;
@@ -2765,6 +2771,9 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   -o-background-size: cover;
   background-size: cover; }
 
+.mailpoet_paragraph {
+  position: relative; }
+
 .mailpoet-manage-subscription .mailpoet_paragraph label + br {
   display: none; }
 
@@ -2795,6 +2804,14 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 
 .mailpoet-change-email-info {
   display: none; }
+
+.mailpoet_form .parsley-errors-list {
+  position: absolute;
+  top: 0;
+  left: 5em;
+  font-size: 1em;
+  margin: 0;
+  line-height: 1.4; }
 
 .cta-block {
   padding: 1.5rem;
@@ -3082,8 +3099,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .archive article.exercises .entry-title,
   .search-results article.post .entry-title,
   .search-results article.exercises .entry-title {
-    font-size: 18px;
-    font-size: 1.125rem;
+    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 1rem; }
     .blog article.post .entry-title a, .blog article.exercises .entry-title a,
     .archive article.post .entry-title a,
@@ -3108,7 +3125,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   .search-results article.exercises .entry-summary a,
   .search-results article.exercises .entry-content,
   .search-results article.exercises .entry-content a {
-    color: #333; }
+    color: #000; }
   .blog article.post .entry-summary p:first-child, .blog article.post .entry-content p:first-child, .blog article.exercises .entry-summary p:first-child, .blog article.exercises .entry-content p:first-child,
   .archive article.post .entry-summary p:first-child,
   .archive article.post .entry-content p:first-child,
@@ -3192,8 +3209,8 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
       .blog .sticky-post article .entry-title,
       .archive .sticky-post article .entry-title,
       .search-results .sticky-post article .entry-title {
-        font-size: 24px;
-        font-size: 1.5rem; }
+        font-size: 28px;
+        font-size: 1.75rem; }
       .blog .sticky-post article .post-thumbnail,
       .archive .sticky-post article .post-thumbnail,
       .search-results .sticky-post article .post-thumbnail {
@@ -3307,7 +3324,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   margin-top: 1rem;
   padding-bottom: 3rem;
   padding-top: 1rem;
-  background-color: #FFF;
+  background-color: #EEE;
   color: #666;
   font-size: 16px;
   font-size: 1rem;
@@ -3350,7 +3367,7 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
   display: block; }
 
 a.site-info-element {
-  border-bottom: 1px solid #EEE; }
+  border-bottom: 1px solid #DFDFDF; }
 
 .site-info-element:last-child {
   margin-right: 0; }

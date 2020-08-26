@@ -17,7 +17,8 @@
         position: absolute;
         transform: translate(175px, -50px);
         max-width: 255px;
-        width: calc(100% - 175px)
+        width: calc(100% - 175px);
+        @include font-size(1);
     }
 }
 

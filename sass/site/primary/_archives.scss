@@ -89,7 +89,7 @@
             }             
         }
         & .entry-title {
-            @include font-size(1.125);
+            @include font-size(1.5);
             margin-bottom: 1rem;
             & a {
                 color: $color__text-main;
@@ -99,7 +99,7 @@
         & .entry-content {
             &, 
             & a {
-                color: #333;
+                color: #000;
             }
             & p:first-child {
                 margin-top: 0;
@@ -145,7 +145,7 @@
                     justify-content: center;
                 }
                 & .entry-title {
-                    @include font-size(1.5);
+                    @include font-size(1.75);
                 }
                 & .post-thumbnail {
                     width: calc(50% + 2rem);
