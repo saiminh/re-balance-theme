@@ -2805,14 +2805,6 @@ button.swpm-registration-submit, button.swpm-login-form-submit, input[type="butt
 .mailpoet-change-email-info {
   display: none; }
 
-.mailpoet_form .parsley-errors-list {
-  position: absolute;
-  top: 0;
-  left: 5em;
-  font-size: 1em;
-  margin: 0;
-  line-height: 1.4; }
-
 .cta-block {
   padding: 1.5rem;
   background-color: #ffe8e0;
