@@ -3269,7 +3269,7 @@ body.page-template-page-pricing:after {
   -o-background-size: cover;
   background-size: cover; }
 
-.princing .hero-header {
+body.page-template-page-pricing .hero-header {
   margin-top: .5em; }
 
 .pricing .can-toggle__switch {
