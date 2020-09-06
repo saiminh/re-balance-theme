@@ -41,11 +41,19 @@
   position: absolute;
   top: 0;
   left: 5em;
-  font-size: 1em;
+  font-size: .9rem;
   margin: 0;
   line-height: 1.4;
 }
 input.mailpoet_text {
   position: relative;
   z-index: 2;
+}
+.mailpoet_recaptcha {
+  position: absolute;
+  transform: translate(0 , 2.5rem);
+  &,  & .mailpoet_recaptcha_container div, & .mailpoet_recaptcha_container iframe {
+    width: 100%!important;
+    height: auto!important;
+  }
 }

@@ -11,7 +11,6 @@
  *
  * @package rebalance
  */
-
 get_header();
 ?>
 	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
@@ -149,5 +148,5 @@ get_header();
 		</div><!-- #primary -->
 		<?php endif; ?>
 <?php
-get_sidebar();
+//get_sidebar();
 get_footer();

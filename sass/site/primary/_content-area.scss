@@ -11,10 +11,10 @@
 }
 .home.wpsmp-loggedout .site-main,
 .page-template-page-registration .site-main,
-.page-template-page-profile .site-main {
+.page-template-page-profile .site-main, 
+.page-template-page-pricing .site-main {
     margin-left: auto;
     margin-right: auto;
-    //padding: 0;
     @media (min-width: 768px){
         width: 85%;
     }
@@ -30,11 +30,6 @@
         min-height: calc(100vh - 360px - 1rem);
     }
 }
-// .single-exercises .site-content {
-//     @media screen and (min-width: 768px) {
-//         padding-bottom: 4rem;
-//     }
-// }
 .site-footer {
     padding-bottom: 60px;
 
