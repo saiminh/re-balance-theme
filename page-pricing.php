@@ -54,8 +54,17 @@ get_header();
             </div>
              
             <div class="can_toggle__content--checked pricing-business">
-              <div class="form-container">
-                <?php echo do_shortcode( '[caldera_form id="CF5f16fd45b80a5"]' ); ?>
+              <div class="wp-block-columns">
+                <div class="wp-block-column" style="flex-basis: 33.33%">
+                  <h3 class="eyebrow">Inquiring for a business subscription?</h3>
+                  <h2>Let us get to know you!</h2>
+                  <p>To make sure we can offer fair pricing, we need to gather some information about your business. Once we received your inquiry we will get back to you with a tailored offer as soon as possible.</p>
+                </div>
+                <div class="wp-block-column" style="flex-basis: 66.66%">
+                  <div class="form-container">
+                    <?php echo do_shortcode( '[caldera_form id="CF5f16fd45b80a5"]' ); ?>
+                  </div>
+                </div>
               </div>
             </div>
           </div>          
