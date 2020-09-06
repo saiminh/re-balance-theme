@@ -3284,13 +3284,15 @@ body.page-template-page-pricing:after {
   border-radius: 5px;
   padding: 1.5em;
   margin-bottom: 1.5rem;
-  flex-basis: calc(50% - .75em); }
+  flex-basis: calc(50% - .75em);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16); }
   .pricing-private-annually .pricing-title,
   .pricing-private-monthly .pricing-title {
     color: #FF9B7A;
     margin-top: 0; }
   .pricing-private-annually hr,
   .pricing-private-monthly hr {
+    background-color: #DDD;
     margin: 1.5rem -1.5rem;
     width: calc(100% + 3em); }
   .pricing-private-annually .button,
@@ -3299,7 +3301,7 @@ body.page-template-page-pricing:after {
     margin: 0 1.5rem; }
 
 .pricing-amount {
-  margin: 3rem auto; }
+  margin: 4rem auto; }
 
 .pricing-amount-currency,
 .pricing-amount-number,
@@ -3307,6 +3309,7 @@ body.page-template-page-pricing:after {
   display: inline-block;
   color: #BABABA;
   vertical-align: top;
+  font-size: 1.2rem;
   line-height: .6666; }
 
 .pricing-amount-frequency {
