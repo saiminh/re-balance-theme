@@ -3269,6 +3269,9 @@ body.page-template-page-pricing:after {
   -o-background-size: cover;
   background-size: cover; }
 
+.princing .hero-header {
+  margin-top: .5em; }
+
 .pricing .can-toggle__switch {
   margin: 1rem auto 3rem auto; }
 
