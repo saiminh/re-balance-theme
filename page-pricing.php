@@ -71,7 +71,7 @@ get_header();
                       </div>
                     </div>
                     <hr>';
-                    echo do_shortcode('[swpm_payment_button id=1236 class=""]');
+                    echo do_shortcode('[swpm_payment_button id=1226 class=""]');
             echo '</div>
                   <!-- Annual Sub EUR -->
                   <div class="pricing-individual-annually">
