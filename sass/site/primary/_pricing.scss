@@ -7,14 +7,14 @@ body.page-template-page-pricing .hero-header {
 .pricing .can-toggle__switch {
   margin: 1rem auto 3rem auto;
 }
-.pricing-private {
+.pricing-individual {
   @media (min-width: 480px) {
     display: flex;
     justify-content: space-between;
   }
 }
-.pricing-private-annually,
-.pricing-private-monthly {
+.pricing-individual-annually,
+.pricing-individual-monthly {
   text-align: center;
   background-color: #FFF;
   border-radius: 5px;
@@ -45,7 +45,7 @@ body.page-template-page-pricing .hero-header {
   display: inline-block;
   color: #BABABA;
   vertical-align: top;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   line-height: .6666;
 }
 .pricing-amount-frequency {

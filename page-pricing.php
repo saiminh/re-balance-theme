@@ -22,36 +22,75 @@ get_header();
           <div class="can-toggle can-toggle--size-large">
             <input id="a" type="checkbox">
             <label for="a" class="can-toggle__label">
-              <div class="can-toggle__switch" data-checked="Business" data-unchecked="Private"></div>
+              <div class="can-toggle__switch" data-checked="Business" data-unchecked="Individual"></div>
             </label>
-            <div class="can_toggle__content--unchecked pricing-private">
-              <!-- Monthly Sub -->
-              <div class="pricing-private-monthly">
-                <h3 class="pricing-title">Monthly subscription</h3>
-                <div class="pricing-amount">
-                  <div class="pricing-amount--aud">
-                    <div class="pricing-amount-currency">AU$</div>
-                    <div class="pricing-amount-number">3</div>
-                    <div class="pricing-amount-frequency">/mo</div>
-                  </div>
+            <div class="can_toggle__content--unchecked pricing-individual">
+              <?php if (function_exists('geoip_detect2_get_info_from_current_ip')) {
+                $userInfo = geoip_detect2_get_info_from_current_ip();
+                
+                if ($userInfo->country->isoCode == "AU") {
+                echo '
+                <!-- Monthly Sub AUD -->
+                  <div class="pricing-individual-monthly">
+                    <h3 class="pricing-title">Monthly subscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--aud">
+                        <div class="pricing-amount-currency">AU$</div>
+                        <div class="pricing-amount-number">6</div>
+                        <div class="pricing-amount-frequency">/mo</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    echo do_shortcode('[swpm_payment_button id=1239 class=""]');
+            echo '</div>
+                  <!-- Annual Sub AUD -->
+                  <div class="pricing-individual-annually">
+                    <h3 class="pricing-title">Annual subscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--aud">
+                        <div class="pricing-amount-currency">AU$</div>
+                        <div class="pricing-amount-number">60</div>
+                        <div class="pricing-amount-frequency">/year</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    echo do_shortcode('[swpm_payment_button id=1238 class=""]');
+            echo '</div>
                 </div>
-                <hr>
-                <a class="button">Purchase</a>
-              </div>
-              <!-- Annual Sub -->
-              <div class="pricing-private-annually">
-                <h3 class="pricing-title">Annual subscription</h3>
-                <div class="pricing-amount">
-                  <div class="pricing-amount--aud">
-                    <div class="pricing-amount-currency">AU$</div>
-                    <div class="pricing-amount-number">30</div>
-                    <div class="pricing-amount-frequency">/year</div>
-                  </div>
+                ';
+              } else {
+                echo '
+                <!-- Monthly Sub EUR -->
+                  <div class="pricing-individual-monthly">
+                    <h3 class="pricing-title">Monthly subscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--eur">
+                        <div class="pricing-amount-currency">€</div>
+                        <div class="pricing-amount-number">4</div>
+                        <div class="pricing-amount-frequency">/mo</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    echo do_shortcode('[swpm_payment_button id=1236 class=""]');
+            echo '</div>
+                  <!-- Annual Sub EUR -->
+                  <div class="pricing-individual-annually">
+                    <h3 class="pricing-title">Annual subscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--eur">
+                        <div class="pricing-amount-currency">€</div>
+                        <div class="pricing-amount-number">40</div>
+                        <div class="pricing-amount-frequency">/year</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    echo do_shortcode('[swpm_payment_button id=1237 class=""]');
+            echo '</div>
                 </div>
-                <hr>
-                <a class="button">Purchase</a>
-              </div>
-            </div>
+                ';
+              }};
+              ?>
+              
              
             <div class="can_toggle__content--checked pricing-business">
               <div class="wp-block-columns">
