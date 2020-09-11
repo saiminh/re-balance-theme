@@ -95,8 +95,8 @@
 								
 		<?php //Check if SWPM account has expired and display notification
 			if ( rebalance_membership_is_expired() ){
-				$extramsg = '<p>Thank you for using Rebalance, we hope you enjoyed your time with it! Find out more on how to renew your subscription:</p>
-				<a href="/membership-renewal" class="button button-small">Renew my subscription</a>';
+				$extramsg = '<p>Thank you for trying out Rebalance, we hope you enjoyed your time with it! Please help us improve the product by filling out our survey:</p>
+				<a href="https://www.questionpro.com/t/AQ3raZiQrh" class="button button-small">Rebalance Survey</a>';
 				echo get_the_expired_notification(true, $extramsg );
 			}
 		?>
