@@ -18,6 +18,7 @@ get_header();
                 the_content(); 
             endwhile; 
         ?>
+
         <div class="pricing">
           <div class="can-toggle can-toggle--size-large">
             <input id="a" type="checkbox">
@@ -27,7 +28,8 @@ get_header();
             <div class="can_toggle__content--unchecked pricing-individual">
               <?php if (function_exists('geoip_detect2_get_info_from_current_ip')) {
                 $userInfo = geoip_detect2_get_info_from_current_ip();
-                
+                $settings = SwpmSettings::get_instance();
+                $sandbox_enabled = $settings->get_value('enable-sandbox-testing');
                 if ($userInfo->country->isoCode == "AU") {
                 echo '
                 <!-- Monthly Sub AUD -->
@@ -41,7 +43,12 @@ get_header();
                       </div>
                     </div>
                     <hr>';
-                    echo do_shortcode('[swpm_payment_button id=1239 class=""]');
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1239 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1241 class=""]');
+                    }
             echo '</div>
                   <!-- Annual Sub AUD -->
                   <div class="pricing-individual-annually">
@@ -54,7 +61,12 @@ get_header();
                       </div>
                     </div>
                     <hr>';
-                    echo do_shortcode('[swpm_payment_button id=1238 class=""]');
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1238 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1242 class=""]');
+                    }
             echo '</div>
                 </div>
                 ';
@@ -71,7 +83,12 @@ get_header();
                       </div>
                     </div>
                     <hr>';
-                    echo do_shortcode('[swpm_payment_button id=1226 class=""]');
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1226 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1243 class=""]');
+                    }
             echo '</div>
                   <!-- Annual Sub EUR -->
                   <div class="pricing-individual-annually">
@@ -84,7 +101,12 @@ get_header();
                       </div>
                     </div>
                     <hr>';
-                    echo do_shortcode('[swpm_payment_button id=1237 class=""]');
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1237 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1244 class=""]');
+                    }
             echo '</div>
                 </div>
                 ';
