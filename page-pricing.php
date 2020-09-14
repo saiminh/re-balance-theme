@@ -72,8 +72,49 @@ get_header();
             echo '</div>
                 </div>
                 ';
-              } else if ($userInfo->country->isoCode == "NL") {
-                // IF NETHERLANDS
+              } else if ($userInfo->country->isoCode == "US") {
+                // IF USA
+                echo '
+                <!-- Monthly Sub EUR -->
+                  <div class="pricing-individual-monthly">
+                    <h3 class="pricing-title">Monthly Usubscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--eur">
+                        <div class="pricing-amount-currency">€</div>
+                        <div class="pricing-amount-number">4</div>
+                        <div class="pricing-amount-frequency">/mo</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1226 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1243 class=""]');
+                    }
+            echo '</div>
+                  <!-- Annual Sub EUR -->
+                  <div class="pricing-individual-annually">
+                    <h3 class="pricing-title">Annual Usubscription</h3>
+                    <div class="pricing-amount">
+                      <div class="pricing-amount--eur">
+                        <div class="pricing-amount-currency">€</div>
+                        <div class="pricing-amount-number">40</div>
+                        <div class="pricing-amount-frequency">/year</div>
+                      </div>
+                    </div>
+                    <hr>';
+                    if ($sandbox_enabled) {
+                      echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
+                      echo do_shortcode('[swpm_payment_button id=1237 class=""]');
+                    } else {
+                      echo do_shortcode('[swpm_payment_button id=1244 class=""]');
+                    }
+            echo '</div>
+                </div>
+                ';
+              } else {
+                // ALL OTHER COUNTRIES
                 echo '
                 <!-- Monthly Sub EUR -->
                   <div class="pricing-individual-monthly">
@@ -113,12 +154,6 @@ get_header();
             echo '</div>
                 </div>
                 ';
-              } else {
-                // ANY OTHER COUNTRY
-                echo '<div class="pricing-individual-monthly">
-                At the moment we only support the Netherlands and Australia </div>
-                <div class="pricing-individual-annually">
-                At the moment we only support the Netherlands and Australia </div>';
               }
             
             };
