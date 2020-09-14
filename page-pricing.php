@@ -30,9 +30,11 @@ get_header();
                 $userInfo = geoip_detect2_get_info_from_current_ip();
                 $settings = SwpmSettings::get_instance();
                 $sandbox_enabled = $settings->get_value('enable-sandbox-testing');
+                //var_dump($userInfo);
                 if ($userInfo->country->isoCode == "AU") {
+                // IF AUSTRALIA
                 echo '
-                <!-- Monthly Sub AUD -->
+                  <!-- Monthly Sub AUD -->
                   <div class="pricing-individual-monthly">
                     <h3 class="pricing-title">Monthly subscription</h3>
                     <div class="pricing-amount">
@@ -70,7 +72,8 @@ get_header();
             echo '</div>
                 </div>
                 ';
-              } else {
+              } else if ($userInfo->country->isoCode == "NL") {
+                // IF NETHERLANDS
                 echo '
                 <!-- Monthly Sub EUR -->
                   <div class="pricing-individual-monthly">
@@ -110,7 +113,15 @@ get_header();
             echo '</div>
                 </div>
                 ';
-              }};
+              } else {
+                // ANY OTHER COUNTRY
+                echo '<div class="pricing-individual-monthly">
+                At the moment we only support the Netherlands and Australia </div>
+                <div class="pricing-individual-annually">
+                At the moment we only support the Netherlands and Australia </div>';
+              }
+            
+            };
               ?>
               
              

@@ -46,8 +46,8 @@ get_header();
 						<?php get_template_part('inc/inline', 'ui-home-breathe.svg'); ?>
 						<div class="wp-block-group">
 							<div class="wp-block-group__inner-container">
-								<h1 class="hero-header">Bite-sized, healthy&nbsp;moments for&nbsp;busy&nbsp;days.</h1>
-								<p class="hero-subheader">Move&nbsp;more. Breathe&nbsp;consciously. Rebalance&nbsp;your&nbsp;work&nbsp;life.</p>
+								<h1 class="hero-header">Transform&nbsp;your&nbsp;work&nbsp;day. Find&nbsp;your&nbsp;balance.</h1>
+								<p class="hero-subheader">Short exercises that help you take better&nbsp;breaks&nbsp;at&nbsp;your&nbsp;desk.</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
