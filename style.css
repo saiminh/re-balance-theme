@@ -3887,7 +3887,8 @@ a.site-info-element {
   font-style: italic;
   margin: 0 0 1em 0; }
 .page-template-page-profile .payment-schedule-info + .button {
-  margin-bottom: 3px; }
+  line-height: 1.5;
+  display: inline-block; }
 
 .close-x {
   cursor: pointer; }
