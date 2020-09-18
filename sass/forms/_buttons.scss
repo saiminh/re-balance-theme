@@ -64,4 +64,8 @@ a.wp-block-button__link {
 		padding: .5em 1.25em;
 		line-height: 2.5rem;
 	}
+	&.button-block {
+		display: block;
+		text-align: center;
+	}
 }

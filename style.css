@@ -675,6 +675,14 @@ a.wp-block-button__link {
     font-size: 1rem;
     padding: .5em 1.25em;
     line-height: 2.5rem; }
+  button.button-block,
+  input[type="button"].button-block,
+  input[type="reset"].button-block,
+  input[type="submit"].button-block,
+  a.button.button-block,
+  a.wp-block-button__link.button-block {
+    display: block;
+    text-align: center; }
 
 .can-toggle {
   position: relative; }
