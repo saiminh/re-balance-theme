@@ -92,21 +92,21 @@
     & dl {
       overflow: auto;      
     }
-    & dt {
-      @media (min-width: 768px) {
-        clear: both;
-        float: left;
-      }
-    }
     & dd {
-      margin: 0 0 .5rem .25rem;
-      @media (min-width: 768px) {
-        float: left;
-      }
+      margin: 0 0 .5rem 0;      
     }
   }
   .form-container {
     max-width: none;
+  }
+  .payment-schedule-info {
+    display: block;
+    font-size: 0.8em;
+    font-style: italic;
+    margin: 0 0 1em 0;
+  }
+  .payment-schedule-info + .button {
+    margin-bottom: 3px;
   }
 }
 

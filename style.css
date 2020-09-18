@@ -3877,17 +3877,17 @@ a.site-info-element {
     margin-top: 0; }
   .page-template-page-profile .membership-status dl {
     overflow: auto; }
-  @media (min-width: 768px) {
-    .page-template-page-profile .membership-status dt {
-      clear: both;
-      float: left; } }
   .page-template-page-profile .membership-status dd {
-    margin: 0 0 .5rem .25rem; }
-    @media (min-width: 768px) {
-      .page-template-page-profile .membership-status dd {
-        float: left; } }
+    margin: 0 0 .5rem 0; }
 .page-template-page-profile .form-container {
   max-width: none; }
+.page-template-page-profile .payment-schedule-info {
+  display: block;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 0 0 1em 0; }
+.page-template-page-profile .payment-schedule-info + .button {
+  margin-bottom: 3px; }
 
 .close-x {
   cursor: pointer; }
