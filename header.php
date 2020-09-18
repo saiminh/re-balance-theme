@@ -93,15 +93,20 @@
 		
 		</header><!-- #masthead -->
 								
-		<?php //Check if SWPM account has expired and display notification
-			if ( rebalance_membership_is_expired() ){
+		<?php 
+			//Check if SWPM account has expired and is Test Trial membership display survey notification
+			if ( rebalance_membership_is_expired() and get_rebalance_membership_id() == '2' ){
 				$extramsg = '<p>Thank you for trying out Rebalance, we hope you enjoyed your time with it! Please help us improve the product by filling out our survey:</p>
 				<a href="https://www.questionpro.com/t/AQ3raZiQrh" class="button button-small">Rebalance Survey</a>';
-				echo get_the_expired_notification(true, $extramsg );
+				echo get_the_expired_notification(true, $extramsg ); 
+			} 
+			// Else Check if SWPM account has expired and is other membership, then display renewal notification
+			else if (rebalance_membership_is_expired() and get_rebalance_membership_id() !== '2' ) {
+				$extramsg = '<p>To access all Rebalance exercises and content please purchase a subscription:</p>
+				<a href="/pricing" class="button button-small button-closes-msg">Go to subscriptions</a>';
+				echo get_the_expired_notification(true, $extramsg ); 
 			}
 		?>
-
-
 	<?php else : ?>
 
 		<header id="masthead" class="site-header">

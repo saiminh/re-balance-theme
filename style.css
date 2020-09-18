@@ -712,7 +712,7 @@ a.wp-block-button__link {
       .can-toggle .can-toggle__label .can-toggle__switch:after {
         content: attr(data-unchecked);
         position: absolute;
-        z-index: 5;
+        z-index: 2;
         text-align: center;
         background: white;
         transform: translate3d(0, 0, 0); }
@@ -1912,7 +1912,8 @@ a {
 
 .page-template-page-about .statusbar,
 .page-template-page-the-benefits .statusbar,
-.page-template-page-registration .statusbar {
+.page-template-page-registration .statusbar,
+.page-template-page-pricing .statusbar {
   display: none; }
 
 @media (min-width: 768px) {

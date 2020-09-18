@@ -182,7 +182,7 @@
 	function init() {
 
 		//close messages
-		$('.close').on('click', function(){
+		$('.close, .button-closes-msg').on('click', function(){
 			$(this).parents('.notification, .swpm-partial-protection').hide();
 		})
 

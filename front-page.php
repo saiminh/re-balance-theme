@@ -53,7 +53,7 @@ get_header();
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
 									</div>
 									<div class="trial-disclaimer" style="font-size: 12px">
-										The free trial will run until 15 September 2020
+										The free trial will run until 30 September 2020
 									</div>
 								</div>
 								<p>
