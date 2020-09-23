@@ -144,9 +144,9 @@ get_header();
             // $swpm_user = SwpmMemberUtils::get_user_by_id($member_id);
             //var_dump($swpm_user);
             $subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
-            $transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id);
-            $txn_id = $transaction->txn_id;
-            echo $txn_id;
+            $transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;
+            
+            echo $transaction;
             
 
             // if ($subscr_id) {
