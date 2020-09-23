@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Testing template
+ * Template Name: Testing
  * The template for displaying the registration page
  *
  * @package rebalance
