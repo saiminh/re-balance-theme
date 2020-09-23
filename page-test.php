@@ -121,22 +121,32 @@ get_header();
             //       ["profile_image"]=> string(0) "" } 
             //     }
 
-
+            // object(stdClass)#2460 (14) { 
+            //   ["id"]=> string(1) "1" 
+            //   ["email"]=> string(17) "saiminh@gmail.com" 
+            //   ["first_name"]=> string(4) "Name" 
+            //   ["last_name"]=> string(0) "" 
+            //   ["member_id"]=> string(0) "" 
+            //   ["membership_level"]=> string(1) "3" 
+            //   ["txn_date"]=> string(10) "2020-09-01" 
+            //   ["txn_id"]=> string(18) "cus_HwPdMmCf3E05TD" 
+            //   ["subscr_id"]=> string(18) "sub_HwPdpkmP32Ejz2" 
+            //   ["reference"]=> string(0) "" 
+            //   ["payment_amount"]=> string(1) "2" 
+            //   ["gateway"]=> string(15) "stripe-sca-subs" 
+            //   ["status"]=> string(9) "completed" 
+            //   ["ip_address"]=> string(13) "77.248.251.93" }
 
 
 
             
-            $member_id = SwpmMemberUtils::get_logged_in_members_id();
-            $swpm_user = SwpmMemberUtils::get_user_by_id($member_id);
+            // $member_id = SwpmMemberUtils::get_logged_in_members_id();
+            // $swpm_user = SwpmMemberUtils::get_user_by_id($member_id);
             //var_dump($swpm_user);
             $subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
             $transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id);
-            echo '<strong>vardump subscrid:</strong>';
-            var_dump($subscr_id);
-            echo '<br><strong>echo subscrid:</strong>';
-            echo $subscr_id;
-            echo '<br><strong>vardump transaction:</strong>';
-            var_dump($transaction);
+            $txn_id = $transaction->txn_id;
+            echo $txn_id;
             
 
             // if ($subscr_id) {
