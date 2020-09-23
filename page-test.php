@@ -19,7 +19,7 @@ get_header();
             $swpm_user = SwpmMemberUtils::get_user_by_id($member_id);
             //var_dump($swpm_user);
             $subscr_id = SwpmAuth::get_instance()->subscr_id;
-            //var_dump($subscr_id);
+            var_dump($subscr_id);
             
             if ($subscr_id) {
               //composer require stripe/stripe-php;
