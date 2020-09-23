@@ -149,19 +149,17 @@ get_header();
             echo $transaction;
             
 
-            // if ($subscr_id) {
-            //   //composer require stripe/stripe-php;
-            //   require_once('stripe-php/init.php');
-            //   // Set your secret key. Remember to switch to your live secret key in production!
-            //   // See your keys here: https://dashboard.stripe.com/account/apikeys
-            //   \Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+            if ($transaction) {
+              require_once('stripe-php/init.php');
+              // Set your secret key. Remember to switch to your live secret key in production!
+              \Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
 
-            //   $stripecall = \Stripe\BillingPortal\Session::create([
-            //     'customer' => $subscr_id,
-            //     'return_url' => 'http://rebalance.local/membership-profile',
-            //   ]);
-            //   echo '<a class="button" href="'.$stripecall['url'].'">Stripe</a>';
-            // }
+              $stripecall = \Stripe\BillingPortal\Session::create([
+                'customer' => $transaction,
+                'return_url' => 'http://rebalance.local/membership-profile',
+              ]);
+              echo '<a class="button" href="'.$stripecall['url'].'">Stripe</a>';
+            }
           ?>
           
         </div>
