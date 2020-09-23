@@ -158,8 +158,10 @@ get_header();
                 'customer' => $transaction,
                 'return_url' => 'http://rebalance.local/membership-profile',
               ]);
-              echo '<a class="button" href="'.$stripecall['url'].'">Stripe</a>';
-            }
+              if ($stripecall) {
+                echo '<a class="button" href="'.$stripecall['url'].'">Stripe</a>';
+              }
+            } 
           ?>
           
         </div>
