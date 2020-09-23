@@ -131,8 +131,11 @@ get_header();
             //var_dump($swpm_user);
             $subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
             $transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id);
+            echo '<strong>vardump subscrid:</strong>';
             var_dump($subscr_id);
+            echo '<br><strong>echo subscrid:</strong>';
             echo $subscr_id;
+            echo '<br><strong>vardump transaction:</strong>';
             var_dump($transaction);
             
 
