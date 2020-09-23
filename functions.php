@@ -586,6 +586,27 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 		return $error_msg;
 }
 
+function display_manage_subscription_button() {
+	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
+	$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
+
+	if ($transaction) {
+		require_once('stripe-php/init.php');
+		// Set your secret key. Remember to switch to your live secret key in production!
+		\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+
+		$stripecall = \Stripe\BillingPortal\Session::create([
+			'customer' => $transaction,
+			'return_url' => 'http://re-balance.io/membership-profile',
+		]);
+		if ($stripecall) {
+			echo '<a class="button" href="'.$stripecall['url'].'">Manage my subscription</a>';
+		}
+	} 
+	else {
+		echo '<a class="button button-disabled" href="">No subscription found</a>';
+	}
+}
 
 
 function vimeo_duration ($id) {

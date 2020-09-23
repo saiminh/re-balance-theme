@@ -683,6 +683,14 @@ a.wp-block-button__link {
   a.wp-block-button__link.button-block {
     display: block;
     text-align: center; }
+  button.button-disabled,
+  input[type="button"].button-disabled,
+  input[type="reset"].button-disabled,
+  input[type="submit"].button-disabled,
+  a.button.button-disabled,
+  a.wp-block-button__link.button-disabled {
+    opacity: .3;
+    text-decoration: line-through; }
 
 .can-toggle {
   position: relative; }

@@ -68,4 +68,8 @@ a.wp-block-button__link {
 		display: block;
 		text-align: center;
 	}
+	&.button-disabled {
+		opacity: .3;
+		text-decoration: line-through;
+	}
 }
