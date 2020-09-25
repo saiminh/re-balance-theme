@@ -8,7 +8,7 @@
 .mailpoet-manage-subscription .mailpoet_paragraph label + br {
   display: none
 }
-.mailpoet-manage-subscription .mailpoet_paragraph:last-child {
+.mailpoet-manage-subscription .mailpoet_paragraph .mailpoet_submit {
   margin-top: 2rem;
   position: relative;
   &:before {

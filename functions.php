@@ -603,11 +603,16 @@ function display_manage_subscription_button() {
 			echo '<a class="button" href="'.$stripecall['url'].'">Manage my subscription</a>';
 		}
 	} 
-	else {
-		echo '<a class="button button-disabled" href="">No subscription found</a>';
+	else { // This should only show up if user has a free subscription 
+		echo '<a class="button button-small button-disabled" href="">No subscription data</a>';
 	}
 }
 
+function user_has_paid_subscription() {
+	if ( SwpmAuth::get_instance()->userData->subscr_id ) {
+		return true;
+	}
+}
 
 function vimeo_duration ($id) {
 	try {
@@ -692,22 +697,14 @@ function get_first_embed_media($post_id) {
 			return false;
 	}
 }
-
 //Mailpoet stuff
-
 add_filter( 'mailpoet_manage_subscription_page_form_fields', 'mp_remove_manage_fields', 10);
 function mp_remove_manage_fields( $form ) {	
-
 	unset($form[0]); // First Name
 	unset($form[1]); // Last Name
 	unset($form[3]); // List Selection Dropdown
-
-
-
 	return $form;
 }
-
-
 ?>
 
 
