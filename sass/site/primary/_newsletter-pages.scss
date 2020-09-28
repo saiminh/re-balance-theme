@@ -31,6 +31,20 @@
     margin-bottom: -1rem;
   }
 }
+.mailpoet-manage-subscription .mailpoet-submit-success {
+  color: #4CAF50;
+}
+.mailpoet-manage-subscription .mailpoet_submit ~ .mailpoet-submit-success {
+  margin-bottom: 0;
+  margin-top: 1.5em;
+  font-size: 1rem;
+  font-style: italic;
+  &:before {
+    content: url(img/ui-check-green.svg);
+    width: 1rem;
+    margin-right: .4rem;
+  }
+}
 .mailpoet_segment_label {
   margin-top: 1rem;
 }
