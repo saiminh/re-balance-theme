@@ -600,7 +600,7 @@ function display_manage_subscription_button() {
 			'return_url' => 'http://re-balance.io/membership-profile',
 		]);
 		if ($stripecall) {
-			echo '<a class="button button-small" href="'.$stripecall['url'].'">Manage%nbsp;subscription</a>';
+			echo '<a class="button button-small" href="'.$stripecall['url'].'">Manage&nbsp;subscription</a>';
 		}
 	} 
 	else { // This should only show up if user has a free subscription 
