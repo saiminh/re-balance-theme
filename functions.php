@@ -567,7 +567,7 @@ function get_rebalance_membership_alias() {
 	return $userauth->get('alias'); 
 }
 //notification for expired 
-function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
+function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification notification-expired'){
 	$loginlink = '/membership-login';
 	$signuplink = '/membership-registration';
 	$headline = '<h4 class="'.$class.'-header"><svg class="alarm-clock" style="width: 1.25em; height: auto; position: relative; top: 2px; margin-right: .5em;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 245.681 245.681">
