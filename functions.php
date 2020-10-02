@@ -551,10 +551,10 @@ function my_wp_mail_filter( $args ) {
 function rebalance_member_is_logged_in() {
 	if ( SwpmMemberUtils::is_member_logged_in()){ return true; } else { return false; }
 }
-// if membership is expired or membership level is 'Subscription has expired'
+// if membership is expired
 function rebalance_membership_is_expired() {
 	$userauth = SwpmAuth::get_instance();
-	if ($userauth->is_expired_account() or get_rebalance_membership_alias() == 'Subscription has expired') { return true; } else { return false; }
+	if ($userauth->is_expired_account()) { return true; } else { return false; }
 }
 // ID to check against
 function get_rebalance_membership_id() {
