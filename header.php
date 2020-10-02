@@ -74,9 +74,14 @@
 						<?php if ( is_user_logged_in() ) { 
 							//echo 'Username: ' . $current_user->user_login . "\n"; 
 							echo '<div class="user-name">'.$current_user->display_name . "</div>";
-							echo '<div class="user-menu">';							
-							echo '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">'.do_shortcode( '[swpm_show_member_info column="membership_level_name"]' ).'</span></div>';
-							// echo '<div class="user-menu-expires">Expiry date: <span class="user-menu-expire-date">'.do_shortcode( '[swpm_show_member_info column="expiry_date"]' ).'</span></div>';
+							echo '<div class="user-menu">'.							
+									 '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">';
+							if ( rebalance_membership_is_expired() ) { 
+								echo '<i>Subscription Expired</i>';
+							} else {
+								echo do_shortcode( '[swpm_show_member_info column="membership_level_name"]' ).'</span></div>';
+							}
+							
 							echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
 							if (class_exists(\MailPoet\API\API::class)) {
 									$mailpoet_api = \MailPoet\API\API::MP('v1');								

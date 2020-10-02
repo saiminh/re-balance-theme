@@ -586,11 +586,28 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 	return $error_msg;
 }
 
+function user_has_paid_subscription() {
+	require_once('stripe-php/init.php');
+	// Set your secret key. Remember to switch to your live secret key in production!
+	\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+	$stripe = new \Stripe\StripeClient(
+		'TESTSTRIPEAPIKEY'
+	);
+	$response = $stripe->subscriptions->retrieve(
+		'sub_I85NqOErZ82kUb',
+		[]
+	);
+	$status = $response->status;
+	if ( $status !== 'canceled' ) {
+		return true;
+	}
+}
+
 function get_manage_subscription_button() {
 	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
 	$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
 
-	if ($transaction) {
+	if ($transaction and user_has_paid_subscription() ) {
 		require_once('stripe-php/init.php');
 		// Set your secret key. Remember to switch to your live secret key in production!
 		\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
@@ -601,7 +618,7 @@ function get_manage_subscription_button() {
 		]);
 		if ($stripecall) {
 			return '<a class="button button-small" href="'.$stripecall['url'].'">Manage&nbsp;subscription</a>';
-		}
+		}		
 	} 
 	else { // This should only show up if user has a free subscription 
 		return '<a class="button button-small" href="/pricing">Go to subscriptions</a>';
@@ -610,12 +627,6 @@ function get_manage_subscription_button() {
 
 function display_manage_subscription_button() {
 	echo get_manage_subscription_button();
-}
-
-function user_has_paid_subscription() {
-	if ( SwpmAuth::get_instance()->userData->subscr_id ) {
-		return true;
-	}
 }
 
 function vimeo_duration ($id) {
