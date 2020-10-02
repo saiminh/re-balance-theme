@@ -281,7 +281,7 @@
 		});
 
 		// Membership registration links don't swup
-		$('a[href$="membership-registration/"], a[href$="membership-registration"]').attr("data-no-swup", "");
+		$('a[href$="membership-registration/"], a[href$="membership-registration"], a[href$="pricing"], a[href$="pricing/"]').attr("data-no-swup", "");
 		
 		gsap.set("body", {clearProps: "all"});
 
