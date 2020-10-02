@@ -9,11 +9,12 @@ a.wp-block-button__link {
 	border-color: $color__brand-primary!important;
 	background: transparent;
 	color: $color__brand-primary;
-	line-height: 1;
-	padding: .8em 1.75em;
+	line-height: 1.5;
+	padding: .6em 1.75em;
 	@include font-size(1.25);
   transition: .15s all ease-in-out;
 	cursor: pointer;
+	display: inline-block;
 	&:hover {
 		color: $color__brand-primary;
 		border-radius: 15px;
@@ -61,7 +62,7 @@ a.wp-block-button__link {
 	}
 	&.button-small {
 		@include font-size(1);
-		padding: .5em 1.25em;
+		padding: .3em 1.25em;
 		line-height: 2.5rem;
 	}
 	&.button-block {

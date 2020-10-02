@@ -76,8 +76,19 @@
 							echo '<div class="user-name">'.$current_user->display_name . "</div>";
 							echo '<div class="user-menu">';							
 							echo '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">'.do_shortcode( '[swpm_show_member_info column="membership_level_name"]' ).'</span></div>';
-							echo '<div class="user-menu-expires">Expiry date: <span class="user-menu-expire-date">'.do_shortcode( '[swpm_show_member_info column="expiry_date"]' ).'</span></div>';
+							// echo '<div class="user-menu-expires">Expiry date: <span class="user-menu-expire-date">'.do_shortcode( '[swpm_show_member_info column="expiry_date"]' ).'</span></div>';
 							echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
+							if (class_exists(\MailPoet\API\API::class)) {
+									$mailpoet_api = \MailPoet\API\API::MP('v1');								
+									$currentUser = wp_get_current_user();
+									$currentUserEmail = $currentUser->data->user_email;              
+									//echo $currentUserEmail;
+									$stuff = $mailpoet_api->getSubscriber($currentUserEmail);
+									if ($stuff['status'] == 'unsubscribed' OR  $stuff['status'] == 'subscribed' ) {
+										echo '<a href="/newsletter-manage-subscription">Newsletter subscription</a>';      
+									}
+								};						
+						
 							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
 							'>Logout</a>";
 							echo "</div>";
@@ -95,18 +106,12 @@
 								
 		<?php 
 			//Check if SWPM account has expired and is Test Trial membership display survey notification
-			if ( rebalance_membership_is_expired() and get_rebalance_membership_id() == '2' ){
-				$extramsg = '<p>Thank you for trying out Rebalance, we hope you enjoyed your time with it! Please help us improve the product by filling out our survey:</p>
-				<a href="https://www.questionpro.com/t/AQ3raZiQrh" class="button button-small">Rebalance Survey</a>';
-				echo get_the_expired_notification(true, $extramsg ); 
-			} 
-			// Else Check if SWPM account has expired and is other membership, then display renewal notification
-			else if (rebalance_membership_is_expired() and get_rebalance_membership_id() !== '2' ) {
-				$extramsg = '<p>To access all Rebalance exercises and content please purchase a subscription:</p>
-				<a href="/pricing" class="button button-small button-closes-msg">Go to subscriptions</a>';
+			if ( rebalance_membership_is_expired() ){
+				$extramsg = '<p>To access all Rebalance exercises and content please purchase a subscription:</p>';
 				echo get_the_expired_notification(true, $extramsg ); 
 			}
-		?>
+		?>  
+
 	<?php else : ?>
 
 		<header id="masthead" class="site-header">

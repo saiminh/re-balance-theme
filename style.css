@@ -596,12 +596,13 @@ a.wp-block-button__link {
   border-color: #FF9B7A !important;
   background: transparent;
   color: #FF9B7A;
-  line-height: 1;
-  padding: .8em 1.75em;
+  line-height: 1.5;
+  padding: .6em 1.75em;
   font-size: 20px;
   font-size: 1.25rem;
   transition: .15s all ease-in-out;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }
   button:hover,
   input[type="button"]:hover,
   input[type="reset"]:hover,
@@ -673,7 +674,7 @@ a.wp-block-button__link {
   a.wp-block-button__link.button-small {
     font-size: 16px;
     font-size: 1rem;
-    padding: .5em 1.25em;
+    padding: .3em 1.25em;
     line-height: 2.5rem; }
   button.button-block,
   input[type="button"].button-block,

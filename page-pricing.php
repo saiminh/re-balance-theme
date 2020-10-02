@@ -13,12 +13,11 @@ get_header();
 		<main id="main" class="site-main">
       <article>
         <?php 
-            while ( have_posts() ) :
-                the_post();
-                the_content(); 
-            endwhile; 
+          while ( have_posts() ) :
+              the_post();
+              the_content(); 
+          endwhile; 
         ?>
-
         <div class="pricing">
           <div class="can-toggle can-toggle--size-large">
             <input id="a" type="checkbox">
@@ -30,9 +29,9 @@ get_header();
                 $userInfo = geoip_detect2_get_info_from_current_ip();
                 $settings = SwpmSettings::get_instance();
                 $sandbox_enabled = $settings->get_value('enable-sandbox-testing');
-                //var_dump($userInfo);
                 if ($userInfo->country->isoCode == "AU") {
-                  // IF AUSTRALIA
+//–––––––––––––––––––––––––––––––––––––––––
+// IF GEO IS AUSTRALIA
                   echo '
                     <!-- Monthly Sub AUD -->
                     <div class="pricing-individual-monthly">
@@ -46,11 +45,11 @@ get_header();
                       </div>
                       <hr>';
                   if ($sandbox_enabled) {
-                    // IF AUSTRALIA MONTHLY SANDBOX
+  // IF AUSTRALIA MONTHLY SANDBOX
                     echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                     echo do_shortcode('[swpm_payment_button id=1239 class=""]');
                   } else {
-                    // IF AUSTRALIA MONTHLY LIVE
+  // IF AUSTRALIA MONTHLY LIVE
                     echo do_shortcode('[swpm_payment_button id=1241 class=""]');
                   }
                   echo '</div>
@@ -66,18 +65,19 @@ get_header();
                       </div>
                       <hr>';
                   if ($sandbox_enabled) {
-                    // IF AUSTRALIA ANNUAL SANDBOX
+  // IF AUSTRALIA ANNUAL SANDBOX
                     echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                     echo do_shortcode('[swpm_payment_button id=1238 class=""]');
                   } else {
-                    // IF AUSTRALIA ANNUAL LIVE
+  // IF AUSTRALIA ANNUAL LIVE
                     echo do_shortcode('[swpm_payment_button id=1242 class=""]');
                   }
                   echo '</div>
                   </div>';
 
                 } else {
-                // ALL OTHER COUNTRIES -> Euros
+//–––––––––––––––––––––––––––––––––––––––––
+// ELSE ALL OTHER COUNTRIES -> Euros
                   echo '
                   <!-- Monthly Sub EUR -->
                     <div class="pricing-individual-monthly">
@@ -91,11 +91,11 @@ get_header();
                       </div>
                       <hr>';
                       if ($sandbox_enabled) {
-                        // IF EUR MONTHLY SANDBOX
+  // IF EUR MONTHLY SANDBOX
                         echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                         echo do_shortcode('[swpm_payment_button id=1226 class=""]');
                       } else {
-                        // IF EUR MONTHLY LIVE
+  // IF EUR MONTHLY LIVE
                         echo do_shortcode('[swpm_payment_button id=1243 class=""]');
                       }
                   echo '</div>
@@ -111,11 +111,11 @@ get_header();
                       </div>
                       <hr>';
                   if ($sandbox_enabled) {
-                    // IF EUR ANNUAL SANDBOX
+  // IF EUR ANNUAL SANDBOX
                     echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                     echo do_shortcode('[swpm_payment_button id=1237 class=""]');
                   } else {
-                    // IF EUR ANNUAL LIVE
+  // IF EUR ANNUAL LIVE
                     echo do_shortcode('[swpm_payment_button id=1244 class=""]');
                   }
                   echo '</div>

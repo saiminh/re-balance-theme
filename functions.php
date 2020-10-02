@@ -578,15 +578,15 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 	if ( $message ){
 		$text = $message;
 	}
+	$text .= get_manage_subscription_button(); 
 	if ( $closebtn ){
 		$text .= '<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "/></svg></div>';
 	}
-	$error_msg = '<div class="'.$class.'"><span class="'.$class.'-text">'.$headline.$text.'</span></div>';
-	
-		return $error_msg;
+	$error_msg = '<div class="'.$class.'"><span class="'.$class.'-text">'.$headline.$text.'</span></div>';	
+	return $error_msg;
 }
 
-function display_manage_subscription_button() {
+function get_manage_subscription_button() {
 	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
 	$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
 
@@ -600,12 +600,16 @@ function display_manage_subscription_button() {
 			'return_url' => 'http://re-balance.io/membership-profile',
 		]);
 		if ($stripecall) {
-			echo '<a class="button button-small" href="'.$stripecall['url'].'">Manage&nbsp;subscription</a>';
+			return '<a class="button button-small" href="'.$stripecall['url'].'">Manage&nbsp;subscription</a>';
 		}
 	} 
 	else { // This should only show up if user has a free subscription 
-		echo '<a class="button button-small button-disabled" href="">No subscription data</a>';
+		return '<a class="button button-small" href="/pricing">Go to subscriptions</a>';
 	}
+}
+
+function display_manage_subscription_button() {
+	echo get_manage_subscription_button();
 }
 
 function user_has_paid_subscription() {
