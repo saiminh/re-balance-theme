@@ -60,6 +60,11 @@
     }
 }
 
+// Pricing page, hide expired notification here
+.page-template-page-pricing .notification-expired {
+  display: none;
+}
+
 //Profile page
 .page-template-page-profile {
   @include bg-gradient-01;

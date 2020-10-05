@@ -3875,6 +3875,9 @@ a.site-info-element {
       top: calc(50% - 3rem);
       transform: translate(-50%, -50%); } }
 
+.page-template-page-pricing .notification-expired {
+  display: none; }
+
 .page-template-page-profile:after {
   content: "";
   position: fixed;
