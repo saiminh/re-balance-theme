@@ -567,7 +567,7 @@ function get_rebalance_membership_alias() {
 	return $userauth->get('alias'); 
 }
 //notification for expired 
-function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification notification-expired'){
+function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
 	$loginlink = '/membership-login';
 	$signuplink = '/membership-registration';
 	$headline = '<h4 class="'.$class.'-header"><svg class="alarm-clock" style="width: 1.25em; height: auto; position: relative; top: 2px; margin-right: .5em;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 245.681 245.681">
@@ -582,7 +582,7 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 	if ( $closebtn ){
 		$text .= '<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "/></svg></div>';
 	}
-	$error_msg = '<div class="'.$class.'"><span class="'.$class.'-text">'.$headline.$text.'</span></div>';	
+	$error_msg = '<div class="'.$class. ' notification-expired"><span class="'.$class.'-text">'.$headline.$text.'</span></div>';	
 	return $error_msg;
 }
 
