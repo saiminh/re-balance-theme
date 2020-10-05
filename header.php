@@ -24,9 +24,9 @@
 <body <?php body_class(); ?> >
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
-
+	<div style="display: none"><?php print_subscriberid(); ?></div>
 	<?php if ( rebalance_member_is_logged_in() ) : ?>
-	
+		
 		<header id="masthead" class="site-header">
 			<div class="site-header-inner">
 				<div class="site-branding">
