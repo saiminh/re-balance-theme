@@ -586,26 +586,32 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 	return $error_msg;
 }
 
-function user_has_paid_subscription() {
-	require_once('stripe-php/init.php');
-	// Set your secret key. Remember to switch to your live secret key in production!
-	\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
-	$stripe = new \Stripe\StripeClient(
-		'TESTSTRIPEAPIKEY'
-	);
-	$response = $stripe->subscriptions->retrieve(
-		'sub_I85NqOErZ82kUb',
-		[]
-	);
-	$status = $response->status;
-	if ( $status !== 'canceled' ) {
-		return true;
+function get_the_subscriberid() {
+	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
+	if ($subscr_id) {
+		return $subscr_id;
 	}
 }
 
-function print_subscriberid() {
-	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
-	var_dump($subscr_id);
+function user_has_paid_subscription() {
+	$subscri_id = get_the_subscriberid();
+	if ($subscri_id) { //if there's a stripe subscriber id stored in WP 
+		require_once('stripe-php/init.php');
+		// Set your secret key. Remember to switch to your live secret key in production!
+		\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+		$stripe = new \Stripe\StripeClient(
+			'TESTSTRIPEAPIKEY'
+		);
+		
+		$response = $stripe->subscriptions->retrieve(
+			$subscri_id,
+			[]
+		);
+		$status = $response->status;
+		if ( $status !== 'canceled' ) {
+			return true;
+		}
+	}
 }
 
 function get_manage_subscription_button() {
