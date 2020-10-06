@@ -598,10 +598,19 @@ function user_has_paid_subscription() {
 	if ($subscri_id) { //if there's a stripe subscriber id stored in WP 
 		require_once('stripe-php/init.php');
 		// Set your secret key. Remember to switch to your live secret key in production!
-		\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
-		$stripe = new \Stripe\StripeClient(
-			'TESTSTRIPEAPIKEY'
-		);
+		$settings = SwpmSettings::get_instance();
+		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
+		if ($sandbox_enabled) {
+			\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+			$stripe = new \Stripe\StripeClient(
+				'TESTSTRIPEAPIKEY'
+			);
+		} else {
+			\Stripe\Stripe::setApiKey('LIVESTRIPEAPIKEY');
+			$stripe = new \Stripe\StripeClient(
+				'LIVESTRIPEAPIKEY'
+			);
+		}
 		
 		$response = $stripe->subscriptions->retrieve(
 			$subscri_id,

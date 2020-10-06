@@ -26,7 +26,6 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
 	<?php echo '<div style="display: none">'.get_the_subscriberid().'</div>'; ?>
 	<?php if ( rebalance_member_is_logged_in() ) : ?>
-		
 		<header id="masthead" class="site-header">
 			<div class="site-header-inner">
 				<div class="site-branding">
@@ -34,9 +33,6 @@
 						<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
 					</a>
 				</div><!-- .site-branding -->
-			
-			
-
 				<nav id="site-navigation" class="main-navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<div class="navTrigger">
@@ -68,7 +64,6 @@
 					<div class="site-header-search">
 						<?php get_search_form( ); ?> 						
 					</div>
-			
 					<div class="site-header-account">
 						<?php global $current_user; wp_get_current_user(); ?>
 						<?php if ( is_user_logged_in() ) { 
@@ -84,16 +79,15 @@
 							
 							echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
 							if (class_exists(\MailPoet\API\API::class)) {
-									$mailpoet_api = \MailPoet\API\API::MP('v1');								
-									$currentUser = wp_get_current_user();
-									$currentUserEmail = $currentUser->data->user_email;              
-									//echo $currentUserEmail;
-									$stuff = $mailpoet_api->getSubscriber($currentUserEmail);
-									if ($stuff['status'] == 'unsubscribed' OR  $stuff['status'] == 'subscribed' ) {
-										echo '<a href="/newsletter-manage-subscription">Newsletter subscription</a>';      
-									}
-								};						
-						
+								$mailpoet_api = \MailPoet\API\API::MP('v1');								
+								$currentUser = wp_get_current_user();
+								$currentUserEmail = $currentUser->data->user_email;              
+								//echo $currentUserEmail;
+								$stuff = $mailpoet_api->getSubscriber($currentUserEmail);
+								if ($stuff['status'] == 'unsubscribed' OR  $stuff['status'] == 'subscribed' ) {
+									echo '<a href="/newsletter-manage-subscription">Newsletter subscription</a>';      
+								}
+							};						
 							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
 							'>Logout</a>";
 							echo "</div>";
@@ -101,14 +95,9 @@
 							else { 
 								wp_loginout(); } ?> 
 					</div>
-
-
 				</nav><!-- #site-navigation -->		
 			</div> <!-- .site-header-inner -->
-			
-		
 		</header><!-- #masthead -->
-								
 		<?php 
 			//Check if SWPM account has expired and is Test Trial membership display survey notification
 			if ( rebalance_membership_is_expired() ){
@@ -116,9 +105,7 @@
 				echo get_the_expired_notification(true, $extramsg ); 
 			}
 		?>  
-
-	<?php else : ?>
-
+		<?php else : ?>
 		<header id="masthead" class="site-header">
 		<div class="site-header-inner">
 			<div class="site-branding">
@@ -126,19 +113,13 @@
 					<?php get_template_part('inc/inline', 'rebalance-logo.svg'); ?>
 				</a>
 			</div><!-- .site-branding -->
-			
-			
-
 			<nav id="site-navigation" class="main-navigation main-navigation-nonuser">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-
-			<div class="navTrigger">
-			<i></i><i></i><i></i>
-			<span class="menu-name">Menu</span>
-			</div>
-
+				<div class="navTrigger">
+					<i></i><i></i><i></i>
+					<span class="menu-name">Menu</span>
+				</div>
 			</button>						
-
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-2',
@@ -152,80 +133,83 @@
 				<div class="site-header-signup">
 					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
 				</div>
-				
 			</div>
-
 			</nav><!-- #site-navigation -->		
 		<!-- </div> .site-header-inner		 -->
 		</header><!-- #masthead -->		
-
 	<?php endif; ?>
 	
-	<div class="loading-animation"><div class="loader">
-		<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
-		<circle cx="50" cy="50" r="45" fill="none" stroke="#ff9b7a" stroke-width="6" />
-		</svg>
-	</div></div>			
-	
+	<div class="loading-animation">
+		<div class="loader">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+				<circle cx="50" cy="50" r="45" fill="none" stroke="#ff9b7a" stroke-width="6" />
+			</svg>
+		</div>
+	</div>			
 	<div id="swup" class="site-content transition">		
-	
 	<?php if ( rebalance_member_is_logged_in() ) : ?>
-	<div class="statusbar">	
-		<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
-		<?php
-			if (is_search()) :
-				echo '<ul class="breadcrumbs">';
-				echo '<li><a href="';
-				echo get_option('home');
-				echo '">Home';
-				echo '</a></li>';
-				echo '<li>Search</li></ul>';
-
-			else :
-				if ( is_tax( 'types' ) ) :
-					show_custax_breadcrumb(single_tag_title("", false),"types");
-				elseif ( is_tax( 'exercises-tag' ) ) :
-					show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
-				elseif ( has_term( '' , 'types' ) ) :
-					
+		<div class="statusbar">	
+			<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
+			<?php
+				if (is_search()) :
 					echo '<ul class="breadcrumbs">';
 					echo '<li><a href="';
 					echo get_option('home');
 					echo '">Home';
 					echo '</a></li>';
-					$rd_taxonomy = 'types'; // region taxonomy
-					$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
-					if( $rd_terms ) {
-						$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
-						$neworderterms = get_terms($rd_taxonomy, 'orderby=parent&include=' . $term_array );
-						foreach( $neworderterms as $orderterm ) {
-							echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
-						}
-					}
-					echo '<li>';
-					the_title();
-					echo '</li></ul>';
-
-				elseif ( is_front_page() ) :
-					global $current_user; wp_get_current_user(); 
-					echo "<div id='lblGreetings'>";
-					if ( $current_user->first_name ) :
-						echo $current_user->first_name . "\n";
-					else :
-						echo $current_user->display_name . "\n";
-					endif;
-					echo "</div>";
+					echo '<li>Search</li></ul>';
 
 				else :
-					show_breadcrumb();
+					if ( is_tax( 'types' ) ) :
+						show_custax_breadcrumb(single_tag_title("", false),"types");
+					elseif ( is_tax( 'exercises-tag' ) ) :
+						show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
+					elseif ( has_term( '' , 'types' ) ) :
+						
+						echo '<ul class="breadcrumbs">';
+						echo '<li><a href="';
+						echo get_option('home');
+						echo '">Home';
+						echo '</a></li>';
+						$rd_taxonomy = 'types'; // region taxonomy
+						$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
+						if( $rd_terms ) {
+							$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
+							$neworderterms = get_terms($rd_taxonomy, 'orderby=parent&include=' . $term_array );
+							foreach( $neworderterms as $orderterm ) {
+								echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
+							}
+						}
+						echo '<li>';
+						the_title();
+						echo '</li></ul>';
+
+					elseif ( is_front_page() ) :
+						global $current_user; wp_get_current_user(); 
+						echo "<div id='lblGreetings'>";
+						if ( $current_user->first_name ) :
+							echo $current_user->first_name . "\n";
+						else :
+							echo $current_user->display_name . "\n";
+						endif;
+						echo "</div>";
+
+					else :
+						show_breadcrumb();
+					endif;
 				endif;
-			endif;
-		?>
+			?>
 		<?php if ( is_tax(  ) ) : ?>
-		<div class="toggle-discreet">
-			<label class="switch"><input type="checkbox"><span class="toggle-label-text">Discreet Moves</span><span class="slider round hide-off"></span> </label>		
-			<div class="onboarding">Click here to hide all exercises with large, indiscreet movements</div>
-		</div>
+			<div class="toggle-discreet">
+				<label class="switch">
+					<input type="checkbox">
+						<span class="toggle-label-text">Discreet Moves</span>
+						<span class="slider round hide-off"></span> 
+				</label>		
+				<div class="onboarding">
+					Click here to hide all exercises with large, indiscreet movements
+				</div>
+			</div>
 		<?php endif; ?>
-	</div>
+		</div>
 	<?php endif; ?>
