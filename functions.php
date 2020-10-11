@@ -630,10 +630,8 @@ function get_manage_subscription_button() {
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
 		if ($sandbox_enabled) {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
-			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
 		} else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
-			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
 
 		$stripecall = \Stripe\BillingPortal\Session::create([
