@@ -30,6 +30,7 @@ get_header();
                   <p><strong>Can’t see the email?</strong><br>Check your SPAM folder, sometimes it can take a while before the email arrives. In case something has gone wrong, please <a href="https://re-balance.io/contact/" class="rank-math-link">contact us</a>.</p>
                 </div>
               </div>
+                  <?php endif; ?>
             </article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
