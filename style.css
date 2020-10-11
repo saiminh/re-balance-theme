@@ -1946,7 +1946,8 @@ a {
 .page-template-page-the-benefits .statusbar,
 .page-template-page-registration .statusbar,
 .page-template-page-pricing .statusbar,
-.page-template-page-newsletter .statusbar {
+.page-template-page-newsletter .statusbar,
+.page-template-page-thank-you .statusbar {
   display: none; }
 
 @media (min-width: 768px) {
@@ -2766,7 +2767,8 @@ a {
 .search .video-duration {
   margin-bottom: .5rem; }
 
-.page-template-page-registration:after {
+.page-template-page-registration:after,
+.page-template-page-thank-you:after {
   content: "";
   position: fixed;
   /* stretch a fixed position to the whole screen */
