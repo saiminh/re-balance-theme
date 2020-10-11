@@ -131,7 +131,7 @@
 					<a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
 				</div>
 				<div class="site-header-signup">
-					<a class="button" href="<?php echo esc_url( home_url( '/membership-registration/' ) ); ?>">Free trial</a>
+					<a class="button" href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>">Free trial</a>
 				</div>
 			</div>
 			</nav><!-- #site-navigation -->		
