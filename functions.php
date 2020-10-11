@@ -601,11 +601,11 @@ function user_has_paid_subscription() {
 		$settings = SwpmSettings::get_instance();
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
 		if ($sandbox_enabled) {
-			\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
-			$stripe = new \Stripe\StripeClient('TESTSTRIPEAPIKEY');
+			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
 		} else {
-			\Stripe\Stripe::setApiKey('LIVESTRIPEAPIKEY');
-			$stripe = new \Stripe\StripeClient( 'LIVESTRIPEAPIKEY');
+			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
 		
 		$response = $stripe->subscriptions->retrieve(
@@ -626,7 +626,15 @@ function get_manage_subscription_button() {
 	if ($transaction and user_has_paid_subscription() ) {
 		require_once('stripe-php/init.php');
 		// Set your secret key. Remember to switch to your live secret key in production!
-		\Stripe\Stripe::setApiKey('TESTSTRIPEAPIKEY');
+		$settings = SwpmSettings::get_instance();
+		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
+		if ($sandbox_enabled) {
+			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
+		} else {
+			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
+		}
 
 		$stripecall = \Stripe\BillingPortal\Session::create([
 			'customer' => $transaction,
