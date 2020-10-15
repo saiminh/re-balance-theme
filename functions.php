@@ -602,10 +602,10 @@ function user_has_paid_subscription() {
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
 		if ($sandbox_enabled) {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
-		//	$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
+			$stripe = \Stripe\StripeClient(TESTSTRIPEAPIKEY);
 		} else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
-		//	$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
+			$stripe = \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
 		
 		$response = $stripe->subscriptions->retrieve(
