@@ -646,7 +646,7 @@ function get_manage_subscription_button() {
 		}		
 	} 
 	else { // This should only show up if user has a free subscription 
-		return '<a class="button button-small" href="/pricing">Buy a subscription</a>';
+		return '<a class="button button-small" href="/pricing">Go to subscriptions</a>';
 	}
 }
 
