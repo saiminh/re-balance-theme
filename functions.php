@@ -591,6 +591,9 @@ function get_the_subscriberid() {
 	if ($subscr_id) {
 		return $subscr_id;
 	}
+	else {
+		return false;
+	}
 }
 
 function user_has_paid_subscription() {
@@ -602,10 +605,10 @@ function user_has_paid_subscription() {
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
 		if ($sandbox_enabled) {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
-			$stripe = \Stripe\StripeClient(TESTSTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
 		} else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
-			$stripe = \Stripe\StripeClient(LIVESTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
 		
 		$response = $stripe->subscriptions->retrieve(
