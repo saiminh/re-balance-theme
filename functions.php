@@ -603,18 +603,17 @@ function user_has_paid_subscription() {
 		// Set your secret key. Remember to switch to your live secret key in production!
 		$settings = SwpmSettings::get_instance();
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
-		// if ($sandbox_enabled) {
-		// 	\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
-		// 	$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
-		// } else {
-		// 	\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
-		// 	$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
-		// }
+		if ($sandbox_enabled) {
+			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
+		} else {
+			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
+			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
+		}
 		
 		$response = $stripe->subscriptions->retrieve(
 			$subscri_id,
-			[],
-			['api_key' => LIVESTRIPEAPIKEY]
+			[]
 		);
 		$status = $response->status;
 		if ( $status !== 'canceled' ) {
