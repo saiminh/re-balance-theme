@@ -603,7 +603,7 @@ function user_has_paid_subscription() {
 		// Set your secret key. Remember to switch to your live secret key in production!
 		$settings = SwpmSettings::get_instance();
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
-		if ($sandbox_enabled) {
+		if ($sandbox_enabled == '') {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
 			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
 		} else {
@@ -631,7 +631,7 @@ function get_manage_subscription_button() {
 		// Set your secret key. Remember to switch to your live secret key in production!
 		$settings = SwpmSettings::get_instance();
 		$sandbox_enabled = $settings->get_value('enable-sandbox-testing');
-		if ($sandbox_enabled) {
+		if ($sandbox_enabled == '') {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
 		} else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
