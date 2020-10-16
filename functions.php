@@ -366,7 +366,7 @@ function atom_search_where($where){
 
 function show_custax_breadcrumb($name,$type){
     $list = "";
-    $home = get_bloginfo("home");
+    $home = get_bloginfo("url");
     if ($type && $name){
         $ans = get_term_by('name', $name, $type);
         $parentID=$ans->parent;
@@ -625,7 +625,7 @@ function user_has_paid_subscription() {
 			}
 		}
 		catch (Exception $e) {
-			echo 'Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a>.';
+			echo '<p>Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a></p>.';
 		} 
 		
 	}
