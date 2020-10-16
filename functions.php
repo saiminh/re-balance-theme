@@ -633,9 +633,12 @@ function user_has_paid_subscription() {
 function get_manage_subscription_button() {
 	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
 	if ($subscr_id){
-		$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
+		if ( SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id) ){
+			$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
+		}
+		else $transaction = null;
 	} else {
-		$transaction = false;
+		$transaction = null;
 	}
 
 	if ($transaction and user_has_paid_subscription() ) {
