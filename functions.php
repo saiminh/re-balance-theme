@@ -606,7 +606,8 @@ function user_has_paid_subscription() {
 		if ($sandbox_enabled) {
 			\Stripe\Stripe::setApiKey(TESTSTRIPEAPIKEY);
 			$stripe = new \Stripe\StripeClient(TESTSTRIPEAPIKEY);
-		} else {
+		} 
+		else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
 			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
@@ -631,7 +632,11 @@ function user_has_paid_subscription() {
 
 function get_manage_subscription_button() {
 	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
-	$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
+	if ($subscr_id){
+		$transaction = SwpmTransactions::get_transaction_row_by_subscr_id($subscr_id)->txn_id;                        
+	} else {
+		$transaction = false;
+	}
 
 	if ($transaction and user_has_paid_subscription() ) {
 		require_once('stripe-php/init.php');
