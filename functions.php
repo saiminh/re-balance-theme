@@ -610,14 +610,21 @@ function user_has_paid_subscription() {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
 			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
-		
 		$response = $stripe->subscriptions->retrieve(
 			$subscri_id,
 			[]
 		);
-		$status = $response->status;
-		if ( $status !== 'canceled' ) {
-			return true;
+		if ( $response ) {
+			$status = $response->status;
+			if ( $status !== 'canceled' ) {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {
+			return false;
 		}
 	}
 }
