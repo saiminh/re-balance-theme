@@ -52,9 +52,9 @@ get_header();
 									<div class="wp-block-button">
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
 									</div>
-									<div class="trial-disclaimer" style="font-size: 12px">
+									<!-- <div class="trial-disclaimer" style="font-size: 12px">
 										The free trial will run until 30 September 2020
-									</div>
+									</div> -->
 								</div>
 								<p>
 									Already a member? <a href="/membership-login">Sign in</a>
