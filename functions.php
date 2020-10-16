@@ -611,11 +611,11 @@ function user_has_paid_subscription() {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
 			$stripe = new \Stripe\StripeClient(LIVESTRIPEAPIKEY);
 		}
-		$response = $stripe->subscriptions->retrieve(
-			$subscri_id,
-			[]
-		);
-		if ( $response ) {
+		try {
+			$response = $stripe->subscriptions->retrieve(
+				$subscri_id,
+				[]
+			);
 			$status = $response->status;
 			if ( $status !== 'canceled' ) {
 				return true;
@@ -624,9 +624,10 @@ function user_has_paid_subscription() {
 				return false;
 			}
 		}
-		else {
-			return false;
-		}
+		catch (Exception $e) {
+			echo 'Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a>.';
+		} 
+		
 	}
 }
 
