@@ -281,7 +281,15 @@
 		});
 
 		// Membership registration links don't swup
-		$('a[href$="membership-registration/"], a[href$="membership-registration"], a[href$="pricing"], a[href$="pricing/"]').attr("data-no-swup", "");
+		let noswuplinks = [
+			'a[href$="membership-registration/"]', 
+			'a[href$="membership-registration"]', 
+			'a[href$="pricing"]',
+			'a[href$="pricing/"]', 
+			'a[href*="/lessons/"]'
+		];
+
+		$( noswuplinks.toString() ).attr("data-no-swup", "");
 		
 		gsap.set("body", {clearProps: "all"});
 
