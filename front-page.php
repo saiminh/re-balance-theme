@@ -47,7 +47,8 @@ get_header();
 						<div class="wp-block-group">
 							<div class="wp-block-group__inner-container">
 								<h1 class="hero-header">Transform&nbsp;your work&nbsp;day. Find&nbsp;your&nbsp;balance.</h1>
-								<p class="hero-subheader">Short exercises that help you take better&nbsp;breaks&nbsp;at&nbsp;your&nbsp;desk.</p>
+								<p class="hero-subheader">Short & simple exercises empowering you to take better breaks at&nbsp;work.
+</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
