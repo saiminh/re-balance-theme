@@ -587,11 +587,10 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 }
 
 function get_the_subscriberid() {
-	$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
-	if ($subscr_id) {
+	if ( SwpmAuth::get_instance()->userData ) {
+		$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
 		return $subscr_id;
-	}
-	else {
+	} else {
 		return false;
 	}
 }
