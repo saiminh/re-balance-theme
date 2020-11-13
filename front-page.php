@@ -43,19 +43,15 @@ get_header();
 			<main id="main" class="site-main">
 				<div class="wp-block-group hero home-hero">
 					<div class="wp-block-group__inner-container">
-						<?php get_template_part('inc/inline', 'ui-home-breathe.svg'); ?>
+						<?php get_template_part('inc/inline', 'home-tryitnow.svg'); ?>						
 						<div class="wp-block-group">
 							<div class="wp-block-group__inner-container">
 								<h1 class="hero-header">Transform&nbsp;your work&nbsp;day. Find&nbsp;your&nbsp;balance.</h1>
-								<p class="hero-subheader">Short & simple exercises empowering you to take better breaks at&nbsp;work.
-</p>
+								<p class="hero-subheader">Short & simple exercises empowering you to take better breaks at&nbsp;work.</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
-									</div>
-									<!-- <div class="trial-disclaimer" style="font-size: 12px">
-										The free trial will run until 30 September 2020
-									</div> -->
+									</div>									
 								</div>
 								<p>
 									Already a member? <a href="/membership-login">Sign in</a>
@@ -138,15 +134,29 @@ get_header();
 						</ul> -->
 					</div>
 				</div>
-
-				<?php
-					// while ( have_posts() ) :
-					// 	the_post();
-					// 	the_content();
-					// endwhile;
-					?>
+			
 			</main><!-- #main -->
 		</div><!-- #primary -->
+		<div class="notification-modal-darken notification-hidden">
+				<div class="notification notification-rebalance-mini notification-hidden">					
+					<div class="rebalance-mini">
+						<div class="rebalance-mini-illustration">
+							<?php get_template_part( 'inc/inline', 'ui-home-breathe.svg' ); ?>
+						</div>
+						<div class="rebalance-mini-instructions">
+							<h3 style="margin-top: 0">Simply take 5 deep breaths:</h3>
+							<ul>
+								<li>Begin by breathing through your nose</li>
+								<li>Inhale and slowly count up to 5</li>
+								<li>Exhale slowly, counting backwards from 5&nbsp;to&nbsp;1</li>
+								<li>Take four more breaths. Continue to count and feel your breathing.</li>								
+							</ul>							
+							<a class="button" id="confetter" href="#">Celebrate yourself!</a>
+						</div>
+					</div>
+					<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "></polygon></svg></div>
+				</div>
+			</div>
 		<?php endif; ?>
 <?php
 //get_sidebar();

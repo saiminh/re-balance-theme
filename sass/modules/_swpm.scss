@@ -3,8 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-}
+  bottom: 0; }
 .swpm-partial-protection::before {
   content: '';
   background-image: url(https://i.giphy.com/media/iF3M9gPPCdulq/200.webp);
@@ -14,8 +13,7 @@
   right: 0;
   bottom: 0;
   z-index: 0;
-  border-radius: 5px;
-}
+  border-radius: 5px; }
 .swpm-partial-protection-text {
   @include font-size(1);
   padding: 1.5rem;
@@ -27,56 +25,18 @@
   top: calc(50% - 1.5rem);
   left: calc(50% - 1.5rem);
   transform: translate(-50%, -50%);
-  z-index: 1;
-}
+  z-index: 1; }
 .swpm-profile-update-success {
-  color: $color__brand-primary;
-}
-.swpm-partial-protection-header,
-.notification-header {
-  margin: -1.5rem -1.5rem 1.5rem -1.5rem;
-  border-bottom: 1px solid #E8D4C8;
-  padding: 1rem 4rem 1rem 1.5rem;
-}
-
-.exercise-single-article .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer).swpm-post-not-logged-in-msg,
-.swpm-post-not-logged-in-msg,
-.swpm-expired-msg,
-.notification {
-    @include notification;
-}
-
-.notification {
-    position: fixed;
-    z-index: 3;
-    left: 50%;
-    top: 80px;
-    transform: translate(-50%, 0%);
-    box-shadow: 0 0 6px rgba(0,0,0,0.16);
-    border: 2px solid white;
-    @media (min-width: 768px) {
-      top: calc(50% - 3rem);
-      transform: translate(-50%, -50%);
-    }
-}
-
-// Pricing page, hide expired notification here
-.page-template-page-pricing .notification-expired {
-  display: none;
-}
-
+  color: $color__brand-primary; }
 //Profile page
 .page-template-page-profile {
   @include bg-gradient-01;
   .statusbar {
-    display: none;
-  }
+    display: none; }
   .profile-content {
     @media (min-width: 768px) {
       display: flex;
-      align-items: flex-start;
-    }
-  }
+      align-items: flex-start; } }
  .membership-status {
   padding: 1.5rem;
   background-color: lighten($color__brand-primary, 20%);
@@ -89,33 +49,23 @@
       margin: 1rem 1.5rem 1rem 0;
     }
     & :last-child {
-      margin-bottom: 0;
-    }
+      margin-bottom: 0;}
     & :first-child {
-      margin-top: 0;
-    }
+      margin-top: 0;}
     & dl {
-      overflow: auto;      
-    }
+      overflow: auto;}
     & dd {
-      margin: 0 0 .5rem 0;      
-    }
-  }
+      margin: 0 0 .5rem 0;}}
   .form-container {
-    max-width: none;
-  }
+    max-width: none;}
   .payment-schedule-info {
     display: block;
     font-size: 0.8em;
     font-style: italic;
-    margin: 0 0 1em 0;
-  }
+    margin: 0 0 1em 0;}
   .payment-schedule-info + .button {
     line-height: 1.5;
-    display: inline-block;
-  }
-}
-
+    display: inline-block;}}
 .close-x {
   cursor: pointer;
 }

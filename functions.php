@@ -122,13 +122,11 @@ add_action( 'widgets_init', 'rebalance_widgets_init' );
 function rebalance_scripts() {
 	wp_enqueue_style( 'new-hero', 'https://use.typekit.net/vzx1etu.css', false );
 	
-	//wp_enqueue_style( 'rebalance-style', get_stylesheet_uri() );
-
 	wp_enqueue_style('rebalance-style', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false);	
 
-	wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/gsap.min.js', array(), true );
+	wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), true );
 	
-	wp_enqueue_script( 'gsapScrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.0/ScrollTrigger.min.js', array(), true );
+	wp_enqueue_script( 'gsapScrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), true );
 	
 	wp_enqueue_script( 'gsapDrawSVGPlugin', get_template_directory_uri() . '/js/DrawSVGPlugin.js', array(), true );
 

@@ -101,6 +101,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "modules/swpm";
 
 /*--------------------------------------------------------------
+# Notifications
+--------------------------------------------------------------*/
+@import "site/primary/notifications";
+
+/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 @import "modules/infinite-scroll";

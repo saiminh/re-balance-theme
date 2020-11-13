@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 950.1" style="enable-background:new 0 0 640 950.1">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 950.1" style="enable-background:new 0 0 640 950.1; overflow: visible;">
   <path style="fill:#ff9b7a" d="M320 525.3L0 632l21 196.2s19 121.9 299 121.9 299-121.9 299-121.9L640 632 320 525.3z" id="breatheman-chest"/>
   <g id="breatheman-neck">
     <circle style="fill:#fff" cx="318" cy="595.4" r="70.1"/>

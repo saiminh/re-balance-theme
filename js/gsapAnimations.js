@@ -2,23 +2,17 @@
 // Benefits page animations
 // ----------------------------------------------------------
 
-function animateBenefits(){
+function gsAnimations(){
   ScrollTrigger.getAll().forEach(element => element.kill());
+  
   // Create timelines for benefits page to use in init
   if (document.querySelector('#illuOne')) {						
-    
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(DrawSVGPlugin);
-    
-   // gsap.defaults({ overwrite: "auto" });
-
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset"//,
-      //markers: {startColor: "green", endColor: "red", fontSize: "15px", indent: 10}
     });
-
     let triggerOne = { trigger: "#section_one", start: "0% center", end: "100% center" };
-    
     let section_One_raindrops_tl = gsap.timeline({ paused: true,  scrollTrigger: triggerOne })
       .fromTo("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", 
         { yPercent: 0, scaleY: 1 }, 
@@ -26,7 +20,6 @@ function animateBenefits(){
       .fromTo("#illu01-raindrop03, #illu01-raindrop05", 
         { yPercent: 0, scaleY: 1 },
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, 1.85);
-
     let section_OneIn = gsap.timeline({ paused: true, scrollTrigger: triggerOne })
       .set("#illu-mindfulbreak, #illu-workdays, #illu-moneyloss, #cloudrain, #clock, #illu01-lightning-left, #illu01-lightning-right", { autoAlpha: 0 })
       .set("#woman-on-desk", { autoAlpha: 1, scale: 1 })
@@ -46,15 +39,12 @@ function animateBenefits(){
         { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .8)
       .fromTo("#illu01-head", { rotationZ: 0, y: 0, yPercent: 0 }, {  rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
       .fromTo("#illu01-smile", { scaleY: 1, transformOrigin: "50% 50%" }, { scaleY: -1, duration: .5 }, .9);
-
     let triggerTwo = { trigger: "#section_two", start: "0% center", end: "100% center" };
-
     let section_Two_sunriseloop = gsap.timeline({ paused: true, scrollTrigger: triggerTwo })
       .fromTo("#illu01-sun", { autoAlpha: 0 }, { duration: .3, autoAlpha: 1 }, 0)
       .fromTo("#illu01-sun", { xPercent: 0, yPercent: 0 }, { duration: 1, xPercent: -60, yPercent: -60 }, 0)
       .fromTo("#illu01-sun--rays", { scale: 1 }, { duration: .5, transformOrigin: "50% 50%", scale: .9, repeat: -1, yoyo: true }, 0)
       .fromTo("#illu01-sun--rays", { rotationZ: 0 }, { duration: 1, rotationZ: 45, ease: "none", repeat: -1 }, 0);
-
     let section_TwoIn = gsap.timeline({ paused: true, scrollTrigger: triggerTwo })
       .call( function(){ section_OneIn.pause() } )
       .fromTo("#illu01-head", { rotationZ: 2, y: 0, yPercent: 20 }, { rotationZ: 0, y: 0,  yPercent: 0, duration: .3 }, 0)
@@ -64,14 +54,11 @@ function animateBenefits(){
       .fromTo("#illu01-lightning-left", { y: 0, x: 0, autoAlpha: 1 }, { x: -200, y: 0, autoAlpha: 0, duration: .3 }, 0)
       .fromTo("#illu01-lightning-right", { y: 0, x: 0, autoAlpha: 1 }, { x: 200, y: 0, autoAlpha: 0, duration: .3 }, 0)
       .fromTo("#illu01-smile", { scaleY: -1, transformOrigin: "50% 50%" }, { scaleY: 1, duration: .5 }, 0);
-     
     let trigger_whatsWrong_in_scrub = { trigger: "#section_whatsWrong", start: "0% center", end: "25% center", id: "stress", scrub: true };
     let trigger_whatsWrong_Count = { trigger: "#section_whatsWrong", start: "0% center", end: "90% center"};
-
     let section_stressIn_scrub = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in_scrub })      
       .fromTo("#illuOne", { autoAlpha: 1, yPercent: 0 }, { autoAlpha: 0, yPercent: -110, duration: .75 }, 0)
       .fromTo("#illu-workdays", { y: 0, yPercent: 100, autoAlpha: 0, scale: 1 }, { y: 0, yPercent: 0, autoAlpha: 1, scale: 1, duration: 1 }, 0);
-
     //Function for counting up
     Number.prototype.numberFormat = function(decimals, dec_point, thousands_sep) {
       dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
@@ -341,12 +328,12 @@ function animateBenefits(){
         toggleActions: "restart complete reverse reset"//,
       });
 
-      let breathemanbreathes = gsap.timeline( { paused: false, repeat: -1, yoyo: true } )
-        .to("#breatheman-chest", { transformOrigin: "50% 100%", scale: 1.05, yPercent: -5, duration: 2 }, 0)
-        .to("#breatheman-neck", { transformOrigin: "50% 100%", scaleY: .8, yPercent: -15, duration: 1.9 }, 0.1)   
-        .to("#breatheman-head", { transformOrigin: "50% 100%", yPercent: -3, duration: 1.9 }, 0.3)  
-        .to("#breatheman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, duration: 1.7 }, 0.3)    
-        .to("#breatheman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, duration: 1.8 }, 0.2);    
+      let breathemanbreathes = gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
+        .to("#breatheman-chest", { transformOrigin: "50% 100%", scale: 1.125, yPercent: -5, ease: "power2.inout", duration: 5 }, 0)
+        .to("#breatheman-neck", { transformOrigin: "50% 100%", scaleX: 1.125, yPercent: -13, ease: "power2.inout", duration: 4.9 }, 0.1)   
+        .to("#breatheman-head", { transformOrigin: "50% 100%", yPercent: -9, ease: "power2.inout", duration: 4.9 }, 0.3)  
+        .to("#breatheman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, ease: "power2.inout", duration: 4.7 }, 0.3)    
+        .to("#breatheman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, ease: "power2.inout", duration: 4.8 }, 0.2);    
 
       gsap.fromTo("#home-benefits-block img", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
       

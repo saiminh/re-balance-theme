@@ -45,11 +45,24 @@
             max-height: 200px;
         }
         @media (min-width: 768px) {
-            min-width: 25vw;
+            min-width: 33vw;
+            margin: 0;
             flex-basis: 33.3%;
             max-height: none;
             min-height: calc(100vh - 80px);
         }
+    }
+}
+#illu-tryitnow .tryitnow-speech-bubble {
+    transform: scale(1.5);
+    @media (min-width: 768px) {
+        transform: scale(.9) translate(15%, 0%);
+        transition: transform .15s ease-in-out;
+    }
+}
+#illu-tryitnow:hover .tryitnow-speech-bubble {    
+    @media (min-width: 768px) {
+        transform: scale(1) translate(10%, -5%);
     }
 }
 .hero > .wp-block-group__inner-container {
