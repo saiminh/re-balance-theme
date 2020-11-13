@@ -5,6 +5,7 @@
  * navigation support for dropdown menus.
  */
 
+ //Preload some images
 	var images = new Array();
 	function preload() {
 		for (i = 0; i < preload.arguments.length; i++) {
@@ -174,7 +175,7 @@
 	});
 	
 // Celebratory Confetti
-	const defaultColors = ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"];
+	const defaultColors = ["#c4e3f2", "#FFCEBE", "#9ACFE9", "#ff9b7a", "#ffffff"];
 
 	function createElements(root, elementCount, colors, width, height) {
 		return Array.from({ length: elementCount }).map((_, index) => {
@@ -311,39 +312,29 @@
 		return animate(root, fettis, dragFriction, decay, duration, stagger);
 	}
 // End Celebratory confetti code
-
-
+// Begin INIT - js that needs to load on each new swupped page
 	function init() {
-
+		// Notification
 		if ( $('.notification-hidden').length ) {
-			console.log('ja hiden notificke');
 			$('.show-notification').on('click', function(){
 				$('.notification-hidden').removeClass('notification-hidden');
 			})
-		} else {
-			console.log('kein hidden genotifiziere');
 		}
-
+		// Confetti init
 		if ( document.getElementById('confetter') ) {
-			// Confetti
 			const confetter = document.getElementById('confetter');
 			const root = document.getElementById('confetter');
 			confetter.addEventListener('click', (e) => {
-				// const values = readFormValues();
-				// values.colors = ['#000','#333', '#666'];
+				confetter.innerHTML = "✓ Well Done! Again!";
 				confetti(root, config = {} );
-				e.preventDefault();
+				e.preventDefault();				
 			});
-		}	else {
-			console.log( 'No Confetter on this page');
 		}	
-
 		//close messages
 		$('.close, .button-closes-msg').on('click', function(){
 			$(this).parents('.swpm-partial-protection').hide();
 			$(this).parents('.notification, .notification-modal-darken').addClass('notification-hidden');
 		})
-
 		//Date greeting
 		if (document.querySelector('#lblGreetings')) {
 			var myDate = new Date();
@@ -362,7 +353,6 @@
 			positionMoveMenus();
 		}
 		document.querySelector("html").scrollTop = "0";
-
 		// initiate live search
 		if (typeof jQuery().searchwp_live_search == 'function') {
 			jQuery('input[data-swplive="true"]').searchwp_live_search();			

@@ -60,7 +60,7 @@
 .rebalance-mini {
   font-size: .9rem;
   overflow-y: scroll;
-  max-height: calc(100vh - 20px - 62px);  
+  max-height: 100%;  
   padding: 1rem;
   @media (min-width: 768px) {
     display: flex; 
