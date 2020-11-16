@@ -22,16 +22,22 @@
 					echo $form_widget->widget(array('form' => 1, 'form_type' => 'php'));
 				?>
 			</div>
-			<div class="site-info">		
-				<h3>Rebalance</h3>
-				<a class="site-info-element" href="/contact/">Contact</a>
-				<a class="site-info-element" href="/about/">About</a>
-				<a class="site-info-element" href="/terms-of-use/">Terms&nbsp;&&nbsp;Conditions</a>
-				<a class="site-info-element" href="/privacy-policy/">Privacy Policy</a>
-				<a class="site-info-element" href="/cookie-policy/">Cookie Policy</a>
-				<span class="site-info-element">
-					©&nbsp;<?php echo date("Y"); ?>&nbsp;Re.Balance&nbsp;BV
-				</span>
+			<div class="site-info">	
+				<div>
+					<h3>Rebalance</h3>
+					<a class="site-info-element" href="/contact/">Contact</a>
+					<a class="site-info-element" href="/about/">About</a>
+					<a class="site-info-element" href="/why-rebalance/">Why rebalance?</a>
+				</div>	
+				<div>
+					<h3>Legal</h3>
+					<a class="site-info-element" href="/terms-of-use/">Terms&nbsp;&&nbsp;Conditions</a>
+					<a class="site-info-element" href="/privacy-policy/">Privacy Policy</a>
+					<a class="site-info-element" href="/cookie-policy/">Cookie Policy</a>
+					<span class="site-info-element">
+						©&nbsp;<?php echo date("Y"); ?>&nbsp;Re.Balance&nbsp;BV
+					</span>
+				</div>
 			</div><!-- .site-info -->			
 		</div>		
 	</footer><!-- #colophon -->

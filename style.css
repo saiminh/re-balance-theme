@@ -3141,7 +3141,7 @@ input.mailpoet_text {
 
 .cta-block {
   padding: 1.5rem;
-  background-color: #ffe8e0;
+  background-color: white;
   border-radius: 5px;
   text-align: center; }
   .cta-block h3 {
@@ -3743,11 +3743,20 @@ body.page-template-page-pricing .hero-header {
 .site-footer-container > div {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem; }
+  .site-footer-container > div :first-child {
+    margin-top: 0; }
   .site-footer-container > div h3 {
-    margin: 0 auto .5rem auto; }
+    margin-bottom: .33em; }
 
 .site-info {
   flex-grow: 1; }
+  @media (min-width: 1100px) {
+    .site-info {
+      display: flex; }
+      .site-info > div {
+        flex-basis: 50%; }
+        .site-info > div:first-child {
+          margin-right: 1rem; } }
 
 .site-info-element {
   line-height: 2.5;
