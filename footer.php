@@ -26,7 +26,9 @@
 				<h3>Rebalance</h3>
 				<a class="site-info-element" href="/contact/">Contact</a>
 				<a class="site-info-element" href="/about/">About</a>
-				<a class="site-info-element" href="/privacy-policy/">Terms&nbsp;&&nbsp;Conditions</a>
+				<a class="site-info-element" href="/terms-of-use/">Terms&nbsp;&&nbsp;Conditions</a>
+				<a class="site-info-element" href="/privacy-policy/">Privacy Policy</a>
+				<a class="site-info-element" href="/cookie-policy/">Cookie Policy</a>
 				<span class="site-info-element">
 					©&nbsp;<?php echo date("Y"); ?>&nbsp;Re.Balance&nbsp;BV
 				</span>
