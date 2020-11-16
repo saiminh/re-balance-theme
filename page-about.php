@@ -12,9 +12,10 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       <div class="background-stage">
-        <img class="bg-galaxy" src="<?php echo get_template_directory_uri(  ) ;?>/img/benefits-galaxy-bg.jpg" alt="The background depicts a photograph of a galaxy">
+        <!-- <img class="bg-galaxy" src="<?php echo get_template_directory_uri(  ) ;?>/img/benefits-galaxy-bg.jpg" alt="The background depicts a photograph of a galaxy"> -->
       </div>
       <div class="illustration-stage">      
+        <?php get_template_part( 'inc/inline', 'ui-home-breathe.svg' ); ?>
         <svg id="unbalancedWorld" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 1018.1 795.4" style="enable-background:new 0 0 1018.1 795.4" xml:space="preserve">
           <g id="world">
             <path style="fill:#99cee8" d="M497.7 641.1c-8.2.3-17.2-.8-26.2-.8-5.4 0-10.7-.3-16.1-.7-7-.5-14.1-1.2-21.1-1.8h-1.5c-9.4.1-18.7-.6-28-1.5-2.6-.2-5.2-.3-7.8-.4-6.1-.3-12.1-1-18.1-1.8-2.2-.3-4.4-.3-6.6-.5-14.7-.9-29.1-3.2-43.2-7.4-5.5-1.6-11.3-2.2-16.8-3.6-9.3-2.3-18.4-5.6-27.8-7.7-11.3-2.6-22.7-5.3-33.7-9.2-13.9-4.9-27.5-10.3-40.8-16.5-10.8-5-21.3-10.4-30.7-17.7-6.9-5.3-13.6-10.9-20-16.9-9.4-8.7-16.6-19.2-23.4-30-8.2-13-14.2-27-18.8-41.6-2.9-9.2-4.8-18.6-5.9-28.1-1.2-10.5-.9-21-.6-31.5.8-23.2 6.3-45.4 15.3-66.7 5.8-13.7 12.8-26.9 19.8-40 8.8-16.6 20.3-31.3 31.7-46.1 8.5-11 17.8-21.2 27.9-30.8 8.6-8.2 17.6-16 26.8-23.5 9.5-7.8 18.9-15.7 29.1-22.5 16.4-10.9 33.1-21.3 50.2-31.1 15.5-9 31.5-17.1 47.1-25.9 16.5-9.4 33.9-16.8 51.9-22.7 17.1-5.6 34.6-10 52.4-12.8 9.2-1.5 18.4-3.2 27.6-4.8 9-1.5 18.1-2 27.2-1.6 3.2.1 6.4.7 9.6.6 2.3 0 4.5-.3 6.8-.3 13.3-.2 26.4 1.4 39.2 4.7 19.1 5 38.1 10.2 57 16 18.1 5.6 35.7 12.5 52.7 20.8 19.5 9.5 38.2 20.4 56.1 32.6 8.8 6 17.4 12.2 26.2 18.2 6.4 4.3 13.4 7.7 19.4 12.7 4.9 4.1 9.7 8.3 14.8 12.2 6.6 5 13.2 9.8 19.6 15 5.9 4.9 11.4 10.1 16.8 15.4 12.9 12.5 24.7 25.9 35.3 40.4 5.7 7.8 11.7 15.5 16.6 23.8 4.6 7.7 7.5 16.1 10.3 24.6 3.4 10.3 5.4 20.9 7.4 31.5 1 5.4 1.4 10.9 2.1 16.3 1.1 8.5 1.6 17 1.7 25.5 0 2.4-.4 4.9-.6 7.3-.3 5.6-.8 11.1-1.4 16.6-.6 6.3-2.8 12.3-4.1 18.5-1.7 7.6-4.2 15-7.1 22.2-1.2 3.1-3 5.9-4.8 8.6-3.4 5.1-6.9 10.1-9.7 15.6-2.5 4.9-6.6 8.7-9.5 13.2-4.4 6.9-10.2 12.5-16 18.2-2.1 2.1-4.2 4.3-6.1 6.5-5.7 6.5-12.8 11.5-19.3 17.1-14.2 12.2-30.1 22-46.3 31-14.8 8.2-30.2 15.5-46.3 21.1-19.8 6.9-39.9 12.5-60.2 17.7-9 2.3-18.2 3.6-27.2 5.6-8.2 1.8-16.4 3.6-24.6 5.1-7.5 1.4-15 2.7-22.6 3.7-7.9 1-15.8 2-23.6 3-4.5.5-9 .8-13.6 1.2-5.1.5-10.2 1-15.3 1.4-4.3.4-8.7.7-13.1.8-4.5.1-9 .3-13.5.5-8.5.7-17.1 1.4-26.6 1.3z" id="head"/>
@@ -115,7 +116,7 @@ get_header();
             <path style="fill:none;stroke:#000;stroke-width:7;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10" d="M306.3 74.7L320.7 87l15.2-13.2"/>
           </g>
         </svg>
-        <svg id="ourStory" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500">
+        <!-- <svg id="ourStory" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500">
           <g id="er-body">
             <g id="jtqRtG_1_">
               <path style="fill:#020303" d="M160.5 240.3c2.5-.7 4.8-1.9 7.3-2.6.8-.2 1.6-.5 2.3-.6 5.2-.5 10.5-1 15.8-.4 7.1.9 13.9 2.7 20.5 5.5 6.3 2.7 12.7 5.2 19.1 7.8.5.2 1.1.4 1.7.6.3.2.6.3.8.5.5 1 1.2 1.6 2.3 1.8.4.1.4.4.5.7.5 1.6.9 3.2 1.1 4.8.5 4.1 2.1 7.9 4.1 11.5 3.4 6.2 6.7 12.4 9.9 18.6 2.6 5.1 5.9 9.8 9.3 14.3 3.2 4.1 6.4 8.3 8.9 12.9.7 1.4 1.6 2.7 2.4 4 2.5 4 5.3 7.8 8.7 11.2 1 1 2.2 1.9 3.2 3 6.4 6.5 12.5 13.2 18.3 20.3 3.9 4.9 8.1 9.5 12.9 13.6.6.5 1 1.1 1.5 1.7 3.8 4.7 7.1 9.7 10.1 15 4.1 7.3 5.9 15.2 6.5 23.4.3 5.3-1.8 9.8-4.5 14-2.8 4.5-5.2 9-4.8 14.6.1 1.5 0 3-.3 4.5-.2 1-.2 2.1-.1 3.2.9 7.2.6 14.4.3 21.6 0 .4-.1.7-.2 1.1-1.1 5.1-3.5 9.4-7.7 12.7-1.5 1.2-3.1 2.3-4.8 3.3-4.5 2.7-9.5 4.3-14.6 5.3-5.8 1.2-11.8 1.9-17.7 2.9-6.9 1.1-13.7 1.1-20.6.3-3.6-.4-7.3-.7-10.9-1.3-1-.2-2-.3-3.1-.2-6.4.4-12.6-.9-18.8-2.6-3-.8-5.8-2.3-8.6-3.6-3.8-1.7-7.7-3.3-11.2-5.8-1-.7-1.9-1.4-2.8-2.2-1.1-1.1-1.6-2.4-1.2-4 .2-.6.1-1.1 0-1.7-1-4.3-2-8.7-3-13.1-.6-2.7-1.1-5.5-2.2-8.1-1.9-4.5-3.8-8.9-5.7-13.4-6-14-12.8-27.7-18.7-41.8-4.3-10.3-9.1-20.3-12.7-30.9-3.5-10.3-7.1-20.5-9-31.3-1.4-7.9-2.4-15.8-2.4-23.9 0-5.8.1-11.5.6-17.2.3-3.6.6-7.3 1.1-10.9 1.4-10.4 4.3-20.4 7.3-30.4.7-2.1 1.3-4.3 2.5-6.2 2.4-.8 4.4-1.9 6.6-2.5zm82.3 152.8c-.1 0-.1.1-.2.1l-.1.1c0 .1.1.1.2 0 0-.1.1-.1.1-.2zm2.6-1.8c-.2 0-.4.2-.3.4.1.2.4.1.5 0 .1-.1.2-.2.3-.4l.1-.1c0-.1-.1-.1-.2 0s-.2.1-.4.1zm-.9.9c-.6-.2-.8.1-1.3.6.8 0 1.1-.1 1.3-.6z"/>
@@ -149,7 +150,7 @@ get_header();
               <path style="fill:#fff" d="M298.6 300.1c-1.1 3.3-2.1 6.7-3.3 9.9-2 5.3-3.3 10.9-5.4 16.2-2.3 5.9-5 11.7-7.9 17.3-.3.5-.5.9-.7 1.4-2.1 6-5.5 11.3-8.3 16.9-.1.1-.1.3-.2.5.4.7 1.1 1.1 1.8 1.5 4.3 2.3 8.9 4.1 13.5 5.6 6.6 2.1 13.3 4.3 19.9 6.7 9.2 3.4 18.6 6.5 27.7 10 7.6 2.9 15.3 5.5 23.1 7.7 2.8.8 5.6 1.8 8.4 2.8 1.9.7 3.7 1.2 5.8 1.3 2 .1 4 .6 6 1 4.5.9 8.9 1.8 13.6 1.6 1 0 2 .2 3 .2 3.7 0 7.2-.8 10.8-1.5 4.2-.8 7.8-2.7 11.2-5 3.6-2.5 6.3-5.8 7.7-10.1.8-2.5 1.8-5 2.2-7.6.1-.3.1-.6.1-1-.1-4.4-.6-8.8-2.6-12.8-.6-1.1-1.2-2.1-2.1-3-4.1-4.3-8.3-8.5-13-12.1-2.4-1.8-5.1-3.2-7.8-4.5-3.6-1.6-7.2-3.3-10.9-4.8-4.4-1.8-8.9-3.3-13.4-4.8-1-.3-2-.7-3-1.2-5.2-2.7-10.7-4.8-16-7.2-4.2-1.8-8.5-3.6-12.7-5.5-3.8-1.7-7.7-3-11.5-4.6-3.9-1.6-7.8-3.4-11.7-5.1-5-2.2-9.6-5-14.6-7.3-1.8-.8-3.5-1.5-5.3-2.3-1.4-.3-3 0-4.4-.2z"/>
             </g>
           </g>
-        </svg>
+        </svg> -->
         <svg id="illu-logo" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 500" xml:space="preserve">
           <g id="word" fill="#231f20">
             <path id="letter-r" d="M5.7 198.9H13l1.1 11.7h.1c5-9.6 14.5-12.5 21-12.5 1.7 0 3.2.1 4.6.3v8.9c-1.5-.3-3.1-.4-4.7-.4-10 0-20.2 6.6-20.2 21V271H5.7v-72.1z"/>
@@ -167,63 +168,68 @@ get_header();
       </div>
 
       <div class="content-scroll">
-            <?php // while ( have_posts() ) : the_post();the_content(); endwhile; ?>         
+        <div class="wp-block-group section" id="section_improve_your_workday">
+          <div class="wp-block-group__inner-container">
+            <h1>
+              Improve your workday and build a sustainable wellness habit
+            </h1>
+            <p>
+              We’ll help you transform your workday and build a wellness habit your can easily incorporate into your existing routine. Rebalance combines the Tiny Habits® method with our short, simple movement and breathing exercises so you can learn how to create a habit of taking better breaks at your desk.
+            </p>
+          </div>
+        </div>
         <div class="wp-block-group section" id="section_unbalancedWorld">
           <div class="wp-block-group__inner-container">
             <!-- <h2 class="eyebrow">The Benefits</h2> -->
-            <h1>An Unbalanced World</h1>
-
-            <p><em>Many of us move through the world with packed calendars, racing from home to work, in and out of meetings, with ever-increasing responsibilities, it’s hard to find the time to just slow down, take a breath and look after ourselves.</em></p> 
-            
-            <p>As the pressures of modern life have increased, so too has the incidence of work related stress and burnout. Physically, our bodies were designed to move, and yet we find ourselves sitting on average for a total of 1200 hours per year!</p>
-            
-            <p>This can contribute to a range of negative health outcomes, including increased risk of high blood pressure, neck, shoulder and lower back pain, and reduced concentration. We feel it’s time to bring a little balance back into the workplace!</p>
+            <h2>
+              An Unbalanced World
+            </h2>
+            <p>
+              Many of us live with packed calendars, racing from home to work, in and out of meetings, with ever-increasing responsibilities, it’s hard to find the time just to slow down, take a breath and look after ourselves. As the pressures of modern life have increased, it’s not surprising that the incidence of work related physical and mental health conditions has too.
+            </p>
           </div>
         </div>
-
         <div class="wp-block-group section" id="section_ourMission">
             <div class="wp-block-group__inner-container">
-
-            <h2>Mission</h2>
-
-            <p><em>Rebalance is out to create change, aiming to help build happier, healthier lives for busy professionals. We have a mission to integrate wellness into the workplace through our accessible, on-demand platform.</em></p>
-              
-            <p>We provide a tool to help you rebalance during your day, with short videos for mindful movement which synchronise movement with your breath, and breathwork exercises which are specific breathing techniques designed to calm, focus, de-stress or uplift our mind. All without any acrobatics, stretchy pants or jargon! We know you have a busy schedule and limited space, so our exercises are time conscious and most are discreet, targeting areas of the body that suffer as a result of sitting.</p>
-
-          </div>
-        </div>
-
-        <div class="wp-block-group section" id="section_ourStory">
-          <div class="wp-block-group__inner-container">
-
-            <h2>Our Story</h2>
-            
-            <p><em>Rebalance was founded by Emma Rusiti. Emma studied psychology and is driven by her desire to help people. Over the last 10 years yoga has become her passion.</em></p>
-            
-            <p>Having experienced the transformational impact yoga and breathwork techniques had on her mental and emotional wellbeing, Emma went on to dedicate extensive time studying these practices across the world. However in 2015, she experienced the loss of a family member to suicide. This highlighted to her the importance and necessity of taking time to invest in our mental health regularly, and planted the seed for Rebalance.</p> 
-
+            <h2>
+              Mission
+            </h2>
+            <p>
+              We feel it’s time to bring balance back into your work life! We aim to build happier, healthier lives for busy professionals by empowering them to integrate wellness into their day. We know you have a busy schedule and limited space, so our movement and breathing exercises are time conscious, discreet, and help you form a lasting habit of wellness. All without any acrobatics, stretchy pants or jargon!
+            </p>
           </div>
         </div>
 
         <div class="wp-block-group section" id="section_rebalance">
           <div class="wp-block-group__inner-container">
-
-            <h2>Rebalance Your Work Day</h2>
-
-            <p><em>Rebalance was developed as an online tool that would enable the benefits of yoga, mindful movement and breathwork practices to be experienced by those who need it most: busy, working professionals.</em></p>
-            <p>It aims to help users connect to themselves by offering approachable movement and breathing exercises that can be incorporated into the workday, allowing individuals to press pause in their otherwise busy day.</p>
-            <p>Using just a few minutes of your time, we aim to give you a tool to help you look after yourself, unwind some tension, improve your mood, and increase your productivity and focus. By doing so, we aim to help organisations support their employees in taking a mindful break during the day to improve their mental, emotional and physical wellbeing.</p>
-
+            <h2>
+              Transform Your Work Day
+            </h2>
+            <p>
+              With Rebalance, you will learn how to easily insert tiny pockets of wellness into your day by building a sustainable habit, and without piling more obligations onto your plate. We combine a simple and effective habit formation technique developed behaviour design researcher BJ Fogg at Stanford University, with mindful movement and breathwork exercises.
+            </p>
+            <p>
+              Doing so enables our members to build their own habit of wellness, empowering them to press pause in their otherwise busy day, while teaching them methods to unwind physical tension, improve mood, and increase productivity and focus. This allows the benefits of yoga and mindfulness practices to be easily experienced by those who need it most: busy, working professionals. 
+            </p>
+            <p>
+              Are you looking to improve your employee’s work-life balance and transform your company’s culture? <a href="<?php echo esc_url( home_url( '/business-inquiry/' ) ); ?>">Enquire for a business now</a>              
+            </p>
             <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
-              <h3>Rebalance is here to help!</h3>
+              <h3>
+                Rebalance is here to help!
+              </h3>
               <div class="wp-block-buttons">
                 <div class="wp-block-button">
                   <a href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>" class="wp-block-button__link">Start Your Free Trial</a>
                 </div>
               </div>
-              <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
+              <p class="already-member">
+                Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
+              </p>
             </div>
+            <?php else : ?>
+              <a href="<?php echo esc_url( home_url( '/surprise/' ) ); ?>" class="wp-block-button__link">Try a random exercise</a>
             <?php endif; ?>
             
           </div>

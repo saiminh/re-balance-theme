@@ -5,8 +5,10 @@
 function gsAnimations(){
   ScrollTrigger.getAll().forEach(element => element.kill());
 
-  // Create timelines for benefits page to use in init
   if (document.querySelector('#illu-woman-rain-shine')) {						
+    // -------------------------
+    // Animations for Home Page
+    // -------------------------
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(DrawSVGPlugin);
     ScrollTrigger.defaults({
@@ -176,8 +178,14 @@ function gsAnimations(){
         { scaleY: -1, transformOrigin: "50% 50%" }, 
         { scaleY: 1, duration: .5 }, 1);
 
-    let triggerrebalanceYourselfIn = { trigger: "#section_rebalanceYourself", start: "0% center", end: "100% center" };
-    let rebalanceYourselfIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourselfIn })     
+    let triggerrebalanceYourselfIn = { 
+      trigger: "#section_rebalanceYourself", 
+      start: "0% center", 
+      end: "100% center" };
+    
+    let rebalanceYourselfIn = gsap.timeline({ 
+      paused: true, 
+      scrollTrigger: triggerrebalanceYourselfIn })     
     .fromTo("#illu-woman-rain-shine", 
       { yPercent: 0, autoAlpha: 1 }, 
       { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
@@ -191,24 +199,37 @@ function gsAnimations(){
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);    
   } 
+
   else if (document.querySelector('#world')) { 
-    
+// -------------------------
+// Animations for About Page
+// -------------------------
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(DrawSVGPlugin);
-    
-    //gsap.defaults({ overwrite: "true" });
-
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset",
     });
     
-    gsap.fromTo(".bg-galaxy", { yPercent: -10 }, { yPercent: -20, ease: "none", scrollTrigger: {trigger: "#section_ourMission", start: "0% 70px", end: "100% top", scrub: true} })
+    gsap.fromTo("#breatheman", 
+    { yPercent: -10, autoAlpha: 0, scale: .75 }, 
+    { yPercent: 0, autoAlpha: 1, scale: .8, ease: "none", 
+      scrollTrigger: { trigger: "#section_improve_your_workday"} })
 
-    gsap.fromTo(".bg-galaxy", { yPercent: 0 }, { yPercent: -10, ease: "none", scrollTrigger: {trigger: "#section_unbalancedWorld", start: "0% 70px", end: "100% top", scrub: true} }) 
+    gsap.fromTo("#breatheman", 
+    { yPercent: 0, autoAlpha: 1 }, 
+    { yPercent: -100, autoAlpha: 0, ease: "none", 
+      scrollTrigger: { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ",} })
 
-    let trigger_unbalancedWorldIn = { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause(); console.log('trigger_unbalancedWorldIn'); }};
+    let trigger_unbalancedWorldIn = { 
+      trigger: "#section_unbalancedWorld", 
+      start: "0% center", 
+      end: "100% center ", 
+      onEnter: ()=>{ 
+        tl_unbalancedWorldeyeloop.pause(); 
+        console.log('trigger_unbalancedWorldIn'); 
+      }};
 
-    let section_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
+    let tl_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
       .fromTo("#eyes", { xPercent: -2, yPercent: -40 }, { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -20, yPercent: -20, duration: 1, ease: "power4.out" })
@@ -217,7 +238,12 @@ function gsAnimations(){
       .fromTo("#eyelids", { yPercent: 0 }, { yPercent: -30, duration: 5 }, 0)
       .to("#eyelids", { yPercent: 0, duration: 3 }, 5);
 
-    let section_unbalancedWorld = gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
+    
+    gsap.fromTo("#unbalancedWorld", 
+        { yPercent: 100, autoAlpha: 0 },
+        { yPercent: 0, autoAlpha: 1, duration: 1, scrollTrigger: trigger_unbalancedWorldIn })
+
+    let tl_unbalancedWorld = gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
       .set("#eyes", { xPercent: 0, yPercent: 0 })
       .set("[id^='notification-']", { scale: 0, xPercent: 0, yPercent: 0, autoAlpha: 1, transformOrigin: "50% 50%" })
       .to("#unbalancedWorld", { autoAlpha: 1, duration: 1 })
@@ -230,9 +256,9 @@ function gsAnimations(){
       .to("#eyes", { xPercent: -20, yPercent: -20, duration: 1, ease: "power4.out" }, 3)
       .to("#eyes", { xPercent: -2, yPercent: 60, duration: 1, ease: "power4.out" }, 4)
       .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" }, 5)
-      .to("#eyelids", { yPercent: 0, duration: 1, onComplete: ()=>{ section_unbalancedWorldeyeloop.play(0) } }, 7.2);
+      .to("#eyelids", { yPercent: 0, duration: 1, onComplete: ()=>{ tl_unbalancedWorldeyeloop.play(0) } }, 7.2);
 
-    let section_ourMissioneyeloop = gsap.timeline({ paused: true, repeat: -1 })
+    let tl_ourMissioneyeloop = gsap.timeline({ paused: true, repeat: -1 })
       .fromTo("#bw-eyelids-lower", { yPercent: 0 }, { yPercent: -75, duration: .05 }, 2)
       .fromTo("#bw-eyelids-upper", { yPercent: 0 }, { yPercent: 75, duration: .05 }, 2)
       .to("#bw-eyelids-lower, #bw-eyelids-upper", { yPercent: 0, duration: .3 }, 2.05)
@@ -242,15 +268,15 @@ function gsAnimations(){
       
       
 
-    let trigger_ourMission_In = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ section_unbalancedWorldeyeloop.pause();  console.log('trigger_ourMission_In'); } }
+    let trigger_ourMission_In = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ tl_unbalancedWorldeyeloop.pause();  console.log('trigger_ourMission_In'); } }
 
-    let section_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMission_In })
+    let tl_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMission_In })
       .to("#notification-todo", { xPercent: 100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-traffic", { xPercent: -100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-alarm", { xPercent: -100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-meeting", { xPercent: 100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#world", { transformOrigin: "50% 50%", yPercent: -50, scale: .8, duration: .5 }, 0)
-      .to("#eyes", { xPercent: -10, yPercent: 80, duration: 1, onComplete: ()=>{section_ourMissioneyeloop.play(0)} }, .5)
+      .to("#eyes", { xPercent: -10, yPercent: 80, duration: 1, onComplete: ()=>{tl_ourMissioneyeloop.play(0)} }, .5)
       .to("#eyelids", { yPercent: 0, duration: 1 }, .5)
       .fromTo("#bw-eyes", {  yPercent: 0 }, { yPercent: -50, duration: 1 }, 1.5)
       .fromTo("#bw-arrow path", { stroke: "#000000" }, {  stroke: "#FFFFFF", duration: 1 }, 0)
@@ -260,46 +286,12 @@ function gsAnimations(){
         drawSVG: "50% 50%" },{
         drawSVG: "100%", ease: "expo.inOut", duration: 1}, .5)
 
-    let trigger_ourStory_In = { trigger: "#section_ourStory", start: "0% center", end: "100% center", onEnter: ()=>{ section_ourMissioneyeloop.pause() } }
-
-    let section_ourStory = gsap.timeline({ paused: true, scrollTrigger: trigger_ourStory_In })      
-      .to("#unbalancedWorld, #ourMission", { yPercent: -200, autoAlpha: 0, duration: 1.1 }, 0)
-      .fromTo("#ourStory", { yPercent: 100, autoAlpha: 0 }, { y: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 0)
-      .fromTo("#er-wholearm", { transformOrigin: "11% 63%", xPercent: 0, rotationZ: 45 }, { transformOrigin: "11% 63%", rotationZ: 0, xPercent: 9, duration: .5, ease: "back.out(1.7)" }, 0.2)
-      .fromTo("#er-underarm", { transformOrigin: "10% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
-      .fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 45 }, { rotationZ: 0, duration: .5, ease: "back.out(1.7)" }, 0.2)
-      .addLabel("bulb", .3)
-      //.fromTo("#er-hand", { transformOrigin: "80% 90%", rotationZ: 0 }, { rotationZ: 58, duration: .4, ease: "back.out(1.7)" }, "bulb+=.3")
-      .fromTo("#er-bulb", { transformOrigin: "50% 90%", yPercent: 20, scaleY: 0 }, { yPercent: 0, scaleY: 1, ease: "back.out(1.7)", duration: .3 }, "bulb")
-      .set("[id^='ray-']", {y: -15}, "bulb+=.3" )
-      .fromTo("#ray-01", 
-        { transformOrigin: "50% 50%", yPercent: 0 }, 
-        { yPercent: -1200, duration:.3, ease: "power3.in" }, "bulb+=.3" )
-      .fromTo("#ray-02", 
-        { transformOrigin: "50% 50%", rotationZ: 45, yPercent: 0, xPercent: 0 }, 
-        { yPercent: -800, xPercent: 800, duration:.3, ease: "power3.in" }, "bulb+=.3" )
-      .fromTo("#ray-03", 
-        { transformOrigin: "50% 50%", rotationZ: 90, yPercent: 0, xPercent: 0 }, 
-        { yPercent: 0, xPercent: 1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
-      .fromTo("#ray-04", 
-        { transformOrigin: "50% 50%", rotationZ: -45, yPercent: 0, xPercent: 0 }, 
-        { yPercent: -800, xPercent: -800, duration:.3, ease: "power3.in" }, "bulb+=.3" )
-      .fromTo("#ray-05", 
-        { transformOrigin: "50% 50%", rotationZ: -90, yPercent: 0, xPercent: 0 }, 
-        { yPercent: 0, xPercent: -1000, duration:.3, ease: "power3.in" }, "bulb+=.3" )
-      .fromTo("#er-bulb > circle",  { scaleY: 1 }, { scaleY: 6, duration: .2  }, "bulb+=.3")
-      .fromTo("#er-bulb > circle", { scaleY: 6 }, { scaleY: 1, duration: .3 }, "bulb+=.5" )
-      .fromTo("#er-bulb > circle", { autoAlpha: 1 }, { autoAlpha: 0, duration: .1, ease: "power3.out" }, "bulb+=.8" )
-      .fromTo(".bg-galaxy", { autoAlpha: 1 }, { autoAlpha: 0, duration: .3 }, "bulb+=.5" )
-      .fromTo(".content-scroll", { color: "#FFFFFF"}, { color: "#000000", duration: .3 }, "bulb+=.5")
-      .fromTo(".page-template-page-about em", { color: "#FF9B7A"}, { color: "rgb(234, 75, 23)", duration: .3 }, "bulb+=.5")
-      .fromTo(".page-template-page-about .illustration-stage", { background: "linear-gradient(rgba(26, 32, 46, 1) 0%, rgba(26, 32, 46, 1) 80%, rgba(26, 32, 46, 0) 100%) no-repeat" }, { background: "linear-gradient(rgba(154, 207, 233, 1) 0%, rgba(154, 207, 233, 1) 80%, rgba(154, 207, 233, 0) 100% ) no-repeat" , duration: .3 }, "bulb+=.5")
-
-    let triggerrebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
-    let rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourWorkDayIn })         
-    .fromTo("#ourStory > *", 
+    let trigger_rebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
+    let tl_rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: trigger_rebalanceYourWorkDayIn })         
+    .fromTo("#world", 
       { yPercent: 0, autoAlpha: 1 }, 
       { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
+    .to("#ourMission", { yPercent: -100, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
       { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
       { y: 0, x: 0, rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)

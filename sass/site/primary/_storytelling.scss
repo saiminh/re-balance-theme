@@ -50,11 +50,11 @@
   background: linear-gradient(
       180deg, 
       $color__brand-secondary 0%, 
-      $color__brand-secondary 80%, 
+      #DDE5EA 80%, 
       transparentize($color__brand-secondary, 1) 100%
   ) no-repeat;
   z-index: 1;
-  overflow: hidden;
+  overflow: visible;
 
   @media (min-width: 769px){
     background: transparent;
@@ -154,21 +154,7 @@
 }
 
 .page-template-page-about .illustration-stage {
-  background: linear-gradient(
-      180deg, 
-      rgba(26, 32, 46, 1) 0%, 
-      rgba(26, 32, 46, 1) 80%, 
-      rgba(26, 32, 46, 0) 100%
-  ) no-repeat;
-  overflow: visible;
-
-  @media (min-width: 769px){
-    background: transparent!important;  
-  }
-}
-
-.page-template-page-about .site-content {
-  color: #FFF;
+  
 }
 
 #section_unbalancedWorld {
@@ -190,12 +176,6 @@
 
   @media (min-width: 769px){
     height: calc(100vh - 80px);
-  }
-
-  & .bg-galaxy {
-    min-width: 100vw;
-    min-height: 150%;
-    object-fit: cover;
   }
 }
 
