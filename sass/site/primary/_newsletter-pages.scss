@@ -67,7 +67,7 @@ input.mailpoet_text {
   position: absolute;
   transform: translate(0 , 2.5rem);
   &,  & .mailpoet_recaptcha_container div, & .mailpoet_recaptcha_container iframe {
-    width: 100%!important;
+    width: calc(100% - 2rem)!important;
     height: auto!important;
   }
 }

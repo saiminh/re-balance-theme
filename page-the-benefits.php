@@ -8,11 +8,10 @@
 
 get_header();
 ?>
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       <div class="illustration-stage">
-        <svg id="illuOne" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 524" style="enable-background:new 0 0 445 524;" xml:space="preserve">
+        <svg id="illu-woman-rain-shine" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 445 524" style="enable-background:new 0 0 445 524;" xml:space="preserve">
           <g id="illu01-sun">
             <circle id="illu01-sun--body" style="fill:#FFFFFF;" cx="218.5" cy="267.5" r="55.5"/>
             <g id="illu01-sun--rays">
@@ -107,7 +106,7 @@ get_header();
             <path fill="none" stroke="#000" stroke-width="5" d="M133 37.9v-8.8M204.1 109h8.8M133 180.1v8.8M61.9 109h-8.8M168.5 47.5l4.5-7.7M194.5 144.5l7.7 4.5M97.5 170.5l-4.5 7.7M71.5 73.5L63.8 69M194.5 73.5l7.7-4.5M168.5 170.5l4.5 7.7M71.5 144.5l-7.7 4.5M97.5 47.5L93 39.8"/>
             <path id="hours" fill="none" stroke="#000" stroke-width="7" d="M133 109l19.6-36"/>
           </g>
-          <g id="calendar">
+          <!-- <g id="calendar">
             <path fill="#fff" d="M10.7 12.8h100.9v100.9H10.7z"/>
             <path fill="#ff9b7a" d="M10.5 12.8h101.1v20.6H10.5z"/>
             <path fill="#d55c38" d="M111.6 12.8l7.4 7.7v20.8l-7.4-7.9z"/>
@@ -117,7 +116,7 @@ get_header();
           </g>
           <text id="number-workdays" transform="translate(143.999 102.7908)" style="fill:#FFFFFF; font-family:'hero-new'; font-weight: 600; font-size:83.9618px; letter-spacing:-1;" >
             12,800,000
-          </text>
+          </text> -->
           <g id="woman-on-desk">
             <g id="chair">
               <path d="M131 238.6c.7-.9.6-1.8.3-2.8-3.1-11-6.1-22-9.1-33-1-3.8-1.7-7.6-2.6-11.4-.7-2.8-1.3-5.6-1.6-8.6-.1-.6-.2-1.2-.7-1.6-.3-3-.6-6.1-1.1-9.1-.6-4.3-.8-8.7-1-13.1-.1-1.9.5-3.9.8-5.9.2-1.2 1.2-2 2.4-2.2 1.4-.2 2.9-.2 4.3.2 2.1.7 2.7 1.4 2.8 3.6.5 9.5 1.5 18.9 2.9 28.4 1.4 9.7 3.7 19.3 6.3 28.7 3.3 11.7 6.4 23.4 10.5 34.8 1.5 4.2 3.2 8.3 4.9 12.4 1.9 4.6 1.9 3.9-2.2 6.3-1.2.7-2.3 1.6-3.7 1.8-1.7.2-2.3.1-3.2-1.4-1.5-2.4-2.4-5.1-3.4-7.8-2.2-6.3-4.6-12.7-6.6-19.3z" fill="#d55c38"/>
@@ -178,7 +177,7 @@ get_header();
 
         <!-- End Illustration Workdays -->
 
-        <svg id="illu-moneyloss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500;" xml:space="preserve">
+        <!-- <svg id="illu-moneyloss" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 640 500" style="enable-background:new 0 0 640 500;" xml:space="preserve">
           <rect style="fill:#9ACFE900;" width="640" height="500"/>
           <rect x="25.6" y="51" style="fill:#C2E5F2EE;" width="569.1" height="286.1"/>
           <text id="number-workdays_1_" transform="matrix(1 0 0 1 18.499 452.4414)" style="fill:#FFFFFF; font-family:'hero-new'; font-weight: 600; font-size:94.6232px; letter-spacing:-1;">-€</text>
@@ -197,10 +196,10 @@ get_header();
             146.5,113.5 184.8,130.3 192.3,170.4 243.2,134.1 273.5,234.3 333.4,228.4 385.6,261.4 492.8,270.8 571.9,318.1 "/>
           <text id="lossnumber" transform="matrix(1 0 0 1 128.3935 452.4414)" style="font-family:'hero-new'; font-weight: 600; font-size:94.6232px; letter-spacing:-1;">600</text>
           <text transform="matrix(1 0 0 1 333.025 452.4414)" style="fill:#FFFFFF; font-family:'hero-new'; font-weight: 600; font-size:94.6232px; letter-spacing:-1;">billion</text>
-        </svg>
+        </svg> -->
         <!-- End moneyloss Workdays -->
 
-        <svg version="1.1" id="illu-mindfulbreak" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 500" xml:space="preserve">
+        <!-- <svg version="1.1" id="illu-mindfulbreak" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 500" xml:space="preserve">
           <g id="battery" fill="#fbfdfe">
             <path d="M348.6 15.3H396c4.2 0 5.6 1.2 5.4 5.5-.6 17.9-.1 35.9-.2 53.8v1.9c-.3 3.1-1.1 4.1-4.4 4.2-8.4.3-16.8.7-25.1.7-23.5.1-46.9.1-70.4.1h-1.9c-1.4 0-1.5-.9-1.8-2.1-1.6-6-1.1-12.2-1.5-18.3-.7-12.9-.5-25.9-.5-38.8 0-1.8.2-3.5 1.1-5.2.6-1.1 1.3-1.6 2.5-1.6h49.3c.1-.1.1-.1.1-.2zm.3 8.2v.1h-42.3c-3.2 0-3.2.1-3.1 3.2.1 4 .4 8.1.5 12.1.3 10 .2 19.9.2 29.9 0 4.8-.3 4.5 4.4 4.5 26.4 0 52.9 0 79.3.1 1.8 0 3.6.2 5.4.3 1.3.1 2-.4 2-1.8v-2.2c-.2-10-.4-19.9-.5-29.9-.1-4.5-.1-8.9-.1-13.4 0-2.7-.1-2.8-2.9-2.8h-1c-14.1-.1-28-.1-41.9-.1zM403.6 48.3c.1-3.9-.3-7.8.2-11.7.4-3.2.6-3.4 3.7-3.4 4.3-.1 5.8 1.1 6 5.5.3 5.3.9 10.5.6 15.8-.1 2-.3 4-1.3 5.8-.8 1.4-1.8 2.3-3.6 2.1-.4-.1-.8 0-1.3 0-4.1 0-4.2 0-4.3-4.2-.1-3.4 0-6.6 0-9.9z"/>
           </g>
@@ -219,7 +218,7 @@ get_header();
             <path d="M212.3 175.8c1.3 3.5 1.1 4.3-1.7 6-2.5 1.5-4.9 3-7.4 4.4-4.7 2.8-9.1 2.4-13.2-1.2-.2-.2-.5-.3-.9-.6-.7.9-.3 1.6.2 2.3 1.5 2.1 3.6 3.3 6.1 3.7 3.3.4 6.6.3 9.6-1.4l7.5-4.2c1.2-.7 1.7-.3 2 .9.6 2.2.5 4-1.5 5.7-3.4 3-5 7.3-6.4 11.6-.2.5-.3 1-.3 1.6-.2 1.6-1.3 2.3-2.7 1.7-5.1-2.2-10.8-2.3-16-4-2-.7-3.4-1.8-4.7-3.5-2.2-2.9-3.9-6.1-5.8-9.1-1.2-1.9-1.5-4-.1-6 3.2-4.5 6.5-8.9 11.4-11.8 2.9-1.7 5.9-2.3 9.1-2.3 2 0 2.4.4 2.6 2.4.2 2 .1 4 .6 6 .4 1.3.7 2.6 1.8 3.6-.5-2.5 0-5 .1-7.5.3-7.6 3.4-14.2 7.7-20.2 2.3-3.2 5.6-5.2 9.2-6.6 3.3-1.2 6.7-2.1 10.1-2.9 2-.5 4-.4 5.9.4 1.1.4 2.1.8 3.3.8 1.4.1 2.9.6 4.2 1.4-.5 1.3-1.7 1.4-2.7 1.6-1.8.3-3 1.4-3.9 3-1.8 3.4-3.2 7-3.2 10.9 0 3.3-.3 6.5 1.1 10.1 1.2-1.7 1.3-3.4 1.4-5 .3-2.8.9-5.4 1.8-8.1 2-6.2 5.6-11 11.4-13.9 6-3 12.4-5.2 19.3-4.5 3.9.4 7.8.4 11.8.4 5.5-.1 10.2-2.7 14.7-5.6.2-.1.3-.5.7-1.1-5.1 1.6-9.6 4.3-14.9 3.4-.4-1 .5-1.4.9-1.9 1.5-1.9 2.9-3.9 4.3-6 2.6-3.9 5.8-7.2 10.3-9.1 3.4-1.4 6.5-3.7 10.3-4.1 4.1-.5 8.1-1.4 12.3-.5 2.3.5 4.1 1.6 6.1 2.5 1.7.8 3.4 1.7 5.4 2.7-2 2.8-5.3 4.4-5.4 8 2.7-4.3 6.6-6.9 11.6-7.7 4.3-.7 8.7-.5 12.9 1 .6.2 1.2.4 1.7.8 4.7 3.6 10 6.5 13.3 11.6.2.3.5.7 1.2.5.3-2.5-.9-4.4-2.6-6-2.4-2.3-4.5-4.7-6.9-7.3 1.9-1.9 4.9-1.7 7.3-3.4-2.7-.4-4.8.4-6.8 1.1-1.5.5-2.9.8-4.6-.1-2.3-1.2-4.7-1.6-7.4-1.2-2.8.4-5.7 0-8.5.7-.7.2-1.5 0-2.2-.3-2.1-1.1-4.1-2.2-6.2-3.2.3-1.2 1.2-1 1.8-1.2 6.2-1.9 12.5-3.3 18.9-4.5 1.4-.3 3-.3 4.4-.3 2.5-.1 5.1-.2 7.6-.4 6.5-.5 12.4 1.2 17.7 5 1.6 1.2 2.1 2.9 2.4 4.6.9 5.2-.1 7.1-4.8 9.4-1.1.6-2.4 1-3.4 1.6-1.2.7-2.4 1.5-2.4 3.6 1.8-1.1 2.9-2.7 4.7-3.2 2.1-.6 4.2-1.5 6.3-2.2 3.9-1.4 4.7-2.6 3.9-6.7-.6-3 .2-4.4 3.1-5.2 1.7-.5 3.5-.7 5.3-.8 3.8-.3 7.6.5 11.4.9 3.4.4 6.1 2.4 8.5 4.6 2.2 2 3.9 4.4 5.6 6.9 4 5.7 9.4 9.1 16.6 9.2 1.8 0 3.5-.4 4.8-2.1-4.5 1.8-8.5 1-12.4-1.4-3.7-2.3-5.8-5.7-7.9-9.6 4.4-.7 8.5-1.1 12.5-.2 7.3 1.6 13.9 4.7 19.2 10 .4.4.9.9 1.2 1.5 1.3 2.1.4 4.6-2 5.3-5.3 1.5-10.7 2.5-16.3.6-3.3-1.1-6.8-1.5-10.3-2.1-3.9-.7-7.6-1.9-10.9-4.2-4.8-3.3-10.2-4.3-16.5-3 1.1.9 2.1.7 2.9.6 4.9-.2 9.3 1.2 13.1 4.2 4.5 3.5 9.9 4.9 15.1 6.7 1.7.6 3.6.9 5.1 1.7 3.9 2.1 7.6 1.1 11.3-.4 4.4-1.9 9-2.9 13.9-2.6 3.3.2 6.1 1.4 8.6 3.7 5.2 4.6 8.7 10.3 11.2 16.8.2.4.3.8.4 1.2.5 1.9 0 2.7-1.9 2.7-1.8 0-3.6-.1-5.4-.4-1.5-.2-2.9-.2-4.4.6.6.7 1.5.8 2.3.8 5 .3 9.5 2.2 13.8 4.4 2.5 1.3 5.2 2.4 7.4 4.3 4.3 3.6 6.2 8.5 7.5 13.7.8 3.2 1.2 6.5.2 9.7-.3.9-.2 1.9-.1 2.8.3 3.5-.9 6.4-2.9 9.2-2.9 4.1-5.6 8.4-8.4 12.7.6.6 1.1.2 1.4-.1 3.2-3.2 6.8-6.2 9.5-9.8 1.9-2.5 3.7-5.5 3.9-8.9 0-.4.1-.8.2-1.3.1-1.2.2-2.6 1.5-3 1.2-.4 1.7 1 2.5 1.7 4.6 4.4 6.6 9.7 6.3 16-.1 1.5-.3 2.9-1.3 4.1-1.3 1.6-1.9 3.4-1.9 5.6.1 1.7-.5 2.2-2.2 1.8-8.2-1.9-15.1 1.3-21.6 5.5-3.6 2.3-5 6.1-4.1 10.3.5 2.5-.3 3.6-2.3 4.7-2.6 1.3-4.9 3.3-7.8 4.2-1.6-3.3-1.5-6.6-.5-10 1.2-4.2 2.8-8.2 5-12 2.8-4.8 5.2-9.7 7.3-14.8 2.2-5.5 2.9-11.1 1.8-16.9-.7-3.6-2.7-6.7-6.2-8.4-1.3-.6-2.2-1.7-3.2-2.6-3.5-3.2-7.3-5.6-12.1-6.6-6.9-1.5-12 1.2-16.2 6.3-1.2 1.5-2.2 3.1-3 4.9-1.1 2.4-2.9 3.6-5.7 3.8-3.3.2-6.3 1.8-8.8 4.1-.5.5-1 1.1-.9 2.2 2-1 3.7-2 5.7-2.6 1.1-.3 2.2-.6 3.4-.8 2.3-.3 2.7-.1 2.3 2.3-.4 2.8-.5 5.5.1 8.2.5 2.2 1.3 4.2 2.8 5.9 1-.4.5-1.1.4-1.6-.2-1.2-.5-2.3-.6-3.4-1.5-9.7 2.8-17 9.7-23.2 4.1-3.7 8.8-3.2 13.4-1.3 2.7 1.1 5.1 2.9 7.2 5.1 1.5 1.6 3.1 3 5.3 3.9 2.2.9 3.1 3.3 3 5.6-.1 4-.5 8-2.3 11.8-2.7 5.8-5.8 11.3-8.8 17-3.6 6.8-5.5 14-3 21.8.4 1.1.3 2.1-.5 3-3.5 4.3-7.2 8.3-12.1 11.2-3.3 2-6.8 2-10.5 1.3-1.6-.3-2.4-1.2-2.2-2.9.1-1.1.1-2.1.3-3.2.7-5.4-1.6-9.9-6.4-12.5-2.6-1.4-5.5-2.3-8.2-3.4-.7-.3-1.5-.4-2.1-1.3 1.6-2.5 4.3-4.2 5.8-6.9 1.5-2.8 1.3-5.9 1.7-9.1 1.7.4 2.3 1.6 3 2.8 1.5 2.6 3.5 4.8 5.6 6.9 1.5 1.7 3.2 2.2 5.4 1.8 2.3-.4 2.8.1 3.2 2.6 1.1 5.6-.1 10.7-3.1 15.5-.4.6-1.1 1.1-.6 2.3 3.7-3.9 6.4-8.1 6.7-13.4.2-3 .7-6.2-.9-9.1-.6-1 .1-1.8.7-2.6 4.7-7.4 8.1-15.4 11-23.6 0-.1-.1-.2-.2-.4-1.3.3-1.9 1.5-2.5 2.5-2.8 4.5-5.7 9-8.5 13.5-.3.4-.6.9-.9 1.3-4.6 6.3-5.8 6.6-12.5 1.6-2.2-1.6-4-3.8-6.4-5.2-.8-.4-1.1-1.2-1.4-2.1-.3-1-.7-2-1-3-1.6-6.8-6.2-10.9-12.5-13.4-2.4-1-2.5-1-1-3.2 1.7-2.7 2.5-5.6 2.5-8.8 0-4.2.5-8.5-.5-12.7-.3-1.3.3-2 1.3-2.6 1.9-1 3.7-2.1 5.5-3.2 1.8-1.1 3.5-2.5 4.6-4.4.7-1.2 1.7-1.8 3-2 3.3-.3 6.5-.8 9.8-1.1 1.6-.2 3.2-.3 4.7-.4 4.2-.3 7.8 1.4 11.4 3.5.5.3.8 1 1.7.9 0-1.3-1-2.1-1.8-2.7-3.5-2.9-7.3-4.7-12.1-5.1-4.5-.4-8.9 0-13.2 1-2 .4-2.1.3-2.3-1.8-.1-1.2-.1-2.3-.2-3.5-.5-5-3-8.7-7.4-11.1-2.7-1.5-5.4-3-7.8-4.9-.4-.3-.8-.8-1.6-.4.6 1.4 1.8 2.3 2.9 3.2 1.6 1.2 3.3 2.3 5.1 3.3 5.3 2.8 5.9 6.7 4.9 11.5-.4 1.8-1 3.4-1.1 5.3-.1 1.6-.9 3-2.1 4.2-1.7 1.7-3.5 3.1-5.4 4.5-1.6 1.2-1.9 1.2-3-.5-1.9-2.8-4-5.5-6.1-8.2-.7-.9-1.5-1.8-2.5-2.4-.6-.3-1.2-.5-1.8 0-.7.6-.6 1.3-.4 2 .1.3.3.6.5.8 3.7 3.6 6 8.2 8.4 12.6 1.2 2.2 1.7 4.6 1.7 7.1 0 3.2.1 6.3-.5 9.5-.7 3.7-3.1 5.9-5.6 8.2-.7.6-1.6.5-2.4.6-9.8 1.3-18.8 4.4-26.5 10.8-2.5 2.1-4.9 4.4-7 7-2.2 2.7-4.6 5.4-6.5 8.2-4.1 6.1-5.7 12.9-3.2 20.4.9-.6.7-1.3.6-1.8-.3-3.8.4-7.4 1.9-10.9.6-1.4 1.2-2.6 2.1-3.9 3.4-4.6 7-9.1 11.2-13 7.8-7.1 17-10.7 27.4-11.3 1.4-.1 2.8-.2 4.1-.3 6.5 0 12.5 4.1 14.3 9.7 1 3 2.1 6 2.7 9.1.7 3.8-.2 7.1-3 9.9-.9.9-1.7 1.9-2.7 2.7-4 3.4-7 7.7-10.3 11.7-3.5 4.1-4.8 8.8-2.3 14.7 1-2.3 1.4-4.2 1.7-6.1.5-3.8 2.2-6.8 5-9.4 1.2-1.1 2.3-2.2 3.4-3.4 1.1-1.2 2.1-1.5 3.6-.7 2.9 1.6 5.9 2.9 8.8 4.5 3.9 2.2 6.3 5.4 6.2 10 0 3.9.6 7.8.7 11.8.1 4.8-1.8 8.1-6.2 10.1-2.2 1-4.4 1.9-7 2.9 4.1 1 9.6-1.4 14.2-5.9 1.5 2.7 2.5 5.8 5.2 8.4-.1-2.2-.8-3.6-1.5-5-.7-1.3-1.3-2.7-1.9-4-.8-1.7-1.1-3.4-.4-5.2.1-.3.1-.6.2-.9.3-1.3-.5-3 .8-3.9 1.1-.7 2.4.5 3.6.8 1.6.3 3.1.5 4.7.5 1.1 0 1.9.4 1.5 1.7-.6 2.3-.4 4.6-.4 7-.2 7.4 3.9 12.5 9.2 17 .1.1.4 0 .7.1.5-1-.3-1.6-.7-2.2-3.3-4.5-5-9.5-4.7-15.2.2-3.2-.3-6.4 1.7-9.2.5-.8 1-1.7 1.7-2.3 3.3-3 6-6.6 8-10.6.6-1.1 1.4-1.8 2.5-2.3l9.6-4.2c2.2-1 3.9-.6 5.9.7 2.8 1.8 5.1 4 7.7 6 1.4 1.1 2.8 2.3 3.6 4 2.5 4.9 5.3 9.7 5.3 15.5 0 .5.2 1 .3 1.6 0 .2.2.3.4.5 1.1-3.2 1.2-7.5.1-10.4-1.4-3.9-2.6-7.9-5.1-11.3-.8-1.2-.4-1.8.8-2.4 1.2-.6 2.4-1.4 3.6-2.1.5-.3 1-.7.8-1.2-.2-.7-.9-.8-1.6-.8-1.2 0-2.3.6-3.3 1.2-1.9 1.3-3.4 1.2-5.3-.5-2.3-2.1-4.9-4.1-7.9-5.4-1.2-.5-1.5-1.4-1.4-2.5.2-3 1.2-5.7 3.6-7.6 3-2.5 6.2-4.8 9.8-6.4.5-.2 1-.5 1.5-.6 6.2-1.6 8.5-.7 11.4 3.4.8 1.1 1.7 2.2 2.5 3.3.3.4.8.7 1.4.4.4-.3.4-.8.3-1.2-.4-2-1.2-3.9-2.6-5.4-1.2-1.3-1.3-2.8-1.2-4.4.1-1.6 1-2.2 2.6-1.8 1.5.3 2.5 1.3 3.1 2.5 1.4 2.5 2.9 5 3.4 7.8.8 4.2 2.4 8.1 2.6 12.4 0 1.1.6 2.2 1 3.3 2.2 5.8 3.7 11.7 5 17.8 1.4 6.7.5 13.3-.8 19.9-1.8 9.1-7.2 15.9-13.4 22.3-.8.9-1.8 1.5-3 1.7-7.5 1.3-14.9 3.2-22.6 3.3-2.6.1-5.1-.4-7.1-2.4.3 1.9.5 2.3 2.2 2.8 7.3 2 14.6 3.8 22.2 1.8.4-.1.8-.2 1.2-.2 1-.1 1.4.3 1.1 1.3-.9 3-1.8 6.1-4.1 8.5-7 7.4-15.7 11.9-25.3 14.7-.8.2-1.7.2-2.5.2-3.2 0-6.4 0-9.6-.1-3.8-.1-7.3-1.2-10.4-3.4-3.1-2.2-5.8-4.9-8.9-7.1-1.7-1.2-3.1-2.8-4.6-4.4 0 2.1 1.3 3.5 2.6 4.8 3.4 3.5 6.9 6.8 10.5 10.5-2 .1-3.6-.6-5.3-1.2-5.8-2-11.7-3.8-17.9-4.5-3.1-.3-6.1-.3-9.2-.4h-5.7c-.5-.6-.4-.9-.2-1.1 1.9-2.3 3.3-4.9 4.3-7.7.7-1.9 1-2 2.8-1.1 2.2 1 4.4 2 6.7 3.2.1-1.3-.7-1.8-1.2-2.3-1.8-1.8-3.9-3.3-5.9-4.8-2.9-2.1-4.7-4.9-5.6-8.2-.3-1-.7-2-1.1-3-.3-.6-.7-1.2-1.4-1.1-.9.1-1.1.9-1.2 1.6-.3 3.9.5 7.4 3.1 10.4.4.5.9.9 1.3 1.4.6.6.7 1.3.3 2-2.1 3.2-3.6 6.8-6.5 9.4-.9.8-1.8 1.5-3.1 1.5-8.3-.1-16.2 1.9-24.2 3.7-.5.1-1 .3-1.9-.2 4.9-4.2 9.3-8.8 13.5-13.6-1.7.1-2.8 1.3-4 2.2-6.8 5.4-14.2 10.1-20.9 15.6-.4.3-.9.6-1.4.7-4.9.9-9.5 2.9-14.2 4.5-2.8.9-5.6.8-8.4 1.2-.1-1.7.7-2.9 1.3-4.1 3.1-6.3 6.1-12.6 8.3-19.3 1-3.2 3.2-6 5.4-8.6 3.2-3.7 6.3-7.4 11-9.4 2-.8 3.5-2.7 5.5-3.7 5-2.2 9.8-2.2 14.7.3.3.1.6.3.8.4h.6c-2.6-5.1-7.4-4.5-11.8-4.9-.4-1.4.6-2 1.3-2.7 1.5-1.6 2.5-3.3 3.4-5.3 1.7-3.6 4.2-6.6 8.2-8 .5-.2 1-.4 1.4-.6.1 0 .1-.2.1-.3-.5-.9-1.3-.6-1.9-.5-3 .6-5.6 1.9-7.4 4.6-2.5 3.9-6 6.8-8.9 10.4-1.7 2.2-4 3.7-6.6 4.8-4.5 2-7.7 5.6-10.8 9.2-.7.8-1.3 1.7-2.4 3-.3-2.3 0-4.1 0-6 .1-7.9-1.6-14.9-8.8-19.5-3.2-2.1-6.5-4-9.9-5.7-.6-.3-1.2-.9-2.3-.4.6 1.6 1.9 2.4 3 3.4 2.1 1.8 4.2 3.6 6.4 5.2 3 2.3 4.6 5.6 5.4 9.1 1 4.2 1.8 8.5 2.5 12.8.3 1.8.2 3.5-.3 5.4-1.1 4.2-2.1 8.4-3.5 12.6-.6 1.8-1.3 3.6-2.3 5.2-1.9 3.2-3.6 6.5-5.7 9.6-3.3 4.7-7.3 8.6-13.2 10.4-7.5 2.2-15 3.6-22.9 3.4-2.8-.1-5.5-.4-8.2-.6-.5 0-1-.2-1.3-.7 0-.5.2-.9.5-1.1 3.6-2.4 6.1-6 9.4-8.6 6.6-5.1 6.8-12.4 4.5-19.6-.7-2.4-2.1-4.6-4.1-6.5-.6 1.2.1 2 .5 2.8 1.6 3.7 2.6 7.3 1.8 11.4-.4 2-1 3.9-1.9 5.7-3 5.5-7.3 9.6-12.9 12.3-1 .5-2 .8-3 .9-4.6.5-9.3.9-13.8-.6-1.6-.5-3.3-.9-4.9-1.5-3.3-1.1-5.9-2.8-6.3-6.9 5.7-.8 9.3-4.5 12.1-9.6 1.4 1.9 1.3 4.1 2.6 5.7 1-.5.6-1.4.6-2v-9.2c.1-2.2.4-2.3 2.5-1.6 2.7.8 5.5 1.7 8.3 2.3 1.7.4 3.4.3 5.1 0 .5-.1 1.1-.3 1-1-.1-.5-.6-.5-1-.6l-11.1-2.7c-.6-.2-1.2-.4-1.8-.5-2.3-.3-3.3-1.5-4-3.8-1.2-3.6-2.5-7.2-4.6-10.4-3-4.6-2.8-9.1.9-13.5 1.8-2.2 3.4-4.6 5.1-6.9 1.4-1.9 2.4-4 3-6.3.2-.6.3-1.3 1.1-1.4.7-.1 1.2.4 1.5 1 .9 1.5 1.7 2.9 3.3 3.7.6.3 1.2.5 1.7.8.5.2 1.1.3 1.5-.2.4-.5.2-1-.1-1.5-1.6-2.3-2.6-5-4.9-6.6-1.5-1.1-1.7-2.4-1.4-4.1.5-2.8.3-5.7.3-8.6 0-.5-.1-1.1-.8-1.2-.4 0-.8.4-.9.8-.9 2.2-1.7 4.5-1.4 6.8.7 5.4-1.6 9.7-4.7 13.7-1.9 2.5-3.6 5.2-5.5 7.8-1.6 2.2-2.7 4.6-2.7 7.5-1.4-.3-1.7-1.5-2.2-2.2-2.3-3.3-5.5-5.5-9.4-5.9-4.1-.5-7.1-2.6-9.7-5.4-.6-.6-1.1-2.1-2.1-1.4-1.2.7-.1 1.9.3 2.8.3.8.8 1.5 1.2 2.3-4.6 1.9-8.2 4.5-8.7 9.9 1.4-1.8 2.4-3.9 4.7-4.9.3-.1.5-.4.8-.5 4.9-2.5 13.9-1.2 17.4 3 5.5 6.5 10 13.7 12.6 21.9 2.3 7.2-3.4 18.8-12.6 19.6-3.5.3-6.5-.1-9.4-1.8-4.2-2.4-8.3-4.7-11.5-8.4-2-2.2-3.2-4.8-4.1-7.5-.2-.7-.3-1.5-.2-2.2.1-1.7.9-2.2 2.6-1.7 2 .6 3.6 1.7 5.4 2.8 1.6 1 3.2 1.4 5.1 1.4 2.3-.1 4.7 0 7-.1 2.5-.1 4.7-.7 6.3-2.8-.3-.3-.5-.5-.6-.5-3.3 1.2-6.7.9-10 .1-1.5-.4-3.2-.4-4.7-.4-2.3 0-4.4-.6-6.4-1.8-7.3-4.5-11.9-10.5-11.2-19.6.4-4.8 2.4-9 4.7-13.1 2-3.6 5-6.2 8-9 4.6-4.4 9.7-7.9 15.1-11 1.5-.8 2.9-1.7 5.2-2.4-2.6 4.1-5.1 7.7-5.8 12-.2.2-.5.4-.7.6-.2.2-.4.6-.1.8.3.2.5-.1.7-.4l.3-.9c1.5-1.3 2.2-3.1 3.1-4.8 1.5-2.7 3.5-4.8 6-6.5 6.4-4.6 13.5-7.3 21.5-8.1 5.1-.5 10.2-.4 15.3-.5 1.8 0 3.6.2 5.3.9 2.3.9 2.5 2.2.9 4-3.5 3.8-5.1 8.5-6.6 13.3-.2.8-.3 1.7-.1 2.5 1.1 5-.4 9.7-2.1 14.3-1.6 4.5-5.3 7.6-8.7 10.8-1.7 1.6-3.5 3.1-5.3 4.8 1 .7 1.7.2 2.3-.1 3.1-1.6 6-3.6 8.8-5.7 3.6-2.9 8.1-2.7 11.5.4 5.4 4.7 8.5 10.8 10.4 17.5.8 2.7 1.4 5.6 2.1 8.3.1.6.1 1.3 1.1 1.6.2-1.7.2-3.3-.1-5-.9-5.1-2.4-10.1-4.6-14.9-1.9-4.1-4.9-7.4-7.6-10.9-1.1-1.4-2.8-2.2-4.5-2.9-.8-.4-1.5-.7-1.1-1.9 1.8-4.6 1.1-9.5.5-14.2-.5-3.9-.2-7.3 2.6-10.3 1.3-1.4 2.5-2.9 3.8-4.3 1.4-1.4 3-2.3 5-2.6 1.8-.3 3.5-.7 5.3-1 1.2-.2 2.3-.2 3.5.3 4.3 1.7 8.6 3.2 12.1 6.3 2.5 2.2 5.3 3.9 8.5 4.8 1.4.4 2.7 1.2 4 2 4.1 2.5 8.5 4.4 13.2 5.4 1.5.3 2.9.3 4.3-.5 2.2-1.2 4.6-2.2 6.8-3.4 3.8-2 8.1-3.1 12.5-3.5 3.1-.3 5.8 1.2 8 3.3 2.3 2.1 4.1 4.6 5.6 7.3 2 3.5 2.2 7.4.8 11.1-3 7.5-7.2 13.9-15.2 17.1-4.9 2-9.8 4.2-14.6 6.3-.8.4-2.2.5-1.8 1.7.4 1.3 1.6.5 2.5.3 7.7-1.6 15.2-4.1 22.3-7.5 2.1-1 3.9-2.5 5.3-4.4 2.4-3.3 4.7-6.6 6-10.5.4-1.1.9-2 2-2.3 4.7-1.5 9.4-2.8 14.3-1.2 4.7 1.5 8.3 4.2 9.6 9.2.4 1.3.7 2.7 1.7 3.9.8-.5.5-1.3.5-1.9-.4-9.9-5.2-14.5-15.1-16.9-3.2-.8-6.6.3-9.6 1.6-1.5.7-2.1.3-2.4-1.2-1.4-7-6.6-11.4-11.9-15.1-6.3-4.4-13.6-4-20.3-.4-7.2 3.9-14 3.5-20.8-.6-1.7-1-1.9-2.3-.3-3.1 6.8-3.4 11.7-9 17.1-14.1.2-.2.5-.4 1.1-.8 4.2 5.5 9.9 8.4 16.8 8.9-.2-.2-.5-.4-.8-.5-5.3-1-9-4.5-12.5-8.3-2-2.2-2.1-2.2-.1-4.3 2.1-2.2 4.2-4.5 6.1-6.9.9-1.2 1.8-2.3 2.1-3.8-.9-.6-1.3.1-1.7.5-7.9 7.9-16.7 14.7-24.7 22.5-2.4 2.4-5 4.6-8.7 4.8-.4 0-.9.2-1.3.1-4.5-1-8.9-2.6-11.8-6.2-2.4-2.9-4.1-6.4-5.2-10.1-.6-1.9-.7-3.7-.1-5.6 2.1-6 4.2-12 8.6-16.9 1.4-1.5 2.2-3.4 3.2-5.1.2-.5.6-1 .1-1.4-.6-.6-1.2-.1-1.7.3-1.8 2-3.6 3.9-5.3 6-1.7 2.1-3.4 4.1-4.6 6.5-.9 1.6-2.2 2.5-4 2.8-4.2.8-7.6 3.3-11.1 5.3-.3.2-.6.6-.8 1-.1.1-.1.4 0 .6.2.3.5.4.8.3.9-.4 1.7-.9 2.5-1.3 2.2-1.3 4.7-2 7.2-2.4 1.5-.2 2.1.3 1.6 1.7-1.5 4.3-.4 8.4 1.1 12.4.7 1.9.4 2.1-1.7 1.9-3.2-.3-6.1-1.6-8.9-3.1-2.3-1.2-3.8-2.9-4.2-5.6-1-7.1-1.1-14.1 2.5-20.7 4.9-8.9 11.9-15.7 20.4-20.9 5.1-3.1 10.5-5.5 16.1-7.6 2.6-1 4.9-1.3 7.6-1.2 5.8.2 11-1.9 15.4-5.9 1.6-1.5 3.2-2.8 5-3.8 4.3-2.5 7.5-10.1 6.5-14.9-.6-2.6-1.2-5.2-2.2-7.7-.3-.8-.6-1.6-.8-2.4-1.3-4.8 0-7.7 4.5-9.8 2.3-1.1 4.7-1.8 7.3-2.3 1.3-.2 3.4-.5 3.3-1.8-.1-1.7-2.3-1.3-3.7-1.4-1.8-.2-3.6-.1-5.4 0-3.8.3-6.4 2.5-8.6 5.4-.9 1.2-1 2.5-1 3.9.1 3.2.7 6.3 1.7 9.3 1.1 3.3 2.2 6.6 2.3 10.2 0 2-.6 3.6-2.2 5-4.8 4.7-10.5 8.1-16.9 9.9-7.3 2-14.5 1.2-20.7-4-.9-.8-1.8-1.5-2.7-2.3-3.7-3.5-4.9-5.8-6.4-12.5-.5 2.9.7 8.1 2.6 11 1 1.6 2.2 3.1 3.3 4.7 1.3 1.9.9 2.6-1.5 2.5-3.1-.2-6.1.3-9.2.7-5.9.7-10.9 3.5-14.7 8-.2.2-.4.5-.1 1.1 1.1.2 2.1-.6 3-1.1 7-4.3 14.8-4.9 22.6-5.5 1.7-.1 3.3.6 5 .8.9.1 1.4.8 1.9 1.6s.3 1.4-.6 1.8c-.6.2-1.2.4-1.8.7-9.4 3.4-18.3 7.9-25.7 14.4-8.5 7.4-13.1 16.8-11.5 28.5.5 3.4 1.5 6.6 3.1 9.6.4.8 1.1 1.9.5 2.7-.7 1-1.9.4-2.9.3-7.1-1-14.2-.7-21.3-.1-7.8.6-15.1 3.4-22.5 5.5-1.2.3-2.3 1-4 1 .9-1.6 1.7-3 2.6-4.3 3.5-5.3 5.1-11.2 5.7-17.4.6-6.5-2.6-11.4-7.6-15.2-1.3-1-3-1.5-5.2-.9 2.2 1.4 4.2 2.4 5.8 4.2 3.1 3.6 4.1 7.4 3.8 12.2-.7 10.6-6.8 17.2-14.6 23.1-.8.6-1.6.9-2.6 1-7.1.5-14-.4-20.4-3.7-2.4-1.2-4.4-2.9-5.9-5.2-.5-.8-.8-2-2.2-2.4-.3 2.5.4 4.6 2 6.4 3.6 4.3 8.3 6.9 13.6 8.3 3.2.9 6.4 2.2 9.8 1.6.6 1.2-.3 1.5-.8 2-3 3.3-6.9 5.6-9.8 9-2.1 2.5-4.4 4.9-5.6 8.1-.4 1.1-1.3 1.6-2.4 1.8-1.9.3-3.7.8-5.7.8-5.9 0-11.9.1-17.8 0-6.1-.1-11.5-2.5-16.9-5.2-.1-.1-.1-.4-.3-.9 3.9-.4 7.7-1.2 10.7-3.7-.2-1-.7-.8-1-.6-4.7 2-9.6 1.1-14.4.6-.5-.1-1.1-.3-1.6-.2-8.6.8-18.3-8.7-19.3-18.7-.4-4.2-.1-8.7 1.3-12.9.4-1.2 1-2.3.9-3.8-3.4 2.6-4.5 5.3-5.3 12.7-.2 0-.5.1-.6 0-3.6-6.5-7.2-13-9.2-20.1-1.4-4.8-.6-9.5 1.3-14 2.4-5.7 5.1-11.2 9.1-16 3.6-4.4 7.8-8 13-10.5 3.3-1.6 3.5-1.5 6.6 1.2-.8.7-1.8.9-2.8 1.2-5.1 1.7-8.5 5.1-10.3 10.1-.8 2.1-1.7 4.2-2.1 6.4-1.5 10.5.5 19.9 8.5 27.6 2.8 2.8 6 4.7 9.7 5.8.4.1.8.3 1.2.4.6.1 1.1 0 1.2-.6.1-.4-.2-.9-.6-1l-2.1-.6c-2.9-.7-5.3-2.1-7.1-4.5-1.9-2.6-4.3-4.7-5.9-7.5-.6-1.1-1.3-2.2-1.3-3.5-.4-7.3.3-14.4 4-21 1.5-2.8 3.3-5.2 6.3-6.4.4-.2.8-.4 1.1-.6 5.5-3.5 11.2-3.4 17.3-1.7 4 1.1 8.1 1.6 11.8 3.6 6.4 3.4 13.4 4.8 20.3 6.3 3.1.7 6.3 0 9.1-1.8.3-.2.6-.6.9-.9.1-.1.1-.4.2-.6-.4-.8-1-.5-1.6-.4-5 .9-9.6.1-14.1-2.2-4.4-2.3-9-4.3-14.1-4.6-.3 0-.6-.1-.9-.2-2.9-.6-2.9-.7-1.7-3.2 3.5-6.9 8-13 15.1-16.7 2.4-1.2 4.8-2.2 7.5-2.2 1.4 0 2.8 0 4.1-.4 1.3-.4 2.5-.1 3.8.2 3.3.9 6.5 1.9 9.5 3.5 1.1.6 2.2 1.2 3.6 1.2.8 0 1.6 0 1.8-.9.2-.7-.3-1.2-.8-1.6-1.1-.9-2.3-1.5-3.5-2.1-.7-.3-1.3-.7-2.2-1.2 3.7-3 7.6-5.4 10.2-9.3-.9-.7-1.5-.2-2 .1-3.6 2.2-7.4 4.2-10.4 7.3-.9.9-1.9 1.1-2.9.7-5.1-1.6-10.1-.1-15.1.2-1.6.1-3.1.8-4.5 1.5-1.2.6-2.5 1.2-3.8 1.7-2 .7-1.9.6-2.6-1.3-1.6-4.6-2-9.3-2-14.1.1-3.1 1.1-5.6 3.2-7.7 1.7-1.8 3.4-3.5 5.3-5 2.2-1.7 3.9-3.7 5.2-6.8-2.4.1-3.7 1.4-5 2.5-5.7 5.3-11.4 11.6-12.4 20.8l-.1.1.1-.1zm49 110.3c-.1.1-.5-.1-.5.3.2-.2.4-.3.5-.3l.1-.1-.1.1zm-72.7-68.3c-5.1 3.8-6.5 9-5.4 14.9 1.5 7.9 7.1 12 14.2 14.4 2.7.9 5.5.6 8.2.7 2.1 0 2.3.3 1.4 2.2-1 2-1.9 4-3 6-2.1 3.7-3.1 7.6-2.6 11.9.1 1 .4 2.1-.4 3.1-1.9-.2-3.4-1.1-5-2-5.1-2.8-10.8-1.9-16.2-2.4-.2 0-.6.3-.7.5-.1.2.1.6.4.8 1.1.7 2.4.8 3.7.9 3.1.2 6.2.6 8.9 2 6.6 3.4 13.4 6.3 19.5 10.6 4.2 3 9.1 4.4 14.5 3.9 3.9-.4 7.3-2.2 11.4-2.9-2.4-1.7-2.4-1.6-5.6-1.1-7.8 1.2-15.3.7-21.4-5.1-.5-.4-1-.9-1.5-1.1-4.1-1.4-4.3-4.6-4.5-8.3-.4-5.2 1.1-9.6 3.9-13.8.5-.8 1-1.6 1.4-2.5 1.5-4.1 4.6-6.1 8.8-6.7 1.5-.2 2.9-.4 4.4-.4 2.6-.1 5.3-.2 7.9-.5 5.7-.7 11.3 0 15.9 4 .8.7 1.7 1.2 2.5 2 2.4 2.3 5.4 4.2 5.5 8.2.4-1.6.6-3.2-.1-4.7-2.5-6-6.6-10.3-12.9-12.3-.8-.2-1.7-.2-2.3-1.2 4.3-4.2 8.1-8.9 12-13.5 2.7-3.1 6-5.1 9.7-6.3 2.5-.8 5-1.6 7.7-2.1 4.9-.9 9.4-.5 13.7 2.4 1.5 1 2.3 2.1 2.4 3.8.4 4.9.3 9.9-1.1 14.5-1.3 4.5-1.5 9-1.5 13.5 0 4.1 2.4 6.3 6.9 6.6-.5-1.2-1.5-1.9-2.3-2.6-2.4-2-3.1-4.6-2.5-7.4.6-2.8 1.4-5.5 1.9-8.4.3-2.1 1.8-2.6 3.7-1.9 2.6 1 5.1 2 7.7 3 1.3.5 2.6.9 4 .8.5-.1 1.1 0 1.3-.7.2-.6-.2-1-.6-1.3-3-2.2-5.9-4.6-9.7-5.1-.5-.1-1-.3-1.5-.4-3.2-.7-3.7-1.2-3.4-4.3.4-5.8 3.5-10.2 7.6-14.3 2.2 2.6 4.1 5.1 7.1 7 .6-2.2-.3-3.7-.8-5.3-1.9-5.7-2.5-11.5.5-17 2.8-5.2 6.7-9.5 12.2-12.7-1.9-.2-3.1.8-4.3 1.5-3.3 2-5.7 5-8.5 7.6-4.4 4-7.1 8.7-6.4 14.8.2 1.8-.7 2.7-2.3 3.2-2.5.8-4.7 1.9-6.2 4.3-.8-.7-1.4-1.3-2.1-1.8-2.1-1.5-4.2-3.2-6.7-3.5-4.3-.4-8.6-.7-12.9.7-3.2 1-6 2.6-9.1 3.6l-.1-.1c.7-4.3-.6-7.9-3.6-11-3.8-4.2-9-5.9-14.1-7.7-1.5-.5-3.3-.7-5.3.9 4.1 0 7.1 1.4 10.3 2.7 5.8 2.5 9 8.8 8.1 15-.6 4.1-1.8 7.8-5.1 10.6-.3.3-.5.7-.8 1-3.4 3.8-6.6 7.6-12 9-3.4.9-6.7.6-10.1.7-1.6 0-2.8-.7-3.6-2.1-1.3-2-2.7-3.8-4.1-5.7-.5-.6-.8-1.6-2.1-1.1.1 2.1.5 4.1 1.6 6 1.6 2.8.4 5.5-2.6 6.7-1 .4-2 .7-3.1.7-3.2 0-6.4.3-9.5 0-5-.6-9.6-2.3-11.4-7.7-1.8-5.3-2.7-10.7.3-16 .3-.4.3-1 .5-1.5.3-.3 1.1-.4.6-1-.7-.1-1.1.4-1.3.8zm159.1-53.2c3.2 1.2 6.4.9 9.5.9 1.7 0 3.3.4 4.8 1.3 5.5 2.9 10.1 6.9 14.5 11.2.5.5.8 1.3 1.8 1.1 0-.3.1-.6.1-.9-.1-.5-.3-1-.5-1.5-3.1-5.4-6.7-10.4-12.6-13-1-.4-1.9-.9-2.9-1.3-1.7-.6-2-1.7-1.4-3.2.7-2 1.3-4 2.1-6 3.3-7.9 8.3-14.2 16.7-17.2.1 0 .1-.2.1-.3-2.7-1.1-4.4-1-7.3.8-4.4 2.8-8.5 6-11.5 10.5-2.6-2-5.1-3.8-7.4-5.8-5.5-4.8-11.7-4-18.1-2.9-.3 0-.6.3-.7.5-.2.5.2.9.6.9 1.5.4 3.1.8 4.7.9 3.1.3 6.1 1.1 8.7 2.8 2.8 1.7 5.6 3.5 8.3 5.4 1.9 1.3 2 1.8 1.2 4-1 2.5-2 4.9-2.2 7.6-.1.9-.6 1.3-1.4 1.5-1 .2-2.1.4-3.1.7-1.3.5-2.8.6-4 2zm152.7 126c-1.5.7-2.9 1.2-4.1 2-1.3.9-2.7 1-4.1 1.4-3.6.9-7.2.1-10.7.3-.9.1-1.4-.4-1.4-1.3 0-1-.1-1.9 0-2.9.2-4.1-1.1-7.7-3.1-11.2-.3-.6-.6-1.5-1.6-1.2-.7.2-.6 1-.6 1.7-.1 3.1.6 6.1 1 9.2 1.3 7.9-.8 14.9-5.5 21.2-.5.7-1.1 1.3-1.8 1.8-4.1 3.4-8.9 4.8-14.1 5.1-.7 0-1.5 0-2.2-.1-.8 0-1.2-.9-2.1-1.2-.3 1.8.8 2.3 1.9 2.8 1.4.6 2.8 1 4.3 1 1.4 0 2.8.1 4.1.1.8 0 1.3.3 1.6 1.2 1.5 4.1 4 7 8.2 9.7.3-1.3-.4-2.3-1-3.2-.9-1.3-2-2.5-2.9-3.8-1.9-2.7-1.5-4.3 1.4-5.8 4.7-2.5 8.1-6.1 9.9-11.1.9-2.4 1.8-4.8 2.5-7.2.6-2 1.4-2.6 3.2-1.8 3.3 1.5 6.7 1 10 1 3.9-.3 6.7-3.2 7.1-7.7zM340.2 159c-2.4 2.7-5.2 4.7-8.3 6.4-3.7 2-7.6 3.8-11.8 4.8-2.6.6-2.9.5-2.7-2.1.2-2.1.6-4.2-.1-6.3-1.6-5.6-.7-10.9 1.9-16 .4-.8 1.1-1.6.8-2.6-.8-.3-1.2.4-1.6.8-2.6 2.5-4.1 5.6-5.2 9-1 3-1.2 6 0 9 1.1 2.6.9 5.4 1.5 8.1.3 1.4-.4 2.1-1.7 2.6-2.4.9-4.7 1.8-7.2 2.5-6.9 1.8-12.1 5.9-16.2 11.6-.4.5-1 1.1-.4 2 1.4-.3 2.1-1.4 2.9-2.3 3.3-3.1 6.9-5.8 11.4-6.7 5.9-1.1 11.4-3.3 17-5.1 5.3-1.7 9.9-4.4 14-7.9 2.7-2 4.9-4.3 5.7-7.8zm-78.1 42.4c1.3-.2 1.8-1.1 2.4-1.7 2.2-2 4.1-4.3 5.9-6.6.9-1.1 1.7-1.5 2.7 0 .7 1.1 1.6 2 2.8 2.5.7.3 1.4.8 2.1.2.7-.8-.1-1.3-.5-1.9-.4-.5-.9-.9-1.3-1.4-2.7-2.9-2.6-2.8-1-6.3 2.3-5 5-9.8 6.5-15.2 1-3.4 3.3-6.2 6.1-8.4 2.2-1.8 4.6-3.4 6.9-5.1.6-.4 1.4-.6 1.1-2.1-6 .7-10.5 3.8-13.8 8.5-1-.5-1.1-1.3-1.5-1.9-2.7-4-6.4-6.5-11.2-7.1-3.9-.5-7.8.7-11.8.8.3.9.9.9 1.4 1.1 2.5.7 5.1.7 7.6.5 4.3-.3 9.8 3.3 11.3 8.7.4 1.4.6 2.9 1 4.3.5 1.8.3 3.6-.5 5.3-1.8 4.3-5 7.9-6.5 12.3-.1.4-.5.6-.8 1-2.6 3.2-5.2 6.5-7.7 9.7-.6.7-1.3 1.4-1.2 2.8zm178.8 126.8c.2.4.5.7.9.7 0 0 .2-.4.1-.5-.2-.4-.4-.7-.9-.7-.2.1-.2.3-.1.5z" fill="#fe9a79"/>
             <path d="M162.4 208.8c-.6-1.4-.6-2.5-.3-3.5 1.5-4.9 3.1-9.7 7-13.4.5-.5 1.1-1 1.7-1.4.9-.7 1.6-.5 2.3.4 1.6 2 2 4.7 3.9 6.9-5.7 2.6-10.3 6.4-14.6 11zM255.6 217.9l-.2.2-.1-.1c.1-.1.2-.1.3-.1-.1-.1 0 0 0 0z" fill="#fe9a79"/>
           </g>
-        </svg>
+        </svg> -->
         <!-- End Illustration mindfull break -->
         
         <svg version="1.1" id="illu-logo" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 500" xml:space="preserve">
@@ -237,113 +236,85 @@ get_header();
           <path d="M309.9 335.9c-35 0-56.1-25.8-57-26.9l6.3-5-3.2 2.5 3.1-2.5c.2.2 19.6 23.9 50.7 23.9s50.5-23.7 50.7-23.9l6.3 5c-.8 1.1-21.9 26.9-56.9 26.9z" fill="#fe9a79" id="smile"/>
         </svg>
 
-
         <!-- End Illustration mindfull break -->
       </div>
 
       <div class="content-scroll">
             <?php // while ( have_posts() ) : the_post();the_content(); endwhile; ?>         
-        <div class="wp-block-group section" id="section_one">
+        <div class="wp-block-group section" id="section_why_reblance">
           <div class="wp-block-group__inner-container">
-          <h3 class="eyebrow">Learn&nbsp;why&nbsp;Rebalance is&nbsp;a&nbsp;great&nbsp;product for&nbsp;you&nbsp;and&nbsp;your&nbsp;team</h3>
-            <h1>Why Rebalance?</h1>
-            
-            <p>Are your days so busy that you struggle to find time for a break? Feel exhausted, stressed, or overwhelmed by a seemingly never ending to-do list? Do you have a tight neck and shoulders, stiff hips, or a sore lower back? Or perhaps you lose focus during the afternoon slump?</p>
-
-           
-
+          <h3 class="eyebrow">Improve your workday and build your wellness habit</h3>
+            <h1>
+              Why Rebalance?
+            </h1>
+            <p>
+              Are your days so busy that you struggle to find time for a break? Feel exhausted and overwhelmed by a seemingly never ending to-do list? Perhaps you lose focus during the afternoon slump? Do you wish you could find the time for some wellbeing practices but struggle to fit them into your routine?
+            </p>
+            <p>
+              You’re not alone.
+            </p>
           </div>
         </div>
-
-        <div class="wp-block-group section" id="section_two">
-          <div class="wp-block-group__inner-container">
-            <h2>What if ...</h2>
-            <p>... there was a tool to help you take a break while boosting your mood, releasing tension, and increasing your productivity? <strong>Introducing: Rebalance.</strong></p>
-          </div>
-        </div>
-
-
         <div class="wp-block-group section" id="section_whatsWrong">
           <div class="wp-block-group__inner-container">
-
-            <h2>So What’s Wrong With The Way We Work?</h2>
-
-            <h3>Work-related Stress and Burnout</h3>
-            
-            <p>As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related stress, depression and burnout.</p>
-            <p><em> In the UK, work-related mental health conditions resulted in a loss of</em> <strong>12.8 million work days</strong> <em>in 2018, which is 54% of the total working days lost</em><?php echo do_shortcode("[mfn]Health and Safety Executive. (2019). <em>Work-related stress, anxiety or depression statistics in Great Britain, 2019</em>. Health and Safety Executive, <a href='https://www.hse.gov.uk/statistics/causdis/stress.pdf'>https://www.hse.gov.uk/statistics/causdis/stress.pdf</a>[/mfn]"); ?>.</p>
-          
+            <h2>
+              What’s Wrong With The Way We Work?
+            </h2>
+            <p>
+              As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related health conditions. These figures are worrying. The rates of work related stress and depression are on the rise, with 73% of Australian professionals experiencing a degree of stress in an average week<?php echo do_shortcode("[mfn]McMillan, L. (2016). 2016 Snapshot of the Australian Workplace. Reventure Ltd., Melbourne.[/mfn]"); ?>, and burnout has officially been labelled as an 'occupational phenomenon' by the WHO<?php echo do_shortcode("[mfn]WHO. (2019). Burn-out an 'occupational phenomenon': International Classification of Diseases. Retrieved from: <a href='https://www.who.int/mental_health/evidence/burn-out/en/'>https://www.who.int/mental_health/evidence/burn-out/en/</a>[/mfn]"); ?>.
+            </p>
+            <p>
+              Similarly, science has shown prolonged periods of sitting are bad for us, which for those of us who work at a desk, is a pretty inconvenient truth! As we sit, blood flow slows in the body, meaning the organs and brain receive less oxygen, which in turn leads to reduced focus and concentration.
+            </p>
+            <p>
+              As stressed and stationary are rapidly becoming our new normal, many professionals are struggling to improve their work-life balance and find ways to support their physical and mental wellbeing.
+            </p>
           </div>
         </div>
-
-        <div class="wp-block-group section" id="section_moneyloss">
+        <div class="wp-block-group section" id="section_bring_balance_back">
             <div class="wp-block-group__inner-container">
-
-            <p>Similarly, a European funded project estimated the cost to Europe of workplace stress to be approximately <strong>€600 billion</strong> annually. This comprises the loss of <strong>€272 billion</strong> to employers resulting from absenteeism and presenteeism (being present at work but not productive); lost productivity costs of <strong>€242 billion</strong>; and social costs for healthcare (€63 billion), welfare and disability payments (€39 billion)<?php echo do_shortcode("[mfn]Hassard, J.,Teoh, K., Cox, T., Dewe, P., Cosmar, M., Gründler, R., Flemming, D., Cosemans, B., & Van den Broek, K. (2014). <em>Calculating the Cost of Work-Related Stress and Psychosocial Risks: European Risk Observatory.</em> European Agency for Safety and Health at Work, Luxembourg.[/mfn]"); ?>.</p>
-            
-            <p>While these figures are worrying, the upside is employers are recognising the need for change. Rebalance helps combat work-related mental health conditions by providing a wellbeing platform that helps organisations to invest in and prioritise their people: supporting employee mental health, boosting resilience, and reducing stress.</p>
-            <p><em>Since the growth of companies is directly related to the health of their employees, this is beneficial for employers in reducing absenteeism and presenteeism, and increasing employee retention and engagement.</em></p>
-
+            <h2>
+              Bring balance back into your day
+            </h2>    
+            <p>
+              Despite our best intentions, taking a break at work to press pause, breathe or stretch can seem impossible, let alone making a regular habit of it. Perhaps you can’t find the time, or at not sure where to begin. We know from experience that building any new habit is hard, and maintaining them is even harder.
+            </p>
+            <p>
+              What if there was a tool to help you take a break while boosting your mood, releasing tension, and increasing your productivity? Introducing: Rebalance.
+            </p>
           </div>
         </div>
-
-        <div class="wp-block-group section" id="section_problemWithSitting">
+        <div class="wp-block-group section" id="section_about_habits">
             <div class="wp-block-group__inner-container">
-
-            <h3>The Problem With Sitting</h3>
-
-            <p><em>How many hours a day do you spend sitting?  7? 8? 10+ hours? Science has shown us that prolonged periods of sitting are bad for you. For those of us who work at a desk, this is a pretty inconvenient truth!</em></p>
-            
-            <p>So what actually happens when we sit? Normally when our muscles move, they pump fresh blood and oxygen through the body, however when we’re in a stationary seated position our muscles aren’t moving as frequently, so blood flows more slowly through the body. <strong>As blood flow slows, so does the body.</strong></p>
-            
-            <p> This lack of movement means the organs and brain receive less oxygen leading to reduced focus and concentration, and while we sit we burn fewer calories than when we move which can contribute to weight gain. Lastly, sitting with a poor and hunched posture causes the abdominal muscles to soften, the lower back tightens and rounds, hip flexors become short and tight, and tilting the head forwards towards your screen overextends the neck and shoulders causing tension and reducing flexibility in the spine.<?php echo do_shortcode("[mfn]Matthews, C. E., George, S. M., Moore, S. C., Bowles, H. R., Blair, A., Park, Y., Troiano, R. P., Hollenbeck., & Schatzkin, A. (2012). Amount of Time Spent in Sedentary Behaviors and Cause-Specific Mortality in US Adults. <em>American Journal of Clinical Nutrition,</em> 95(2), 437-445. doi:10.3945/ajcn.111.019620 [/mfn]"); ?></p>
-            
-            <p>Lastly, sitting with a poor and hunched posture causes the abdominal muscles to soften while the lower back tightens and rounds, hip flexors become short and tight, and tilting the head forwards towards your screen overextends the neck and shoulders causing tension and reducing flexibility in the spine. </p>
-
+              <p>
+                Rebalance helps busy professionals transform their workday by first teaching members a simple habit formation technique, so they learn how they can insert tiny movement and breathing exercises into their existing daily routine to support their wellbeing. This means your new wellness habit will be consistent and here to stay!
+              </p>
+              <p>
+                By starting with habit formation, we empower our members and your employees to thrive, as they incorporate wellness into their lives and transform their workday improving their happiness, resilience and wellbeing.
+              </p>
           </div>
         </div>
-
-        <div class="wp-block-group section" id="section_howCombat">
-          <div class="wp-block-group__inner-container">
-            
-            <h2>How Can You Combat This?</h2>
-           
-            <p>Well the answer is fairly straightforward: your body is built to move! It’s best to incorporate activity into your day<?php echo do_shortcode("[mfn]Hales, D. & Hales, J. (2018). <em>Personal Stress Management: From surviving to thriving.</em> Cengage: Boston, USA.[/mfn]"); ?>. Get up and walk for a few minutes, alternate between working at seated and standing desks, or rebalance the body with some mindful movements.</p>
-            <p><strong>When you use Rebalance,</strong> <em>you have the added advantage of focussing your attention on combining movement with the breath, so this provides you with a mental break, as well as a physical one which improves overall health.</em></p>
-
-          </div>
-        </div>
-
-        <div class="wp-block-group section" id="section_mindfulBreak">
-          <div class="wp-block-group__inner-container">
-
-            <h2>Take a Mindful Break</h2>
-
-            <p>We often don’t feel that we have time to take a break. However interestingly, research shows the most productive employees don’t put in the longest hours, rather they take regular breaks. So why is this the case?</p>
-            <p>Our work repetitively uses the same region of the brain, the pre-frontal cortex which is responsible for concentration, decision making and problem solving. Just as repeatedly overloading the same muscle leads to fatigue, the same occurs with our mental energy, and as our energy is depleted we become less effective and efficient<?php echo do_shortcode("[mfn]Trougaskos, J. P.,  Hideg, I., Cheng, B. H., & Beal, D. J. (2014). Lunch Breaks Unpacked: The Role of Autonomy as a Moderator of Recovery During Lunch. <em>Academy of Management Journal</em>, 57(2), 405-421. doi:10.5465/amj.2011.1072[/mfn]"); ?>.</p>
-            <p><em>Taking an intentional break allows you to recharge your energy levels, improves your focus when you return to a task, and increases creative thinking and productivity<?php echo do_shortcode("[mfn]Ariga, A. & Lleras, A. (2011). Brief and Rare Mental “Breaks” Keep you Focused: Deactivation and Reactivation of Task Goals Preempt Vigilance Decrements. <em>Cognition</em>, 118(3), 439-443. doi:10.1016/j.cognition.2010.12.007[/mfn]"); ?>.</em></p>
-
-          </div>
-        </div>
-
         <div class="wp-block-group section" id="section_rebalanceYourself">
           <div class="wp-block-group__inner-container">
-          
-            <h2>Rebalance Yourself</h2>
-
-            <p>Rebalance enables you take a mindful break during your work day. Using just a few minutes of your time, we aim to give you an on-demand and approachable tool to help you look after yourself, combat the negative effects of prolonged sitting and work-related mental health conditions.</p>
-            <p><em>Whether you need to move and stretch out tight muscles, manage your stress, breathe to re-energise or regain your focus, it’s entirely up to you.</em></p>
-
+            <h2>
+              Transform your workday today!
+            </h2>
             <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
-              <h3>Rebalance is here to help!</h3>
+              <h3>
+                Rebalance is here to help!
+              </h3>
               <div class="wp-block-buttons">
                 <div class="wp-block-button">
                   <a href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>" class="wp-block-button__link">Start Your Free Trial</a>
                 </div>
               </div>
-              <p class="already-member">Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a></p>
+              <p class="already-member">
+                Already a member? <a href="<?php echo esc_url( home_url( '/membership-login/' ) ); ?>">Log in</a>
+              </p>
             </div>
+            <?php else : ?>
+              <a href="<?php echo esc_url( home_url( '/surprise/' ) ); ?>" class="wp-block-button__link">Try a random exercise</a>
             <?php endif; ?>
 
           </div>

@@ -4,7 +4,7 @@
 
 function gsAnimations(){
   ScrollTrigger.getAll().forEach(element => element.kill());
-
+  
   // Create timelines for benefits page to use in init
   if (document.querySelector('#illu-woman-rain-shine')) {						
     gsap.registerPlugin(ScrollTrigger);
@@ -12,40 +12,25 @@ function gsAnimations(){
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset"//,
     });
-
-    let trigger_illu_woman_rain = { 
-      trigger: "#section_why_reblance", 
-      start: "0% center", 
-      end: "100% center" };
     
-    let tl_woman_rain_raindrops = gsap.timeline({ 
-      paused: true,  
-      scrollTrigger: {
-        trigger: "#section_why_rebalance",
-        start: "top center",
-        end: "bottom center"
-      } })
+    let triggerOne = { trigger: "#section_one", start: "0% center", end: "100% center" };
+
+    let section_One_raindrops_tl = gsap.timeline({ paused: true,  scrollTrigger: triggerOne })
       .fromTo("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", 
         { yPercent: 0, scaleY: 1 }, 
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3}, 1.7)
       .fromTo("#illu01-raindrop03, #illu01-raindrop05", 
         { yPercent: 0, scaleY: 1 },
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, 1.85);
-    
-    let tl_woman_rain_in = gsap.timeline({ 
-      paused: true, 
-      scrollTrigger: trigger_illu_woman_rain })
-      .set("#illu-mindfulbreak, #illu-workdays, #illu-moneyloss, #cloudrain, #clock, #illu01-lightning-left, #illu01-lightning-right", 
-        { autoAlpha: 0 })
-      .set("#woman-on-desk", 
-        { autoAlpha: 1, scale: 1 })
-      .set("#illu01-head", 
-        { rotationZ: 0, y: 0, yPercent: 0 })
-      .set("#illu01-smile", 
-        { scaleY: 1 })
-      .fromTo("#illu-woman-rain-shine", 
-        { yPercent: 0, autoAlpha: 0 }, 
-        { yPercent: 0, autoAlpha: 1, duration: .7})
+
+    let section_OneIn = gsap.timeline({ paused: true, scrollTrigger: triggerOne })
+      .set("#illu-mindfulbreak, #illu-workdays, #illu-moneyloss, #cloudrain, #clock, #illu01-lightning-left, #illu01-lightning-right", { autoAlpha: 0 })
+      .set("#woman-on-desk", { autoAlpha: 1, scale: 1 })
+      .set("#illu01-head", { rotationZ: 0, y: 0, yPercent: 0 })
+      .set("#illu01-smile", { scaleY: 1 })
+      .fromTo("#illu-woman-rain-shine", { 
+        yPercent: 0, autoAlpha: 0 }, {
+        yPercent: 0, autoAlpha: 1, duration: .7})
       .fromTo("#cloudrain", 
         { xPercent: -100, yPercent: 0, autoAlpha: 0 }, 
         { xPercent: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 1.2)
@@ -55,37 +40,96 @@ function gsAnimations(){
       .fromTo("#illu01-lightning-right", 
         { y: -300, x: 100, autoAlpha: 0 }, 
         { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .8)
-      .fromTo("#illu01-head", 
-        { rotationZ: 0, y: 0, yPercent: 0 }, 
-        { rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
-      .fromTo("#illu01-smile", 
-        { scaleY: 1, transformOrigin: "50% 50%" }, 
-        { scaleY: -1, duration: .5 }, .9);
+      .fromTo("#illu01-head", { rotationZ: 0, y: 0, yPercent: 0 }, {  rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
+      .fromTo("#illu01-smile", { scaleY: 1, transformOrigin: "50% 50%" }, { scaleY: -1, duration: .5 }, .9);
+    
+    let triggerTwo = { trigger: "#section_two", start: "0% center", end: "100% center" };
+   
+    let section_Two_sunriseloop = gsap.timeline({ paused: true, scrollTrigger: triggerTwo })
+      .fromTo("#illu01-sun", { autoAlpha: 0 }, { duration: .3, autoAlpha: 1 }, 0)
+      .fromTo("#illu01-sun", { xPercent: 0, yPercent: 0 }, { duration: 1, xPercent: -60, yPercent: -60 }, 0)
+      .fromTo("#illu01-sun--rays", { scale: 1 }, { duration: .5, transformOrigin: "50% 50%", scale: .9, repeat: -1, yoyo: true }, 0)
+      .fromTo("#illu01-sun--rays", { rotationZ: 0 }, { duration: 1, rotationZ: 45, ease: "none", repeat: -1 }, 0);
+    
+    let section_TwoIn = gsap.timeline({ paused: true, scrollTrigger: triggerTwo })
+      .call( function(){ section_OneIn.pause() } )
+      .fromTo("#illu01-head", { rotationZ: 2, y: 0, yPercent: 20 }, { rotationZ: 0, y: 0,  yPercent: 0, duration: .3 }, 0)
+      .fromTo("#cloudrain", { 
+        xPercent: 0, yPercent: 0, autoAlpha: 1 }, { 
+        xPercent: 0, yPercent: -400, autoAlpha: 0, duration: .5 }, 0)
+      .fromTo("#illu01-lightning-left", { y: 0, x: 0, autoAlpha: 1 }, { x: -200, y: 0, autoAlpha: 0, duration: .3 }, 0)
+      .fromTo("#illu01-lightning-right", { y: 0, x: 0, autoAlpha: 1 }, { x: 200, y: 0, autoAlpha: 0, duration: .3 }, 0)
+      .fromTo("#illu01-smile", { scaleY: -1, transformOrigin: "50% 50%" }, { scaleY: 1, duration: .5 }, 0);
+    let trigger_whatsWrong_in_scrub = { trigger: "#section_whatsWrong", start: "0% center", end: "25% center", id: "stress", scrub: true };
+    let trigger_whatsWrong_Count = { trigger: "#section_whatsWrong", start: "0% center", end: "90% center"};
+    let section_stressIn_scrub = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in_scrub })      
+      .fromTo("#illu-woman-rain-shine", { autoAlpha: 1, yPercent: 0 }, { autoAlpha: 0, yPercent: -110, duration: .75 }, 0)
+      .fromTo("#illu-workdays", { y: 0, yPercent: 100, autoAlpha: 0, scale: 1 }, { y: 0, yPercent: 0, autoAlpha: 1, scale: 1, duration: 1 }, 0);
+    //Function for counting up
+    Number.prototype.numberFormat = function(decimals, dec_point, thousands_sep) {
+      dec_point = typeof dec_point !== 'undefined' ? dec_point : '.';
+      thousands_sep = typeof thousands_sep !== 'undefined' ? thousands_sep : ',';
+      var parts = this.toFixed(decimals).split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands_sep);
+      return parts.join(dec_point);
+    };
+    var counter = { var: 0 };
+    var tal = document.getElementById("number-workdays");
 
-    let trigger_whatsWrong_in = { 
-      trigger: "#section_whatsWrong", 
-      start: "0% center", 
-      end: "25% center", 
-      id: "stress", 
-      scrub: true };
+    let section_stressCount = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_Count })      
+      .call( function(){ section_OneIn.pause(); }, 0)
+      .set("#number-workdays", { scale: 1, fill: "#FFF" })
+      .to(counter, {
+        var: 12800000, 
+        onUpdate: function(){
+          var nwc = counter.var.numberFormat(0);
+          tal.innerHTML = nwc;
+        },
+        ease: "power4.in", duration: 3, 
+        onComplete: function(){
+          gsap.fromTo("#number-workdays", { scale: 1.2, fill: "#FFF" },{ scale: 1, fill: "#000", ease: "elastic.out( 1, 0.3)", duration: .66 })
+        }
+      }, 0);
 
-    let tl_whatsWrong_in = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in })      
-      .fromTo("#illu-woman-rain-shine", 
-        { autoAlpha: 1, yPercent: 0 }, 
-        { autoAlpha: 0, yPercent: -110, duration: .75 }, 0)
+      let loss = { var: 2 };
+      let losstal = document.getElementById("lossnumber");
+    
+    let triggermoneyLossIn_scrub = { trigger: "#section_moneyloss", start: "0% center", end: "90% center", scrub: true };
+
+    let section_moneyLossIn = gsap.timeline({ paused: true, scrollTrigger: triggermoneyLossIn_scrub })
+      .call( function(){ section_OneIn.pause(); }, 0)
       .fromTo("#illu-workdays", 
-        { yPercent: 100, autoAlpha: 0, scale: 1 }, 
-        { yPercent: 0, autoAlpha: 1, scale: 1, duration: 1 }, 0);
+        { autoAlpha: 1, yPercent: 0, scale: 1 }, 
+        { autoAlpha: 1, yPercent: -22, scale: .75 , duration: 1}, 0)
+      .fromTo("#illu-moneyloss", 
+        { autoAlpha: 0, yPercent: 100 }, 
+        { autoAlpha: 1, yPercent: 0, duration: 1 }, 0)
+      .fromTo("#woman-on-desk", 
+        { autoAlpha: 1, scale: 1, transformOrigin: "50% 50%" }, 
+        { autoAlpha: 0, scale: .5, duration: 1 }, 0)
+      .fromTo("#losspath", {
+          drawSVG: "0%" },{
+          drawSVG: "100%", ease: "none", duration: 5}, 0)
+      .to(loss, 5, { 
+        var: 600, 
+        onUpdate: function(){
+          var lossnumberdisplay = loss.var.numberFormat(0);
+          losstal.innerHTML = lossnumberdisplay;
+        }, 
+        ease: "none", duration: 3,
+        onComplete: function(){
+          gsap.fromTo("#lossnumber", {
+              scale: 1.5, transformOrigin: "50% 50%" }, {
+              scale: 1, ease: "elastic.out( 1, 0.3)", duration: .66 
+          })
+        }
+      }, 0);
      
-    let trigger_woman_on_desk_slumps = { 
-      trigger: "#section_whatsWrong", 
-      start: "0% center", 
-      end: "100% center", 
-      scrub: true };
-
-    let tl_woman_on_desk_slumps_in = gsap.timeline({ 
-      paused: true, 
-      scrollTrigger: trigger_woman_on_desk_slumps })         
+    let trigger_problemWithSitting_in_scrub = { trigger: "#section_problemWithSitting", start: "0% center", end: "100% center", scrub: true };
+    let section_problemWithSitting_in = gsap.timeline({ paused: true, scrollTrigger: trigger_problemWithSitting_in_scrub })         
+      .fromTo("#illu-workdays", 
+        { autoAlpha: 1, yPercent: -22, scale: .75 }, 
+        { autoAlpha: 1, yPercent: 0, scale: 1, duration: 1 }, 0)
       .fromTo("#woman-on-desk", 
         { autoAlpha: 0, scale: .5 }, 
         { autoAlpha: 1, scale: 1, duration: 1 }, 0)
@@ -96,6 +140,9 @@ function gsAnimations(){
       .fromTo("#clock", 
         { autoAlpha: 0, scale: .6, xPercent: 0 }, 
         { autoAlpha: 1, scale: 1, xPercent: 0, duration: 1 }, 0)
+      .fromTo("#calendar, #number-workdays", 
+        { autoAlpha: 1, scale: 1, transformOrigin: "50% 0%" }, 
+        { autoAlpha: 0, scale: 0.3, duration: 1 }, 0)
       .fromTo("#minutes", { transformOrigin: "50% 100%", rotate: 0 }, { rotate: 3600, duration: 5 }, 0)
       .fromTo("#hours", { transformOrigin: "0% 100%", rotate: 0 }, { rotate: 300, duration: 5 }, 0)
       .fromTo("#body-workdays #upperbody", 
@@ -106,13 +153,8 @@ function gsAnimations(){
         { rotationZ: -10, xPercent: 5, yPercent: 10, duration: 5 }, 0);
     
   
-    let trigger_speechbubble_pops_up = { 
-      paused: true, 
-      trigger: "#section_bring_balance_back", 
-      start: "0% center", 
-      end: "100% center" };
-
-    let tl_speechbubble_pops_up = gsap.timeline({ paused: true, scrollTrigger: trigger_speechbubble_pops_up })
+    let triggerhowCombatIn = { paused: true, trigger: "#section_howCombat", start: "0% center", end: "100% center" };  
+    let section_howCombatIn = gsap.timeline({ paused: true, scrollTrigger: triggerhowCombatIn })
       .fromTo("#body-workdays #upperbody", 
         { autoAlpha: 1,  rotationZ: 5 }, 
         { rotationZ: -30, duration: .5, ease: "power4.in" }, 0)
@@ -132,53 +174,27 @@ function gsAnimations(){
         { autoAlpha: 1, scale: 0, transformOrigin: "100% 100%" }, 
         { scale: 1, duration: .5, ease: "elastic.out( 1, 0.75)" }, .5);
 
-    let trigger_woman_sunrise = { 
-      trigger: "#section_about_habits", 
-      start: "0% center", 
-      end: "100% center" };
+    let section_mindfulBreakCharge = gsap.timeline({ paused: true, scrollTrigger: { trigger: "#section_mindfulBreak", start: "0% center", end: "100% center", scrub: true, onEnter: () => gsap.killTweensOf(ScrollTrigger.getById("stress").animation) } })      
+      .fromTo("#charge", { scaleX: 0 }, { scaleX: 1, ease: "none", duration: 10 }, 0)
+      .fromTo("#charge", { fill: "red" }, { fill: "#6a945b", ease: "power4.easeOut", duration: 10 }, 0);
 
-    let tl_woman_sunrise_sunriseloop = gsap.timeline({ 
-      paused: true, 
-      scrollTrigger: trigger_woman_sunrise })      
-      .fromTo("#illu01-sun", 
-        { autoAlpha: 0 }, 
-        { duration: .3, autoAlpha: 1 }, 1)
-      .fromTo("#illu01-sun", 
-        { xPercent: 0, yPercent: 0 }, 
-        { duration: 1, xPercent: -60, yPercent: -60 }, 1)
-      .fromTo("#illu01-sun--rays", 
-        { scale: 1 }, 
-        { scale: .9, duration: .5, transformOrigin: "50% 50%", repeat: -1, yoyo: true }, 1)
-      .fromTo("#illu01-sun--rays", 
-        { rotationZ: 0 }, 
-        { rotationZ: 360, duration: 8, ease: "none", repeat: -1 }, 1);
+      gsap.fromTo("#illu-workdays", 
+        { yPercent: 0, autoAlpha: 1 }, 
+        { yPercent: -110, autoAlpha: 0, 
+          scrollTrigger: { trigger: "#section_mindfulBreak", start: "0% center", end: "10% center", scrub: true } 
+        });
+      gsap.fromTo("#illu-mindfulbreak", 
+        { yPercent: 110, autoAlpha: 0 }, 
+        { yPercent: 0, autoAlpha: 1, 
+          scrollTrigger: { trigger: "#section_mindfulBreak", start: "0% center", end: "12% center", scrub: true } });
 
-    let tl_woman_sunrise_in = gsap.timeline({ paused: true, scrollTrigger: trigger_woman_sunrise })
-      .fromTo("#illu-woman-rain-shine", 
-        { autoAlpha: 0, yPercent: -110 }, 
-        { autoAlpha: 1, yPercent: 0, duration: .75 }, 0)
-      .fromTo("#illu-workdays", 
-        { yPercent: 0, autoAlpha: 1, scale: 1 }, 
-        { yPercent: 100, autoAlpha: 0, scale: 1, duration: 1 }, 0)
-      .fromTo("#illu01-head", 
-        { rotationZ: 2, y: 0, yPercent: 20 }, 
-        { rotationZ: 0, y: 0,  yPercent: 0, duration: .3 }, 1)
-      .fromTo("#cloudrain", 
-        { xPercent: 0, yPercent: 0, autoAlpha: 1 }, 
-        { xPercent: 0, yPercent: -400, autoAlpha: 0, duration: .5 }, 1)
-      .fromTo("#illu01-lightning-left", 
-        { x: 0, y: 0, autoAlpha: 1 }, 
-        { x: -200, y: 0, autoAlpha: 0, duration: .3 }, 1)
-      .fromTo("#illu01-lightning-right", 
-        { x: 0, y: 0, autoAlpha: 1 }, 
-        { x: 200, y: 0, autoAlpha: 0, duration: .3 }, 1)
-      .fromTo("#illu01-smile", 
-        { scaleY: -1, transformOrigin: "50% 50%" }, 
-        { scaleY: 1, duration: .5 }, 1);
-
+    let triggermindfulBreakflash = { trigger: "#section_mindfulBreak", start: "0% center", end: "90% center" };
+    let braincharging = gsap.timeline({ paused: true, scrollTrigger: triggermindfulBreakflash })    
+      .fromTo("#flash", { autoAlpha: 1 }, { autoAlpha: 0, duration: .5, repeat: -1, yoyo: true, ease: "power" });
+    
     let triggerrebalanceYourselfIn = { trigger: "#section_rebalanceYourself", start: "0% center", end: "100% center" };
     let rebalanceYourselfIn = gsap.timeline({ paused: true, scrollTrigger: triggerrebalanceYourselfIn })     
-    .fromTo("#illu-woman-rain-shine", 
+    .fromTo("#illu-mindfulbreak", 
       { yPercent: 0, autoAlpha: 1 }, 
       { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
