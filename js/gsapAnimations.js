@@ -213,12 +213,12 @@ function gsAnimations(){
     gsap.fromTo("#breatheman", 
     { yPercent: -10, autoAlpha: 0, scale: .75 }, 
     { yPercent: 0, autoAlpha: 1, scale: .8, ease: "none", 
-      scrollTrigger: { trigger: "#section_improve_your_workday"} })
+      scrollTrigger: { trigger: "#section_improve_your_workday", start: "0% center", end: "60% center"} })
 
     gsap.fromTo("#breatheman", 
     { yPercent: 0, autoAlpha: 1 }, 
     { yPercent: -100, autoAlpha: 0, ease: "none", 
-      scrollTrigger: { trigger: "#section_unbalancedWorld", start: "0% center", end: "100% center ",} })
+      scrollTrigger: { trigger: "#section_unbalancedWorld", start: "-200 center", end: "0% center ", scrub: true } })
 
     let trigger_unbalancedWorldIn = { 
       trigger: "#section_unbalancedWorld", 

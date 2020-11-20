@@ -2607,7 +2607,6 @@ a {
     @media (min-width: 768px) {
       .page-template-default .entry-header h1.entry-title {
         font-size: 2.5rem;
-        padding-right: 33.3%;
         margin: 0;
         padding-bottom: 1em; } }
     @media (min-width: 768px) {
