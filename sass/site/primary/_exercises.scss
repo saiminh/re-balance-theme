@@ -1,4 +1,4 @@
-.exercise-single-article {
+.exercise-single-article:not(.types-tiny) {
     margin-top: 1rem;
 
     & h2 {
@@ -102,4 +102,74 @@
 .archive .video-duration,
 .search .video-duration {
     margin-bottom: .5rem;
+}
+
+.rebalance-mini {
+  font-size: .9rem;
+  overflow-y: scroll;
+  max-height: 100%;  
+  padding: 0 0 2rem 0;
+  @media (min-width: 768px) {
+    display: flex; 
+    align-items: stretch;
+    font-size: 1rem;
+    overflow-y: hidden;
+    max-height: auto;
+    padding: 2rem 1rem;
+    max-width: 60rem;
+    margin: 2rem 0;
+    //border: 1px solid $color__brand-primary;
+    border-radius: 5px;
+    background-color: lighten($color__brand-primary, 20%);
+  }
+}
+.notification-rebalance-mini .rebalance-mini {
+  padding: 1rem;
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+}
+.notification-rebalance-mini .notification-header {
+  margin: 0;
+}
+.rebalance-mini-illustration {
+  text-align: center;
+  & svg {
+    height: 25vh;
+    margin: 10px;
+  }
+  @media (min-width: 768px) {
+    flex-basis: 33.3%; 
+    padding: 1em 4em 1em 1em;
+    position: relative;
+    text-align: left;
+    & svg {
+      height: calc(100% - 2rem);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.rebalance-mini-instructions{  
+  & ul {
+    padding: 0;
+  }
+  & ul > li,
+  & ol > li {
+    padding: 0.25em;
+  }
+  & h1 {
+    margin-top: 0;
+  }
+  @media (min-width: 768px) {
+    flex-basis: 66.6%;
+  }
+}
+.rebalance-mini .button {
+  display: block;
+  text-align: center;
+  @media (min-width: 768px) {
+    display: inline-block;
+  }
 }

@@ -12,7 +12,6 @@
   top: 80px;
   transform: translate(-50%, 0%);
   box-shadow: 0 0 6px rgba(0,0,0,0.16);
-  border: 2px solid white;
   font-size: 1rem;
   @media (min-width: 768px) {
     top: calc(50% - 3rem);
@@ -57,52 +56,7 @@
 .notification-rebalance-mini .notification-header {
   margin-bottom: 0;
 }
-.rebalance-mini {
-  font-size: .9rem;
-  overflow-y: scroll;
-  max-height: 100%;  
-  padding: 1rem;
-  @media (min-width: 768px) {
-    display: flex; 
-    align-items: center;
-    font-size: 1rem;
-    overflow-y: hidden;
-    max-height: auto;
-    padding: 0;
-  }
-}
-.rebalance-mini .rebalance-mini-illustration {
-  & svg {
-    height: 25vh;
-    margin: 10px;
-  }
-  text-align: center;
-  @media (min-width: 768px) {
-    flex-basis: 33.3%; 
-    padding: 1em 3em 1em 1em;
-    & svg {
-      height: auto;
-    }
-  }
-}
-.rebalance-mini .rebalance-mini-instructions{  
-  & ul {
-    padding: 0;
-  }
-  & ul > li {
-    padding: 0.25em;
-  }
-  @media (min-width: 768px) {
-    flex-basis: 66.6%;
-  }
-}
-.rebalance-mini .button {
-  display: block;
-  text-align: center;
-  @media (min-width: 768px) {
-    display: inline-block;
-  }
-}
+
 //Modal oVerlay
 .notification-modal-darken.notification-hidden {
   transition: background-color .5s ease-in-out;
