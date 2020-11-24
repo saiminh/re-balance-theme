@@ -31,11 +31,12 @@
 				</div>	
 				<div>
 					<h3>Legal</h3>
-					<a class="site-info-element" href="/terms-of-use/">Terms&nbsp;&&nbsp;Conditions</a>
+					<a class="site-info-element" href="/terms-of-use/">Terms&nbsp;of&nbsp;Use</a>
+					<a class="site-info-element" href="/terms-and-conditions-of-sale/">Terms of Sale</a>
 					<a class="site-info-element" href="/privacy-policy/">Privacy Policy</a>
 					<a class="site-info-element" href="/cookie-policy/">Cookie Policy</a>
 					<span class="site-info-element">
-						©&nbsp;<?php echo date("Y"); ?>&nbsp;Re.Balance&nbsp;BV
+						©&nbsp;<?php echo date("Y"); ?>&nbsp;Rebalance&nbsp;for&nbsp;work
 					</span>
 				</div>
 			</div><!-- .site-info -->			
