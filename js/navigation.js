@@ -312,6 +312,12 @@
 		return animate(root, fettis, dragFriction, decay, duration, stagger);
 	}
 // End Celebratory confetti code
+
+//Insert after function
+function insertAfter(referenceNode, newNode) {
+	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+};
+
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
 		// Notification
@@ -321,15 +327,18 @@
 			})
 		}
 		// Confetti init
-		if ( document.getElementById('confetter') ) {
-			const confetter = document.getElementById('confetter');
-			const root = document.getElementById('confetter');
+		let confetter = document.getElementsByClassName('button-confetti')[0];
+		if ( confetter ) {
+			const root = confetter;
 			confetter.addEventListener('click', (e) => {
-				confetter.innerHTML = "✓ Well Done! Again!";
+				console.log('confetti!');
+				confetter.innerHTML = "✓ Celebrate more!";
 				confetti(root, config = {} );
 				e.preventDefault();				
 			});
-		}	
+		} else {
+			console.log('no confetter');
+		};	
 		//close messages
 		$('.close, .button-closes-msg').on('click', function(){
 			$(this).parents('.swpm-partial-protection').hide();
