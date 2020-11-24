@@ -188,19 +188,19 @@ function create_posttype() {
  
     register_post_type( 'exercises',
     // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Exercises' ),
-                'singular_name' => __( 'Exercise' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-			'rewrite' => array('slug' => 'exercises'),
-			'taxonomies' => array('exercise-type', 'exercise-tag'),
-			// below is to enable Gutenberg for this post type
+			array(
+				'labels' => array(
+					'name' => __( 'Exercises' ),
+					'singular_name' => __( 'Exercise' ),
+				),
+			'public' => true,
+			'show_ui' => true,
 			'show_in_rest' => true,
+			'has_archive' => 'exercises',
+			'rewrite' => array('slug' => 'exercises/%exercisetypes%', 'with_front' => false),
+			'taxonomies' => array('exercise-type', 'exercise-tag'),
 			'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', 'permalinks', 'featured_image' ),
-        )
+		)
 	);
 	flush_rewrite_rules(); 
 }
@@ -209,41 +209,41 @@ add_action( 'init', 'create_posttype', 0 );
  
 //create a custom taxonomy name it topics for your posts
  
-function create_types_hierarchical_taxonomy() {
+function create_exercisetypes_hierarchical_taxonomy() {
  
 // Add new taxonomy, make it hierarchical like categories
 //first do the translations part for GUI
  
   $labels = array(
-    'name' => _x( 'Types', 'taxonomy general name' ),
-    'singular_name' => _x( 'Exercise', 'taxonomy singular name' ),
-    'search_items' =>  __( 'Search Types' ),
-    'all_items' => __( 'All Types' ),
-    'parent_item' => __( 'Parent Type' ),
-    'parent_item_colon' => __( 'Parent Type:' ),
-    'edit_item' => __( 'Edit Type' ), 
-    'update_item' => __( 'Update Type' ),
-    'add_new_item' => __( 'Add New Type' ),
-    'new_item_name' => __( 'New Type Name' ),
-    'menu_name' => __( 'Types' ),
+    'name' => _x( 'Exercise-Types', 'taxonomy general name' ),
+    'singular_name' => _x( 'Exercise-Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Exercise-Types' ),
+    'all_items' => __( 'All Exercise-Types' ),
+    'parent_item' => __( 'Parent Exercise-Type' ),
+    'parent_item_colon' => __( 'Parent Exercise-Type:' ),
+    'edit_item' => __( 'Edit Exercise-Type' ), 
+    'update_item' => __( 'Update Exercise-Type' ),
+    'add_new_item' => __( 'Add New Exercise-Type' ),
+    'new_item_name' => __( 'New Exercise-Type Name' ),
+    'menu_name' => __( 'Exercise-Types' )
   );    
   $args = array(
-	'hierarchical' => true,
-    'labels' => $labels,
-    'show_ui' => true,
-    'show_admin_column' => true,
-    'query_var' => true,
-	'rewrite' => array( 'slug' => 'exercise-type' ),
-	'public' => 'true',
-	'has_archive' => 'true',
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'exercise-type', 'with_front' => false ),
+		'public' => true,
+		'has_archive' => true,
+		'show_in_rest' => true // Needed for tax to appear in Gutenberg editor
   );
 
 // Now register the taxonomy
- 
-  register_taxonomy('types', 'exercises', $args);
+  register_taxonomy('exercisetypes', 'exercises', $args);
 }
-//hook into the init action and call create_types_hierarchical_taxonomy when it fires
-add_action( 'init', 'create_types_hierarchical_taxonomy', 0 );
+//hook into the init action and call create_exercisetypes_hierarchical_taxonomy when it fires
+add_action( 'init', 'create_exercisetypes_hierarchical_taxonomy', 0 );
 
 
 /**
@@ -271,7 +271,7 @@ function create_tag_taxonomies_for_exercises()
     'separate_items_with_commas' => __( 'Separate tags with commas' ),
     'add_or_remove_items' => __( 'Add or remove tags' ),
     'choose_from_most_used' => __( 'Choose from the most used tags' ),
-    'menu_name' => __( 'Tags' ),
+    'menu_name' => __( 'Tags' )
   ); 
 
   register_taxonomy('exercises-tag','exercises',array(
@@ -281,11 +281,56 @@ function create_tag_taxonomies_for_exercises()
     'update_count_callback' => '_update_post_term_count',
     'query_var' => true,
 	'rewrite' => array( 'slug' => 'exercises-tag' ),
-	'public' => 'true',
-	'has_archive' => 'true',
+	'public' => true,
+	'has_archive' => true,
+	'show_in_rest' => true
   ));
   flush_rewrite_rules(); 
 }
+
+function show_cpt_permalinks( $post_link, $post ){
+	if ( is_object( $post ) && $post->post_type == 'exercises' ){
+			$terms = wp_get_object_terms( $post->ID, 'exercisetypes' );
+			if( $terms ){
+					return str_replace( '%exercisetypes%' , $terms[0]->slug , $post_link );
+			}
+	}
+	return $post_link;
+}
+add_filter( 'post_type_link', 'show_cpt_permalinks', 1, 2 );
+
+/* Use special template for tiny exercises */
+function get_custom_single_template($single_template) {
+		global $post;
+		if ( has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
+						$single_template = dirname( __FILE__ ) . '/single-exercises-tiny.php';
+		 }
+		 return $single_template;
+}
+add_filter( "single_template", "get_custom_single_template" ) ;
+
+/* Shortcode to display tiny content inline? Kan het? */
+function tiny_shortcode( $atts = array() ){
+	//default parameters
+	extract(shortcode_atts( array(
+		'name' => 'deep-breathing'
+	), $atts ));
+	
+	$page = get_posts( array(
+		'name'      => $atts['name'],
+		'post_type' => 'exercises'
+	) );
+
+	if ( $page ){
+			echo '<h4 class="notification-header">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+			echo '<div class="rebalance-mini">';
+			echo '<div class="rebalance-mini-illustration">';
+			get_template_part( 'inc/inline', 'tiny-illu-'.$atts['name'].'.svg' );
+			echo '</div><div class="rebalance-mini-instructions">'.$page[0]->post_content.'<a class="button button-confetti" id="confetter" href="#confetti">Congratulate Yourself!</a></div>';
+			echo '</div>';
+	}
+}
+add_shortcode( 'tiny', 'tiny_shortcode' );
 
 
 /** Display posts by category */
@@ -451,17 +496,20 @@ function show_breadcrumb() {
 // adding custom body classes
 
 function rebalance_bodyclass_names( $classes ) {
+	global $post;
+	if ( has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
+			$classes[] = 'tiny-single';
+	}
 	$usypusy = SwpmAuth::get_instance();
 	if ( SwpmMemberUtils::is_member_logged_in()) {
 		if ($usypusy->is_expired_account()){
 			$classes[] = 'wpsmp-loggedin-expired';
 		}
 			$classes[] = 'wpsmp-loggedin';
-			return $classes;
 	}  else {
 			$classes[] = 'wpsmp-loggedout';
-			return $classes;
 	}
+	return $classes;
 }
 
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
@@ -711,6 +759,8 @@ function my_embed_oembed_html($html, $url, $attr, $post_id) {
 			$vimeoidslash = preg_replace($pattern, "", $url);			
 			$vimeoid = preg_replace("#/#", ":", $vimeoidslash);			
 			$t = vimeo_duration($vimeoid);
+			$loginlink = '/membership-login';
+			$signuplink = '/membership-registration';
 			echo '<div class="video-duration">Time: '.sprintf('%02d:%02d', ($t/60%60), $t%60).'</div>';
 			return '
 				[swpm_protected custom_msg="
