@@ -57,22 +57,22 @@
     padding: 2rem;
     display: flex;
     overflow: visible;
-  }
-  & > svg {
-    visibility: hidden;
-    opacity: 0; 
-    // ^ important to prevent rendering jump or these be shown elsewhere
-    position: absolute;
-    left: 0;
-    height: calc(100% - 20px);
+  } 
+}
+.illustration-stage > svg {
+  visibility: hidden;
+  //opacity: 0; 
+  // ^ important to prevent rendering jump or these be shown elsewhere
+  position: absolute;
+  left: 0;
+  height: calc(100% - 20px);
+  width: 100%;
+  overflow: visible;
+  @media (min-width: 769px){
     width: 100%;
-    overflow: visible;
-    @media (min-width: 769px){
-      width: 100%;
-      left: 2rem;
-      height: auto;
-      align-self: center;
-    }
+    left: 2rem;
+    height: auto;
+    align-self: center;
   }
 }
 .content-scroll {

@@ -37,10 +37,6 @@ function gsAnimations(){
     let tl_woman_rain_in = gsap.timeline({ 
       paused: true, 
       scrollTrigger: trigger_illu_woman_rain })
-      .set("#illu-mindfulbreak, #illu-workdays, #illu-moneyloss, #cloudrain, #clock, #illu01-lightning-left, #illu01-lightning-right", 
-        { autoAlpha: 0 })
-      .set("#woman-on-desk", 
-        { autoAlpha: 1, scale: 1 })
       .set("#illu01-head", 
         { rotationZ: 0, y: 0, yPercent: 0 })
       .set("#illu01-smile", 
@@ -127,8 +123,7 @@ function gsAnimations(){
       .fromTo("#body-workdays", 
         { autoAlpha: 1, yPercent: 0 }, 
         { autoAlpha: 0, duration: .05 }, .55)
-      .fromTo("#clock", 
-        { autoAlpha: 1, scale: 1, xPercent: 0 }, 
+      .to("#clock", 
         { autoAlpha: 0, xPercent: -100, duration: .4,  }, .4)
       .fromTo("#speechbubble", 
         { autoAlpha: 1, scale: 0, transformOrigin: "100% 100%" }, 
@@ -165,14 +160,11 @@ function gsAnimations(){
       .fromTo("#illu01-head", 
         { rotationZ: 2, y: 0, yPercent: 20 }, 
         { rotationZ: 0, y: 0,  yPercent: 0, duration: .3 }, 1)
-      .fromTo("#cloudrain", 
-        { xPercent: 0, yPercent: 0, autoAlpha: 1 }, 
+      .to("#cloudrain", 
         { xPercent: 0, yPercent: -400, autoAlpha: 0, duration: .5 }, 1)
-      .fromTo("#illu01-lightning-left", 
-        { x: 0, y: 0, autoAlpha: 1 }, 
+      .to("#illu01-lightning-left", 
         { x: -200, y: 0, autoAlpha: 0, duration: .3 }, 1)
-      .fromTo("#illu01-lightning-right", 
-        { x: 0, y: 0, autoAlpha: 1 }, 
+      .to("#illu01-lightning-right", 
         { x: 200, y: 0, autoAlpha: 0, duration: .3 }, 1)
       .fromTo("#illu01-smile", 
         { scaleY: -1, transformOrigin: "50% 50%" }, 
