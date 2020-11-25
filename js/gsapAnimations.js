@@ -303,30 +303,6 @@ function gsAnimations(){
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);
 
 
-  } else if (document.querySelector('.home-hero')) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      ScrollTrigger.defaults({
-        toggleActions: "restart complete reverse reset"//,
-      });
-
-      gsap.fromTo("#home-benefits-block img", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
-      
-      gsap.fromTo("#home-benefits-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-benefits-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
-
-      gsap.fromTo("#home-about-block img", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
-      
-      gsap.fromTo("#home-about-block div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-about-block", start: "0% 70%", end: "100% 70%", scrub: false } } );
-      
-      gsap.fromTo("#home-example-video-block-breathe figure", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-example-video-block-breathe", start: "0% 70%", end: "100% 70%", scrub: false } } );
-      
-      gsap.fromTo("#home-example-video-block-breathe div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-example-video-block-breathe", start: "0% 70%", end: "100% 70%", scrub: false } } );
-
-      gsap.fromTo("#home-example-video-block-move figure", { autoAlpha: 0, yPercent: 40 }, { autoAlpha: 1, yPercent: 0, duration: .5, scrollTrigger: { trigger: "#home-example-video-block-move", start: "0% 70%", end: "100% 70%", scrub: false } } );
-      
-      gsap.fromTo("#home-example-video-block-move div:nth-child(2) *", { autoAlpha: 0 }, { autoAlpha: 1, duration: 1, scrollTrigger: { trigger: "#home-example-video-block-move", start: "0% 70%", end: "100% 70%", scrub: false } } );
-
-  
   } else {
     console.log('nothing to gsap here');
   }

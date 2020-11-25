@@ -7,8 +7,7 @@
         @include font-size(1.2);
     }
 }
-#home-benefits-block,
-#home-about-block {
+#home-how-block {
     align-items: center;
     & .wp-block-column {
         flex-basis: 66.6%;
@@ -16,6 +15,16 @@
     & .wp-block-column:first-child {
         flex-basis: 33.3%;
         text-align: center;
+    }
+}
+#home-offer-block {
+    align-items: center;
+    & .wp-block-column {
+        flex-basis: 50%;
+        background-color: #fff;
+        padding: .5em 2em 1.5em 2em;
+        border-radius: 5px;
+        box-shadow: 0 3px 16px rgba(0,0,0,0.1);
     }
 }
 .home-example-video-block .wp-block-column *:first-child{

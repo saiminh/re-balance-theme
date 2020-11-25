@@ -60,81 +60,64 @@ get_header();
 						</div>		
 					</div>
 				</div>
-				<div id="home-about-block" class="wp-block-columns">
+				<div id="home-how-block" class="wp-block-columns">
 					<div class="wp-block-column">
-						<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-about.png" alt="A woman at her work desk being reminded to use rebalance">
+						<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
 					</div>	
 					<div class="wp-block-column">
 						<!-- <h3 class="eyebrow">Our Mission</h3> -->
-						<h2>Bring balance back into your world</h2>
+						<h2>
+							How can Rebalance help?</h2>
+						<p>
+							Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University, with mindful movement and breathwork exercises. This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.</p>
 						<ul>
-							<li>We provide a platform with short video exercises for mindful movement and breathwork</li>
-							<li>Learn to synchronise your breath with movement to combat the negative effects of sitting</li>
-							<li>Use your breath to calm, focus, de-stress or uplift your mind</li>
-						</ul>
-						<div class="wp-block-buttons">
-							<div class="wp-block-button">
-								<a class="wp-block-button__link" href="/about" data-no-swup="">Read more</a>
-							</div>
-						</div>
-					</div>		
-				</div>
-				<div id="home-benefits-block" class="wp-block-columns">
-					<div class="wp-block-column">
-						<img class="home-benefits-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="An out-of-shape world transforms into a perfectly round earth">
-					</div>	
-					<div class="wp-block-column">
-						<!-- <h3 class="eyebrow">The Benefits</h3> -->
-						<h2>How can Rebalance help?</h2>
-						<ul>
-							<li>Taking conscious and effective breaks improves productivity, focus and engagement</li>
+							<li>Start small with our Rebalance Tiny Habit formation program.</li>
+							<li>Learn to take conscious and effective breaks to improve your productivity, focus and engagement</li>
 							<li>Improve your working environment for you or your whole business</li>
-							<li>Reduce incidence of work-related stress, and employee absenteeism and presenteeism</li>
+							<li>Reduce work-related stress, and employee absenteeism and presenteeism</li>
 						</ul>
 						<div class="wp-block-buttons">
 							<div class="wp-block-button">
-								<a class="wp-block-button__link" href="/the-benefits" data-no-swup="">Learn more</a>
+								<a class="wp-block-button__link" href="/why-rebalance" data-no-swup="">Read more</a>
 							</div>
 						</div>
 					</div>		
 				</div>
-				<div id="home-example-video-block-breathe" class="home-example-video-block wp-block-columns">
-					<div class="wp-block-column">
-						<figure class="wp-block-embed-vimeo wp-block-embed is-type-video is-provider-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio">
-							<iframe src="https://player.vimeo.com/video/433640250" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-						</figure>
-					</div>
-					<div class="wp-block-column">
-						<h2>Take a Breath</h2>
-						<p>Try our One Minute Quick Fix breathwork exercise. This uses an even breathing pattern which immediately calms your nervous system, reducing stress and anxiety. </p>
-						<!-- <h3>Benefits:</h3>
-						<ul>
-							<li>Reduces stress, anxiety, anger and frustration</li>
-							<li>Moves your nervous system into a relaxed state of ‘rest and digest’</li>
-						</ul> -->
-					</div>
+				<div id="home-offer-block">
+					<h2>
+						What we Offer</h2>
+					<p class="has-medium-font-size">
+						We will help you bring wellness easily into your daily routine to help you or your staff to reduce stress, improve focus and innovative thinking.</p>
+					<div class="wp-block-columns">
+						<div class="wp-block-column">
+							<!-- <h3 class="eyebrow">The Benefits</h3> -->
+							<h3>
+								Individual memberships</h3>
+							<p>
+								Struggle to find time for a break? Learn how to effortlessly fit mindful movement and breathing practices into your day and improve your work-life balance.</p>
+							<p>
+								Take the next step on your wellness journey and get started with our free trial today</p>
+							<div class="wp-block-buttons">
+								<div class="wp-block-button">
+									<a class="wp-block-button__link" href="/register-for-free-trial" data-no-swup="">Free Trial</a>
+								</div>
+							</div>
+						</div>	
+						<div class="wp-block-column">
+							<h3>
+								Corporate Solutions</h3>
+							<p>
+								Are you looking to improve your company’s culture, increase your employee’s productivity, or reduce the rate of work-related health conditions?</p>
+							<p>
+								Learn more about how we can help you and enquire for a business today</p>
+							<div class="wp-block-buttons">
+								<div class="wp-block-button">
+									<a class="wp-block-button__link" href="/business-inquiry/" data-no-swup="">Enquire now</a>
+								</div>
+							</div>
+						</div>		
+					</div>			
 				</div>
-				<div id="home-example-video-block-move" class="home-example-video-block wp-block-columns">
-					<div class="wp-block-column">
-						<figure class="wp-block-embed-vimeo wp-block-embed is-type-video is-provider-vimeo wp-embed-aspect-16-9 wp-has-aspect-ratio">
-							<iframe src="https://player.vimeo.com/video/433719983" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-						</figure>
-					</div>
-					<div class="wp-block-column">
-						<h2>Got a Minute to Move?</h2>	
-						<p>Try our One Minute Shoulder Moves. Begin by synchronising the breath with energising shoulder shrugs, then stretch between your shoulder blades to release tension in the area.</p>					
-						<!-- <h3>Benefits:</h3>
-						<ul>
-							<li>Release tension in the shoulder region</li>
-							<li>Synchronise the breath with short energising movements</li>
-						</ul>
-						<h3>Precautions:</h3>
-						<ul>
-							<li>Perform slowly and with caution if you have a shoulder injury or chronic shoulder pain</li>
-						</ul> -->
-					</div>
-				</div>
-			
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<div class="notification-modal-darken notification-hidden">
