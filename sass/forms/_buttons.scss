@@ -4,37 +4,24 @@ input[type="reset"],
 input[type="submit"],
 a.button,
 a.wp-block-button__link {
-	border: 2px solid;
+	border: none;
 	border-radius: 3px;
 	border-color: $color__brand-primary!important;
-	background: transparent;
-	color: $color__brand-primary;
+	background: $color__brand-primary;
+	color: $color__background-body;
 	line-height: 1.5;
-	padding: .6em 1.75em;
+	padding: .66em 1.75em;
 	@include font-size(1.25);
   transition: .15s all ease-in-out;
 	cursor: pointer;
 	display: inline-block;
 	&:hover {
-		color: $color__brand-primary;
+		color: $color__background-body;
 		border-radius: 15px;
-		// box-shadow: -1px 1px 0 darken($color__brand-primary, 20%),
-		// 						-2px 2px 0 darken($color__brand-primary, 20%),
-		// 						-3px 3px 0 darken($color__brand-primary, 20%),
-		// 						-4px 4px 0 darken($color__brand-primary, 20%),
-		// 						-5px 5px 0 darken($color__brand-primary, 20%);
-		// transform: translate(3px, -3px);
 	}
-
 	&:visited {
-		color: $color__brand-primary;
+		color: $color__background-body;
 	}
-
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
-	}
-
 	&.search-submit--home {
 		position: absolute;
 		right: 0;
@@ -72,5 +59,10 @@ a.wp-block-button__link {
 	&.button-disabled {
 		opacity: .3;
 		text-decoration: line-through;
+	}
+	&.button-secondary {
+		background: transparent;
+		color: $color__brand-primary;
+		border: 2px solid $color__brand-primary;
 	}
 }

@@ -46,8 +46,12 @@ get_header();
 						<?php get_template_part('inc/inline', 'home-tryitnow.svg'); ?>						
 						<div class="wp-block-group">
 							<div class="wp-block-group__inner-container">
-								<h1 class="hero-header">Transform&nbsp;your work&nbsp;day. Find&nbsp;your&nbsp;balance.</h1>
-								<p class="hero-subheader">Short & simple exercises empowering you to take better breaks at&nbsp;work.</p>
+								<h1 class="hero-header">
+									Transform&nbsp;your work&nbsp;day. Find&nbsp;your&nbsp;balance.
+								</h1>
+								<p class="hero-subheader">
+									Short and simple exercises to help you take better breaks at work.
+								</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
 										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
@@ -60,34 +64,41 @@ get_header();
 						</div>		
 					</div>
 				</div>
-				<div id="home-how-block" class="wp-block-columns">
-					<div class="wp-block-column">
-						<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
-					</div>	
-					<div class="wp-block-column">
-						<!-- <h3 class="eyebrow">Our Mission</h3> -->
-						<h2>
-							How can Rebalance help?</h2>
-						<p>
-							Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University, with mindful movement and breathwork exercises. This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.</p>
-						<ul>
-							<li>Start small with our Rebalance Tiny Habit formation program.</li>
-							<li>Learn to take conscious and effective breaks to improve your productivity, focus and engagement</li>
-							<li>Improve your working environment for you or your whole business</li>
-							<li>Reduce work-related stress, and employee absenteeism and presenteeism</li>
-						</ul>
-						<div class="wp-block-buttons">
-							<div class="wp-block-button">
-								<a class="wp-block-button__link" href="/why-rebalance" data-no-swup="">Read more</a>
+				<div id="home-how-block">
+					<h2>
+						How can Rebalance help?
+					</h2>
+					<p class="has-medium-font-size">
+						Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University, with mindful movement and breathwork exercises.
+					</p>
+					<div class="wp-block-columns" style="align-items: center">
+						<div class="wp-block-column">
+							<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
+						</div>	
+						<div class="wp-block-column">
+							<p>
+								This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.</p>
+							<ul>
+								<li>Start small with our Rebalance Tiny Habit® formation program.</li>
+								<li>Learn to take conscious and effective breaks to improve your productivity, focus and engagement</li>
+								<li>Improve your working environment for you or your whole business</li>
+								<li>Reduce work-related stress, and employee absenteeism and presenteeism</li>
+							</ul>
+							<div class="wp-block-buttons">
+								<div class="wp-block-button">
+									<a class="wp-block-button__link" href="/why-rebalance" data-no-swup="">Read More</a>
+								</div>
 							</div>
-						</div>
-					</div>		
+						</div>		
+					</div>
 				</div>
 				<div id="home-offer-block">
 					<h2>
-						What we Offer</h2>
+						What we Offer
+					</h2>
 					<p class="has-medium-font-size">
-						We will help you bring wellness easily into your daily routine to help you or your staff to reduce stress, improve focus and innovative thinking.</p>
+						We will help bring wellness easily into your daily routine. Assisting you or your staff to reduce stress, improve focus, and increase innovative thinking.
+					</p>
 					<div class="wp-block-columns">
 						<div class="wp-block-column">
 							<!-- <h3 class="eyebrow">The Benefits</h3> -->
@@ -112,7 +123,7 @@ get_header();
 								Learn more about how we can help you and enquire for a business today</p>
 							<div class="wp-block-buttons">
 								<div class="wp-block-button">
-									<a class="wp-block-button__link" href="/business-inquiry/" data-no-swup="">Enquire now</a>
+									<a class="wp-block-button__link" href="/business-inquiry/" data-no-swup="">Enquire Now</a>
 								</div>
 							</div>
 						</div>		
