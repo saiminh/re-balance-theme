@@ -342,6 +342,9 @@
 	& a {
 		color: $color__brand-primary;
 	}
+	& a.button {
+		color: $color__background-body;
+	}
 
 	& .user-menu {
 		//border-top: 1px solid #ddd;
