@@ -163,18 +163,18 @@
 					echo '<li>Search</li></ul>';
 
 				else :
-					if ( is_tax( 'types' ) ) :
-						show_custax_breadcrumb(single_tag_title("", false),"types");
+					if ( is_tax( 'exercisetypes' ) ) :
+						show_custax_breadcrumb(single_tag_title("", false),"exercisetypes");
 					elseif ( is_tax( 'exercises-tag' ) ) :
 						show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
-					elseif ( has_term( '' , 'types' ) ) :
+					elseif ( has_term( '' , 'exercisetypes' ) ) :
 						
 						echo '<ul class="breadcrumbs">';
 						echo '<li><a href="';
 						echo get_option('home');
 						echo '">Home';
 						echo '</a></li>';
-						$rd_taxonomy = 'types'; // region taxonomy
+						$rd_taxonomy = 'exercisetypes'; // region taxonomy
 						$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
 						if( $rd_terms ) {
 							$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
