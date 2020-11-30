@@ -190,12 +190,12 @@ function gsAnimations(){
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);    
-  } 
-
-  else if (document.querySelector('#world')) { 
-// -------------------------
-// Animations for About Page
-// -------------------------
+  }; 
+  
+  if (document.querySelector('#world')) { 
+  // -------------------------
+  // Animations for About Page
+  // -------------------------
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(DrawSVGPlugin);
     ScrollTrigger.defaults({
@@ -229,7 +229,6 @@ function gsAnimations(){
       .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
       .fromTo("#eyelids", { yPercent: 0 }, { yPercent: -30, duration: 5 }, 0)
       .to("#eyelids", { yPercent: 0, duration: 3 }, 5);
-
     
     gsap.fromTo("#unbalancedWorld", 
         { yPercent: 100, autoAlpha: 0 },
@@ -293,12 +292,8 @@ function gsAnimations(){
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);
-
-
-  } else {
-    console.log('nothing to gsap here');
-  }
-
+  };
+  
   if (document.querySelector('#breatheman')) {
     let breathemanbreathes = gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
     .to("#breatheman-chest", { transformOrigin: "50% 100%", scale: 1.125, yPercent: -5, ease: "power2.inout", duration: 5 }, 0)
@@ -306,5 +301,13 @@ function gsAnimations(){
     .to("#breatheman-head", { transformOrigin: "50% 100%", yPercent: -9, ease: "power2.inout", duration: 4.9 }, 0.3)  
     .to("#breatheman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, ease: "power2.inout", duration: 4.7 }, 0.3)    
     .to("#breatheman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, ease: "power2.inout", duration: 4.8 }, 0.2);    
-  }
+  };
+
+  if (document.querySelector('#energising-breaths')) {
+    let energisingbreaths_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: false })
+      .fromTo("#breatheout", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.01}, 1)
+      .fromTo("#breathein", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.01}, 1)
+      .fromTo("#breatheout", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.01}, 2.1)
+      .fromTo("#breathein", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.01}, 2.1)
+  };
 }
