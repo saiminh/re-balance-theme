@@ -370,7 +370,7 @@ function gsAnimations(){
     .set("#head, #rays", { transformOrigin: "50% 50%" })
     .set("#pursed", { autoAlpha: 0 })
     .to("#head, #rays", { scale: 1.5, duration: 4, ease: "power3.Out" }, 0)
-    .to("#face", { yPercent: -25, duration: 4, ease: "power3.Out" }, 0)
+    .to("#face", { yPercent: -15, duration: 4, ease: "power3.Out" }, 0)
     .to("#brows", { yPercent: -100, duration: 4, ease: "power3.Out" }, 0)
     .to("#nose", { yPercent: -25, scaleX: 1.1, duration: 4, ease: "power3.Out" }, 0)
     .to("#mouth", { yPercent: -50, duration: 4, ease: "power3.Out" }, 0)
