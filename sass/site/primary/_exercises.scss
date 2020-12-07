@@ -136,6 +136,7 @@
   & svg {
     height: 25vh;
     margin: 10px;
+    overflow: visible;
   }
   @media (min-width: 768px) {
     flex-basis: 33.3%; 
@@ -147,6 +148,7 @@
     & svg {
       height: auto;
       margin: 0;
+      flex-basis: 100%;
       // position: absolute;
       // top: 50%;
       // transform: translateY(-50%);

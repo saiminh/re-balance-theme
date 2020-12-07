@@ -310,4 +310,79 @@ function gsAnimations(){
       .fromTo("#breatheout", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.01}, 2.1)
       .fromTo("#breathein", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.01}, 2.1)
   };
+
+  if (document.querySelector('#eye-relaxation')) {
+    let eyerelaxation_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: false })
+      .fromTo("#rub, #armhand", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.1}, 2)
+      .fromTo("#nice", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.1}, 2)
+      .fromTo("#rub, #armhand", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.1}, 3.1)
+      .fromTo("#nice", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.1}, 3.1)
+  };
+
+  if (document.querySelector('#tiny-first-aid')) {
+    let tl_woman_rain_raindrops = gsap.timeline()
+      .set("#cloudrain", { yPercent: -5 })
+      .fromTo("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", 
+        { yPercent: 0, scaleY: 1 }, 
+        { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3}, 0)
+      .fromTo("#illu01-raindrop03, #illu01-raindrop05", 
+        { yPercent: 0, scaleY: 1 },
+        { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, .15);
+    let tinyfirstaid_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: true })
+      .set("#illu01-body, #illu01-head", {transformOrigin: "50% 100%"})
+      .to("#illu01-body", { scale: 1.125, ease: "power3.inOut", duration: 3 }, 0)
+      .to("#illu01-head", { yPercent: -9, ease: "power3.inOut", duration: 2.9 }, 0.3)  
+    let rainawaysunup_tl = gsap.timeline({ paused: false})
+      .to("#cloudrain", { yPercent: -200, autoAlpha: 0, ease: "power3.inOut" ,duration: 1 }, 5)
+      .to("#illu01-sun", { yPercent: -120, xPercent: 100, ease: "power3.inOut", duration: 1 }, 5.25)
+  };
+
+  if (document.querySelector('#illu-focus')) {
+    let tinyfocus_tl = gsap.timeline({ repeat: -1 })
+      .set("#body, #head", { transformOrigin: "50% 100%" })
+      .to("#body", { scale: 1.125, ease: "power2.Out", duration: 4 }, 0)
+      .to("#head, #hands", { yPercent: -12, ease: "power2.Out", duration: 4 }, 0)
+      .to("#arms", { yPercent: -20, ease: "power2.Out", duration: 4 }, 0)
+      .to("#body", { scale: 1, ease: "power2.Out", duration: 4 }, 4)
+      .to("#head, #hands", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
+      .to("#arms", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
+  };
+  
+  if (document.querySelector('#illu-neck-moves-side-to-side')) {
+    let neckmove_tl = gsap.timeline({ repeat: -1 })
+      .set("#body, #head", { transformOrigin: "50% 90%" })
+      .set("#head", { rotationZ: -45 })
+      .to("#body", { scale: 1.125, ease: "power2.Out", duration: 4 }, 0)
+      .to("#head, #hands", { yPercent: -12, ease: "power2.Out", duration: 4 }, 0)
+      .to("#arms", { yPercent: -20, ease: "power2.Out", duration: 4 }, 0)
+      .to("#body", { scale: 1, ease: "power2.Out", duration: 4 }, 4)
+      .to("#head, #hands", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
+      .to("#arms", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
+    let sidetoside_tl = gsap.timeline({ repeat: -1 })
+      .to("#head", { rotationZ: 0, duration: 4 }, 0)
+      .to("#head", { rotationZ: 45, duration: 4 }, 4)
+      .to("#head", { rotationZ: 0, duration: 4 }, 8)
+      .to("#head", { rotationZ: -45, duration: 4 }, 12)
+  };
+
+  if (document.querySelector( '#tiny-illu-calming-breaths' )) {
+    let calmingbreaths_tl = gsap.timeline({ repeat: -1 })
+    .set("#head, #rays", { transformOrigin: "50% 50%" })
+    .set("#pursed", { autoAlpha: 0 })
+    .to("#head, #rays", { scale: 1.5, duration: 4, ease: "power3.Out" }, 0)
+    .to("#face", { yPercent: -25, duration: 4, ease: "power3.Out" }, 0)
+    .to("#brows", { yPercent: -100, duration: 4, ease: "power3.Out" }, 0)
+    .to("#nose", { yPercent: -25, scaleX: 1.1, duration: 4, ease: "power3.Out" }, 0)
+    .to("#mouth", { yPercent: -50, duration: 4, ease: "power3.Out" }, 0)
+    .to("#pursed", { autoAlpha: 1, duration: .25 }, 4)
+    .to("#smile", { autoAlpha: 0, duration: .25 }, 4)
+    .to("#head, #rays", { scale: 1, duration: 4, ease: "power3.Out" }, 5)
+    .to("#face", { yPercent: 0, duration: 4, ease: "power3.Out" }, 5)
+    .to("#brows", { yPercent: 0, duration: 4, ease: "power3.Out" }, 5)
+    .to("#nose", { yPercent: 0, scaleX: 1, duration: 4, ease: "power3.Out" }, 5)
+    .to("#mouth", { yPercent: 0, duration: 4, ease: "power3.Out" }, 5)
+    .to("#pursed", { autoAlpha: 0, duration: .25 }, 8.75)
+    .to("#smile", { autoAlpha: 1, duration: .25 }, 8.75)
+    .to("#rays", { rotationZ: 360, duration: 9, ease: "linear" }, 0)
+  };
 }
