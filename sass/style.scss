@@ -96,6 +96,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "site/site";
 
 /*--------------------------------------------------------------
+# Learnpress
+--------------------------------------------------------------*/
+@import "learnpress/learnpress-archive";
+@import "learnpress/learnpress-modal";
+
+/*--------------------------------------------------------------
 # Simple WP Membership styles
 --------------------------------------------------------------*/
 @import "modules/swpm";

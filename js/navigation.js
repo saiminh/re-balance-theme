@@ -443,7 +443,7 @@ function insertAfter(referenceNode, newNode) {
 			'a[href$="membership-registration"]', 
 			'a[href$="pricing"]',
 			'a[href$="pricing/"]', 
-			'a[href*="/lessons/"]'
+			'a[href*="/courses/"]'
 		];
 
 		$( noswuplinks.toString() ).attr("data-no-swup", "");

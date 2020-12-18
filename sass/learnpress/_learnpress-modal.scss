@@ -1,0 +1,38 @@
+body.rebalance{
+  .lp-overlay .modal-dialog .modal-content{
+    padding: 0;
+    background-color: lighten($color__brand-primary, 22%);
+    border-radius: 5px;
+  }
+  .lp-overlay .modal-dialog .modal-header,
+  .lp-overlay .modal-dialog .modal-body,
+  .lp-overlay .modal-dialog .modal-footer {
+    margin: 0;
+    padding: 1rem 1.5rem;
+  }
+  .lp-overlay .modal-dialog .modal-header {
+    border-bottom: 1px solid #E8D4C8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    & .modal-title {
+      font-size: 1.125rem;
+      margin: 0;
+    }    
+  }
+  .lp-overlay .modal-dialog button {
+    background: transparent;
+    color: $color__brand-primary;
+    font-size: 2rem;
+    padding: 0;
+    line-height: 1.6875rem;
+    &.btn-yes, 
+    &.btn-no {
+      font-size: 1.25rem;
+      padding-left: 1.5rem;
+      margin: 0;
+    }
+  } 
+  .lp-overlay .modal-dialog .modal-footer {
+    border-top: 1px solid #E8D4C8;
+  }
+}

@@ -1,0 +1,121 @@
+.post-type-archive-lp_course .statusbar,
+.single-lp_course .statusbar {
+  display: none;
+}
+.learn-press-search-course-form {
+  display: none;
+}
+.course-learning-summary .course-meta .course-students {
+  display: none;
+}
+.lp-archive-courses .learn-press-courses .lp_course {
+  background-color: lighten($color__brand-primary, 20%);
+  padding: 1.5rem;
+  & .course-info {
+    display: none;
+  }
+  & .course-permalink {
+    margin: 0;
+  }
+  & .course-title {
+    margin: 1.5rem 0 0 0;
+  }
+}
+body.rebalance {
+  & .learn-press-course-results-progress {
+    margin-right: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  & .learn-press-course-results-progress .items-progress, 
+  & .learn-press-course-results-progress .course-progress {
+    margin-right: 0;
+  }
+  & .learn-press-course-results-progress::after {
+    display: none; //this was f-ing up the flex alignment; 
+  }
+  & .learn-press-progress .progress-bg .progress-active,
+  & ul.learn-press-nav-tabs .course-nav.active::after, 
+  & ul.learn-press-nav-tabs .course-nav:hover::after,
+  & .lp-label.label-enrolled, 
+  & .lp-label.label-started  {
+    background: $color__brand-secondary;
+  }
+  & .course-curriculum ul.curriculum-sections .section-content .course-item.has-status.passed .course-item-status {
+    border-color: $color__brand-secondary;
+    color: $color__brand-secondary;
+  }
+  & .course-curriculum ul.curriculum-sections .section-header {
+    border-bottom-color: $color__brand-primary;
+  }
+  & .course-curriculum ul.curriculum-sections .section-content .course-item .course-item-meta .item-meta.trans {
+    padding: 0 8px;
+  }
+  & #course-item-content-header {
+    background-color: lighten($color__brand-primary, 20%);
+    border-bottom: 0;
+  }
+  &.course-item-popup #course-item-content-header .course-item-search {
+    & input[type="text"]::placeholder {
+      color: $color__brand-primary;
+    }
+  }
+  & #course-item-content-header .course-item-search button {
+    color: $color__brand-primary;
+  }
+  & #course-item-content-header .form-button.lp-button-back button {
+    font-size: 1rem;
+  }
+  &.course-item-popup #learn-press-course-curriculum {
+    border-right-color: #FFF;
+    background-color: lighten($color__brand-primary, 23%);
+  }
+  & .course-curriculum ul.curriculum-sections .section-content .course-item {
+    border-bottom-color: #FFF;
+    background-color: transparent;
+  }
+  & .course-tab-panel-curriculum .course-curriculum ul.curriculum-sections .section-content .course-item {
+    border-bottom-color: lighten($color__brand-primary, 20%);
+  }
+  & .course-curriculum ul.curriculum-sections .section-content .course-item.current {
+    background-color: lighten($color__brand-primary, 22%);
+  }
+  //highlighter of current lesson
+  & .course-curriculum ul.curriculum-sections .section-content .course-item::before {
+    background: $color__brand-primary;
+  }
+  //label pills
+  & .course-curriculum ul.curriculum-sections .section-content .course-item .course-item-meta .count-questions,
+  & .course-curriculum ul.curriculum-sections .section-content .course-item .course-item-meta .duration{ 
+    background: $color__brand-secondary;
+  }
+  & .course-curriculum ul.curriculum-sections .section-content .course-item.item-preview .course-item-status {
+    background: $color__brand-secondary;
+  }
+  & .scrollbar-light > .scroll-element.scroll-y .scroll-bar {
+    background: $color__brand-primary;
+  }
+  & .lp-course-progress .lp-passing-conditional {
+    background: $color__brand-primary;
+  }
+  & .lp-label {
+    background: $color__brand-secondary;
+  }
+  & .learn-press-message::before {
+    background: $color__brand-secondary;
+  }
+  &.course-item-popup .content-item-summary {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  &.learnpress-page .lp-button,
+  & #course-item-content-header .form-button.lp-button-back button {
+    line-height: 1.5;
+    padding: .66em 1.75em;
+    height: auto;
+  }
+}
+body.single-lp_course #rebalance-courses {
+  max-width: 45rem;
+  margin: auto; 
+}

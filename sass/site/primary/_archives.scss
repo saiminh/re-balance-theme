@@ -21,7 +21,6 @@
         width: calc(100% + .5em)
     }
 }
-
 .exercises-tag,
 .exercises-tag:visited {
     padding: 0;
@@ -30,7 +29,6 @@
 .blog,
 .archive,
 .search-results {
-
     & article.post,
     & article.exercises {
         width: 66%;
@@ -45,33 +43,27 @@
         @include font-size(0.8);
         position: relative;
         transition: all .2s ease-in-out;
-
         &:hover {
             @media (min-width: 1100px) {
                 border-radius: 30px;
             }
         }
-
         @media (min-width: 640px) {
             width: calc(40% - .5em) ;
             @include font-size(1);
         }
-
         @media (min-width: 769px) {
             padding: 2rem 2rem .75rem 2rem;
             width: calc((100% - 1.5em) / 3) ;
             transition: all .1s ease-out;
             flex-grow: 0;            
-
             &:last-child {
                 flex-grow: 0;
             }
         }
-
         @media (min-width:  1100px) {
             z-index: 2;
         }
-
         & .post-thumbnail {
             display: block;
             width: calc(100% + 4em);
@@ -129,14 +121,11 @@
             }
         }
     }
-
-
     & .sticky-post{
         & article {
             width: 100%;
             @include font-size(1);
             margin-bottom: 1rem;
-
             @media (min-width: 768px) {
                 display: flex;
                 & .entry-text {
@@ -167,7 +156,6 @@
     @include font-size(.9);
     color: #666;
     margin-bottom: .5em;
-    
 }
 .single .pre-entry-meta {
     @include font-size(1);
