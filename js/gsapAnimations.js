@@ -385,4 +385,41 @@ function gsAnimations(){
     .to("#smile", { autoAlpha: 1, duration: .25 }, 8.75)
     .to("#rays", { rotationZ: 360, duration: 9, ease: "linear" }, 0)
   };
-}
+  if (document.querySelector( "#neck-moves-up-and-down" )) {
+    let neckupdown_tl = gsap.timeline({ repeat: -1 })
+      .set("#head", { transformOrigin: "45% 90%" })
+      .set("#body", { transformOrigin: "50% 100%" })
+      .to("#head", { rotationZ: 45, xPercent: -5,  duration: 3 })
+      .to("#head", { rotationZ: -35, xPercent: 0, yPercent: 3, duration: 3 })
+      .to("#body", { scale: 1.075, xPercent: 3, duration: 3 }, 3)
+      .to("#head", { rotationZ: 0, xPercent: 0, yPercent: 0, duration: 3 })
+      .to("#body", { scale: 1, xPercent: 0, duration: 3 }, 6)
+      .to("#body", { duration: 3 })
+  }
+  if( document.querySelector( "#neck-rotation" )) {
+    let neckrotation_tl = gsap.timeline({ repeat: -1, yoyo: true })
+      .set("[id^='head-']:not(#head-down)", { autoAlpha: 0 }, 0)
+      //.set("#head-down", { autoAlpha: 1 }, 0)
+      .set("#head-down", { autoAlpha: 0}, .5)
+      .set("#head-down-right", { autoAlpha: 1}, .5)
+      .set("#head-down-right", { autoAlpha: 0}, 1)
+      .set("#head-up-right", { autoAlpha: 1}, 1)
+      .set("#head-up-right", { autoAlpha: 0}, 1.5)
+      .set("#head-up", { autoAlpha: 1}, 1.5)
+      .set("#head-up", { autoAlpha: 0}, 2)
+      .set("#head-up-left", { autoAlpha: 1}, 2)
+      .set("#head-up-left", { autoAlpha: 0}, 2.5)
+      .set("#head-down-left", { autoAlpha: 1}, 2.5)
+      .set("#head-down-left", { autoAlpha: 0}, 3)
+      .set("#head-down", { autoAlpha: 1}, 3)
+      .set("#head-down", { autoAlpha: 1}, 3.5);
+      neckrotation_tl.timeScale(1.5);
+  }
+  if( document.querySelector( "#wrist-moves-flexions" )) {
+    let wristflexions_tl = gsap.timeline({ repeat: -1, yoyo: true })
+      .to("#hand", { duration: 1}, 0)
+      .to("#hand", { transformOrigin: "45% 5%", yPercent: 5, xPercent: -4, rotationZ: 85, duration: 1 }, 1)
+      .to("#fingers", { transformOrigin: "20% 10%", rotationZ: 45, duration: .75 }, 1.25)
+      .to("#hand", { duration: 1})
+  }  
+} 

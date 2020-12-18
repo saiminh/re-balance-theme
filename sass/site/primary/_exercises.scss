@@ -57,8 +57,7 @@
             margin-top: -1.2rem;
         }
     }
-    & .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer) {
-        
+    & .post-info > :not(.wp-block-embed):not(.wp-block-video):not(.entry-footer):not(.swpm-expired-msg) {
         @media (min-width: 768px) {
             margin-left: 66%;
         }
