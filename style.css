@@ -3975,6 +3975,14 @@ body.rebalance.learnpress-page .lp-button, body.rebalance #course-item-content-h
   line-height: 1.5;
   padding: .66em 1.75em;
   height: auto; }
+body.rebalance .course-item-nav .prev a, body.rebalance .course-item-nav .next a {
+  color: #FF9B7A; }
+@media (min-width: 769px) {
+  body.rebalance.course-item-popup #learn-press-content-item .content-item-wrap {
+    margin-top: 0;
+    padding: 3.5rem 4rem 4rem 4rem; } }
+body.rebalance.course-item-popup .content-item-summary > h3 {
+  margin-top: 0; }
 
 body.single-lp_course #rebalance-courses {
   max-width: 45rem;
