@@ -114,8 +114,7 @@ body.rebalance {
     padding: .66em 1.75em;
     height: auto;
   }
-  & .course-item-nav .prev a, 
-  & .course-item-nav .next a {
+  & .course-item-nav .prev a, & .course-item-nav .next a {
     color: $color__brand-primary;
   }
   &.course-item-popup #learn-press-content-item .content-item-wrap {
