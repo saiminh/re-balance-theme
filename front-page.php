@@ -109,7 +109,7 @@ get_header();
 						
 					</div>
 					<div class="home-dashboard-exercise-link--tiny">
-						<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/tiny">
+						<a href="<?php echo get_bloginfo('wpurl'); ?>/tiny/">
 							Tiny Exercises
 							<span>Super quick exercises with short descriptions</span>
 						</a>
