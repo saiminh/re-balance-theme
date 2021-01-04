@@ -43,7 +43,7 @@
 						<span class="menu-name">Menu</span>
 						</div>
 					</button>			
-					<div class="menu-movebreathe-container">
+					<!-- <div class="menu-movebreathe-container">
 						<ul id="movebreathe-menu" class="menu nav-menu">
 							<li id="menu-item-move" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/move/">Move</a></li>
 							<li id="menu-item-search" class="menu-item menu-item-type-post_type menu-item-object-page">
@@ -55,7 +55,7 @@
 							</a></li>
 							<li id="menu-item-breathe" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">Breathe</a></li>
 						</ul>
-					</div>	
+					</div>	 -->
 
 				<?php
 				wp_nav_menu( array(
@@ -188,14 +188,6 @@
 						echo '</li></ul>';
 
 					elseif ( is_front_page() ) :
-						global $current_user; wp_get_current_user(); 
-						echo "<div id='lblGreetings'>";
-						if ( $current_user->first_name ) :
-							echo $current_user->first_name . "\n";
-						else :
-							echo $current_user->display_name . "\n";
-						endif;
-						echo "</div>";
 
 					else :
 						show_breadcrumb();

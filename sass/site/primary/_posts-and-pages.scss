@@ -1,181 +1,18 @@
 .sticky {
 	display: block;
 }
-
 .updated:not(.published) {
 	display: none;
 }
-
 .page-content,
 .entry-content,
 .entry-summary {
 	margin: 0;
 }
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-  
-.home .page-header,
-.choose-exercise-buttons {
-	text-align: center;
-}
-
-.home .page-title::before {
-    content: '';
-    width: 66.6%;
-    height: 1px;
-    background-color: #FF9B7A;
-	display: block;
-	margin: .5em auto;
-}
-
-.home .page-subtitle {
-	@include font-size(0.9);
-	margin-top: 0;
-	font-weight: 300;
-	display: none; //!!! FOR NOW, maybe have it as a quick speech bubble animation later
-
-	@media (min-width: 480px) {
-		position: absolute;
-		top: -4.5rem;
-		z-index: 9999;
-	}
-
-	@media (min-width:  1100px) {
-		position: relative;
-		top: 0;
-		text-align: left;
-		font-weight: 300;
-		@include font-size(1);
-	}
-}
-
-.home .choose-exercise-links {
-	display: flex;
-	justify-content: space-between;
-	flex-direction: column;
-
-	@media (min-width: 480px) {
-		flex-direction: row;
-	}
-
-	
-	& > div {
-		background-color: $color__brand-secondary;
-		width: 100%;
-		display: inline-block;
-		position: relative;
-		transition: all .2s ease-in-out;
-		overflow: hidden;
-		margin-bottom: 1em;
-		border-radius: 5px;
-
-		@media (min-width: 480px) {
-			width: calc(33.3% - 6px);
-			margin-bottom: 0;
-		}
-
-		& > a {
-			position: relative;
-			display: block;
-			width: 100%;
-			padding: 1em;
-			padding-bottom: calc(100% - 2em);
-			color: #fff;
-			left: 0;
-			@include font-size(1);
-			line-height: 1;
-			transition: all .2s ease-in-out;
-
-			@media screen and (min-width: 480px) {
-				@include font-size(1.5);
-				padding: 20px;
-				padding-bottom: calc(100vh - 225px - 2em);
-			}
-
-			@media screen and (min-width:  1100px) {
-				padding-top: calc(100vh - 80px - 6rem - 1em ); 
-				padding-bottom: 20px;
-				text-align: center; 
-			}
-	
-		}
-
-		&:after {
-		//	content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			bottom: 0;
-			right: 0;
-			transform: translateX(100%);
-			background-color: lighten(#FF9B7A, 25%);
-			z-index: 0;
-			border-radius: 50%;
-			transition: all .1s ease-in-out ;
-		}
-
-		&.choose-exercise-link--breathe:after {
-			transform: translateX(-100%);
-		}
-
-		&:hover:after{
-			transform: translateX(0%);
-		}
-
-		&:hover {			
-			transform: scale(1.025);
-			border-radius: 10px;
-			background-color: lighten($color__brand-secondary, 5%);
-			// box-shadow: -1px 1px 0 darken($color__brand-secondary, 10%), 
-			// 			-2px 2px 0 darken($color__brand-secondary, 10%),
-			// 			-3px 3px 0 darken($color__brand-secondary, 10%),
-			// 			-4px 4px 0 darken($color__brand-secondary, 10%),
-			// 			-5px 5px 0 darken($color__brand-secondary, 10%),
-						// -6px 6px 0 darken($color__brand-secondary, 10%),
-						// -7px 7px 0 darken($color__brand-secondary, 10%),
-						// -8px 8px 0 darken($color__brand-secondary, 10%),
-						// -9px 9px 0 darken($color__brand-secondary, 10%),
-						// -10px 10px 0 darken($color__brand-secondary, 10%);
-
-		}
-	}
-}
-.choose-exercise-link--move a,
-.choose-exercise-link--breathe a,
-.choose-exercise-link--surprise a {
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	background-image: url(img/ui-home-move.svg);
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	background-size: auto calc(100% - 2em);
-	z-index: 1;
-
-	@media (min-width: 480px) {
-		background-size: auto calc(100% - 4em);
-	}
-
-	@media (min-width: 1155px) {
-		background-position: 50% 35%;
-	}
-}
-
-.choose-exercise-link--breathe a {
-	background-image: url(img/ui-home-breathe.svg);
-	background-size: auto calc(70% - 4em);
-}
-
-.choose-exercise-link--surprise a {
-	background-image: url(img/ui-home-surprise.svg);
-	background-size: auto calc(70% - 4em);
-}
-
 .page-template-default {
 	overflow-x: hidden;
 	& article {
@@ -205,7 +42,6 @@
 				padding-bottom: 1em;
 			}
 		}
-
 		& .attachment-post-thumbnail {
 			@media (min-width: 768px) {
 				position: absolute;
@@ -287,7 +123,6 @@
 				color: #FFF;
 			}
 		}
-
 		& .attachment-post-thumbnail {
 			@media (min-width: 768px) {
 				position: absolute;

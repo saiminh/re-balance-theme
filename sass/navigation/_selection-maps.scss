@@ -93,7 +93,8 @@
 }
 
 .move-bodyparts-map,
-.breathe-map {
+.breathe-map,
+.tiny-map {
     height: calc(100vh - 160px - 2em);
     width: 100%;
     position: relative;
@@ -244,13 +245,11 @@
         bottom: 55%;
     }
 }
-
 .breathe-map-illu--calm {
     width: 20%;
     bottom: calc(3% + 1.5rem);
     left: 8.75%;
 }
-
 .breathe-map-illu--energize {
     width: 20%;
     bottom: calc(100% - 10rem);
@@ -260,10 +259,46 @@
         bottom: 55%;
     }
 }
-
 .breathe-map-illu--focus {
     width: 20%;
     bottom: calc(3% + 1.5rem);
     left: 71.25%;
 }
-
+.tiny-map-title {
+    position: absolute;
+    color: $color__background-body;
+    padding: 1rem;
+    & h1 {
+        margin: 0;
+        @include font-size(1.5);
+    }
+    & p {
+        margin: 0.3rem 0 0 0 ;
+    }
+}
+.tiny-map-inner {
+    display: flex;
+    min-height: 100%;
+}
+.tiny-map-illu,
+.tiny-map-illu:hover,
+.tiny-map-illu:active,
+.tiny-map-illu:visited {
+    flex: 1 1 33%;
+    align-self: center;
+    text-align: center;
+    @include font-size(1.25);
+    color: $color__background-body;
+    position: relative;
+    & svg {
+        width: 100%;
+    }
+}
+.tiny-map-illu-subtitle {
+    display: block;
+    position: absolute;
+    left: 50%;
+    @include font-size(.9);
+    max-width: 20em;
+    transform: translateX(-50%);
+}

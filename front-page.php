@@ -15,28 +15,108 @@ get_header();
 ?>
 	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-			<header class="page-header">
-				<h2 class="page-subtitle" id="lblGreetings">
-					<?php global $current_user; wp_get_current_user(); ?>
-					<?php echo $current_user->display_name . "\n"; ?>
-				</h2>
-			</header>
-			<div class="home-search">
-				<?php get_search_form( ); ?> 						
+		<main id="main" class="site-main home-dashboard">
+			<nav class="home-dashboard-tabs">
+				<a class="home-dashboard-tab--active" href="#home-dashboard-courses">Courses</a>
+				<a href="#home-dashboard-exercises">Exercises</a>
+			</nav>
+			<div id="home-dashboard-courses" class="home-dashboard-courses">
+				<?php 
+				//Users name, JS adds the time-specific greeting
+					global $current_user; wp_get_current_user(); 
+					echo "<div id='lblGreetings'>";
+					if ( $current_user->first_name ) :
+						echo $current_user->first_name . "\n";
+					else :
+						echo $current_user->display_name . "\n";
+					endif;
+					echo "</div>";
+				// Courses
+					$profile       = learn_press_get_profile();
+					$filter_status = LP_Request::get_string( 'filter-status' );
+					$query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
+					
+				?>
+				<div class="learn-press-subtab-content">
+					<?php if ( $query['items'] ) { ?>
+						<p>Latest course progress</p>
+						<?php							
+							$i = 0; 
+							foreach ( $query['items'] as $user_course ) { 
+								if (++$i > 3) {
+									echo '<div><a href="/student-profile/'.wp_get_current_user()->user_login.'/courses/purchased/" class="profile-link">See all course progress</a></div>';
+									break;
+								}
+								$course = learn_press_get_course( $user_course->get_id() ); ?>
+								<h4 class="home-dashboard-courses-coursetitle">
+									<a href="<?php echo $course->get_permalink(); ?>">
+										<?php echo $course->get_title(); ?>
+									</a>
+								</h4>
+							<?php if ( $user_course->get_results( 'status' ) !== 'purchased' ) { ?>
+								<div class="learn-press-progress lp-course-progress">
+										<div class="progress-bg lp-progress-bar">
+												<div class="progress-active lp-progress-value"
+															style="left: <?php echo $user_course->get_percent_result(); ?>;">
+												</div>
+										</div>
+								</div>
+								<span class="result-percent"><?php echo $user_course->get_percent_result(); ?></span>
+								<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
+									<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
+								</span>
+								<a class="course-progress-gotocourselink" href="<?php echo $course->get_permalink(); ?>">Continue</a>
+							<?php } else { ?>
+								<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
+									<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
+								</span>
+							<?php } ?>							
+						<?php } ?>
+					<?php } else {
+						echo '<p>You are not enrolled in any courses at the moment. <a href=""><i class="material-icons">info</i> What are courses?</a></p>
+						<p><strong>Suggested courses</strong></p>';
+						
+						echo do_shortcode( "[learn_press_popular_courses limit='1']" );	
+						
+					} ?>
+					<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses">See all courses</a></div>
+				</div>
+
+
 			</div>
-			<div class="choose-exercise-links">          
-				<div class="choose-exercise-link--move">
-					<a href="<?php echo get_bloginfo('wpurl'); ?>/move/">I want to Move</a>
+			<div id="home-dashboard-exercises" class="home-dashboard-exercises hidden-on-narrow">
+				<div class="home-search">
+					<?php get_search_form( ); ?> 						
 				</div>
-				<div class="choose-exercise-link--breathe">
-					<a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">I want to Breathe</a>
-				</div>
-				<div class="choose-exercise-link--surprise">
-					<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise">Surprise me!</a>
+				<div class="home-dashboard-exercise-links">          
+					<div class="home-dashboard-exercise-link--move">
+						<a href="<?php echo get_bloginfo('wpurl'); ?>/move/">
+							Move
+							<span>Video exercises</span>
+						</a>
+					</div>
+					<div class="home-dashboard-exercise-link--breathe">
+						<a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">
+							Breathe
+							<span>Video exercises</span>
+						</a>
+					</div>
+					<div class="home-dashboard-exercise-link--surprise">
+						<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise">
+							Surprise me!
+							<span>Do a random video exercise</span>
+						</a>
+						
+					</div>
+					<div class="home-dashboard-exercise-link--tiny">
+						<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/tiny">
+							Tiny Exercises
+							<span>Super quick exercises with short descriptions</span>
+						</a>
+					</div>
 				</div>
 			</div>
-			</main><!-- #main -->
+		</main><!-- #main -->
 	</div><!-- #primary -->
 		<?php else : ?>
 		<div id="primary" class="content-area content-area--landing">

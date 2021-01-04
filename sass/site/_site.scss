@@ -9,7 +9,8 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-@import "primary/home";
+@import "primary/home-loggedout";
+@import "primary/home-loggedin";
 @import "primary/posts-and-pages";
 @import "primary/exercises";
 @import "primary/registration";

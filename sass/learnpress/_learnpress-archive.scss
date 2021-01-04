@@ -126,6 +126,9 @@ body.rebalance {
   &.course-item-popup .content-item-summary>h3 {
     margin-top: 0;
   }
+  & ul.learn-press-courses .course:before {
+    content: none;
+  }
 }
 body.single-lp_course #rebalance-courses {
   max-width: 45rem;

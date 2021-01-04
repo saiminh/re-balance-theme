@@ -1,0 +1,14 @@
+.lp-user-profile {
+  & li:before {
+    content: none;
+  }
+  & .orders,
+  & .quizzes, 
+  & .dashboard, 
+  & .settings {
+    display: none;
+  }
+  & .lp-sub-menu {
+    padding: 0;
+  }
+}

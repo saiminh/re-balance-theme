@@ -21,15 +21,15 @@
 	
 	gsap.registerPlugin(DrawSVGPlugin);
 
-	var container, button, menu, links, i, len;
+	var container, navbutton, menu, links, i, len;
 
 	container = document.getElementById( 'site-navigation' );
 	if ( ! container ) {
 		return;
 	}
 
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
+	navbutton = container.getElementsByTagName( 'button' )[0];
+	if ( 'undefined' === typeof navbutton ) {
 		return;
 	}
 
@@ -37,7 +37,7 @@
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
+		navbutton.style.display = 'none';
 		return;
 	}
 
@@ -46,7 +46,7 @@
 		menu.className += ' nav-menu';
 	}
 
-	button.onclick = function() {
+	navbutton.onclick = function() {
 		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
 			if ($("#primary-menu, .site-header-account").length){
 				gsap.to("#primary-menu, .site-header-account", {
@@ -56,7 +56,7 @@
 					ease: "sine.inOut",
 					onComplete: function(){
 						container.className = container.className.replace( ' toggled', '' );
-						button.setAttribute( 'aria-expanded', 'false' );
+						navbutton.setAttribute( 'aria-expanded', 'false' );
 						menu.setAttribute( 'aria-expanded', 'false' );
 						gsap.set("#primary-menu, .site-header-account", {
 							xPercent: 0,
@@ -66,7 +66,7 @@
 			} else {
 				
 					container.className = container.className.replace( ' toggled', '' );
-					button.setAttribute( 'aria-expanded', 'false' );
+					navbutton.setAttribute( 'aria-expanded', 'false' );
 					menu.setAttribute( 'aria-expanded', 'false' );									
 			}
 			
@@ -77,7 +77,7 @@
 			
 		} else {
 			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
+			navbutton.setAttribute( 'aria-expanded', 'true' );
 			menu.setAttribute( 'aria-expanded', 'true' );
 			if ($("#primary-menu, .site-header-account").length){
 				gsap.from("#primary-menu, .site-header-account", {
@@ -96,7 +96,7 @@
 	};
 
 	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	links = menu.getElementsByTagName( 'a' );
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
@@ -109,10 +109,8 @@
 	 */
 	function toggleFocus() {
 		var self = this;
-
 		// Move up through the ancestors of the current link until we hit .nav-menu.
 		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
-
 			// On li elements toggle the class .focus.
 			if ( 'li' === self.tagName.toLowerCase() ) {
 				if ( -1 !== self.className.indexOf( 'focus' ) ) {
@@ -121,7 +119,6 @@
 					self.className += ' focus';
 				}
 			}
-
 			self = self.parentElement;
 		}
 	}
@@ -317,6 +314,26 @@
 function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 };
+
+//Home Tabbed for mobile navigation
+function homeNavTab(){
+	let tabs = document.querySelectorAll(".home-dashboard-tabs a");
+	tabs.forEach(tab => { tab.addEventListener("click", function(e){
+		let currentTab = document.querySelector(".home-dashboard-tab--active");
+		let tablink = tab.getAttribute('href');
+		let tablinkString = tablink.replace('#', '');
+		let target = document.getElementById(tablinkString);
+		if ( target.classList.contains("hidden-on-narrow") ){
+			document.querySelectorAll(".home-dashboard > div").forEach(div => { div.classList.add("hidden-on-narrow") });
+			target.classList.toggle("hidden-on-narrow");
+			currentTab.classList.remove("home-dashboard-tab--active");
+			tab.classList.add("home-dashboard-tab--active");
+		} else {
+
+		};
+	}) })
+};
+homeNavTab();
 
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
