@@ -149,15 +149,13 @@ get_header();
 						How can Rebalance help?
 					</h2>
 					<p class="has-medium-font-size">
-						Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University, with mindful movement and breathwork exercises.
+						Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University with mindful movement and breathwork exercises. This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.
 					</p>
 					<div class="wp-block-columns" style="align-items: center">
 						<div class="wp-block-column">
 							<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
 						</div>	
-						<div class="wp-block-column">
-							<p>
-								This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.</p>
+						<div class="wp-block-column">							
 							<ul>
 								<li>Start small with our Rebalance Tiny Habit® formation program.</li>
 								<li>Learn to take conscious and effective breaks to improve your productivity, focus and engagement</li>
@@ -198,9 +196,9 @@ get_header();
 							<h3>
 								Corporate Solutions</h3>
 							<p>
-								Are you looking to improve your company’s culture, increase your employee’s productivity, or reduce the rate of work-related health conditions?</p>
+								Are you looking to improve your company’s culture, increase your employees’ productivity, or reduce the rate of work-related health conditions?</p>
 							<p>
-								Learn more about how we can help you and enquire for a business today</p>
+								Learn more about how we can help you and enquire for your business today</p>
 							<div class="wp-block-buttons">
 								<div class="wp-block-button">
 									<a class="wp-block-button__link" href="/business-inquiry/" data-no-swup="">Enquire Now</a>
