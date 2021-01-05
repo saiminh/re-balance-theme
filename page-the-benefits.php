@@ -261,7 +261,7 @@ get_header();
               What’s Wrong With The Way We Work?
             </h2>
             <p>
-              As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related health conditions. These figures are worrying. The rates of work related stress and depression are on the rise, with 73% of Australian professionals experiencing a degree of stress in an average week<?php echo do_shortcode("[mfn]McMillan, L. (2016). 2016 Snapshot of the Australian Workplace. Reventure Ltd., Melbourne.[/mfn]"); ?>, and burnout has officially been labelled as an 'occupational phenomenon' by the WHO<?php echo do_shortcode("[mfn]WHO. (2019). Burn-out an 'occupational phenomenon': International Classification of Diseases. Retrieved from: <a href='https://www.who.int/mental_health/evidence/burn-out/en/'>https://www.who.int/mental_health/evidence/burn-out/en/</a>[/mfn]"); ?>.
+              As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related health conditions. These figures are worrying. The rates of work related stress and depression are on the rise, with 73% of Australian professionals experiencing a degree of stress in an average week<?php echo do_shortcode("[mfn]McMillan, L. (2016). 2016 Snapshot of the Australian Workplace. Reventure Ltd., Melbourne.[/mfn]"); ?>, and burnout has officially been labelled as an ‘occupational phenomenon’ by the WHO<?php echo do_shortcode("[mfn]WHO. (2019). Burn-out an 'occupational phenomenon': International Classification of Diseases. Retrieved from: <a href='https://www.who.int/mental_health/evidence/burn-out/en/'>https://www.who.int/mental_health/evidence/burn-out/en/</a>[/mfn]"); ?>.
             </p>
             <p>
               Similarly, science has shown prolonged periods of sitting are bad for us, which for those of us who work at a desk, is a pretty inconvenient truth! As we sit, blood flow slows in the body, meaning the organs and brain receive less oxygen, which in turn leads to reduced focus and concentration.
@@ -277,10 +277,10 @@ get_header();
               Bring balance back into your day
             </h2>    
             <p>
-              Despite our best intentions, taking a break at work to press pause, breathe or stretch can seem impossible, let alone making a regular habit of it. Perhaps you can’t find the time, or at not sure where to begin. We know from experience that building any new habit is hard, and maintaining them is even harder.
+              Despite our best intentions, taking a break at work to press pause, breathe or stretch can seem difficult or even impossible, let alone making a regular habit of it. Perhaps you can’t find the time, or are not sure where to begin. We know from experience that building any new habit is hard, and maintaining it is even harder.
             </p>
             <p>
-              What if there was a tool to help you take a break while boosting your mood, releasing tension, and increasing your productivity? Introducing: Rebalance.
+              What if there was a tool to help you take a break while boosting your mood, releasing tension and increasing your productivity? Introducing: Rebalance.
             </p>
           </div>
         </div>
@@ -290,7 +290,7 @@ get_header();
                 Rebalance helps busy professionals transform their workday by first teaching members a simple habit formation technique, so they learn how they can insert tiny movement and breathing exercises into their existing daily routine to support their wellbeing. This means your new wellness habit will be consistent and here to stay!
               </p>
               <p>
-                By starting with habit formation, we empower our members and your employees to thrive, as they incorporate wellness into their lives and transform their workday improving their happiness, resilience and wellbeing.
+                By starting with habit formation, we empower our members and your employees to thrive, as they incorporate wellness into their lives and transform their workday, improving their happiness, resilience and wellbeing.
               </p>
           </div>
         </div>
