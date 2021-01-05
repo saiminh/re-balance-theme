@@ -174,7 +174,7 @@ get_header();
               Improve your workday and build a sustainable wellness habit
             </h1>
             <p>
-              We’ll help you transform your workday and build a wellness habit your can easily incorporate into your existing routine. Rebalance combines the Tiny Habits® method with our short, simple movement and breathing exercises so you can learn how to create a habit of taking better breaks at your desk.
+              We’ll help you transform your workday and build a wellness habit you can easily incorporate into your existing routine. Rebalance combines the Tiny Habits® method with our short, simple movement and breathing exercises so you can learn how to create a habit of taking better breaks at your desk.
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ get_header();
               An Unbalanced World
             </h2>
             <p>
-              Many of us live with packed calendars, racing from home to work, in and out of meetings, with ever-increasing responsibilities, it’s hard to find the time just to slow down, take a breath and look after ourselves. As the pressures of modern life have increased, it’s not surprising that the incidence of work related physical and mental health conditions has too.
+              Many of us live with packed calendars, racing from home to work, in and out of meetings, with ever-increasing responsibilities. It’s hard to find the time just to slow down, take a breath and look after ourselves. As the pressures of modern life have increased, it’s not surprising that the incidence of work-related physical and mental health conditions has too.
             </p>
           </div>
         </div>
@@ -195,7 +195,7 @@ get_header();
               Mission
             </h2>
             <p>
-              We feel it’s time to bring balance back into your work life! We aim to build happier, healthier lives for busy professionals by empowering them to integrate wellness into their day. We know you have a busy schedule and limited space, so our movement and breathing exercises are time conscious, discreet, and help you form a lasting habit of wellness. All without any acrobatics, stretchy pants or jargon!
+              We feel it’s time to bring balance back into your work life! We aim to build happier, healthier lives for busy professionals by empowering you to integrate wellness into your day. We know you have a busy schedule and limited space, so our movement and breathing exercises are time conscious, discreet, and help you form a lasting habit of wellness. All without any acrobatics, stretchy pants or jargon!
             </p>
           </div>
         </div>
@@ -206,10 +206,13 @@ get_header();
               Transform Your Work Day
             </h2>
             <p>
-              With Rebalance, you will learn how to easily insert tiny pockets of wellness into your day by building a sustainable habit, and without piling more obligations onto your plate. We combine a simple and effective habit formation technique developed behaviour design researcher BJ Fogg at Stanford University, with mindful movement and breathwork exercises.
+              With Rebalance, you will learn how to easily insert tiny pockets of wellness into your day by building a sustainable habit, without piling more obligations onto your plate. We combine a simple and effective habit formation technique developed by behaviour design researcher BJ Fogg at Stanford University, with mindful movement and breathwork exercises.
             </p>
             <p>
-              Doing so enables our members to build their own habit of wellness, empowering them to press pause in their otherwise busy day, while teaching them methods to unwind physical tension, improve mood, and increase productivity and focus. This allows the benefits of yoga and mindfulness practices to be easily experienced by those who need it most: busy, working professionals. 
+              Doing so enables our members to build their own habit of wellness, empowering you to press pause in your otherwise busy day, while teaching you methods to unwind physical tension, improve mood, and increase productivity and focus. This allows the benefits of yoga and mindfulness practices to be easily experienced by those who need it most: busy, working professionals. Like you!
+            </p>
+            <p>
+              <a href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>">Get started with our free trial today!</a>
             </p>
             <p>
               Are you looking to improve your employee’s work-life balance and transform your company’s culture? <a href="<?php echo esc_url( home_url( '/business-inquiry/' ) ); ?>">Enquire for a business now</a>              
