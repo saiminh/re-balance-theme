@@ -35,54 +35,55 @@ get_header();
 					$profile       = learn_press_get_profile();
 					$filter_status = LP_Request::get_string( 'filter-status' );
 					$query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
-					
 				?>
-				<div class="learn-press-subtab-content">
-					<?php if ( $query['items'] ) { ?>
-						<p>Latest course progress</p>
-						<?php							
-							$i = 0; 
-							foreach ( $query['items'] as $user_course ) { 
-								if (++$i > 3) {
-									echo '<div><a href="/student-profile/'.wp_get_current_user()->user_login.'/courses/purchased/" class="profile-link">See all course progress</a></div>';
-									break;
-								}
-								$course = learn_press_get_course( $user_course->get_id() ); ?>
-								<h4 class="home-dashboard-courses-coursetitle">
-									<a href="<?php echo $course->get_permalink(); ?>">
-										<?php echo $course->get_title(); ?>
-									</a>
-								</h4>
-							<?php if ( $user_course->get_results( 'status' ) !== 'purchased' ) { ?>
-								<div class="learn-press-progress lp-course-progress">
-										<div class="progress-bg lp-progress-bar">
-												<div class="progress-active lp-progress-value"
-															style="left: <?php echo $user_course->get_percent_result(); ?>;">
-												</div>
+					<?php if ( $query['items'] ) : ?>
+						<p>Your course progress</p>
+						<?php	$i = 0; ?>
+						<?php foreach ( $query['items'] as $user_course ) : ?> 							
+							<?php if ( $user_course->get_results( 'status' ) !== 'passed' ) : ?>
+								<?php if (++$i > 3) { break; } ?>
+								<?php $course = learn_press_get_course( $user_course->get_id() ); ?>
+									<div class="home-dashboard-courses-course">
+										<div class="home-dashboard-courses-thumbnail course-thumbnail">
+											<?php echo $course->get_image(); ?>
 										</div>
-								</div>
-								<span class="result-percent"><?php echo $user_course->get_percent_result(); ?></span>
-								<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
-									<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
-								</span>
-								<a class="course-progress-gotocourselink" href="<?php echo $course->get_permalink(); ?>">Continue</a>
-							<?php } else { ?>
-								<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
-									<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
-								</span>
-							<?php } ?>							
-						<?php } ?>
-					<?php } else {
-						echo '<p>You are not enrolled in any courses at the moment. <a href=""><i class="material-icons">info</i> What are courses?</a></p>
-						<p><strong>Suggested courses</strong></p>';
-						
-						echo do_shortcode( "[learn_press_popular_courses limit='1']" );	
-						
-					} ?>
-					<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses">See all courses</a></div>
-				</div>
-
-
+										<h4 class="home-dashboard-courses-coursetitle">
+											<a href="<?php echo $course->get_permalink(); ?>">
+												<?php echo $course->get_title(); ?>
+											</a>
+										</h4>
+										<?php if ( $user_course->get_results( 'status' ) !== 'purchased' ) : ?>
+											<div class="learn-press-progress lp-course-progress">
+													<div class="progress-bg lp-progress-bar">
+															<div class="progress-active lp-progress-value"
+																		style="left: <?php echo $user_course->get_percent_result(); ?>;">
+															</div>
+													</div>
+											</div>
+											<span class="result-percent"><?php echo $user_course->get_percent_result(); ?></span>
+											<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
+												<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
+											</span>
+											<a class="course-progress-gotocourselink" href="<?php echo $course->get_permalink(); ?>">Continue</a>
+										<?php else : ?>
+											<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
+												<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
+											</span>
+										<?php endif; ?> 
+									</div>
+							<?php endif; ?> 
+						<?php endforeach; ?>											
+									<div class="home-dashboard-courses-coursehistorylink">
+										<a href="/my-course-history" class="profile-link">
+											My course history
+										</a>
+									</div>					
+					<?php else : ?>
+						<p>You are not enrolled in any courses at the moment. <a href=""><i class="material-icons">info</i> What are courses?</a></p>
+						<p><strong>Suggested courses</strong></p>'
+						<?php echo do_shortcode( "[learn_press_popular_courses]" );	?>
+					<?php endif; ?>
+						<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses">Access Course library</a></div>
 			</div>
 			<div id="home-dashboard-exercises" class="home-dashboard-exercises hidden-on-narrow">
 				<div class="home-search">

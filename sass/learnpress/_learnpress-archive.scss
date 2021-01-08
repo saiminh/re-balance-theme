@@ -41,6 +41,9 @@ body.rebalance {
   & .lp-label.label-started  {
     background: $color__brand-secondary;
   }
+  & .courses-completed .learn-press-progress .progress-bg .progress-active {
+    background-color: $color__progress-complete;
+  }
   & .course-curriculum ul.curriculum-sections .section-content .course-item.has-status.passed .course-item-status {
     border-color: $color__brand-secondary;
     color: $color__brand-secondary;
@@ -100,6 +103,9 @@ body.rebalance {
   }
   & .lp-label {
     background: $color__brand-secondary;
+  }
+  & .lp-label.label-passed {
+    background: $color__progress-complete;
   }
   & .learn-press-message::before {
     background: $color__brand-secondary;

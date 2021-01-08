@@ -29,7 +29,8 @@
 .swpm-profile-update-success {
   color: $color__brand-primary; }
 //Profile page
-.page-template-page-profile {
+.page-template-page-profile,
+.page-template-page-my-course-history {
   @include bg-gradient-01;
   .statusbar {
     display: none; }
@@ -68,4 +69,26 @@
     display: inline-block;}}
 .close-x {
   cursor: pointer;
+}
+//My course history page
+.profile-course-history-content {
+  background-color: #FFF;
+  padding: 1.5rem;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+  border-radius: 5px;
+  @media screen and (min-width: 1100px) {
+    padding: 2rem;
+    display: flex;
+    padding-right: 0;
+  }
+}
+.profile-course-history-content > div {
+  @media screen and (min-width: 1100px) {
+    margin-right: 2rem;
+  }
+  & > h2 {
+    margin-top: 0;
+    @include font-size(1.2);
+  }
 }

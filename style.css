@@ -2571,7 +2571,8 @@ a {
     background-color: #ffe8e0;
     border-radius: 5px;
     padding: 1em;
-    margin-right: 6px; } }
+    margin-right: 6px;
+    overflow-y: scroll; } }
 .home-dashboard-courses #lblGreetings {
   margin: 0 -1.5rem;
   padding: 0 1.5rem 1rem 1.5rem;
@@ -2585,9 +2586,24 @@ a {
       margin: 0 -1rem;
       padding: 0 1rem 1rem 1rem; } }
 
+.home-dashboard-courses-course {
+  clear: both;
+  overflow: auto;
+  margin-bottom: 1rem; }
+
+.home-dashboard-courses-thumbnail {
+  width: 25%;
+  float: left;
+  margin-right: 1rem;
+  border-radius: 3px;
+  overflow: hidden; }
+  .home-dashboard-courses-thumbnail img {
+    display: block;
+    width: 100%; }
+
 .home-dashboard-courses-coursetitle {
   font-weight: 600;
-  margin-bottom: 0.5rem; }
+  margin: 0 0 0.5rem 0; }
   .home-dashboard-courses-coursetitle a {
     color: #000; }
 
@@ -3882,14 +3898,16 @@ body.page-template-page-pricing .hero-header {
 .home.wpsmp-loggedout .site-main,
 .page-template-page-registration .site-main,
 .page-template-page-profile .site-main,
-.page-template-page-pricing .site-main {
+.page-template-page-pricing .site-main,
+.page-template-page-my-course-history .site-main {
   margin-left: auto;
   margin-right: auto; }
   @media (min-width: 768px) {
     .home.wpsmp-loggedout .site-main,
     .page-template-page-registration .site-main,
     .page-template-page-profile .site-main,
-    .page-template-page-pricing .site-main {
+    .page-template-page-pricing .site-main,
+    .page-template-page-my-course-history .site-main {
       width: 85%; } }
 
 .site-content {
@@ -4073,6 +4091,8 @@ body.rebalance .learn-press-course-results-progress::after {
   display: none; }
 body.rebalance .learn-press-progress .progress-bg .progress-active, body.rebalance ul.learn-press-nav-tabs .course-nav.active::after, body.rebalance ul.learn-press-nav-tabs .course-nav:hover::after, body.rebalance .lp-label.label-enrolled, body.rebalance .lp-label.label-started {
   background: #9ACFE9; }
+body.rebalance .courses-completed .learn-press-progress .progress-bg .progress-active {
+  background-color: #A6C9AD; }
 body.rebalance .course-curriculum ul.curriculum-sections .section-content .course-item.has-status.passed .course-item-status {
   border-color: #9ACFE9;
   color: #9ACFE9; }
@@ -4111,6 +4131,8 @@ body.rebalance .lp-course-progress .lp-passing-conditional {
   background: #FF9B7A; }
 body.rebalance .lp-label {
   background: #9ACFE9; }
+body.rebalance .lp-label.label-passed {
+  background: #A6C9AD; }
 body.rebalance .learn-press-message::before {
   background: #9ACFE9; }
 body.rebalance.course-item-popup .content-item-summary {
@@ -4209,7 +4231,8 @@ body.rebalance .lp-overlay .modal-dialog .modal-footer {
 .swpm-profile-update-success {
   color: #FF9B7A; }
 
-.page-template-page-profile:after {
+.page-template-page-profile:after,
+.page-template-page-my-course-history:after {
   content: "";
   position: fixed;
   /* stretch a fixed position to the whole screen */
@@ -4226,44 +4249,76 @@ body.rebalance .lp-overlay .modal-dialog .modal-footer {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
-.page-template-page-profile .statusbar {
+.page-template-page-profile .statusbar,
+.page-template-page-my-course-history .statusbar {
   display: none; }
 @media (min-width: 768px) {
-  .page-template-page-profile .profile-content {
+  .page-template-page-profile .profile-content,
+  .page-template-page-my-course-history .profile-content {
     display: flex;
     align-items: flex-start; } }
-.page-template-page-profile .membership-status {
+.page-template-page-profile .membership-status,
+.page-template-page-my-course-history .membership-status {
   padding: 1.5rem;
   background-color: #ffe8e0;
   border-radius: 5px;
   margin: 1rem -.5rem; }
   @media (min-width: 480px) {
-    .page-template-page-profile .membership-status {
+    .page-template-page-profile .membership-status,
+    .page-template-page-my-course-history .membership-status {
       margin: 1rem auto; } }
   @media (min-width: 768px) {
-    .page-template-page-profile .membership-status {
+    .page-template-page-profile .membership-status,
+    .page-template-page-my-course-history .membership-status {
       margin: 1rem 1.5rem 1rem 0; } }
-  .page-template-page-profile .membership-status :last-child {
+  .page-template-page-profile .membership-status :last-child,
+  .page-template-page-my-course-history .membership-status :last-child {
     margin-bottom: 0; }
-  .page-template-page-profile .membership-status :first-child {
+  .page-template-page-profile .membership-status :first-child,
+  .page-template-page-my-course-history .membership-status :first-child {
     margin-top: 0; }
-  .page-template-page-profile .membership-status dl {
+  .page-template-page-profile .membership-status dl,
+  .page-template-page-my-course-history .membership-status dl {
     overflow: auto; }
-  .page-template-page-profile .membership-status dd {
+  .page-template-page-profile .membership-status dd,
+  .page-template-page-my-course-history .membership-status dd {
     margin: 0 0 .5rem 0; }
-.page-template-page-profile .form-container {
+.page-template-page-profile .form-container,
+.page-template-page-my-course-history .form-container {
   max-width: none; }
-.page-template-page-profile .payment-schedule-info {
+.page-template-page-profile .payment-schedule-info,
+.page-template-page-my-course-history .payment-schedule-info {
   display: block;
   font-size: 0.8em;
   font-style: italic;
   margin: 0 0 1em 0; }
-.page-template-page-profile .payment-schedule-info + .button {
+.page-template-page-profile .payment-schedule-info + .button,
+.page-template-page-my-course-history .payment-schedule-info + .button {
   line-height: 1.5;
   display: inline-block; }
 
 .close-x {
   cursor: pointer; }
+
+.profile-course-history-content {
+  background-color: #FFF;
+  padding: 1.5rem;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
+  border-radius: 5px; }
+  @media screen and (min-width: 1100px) {
+    .profile-course-history-content {
+      padding: 2rem;
+      display: flex;
+      padding-right: 0; } }
+
+@media screen and (min-width: 1100px) {
+  .profile-course-history-content > div {
+    margin-right: 2rem; } }
+.profile-course-history-content > div > h2 {
+  margin-top: 0;
+  font-size: 19.2px;
+  font-size: 1.2rem; }
 
 /*--------------------------------------------------------------
 # Notifications
