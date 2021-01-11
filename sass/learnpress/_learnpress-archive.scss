@@ -11,6 +11,10 @@
 .lp-archive-courses .learn-press-courses .lp_course {
   background-color: lighten($color__brand-primary, 20%);
   padding: 1.5rem;
+  border-radius: 5px;
+  @media screen and (min-width: 1100px) {
+    width: 23%;
+  }
   & .course-info {
     display: none;
   }
@@ -134,6 +138,18 @@ body.rebalance {
   }
   & ul.learn-press-courses .course:before {
     content: none;
+  }
+  & ul.learn-press-courses .course .course-info {
+    display: none;
+  }
+  & .course-meta {
+    display: none;
+  }
+  & .lp-single-course .course-price {
+    display: none;
+  }
+  & .course-nav-tab-instructor {
+    display: none;
   }
 }
 body.single-lp_course #rebalance-courses {

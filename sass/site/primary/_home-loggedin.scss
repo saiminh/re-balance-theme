@@ -38,7 +38,7 @@
     flex-basis: calc(33.3% - 6px);
     background-color: lighten($color__brand-primary, 20%);
     border-radius: 5px;
-    padding: 1em;
+    padding: 1em 1.5rem;
     margin-right: 6px;
     overflow-y: scroll;
   }
@@ -49,8 +49,8 @@
     border-bottom: 1px solid $color__brand-primary;
     @media screen and (min-width: 1100px) {
       @include font-size(1.125);
-      margin: 0 -1rem;
-      padding: 0 1rem 1rem 1rem;
+      margin: 0 -1.5rem;
+      padding: 0 1.5rem 1rem 1.5rem;
     }
   }
 }

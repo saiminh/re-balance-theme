@@ -232,3 +232,7 @@
   margin: 0 0 1rem 0;
   max-width: 640px;
 }
+
+.swpm-profile-phone-row, .swpm-profile-street-row, .swpm-profile-city-row, .swpm-profile-state-row, .swpm-profile-zipcode-row, .swpm-profile-country-row, .swpm-profile-company-row, .swpm-profile-membership-level-row {
+  display: none;
+}

@@ -13,10 +13,9 @@ textarea {
 		@include font-size(0.875);
 	}
 }
-
 .material-icons {
-	font-size: inherit;
-	line-height: inherit;
+	//font-size: inherit;
+	//line-height: inherit;
 	vertical-align: text-bottom;
 }
 /* Rules for sizing the icon. */

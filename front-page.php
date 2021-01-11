@@ -35,10 +35,11 @@ get_header();
 					$profile       = learn_press_get_profile();
 					$filter_status = LP_Request::get_string( 'filter-status' );
 					$query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
+							
 				?>
 					<?php if ( $query['items'] ) : ?>
 						<p>Your course progress</p>
-						<?php	$i = 0; ?>
+						<?php	$i = 0; $total = 0; ?>
 						<?php foreach ( $query['items'] as $user_course ) : ?> 							
 							<?php if ( $user_course->get_results( 'status' ) !== 'passed' ) : ?>
 								<?php if (++$i > 3) { break; } ?>
@@ -71,19 +72,18 @@ get_header();
 											</span>
 										<?php endif; ?> 
 									</div>
-							<?php endif; ?> 
-						<?php endforeach; ?>											
+							<?php $total++; endif; ?> 
+							<?php endforeach; ?>											
+							<?php if($total == 0) { echo '<p>You are currently not enrolled in any courses.'; } ?>
 									<div class="home-dashboard-courses-coursehistorylink">
 										<a href="/my-course-history" class="profile-link">
 											My course history
 										</a>
 									</div>					
 					<?php else : ?>
-						<p>You are not enrolled in any courses at the moment. <a href=""><i class="material-icons">info</i> What are courses?</a></p>
-						<p><strong>Suggested courses</strong></p>'
-						<?php echo do_shortcode( "[learn_press_popular_courses]" );	?>
+						<p>You are not enrolled in any courses at the moment. <a href="/how-to-use-rebalance"><i class="material-icons">info</i> What are courses?</a></p>						
 					<?php endif; ?>
-						<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses">Access Course library</a></div>
+						<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses"><i class="material-icons">library_books</i> Access Course library</a></div>
 			</div>
 			<div id="home-dashboard-exercises" class="home-dashboard-exercises hidden-on-narrow">
 				<div class="home-search">

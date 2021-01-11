@@ -70,3 +70,6 @@ big {
 .modern-footnotes-footnote__note--tooltip {
 	@include font-size(0.75);
 }
+p.muted {
+	color: lighten($color__text-main, 50%);
+}

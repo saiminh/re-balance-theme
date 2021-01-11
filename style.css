@@ -369,8 +369,6 @@ textarea {
       font-size: 0.875rem; } }
 
 .material-icons {
-  font-size: inherit;
-  line-height: inherit;
   vertical-align: text-bottom; }
 
 /* Rules for sizing the icon. */
@@ -531,6 +529,9 @@ big {
 .modern-footnotes-footnote__note--tooltip {
   font-size: 12px;
   font-size: 0.75rem; }
+
+p.muted {
+  color: gray; }
 
 /*--------------------------------------------------------------
 # Elements
@@ -1373,6 +1374,9 @@ label {
   margin: 0 0 1rem 0;
   max-width: 640px; }
 
+.swpm-profile-phone-row, .swpm-profile-street-row, .swpm-profile-city-row, .swpm-profile-state-row, .swpm-profile-zipcode-row, .swpm-profile-country-row, .swpm-profile-company-row, .swpm-profile-membership-level-row {
+  display: none; }
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -1723,17 +1727,9 @@ a {
   @media (min-width: 1100px) {
     .user-name {
       font-size: .8em;
-      padding-left: 1em;
-      max-width: 100px; }
-      .user-name::before {
-        content: '';
-        width: 0;
-        height: 0;
-        border: 4px solid transparent;
-        border-top-color: #AAA;
-        position: absolute;
-        left: 0;
-        top: 45%; } }
+      max-width: 200px; }
+      .user-name .material-icons {
+        line-height: .75; } }
 
 .user-menu-membership, .user-menu-expires {
   font-size: .75em;
@@ -2570,7 +2566,7 @@ a {
     flex-basis: calc(33.3% - 6px);
     background-color: #ffe8e0;
     border-radius: 5px;
-    padding: 1em;
+    padding: 1em 1.5rem;
     margin-right: 6px;
     overflow-y: scroll; } }
 .home-dashboard-courses #lblGreetings {
@@ -2583,8 +2579,8 @@ a {
     .home-dashboard-courses #lblGreetings {
       font-size: 18px;
       font-size: 1.125rem;
-      margin: 0 -1rem;
-      padding: 0 1rem 1rem 1rem; } }
+      margin: 0 -1.5rem;
+      padding: 0 1.5rem 1rem 1.5rem; } }
 
 .home-dashboard-courses-course {
   clear: both;
@@ -4073,7 +4069,11 @@ a.site-info-element {
 
 .lp-archive-courses .learn-press-courses .lp_course {
   background-color: #ffe8e0;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  border-radius: 5px; }
+  @media screen and (min-width: 1100px) {
+    .lp-archive-courses .learn-press-courses .lp_course {
+      width: 23%; } }
   .lp-archive-courses .learn-press-courses .lp_course .course-info {
     display: none; }
   .lp-archive-courses .learn-press-courses .lp_course .course-permalink {
@@ -4152,6 +4152,14 @@ body.rebalance.course-item-popup .content-item-summary > h3 {
   margin-top: 0; }
 body.rebalance ul.learn-press-courses .course:before {
   content: none; }
+body.rebalance ul.learn-press-courses .course .course-info {
+  display: none; }
+body.rebalance .course-meta {
+  display: none; }
+body.rebalance .lp-single-course .course-price {
+  display: none; }
+body.rebalance .course-nav-tab-instructor {
+  display: none; }
 
 body.single-lp_course #rebalance-courses {
   max-width: 45rem;
@@ -4309,12 +4317,14 @@ body.rebalance .lp-overlay .modal-dialog .modal-footer {
   @media screen and (min-width: 1100px) {
     .profile-course-history-content {
       padding: 2rem;
-      display: flex;
-      padding-right: 0; } }
+      display: flex; } }
 
 @media screen and (min-width: 1100px) {
   .profile-course-history-content > div {
-    margin-right: 2rem; } }
+    margin-right: 2rem;
+    flex: 1 1 50%; }
+    .profile-course-history-content > div:last-child {
+      margin-right: 0; } }
 .profile-course-history-content > div > h2 {
   margin-top: 0;
   font-size: 19.2px;

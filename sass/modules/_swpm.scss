@@ -80,12 +80,15 @@
   @media screen and (min-width: 1100px) {
     padding: 2rem;
     display: flex;
-    padding-right: 0;
   }
 }
 .profile-course-history-content > div {
   @media screen and (min-width: 1100px) {
     margin-right: 2rem;
+    flex: 1 1 50%;
+    &:last-child {
+      margin-right: 0;
+    }
   }
   & > h2 {
     margin-top: 0;

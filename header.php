@@ -71,7 +71,7 @@
 						<?php global $current_user; wp_get_current_user(); ?>
 						<?php if ( is_user_logged_in() ) { 
 							//echo 'Username: ' . $current_user->user_login . "\n"; 
-							echo '<div class="user-name">'.$current_user->display_name . "</div>";
+							echo '<div class="user-name"><i class="material-icons">account_circle</i> '.$current_user->display_name . "</div>";
 							echo '<div class="user-menu">'.							
 									 '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">';
 							if ( rebalance_membership_is_expired() ) { 
@@ -81,6 +81,7 @@
 							}
 							
 							echo "<a href='".get_option( 'home' )."/membership-profile'>Profile</a>";
+							echo "<a href='/my-course-history'>My courses</a>";
 							if (class_exists(\MailPoet\API\API::class)) {
 								$mailpoet_api = \MailPoet\API\API::MP('v1');								
 								$currentUser = wp_get_current_user();
@@ -90,8 +91,7 @@
 								if ($stuff['status'] == 'unsubscribed' OR  $stuff['status'] == 'subscribed' ) {
 									echo '<a href="/newsletter-manage-subscription">Newsletter subscription</a>';      
 								}
-							};					
-							echo "<a href='/my-course-history'>My courses</a>";	
+							};													
 							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true
 							'>Logout</a>";
 							echo "</div>";
