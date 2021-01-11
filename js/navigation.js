@@ -333,10 +333,14 @@ function homeNavTab(){
 		};
 	}) })
 };
-homeNavTab();
 
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
+		//homenavtab
+		if ($('.home-dashboard')){
+			homeNavTab();
+		}
+
 		// Notification
 		if ( $('.notification-hidden').length ) {
 			$('.show-notification').on('click', function(){
