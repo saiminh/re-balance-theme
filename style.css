@@ -2980,7 +2980,9 @@ a {
   .rebalance-mini-illustration svg {
     height: 25vh;
     margin: 10px;
-    overflow: visible; }
+    overflow: visible;
+    visibility: hidden;
+    opacity: 0; }
   @media (min-width: 768px) {
     .rebalance-mini-illustration {
       flex-basis: 33.3%;
@@ -2993,6 +2995,10 @@ a {
         height: auto;
         margin: 0;
         flex-basis: 100%; } }
+
+.rebalance-mini-illustration #ready,
+.rebalance-mini-illustration #again {
+  cursor: pointer; }
 
 .rebalance-mini-instructions {
   align-self: center; }
@@ -3535,6 +3541,10 @@ input.mailpoet_text {
   @media (min-width: 769px) {
     .background-stage {
       height: calc(100vh - 80px); } }
+
+.rebalance-mini-illustration svg > * {
+  visibility: hidden;
+  opacity: 0; }
 
 body.page-template-page-pricing:after {
   content: "";

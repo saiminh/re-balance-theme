@@ -1,0 +1,5 @@
+.rebalance-mini-illustration svg > * {
+  visibility: hidden;
+  opacity: 0;
+  //hidden at pageload, show needed items via js
+}

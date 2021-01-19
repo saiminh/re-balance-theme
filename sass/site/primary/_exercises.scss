@@ -136,6 +136,8 @@
     height: 25vh;
     margin: 10px;
     overflow: visible;
+    visibility: hidden;
+    opacity: 0;
   }
   @media (min-width: 768px) {
     flex-basis: 33.3%; 
@@ -148,11 +150,12 @@
       height: auto;
       margin: 0;
       flex-basis: 100%;
-      // position: absolute;
-      // top: 50%;
-      // transform: translateY(-50%);
     }
   }
+}
+.rebalance-mini-illustration #ready,
+.rebalance-mini-illustration #again {
+  cursor: pointer;
 }
 .rebalance-mini-instructions{  
   align-self: center;
