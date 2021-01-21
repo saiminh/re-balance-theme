@@ -130,6 +130,8 @@ function rebalance_scripts() {
 	wp_enqueue_script( 'gsapScrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), true );
 	
 	wp_enqueue_script( 'gsapDrawSVGPlugin', get_template_directory_uri() . '/js/DrawSVGPlugin.js', array(), true );
+	
+	wp_enqueue_script( 'gsapMorphSVGPlugin', get_template_directory_uri() . '/js/MorphSVGPlugin.min.js', array(), true );
 
 	wp_enqueue_script( 'swup', get_template_directory_uri() . '/js/swup.js', array(), '20151215', true );
 	

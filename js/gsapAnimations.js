@@ -15,6 +15,7 @@ function gsAnimations(){
     // -------------------------
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(DrawSVGPlugin);
+    gsap.registerPlugin(MorphSVGPlugin);
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset"//,
     });
@@ -437,6 +438,19 @@ function gsAnimations(){
       .to("#fingers", { transformOrigin: "20% 10%", rotationZ: 45, duration: .75 }, 1.25)
       .to("#hand", { duration: 1})
   }  
+  if( document.querySelector( "#wrist-moves-rotations" )) {
+    gsap.to("#fist-1", { autoAlpha: 1, onComplete: () => {tl.play()} });
+    let tl = new gsap.timeline({ paused: true, repeat: -1, yoyo: true, repeatDelay: 1, defaults: { duration: .2 } })
+      .to("#fist-1", { autoAlpha: 0 }, .5)
+      .to("#fist-2", { autoAlpha: 1 }, .5)
+      .to("#fist-2", { autoAlpha: 0 }, 1)
+      .to("#fist-4", { autoAlpha: 1 }, 1)
+      .to("#fist-4", { autoAlpha: 0 }, 1.5)
+      .to("#fist-3", { autoAlpha: 1 }, 1.5)
+      .to("#fist-3", { autoAlpha: 0 }, 2)
+      .to("#fist-1", { autoAlpha: 1 }, 2)
+          
+  }
   if( document.querySelector( "#emergency-breath" )) {
     gsap.set("#emergency-breath > *", { autoAlpha: 0});
     let t_count = 1,
@@ -549,5 +563,65 @@ function gsAnimations(){
     .to("#woman-head, #woman-hair-back", { transformOrigin: "50% 100%", yPercent: -9, ease: "power2.inout", duration: 4.9 }, 0.3)  
     .to("#woman-brows", { transformOrigin: "50% 100%", yPercent: -66, scaleX: .9, ease: "power2.inout", duration: 4.7 }, 0.3)    
     .to("#woman-nose", { transformOrigin: "50% 50%", scaleX: 1.2, ease: "power2.inout", duration: 4.8 }, 0.2);    
-  };
+  }
+  if (document.querySelector('#shoulder-stretch')) {
+    gsap.to("#shoulder-stretch > *:not(#forearm-left)", {autoAlpha: 1})
+    let tl = new gsap.timeline({ 
+      repeat: -1, yoyo :true, repeatDelay: 3, defaults: {
+        duration: 2,
+        ease: "power4.inOut"
+      } })
+      .from("#arm-right", { transformOrigin: "5% 90%", rotationZ: 90 }, 0)
+      .from("#forearm-right", { transformOrigin: "50% 90%", rotationZ: 45 }, .1)
+      .from("#upperarm-left", { transformOrigin: "10% 33%", rotationZ: 45 }, .4)
+      .fromTo("#forearm-left", 
+        { transformOrigin: "50% 90%", autoAlpha: 0, xPercent: -80, yPercent: 33, rotationZ: 90 }, 
+        { autoAlpha: 1, xPercent: 0, yPercent: 0, rotationZ: 0 }, .5)
+  }
+  if (document.querySelector('#shoulder-shrugs')) {
+    gsap.to("#shoulder-shrugs > *:not(#breatheman-chest-shrugged)", {autoAlpha: 1})
+    let tl = new gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 })
+      .addLabel("a")
+      .to("#breathman-chest", { morphSVG: "#breatheman-chest-shrugged", duration: 2, ease: "circ.inOut" }, "a" )
+      .to("#breatheman-neck", { yPercent: -15, duration: 2, ease: "circ.inOut" }, "a" )
+      .to("#breatheman-head", { yPercent: 5, duration: 2, ease: "circ.inOut" }, "a" )
+  }
+  if (document.querySelector('#wrist-flexions')) {
+    let tl = new gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 2 })
+      .set("#wrist-flexions > *", { autoAlpha: 1 })
+      .to("#hand", { transformOrigin: "48% 18%", rotationZ: -70, xPercent: 4, yPercent: -4 })
+      .to("#finger", { transformOrigin: "55% 10%", rotationZ: -40, duration: 1 }, .2 )
+  }
+  if (document.querySelector('#fingers-palm-stretch')) {
+    gsap.set("#arm-right", { transformOrigin: "5% 25%",  rotationZ: 45  }, 0)
+    gsap.set("#hand-right", {  transformOrigin: "25% 90%",  rotationZ: 40  }, 0)
+    gsap.set("#arm-left, #shadow-arm-left", { transformOrigin: "5% 50%",  rotationZ: 55  }, 0)
+    gsap.set("#hand-left, #shadow-hand-left", { transformOrigin: "25% 17%", rotationZ: -70  }, 0)
+    gsap.to("#fingers-palm-stretch > *", { autoAlpha: 1, onComplete: () => { tl.play() } });
+    let tl = new gsap.timeline({ paused: true, repeat: -1, yoyo: false, defaults: {
+      duration: 1, ease: "power3.inOut"
+    } })      
+      .to("#arm-right", { 
+        rotationZ: 0  }, 1)
+      .to("#hand-right", { 
+        rotationZ: 0  }, 1)      
+      .to("#arm-left, #shadow-arm-left", { 
+        rotationZ: -35  }, 1)
+      .to("#hand-left, #shadow-hand-left", { 
+        rotationZ: -45  }, 1)
+      .to("#arm-left, #shadow-arm-left", { 
+        rotationZ: 0  }, 2)
+      .to("#hand-left, #shadow-hand-left", { 
+        rotationZ: 0  }, 2)
+      .to("#hand-left, #shadow-hand-left", { 
+        rotationZ: 10  }, 3)
+      .to("#hand-right", { 
+        rotationZ: -10  }, 3)      
+      .to("#arm-right", { rotationZ: 45  }, 6)
+      .to("#hand-right", { rotationZ: 40  }, 6)
+      .to("#arm-left, #shadow-arm-left", { rotationZ: 55  }, 6)
+      .to("#hand-left, #shadow-hand-left", { rotationZ: -70  }, 6)
+
+      .to("#hand-left",{ duration: 2 }, 3)  
+  }
 } 
