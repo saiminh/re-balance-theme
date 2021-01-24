@@ -621,7 +621,57 @@ function gsAnimations(){
       .to("#hand-right", { rotationZ: 40  }, 6)
       .to("#arm-left, #shadow-arm-left", { rotationZ: 55  }, 6)
       .to("#hand-left, #shadow-hand-left", { rotationZ: -70  }, 6)
-
       .to("#hand-left",{ duration: 2 }, 3)  
+  }
+  if (document.querySelector("#seated-twists")) {
+    gsap.to("#frontal, #chair", { autoAlpha: 1, onComplete: () => { tl.play() } })
+    let tl = new gsap.timeline({ paused: true, repeat: -1 })
+     .set("#frontal", { autoAlpha: 0 }, 1)
+     .set("#left", { autoAlpha: 1 }, 1)
+     .set("#left", { autoAlpha: 0 }, 3)
+     .set("#frontal", { autoAlpha: 1 }, 3)
+     .set("#frontal", { autoAlpha: 0 }, 5)
+     .set("#right", { autoAlpha: 1 }, 5)
+     .set("#right", { autoAlpha: 0 }, 7)
+     .set("#frontal", { autoAlpha: 1 }, 7)
+  }
+  if(document.querySelector("#gratefulness")) {
+    gsap.set("#rays line", {drawSVG: "0% 100%"})
+    gsap.to("#rays", {transformOrigin: "50% 50%", rotationZ: 45, duration: 5, ease: "linear", repeat: -1 }, 0)
+    gsap.to("#gratefulness > *", { autoAlpha: 1, onComplete: () => { tl.play() } })
+    let tl = new gsap.timeline({ paused: true, repeat: -1, repeatDelay: .1 })
+      .fromTo("#rays line", {
+        drawSVG: "0% 100%"
+      },{
+        drawSVG: "100% 100%", duration: .5, ease: "circ.out"
+      }, 0)
+      .fromTo("#rays line", {
+        drawSVG: "0% 0%"
+      }, {
+        drawSVG: "0% 100%", duration: .75, ease: "circ.out"
+      }, .75)
+  }
+  if(document.querySelector("#happiness")) {
+    gsap.set("#dimple-left", { autoAlpha: 1, xPercent: 110, yPercent: 100, drawSVG: "50% 50%" });
+    gsap.set("#dimple-right", { autoAlpha: 1, xPercent: -110, yPercent: 80, drawSVG: "50% 50%" });
+    gsap.to("#straight", { autoAlpha: 1, onComplete: () => { tl.play() } });
+    let tl = new gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1 })
+     .to("#straight", { morphSVG: "#smile", ease: "circ.out", duration: 2 } )
+     .to("#dimple-left, #dimple-right", { drawSVG: "0% 100%", ease: "circ.out", duration: 2 }, 0)
+     .to("#dimple-left", { xPercent: 0, yPercent: 0, ease: "circ.out", duration: 2 }, 0)
+     .to("#dimple-right", { xPercent: 0, yPercent: 0, ease: "circ.out", duration: 2 }, 0)
+     .to("#straight", { morphSVG: "#straight" }, 3 )
+     .to("#dimple-left, #dimple-right", { drawSVG: "50% 50%" }, 3 )
+     .to("#dimple-left", { xPercent: 110, yPercent: 100 }, 3 )
+     .to("#dimple-right", { xPercent: -110, yPercent: 80 }, 3 )
+  }
+  if (document.querySelector("#beauty")) {
+    gsap.set("#beauty > *", { transformOrigin: "50% 50%", scale: 0 })
+    gsap.to("#beauty > *", {autoAlpha: 1, onComplete: () => { tl.play() }});
+    let tl = new gsap.timeline({ paused: true, repeat: -1  })
+      .to("#beauty > *", 
+        { scale: 1, stagger: { amount: 1, from: "start" }, duration: 3, ease: "power4.out" })
+      .to("#beauty > *", 
+        { scale: 0, rotationZ: "+=180", stagger: { amount: 2, from: "end" }, duration: 3, ease: "power2.in" })
   }
 } 
