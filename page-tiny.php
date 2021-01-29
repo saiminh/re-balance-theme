@@ -20,14 +20,16 @@ get_header();
 					<a href="<?php echo get_home_url(); ?>/exercise-type/tiny-breathwork/" class="tiny-map-illu tiny-map-illu--breathe">						
 						<?php get_template_part('inc/inline', 'ui-tiny-breathe.svg'); ?>
 						Breathe
+            <span class="tiny-map-illu-subtitle">Short and discreet exercises to move more while you work</span>
           </a>
           <a href="<?php echo get_home_url(); ?>/exercise-type/tiny-movements/" class="tiny-map-illu tiny-map-illu--move">						
             <?php get_template_part('inc/inline', 'ui-tiny-move.svg'); ?>
             Move
+            <span class="tiny-map-illu-subtitle">Breathwork practices to uplift your mood or soothe your mind</span>
           </a>
-          <a href="<?php echo get_home_url(); ?>/exercise-type/tiny-nows/" class="tiny-map-illu tiny-map-illu--now">						
+          <a href="<?php echo get_home_url(); ?>/exercise-type/tiny-reflections/" class="tiny-map-illu tiny-map-illu--now">						
             <?php get_template_part('inc/inline', 'ui-tiny-now.svg'); ?>
-            Now
+            Reflect
             <span class="tiny-map-illu-subtitle">Small bursts of mindfulness, gratitude and happiness</span>
           </a>
 					

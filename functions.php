@@ -577,7 +577,7 @@ function my_wp_mail_filter( $args ) {
 		<img src="https://re-balance.io/wp-content/themes/rebalance-wptheme/img/rebalance-logo-darkmode.png" alt="rebalance" style="width: 200px; height: 55px; border: none; font-size:12px; font-style: italic; margin-bottom: 10px;" /></div><!--<![endif]-->
 		</td></tr><tr><td style="padding: 30px; font-family: hero-new, sans-serif; font-size: 17px; line-height: 25px; color: #333333; background-color: #FFFFFF;">'.$args['message'].'</td></tr><tr><td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: hero-new,  sans-serif; line-height:18px; text-align: center; background-color: #FFFFFF; color: #888888; border-top: 1px solid #EEEEEE;">
 			This Email address was sent by <a href="www.re-balance.io" style="color: #FF9B7A; text-decoration: none;">www.re-balance.io</a><br /><br />
-			Re.Balance | Bosboom Toussaintstraat 28 - 1 | 1054 AS Amsterdam | The Netherlands
+			ReBalance for work | 92 Boundary St, Paddington, NSW 2021 | Australia
 			</td></tr></table></div></body>',
 		'headers'     => $args['headers'],
 		'attachments' => $args['attachments'],
