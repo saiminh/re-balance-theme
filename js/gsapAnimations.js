@@ -750,6 +750,72 @@ function gsAnimations(){
       .to("#front-hand-r", { morphSVG: "#front-hand-r", duration: .25, ease: "none" }, "backtostart")
       .to("#front-arm-l", { morphSVG: "#front-arm-l", duration: .25, ease: "none" }, "backtostart")
       .to("#front-arm-r", { morphSVG: "#front-arm-r", duration: .25, ease: "none" }, "backtostart")
-      
+  }
+  if (document.getElementById('illu-seated-cat-cows')){
+    gsap.set("#torso-arched, #torso-stretched", { autoAlpha: 0 })
+    gsap.set("#illu-seated-cat-cows > *", { autoAlpha: 1 })
+    let tl = gsap.timeline({ repeat: -1, yoyo: false, defaults: {
+      duration: 2, ease: "power3.out"
+    } })
+      .addLabel("to-cow")
+      .to("#head-neck", { transformOrigin: "40% 90%", rotationZ: -50, xPercent: -10}, "to-cow")
+      .to("#body", { transformOrigin: "18% 90%", rotationZ: 20, xPercent: -2, yPercent: 1 }, "to-cow")
+      .to("#torso-straight", { morphSVG: "#torso-stretched" }, "to-cow")
+      .to("#arm", { transformOrigin: "15% 15%",rotationZ: 10, xPercent: -2 }, "to-cow")
+      .to("#forearm-hand", { transformOrigin: "10% 10%",rotationZ: -40 }, "to-cow")
+      .to("#hand", { transformOrigin: "10% 10%",rotationZ: 15, xPercent: -5, yPercent: -5 }, "to-cow")
+      .addLabel("to-cat")
+      .to("#head-neck", { rotationZ: 66, xPercent: 50, yPercent: 15}, "to-cat")
+      .to("#body", { rotationZ: -20, xPercent: 0, yPercent: 0 }, "to-cat")
+      .to("#torso-straight", { morphSVG: "#torso-arched" }, "to-cat")
+      .to("#arm", { rotationZ: 23, xPercent: 25, yPercent: 5 }, "to-cat")
+      .to("#forearm-hand", { rotationZ: -10 }, "to-cat")
+      .to("#hand", { rotationZ: 15, xPercent: -5, yPercent: -5 }, "to-cat")
+      .addLabel("back")
+      .to("#head-neck", { rotationZ: 0, xPercent: 0, yPercent: 0}, "back")
+      .to("#body", { rotationZ: 0, xPercent: 0, yPercent: 0 }, "back")
+      .to("#torso-straight", { morphSVG: "#torso-straight" }, "back")
+      .to("#arm", { rotationZ: 0, xPercent: 0, yPercent: 0 }, "back")
+      .to("#forearm-hand", { rotationZ: 0 }, "back")
+      .to("#hand", { rotationZ: 0, xPercent: 0, yPercent: 0 }, "back")
+  }
+  if(document.getElementById('tiny-seated-figure-four')){
+    gsap.set("#tiny-seated-figure-four > *", { autoAlpha: 1 })
+    gsap.set("#arm, #arm-lower, #hand", { transformOrigin: "8% 50%" })
+    gsap.set("#torso", { transformOrigin: "10% 90%" })
+    gsap.set("#head-neck", { transformOrigin: "30% 90%" })
+    let tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true, defaults: {
+      duration: 2, ease: "power3.Out"
+    }})
+      .addLabel("raisearm")
+      .fromTo("#arm", { rotationZ: 90 }, { rotationZ:20, duration: .5, ease: "none" }, "raisearm")
+      .fromTo("#arm-lower", { rotationZ:-60 }, { rotationZ: -20, duration: .5, ease: "none" }, "raisearm")
+      .fromTo("#hand", { rotationZ:-40 }, { rotationZ: -20, duration: .5, ease: "none"} , "raisearm")
+      .addLabel("lean-fwd", .5)
+      .to("#torso", { rotationZ: 45 }, "lean-fwd")
+      .to("#head-neck", { rotationZ: -45 }, "lean-fwd")
+      .to("#arm", { rotationZ: -45 }, "lean-fwd")
+      .to("#arm-lower", { rotationZ: 0 }, "lean-fwd")
+      .to("#hand", { rotationZ: 0 }, "lean-fwd")
+  }
+  if(document.getElementById('illu-tiny-squats')){
+    gsap.set("#illu-tiny-squats > *", { autoAlpha: 1 })
+    gsap.set("#body-upper", { transformOrigin: "41% 94.5%", rotationZ: -80  })
+    gsap.set("#hip-torso", { transformOrigin: "44% 80.5%", rotationZ: 80 })
+    gsap.set("#arm", { transformOrigin: "44% 10.6%" })
+    gsap.set("#arm, #arm-lower", { transformOrigin: "44% 10.6%" })
+    gsap.set("#hand", { transformOrigin: "55% 10.6%" })
+    gsap.set("#head-neck", { transformOrigin: "40% 86%" })
+    gsap.set("#dude", { transformOrigin: "100% 100%" })
+    gsap.set("#foot", { transformOrigin: "23% 10%" })
+    let tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true, defaults:{
+      duration: 1.5, ease: "power2.inOut"
+    } })
+      .addLabel("setup")
+      .addLabel("stand", 1)
+      .to("#body-upper", { rotationZ: 0 }, "stand")
+      .to("#hip-torso", { rotationZ: 0, duration: 1.1 }, "stand+=0.4")
+      .to("#arm, #arm-lower, #head-neck, #hand", { rotationZ: -20, duration: .75 }, "stand")
+      .to("#arm, #arm-lower, #head-neck, #hand", { rotationZ: 0, ease: "elastic.inout" }, "stand+=0.75")
   }
 } 
