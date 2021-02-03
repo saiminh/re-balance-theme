@@ -442,7 +442,6 @@ function gsAnimations(){
     gsap.set(".rebalance-mini-illustration #neck-rotation > *", { autoAlpha: 1 });
     let neckrotation_tl = new gsap.timeline({ repeat: -1, yoyo: true })
       .set("[id^='head-']:not(#head-down)", { autoAlpha: 0 }, 0)
-      //.set("#head-down", { autoAlpha: 1 }, 0)
       .set("#head-down", { autoAlpha: 0}, .5)
       .set("#head-down-right", { autoAlpha: 1}, .5)
       .set("#head-down-right", { autoAlpha: 0}, 1)
@@ -456,7 +455,7 @@ function gsAnimations(){
       .set("#head-down-left", { autoAlpha: 0}, 3)
       .set("#head-down", { autoAlpha: 1}, 3)
       .set("#head-down", { autoAlpha: 1}, 3.5);
-      neckrotation_tl.timeScale(1.5);
+      neckrotation_tl.timeScale(.5);
   }
   if( document.querySelector( "#wrist-moves-flexions" )) {
     gsap.set(".rebalance-mini-illustration #wrist-moves-flexions > *", { autoAlpha: 1 });
@@ -560,7 +559,9 @@ function gsAnimations(){
   if (document.querySelector("#gaze-change") ){
     gsap.to("#eye, #nothing-to-see, #arrow", {autoAlpha: 1});
     gsap.to("#nothing-to-see", {yPercent: 10});
-    gsap.fromTo("#arrow", { transformOrigin: "100% 100%", scale: 0, rotationZ: 20}, {scale: 1, rotationZ: 0, delay: .5, ease: "circ.inOut"});
+    gsap.fromTo("#arrow", 
+      { scale: 0, rotationZ: 20, transformOrigin: "100% 100%"}, 
+      { scale: 1, rotationZ: 0, delay: .5, ease: "circ.inOut"});
     gsap.fromTo("#look-elsewhere", { autoAlpha: 0, yPercent: -50 }, { autoAlpha: 1, yPercent: 30, delay: .5 })
   }
   if (document.querySelector("#eye-movements") ){
