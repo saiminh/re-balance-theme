@@ -25,7 +25,7 @@ function gsAnimations(){
       start: "0% center", 
       end: "100% center" };
     
-    let tl_woman_rain_raindrops = new gsap.timeline({ 
+    let tl_woman_rain_raindrops = gsap.timeline({ 
       paused: true,  
       scrollTrigger: {
         trigger: "#section_why_rebalance",
@@ -39,7 +39,7 @@ function gsAnimations(){
         { yPercent: 0, scaleY: 1 },
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, 1.85);
     
-    let tl_woman_rain_in = new gsap.timeline({ 
+    let tl_woman_rain_in = gsap.timeline({ 
       paused: true, 
       scrollTrigger: trigger_illu_woman_rain })
       .set("#illu01-head", 
@@ -72,7 +72,7 @@ function gsAnimations(){
       id: "stress", 
       scrub: true };
 
-    let tl_whatsWrong_in = new gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in })      
+    let tl_whatsWrong_in = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in })      
       .fromTo("#illu-woman-rain-shine", 
         { autoAlpha: 1, yPercent: 0 }, 
         { autoAlpha: 0, yPercent: -110, duration: .75 }, 0)
@@ -86,7 +86,7 @@ function gsAnimations(){
       end: "100% center", 
       scrub: true };
 
-    let tl_woman_on_desk_slumps_in = new gsap.timeline({ 
+    let tl_woman_on_desk_slumps_in = gsap.timeline({ 
       paused: true, 
       scrollTrigger: trigger_woman_on_desk_slumps })         
       .fromTo("#woman-on-desk", 
@@ -115,7 +115,7 @@ function gsAnimations(){
       start: "0% center", 
       end: "100% center" };
 
-    let tl_speechbubble_pops_up = new gsap.timeline({ paused: true, scrollTrigger: trigger_speechbubble_pops_up })
+    let tl_speechbubble_pops_up = gsap.timeline({ paused: true, scrollTrigger: trigger_speechbubble_pops_up })
       .fromTo("#body-workdays #upperbody", 
         { autoAlpha: 1,  rotationZ: 5 }, 
         { rotationZ: -30, duration: .5, ease: "power4.in" }, 0)
@@ -139,7 +139,7 @@ function gsAnimations(){
       start: "0% center", 
       end: "100% center" };
 
-    let tl_woman_sunrise_sunriseloop = new gsap.timeline({ 
+    let tl_woman_sunrise_sunriseloop = gsap.timeline({ 
       paused: true, 
       scrollTrigger: trigger_woman_sunrise })      
       .fromTo("#illu01-sun", 
@@ -155,7 +155,7 @@ function gsAnimations(){
         { rotationZ: 0 }, 
         { rotationZ: 360, duration: 8, ease: "none", repeat: -1 }, 1);
 
-    let tl_woman_sunrise_in = new gsap.timeline({ paused: true, scrollTrigger: trigger_woman_sunrise })
+    let tl_woman_sunrise_in = gsap.timeline({ paused: true, scrollTrigger: trigger_woman_sunrise })
       .fromTo("#illu-woman-rain-shine", 
         { autoAlpha: 0, yPercent: -110 }, 
         { autoAlpha: 1, yPercent: 0, duration: .75 }, 0)
@@ -180,7 +180,7 @@ function gsAnimations(){
       start: "0% center", 
       end: "100% center" };
     
-    let rebalanceYourselfIn = new gsap.timeline({ 
+    let rebalanceYourselfIn = gsap.timeline({ 
       paused: true, 
       scrollTrigger: triggerrebalanceYourselfIn })     
     .fromTo("#illu-woman-rain-shine", 
@@ -226,7 +226,7 @@ function gsAnimations(){
         console.log('trigger_unbalancedWorldIn'); 
       }};
 
-    let tl_unbalancedWorldeyeloop = new gsap.timeline({ paused: true, repeat: -1 })
+    let tl_unbalancedWorldeyeloop = gsap.timeline({ paused: true, repeat: -1 })
       .fromTo("#eyes", { xPercent: -2, yPercent: -40 }, { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -20, yPercent: 60, duration: 1, ease: "power4.out" })
       .to("#eyes", { xPercent: -20, yPercent: -20, duration: 1, ease: "power4.out" })
@@ -239,7 +239,7 @@ function gsAnimations(){
         { yPercent: 100, autoAlpha: 0 },
         { yPercent: 0, autoAlpha: 1, duration: 1, scrollTrigger: trigger_unbalancedWorldIn })
 
-    let tl_unbalancedWorld = new gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
+    let tl_unbalancedWorld = gsap.timeline({ paused: true, scrollTrigger: trigger_unbalancedWorldIn }).timeScale(2)
       .set("#eyes", { xPercent: 0, yPercent: 0 })
       .set("[id^='notification-']", { scale: 0, xPercent: 0, yPercent: 0, autoAlpha: 1, transformOrigin: "50% 50%" })
       .to("#unbalancedWorld", { autoAlpha: 1, duration: 1 })
@@ -254,7 +254,7 @@ function gsAnimations(){
       .to("#eyes", { xPercent: -2, yPercent: -40, duration: 1, ease: "power4.out" }, 5)
       .to("#eyelids", { yPercent: 0, duration: 1, onComplete: ()=>{ tl_unbalancedWorldeyeloop.play(0) } }, 7.2);
 
-    let tl_ourMissioneyeloop = new gsap.timeline({ paused: true, repeat: -1 })
+    let tl_ourMissioneyeloop = gsap.timeline({ paused: true, repeat: -1 })
       .fromTo("#bw-eyelids-lower", { yPercent: 0 }, { yPercent: -75, duration: .05 }, 2)
       .fromTo("#bw-eyelids-upper", { yPercent: 0 }, { yPercent: 75, duration: .05 }, 2)
       .to("#bw-eyelids-lower, #bw-eyelids-upper", { yPercent: 0, duration: .3 }, 2.05)
@@ -266,7 +266,7 @@ function gsAnimations(){
 
     let trigger_ourMission_In = { trigger: "#section_ourMission", start: "0% center", end: "100% center", onEnter: ()=>{ tl_unbalancedWorldeyeloop.pause();  console.log('trigger_ourMission_In'); } }
 
-    let tl_ourMission = new gsap.timeline({ paused: true, scrollTrigger: trigger_ourMission_In })
+    let tl_ourMission = gsap.timeline({ paused: true, scrollTrigger: trigger_ourMission_In })
       .to("#notification-todo", { xPercent: 100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-traffic", { xPercent: -100, yPercent: -100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
       .to("#notification-alarm", { xPercent: -100, yPercent: 100, autoAlpha: 0, duration: .2, ease: "power3.out" }, 0)
@@ -283,7 +283,7 @@ function gsAnimations(){
         drawSVG: "100%", ease: "expo.inOut", duration: 1}, .5)
 
     let trigger_rebalanceYourWorkDayIn = { trigger: "#section_rebalance", start: "0% center", end: "100% center" };
-    let tl_rebalanceYourWorkDayIn = new gsap.timeline({ paused: true, scrollTrigger: trigger_rebalanceYourWorkDayIn })         
+    let tl_rebalanceYourWorkDayIn = gsap.timeline({ paused: true, scrollTrigger: trigger_rebalanceYourWorkDayIn })         
     .fromTo("#world", 
       { yPercent: 0, autoAlpha: 1 }, 
       { yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
@@ -301,7 +301,7 @@ function gsAnimations(){
   
   if (document.querySelector('#breatheman')) {
     gsap.set(".rebalance-mini-illustration #breatheman > *", { autoAlpha: 1 });
-    let breathemanbreathes = new gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
+    let breathemanbreathes = gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
     .to("#breatheman-chest", { transformOrigin: "50% 100%", scale: 1.125, yPercent: -5, ease: "power2.inout", duration: 5 }, 0)
     .to("#breatheman-neck", { transformOrigin: "50% 100%", scaleX: 1.125, yPercent: -13, ease: "power2.inout", duration: 4.9 }, 0.1)   
     .to("#breatheman-head", { transformOrigin: "50% 100%", yPercent: -9, ease: "power2.inout", duration: 4.9 }, 0.3)  
@@ -310,7 +310,7 @@ function gsAnimations(){
   };
 
   if (document.querySelector('#energising-breaths')) {
-    let energisingbreaths_tl = new gsap.timeline({ paused: false, repeat: -1, yoyo: false })
+    let energisingbreaths_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: false })
       .fromTo("#breatheout", {autoAlpha: 0}, { autoAlpha: 1, duration: 0.01}, 1)
       .fromTo("#breathein", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.01}, 1)
       .fromTo("#breatheout", {autoAlpha: 1}, { autoAlpha: 0, duration: 0.01}, 2.1)
@@ -321,7 +321,7 @@ function gsAnimations(){
     gsap.to("#rub, #armhand, #neck, #head, #body", { autoAlpha: 1, duration: 1 });
     gsap.to("#rub", { xPercent: 3, yPercent: -3, repeat: -1, duration: .1, yoyo: true});
     gsap.to("#armhand", { xPercent: -3, yPercent: 3, repeat: -1, duration: .1, yoyo: true});
-    let eyerelaxation_tl = new gsap.timeline({ paused: false, repeat: -1, yoyo: false })
+    let eyerelaxation_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: false })
       .to("#rub, #armhand", {autoAlpha: 0, duration: 0.1}, 2)      
       .to("#nice", { autoAlpha: 1, duration: 0.1}, 2)
       .to("#rub, #armhand", { autoAlpha: 1, duration: 0.1}, 3.1)
@@ -330,7 +330,7 @@ function gsAnimations(){
 
   if (document.querySelector('#tiny-first-aid')) {
     gsap.set(".rebalance-mini-illustration #tiny-first-aid > *", { autoAlpha: 1 });
-    let tl_woman_rain_raindrops = new gsap.timeline()
+    let tl_woman_rain_raindrops = gsap.timeline()
       .set("#cloudrain", { yPercent: -5 })
       .fromTo("#illu01-raindrop01, #illu01-raindrop02, #illu01-raindrop04", 
         { yPercent: 0, scaleY: 1 }, 
@@ -338,11 +338,11 @@ function gsAnimations(){
       .fromTo("#illu01-raindrop03, #illu01-raindrop05", 
         { yPercent: 0, scaleY: 1 },
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, .15);
-    let tinyfirstaid_tl = new gsap.timeline({ paused: false, repeat: -1, yoyo: true })
+    let tinyfirstaid_tl = gsap.timeline({ paused: false, repeat: -1, yoyo: true })
       .set("#illu01-body, #illu01-head", {transformOrigin: "50% 100%"})
       .to("#illu01-body", { scale: 1.125, ease: "power3.inOut", duration: 3 }, 0)
       .to("#illu01-head", { yPercent: -9, ease: "power3.inOut", duration: 2.9 }, 0.3)  
-    let rainawaysunup_tl = new gsap.timeline({ paused: false})
+    let rainawaysunup_tl = gsap.timeline({ paused: false})
       .to("#cloudrain", { yPercent: -200, autoAlpha: 0, ease: "power3.inOut" ,duration: 1 }, 5)
       .to("#illu01-sun", { yPercent: -120, xPercent: 100, ease: "power3.inOut", duration: 1 }, 5.25)
   };
@@ -351,7 +351,7 @@ function gsAnimations(){
     gsap.set(".rebalance-mini-illustration #illu-focus > *", { autoAlpha: 1 });
     gsap.set("#n2, #n3, #n4, #n5, #n6, #exhale", { autoAlpha: 0 });
     gsap.set("#inhale, #exhale", { transformOrigin: "50% 100%" });
-    let tinyfocus_tl = new gsap.timeline({ repeat: -1 })
+    let tinyfocus_tl = gsap.timeline({ repeat: -1 })
       .addLabel("inhale", 0)
       .fromTo("#inhale", {autoAlpha: 0, yPercent: 50}, { autoAlpha: 1, yPercent: 0 }, "exhale")
       .set("#body, #head", { transformOrigin: "50% 100%" }, "inhale")
@@ -389,7 +389,7 @@ function gsAnimations(){
   
   if (document.querySelector('#illu-neck-moves-side-to-side')) {
     gsap.set(".rebalance-mini-illustration #illu-neck-moves-side-to-side > *", { autoAlpha: 1 });
-    let neckmove_tl = new gsap.timeline({ repeat: -1 })
+    let neckmove_tl = gsap.timeline({ repeat: -1 })
       .set("#body, #head", { transformOrigin: "50% 90%" })
       .set("#head", { rotationZ: -45 })
       .to("#body", { scale: 1.125, ease: "power2.Out", duration: 4 }, 0)
@@ -398,7 +398,7 @@ function gsAnimations(){
       .to("#body", { scale: 1, ease: "power2.Out", duration: 4 }, 4)
       .to("#head, #hands", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
       .to("#arms", { yPercent: 0, ease: "power2.Out", duration: 4 }, 4)
-    let sidetoside_tl = new gsap.timeline({ repeat: -1 })
+    let sidetoside_tl = gsap.timeline({ repeat: -1 })
       .to("#head", { rotationZ: 0, duration: 4 }, 0)
       .to("#head", { rotationZ: 45, duration: 4 }, 4)
       .to("#head", { rotationZ: 0, duration: 4 }, 8)
@@ -407,7 +407,7 @@ function gsAnimations(){
 
   if (document.querySelector( '#tiny-illu-calming-breaths' )) {
     gsap.set(".rebalance-mini-illustration #tiny-illu-calming-breaths > *", { autoAlpha: 1 });
-    let calmingbreaths_tl = new gsap.timeline({ repeat: -1 })
+    let calmingbreaths_tl = gsap.timeline({ repeat: -1 })
     .set("#head, #rays", { transformOrigin: "50% 50%" })
     .set("#pursed", { autoAlpha: 0 })
     .to("#head, #rays", { scale: 1.5, duration: 4, ease: "power3.Out" }, 0)
@@ -428,7 +428,7 @@ function gsAnimations(){
   };
   if (document.querySelector( "#neck-moves-up-and-down" )) {
     gsap.set(".rebalance-mini-illustration #neck-moves-up-and-down > *", { autoAlpha: 1 });
-    let neckupdown_tl = new gsap.timeline({ repeat: -1 })
+    let neckupdown_tl = gsap.timeline({ repeat: -1 })
       .set("#head", { transformOrigin: "45% 90%" })
       .set("#body", { transformOrigin: "50% 100%" })
       .to("#head", { rotationZ: 45, xPercent: -5,  duration: 3 })
@@ -440,7 +440,7 @@ function gsAnimations(){
   }
   if( document.querySelector( "#neck-rotation" )) {
     gsap.set(".rebalance-mini-illustration #neck-rotation > *", { autoAlpha: 1 });
-    let neckrotation_tl = new gsap.timeline({ repeat: -1, yoyo: true })
+    let neckrotation_tl = gsap.timeline({ repeat: -1, yoyo: true })
       .set("[id^='head-']:not(#head-down)", { autoAlpha: 0 }, 0)
       .set("#head-down", { autoAlpha: 0}, .5)
       .set("#head-down-right", { autoAlpha: 1}, .5)
@@ -457,17 +457,9 @@ function gsAnimations(){
       .set("#head-down", { autoAlpha: 1}, 3.5);
       neckrotation_tl.timeScale(.5);
   }
-  if( document.querySelector( "#wrist-moves-flexions" )) {
-    gsap.set(".rebalance-mini-illustration #wrist-moves-flexions > *", { autoAlpha: 1 });
-    let wristflexions_tl = new gsap.timeline({ repeat: -1, yoyo: true })
-      .to("#hand", { duration: 1}, 0)
-      .to("#hand", { transformOrigin: "45% 5%", yPercent: 5, xPercent: -4, rotationZ: 85, duration: 1 }, 1)
-      .to("#fingers", { transformOrigin: "20% 10%", rotationZ: 45, duration: .75 }, 1.25)
-      .to("#hand", { duration: 1})
-  }  
   if( document.querySelector( "#wrist-moves-rotations" )) {
     gsap.to("#fist-1", { autoAlpha: 1, onComplete: () => {tl.play()} });
-    let tl = new gsap.timeline({ paused: true, repeat: -1, yoyo: true, repeatDelay: 1, defaults: { duration: .2 } })
+    let tl = gsap.timeline({ paused: true, repeat: -1, yoyo: true, repeatDelay: 1, defaults: { duration: .2 } })
       .to("#fist-1", { autoAlpha: 0 }, .5)
       .to("#fist-2", { autoAlpha: 1 }, .5)
       .to("#fist-2", { autoAlpha: 0 }, 1)
@@ -487,7 +479,7 @@ function gsAnimations(){
         numbersout = {autoAlpha: 0, yPercent: 10, duration: t_fade/2 };
     gsap.set(numbers, { yPercent: 10 })      
     gsap.to("#ready", {autoAlpha: 1, duration: 1 });
-    let countdown_tl = new gsap.timeline({ paused: true })
+    let countdown_tl = gsap.timeline({ paused: true })
       .to(numbers[3], numbersin )
       .to(numbers[3], numbersout, t_count )
       .to(numbers[2], numbersin, t_count )
@@ -498,7 +490,7 @@ function gsAnimations(){
       .to(numbers[0], numbersout, (t_count * 4) );
     let textin = { autoAlpha: 1, onComplete: () => countdown_tl.play(0), duration: .5 },
         textout = { autoAlpha: 0, duration: .5 };
-    let emergenzyBreath_tl = new gsap.timeline({ paused: true })
+    let emergenzyBreath_tl = gsap.timeline({ paused: true })
       .to("#ready, #again", textout )
       .to("#inhale", textin )
       .fromTo("#inhale", { scale: .4, transformOrigin: "50% 50%" }, { scale: 1, duration: ( t_count * 4 ) }, 0)
@@ -515,7 +507,7 @@ function gsAnimations(){
     document.querySelector("#again").addEventListener("click", () => emergenzyBreath_tl.play(0) );
   }
   if( document.querySelector( "#concentrating-breaths" )) {
-    let tl = new gsap.timeline({ repeat: -1 })
+    let tl = gsap.timeline({ repeat: -1 })
       .addLabel("scenetwo", 3)
       .addLabel("thumbin", 5)
       .addLabel("pinkout", 7)
@@ -566,7 +558,7 @@ function gsAnimations(){
   }
   if (document.querySelector("#eye-movements") ){
     gsap.to("#eye-movements > *", { autoAlpha: 1 });
-   let tl = new gsap.timeline({ repeat: -1 })
+   let tl = gsap.timeline({ repeat: -1 })
     .set("#retina", {transformOrigin: "50% 50%"})
     .to("#retina", { scaleY: .8, yPercent: -60, ease: "power4.out", duration: 1.5 }, 2)
     .to("#eye-movements", { scale: 1.25, yPercent: -10, duration: 3 }, 2)
@@ -581,12 +573,12 @@ function gsAnimations(){
   if (document.querySelector('#blinking-practice')) {
     gsap.set("#blinking-practice > *", { autoAlpha: 1 });
     gsap.set("#eyes-closed", { autoAlpha: 0 });
-    let tl_eyes = new gsap.timeline ( { repeat: -1, repeatDelay: .3 })
+    let tl_eyes = gsap.timeline ( { repeat: -1, repeatDelay: .3 })
       .to("#eyes-closed", { autoAlpha: 1, duration: .2 }, 5)
       .to("#eyes-open", { autoAlpha: 0, duration: .2 }, 5)
       .to("#eyes-closed", { autoAlpha: 0, duration: .2 }, 10.5)
       .to("#eyes-open", { autoAlpha:  1, duration: .2 }, 10.5)
-    let tl = new gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
+    let tl = gsap.timeline( { paused: false, repeat: -1, repeatDelay: .3, yoyo: true } )
     .to("#woman-chest", { transformOrigin: "50% 100%", scale: 1.125, yPercent: -5, ease: "power2.inout", duration: 5 }, 0)
     .to("#woman-neck", { transformOrigin: "50% 100%", scaleX: 1.125, yPercent: -13, ease: "power2.inout", duration: 4.9 }, 0.1)   
     .to("#woman-head, #woman-hair-back", { transformOrigin: "50% 100%", yPercent: -9, ease: "power2.inout", duration: 4.9 }, 0.3)  
@@ -595,7 +587,7 @@ function gsAnimations(){
   }
   if (document.querySelector('#shoulder-stretch')) {
     gsap.to("#shoulder-stretch > *:not(#forearm-left)", {autoAlpha: 1})
-    let tl = new gsap.timeline({ 
+    let tl = gsap.timeline({ 
       repeat: -1, yoyo :true, repeatDelay: 3, defaults: {
         duration: 2,
         ease: "power4.inOut"
@@ -609,17 +601,25 @@ function gsAnimations(){
   }
   if (document.querySelector('#shoulder-shrugs')) {
     gsap.to("#shoulder-shrugs > *:not(#breatheman-chest-shrugged)", {autoAlpha: 1})
-    let tl = new gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 })
+    let tl = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 1 })
       .addLabel("a")
       .to("#breathman-chest", { morphSVG: "#breatheman-chest-shrugged", duration: 2, ease: "circ.inOut" }, "a" )
       .to("#breatheman-neck", { yPercent: -15, duration: 2, ease: "circ.inOut" }, "a" )
       .to("#breatheman-head", { yPercent: 5, duration: 2, ease: "circ.inOut" }, "a" )
   }
-  if (document.querySelector('#wrist-flexions')) {
-    let tl = new gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 2 })
+  if (document.querySelector('#wrist-flexions')) {    
+    gsap.set("#hand", { transformOrigin: "48% 18%" })
+    gsap.set("#finger", { transformOrigin: "55% 10%" });
+    let tl = gsap.timeline({ repeat: -1, repeatDelay: 2, defaults: {
+      duration: 1
+    } })
       .set("#wrist-flexions > *", { autoAlpha: 1 })
-      .to("#hand", { transformOrigin: "48% 18%", rotationZ: -70, xPercent: 4, yPercent: -4 })
-      .to("#finger", { transformOrigin: "55% 10%", rotationZ: -40, duration: 1 }, .2 )
+      .to("#hand", { rotationZ: -70, xPercent: 4, yPercent: -4 })
+      .to("#finger", { rotationZ: -40 }, .2 )
+      .to("#hand", { rotationZ: 80, xPercent: -10, yPercent: -4 }, 3)
+      .to("#finger", { rotationZ: 40 }, 3.2 )
+      .to("#hand", { rotationZ: 0, xPercent: 0, yPercent: 0 }, 6)
+      .to("#finger", { rotationZ: 0 }, 6.2 )
   }
   if (document.querySelector('#fingers-palm-stretch')) {
     gsap.set("#arm-right", { transformOrigin: "5% 25%",  rotationZ: 45  }, 0)
@@ -627,7 +627,7 @@ function gsAnimations(){
     gsap.set("#arm-left, #shadow-arm-left", { transformOrigin: "5% 50%",  rotationZ: 55  }, 0)
     gsap.set("#hand-left, #shadow-hand-left", { transformOrigin: "25% 17%", rotationZ: -70  }, 0)
     gsap.to("#fingers-palm-stretch > *", { autoAlpha: 1, onComplete: () => { tl.play() } });
-    let tl = new gsap.timeline({ paused: true, repeat: -1, yoyo: false, defaults: {
+    let tl = gsap.timeline({ paused: true, repeat: -1, yoyo: false, defaults: {
       duration: 1, ease: "power3.inOut"
     } })      
       .to("#arm-right", { 
@@ -654,7 +654,7 @@ function gsAnimations(){
   }
   if (document.querySelector("#seated-twists")) {
     gsap.to("#frontal, #chair", { autoAlpha: 1, onComplete: () => { tl.play() } })
-    let tl = new gsap.timeline({ paused: true, repeat: -1 })
+    let tl = gsap.timeline({ paused: true, repeat: -1 })
      .set("#frontal", { autoAlpha: 0 }, 1)
      .set("#left", { autoAlpha: 1 }, 1)
      .set("#left", { autoAlpha: 0 }, 3)
@@ -668,7 +668,7 @@ function gsAnimations(){
     gsap.set("#rays line", {drawSVG: "0% 100%"})
     gsap.to("#rays", {transformOrigin: "50% 50%", rotationZ: 45, duration: 5, ease: "linear", repeat: -1 }, 0)
     gsap.to("#gratefulness > *", { autoAlpha: 1, onComplete: () => { tl.play() } })
-    let tl = new gsap.timeline({ paused: true, repeat: -1, repeatDelay: .1 })
+    let tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: .1 })
       .fromTo("#rays line", {
         drawSVG: "0% 100%"
       },{
@@ -684,7 +684,7 @@ function gsAnimations(){
     gsap.set("#dimple-left", { autoAlpha: 1, xPercent: 110, yPercent: 100, drawSVG: "50% 50%" });
     gsap.set("#dimple-right", { autoAlpha: 1, xPercent: -110, yPercent: 80, drawSVG: "50% 50%" });
     gsap.to("#straight", { autoAlpha: 1, onComplete: () => { tl.play() } });
-    let tl = new gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1 })
+    let tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 1 })
      .to("#straight", { morphSVG: "#smile", ease: "circ.out", duration: 2 } )
      .to("#dimple-left, #dimple-right", { drawSVG: "0% 100%", ease: "circ.out", duration: 2 }, 0)
      .to("#dimple-left", { xPercent: 0, yPercent: 0, ease: "circ.out", duration: 2 }, 0)
@@ -697,7 +697,7 @@ function gsAnimations(){
   if (document.querySelector("#beauty")) {
     gsap.set("#beauty > *", { transformOrigin: "50% 50%", scale: 0 })
     gsap.to("#beauty > *", {autoAlpha: 1, onComplete: () => { tl.play() }});
-    let tl = new gsap.timeline({ paused: true, repeat: -1  })
+    let tl = gsap.timeline({ paused: true, repeat: -1  })
       .to("#beauty > *", 
         { scale: 1, stagger: { amount: 1, from: "start" }, duration: 3, ease: "power4.out" })
       .to("#beauty > *", 
