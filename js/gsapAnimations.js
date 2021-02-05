@@ -819,4 +819,37 @@ function gsAnimations(){
       .to("#arm, #arm-lower, #head-neck, #hand", { rotationZ: -20, duration: .75 }, "stand")
       .to("#arm, #arm-lower, #head-neck, #hand", { rotationZ: 0, ease: "elastic.inout" }, "stand+=0.75")
   }
+  if(document.getElementById('illu-ankle-rotations')){
+    gsap.set("#l-foot > g, #r-foot > g", { autoAlpha: 0 })
+    gsap.set("#l-foot, #r-foot", { autoAlpha: 1 })
+    gsap.set("#l-foot-up, #r-foot-up, #r-arrow, #l-arrow", { autoAlpha: 1, transformOrigin: "50% 50%" })
+    let tl = gsap.timeline( { repeat: -1, yoyo: true, repeatDelay: .5, defaults: {
+      duration: .1, delay: .5, ease: "none"
+    }})      
+      .addLabel("up-right")
+      .to("#l-foot-up, #r-foot-up", { autoAlpha: 0 }, "up-right" )
+      .to("#l-foot-up-right, #r-foot-up-right", { autoAlpha: 1 }, "up-right")
+      .addLabel("down-right")
+      .to("#l-foot-up-right, #r-foot-up-right", { autoAlpha: 0 }, "down-right")
+      .to("#l-foot-down-right, #r-foot-down-right", { autoAlpha: 1 }, "down-right")
+      .addLabel("down")
+      .to("#l-foot-down-right, #r-foot-down-right", { autoAlpha: 0 }, "down")
+      .to("#l-foot-down, #r-foot-down", { autoAlpha: 1 }, "down")
+      .addLabel("down-left")
+      .to("#l-foot-down, #r-foot-down", { autoAlpha: 0 }, "down-left")
+      .to("#l-foot-down-left, #r-foot-down-left", { autoAlpha: 1 }, "down-left")
+      .addLabel("up-left")
+      .to("#l-foot-down-left, #r-foot-down-left", { autoAlpha: 0 }, "up-left")
+      .to("#l-foot-up-left, #r-foot-up-left", { autoAlpha: 1 }, "up-left")
+      .addLabel("up")
+      .to("#l-foot-up-left, #r-foot-up-left", { autoAlpha: 0 }, "up")
+      .to("#l-foot-up, #r-foot-up", { autoAlpha: 1 }, "up")      
+  }
+  let tl_arrows = gsap.timeline({ repeat: -1, repeatDelay: 0, defaults: {
+    ease: "power3.inOut"
+  } })
+    .to("#r-arrow, #l-arrow", { rotationZ: -360, duration: 3.6 })
+    .to("#r-arrow, #l-arrow", { scaleX: -1, duration: .5, ease: "circ.inOut" })
+    .to("#r-arrow, #l-arrow", { rotationZ: 0, duration: 3.6 }, 4.1)
+    .to("#r-arrow, #l-arrow", { scaleX: 1, duration: .5, ease: "circ.inOut" })
 } 
