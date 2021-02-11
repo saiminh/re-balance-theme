@@ -18,7 +18,7 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			if( is_post_type_archive( "lp_course" ) || is_singular( "lp_course" ) ){ 
+			if( is_post_type_archive( "lp_course" ) || is_singular( "lp_course" ) || is_category( ) ){ 
 				get_template_part( 'template-parts/content', 'courses' );
 			} else {
 				get_template_part( 'template-parts/content', 'page' );

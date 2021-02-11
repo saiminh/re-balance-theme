@@ -805,6 +805,23 @@ function mp_remove_manage_fields( $form ) {
 add_filter('mailpoet_display_custom_fonts', function () {
 	return false;
 });
-?>
 
+//For devevopment you can use get_current_template to show which template is used
+add_filter( 'template_include', 'var_template_include', 1000 );
+function var_template_include( $t ){
+		$GLOBALS['current_theme_template'] = basename($t);
+		return $t;
+}
+
+function get_current_template( $echo = false ) {
+		if( !isset( $GLOBALS['current_theme_template'] ) )
+				return false;
+		if( $echo )
+				echo $GLOBALS['current_theme_template'];
+		else
+				return $GLOBALS['current_theme_template'];
+}
+
+
+?>
 

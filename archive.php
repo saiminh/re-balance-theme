@@ -9,8 +9,8 @@
 
 get_header();
 ?>
-
 	<div id="primary" class="content-area">
+		
 		<?php if ( have_posts() ) : ?>			
 		
 			<main id="main" class="site-main">		
@@ -34,11 +34,9 @@ get_header();
 				endwhile; 
 				echo '</div>'; ?>
 			
-			
 			<?php else: ?>
 				
 				<div class="posts-row">
-					
 					
 				<?php
 				/* Start the Loop */
