@@ -464,7 +464,8 @@ function homeNavTab(){
 			'a[href$="membership-registration"]', 
 			'a[href$="pricing"]',
 			'a[href$="pricing/"]', 
-			'a[href*="/courses/"]'
+			'a[href*="/courses/"]',
+			'a[href*="/course/"]'
 		];
 
 		$( noswuplinks.toString() ).attr("data-no-swup", "");
