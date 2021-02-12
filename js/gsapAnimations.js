@@ -622,34 +622,29 @@ function gsAnimations(){
       .to("#finger", { rotationZ: 0 }, 6.2 )
   }
   if (document.querySelector('#fingers-palm-stretch')) {
-    gsap.set("#arm-right", { transformOrigin: "5% 25%",  rotationZ: 45  }, 0)
-    gsap.set("#hand-right", {  transformOrigin: "25% 90%",  rotationZ: 40  }, 0)
-    gsap.set("#arm-left, #shadow-arm-left", { transformOrigin: "5% 50%",  rotationZ: 55  }, 0)
-    gsap.set("#hand-left, #shadow-hand-left", { transformOrigin: "25% 17%", rotationZ: -70  }, 0)
+    gsap.set("#arm-right", { transformOrigin: "10% 39%",  rotationZ: 48  }, 0)
+    gsap.set("#hand-right", {  transformOrigin: "25% 90%",  rotationZ: 45  }, 0)
+    gsap.set("#fingers-right", {  transformOrigin: "60% 90%",  rotationZ: 45  }, 0)
+    gsap.set("#arm-left", { transformOrigin: "10% 64%", rotationZ: 75  }, 0)
+    gsap.set("#hand-left", { transformOrigin: "25% 17%", rotationZ: -70  }, 0)
     gsap.to("#fingers-palm-stretch > *", { autoAlpha: 1, onComplete: () => { tl.play() } });
     let tl = gsap.timeline({ paused: true, repeat: -1, yoyo: false, defaults: {
       duration: 1, ease: "power3.inOut"
     } })      
-      .to("#arm-right", { 
-        rotationZ: 0  }, 1)
-      .to("#hand-right", { 
-        rotationZ: 0  }, 1)      
-      .to("#arm-left, #shadow-arm-left", { 
-        rotationZ: -35  }, 1)
-      .to("#hand-left, #shadow-hand-left", { 
-        rotationZ: -45  }, 1)
-      .to("#arm-left, #shadow-arm-left", { 
-        rotationZ: 0  }, 2)
-      .to("#hand-left, #shadow-hand-left", { 
-        rotationZ: 0  }, 2)
-      .to("#hand-left, #shadow-hand-left", { 
-        rotationZ: 10  }, 3)
-      .to("#hand-right", { 
-        rotationZ: -10  }, 3)      
-      .to("#arm-right", { rotationZ: 45  }, 6)
-      .to("#hand-right", { rotationZ: 40  }, 6)
-      .to("#arm-left, #shadow-arm-left", { rotationZ: 55  }, 6)
-      .to("#hand-left, #shadow-hand-left", { rotationZ: -70  }, 6)
+      .to("#arm-right", { rotationZ: 0  }, 1)
+      .to("#hand-right", { rotationZ: 10  }, 1)      
+      .to("#fingers-right", { rotationZ: 0  }, 1)      
+      .to("#arm-left", { rotationZ: -25  }, 1)
+      .to("#hand-left", { rotationZ: -45  }, 1)
+      .to("#arm-left", { rotationZ: 0 }, 2)
+      .to("#hand-left", { rotationZ: -25  }, 2)
+      .to("#hand-left", { rotationZ: 0  }, 3)
+      .to("#hand-right", { rotationZ: 0  }, 3)      
+      .to("#arm-right", { rotationZ: 48  }, 6)
+      .to("#hand-right", { rotationZ: 45  }, 6)
+      .to("#fingers-right", { rotationZ: 45  }, 6)
+      .to("#arm-left", { rotationZ: 75  }, 6)
+      .to("#hand-left", { rotationZ: -70  }, 6)
       .to("#hand-left",{ duration: 2 }, 3)  
   }
   if (document.querySelector("#seated-twists")) {
