@@ -3,3 +3,9 @@
   opacity: 0;
   //hidden at pageload, show needed items via js
 }
+#illu-ankle-flexions {
+  @media (max-width: 767px) {
+    height: auto;
+    width: 75%;
+  }
+}
