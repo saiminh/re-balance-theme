@@ -823,9 +823,16 @@ function gsAnimations(){
     gsap.set("#l-foot > g, #r-foot > g", { autoAlpha: 0 })
     gsap.set("#l-foot, #r-foot", { autoAlpha: 1 })
     gsap.set("#l-foot-up, #r-foot-up, #r-arrow, #l-arrow", { autoAlpha: 1, transformOrigin: "50% 50%" })
-    let tl = gsap.timeline( { repeat: -1, yoyo: true, repeatDelay: .5, defaults: {
-      duration: .1, delay: .5, ease: "none"
-    }})      
+    let tl = gsap.timeline( { 
+      repeat: -1, 
+      yoyo: true, 
+      repeatDelay: .5, 
+      defaults: {
+        duration: .1, 
+        delay: .5, 
+        ease: "none"
+      }
+    })      
       .addLabel("up-right")
       .to("#l-foot-up, #r-foot-up", { autoAlpha: 0 }, "up-right" )
       .to("#l-foot-up-right, #r-foot-up-right", { autoAlpha: 1 }, "up-right")
@@ -844,12 +851,40 @@ function gsAnimations(){
       .addLabel("up")
       .to("#l-foot-up-left, #r-foot-up-left", { autoAlpha: 0 }, "up")
       .to("#l-foot-up, #r-foot-up", { autoAlpha: 1 }, "up")      
+      let tl_arrows = gsap.timeline({ repeat: -1, repeatDelay: 0, defaults: {
+        ease: "power3.inOut"
+      } })
+        .to("#r-arrow, #l-arrow", { rotationZ: -360, duration: 3.6 })
+        .to("#r-arrow, #l-arrow", { scaleX: -1, duration: .5, ease: "circ.inOut" })
+        .to("#r-arrow, #l-arrow", { rotationZ: 0, duration: 3.6 }, 4.1)
+        .to("#r-arrow, #l-arrow", { scaleX: 1, duration: .5, ease: "circ.inOut" })
   }
-  let tl_arrows = gsap.timeline({ repeat: -1, repeatDelay: 0, defaults: {
-    ease: "power3.inOut"
-  } })
-    .to("#r-arrow, #l-arrow", { rotationZ: -360, duration: 3.6 })
-    .to("#r-arrow, #l-arrow", { scaleX: -1, duration: .5, ease: "circ.inOut" })
-    .to("#r-arrow, #l-arrow", { rotationZ: 0, duration: 3.6 }, 4.1)
-    .to("#r-arrow, #l-arrow", { scaleX: 1, duration: .5, ease: "circ.inOut" })
+  if(document.getElementById('illu-ankle-flexions')){
+    gsap.set("#leg", {transformOrigin: "-20% 0%", rotationZ: 0})
+    gsap.set("#foot", {transformOrigin: "17% 45%" })
+    gsap.set("#frontfoot", {transformOrigin: "22% 79%" })
+    gsap.set("#toes", {transformOrigin: "33% 63%" })
+    gsap.set("#toeytoetoe", {transformOrigin: "33% 63%" })
+    gsap.to("#leg", { autoAlpha: 1, duration: 1 })
+
+    let tl = gsap.timeline({ repeat: -1, paused: false })
+      .addLabel("pullup", 1)
+      .to("#leg", { rotationZ: -5 }, "pullup")
+      .to("#foot", { rotationZ: -40, xPercent: -20 }, "pullup")
+      .to("#frontfoot", { rotationZ: -15 }, "pullup+=.1")
+      .to("#toes", { rotationZ: -30 }, "pullup+=.2")
+      .to("#toeytoetoe", { rotationZ: 10 }, "pullup+=.3")
+      .addLabel("pushdown", 4)
+      .to("#leg", { rotationZ: 5 }, "pushdown")
+      .to("#foot", { rotationZ: 30, xPercent: 0 }, "pushdown")
+      .to("#frontfoot", { rotationZ: 25 }, "pushdown+=.1")
+      .to("#toes", { rotationZ: 20, xPercent: 5, yPercent: -5 }, "pushdown+=.2")
+      .to("#toeytoetoe", { rotationZ: -10 }, "pushdown+=.3")
+      .addLabel("back", 7)
+      .to("#leg", { rotationZ: 0 }, "back")
+      .to("#foot", { rotationZ: 0 }, "back")
+      .to("#frontfoot", { rotationZ: 0 }, "back+=.1")
+      .to("#toes", { rotationZ: 0, xPercent: 0, yPercent: 0 }, "back+=.2")
+      .to("#toeytoetoe", { rotationZ: 0 }, "back+=.3")
+  }  
 } 
