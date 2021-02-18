@@ -211,8 +211,12 @@
       }
       & > span {
         display: block;
-        @include font-size(.9);
+        @include font-size(.8);
         margin-top: .5rem;
+        line-height: 1.4;
+        @media (min-width: 640px) {
+          max-width: 40%;
+        }
       }
     }
     &.home-dashboard-exercise-link--breathe:after {
@@ -237,11 +241,15 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url(img/ui-home-move.svg);
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: auto calc(100% - 2em);
   z-index: 1;
+  background-image: url(img/ui-home-move.svg);
+  background-repeat: no-repeat;
+  background-size: auto 66.6%;
+  background-position: 50% 90%;
+  @media (min-width: 640px) {
+    background-position: 50% 50%;
+    background-size: auto calc(100% - 2em);
+  }
 }
 .home-dashboard-exercise-link--breathe a {
   background-image: url(img/ui-home-breathe.svg);
@@ -254,5 +262,9 @@
 .home-dashboard-exercise-link--tiny a {
   background-image: url(img/ui-home-tiny.svg);
   background-size: auto calc(55% - 2em);
-  background-position: 50% 55%;
+  background-position: 50% 75%;
+  @media (min-width: 640px) {
+    background-size: auto calc(55% - 2em);
+    background-position: 50% 55%;
+  }
 }

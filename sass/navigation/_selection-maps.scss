@@ -104,17 +104,16 @@
     box-sizing: border-box;
     margin: 0;
     border-radius: 10px;
-
     @media (min-width: 800px) {
         height: calc(100vh - 160px);
-        width: 100%;
-    }
-
-    @media (min-width:  1100px) {
-        box-sizing: border-box;
     }
 }
-
+.tiny-map {
+    height: auto;
+    @media (min-width: 800px) {
+        height: calc(100vh - 160px);
+    }
+}
 .breathe-map-inner {
     margin: -1rem auto;
     max-width: 1000px;
@@ -210,32 +209,26 @@
         pointer-events: none;
     }
 }
-
 .breathe-map-illu:hover {
     font-weight: 600;
     color: #000;
-
     & svg {
         transform: scale(1.1);
     }
 }
-
 .breathe-map-illu:visited {
     color: $color__text-main;
 }
-
 .breathe-map-illu--justbreathe {
     width: 25%;
     left: 37.5%;
     top: 50%;
     transform: translateY(-50%);
-
     @media (min-width: 800px) {
         left: 40%;
         width: 20%;
     }
 }
-
 .breathe-map-illu--firstaid {
     width: 20%;
     bottom: calc(100% - 10rem);
@@ -265,9 +258,11 @@
     left: 71.25%;
 }
 .tiny-map-title {
-    position: absolute;
     color: $color__background-body;
     padding: 1rem;
+    @media (min-width: 800px){
+        position: absolute;
+    }
     & h1 {
         margin: 0;
         @include font-size(1.5);
@@ -279,26 +274,34 @@
 .tiny-map-inner {
     display: flex;
     min-height: 100%;
+    flex-direction: column;
+    @media (min-width: 800px){
+        flex-direction: row;
+    }
 }
 .tiny-map-illu,
 .tiny-map-illu:hover,
 .tiny-map-illu:active,
 .tiny-map-illu:visited {
-    flex: 1 1 33%;
+    flex: 1 1 100%;
     align-self: center;
     text-align: center;
     @include font-size(1.25);
     color: $color__background-body;
     position: relative;
+    @media (min-width: 800px){
+        flex: 1 1 33%;
+    }
     & svg {
         width: 100%;
     }
 }
 .tiny-map-illu-subtitle {
     display: block;
-    position: absolute;
-    left: 50%;
     @include font-size(.9);
-    max-width: 20em;
-    transform: translateX(-50%);
+    padding: 0 2em 1em 2em;
+    @media (min-width: 800px){
+        padding: 0 2em;
+        position: absolute;
+    }
 }
