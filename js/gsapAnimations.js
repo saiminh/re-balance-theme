@@ -881,5 +881,19 @@ function gsAnimations(){
       .to("#frontfoot", { rotationZ: 0 }, "back+=.1")
       .to("#toes", { rotationZ: 0, xPercent: 0, yPercent: 0 }, "back+=.2")
       .to("#toeytoetoe", { rotationZ: 0 }, "back+=.3")
+  }
+  if( document.getElementById('illu-appreciate') ) {
+    gsap.set("#man-in-cloud", { xPercent: -40, yPercent: -40  })
+    gsap.set("#cloud-trail > *, #cloud-body, #man", { autoAlpha: 0  })
+    let tl = gsap.timeline({ repeat: 0, repeatDelay: 1 })
+    .to("#woman, #man-in-cloud", { autoAlpha: 1 }, 0 )
+    .to("#woman", { xPercent: 50, yPercent: 40, scale: .6  }, 1.5 )
+    .fromTo("#cloud-trail > *", 
+      { autoAlpha: 0,  xPercent: 100, yPercent: 100 }, 
+      { autoAlpha: 1,  xPercent: 0, yPercent: 0, stagger: .125, duration: .5 }, 1.5 )
+    .fromTo("#cloud-body, #man", { autoAlpha: 0, scale: .5, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, stagger: .2, ease: "bounce.out" }, 2)
+    .to("#man-in-cloud", { xPercent: -10, yPercent: 2.5, scale: 1.2 }, 4)
+    .to("#woman", { autoAlpha: 0 }, 4)
+    .to("#cloud-trail > *", { xPercent: -100, yPercent: -100, autoAlpha: 0, stagger: .1 }, 3.75)
   }  
 } 
