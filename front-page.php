@@ -93,13 +93,13 @@ get_header();
 					<div class="home-dashboard-exercise-link--move">
 						<a href="<?php echo get_bloginfo('wpurl'); ?>/move/">
 							Move
-							<span>Video exercises</span>
+							<span>Video exercises to move mindfully</span>
 						</a>
 					</div>
 					<div class="home-dashboard-exercise-link--breathe">
 						<a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">
 							Breathe
-							<span>Video exercises</span>
+							<span>Short videos for breathwork exercises</span>
 						</a>
 					</div>
 					<div class="home-dashboard-exercise-link--surprise">
