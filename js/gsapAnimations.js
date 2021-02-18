@@ -896,4 +896,20 @@ function gsAnimations(){
     .to("#woman", { autoAlpha: 0 }, 4)
     .to("#cloud-trail > *", { xPercent: -100, yPercent: -100, autoAlpha: 0, stagger: .1 }, 3.75)
   }  
+  if( document.getElementById('illu-positivity') ) {
+    gsap.set("#icecream-in-cloud", { xPercent: -40, yPercent: -40  })
+    gsap.set("#cloud-body", { xPercent: 10, yPercent: 10  })
+    gsap.set("#icecream", { xPercent: 20, yPercent: 10  })
+    gsap.set("#cloud-trail > *, #cloud-body, #icecream", { autoAlpha: 0  })
+    let tl = gsap.timeline({ repeat: 0, repeatDelay: 1 })
+    .to("#woman, #icecream-in-cloud", { autoAlpha: 1 }, 0 )
+    .to("#woman", { xPercent: 50, yPercent: 40, scale: .6  }, 1.5 )
+    .fromTo("#cloud-trail > *", 
+      { autoAlpha: 0,  xPercent: 100, yPercent: 100 }, 
+      { autoAlpha: 1,  xPercent: 0, yPercent: 0, stagger: .125, duration: .5 }, 1.5 )
+    .fromTo("#cloud-body, #icecream", { autoAlpha: 0, scale: .5, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, stagger: .2, ease: "bounce.out" }, 2)
+    .to("#icecream-in-cloud", { xPercent: -20, yPercent: -10, scale: 1.2 }, 4)
+    .to("#woman", { autoAlpha: 0 }, 4)
+    .to("#cloud-trail > *", { xPercent: -100, yPercent: -100, autoAlpha: 0, stagger: .1 }, 3.75)
+  }  
 } 
