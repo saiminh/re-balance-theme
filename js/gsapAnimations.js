@@ -914,10 +914,19 @@ function gsAnimations(){
   }  
   if( document.getElementById('illu-grateful') ) {
     gsap.set("#grateful, #t-bar, #heart", {autoAlpha: 1, drawSVG: "0% 0%"})
-    gsap.to("#grateful", {drawSVG: "0% 100%", duration: 5 })
-    gsap.to("#heart", {drawSVG: "0% 100%", duration: 3, delay: 2 })
-    gsap.to("#t-bar", {drawSVG: "0% 100%", duration: .5, delay: 4.5 })
-    gsap.to("#i-am", {autoAlpha: 1, duration: .5, delay: 4.5 })
-    gsap.to("#heart", {transformOrigin: "50% 50%", scale: .9, ease: "circ.inOut", duration: 1, repeat: -1, yoyo: true })
+    let tl = gsap.timeline({})
+      .to("#grateful", {drawSVG: "0% 100%", duration: 5 }, 0)
+      .to("#heart", {drawSVG: "0% 100%", duration: 2, ease: "circ.out" }, 1)
+      .to("#t-bar", {drawSVG: "0% 100%", duration: .5 }, 4.5)
+      .fromTo("#i-am",{transformOrigin: "50% 50%", autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, duration: 1, ease: "bounce.out" }, 5)
+      .to("#heart", {transformOrigin: "50% 50%", scale: .9, ease: "circ.inOut", duration: .75, repeat: -1, yoyo: true }, 3)
+    }
+  if( document.getElementById('illu-thankful') ) {
+    gsap.set("#thankful, #t-bar, #heart", {autoAlpha: 1, drawSVG: "0% 0%"})
+    let tl = gsap.timeline({})
+      .to("#thankful", {drawSVG: "0% 100%", duration: 5 }, 0.5)
+      .to("#heart", {drawSVG: "0% 100%", duration: 2, ease: "circ.out" }, 1)
+      .fromTo("#i-am",{transformOrigin: "50% 50%", autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, duration: 1, ease: "bounce.out" }, 5)
+      .to("#heart", {transformOrigin: "50% 50%", scale: .9, ease: "circ.inOut", duration: .75, repeat: -1, yoyo: true }, 3)
   }
 } 
