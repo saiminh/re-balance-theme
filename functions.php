@@ -664,7 +664,7 @@ function user_has_paid_subscription() {
 			}
 		}
 		catch (Exception $e) {
-			echo '<p>Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a></p>.';
+			echo '<p>Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a>.</p>';
 		} 
 		
 	}
