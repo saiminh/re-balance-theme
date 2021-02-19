@@ -912,4 +912,12 @@ function gsAnimations(){
     .to("#woman", { autoAlpha: 0 }, 4)
     .to("#cloud-trail > *", { xPercent: -100, yPercent: -100, autoAlpha: 0, stagger: .1 }, 3.75)
   }  
+  if( document.getElementById('illu-grateful') ) {
+    gsap.set("#grateful, #t-bar, #heart", {autoAlpha: 1, drawSVG: "0% 0%"})
+    gsap.to("#grateful", {drawSVG: "0% 100%", duration: 5 })
+    gsap.to("#heart", {drawSVG: "0% 100%", duration: 3, delay: 2 })
+    gsap.to("#t-bar", {drawSVG: "0% 100%", duration: .5, delay: 4.5 })
+    gsap.to("#i-am", {autoAlpha: 1, duration: .5, delay: 4.5 })
+    gsap.to("#heart", {transformOrigin: "50% 50%", scale: .9, ease: "circ.inOut", duration: 1, repeat: -1, yoyo: true })
+  }
 } 
