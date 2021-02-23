@@ -836,6 +836,7 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 
 	if ( $page ){
 		$return = '<table style="width: 100%; border: none; border-collapse: collapse"><tr><td style="background-color: #ffe8e0; padding: 30px; border-radius: 5px">';
+		$return .= get_the_post_thumbnail( $page[0]->ID );
 		$return .= '<h4>Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
 		$return .= '<style>li{padding: 5px 0}</style>';
 		$return .= $page[0]->post_content;
