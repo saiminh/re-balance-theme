@@ -835,32 +835,25 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 	) );
 
 	if ( $page ){
-		$return = '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0">';
-		$return .= '<tr><td style="background-color: #ffe8e0; padding: 0; border-radius: 5px">';
-		$return .= '<div style="display: inline-block; max-width: 180px; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
-		$return .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
-		$return .= '<td style="padding: 15px; text-align: center">';
-		$return .= get_the_post_thumbnail( $page[0]->ID, array(150,150) );
-		$return .= '</td></tr></table>';
-		$return .= '</div><div style="display: inline-block; max-width: 440px; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
-		$return .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
-		$return .= '<td style="
-								padding: 25px; 
-								border-collapse: collapse;
-								color: #000000;
-								font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
-								font-size: 16px;
-								line-height: 25.6px;
-								word-break: break-word;
-								word-wrap: break-word;
-								text-align: left;">';
-		$return .= '<h4 style="margin-top: 0">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
-		$return .= '<style type="text/css">ol{padding-left: 1em; margin-bottom: 0} ol li{ padding: 5px 0}</style>';
-		$return .= $page[0]->post_content;
-		$return .= '</td></tr></table></div></td></tr></table>';
-	} else { $return = $tinyname.' does not exist, check if the name of the post is identical with the URL'; }
+		$output = '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0">';
+		$output .= '<tr><td style="background-color: #ffe8e0; padding: 0; border-radius: 5px">';
+		$output .= '<div style="display: inline-block; max-width: 180px; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
+		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
+		$output .= '<td style="padding: 15px; text-align: center">';
+		$output .= get_the_post_thumbnail( $page[0]->ID, array(150,150) );
+		$output .= '</td></tr></table>';
+		$output .= '</div><div style="display: inline-block; max-width: 440px; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
+		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
+		$output .= '<td style="padding: 25px; border-collapse: collapse; color: #000000; font-family: Arial,Helvetica,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; word-wrap: break-word; text-align: left;">';
+		$output .= '<h4 style="margin-top: 0">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+		$output .= '<style type="text/css">ol{padding-left: 1em; margin-bottom: 0} ol li{ padding: 5px 0}</style>';
+		$output .= $page[0]->post_content;
+		$output .= '</td></tr></table></div></td></tr></table>';
+	} else { 
+		$output = $tinyname.' does not exist, check if the name of the post is identical with the URL'; 
+	};
   
-	return $return;
+	return $output;
 }
 
 ?>
