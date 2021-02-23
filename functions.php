@@ -312,7 +312,7 @@ function get_custom_single_template($single_template) {
 }
 add_filter( "single_template", "get_custom_single_template" ) ;
 
-/* Shortcode to display tiny content inline? Kan het? */
+/* Shortcode to display tiny content inline */
 function tiny_shortcode( $atts = array() ){
 	//default parameters
 	extract(shortcode_atts( array(
@@ -333,7 +333,7 @@ function tiny_shortcode( $atts = array() ){
 			echo '</div>';
 	}
 }
-add_shortcode( 'tiny', 'tiny_shortcode' );
+add_shortcode( 'tiny', 'tiny_shortcode' ); 
 
 
 /** Display posts by category */
@@ -806,7 +806,7 @@ add_filter('mailpoet_display_custom_fonts', function () {
 	return false;
 });
 
-//For devevopment you can use get_current_template to show which template is used
+//For development you can use get_current_template to show which template is used
 add_filter( 'template_include', 'var_template_include', 1000 );
 function var_template_include( $t ){
 		$GLOBALS['current_theme_template'] = basename($t);
@@ -822,6 +822,28 @@ function get_current_template( $echo = false ) {
 				return $GLOBALS['current_theme_template'];
 }
 
+add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 5);
+
+function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body) {
+	// always return the shortcode if it doesn't match your own!
+	$end = strlen($shortcode);
+	$tinyname = substr($shortcode, 8, $end-9); //cut the string to only the word
+	
+	$page = get_posts( array(
+		'name'      => $tinyname,
+		'post_type' => 'exercises'
+	) );
+
+	if ( $page ){
+		$return = '<table style="width: 100%; border: none; border-collapse: collapse"><tr><td style="background-color: #ffe8e0; padding: 30px; border-radius: 5px">';
+		$return .= '<h4>Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+		$return .= '<style>li{padding: 5px 0}</style>';
+		$return .= $page[0]->post_content;
+		$return .= '</td></tr></table>';
+	} else { $return = $tinyname.' does not exist, check if the name of the post is identical with the URL'; }
+  
+	return $return;
+}
 
 ?>
 
