@@ -835,12 +835,29 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 	) );
 
 	if ( $page ){
-		$return = '<table style="width: 100%; border: none; border-collapse: collapse"><tr><td style="background-color: #ffe8e0; padding: 30px; border-radius: 5px">';
-		$return .= get_the_post_thumbnail( $page[0]->ID );
-		$return .= '<h4>Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
-		$return .= '<style>li{padding: 5px 0}</style>';
-		$return .= $page[0]->post_content;
+		$return = '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0">';
+		$return .= '<tr><td style="background-color: #ffe8e0; padding: 0; border-radius: 5px">';
+		$return .= '<div style="display: inline-block; max-width: 180px; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
+		$return .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
+		$return .= '<td style="padding: 15px; text-align: center">';
+		$return .= get_the_post_thumbnail( $page[0]->ID, array(150,150) );
 		$return .= '</td></tr></table>';
+		$return .= '</div><div style="display: inline-block; max-width: 440px; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
+		$return .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
+		$return .= '<td style="
+								padding: 25px; 
+								border-collapse: collapse;
+								color: #000000;
+								font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+								font-size: 16px;
+								line-height: 25.6px;
+								word-break: break-word;
+								word-wrap: break-word;
+								text-align: left;">';
+		$return .= '<h4 style="margin-top: 0">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+		$return .= '<style type="text/css">ol{padding-left: 1em; margin-bottom: 0} ol li{ padding: 5px 0}</style>';
+		$return .= $page[0]->post_content;
+		$return .= '</td></tr></table></div></td></tr></table>';
 	} else { $return = $tinyname.' does not exist, check if the name of the post is identical with the URL'; }
   
 	return $return;
