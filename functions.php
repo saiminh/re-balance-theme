@@ -837,12 +837,12 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 	if ( $page ){
 		$output = '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0">';
 		$output .= '<tr><td style="background-color: #ffe8e0; padding: 0; border-radius: 5px">';
-		$output .= '<div style="display: inline-block; max-width: 180px; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
+		$output .= '<div style="display: inline-block; max-width: 30%; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
 		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
 		$output .= '<td style="padding: 15px; text-align: center">';
 		$output .= get_the_post_thumbnail( $page[0]->ID, array(150,150) );
 		$output .= '</td></tr></table>';
-		$output .= '</div><div style="display: inline-block; max-width: 440px; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
+		$output .= '</div><div style="display: inline-block; max-width: 70%; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
 		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
 		$output .= '<td style="padding: 25px; border-collapse: collapse; color: #000000; font-family: Arial,Helvetica,sans-serif; font-size: 16px; line-height: 1.5; word-break: break-word; word-wrap: break-word; text-align: left;">';
 		$output .= '<h4 style="margin-top: 0">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
