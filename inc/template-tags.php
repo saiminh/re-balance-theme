@@ -150,7 +150,7 @@ if ( ! function_exists( 'rebalance_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #9ACFE9 0%, #c4e3f2 20%, #ffe8e0 100%); " class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<a style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>)" class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<!-- <?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(

@@ -120,6 +120,26 @@
                 color: $color__brand-primary;
             }
         }
+        &.exercisetypes-tiny {
+            & .post-thumbnail {
+                background-size: auto calc(100% - 2rem);
+                background-position: 50% 50%;
+            }
+            @media (min-width: 1100px){
+                display: flex;
+                & .post-thumbnail {
+                    flex-basis: calc(33.3% - 1rem);
+                    margin: 0 2rem 0 0;
+                    background-size: 100%;
+                    background-position: 50% calc(50% - 1rem); //because parent has no margin bottom 
+                    background-color: transparent;
+                    padding: 0;
+                }
+                & .post-info {
+                    flex-basis: calc(66.6% - 1rem);
+                }
+            }
+        }
     }
     & .sticky-post{
         & article {
