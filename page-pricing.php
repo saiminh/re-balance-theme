@@ -93,7 +93,13 @@ get_header();
                       if ($sandbox_enabled) {
   // IF EUR MONTHLY SANDBOX
                         echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
-                        echo do_shortcode('[swpm_payment_button id=1226 class=""]');
+                      // Local site
+                        if ( get_site_url() == 'http://re-balance.local') {
+                          echo do_shortcode('[swpm_payment_button id=569 class=""]');
+                      // Live site
+                        } else {
+                          echo do_shortcode('[swpm_payment_button id=1226 class=""]');
+                        }
                       } else {
   // IF EUR MONTHLY LIVE
                         echo do_shortcode('[swpm_payment_button id=1243 class=""]');
