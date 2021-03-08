@@ -211,11 +211,12 @@ get_header();
 			</main><!-- #main -->
 		</div><!-- #primary -->
 		<div class="notification-modal-darken notification-hidden">
-				<div class="notification notification-rebalance-mini notification-hidden">					
-					<?php do_shortcode( "[tiny name='deep-breathing']" ); ?>					
-					<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "></polygon></svg></div>
-				</div>
+			<div class="notification notification-rebalance-mini notification-hidden">					
+				<?php do_shortcode( "[tiny name='deep-breathing']" ); ?>					
+				<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "></polygon></svg></div>
 			</div>
+		</div>
+		<?php the_content(); // Only exists as a hook for the mailpoet popup boxes ?>
 		<?php endif; ?>
 <?php
 //get_sidebar();
