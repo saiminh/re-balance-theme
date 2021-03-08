@@ -371,8 +371,7 @@ function postsbycategory($which_category = 'uncategorized') {
 	add_filter('widget_text', 'do_shortcode');
 
 
-	// Trying to include tags in search results
-
+	// Include tags in search results
 	// search all taxonomies, based on: http://projects.jesseheap.com/all-projects/wordpress-plugin-tag-search-in-wordpress-23
 
 function atom_search_where($where){
@@ -606,7 +605,77 @@ function get_rebalance_membership_alias() {
 	$userauth = SwpmAuth::get_instance();
 	return $userauth->get('alias'); 
 }
-//notification for expired 
+
+// After SWPM Signup: add new user to Mailpoet list
+add_action('swpm_front_end_registration_complete_user_data', 'after_registration_callback');
+function after_registration_callback($member_info) {
+		//print_r($member_info);//Lets see what info is in this array.
+		
+		if (class_exists(\MailPoet\API\API::class)) {
+			$mailpoet_api = \MailPoet\API\API::MP('v1');
+			
+			try {
+				$get_subscriber = $mailpoet_api->getSubscriber($member_info['email']);
+			} catch (\Exception $e) {
+				$error_message = "<h1>Terronius Monk</h1>"; 
+			}
+
+			try {
+				if (!$get_subscriber) {
+					// Subscriber doesn't exist let's create one
+					$mailpoet_api->addSubscriber($member_info['email'], [5]);
+				} else {
+					// In case subscriber exists just add him to new lists
+					$mailpoet_api->subscribeToLists($member_info['email'], [5]);
+				}
+			} catch (\Exception $e) {
+				$error_message = "<h1>Erronius Monk</h1>"; 
+			}
+		}
+}
+
+// INCOMPLETE: After SWPM Stripe payment Success: Add User to Paid Mailp[oet List
+add_action( 'swpm_stripe_ipn_processed', 'after_payment_callback' );
+function after_payment_callback($payment_data) {
+	$email    = $payment_data['payer_email']; //found this in /plugins/simple-membership/ipn/swpm_handle_subsc_ipn.php
+
+	if (class_exists(\MailPoet\API\API::class)) {
+		$mailpoet_api = \MailPoet\API\API::MP('v1');
+			
+		try {
+			$get_subscriber = $mailpoet_api->getSubscriber($payment_data['payer_email']);
+		} catch (\Exception $e) {
+			$error_message = "Can't fint subscriber with Email: ".$payment_data['payer_email']; 
+		}
+
+		try {
+			if (!$get_subscriber) {
+				// Subscriber doesn't exist let's create one
+				$mailpoet_api->addSubscriber($payment_data['payer_email'], [6]);
+			} else {
+				// In case subscriber exists just add him to new lists
+				$mailpoet_api->subscribeToLists($payment_data['payer_email'], [6]);
+			}
+		} catch (\Exception $e) {
+			$error_message = "Can't create new subscriber or add subscriber to list"; 
+		}
+	}
+
+}
+
+// Next: After payment cancellation, unsubscribe automatically 
+add_action( 'swpm_subscription_payment_cancelled', 'after_payment_cancelled_callback' );
+function after_payment_cancelled_callback($payment_cancellation_data) {
+	
+}
+
+//Or even better: on membership level change
+add_action('swpm_membership_level_changed', 'rebalance-handle_membership_level_changed_action_mailpoetsub');
+ function rebalance_handle_membership_level_changed_action_mailpoetsub($args) {
+	 var_dump($args);
+ }
+
+//Notification for when subscription or trial perios is expired 
 function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
 	$loginlink = '/membership-login';
 	$signuplink = '/membership-registration';
@@ -626,6 +695,7 @@ function get_the_expired_notification($closebtn = false, $message = '', $class =
 	return $error_msg;
 }
 
+// Helper Function to quickly get SWPM subscriber ID
 function get_the_subscriberid() {
 	if ( SwpmAuth::get_instance()->userData ) {
 		$subscr_id = SwpmAuth::get_instance()->userData->subscr_id;
@@ -635,6 +705,7 @@ function get_the_subscriberid() {
 	}
 }
 
+// Check if user has a paid SWPM Membership
 function user_has_paid_subscription() {
 	$subscri_id = get_the_subscriberid();
 	if ($subscri_id) { //if there's a stripe subscriber id stored in WP 
@@ -665,8 +736,7 @@ function user_has_paid_subscription() {
 		}
 		catch (Exception $e) {
 			echo '<p>Either payment is in livemode and you are trying to reach a testmode subscription or the other way round... anyways if this message is confusing to you please notify us through our <a href="/contact">contact page</a>.</p>';
-		} 
-		
+		} 	
 	}
 }
 
@@ -680,7 +750,6 @@ function get_manage_subscription_button() {
 	} else {
 		$transaction = null;
 	}
-
 	if ($transaction and user_has_paid_subscription() ) {
 		require_once('stripe-php/init.php');
 		// Set your secret key. Remember to switch to your live secret key in production!
@@ -691,7 +760,6 @@ function get_manage_subscription_button() {
 		} else {
 			\Stripe\Stripe::setApiKey(LIVESTRIPEAPIKEY);
 		}
-
 		$stripecall = \Stripe\BillingPortal\Session::create([
 			'customer' => $transaction,
 			'return_url' => 'http://re-balance.io/membership-profile',
@@ -737,8 +805,6 @@ function vimeo_duration ($id) {
 		return "0";
 	}
 }				
-
-
 
 // Adding the shortcode for SWPM plugin to hide only embeds 
 add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
@@ -794,17 +860,6 @@ function get_first_embed_media($post_id) {
 			return false;
 	}
 }
-//Mailpoet stuff
-add_filter( 'mailpoet_manage_subscription_page_form_fields', 'mp_remove_manage_fields', 10);
-function mp_remove_manage_fields( $form ) {	
-	unset($form[0]); // First Name
-	unset($form[1]); // Last Name
-	unset($form[3]); // List Selection Dropdown
-	return $form;
-}
-add_filter('mailpoet_display_custom_fonts', function () {
-	return false;
-});
 
 //For development you can use get_current_template to show which template is used
 add_filter( 'template_include', 'var_template_include', 1000 );
@@ -822,6 +877,22 @@ function get_current_template( $echo = false ) {
 				return $GLOBALS['current_theme_template'];
 }
 
+//Mailpoet stuff
+
+// Mailpoet Forms customisation
+add_filter( 'mailpoet_manage_subscription_page_form_fields', 'mp_remove_manage_fields', 10);
+function mp_remove_manage_fields( $form ) {	
+	unset($form[0]); // First Name
+	unset($form[1]); // Last Name
+//	unset($form[3]); // List Selection Dropdown
+	return $form;
+}
+// Mailpoet remove custom fonts
+add_filter('mailpoet_display_custom_fonts', function () {
+	return false;
+});
+
+// Custom Mailpoet Shortcodes to use tiny exercises in emails. Usage: "[custom:gratitude]" in mailpoet email editor
 add_filter('mailpoet_newsletter_shortcode', 'mailpoet_custom_shortcode', 10, 5);
 
 function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue, $newsletter_body) {
