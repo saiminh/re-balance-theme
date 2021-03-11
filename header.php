@@ -89,7 +89,7 @@
 								//echo $currentUserEmail;
 								$stuff = $mailpoet_api->getSubscriber($currentUserEmail);
 								if ($stuff['status'] == 'unsubscribed' OR  $stuff['status'] == 'subscribed' ) {
-									echo '<a href="/newsletter-manage-subscription">Newsletter subscription</a>';      
+									echo '<a href="/newsletter-manage-subscription">Email&nbsp;subscription</a>';      
 								}
 							};													
 							echo "<a data-no-swup='' href='".get_option( 'home' )."/?swpm-logout=true

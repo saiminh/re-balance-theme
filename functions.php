@@ -122,73 +122,62 @@ add_action( 'widgets_init', 'rebalance_widgets_init' );
 function rebalance_scripts() {
 	wp_enqueue_style( 'new-hero', 'https://use.typekit.net/vzx1etu.css', false );
 	wp_enqueue_style( 'material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', false );
-	
 	wp_enqueue_style('rebalance-style', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false);	
-
-	wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), true );
-	
+	wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), true );	
 	wp_enqueue_script( 'gsapScrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), true );
-	
 	wp_enqueue_script( 'gsapDrawSVGPlugin', get_template_directory_uri() . '/js/DrawSVGPlugin.js', array(), true );
-	
 	wp_enqueue_script( 'gsapMorphSVGPlugin', get_template_directory_uri() . '/js/MorphSVGPlugin.min.js', array(), true );
-
 	wp_enqueue_script( 'swup', get_template_directory_uri() . '/js/swup.js', array(), '20151215', true );
-	
 	wp_enqueue_script( 'swupbodyclass', get_template_directory_uri() . '/js/SwupBodyClassPlugin.min.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'swupjsplugin', get_template_directory_uri() . '/js/SwupJsPlugin.min.js', array(), '20151215', true );
-	
 	wp_enqueue_script( 'rebalance-animations', get_template_directory_uri() . '/js/gsapAnimations.js', array(), '2020', true );
-
 	wp_enqueue_script( 'rebalance-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'rebalance-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rebalance_scripts' );
-
-
 /**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
-
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
 /**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
 /**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
 /**
  * Load WooCommerce compatibility file.
  */
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
-
+// Our custom user role "paying subscriber"
+function rebalance_custom_roles(){
+	add_role(
+		'paying_subscriber',
+		__( 'Paying Subscriber' ),
+		array(
+			'read' => true,  // true allows this capability
+		)
+	);
+}
 // Our custom post type function for exercises
 function create_posttype() {
- 
     register_post_type( 'exercises',
     // CPT Options
 			array(
@@ -211,12 +200,9 @@ function create_posttype() {
 add_action( 'init', 'create_posttype', 0 );
  
 //create a custom taxonomy name it topics for your posts
- 
 function create_exercisetypes_hierarchical_taxonomy() {
- 
 // Add new taxonomy, make it hierarchical like categories
 //first do the translations part for GUI
- 
   $labels = array(
     'name' => _x( 'Exercise-Types', 'taxonomy general name' ),
     'singular_name' => _x( 'Exercise-Type', 'taxonomy singular name' ),
@@ -241,20 +227,16 @@ function create_exercisetypes_hierarchical_taxonomy() {
 		'has_archive' => true,
 		'show_in_rest' => true // Needed for tax to appear in Gutenberg editor
   );
-
 // Now register the taxonomy
   register_taxonomy('exercisetypes', 'exercises', $args);
 }
 //hook into the init action and call create_exercisetypes_hierarchical_taxonomy when it fires
 add_action( 'init', 'create_exercisetypes_hierarchical_taxonomy', 0 );
 
-
 /**
  * Add Tags to Exercises
  */
-
 add_action( 'init', 'create_tag_taxonomies_for_exercises', 0 );
-
 //create two taxonomies, genres and tags for the post type "tag"
 function create_tag_taxonomies_for_exercises() 
 {
@@ -293,10 +275,10 @@ function create_tag_taxonomies_for_exercises()
 
 function show_cpt_permalinks( $post_link, $post ){
 	if ( is_object( $post ) && $post->post_type == 'exercises' ){
-			$terms = wp_get_object_terms( $post->ID, 'exercisetypes' );
-			if( $terms ){
-					return str_replace( '%exercisetypes%' , $terms[0]->slug , $post_link );
-			}
+		$terms = wp_get_object_terms( $post->ID, 'exercisetypes' );
+		if( $terms ){
+			return str_replace( '%exercisetypes%' , $terms[0]->slug , $post_link );
+		}
 	}
 	return $post_link;
 }
@@ -304,11 +286,11 @@ add_filter( 'post_type_link', 'show_cpt_permalinks', 1, 2 );
 
 /* Use special template for tiny exercises */
 function get_custom_single_template($single_template) {
-		global $post;
-		if ( has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
-						$single_template = dirname( __FILE__ ) . '/single-exercises-tiny.php';
-		 }
-		 return $single_template;
+	global $post;
+	if ( has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
+		$single_template = dirname( __FILE__ ) . '/single-exercises-tiny.php';
+	}
+	return $single_template;
 }
 add_filter( "single_template", "get_custom_single_template" ) ;
 
@@ -318,26 +300,22 @@ function tiny_shortcode( $atts = array() ){
 	extract(shortcode_atts( array(
 		'name' => 'deep-breathing'
 	), $atts ));
-	
 	$page = get_posts( array(
 		'name'      => $atts['name'],
 		'post_type' => 'exercises'
 	) );
-
 	if ( $page ){
-			echo '<h4 class="notification-header">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
-			echo '<div class="rebalance-mini">';
-			echo '<div class="rebalance-mini-illustration">';
-			get_template_part( 'inc/inline', 'tiny-illu-'.$atts['name'].'.svg' );
-			echo '</div><div class="rebalance-mini-instructions">'.$page[0]->post_content.'<a class="button button-confetti" id="confetter" href="#confetti">Congratulate Yourself!</a></div>';
-			echo '</div>';
+		echo '<h4 class="notification-header">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+		echo '<div class="rebalance-mini">';
+		echo '<div class="rebalance-mini-illustration">';
+		get_template_part( 'inc/inline', 'tiny-illu-'.$atts['name'].'.svg' );
+		echo '</div><div class="rebalance-mini-instructions">'.$page[0]->post_content.'<a class="button button-confetti" id="confetter" href="#confetti">Congratulate Yourself!</a></div>';
+		echo '</div>';
 	}
 }
 add_shortcode( 'tiny', 'tiny_shortcode' ); 
 
-
 /** Display posts by category */
-
 function postsbycategory($which_category = 'uncategorized') {
 	// the query
 	$the_query = new WP_Query( array( 'category_name' => $which_category, 'posts_per_page' => 30 ) ); 
@@ -359,74 +337,63 @@ function postsbycategory($which_category = 'uncategorized') {
 	}
 	echo '</div>';
 	 
-	//return $string;
-	 
 	/* Restore original Post Data */
 	wp_reset_postdata();
 	}
 	// Add a shortcode
 	add_shortcode('categoryposts', 'postsbycategory');
-	 
 	// Enable shortcodes in text widgets
 	add_filter('widget_text', 'do_shortcode');
 
-
 	// Include tags in search results
 	// search all taxonomies, based on: http://projects.jesseheap.com/all-projects/wordpress-plugin-tag-search-in-wordpress-23
-
-function atom_search_where($where){
-	global $wpdb;
-	if (is_search())
-	  $where .= "OR (t.name LIKE '%".get_search_query()."%' AND {$wpdb->posts}.post_status = 'publish')";
-	return $where;
+	function atom_search_where($where){
+		global $wpdb;
+		if (is_search())
+			$where .= "OR (t.name LIKE '%".get_search_query()."%' AND {$wpdb->posts}.post_status = 'publish')";
+		return $where;
   }
   
-  function atom_search_join($join){
-	global $wpdb;
-	if (is_search())
-	  $join .= "LEFT JOIN {$wpdb->term_relationships} tr ON {$wpdb->posts}.ID = tr.object_id INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id=tr.term_taxonomy_id INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id";
-	return $join;
+	function atom_search_join($join){
+		global $wpdb;
+		if (is_search())
+			$join .= "LEFT JOIN {$wpdb->term_relationships} tr ON {$wpdb->posts}.ID = tr.object_id INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_taxonomy_id=tr.term_taxonomy_id INNER JOIN {$wpdb->terms} t ON t.term_id = tt.term_id";
+		return $join;
   }
   
   function atom_search_groupby($groupby){
-	global $wpdb;
-  
-	// we need to group on post ID
-	$groupby_id = "{$wpdb->posts}.ID";
-	if(!is_search() || strpos($groupby, $groupby_id) !== false) return $groupby;
-  
-	// groupby was empty, use ours
-	if(!strlen(trim($groupby))) return $groupby_id;
-  
-	// wasn't empty, append ours
-	return $groupby.", ".$groupby_id;
+		global $wpdb;
+		// we need to group on post ID
+		$groupby_id = "{$wpdb->posts}.ID";
+		if(!is_search() || strpos($groupby, $groupby_id) !== false) return $groupby;
+		// groupby was empty, use ours
+		if(!strlen(trim($groupby))) return $groupby_id;
+		// wasn't empty, append ours
+		return $groupby.", ".$groupby_id;
   }
   
   add_filter('posts_where','atom_search_where');
   add_filter('posts_join', 'atom_search_join');
   add_filter('posts_groupby', 'atom_search_groupby');
 
-
 // breadcrumbs for custom taxomonies
-
-function show_custax_breadcrumb($name,$type){
+	function show_custax_breadcrumb($name,$type){
     $list = "";
     $home = get_bloginfo("url");
     if ($type && $name){
-        $ans = get_term_by('name', $name, $type);
-        $parentID=$ans->parent;
-        while ($parentID > 0){
-            $parent = get_term_by('id', $parentID, $type);
-            $url = $home."/".$type."/".$parent->slug;
-            $list = "<li><a href='".$url."'>".$parent->name."</a></li>".$list;
-            $parentID = $parent->parent;
-        }
-        $url = $home."/".$type."/".$ans->slug;
-        $list = $list."<li>".$ans->name."</li>";
+			$ans = get_term_by('name', $name, $type);
+			$parentID=$ans->parent;
+			while ($parentID > 0){
+				$parent = get_term_by('id', $parentID, $type);
+				$url = $home."/".$type."/".$parent->slug;
+				$list = "<li><a href='".$url."'>".$parent->name."</a></li>".$list;
+				$parentID = $parent->parent;
+			}
+			$url = $home."/".$type."/".$ans->slug;
+			$list = $list."<li>".$ans->name."</li>";
 		}   
-  
     if ($list) echo "<ul class='breadcrumbs'><li><a href='".$home."'>Home</a></li>".$list."</ul>";
-}
+	}
 
 //  breadcrumbs for default taxonomies
 function show_breadcrumb() {
@@ -504,11 +471,9 @@ function rebalance_bodyclass_names( $classes ) {
 	}
 	return $classes;
 }
-
 add_filter( 'body_class', 'rebalance_bodyclass_names' );
 
-// My Own post navigation
-
+// Rebalancecustom post navigation
 function rebalance_get_the_posts_navigation( $args = array() ) {
 	$navigation = '';
 
@@ -518,7 +483,6 @@ function rebalance_get_the_posts_navigation( $args = array() ) {
 			if ( ! empty( $args['screen_reader_text'] ) && empty( $args['aria_label'] ) ) {
 					$args['aria_label'] = $args['screen_reader_text'];
 			}
-
 			$args = wp_parse_args(
 					$args,
 					array(
@@ -528,21 +492,16 @@ function rebalance_get_the_posts_navigation( $args = array() ) {
 							'aria_label'         => __( 'Exercises' ),
 					)
 			);
-
 			$next_link = get_previous_posts_link( $args['next_text'] );
 			$prev_link = get_next_posts_link( $args['prev_text'] );
-
 			if ( $prev_link ) {
 					$navigation .= '<div class="nav-previous">' . $prev_link . '</div>';
 			}
-
 			if ( $next_link ) {
 					$navigation .= '<div class="nav-next">' . $next_link . '</div>';
 			}
-
 			$navigation = _navigation_markup( $navigation, 'posts-navigation', $args['screen_reader_text'], $args['aria_label'] );
 	}
-
 	return $navigation;
 }
 
@@ -581,7 +540,6 @@ function my_wp_mail_filter( $args ) {
 		'headers'     => $args['headers'],
 		'attachments' => $args['attachments'],
 	);
-	
 	return $new_wp_mail;
 }
 
@@ -606,11 +564,18 @@ function get_rebalance_membership_alias() {
 	return $userauth->get('alias'); 
 }
 
-// After SWPM Signup: add new user to Mailpoet list
-add_action('swpm_front_end_registration_complete_user_data', 'after_registration_callback');
-function after_registration_callback($member_info) {
+// After SWPM Signup: add new user to Mailpoet lists 'Fortnightly Newsletter' and 'Regular Exercises'
+add_action('swpm_front_end_registration_complete_user_data', 'rebalance_after_registration_callback');
+function rebalance_after_registration_callback($member_info) {
 		//print_r($member_info);//Lets see what info is in this array.
-		
+		SwpmLog::log_simple_debug("swpm_front_end_registration_complete_user_data action fired, here is the passed arguments: ".print_r($member_info), true);
+
+		if ( get_site_url() == 'http://re-balance.local') {
+			$rebalance_list_ids = array(3,7);
+		} else {
+			$rebalance_list_ids = array(5,6);
+		}
+
 		if (class_exists(\MailPoet\API\API::class)) {
 			$mailpoet_api = \MailPoet\API\API::MP('v1');
 			
@@ -623,10 +588,10 @@ function after_registration_callback($member_info) {
 			try {
 				if (!$get_subscriber) {
 					// Subscriber doesn't exist let's create one
-					$mailpoet_api->addSubscriber($member_info['email'], [5]);
+					$mailpoet_api->addSubscriber($member_info['email'], $rebalance_list_ids);
 				} else {
 					// In case subscriber exists just add him to new lists
-					$mailpoet_api->subscribeToLists($member_info['email'], [5]);
+					$mailpoet_api->subscribeToLists($member_info['email'], $rebalance_list_ids);
 				}
 			} catch (\Exception $e) {
 				$error_message = "<h1>Erronius Monk</h1>"; 
@@ -634,48 +599,15 @@ function after_registration_callback($member_info) {
 		}
 }
 
-// INCOMPLETE: After SWPM Stripe payment Success: Add User to Paid Mailp[oet List
-add_action( 'swpm_stripe_ipn_processed', 'after_payment_callback' );
-function after_payment_callback($payment_data) {
-	$email    = $payment_data['payer_email']; //found this in /plugins/simple-membership/ipn/swpm_handle_subsc_ipn.php
-
-	if (class_exists(\MailPoet\API\API::class)) {
-		$mailpoet_api = \MailPoet\API\API::MP('v1');
-			
-		try {
-			$get_subscriber = $mailpoet_api->getSubscriber($payment_data['payer_email']);
-		} catch (\Exception $e) {
-			$error_message = "Can't fint subscriber with Email: ".$payment_data['payer_email']; 
-		}
-
-		try {
-			if (!$get_subscriber) {
-				// Subscriber doesn't exist let's create one
-				$mailpoet_api->addSubscriber($payment_data['payer_email'], [6]);
-			} else {
-				// In case subscriber exists just add him to new lists
-				$mailpoet_api->subscribeToLists($payment_data['payer_email'], [6]);
-			}
-		} catch (\Exception $e) {
-			$error_message = "Can't create new subscriber or add subscriber to list"; 
-		}
-	}
-
-}
-
-// Next: After payment cancellation, unsubscribe automatically 
-add_action( 'swpm_subscription_payment_cancelled', 'after_payment_cancelled_callback' );
-function after_payment_cancelled_callback($payment_cancellation_data) {
-	
-}
-
-//Or even better: on membership level change
-add_action('swpm_membership_level_changed', 'rebalance-handle_membership_level_changed_action_mailpoetsub');
- function rebalance_handle_membership_level_changed_action_mailpoetsub($args) {
-	 var_dump($args);
+ add_action('swpm_front_end_profile_edited', 'rebalance_after_profile_edit_callback');
+ function rebalance_after_profile_edit_callback($member_info)
+ {
+		 //Do stuff
+		 SwpmLog::log_simple_debug("swpm_front_end_profile_edited action fired, here is the passed arguments: ".print_r($member_info), true); 
+		 print_r($member_info);//Lets see what info is in this array.
  }
-
-//Notification for when subscription or trial perios is expired 
+ 
+//Notification for when subscription or trial period is expired 
 function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
 	$loginlink = '/membership-login';
 	$signuplink = '/membership-registration';
