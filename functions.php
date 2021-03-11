@@ -568,7 +568,7 @@ function get_rebalance_membership_alias() {
 add_action('swpm_front_end_registration_complete_user_data', 'rebalance_after_registration_callback');
 function rebalance_after_registration_callback($member_info) {
 		//print_r($member_info);//Lets see what info is in this array.
-		SwpmLog::log_simple_debug("swpm_front_end_registration_complete_user_data action fired, here is the passed arguments: ".print_r($member_info), true);
+		SwpmLog::log_simple_debug("swpm_front_end_registration_complete_user_data action fired, here is the passed arguments: ".var_dump($member_info), true);
 
 		if ( get_site_url() == 'http://re-balance.local') {
 			$rebalance_list_ids = array(3,7);
@@ -582,19 +582,19 @@ function rebalance_after_registration_callback($member_info) {
 			try {
 				$get_subscriber = $mailpoet_api->getSubscriber($member_info['email']);
 			} catch (\Exception $e) {
-				$error_message = "<h1>Terronius Monk</h1>"; 
+				$error_message = "get_subscriber fail"; 
 			}
-
+			
 			try {
 				if (!$get_subscriber) {
 					// Subscriber doesn't exist let's create one
-					$mailpoet_api->addSubscriber($member_info['email'], $rebalance_list_ids);
+					$mailpoet_api->addSubscriber($member_info, $rebalance_list_ids);
 				} else {
 					// In case subscriber exists just add him to new lists
 					$mailpoet_api->subscribeToLists($member_info['email'], $rebalance_list_ids);
 				}
 			} catch (\Exception $e) {
-				$error_message = "<h1>Erronius Monk</h1>"; 
+				$error_message = "addSubscriber und subscribeToLists fail"; 
 			}
 		}
 }
