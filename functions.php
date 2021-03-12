@@ -167,7 +167,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
 // Our custom user role "paying subscriber"
-function rebalance_custom_roles(){
 	add_role(
 		'paying_subscriber',
 		__( 'Paying Subscriber' ),
@@ -175,7 +174,6 @@ function rebalance_custom_roles(){
 			'read' => true,  // true allows this capability
 		)
 	);
-}
 // Our custom post type function for exercises
 function create_posttype() {
     register_post_type( 'exercises',
