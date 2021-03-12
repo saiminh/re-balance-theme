@@ -27,21 +27,6 @@
 <body <?php body_class( 'rebalance' ); ?> >
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
-	<?php 
-		echo '<div style="display: none">';
-		if (class_exists(\MailPoet\API\API::class)) {
-			// Get MailPoet API instance
-			$mailpoet_api = \MailPoet\API\API::MP('v1');
-			// Get available list so that a subscriber can choose in which to subscribe 
-			$lists = $mailpoet_api->getLists();
-			// Get subscriber fields to know what fields can be rendered within a form
-			$subscriber_form_fields = $mailpoet_api->getSubscriberFields();
-			echo  '<h1>Lists:</h1>';
-			print_r($lists);
-			echo  '<h1>Subscriber Form Fields:</h1>';
-			print_r($subscriber_form_fields);
-		echo '</div>'; 
-	?>
 	<?php if ( rebalance_member_is_logged_in() ) : ?>
 		<header id="masthead" class="site-header">
 			<div class="site-header-inner">
