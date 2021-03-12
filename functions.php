@@ -568,11 +568,7 @@ function rebalance_after_registration_callback($member_info) {
 		//print_r($member_info);//Lets see what info is in this array.
 		SwpmLog::log_simple_debug("swpm_front_end_registration_complete_user_data action fired, here is the passed arguments: ".var_dump($member_info), true);
 
-		if ( get_site_url() == 'http://re-balance.local') {
-			$rebalance_list_ids = array(3,7);
-		} else {
-			$rebalance_list_ids = array(5,6);
-		}
+			$rebalance_list_ids = array(5,6);		
 
 		if (class_exists(\MailPoet\API\API::class)) {
 			$mailpoet_api = \MailPoet\API\API::MP('v1');
