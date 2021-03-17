@@ -1,7 +1,7 @@
 <?php
 /**
- * Template Name: Thank you page
- * The template for displaying the registration page
+ * Template Name: SWPM Thank you page
+ * The template for displaying the page you reach after paying
  *
  * @package rebalance
  */

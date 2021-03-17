@@ -562,40 +562,42 @@ function get_rebalance_membership_alias() {
 	return $userauth->get('alias'); 
 }
 
-// // After SWPM Signup: add new user to Mailpoet lists 'Fortnightly Newsletter' and 'Regular Exercises'
-// add_action('swpm_front_end_registration_complete_user_data', 'rebalance_after_registration_callback');
-// function rebalance_after_registration_callback($member_info) {
-// 		//print_r($member_info);//Lets see what info is in this array.
-// 		SwpmLog::log_simple_debug("swpm_front_end_registration_complete_user_data action fired, here is the passed arguments: ".var_dump($member_info), true);
+// After Login, check if user has any mailpoet subscription (even inactive) and if not subscribe them to the initial lists '14 day trial drip campaign' and 'Regular exercises'
+function rebalance_check_if_subscriber_and_subscribe_to_maillists( $user_login, $user ) {
+	if ( get_site_url() == 'http://re-balance.local') {
+		$rebalance_list_ids = array(3,7);
+	} else {
+		$rebalance_list_ids = array(5,6);
+	}
 
-// 		if ( get_site_url() == 'http://re-balance.local') {
-// 			$rebalance_list_ids = array(3,7);
-// 		} else {
-// 			$rebalance_list_ids = array(5,6);
-// 		}
+	$new_subscriber = array(
+		'email' 	=> $user->data->user_email,
+		'source'	=> 'api',
+	);
 
-// 		if (class_exists(\MailPoet\API\API::class)) {
-// 			$mailpoet_api = \MailPoet\API\API::MP('v1');
+	if (class_exists(\MailPoet\API\API::class)) {
+		$mailpoet_api = \MailPoet\API\API::MP('v1');
 			
-// 			try {
-// 				$get_subscriber = $mailpoet_api->getSubscriber($member_info['email']);
-// 			} catch (\Exception $e) {
-// 				$error_message = "get_subscriber fail"; 
-// 			}
+		try {
+			$get_subscriber = $mailpoet_api->getSubscriber($user->data->user_email);
+		} catch (\Exception $e) {
+			$error_message = "get_subscriber fail"; 
+		}
 			
-// 			try {
-// 				if (!$get_subscriber) {
-// 					// Subscriber doesn't exist let's create one
-// 					$mailpoet_api->addSubscriber($member_info, $rebalance_list_ids);
-// 				} else {
-// 					// In case subscriber exists just add him to new lists
-// 					$mailpoet_api->subscribeToLists($member_info['email'], $rebalance_list_ids);
-// 				}
-// 			} catch (\Exception $e) {
-// 				$error_message = "addSubscriber und subscribeToLists fail"; 
-// 			}
-// 		}
-// }
+		try {
+			if (!$get_subscriber) {
+				// Subscriber doesn't exist let's create one
+				$mailpoet_api->addSubscriber($new_subscriber, $rebalance_list_ids);
+			} else {
+				// do nothing because we don't want to unintentionally resubscribe people after they've unsubscribed
+				//$mailpoet_api->subscribeToLists($user->data->user_email, $rebalance_list_ids);
+			}
+		} catch (\Exception $e) {
+			$error_message = "addSubscriber und subscribeToLists fail"; 
+		}
+	}
+}
+add_action('wp_login', 'rebalance_check_if_subscriber_and_subscribe_to_maillists', 10, 2);
 
  add_action('swpm_front_end_profile_edited', 'rebalance_after_profile_edit_callback');
  function rebalance_after_profile_edit_callback($member_info)

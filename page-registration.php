@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: page-registration
+ * Template Name: SWPM Registration Page
  * The template for displaying the registration page
  *
  * @package rebalance
