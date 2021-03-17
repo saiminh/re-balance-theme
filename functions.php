@@ -562,40 +562,6 @@ function get_rebalance_membership_alias() {
 	return $userauth->get('alias'); 
 }
 
-// After Login, check if user has any mailpoet subscription (even inactive) and if not subscribe them to the initial lists '14 day trial drip campaign' and 'Regular exercises'
-function rebalance_check_if_subscriber_and_subscribe_to_maillists( $user_login, $user ) {
-	
-	$rebalance_list_ids = array(5,6);
-
-	$new_subscriber = array(
-		'email' 	=> $user->data->user_email,
-		'source'	=> 'api',
-	);
-
-	if (class_exists(\MailPoet\API\API::class)) {
-		$mailpoet_api = \MailPoet\API\API::MP('v1');
-			
-		try {
-			$get_subscriber = $mailpoet_api->getSubscriber($user->data->user_email);
-		} catch (\Exception $e) {
-			$error_message = "get_subscriber fail"; 
-		}
-			
-		try {
-			if (!$get_subscriber) {
-				// Subscriber doesn't exist let's create one
-				$mailpoet_api->addSubscriber($new_subscriber, $rebalance_list_ids);
-			} else {
-				// do nothing because we don't want to unintentionally resubscribe people after they've unsubscribed
-				// $mailpoet_api->subscribeToLists($user->data->user_email, $rebalance_list_ids);
-			}
-		} catch (\Exception $e) {
-			$error_message = "addSubscriber und subscribeToLists fail"; 
-		}
-	}
-}
-add_action('wp_login', 'rebalance_check_if_subscriber_and_subscribe_to_maillists', 10, 2);
-
  add_action('swpm_front_end_profile_edited', 'rebalance_after_profile_edit_callback');
  function rebalance_after_profile_edit_callback($member_info)
  {
