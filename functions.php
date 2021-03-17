@@ -564,11 +564,8 @@ function get_rebalance_membership_alias() {
 
 // After Login, check if user has any mailpoet subscription (even inactive) and if not subscribe them to the initial lists '14 day trial drip campaign' and 'Regular exercises'
 function rebalance_check_if_subscriber_and_subscribe_to_maillists( $user_login, $user ) {
-	if ( get_site_url() == 'http://re-balance.local') {
-		$rebalance_list_ids = array(3,7);
-	} else {
-		$rebalance_list_ids = array(5,6);
-	}
+	
+	$rebalance_list_ids = array(5,6);
 
 	$new_subscriber = array(
 		'email' 	=> $user->data->user_email,
@@ -590,7 +587,7 @@ function rebalance_check_if_subscriber_and_subscribe_to_maillists( $user_login, 
 				$mailpoet_api->addSubscriber($new_subscriber, $rebalance_list_ids);
 			} else {
 				// do nothing because we don't want to unintentionally resubscribe people after they've unsubscribed
-				//$mailpoet_api->subscribeToLists($user->data->user_email, $rebalance_list_ids);
+				// $mailpoet_api->subscribeToLists($user->data->user_email, $rebalance_list_ids);
 			}
 		} catch (\Exception $e) {
 			$error_message = "addSubscriber und subscribeToLists fail"; 
