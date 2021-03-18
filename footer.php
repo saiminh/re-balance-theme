@@ -42,6 +42,24 @@
 			</div><!-- .site-info -->			
 		</div>		
 	</footer><!-- #colophon -->
+	<?php if(!rebalance_member_is_logged_in()) : ?>
+	<div class="rebalance-popup rebalance-popup--bottomleft free-pdf-signup-form">
+		<div class="close">
+			<svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve">
+				<polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "></polygon>
+			</svg>
+		</div>
+		<?php 
+			if ( get_site_url() == 'http://re-balance.local' ){
+				$pdfformid = 3;
+			} else {
+				$pdfformid = 3; //seem to be the same right now but maybe not in the future
+			}
+			$form_widget = new \MailPoet\Form\Widget();
+			echo $form_widget->widget(array('form' => $pdfformid, 'form_type' => 'php'));
+		?>
+	</div>
+	<?php endif; ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

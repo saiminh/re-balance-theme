@@ -6,16 +6,17 @@
  */
 
  //Preload some images
-	var images = new Array();
-	function preload() {
-		for (i = 0; i < preload.arguments.length; i++) {
-			images[i] = new Image()
-			images[i].src = preload.arguments[i]
-		}
-	};
-	preload(
-		"https://re-balance.io/wp-content/themes/rebalance-wptheme/img/benefits-galaxy-bg.jpg"
-	);
+	// var images = new Array();
+	// function preload() {
+	// 	for (i = 0; i < preload.arguments.length; i++) {
+	// 		images[i] = new Image()
+	// 		images[i].src = preload.arguments[i]
+	// 	}
+	// };
+	// preload(
+	// 	"https://re-balance.io/wp-content/themes/rebalance-wptheme/img/benefits-galaxy-bg.jpg"
+	// );
+	
 
 ( function($) {
 	
@@ -336,6 +337,33 @@ function homeNavTab(){
 
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
+		//local storage functions
+		if (sessionStorage.hasSeenPdfPopup) {
+			
+		} else {
+			sessionStorage.hasSeenPdfPopup = 1;
+			let popup = document.querySelector('.rebalance-popup');
+			if(popup){
+				setTimeout(
+					function(){
+						gsap.to(popup, {
+							yPercent: -100,
+							duration: 0.3,
+							ease: "circ.inOut"
+						})
+					}, 5000
+				)
+				document.addEventListener('click', function(event){
+					if(!event.target.closest('.rebalance-popup .close')) return;
+					gsap.to(popup, {
+						yPercent: 0,
+						duration: 0.3,
+						ease: "circ.inOut"
+					})
+				})
+			}
+		}
+
 		//homenavtab
 		if ($('.home-dashboard')){
 			homeNavTab();

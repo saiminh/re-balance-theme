@@ -561,14 +561,6 @@ function get_rebalance_membership_alias() {
 	$userauth = SwpmAuth::get_instance();
 	return $userauth->get('alias'); 
 }
-
- add_action('swpm_front_end_profile_edited', 'rebalance_after_profile_edit_callback');
- function rebalance_after_profile_edit_callback($member_info)
- {
-		 //Do stuff
-		 SwpmLog::log_simple_debug("swpm_front_end_profile_edited action fired, here is the passed arguments: ".print_r($member_info), true); 
-		 print_r($member_info);//Lets see what info is in this array.
- }
  
 //Notification for when subscription or trial period is expired 
 function get_the_expired_notification($closebtn = false, $message = '', $class = 'notification'){
