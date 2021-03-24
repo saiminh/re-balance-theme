@@ -124,14 +124,18 @@
             & .post-thumbnail {
                 background-size: auto calc(100% - 2rem);
                 background-position: 50% 50%;
-            }
+            }            
             @media (min-width: 1100px){
                 display: flex;
+                padding: 2rem;
+                & .entry-summary :last-child{
+                    margin-bottom: 0;
+                }
                 & .post-thumbnail {
                     flex-basis: calc(33.3% - 1rem);
                     margin: 0 2rem 0 0;
-                    background-size: 100%;
-                    background-position: 50% calc(50% - 1rem); //because parent has no margin bottom 
+                    background-size: contain;
+                    background-position: 50%; //because parent has no margin bottom 
                     background-color: transparent;
                     padding: 0;
                 }
