@@ -149,4 +149,62 @@
 			</svg>
 		</div>
 	</div>			
-	<div id="swup" class="site-content transition">	
+	<div id="swup" class="site-content transition">		
+	<?php if ( rebalance_member_is_logged_in() ) : ?>
+		<div class="statusbar">	
+			<a class="back-button" href="javascript:history.back()"><?php get_template_part('inc/inline', 'back-arrow.svg'); ?></a>
+			<?php
+				if (is_search()) :
+					echo '<ul class="breadcrumbs">';
+					echo '<li><a href="';
+					echo get_option('home');
+					echo '">Home';
+					echo '</a></li>';
+					echo '<li>Search</li></ul>';
+
+				else :
+					if ( is_tax( 'exercisetypes' ) ) :
+						show_custax_breadcrumb(single_tag_title("", false),"exercisetypes");
+					elseif ( is_tax( 'exercises-tag' ) ) :
+						show_custax_breadcrumb(single_tag_title("", false),"exercises-tag");
+					elseif ( has_term( '' , 'exercisetypes' ) ) :
+						
+						echo '<ul class="breadcrumbs">';
+						echo '<li><a href="';
+						echo get_option('home');
+						echo '">Home';
+						echo '</a></li>';
+						$rd_taxonomy = 'exercisetypes'; // region taxonomy
+						$rd_terms = wp_get_post_terms( $post->ID, $rd_taxonomy, array( "fields" => "ids" ) ); // getting the term IDs
+						if( $rd_terms ) {
+							$term_array = trim( implode( ',', (array) $rd_terms ), ' ,' );
+							$neworderterms = get_terms($rd_taxonomy, 'orderby=parent&include=' . $term_array );
+							foreach( $neworderterms as $orderterm ) {
+								echo '<li><a href="' . get_term_link( $orderterm ) . '">' . $orderterm->name . '</a></li>';
+							}
+						}
+						echo '<li>';
+						the_title();
+						echo '</li></ul>';
+
+					elseif ( is_front_page() ) :
+
+					else :
+						show_breadcrumb();
+					endif;
+				endif;
+			?>
+		<?php if ( is_tax(  ) ) : ?>
+			<div class="toggle-discreet">
+				<label class="switch">
+					<input type="checkbox">
+						<span class="toggle-label-text">Discreet Moves</span>
+						<span class="slider round hide-off"></span> 
+				</label>		
+				<div class="onboarding">
+					Click here to hide all exercises with large, indiscreet movements
+				</div>
+			</div>
+		<?php endif; ?>
+		</div>
+	<?php endif; ?>

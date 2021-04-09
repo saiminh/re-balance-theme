@@ -1,6 +1,3 @@
-// @import "../layout/content-sidebar";
-// @import "../layout/sidebar-content";
-
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -11,6 +8,7 @@
 --------------------------------------------------------------*/
 @import "primary/home-loggedout";
 @import "primary/home-loggedin";
+@import "primary/exercises_by_tags";
 @import "primary/posts-and-pages";
 @import "primary/exercises";
 @import "primary/registration";
@@ -38,3 +36,13 @@
 ## Footer
 --------------------------------------------------------------*/
 @import "primary/footer";
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+@import "secondary/widgets";
+/*--------------------------------------------------------------
+# Learnpress
+--------------------------------------------------------------*/
+@import "secondary/learnpress-archive";
+@import "secondary/learnpress-modal";
+@import "secondary/learnpress-profile";

@@ -15,105 +15,80 @@ get_header();
 ?>
 	<?php if ( SwpmMemberUtils::is_member_logged_in()) : ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main home-dashboard">
-			<nav class="home-dashboard-tabs">
-				<a class="home-dashboard-tab--active" href="#home-dashboard-courses">Courses</a>
-				<a href="#home-dashboard-exercises">Exercises</a>
-			</nav>
-			<div id="home-dashboard-courses" class="home-dashboard-courses">
+		<main id="main" class="site-main">
+			<div id="home-dashboard-exercises">
 				<?php 
-				//Users name, JS adds the time-specific greeting
-					global $current_user; wp_get_current_user(); 
-					echo "<div id='lblGreetings'>";
-					if ( $current_user->first_name ) :
-						echo $current_user->first_name . "\n";
-					else :
-						echo $current_user->display_name . "\n";
-					endif;
-					echo "</div>";
-				// Courses
-					$profile       = learn_press_get_profile();
-					$filter_status = LP_Request::get_string( 'filter-status' );
-					$query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
-							
-				?>
-					<?php if ( $query['items'] ) : ?>
-						<p>Your course progress</p>
-						<?php	$i = 0; $total = 0; ?>
-						<?php foreach ( $query['items'] as $user_course ) : ?> 							
-							<?php if ( $user_course->get_results( 'status' ) !== 'passed' ) : ?>
-								<?php if (++$i > 3) { break; } ?>
-								<?php $course = learn_press_get_course( $user_course->get_id() ); ?>
-									<div class="home-dashboard-courses-course">
-										<div class="home-dashboard-courses-thumbnail course-thumbnail">
-											<?php echo $course->get_image(); ?>
-										</div>
-										<h4 class="home-dashboard-courses-coursetitle">
-											<a href="<?php echo $course->get_permalink(); ?>">
-												<?php echo $course->get_title(); ?>
-											</a>
-										</h4>
-										<?php if ( $user_course->get_results( 'status' ) !== 'purchased' ) : ?>
-											<div class="learn-press-progress lp-course-progress">
-													<div class="progress-bg lp-progress-bar">
-															<div class="progress-active lp-progress-value"
-																		style="left: <?php echo $user_course->get_percent_result(); ?>;">
-															</div>
-													</div>
-											</div>
-											<span class="result-percent"><?php echo $user_course->get_percent_result(); ?></span>
-											<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
-												<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
-											</span>
-											<a class="course-progress-gotocourselink" href="<?php echo $course->get_permalink(); ?>">Continue</a>
-										<?php else : ?>
-											<span class="lp-label label-<?php echo esc_attr( $user_course->get_results( 'status' ) ); ?>">
-												<?php echo $user_course->get_status_label( $user_course->get_results( 'status' ) ); ?>
-											</span>
-										<?php endif; ?> 
-									</div>
-							<?php $total++; endif; ?> 
-							<?php endforeach; ?>											
-							<?php if($total == 0) { echo '<p>You are currently not enrolled in any courses.'; } ?>
-									<div class="home-dashboard-courses-coursehistorylink">
-										<a href="/my-course-history" class="profile-link">
-											My course history
-										</a>
-									</div>					
-					<?php else : ?>
-						<p>You are not enrolled in any courses at the moment. <a href="/how-to-use-rebalance"><i class="material-icons">info</i> What are courses?</a></p>						
-					<?php endif; ?>
-						<div class="home-dashboard-courses-coursepagelink"><a class="button button-small" href="/courses"><i class="material-icons">library_books</i> Access Course library</a></div>
-			</div>
-			<div id="home-dashboard-exercises" class="home-dashboard-exercises hidden-on-narrow">
-				<div class="home-search">
-					<?php get_search_form( ); ?> 						
-				</div>
-				<div class="home-dashboard-exercise-links">          
-					<div class="home-dashboard-exercise-link--move">
-						<a href="<?php echo get_bloginfo('wpurl'); ?>/move/">
-							Move
-							<span>Video exercises to move mindfully</span>
-						</a>
+					//Users name, JS adds the time-specific greeting
+						global $current_user; wp_get_current_user(); 
+						echo "<div class='headline-homenav' id='lblGreetings'>";
+						if ( $current_user->first_name ) :
+							echo $current_user->first_name . "!\n";
+						else :
+							echo $current_user->display_name . "!\n";
+						endif;
+						echo " <em>How would you like to feel?</em></div>";
+					// Courses
+						$profile       = learn_press_get_profile();
+						$filter_status = LP_Request::get_string( 'filter-status' );
+						$query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
+								
+					?>
+				<div class="card-grid card-grid-7cards card-nav">          
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-less-tense.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/less-tense/">Less tense</a>
+						</h2>
 					</div>
-					<div class="home-dashboard-exercise-link--breathe">
-						<a href="<?php echo get_bloginfo('wpurl'); ?>/breathe/">
-							Breathe
-							<span>Short videos for breathwork exercises</span>
-						</a>
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-energised.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/energised/">Energised</a>
+						</h2>
 					</div>
-					<div class="home-dashboard-exercise-link--surprise">
-						<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise">
-							Surprise me!
-							<span>Do a random video exercise</span>
-						</a>
-						
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-immediate-relief.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/immediate-relief">Immediate relief</a>
+						</h2>
 					</div>
-					<div class="home-dashboard-exercise-link--tiny">
-						<a href="<?php echo get_bloginfo('wpurl'); ?>/tiny/">
-							Tiny Exercises
-							<span>Super quick exercises with short descriptions</span>
-						</a>
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-focussed.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/focussed/">Focussed</a>
+						</h2>
+					</div>
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-destressed.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/de-stressed/">De-stressed</a>
+						</h2>
+					</div>
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-refresh-tired-eyes.svg">
+						</div>
+						<h2 class="card-title">
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/refresh-tired-eyes/">Refresh tired eyes</a>
+						</h2>
+					</div>
+					<div class="card">
+						<div class="card-thumbnail">
+							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-roulette.svg">
+						</div>
+						<h2 class="card-title">
+							<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise/">Exercise Roulette</a>
+						</h2>
 					</div>
 				</div>
 			</div>
