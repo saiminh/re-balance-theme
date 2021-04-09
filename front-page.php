@@ -79,7 +79,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-refresh-tired-eyes.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/refresh-tired-eyes/">Refresh tired eyes</a>
+							<a href="<?php echo get_bloginfo('wpurl'); ?>/tired-eyes/">Refresh tired eyes</a>
 						</h2>
 					</div>
 					<div class="card">
