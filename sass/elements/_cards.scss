@@ -51,13 +51,10 @@
   justify-content: center;
 }
 .card-thumbnail img {
-  width: 100%;
-  height: 25vh;
+  width: auto;
+  height: 23vh;
+  margin: 1rem;
   align-self: center;
-  @media (min-width: 769px) {
-    height: auto;
-    max-height: 28vh;
-  }
 }
 .card:nth-child(2n) .card-thumbnail {
   background-color: $color__brand-primary;

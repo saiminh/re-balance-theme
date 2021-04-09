@@ -28,7 +28,7 @@ elseif ($post_slug == 'focussed') {
   $tag_name = 'focus';
 } 
 elseif ($post_slug == 'energised') {
-  $headline = 'Exercises that will make yu feel energised:';
+  $headline = 'Exercises that will make you feel energised:';
   $recommended_exercise_post = get_page_by_path( 'energising-breaths', OBJECT, 'exercises' );
   $tag_name = 'energise';
 } 
