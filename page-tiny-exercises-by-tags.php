@@ -10,30 +10,37 @@ $post_slug = $post->post_name;
 if ( $post_slug == 'less-tense' ){
   $headline = 'Exercises that will make you feel less tense:';
   $recommended_exercise_post = get_page_by_path( 'eye-relaxation', OBJECT, 'exercises' );
+  $tag_name = 'less-tense';
 } 
 elseif ($post_slug == 'immediate-relief') {
   $headline = 'Exercises that will give you immediate relief:';
   $recommended_exercise_post = get_page_by_path( 'emergency-breath', OBJECT, 'exercises' );
+  $tag_name = 'immediate-relief';
 } 
 elseif ($post_slug == 'de-stressed') {
   $headline = 'Exercises that will reduce stress:';
   $recommended_exercise_post = get_page_by_path( 'calming-breath', OBJECT, 'exercises' );
+  $tag_name = 'de-stress';
 } 
 elseif ($post_slug == 'focussed') {
   $headline = 'Exercises that will feel focused:';
   $recommended_exercise_post = get_page_by_path( 'focussing-breaths', OBJECT, 'exercises' );
+  $tag_name = 'focus';
 } 
 elseif ($post_slug == 'energised') {
   $headline = 'Exercises that will make yu feel energised:';
   $recommended_exercise_post = get_page_by_path( 'energising-breaths', OBJECT, 'exercises' );
+  $tag_name = 'energise';
 } 
 elseif ($post_slug == 'tired-eyes') {
   $headline = 'Exercises for tired eyes:';
   $recommended_exercise_post = get_page_by_path( 'blinking-practice', OBJECT, 'exercises' );
+  $tag_name = 'tired-eyes';
 }
 else {
   $headline = 'No Exercises found';
   $recommended_exercise_post = get_page_by_path( 'eye-relaxation', OBJECT, 'exercises' );
+  $tag_name = 'less-tense';
 }
 
 get_header();
@@ -69,7 +76,7 @@ get_header();
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
                 "exercisetypes" => "tiny-breathwork",
-                "exercises-tag" => $post_slug
+                "exercises-tag" => $tag_name
                 ) 
               );
               while ($query->have_posts()) : $query->the_post();
@@ -94,7 +101,7 @@ get_header();
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
                 "exercisetypes" => "tiny-movements",
-                "exercises-tag" => $post_slug
+                "exercises-tag" => $tag_name
                 ) 
               );
               while ($query->have_posts()) : $query->the_post();
@@ -119,7 +126,7 @@ get_header();
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
                 "exercisetypes" => "tiny-reflections",
-                "exercises-tag" => $post_slug
+                "exercises-tag" => $tag_name
                 ) 
               );
               while ($query->have_posts()) : $query->the_post();
