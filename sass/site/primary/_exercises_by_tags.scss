@@ -1,7 +1,12 @@
-.page-template-page-tiny-exercises-by-tags .site-content {
-  overflow: hidden;
-  @media (min-width: 769px){
-    overflow: initial;
+.page-template-page-tiny-exercises-by-tags {
+  & .site-content {
+    overflow: hidden;
+    @media (min-width: 769px){
+      overflow: initial;
+    }
+  }
+  & .headline-homenav {
+    padding: 0;
   }
 }
 .exercises-by-tags-grid {
@@ -34,7 +39,7 @@
     z-index: 2;
   }
 }
-.exercises-by-tags-grid .recommended h2 {
+.exercises-by-tags-grid .recommended .exercises-by-tags-grid-column-header {
   font-weight: 600;
 }
 .exercises-by-tags-grid-column-body {
@@ -48,14 +53,22 @@
     overflow: auto;
   }
 }
-.exercises-by-tags-grid-column-body .card {
-  flex-basis: 50%;
-  margin-right: 1rem;
+.exercises-by-tags-grid-column-body .card-container {
+  flex-basis: calc(48% + 1rem);
+  margin-left: -1rem;
+  padding: 0 1rem;
   flex-shrink: 0;
   flex-grow: 0;
   @media (min-width: 769px){
     margin-right: 0;
+    padding: 0;
   }
+}
+.exercises-by-tags-grid-column-body.num-2 .card-container {
+  flex-basis: calc(50% + 1rem);
+}
+.exercises-by-tags-grid-column-body.num-1 .card-container {
+  flex-basis: calc(50% + 1rem);
 }
 .recommended .exercises-by-tags-grid-column-body .card {
   flex-basis: calc(100% - 1rem);

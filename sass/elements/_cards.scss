@@ -52,9 +52,12 @@
 }
 .card-thumbnail img {
   width: auto;
-  height: 23vh;
+  height: 20vh;
   margin: 1rem;
   align-self: center;
+  @media (min-width: 769px){
+    height: 25vh;
+  }
 }
 .card:nth-child(2n) .card-thumbnail {
   background-color: $color__brand-primary;

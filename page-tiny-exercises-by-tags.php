@@ -8,32 +8,32 @@
 global $post;
 $post_slug = $post->post_name;
 if ( $post_slug == 'less-tense' ){
-  $headline = 'Exercises that will make you feel less tense:';
+  $headline = 'Exercises that will make you feel <strong>less tense</strong>:';
   $recommended_exercise_post = get_page_by_path( 'eye-relaxation', OBJECT, 'exercises' );
   $tag_name = 'less-tense';
 } 
 elseif ($post_slug == 'immediate-relief') {
-  $headline = 'Exercises that will give you immediate relief:';
+  $headline = 'Exercises that will give you <strong>immediate relief</strong>:';
   $recommended_exercise_post = get_page_by_path( 'emergency-breath', OBJECT, 'exercises' );
   $tag_name = 'immediate-relief';
 } 
 elseif ($post_slug == 'de-stressed') {
-  $headline = 'Exercises that will reduce stress:';
+  $headline = 'Exercises that will <strong>reduce stress</strong>:';
   $recommended_exercise_post = get_page_by_path( 'calming-breath', OBJECT, 'exercises' );
   $tag_name = 'de-stress';
 } 
 elseif ($post_slug == 'focussed') {
-  $headline = 'Exercises that will feel focused:';
+  $headline = 'Exercises that will feel <strong>focused</strong>:';
   $recommended_exercise_post = get_page_by_path( 'focussing-breaths', OBJECT, 'exercises' );
   $tag_name = 'focus';
 } 
 elseif ($post_slug == 'energised') {
-  $headline = 'Exercises that will make you feel energised:';
+  $headline = 'Exercises that will make you feel <strong>energised</strong>:';
   $recommended_exercise_post = get_page_by_path( 'energising-breaths', OBJECT, 'exercises' );
   $tag_name = 'energise';
 } 
 elseif ($post_slug == 'tired-eyes') {
-  $headline = 'Exercises for tired eyes:';
+  $headline = 'Exercises for <strong>tired eyes</strong>:';
   $recommended_exercise_post = get_page_by_path( 'blinking-practice', OBJECT, 'exercises' );
   $tag_name = 'tired-eyes';
 }
@@ -71,16 +71,18 @@ get_header();
         </div>
         <div class="exercises-by-tags-grid-column breathe">
           <h2 class="exercises-by-tags-grid-column-header">Breathe</h2>
-          <div class="exercises-by-tags-grid-column-body">
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
                 "exercisetypes" => "tiny-breathwork",
                 "exercises-tag" => $tag_name
                 ) 
-              );
-              while ($query->have_posts()) : $query->the_post();
+              ); 
+            ?>             
+          <div class="exercises-by-tags-grid-column-body<?php echo ' num-'.$query->post_count; ?>">
+              <?php while ($query->have_posts()) : $query->the_post();
             ?>
+            <div class="card-container">
               <div class="card">
                 <div class="card-thumbnail">
                   <div><?php the_post_thumbnail(); ?></div>
@@ -91,12 +93,12 @@ get_header();
                   </a>
                 </h3>
               </div>
+            </div>
             <?php endwhile; ?>
           </div>
         </div>
         <div class="exercises-by-tags-grid-column move">
           <h2 class="exercises-by-tags-grid-column-header">Move</h2>
-          <div class="exercises-by-tags-grid-column-body">
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
@@ -104,24 +106,28 @@ get_header();
                 "exercises-tag" => $tag_name
                 ) 
               );
+            ?>
+            <div class="exercises-by-tags-grid-column-body<?php echo ' num-'.$query->post_count; ?>">
+            <?php
               while ($query->have_posts()) : $query->the_post();
             ?>
-              <div class="card">
-                <div class="card-thumbnail">
-                  <div><?php the_post_thumbnail(); ?></div>
+              <div class="card-container">
+                <div class="card">
+                  <div class="card-thumbnail">
+                    <div><?php the_post_thumbnail(); ?></div>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="<?php the_permalink(); ?>">
+                      <?php the_title(); ?>
+                    </a>
+                  </h3>
                 </div>
-                <h3 class="card-title">
-                  <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                  </a>
-                </h3>
               </div>
             <?php endwhile; ?>
           </div>
         </div>
         <div class="exercises-by-tags-grid-column reflect">
           <h2 class="exercises-by-tags-grid-column-header">Reflect</h2>
-          <div class="exercises-by-tags-grid-column-body">
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
@@ -129,17 +135,22 @@ get_header();
                 "exercises-tag" => $tag_name
                 ) 
               );
+            ?>
+            <div class="exercises-by-tags-grid-column-body<?php echo ' num-'.$query->post_count; ?>">
+            <?php
               while ($query->have_posts()) : $query->the_post();
             ?>
-              <div class="card">
-                <div class="card-thumbnail">
-                  <div><?php the_post_thumbnail(); ?></div>
+              <div class="card-container">
+                <div class="card">
+                  <div class="card-thumbnail">
+                    <div><?php the_post_thumbnail(); ?></div>
+                  </div>
+                  <h3 class="card-title">
+                    <a href="<?php the_permalink(); ?>">
+                      <?php the_title(); ?>
+                    </a>
+                  </h3>
                 </div>
-                <h3 class="card-title">
-                  <a href="<?php the_permalink(); ?>">
-                    <?php the_title(); ?>
-                  </a>
-                </h3>
               </div>
             <?php endwhile; ?>
           </div>
