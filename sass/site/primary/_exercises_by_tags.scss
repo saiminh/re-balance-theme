@@ -39,6 +39,9 @@
     z-index: 2;
   }
 }
+.reflect .exercises-by-tags-grid-column-header {
+  margin-right: 0;
+}
 .exercises-by-tags-grid .recommended .exercises-by-tags-grid-column-header {
   font-weight: 600;
 }
@@ -74,7 +77,7 @@
   flex-basis: calc(100% - 1rem);
 }
 .exercises-by-tags-grid-column-body,
-.exercises-by-tags-grid-column-body > .card:last-child{
+.exercises-by-tags-grid-column-body > .card-container:last-child{
   @media (min-width: 769px){
     position: sticky;
     top: calc(80px + 3.5rem);
