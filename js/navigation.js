@@ -320,7 +320,7 @@ function insertAfter(referenceNode, newNode) {
 	function init() {
 		//local storage functions
 		if (sessionStorage.hasSeenPdfPopup) {
-			
+			//do nothing
 		} else {
 			sessionStorage.hasSeenPdfPopup = 1;
 			let popup = document.querySelector('.rebalance-popup');
@@ -344,7 +344,6 @@ function insertAfter(referenceNode, newNode) {
 				})
 			}
 		}
-
 		// Notification
 		if ( $('.notification-hidden').length ) {
 			$('.show-notification').on('click', function(){
@@ -382,7 +381,7 @@ function insertAfter(referenceNode, newNode) {
 				greet = 'Good Evening';
 			document.querySelector('#lblGreetings').prepend(greet + ', ');
 		}
-
+		// go to top after swup change
 		document.querySelector("html").scrollTop = "0";
 		// initiate live search
 		if (typeof jQuery().searchwp_live_search == 'function') {
@@ -390,7 +389,6 @@ function insertAfter(referenceNode, newNode) {
 		}
 		// Hide Livesearch after page switch
 		$('.searchwp-live-search-results').removeClass('searchwp-live-search-results-showing');
-
 		// Membership registration links don't swup
 		let noswuplinks = [
 			'a[href$="membership-registration/"]', 
@@ -400,21 +398,30 @@ function insertAfter(referenceNode, newNode) {
 			'a[href*="/courses/"]',
 			'a[href*="/course/"]'
 		];
-
 		$( noswuplinks.toString() ).attr("data-no-swup", "");
-		
 		gsap.set("body", {clearProps: "all"});
-
 		gsAnimations();
-
-
-
+		//Make cards clickable
+		const cards = document.querySelectorAll(".card");
+		cards.forEach(function(card){
+			const mainLink = card.querySelector(".card-mainlink");
+			const clickableElements = Array.from(card.querySelectorAll("a.clickable")); //we are using 'a' here for simplicity but ideally you should put a class like 'clickable' on every clickable element inside card(a, button) and use that in query selector
+			clickableElements.forEach((ele) =>
+				ele.addEventListener("click", (e) => e.stopPropagation())
+			);
+			function handleClick(event) {
+				const noTextSelected = !window.getSelection().toString();
+				if (noTextSelected) {
+					mainLink.click();
+				}
+			}
+			card.addEventListener("click", handleClick);
+		});
 	} // end init() function
 	
 	function ani_loader_in(){
 		gsap.to('.loading-animation', { transformOrigin: "50% 0%", autoAlpha: 0, duration: .5 });			
 	};
-
 	function ani_loader_out(){
 		gsap.to('.loading-animation', { autoAlpha: 1, duration: .5, delay: .3 });	
 		let tl = gsap.timeline({ repeat: -1 });
@@ -423,7 +430,6 @@ function insertAfter(referenceNode, newNode) {
 		tl.fromTo('.loader svg circle', { transformOrigin: "50% 50%", rotationZ: 0 }, { rotationZ: -720, duration: 3, ease: "none" }, 0)
 		return tl;
 	};
-
 	const jsoptions = [
 		{
 		  from: '(.*)', to: '(.*)',

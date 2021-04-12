@@ -62,7 +62,7 @@ get_header();
                 </div>
               </div>
               <h3 class="card-title">
-                <a href="<?php echo get_the_permalink( $recommended_exercise_post ); ?>">
+                <a class="card-mainlink" href="<?php echo get_the_permalink( $recommended_exercise_post ); ?>">
                   <?php echo get_the_title( $recommended_exercise_post ); ?>
                 </a>
               </h3>
@@ -88,7 +88,7 @@ get_header();
                   <div><?php the_post_thumbnail(); ?></div>
                 </div>
                 <h3 class="card-title">
-                  <a href="<?php the_permalink(); ?>">
+                  <a class="card-mainlink" href="<?php the_permalink(); ?>">
                     <?php the_title(); ?>
                   </a>
                 </h3>
@@ -117,7 +117,7 @@ get_header();
                     <div><?php the_post_thumbnail(); ?></div>
                   </div>
                   <h3 class="card-title">
-                    <a href="<?php the_permalink(); ?>">
+                    <a class="card-mainlink" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h3>
@@ -146,7 +146,7 @@ get_header();
                     <div><?php the_post_thumbnail(); ?></div>
                   </div>
                   <h3 class="card-title">
-                    <a href="<?php the_permalink(); ?>">
+                    <a class="card-mainlink" href="<?php the_permalink(); ?>">
                       <?php the_title(); ?>
                     </a>
                   </h3>

@@ -39,7 +39,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-less-tense.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/less-tense/">Less tense</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/less-tense/">Less tense</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -47,7 +47,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-energised.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/energised/">Energised</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/energised/">Energised</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -55,7 +55,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-immediate-relief.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/immediate-relief">Immediate relief</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/immediate-relief">Immediate relief</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -63,7 +63,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-focussed.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/focussed/">Focussed</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/focussed/">Focussed</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -71,7 +71,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-destressed.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/de-stressed/">De-stressed</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/de-stressed/">De-stressed</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -79,7 +79,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-refresh-tired-eyes.svg">
 						</div>
 						<h2 class="card-title">
-							<a href="<?php echo get_bloginfo('wpurl'); ?>/tired-eyes/">Refresh tired eyes</a>
+							<a class="card-mainlink" href="<?php echo get_bloginfo('wpurl'); ?>/tired-eyes/">Refresh tired eyes</a>
 						</h2>
 					</div>
 					<div class="card">
@@ -87,7 +87,7 @@ get_header();
 							<img src="<?php echo get_template_directory_uri() ; ?>/img/ui-home-nav-roulette.svg">
 						</div>
 						<h2 class="card-title">
-							<a data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise/">Exercise Roulette</a>
+							<a class="card-mainlink" data-no-swup="" href="<?php echo get_bloginfo('wpurl'); ?>/surprise/">Exercise Roulette</a>
 						</h2>
 					</div>
 				</div>
