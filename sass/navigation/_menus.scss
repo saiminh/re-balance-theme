@@ -6,67 +6,47 @@
 	top: 0;
 	width: 100%;
 	height: 70px;
-	
 	@media (min-width: 480px) {
 		height: 80px;
 	}
-
-	@media (min-width:  1100px) {
+	@media (min-width:  800px) {
 		border-bottom: none;
 		transition: .1s all linear;
 	}
-
-	// &:before {
-	// 	content: "";
-	// 	width: 100vw;
-	// 	height: 50px;
-	// 	background-color: #FFF;
-	// 	position: absolute;
-	// 	bottom: 100%;
-	// }
-
 	&.scrolled {
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			box-shadow: 0 0 10px rgba(0,0,0,0.05);
 		}
 	}
 }
-
 .site-header-inner {
 	@include content-block;
-	@media (min-width:  1100px) {
+	@media (min-width:  800px) {
 		display: flex;
 		align-items: center;
 		align-content: flex-start;
 	}
-
 }
-
 .site-branding {
 	position: relative;
 	height: 70px;
 	padding: 18px 1rem 14px 1rem;
 	margin: 0 auto;
-
 	@media (min-width: 480px) {
 		height: 80px;
 	}
-
-	@media screen and (min-width:  1100px) {		
+	@media screen and (min-width:  800px) {		
 		margin:  0;
 		padding: 18px 0 14px 0;
 		display: inline-block;
 	}
-
 	& a {
 		display: block;
 		height: 100%;
-
 		&:focus {
 			outline: none;
 		}
 	}
-
 	& svg {
 		display: block;
 		height: 100%;
@@ -75,34 +55,28 @@
 		top: 0;
 	}
 }
-
 .main-navigation {
 	clear: both;
 	display: block;
 	width: 100%;
 	margin: 0 auto;
-
-	@media screen and (min-width:  1100px) {
+	@media screen and (min-width:  800px) {
 		display: flex;
 		width: 100%;
 		margin: 0 0 0 2rem;
 		align-items: center;
 		justify-content: flex-start;
-
 		&.main-navigation-nonuser {
 			margin: 0 auto 0 2rem;
 		}
 	}
-
 	& .menu-nonuser-menu-container,
 	& .menu-menu-1-container,
 	& .menu-movebreathe-container {
-
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			display: inline-block;
 		}
 	}
-
 	& .menu-movebreathe-container {		
 		position: fixed;
 		bottom: 0;
@@ -110,29 +84,24 @@
 		left: 50%;
 		transform: translateX(-50%);
 		border-radius: 25px 25px 0 0;
-
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			position: static;
 			margin-right: 2rem;
 			display: block;
 			width: auto;
 			height: auto;
 			transform: none;
-
 		}
-
 		& ul {
 			display: flex;
 			visibility: visible;
 			opacity: 1;
 			padding: 0;
-
-			@media (min-width:  1100px) {
+			@media (min-width:  800px) {
 				height: auto;
 				display: block;
 			}
 		}
-
 		& a {
 			display: block;
 			border: none;
@@ -146,8 +115,7 @@
 			text-align: center;
 			@include font-size(1.125);
 			background-color: darken($color__brand-primary, 0%);
-
-			@media (min-width:  1100px) {
+			@media (min-width:  800px) {
 				position: static;
 				display: inline;
 				@include font-size(1);
@@ -156,27 +124,21 @@
 				background-color: transparent;
 			}
 		}
-
 		& ul li:first-child a {
 			border-radius: 20px 0 0 0;
 		}
-		
 		& ul li:last-child a {
 			border-radius: 0 20px 0 0;
 		}
-
 		& ul li:nth-child(2):after {
 			content: '';
 			display: none;
 		}
-
 		& ul li:nth-child(2) a {
 			width: 50px;
-
-			@media (min-width:  1100px) {
+			@media (min-width:  800px) {
 				display: none;
 			}
-
 			& svg {
 				position: absolute;
 				width: 30px;
@@ -185,28 +147,23 @@
 				left: 10px;
 			}
 		}
-
 		& ul li:last-child a {
 			left: auto;
 			right: 0;
 		}
-		
 		li:after {
 			color: $color__brand-primary;
 		}
 	} //END & .menu-movebreathe-container 
-
 	& ul {		
 		list-style: none;
 		overflow: hidden;
 		padding: 1rem;
-		
 		@media (min-width: 480px) {
 			right: calc(1rem + 1px);
 			padding: 1.5rem;
 		}
-
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			padding: 0;
 			display: block;
 			position: relative;
@@ -217,7 +174,6 @@
 			box-shadow: none;
 			overflow: visible;
 		}
-
 		ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
@@ -225,49 +181,40 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-
 			ul {
 				left: -999em;
 				top: 0;
 			}
-
 			li {
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
-
 			a {
 				width: 200px;
 			}
 		}
-
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
 		}
 	}
-
 	li {
 		position: relative;		
-
-		@media screen and (min-width:  1100px) {
+		@media screen and (min-width:  800px) {
 			display: inline-block;
 			float: left;
-
 			&:after {
 				content: '|';
 				color: #B2B2B2;
 				margin: 0 .25rem;
 			}
-
 			&:last-child:after {
 				content: '';
 			}
 		}
 	}
-
 	a { //the actual menu links
 		display: block;
 		text-decoration: none;
@@ -276,38 +223,29 @@
 		font-weight: 300;
 		min-width: 250px;
 		color: $color__text-main;
-
-		@media screen and (min-width:  1100px) {
+		@media screen and (min-width:  800px) {
 			display: inline-block;
 			padding: 0 .5rem;
 			margin-left: 0;
 			border-bottom: none;
 			min-width: 0;
-
 		}
 	}
-
 	ul li:last-child a,
 	.user-menu a:last-child {
 		border-bottom: none;
 	}
-
 	.menu-movebreathe-container a {
 		color: #FFF;
-
-		@media (min-width: 1100px) {
+		@media (min-width: 800px) {
 			color: $color__brand-primary;
 		}
 	}
-
-	
 	& .active_page_item > a {
-
 		&:focus {
 			outline: none;
 		}
-
-		@media screen and (min-width:  1100px) {
+		@media screen and (min-width:  800px) {
 			background-color: lighten($color__brand-primary, 27%);
 			border-right: 5px solid $color__brand-primary;
 			color: $color__brand-primary;
@@ -315,42 +253,36 @@
 		}
 	}
 }
-
 .site-header-account {
 	padding: 1.5rem;
 	position: relative;
 	border-radius: 0 0 0 6px;
 	background-color: #EEE;
-
-	@media (min-width:  1100px) {
+	@media (min-width:  800px) {
 		display: block;
 		background-color: transparent;
 		padding: 0;
 		border-radius: 6px;
 	}
-
 	& .site-header-login,
 	& .site-header-signup {
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			display: inline-block;
 			background-color: transparent;
 			padding: 0;
 			border-radius: 6px;
 		}
 	}
-
 	& a {
 		color: $color__brand-primary;
 	}
 	& a.button {
 		color: $color__background-body;
 	}
-
 	& .user-menu {
 		//border-top: 1px solid #ddd;
 		margin-top: .5rem;
-		
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			margin: 0;
 			padding: 1em;
 			border: 1px solid #EEE;
@@ -364,44 +296,32 @@
 			line-height: 2;
 		}
 	}
-
 	&:hover .user-menu {
 		display: inherit;
 	}
 }
 .site-header-login {
 	padding-top: 0;
-	@media (min-width:  1100px){
+	@media (min-width:  800px){
 		margin: 0 0 0 auto;
 	}
 }
 .site-header-signup {
 	padding-bottom: .5rem;
-	@media (min-width:  1100px) {
+	@media (min-width:  800px) {
 		padding: 0;
 	}
 }
-
 .user-name {
 	font-weight: 600;	
 	position: relative;
-	@media (min-width:  1100px) {
+	@media (min-width:  800px) {
 		font-size: .8em;
 		//padding-left: 1em;
 		max-width: 200px;
 		& .material-icons {
 			line-height: .75;
 		}
-		// &::before {
-		// 	content: '';
-		// 	width: 0;
-		// 	height: 0;
-		// 	border: 4px solid transparent;
-		// 	border-top-color: #AAA;
-		// 	position: absolute;
-		// 	left: 0;
-		// 	top: 45%;
-		// }
 	}
 }
 .user-menu-membership, .user-menu-expires {
@@ -414,21 +334,19 @@
 	}
 }
 .main-navigation .user-menu a {
-	@media (min-width: 1100px) {
+	@media (min-width: 800px) {
 		padding: 0;
 		display: block;
 	}
 }
-
 /* Mobile menu. */
-
 .main-navigation  {
 	& ul:not(#movebreathe-menu),
 	& .site-header-account {
 		margin-top: -100vh;
 		margin-left: 100px;
 		margin-right: -50px;
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			display: block;
 			transform: none;
 			margin: 0 0 0 auto;
@@ -441,12 +359,12 @@
 			display: inline-block;
 			min-width: auto;
 		}
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			margin: 0 0 0 auto;
 		}
 	}
 	& .site-header-login {
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			margin: 0 0 0 0;
 		}
 	}
@@ -454,7 +372,7 @@
 .wpsmp-loggedin .main-navigation {
 	& ul:not(#movebreathe-menu),
 	& .site-header-account {
-		@media (min-width:  1100px) {
+		@media (min-width:  800px) {
 			margin: 0;
 		}
 	}
@@ -490,7 +408,6 @@
 		}
 	}
 }
-
 
 .comment-navigation,
 .posts-navigation,
@@ -545,7 +462,7 @@
 		top: 5px;
 	}
 
-	@media screen and (min-width:  1100px) {
+	@media screen and (min-width:  800px) {
 		display: none;
 	}
 	
