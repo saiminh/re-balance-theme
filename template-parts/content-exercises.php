@@ -32,7 +32,7 @@
 					$thisid = get_the_ID(  );
 					echo get_first_embed_media($thisid);
 				?>
-				<?php the_title( sprintf( '<h2 class="card-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+				<?php the_title( sprintf( '<h2 class="card-title"><a class="card-mainlink" href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			</header><!-- .card-title -->
 			<div class="card-summary">
 				<?php the_excerpt(); ?>
