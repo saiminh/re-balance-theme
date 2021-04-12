@@ -70,7 +70,7 @@ get_header();
           </div>
         </div>
         <div class="exercises-by-tags-grid-column breathe">
-          <h2 class="exercises-by-tags-grid-column-header">Breathe</h2>
+          <h2 class="exercises-by-tags-grid-column-header">Breathe <a href="/exercise-type/tiny-breathwork/"> (See all)</a></h2>
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
@@ -98,7 +98,7 @@ get_header();
           </div>
         </div>
         <div class="exercises-by-tags-grid-column move">
-          <h2 class="exercises-by-tags-grid-column-header">Move</h2>
+          <h2 class="exercises-by-tags-grid-column-header">Move <a href="/exercise-type/tiny-movements/"> (See all)</a></h2>
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",
@@ -127,7 +127,7 @@ get_header();
           </div>
         </div>
         <div class="exercises-by-tags-grid-column reflect">
-          <h2 class="exercises-by-tags-grid-column-header">Reflect</h2>
+          <h2 class="exercises-by-tags-grid-column-header">Reflect<a href="/exercise-type/tiny-reflections/"> (See all)</a></h2>
             <?php
               $query = new WP_Query( array( 
                 "post_type" => "exercises",

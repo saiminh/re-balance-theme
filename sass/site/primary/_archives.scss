@@ -21,6 +21,37 @@
         width: calc(100% + .5em)
     }
 }
+.posts-row .card {
+    width: 66%;
+    margin-bottom: .5em;
+    margin-right: .5em;
+    @include font-size(1);
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    position: relative;       
+    @media (min-width: 640px) {
+        width: calc(40% - .5em) ;
+    }
+    @media (min-width: 769px) {
+        width: calc((100% - 1.5em) / 3) ;
+        transition: all .1s ease-out;
+        flex-grow: 0;            
+        &:last-child {
+            flex-grow: 0;
+        }
+    }
+    @media (min-width:  1100px) {
+        z-index: 2;
+    }     
+}
+.posts-grid {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    column-gap: .5rem;
+    @media (min-width: 769px) {
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+    }
+}
 .exercises-tag,
 .exercises-tag:visited {
     padding: 0;
@@ -29,145 +60,37 @@
 .blog,
 .archive,
 .search-results {
-    & article.post,
-    & article.exercises {
-        width: 66%;
-        background-color: lighten($color__brand-primary, 20%);
-        padding: 1.5rem 1.5rem .75rem 1.5rem;
-        border-radius: 5px;
-        overflow: hidden;
-        margin-bottom: .5em;
-        margin-right: .5em;
-        flex-shrink: 0;
-        scroll-snap-align: start;
-        @include font-size(0.8);
-        position: relative;
-        transition: all .2s ease-in-out;
-        &:hover {
-            @media (min-width: 1100px) {
-                border-radius: 30px;
-            }
-        }
-        @media (min-width: 640px) {
-            width: calc(40% - .5em) ;
-            @include font-size(1);
-        }
-        @media (min-width: 769px) {
-            padding: 2rem 2rem .75rem 2rem;
-            width: calc((100% - 1.5em) / 3) ;
-            transition: all .1s ease-out;
-            flex-grow: 0;            
-            &:last-child {
-                flex-grow: 0;
-            }
-        }
-        @media (min-width:  1100px) {
-            z-index: 2;
-        }
-        & .post-thumbnail {
-            display: block;
-            width: calc(100% + 4em);
-            padding-top: 80%;
-            background-size: cover;
-            background-position: 50% 100%; 
-            background-repeat: no-repeat; 
-            background-color: $color__brand-secondary;
-            margin: -1.5rem -1.5rem 1.5rem -1.5rem;                
-            position: relative;
-            z-index: 1;
-    
-            @media (min-width: 769px) {
-                margin: -2rem -2rem 2rem -2rem;
-            }             
-        }
-        & .entry-title {
-            @include font-size(1.5);
-            margin-bottom: 1rem;
-            & a {
-                color: $color__text-main;
-            }
-        }
-        & .entry-summary,
-        & .entry-content {
-            &, 
-            & a {
-                color: #000;
-            }
-            & p:first-child {
-                margin-top: 0;
-            }
-        }
-        & .entry-meta,
-        & .entry-footer {
-            @include font-size(0.75);
-            padding-top: 1em;
-            position: relative;
-            &:before {
-                content: '';
-                width: calc( 100% + 3rem);
-                height: 1px;
-                background-color: lighten($color__brand-primary, 15%);
-                display: block;
-                position: absolute;
-                top: 0;
-                left: -1.5rem;
-                @media (min-width: 769px) {
-                    width: calc( 100% + 4rem);
-                    left: -2rem;
-                }
-            }
-            & .divider {
-                color: $color__brand-primary;
-            }
-        }
-        &.exercisetypes-tiny {
-            & .post-thumbnail {
-                background-size: auto calc(100% - 2rem);
-                background-position: 50% 50%;
-            }            
-            @media (min-width: 1100px){
-                display: flex;
-                padding: 2rem;
-                & .entry-summary :last-child{
-                    margin-bottom: 0;
-                }
-                & .post-thumbnail {
-                    flex-basis: calc(33.3% - 1rem);
-                    margin: 0 2rem 0 0;
-                    background-size: contain;
-                    background-position: 50%; //because parent has no margin bottom 
-                    background-color: transparent;
-                    padding: 0;
-                }
-                & .post-info {
-                    flex-basis: calc(66.6% - 1rem);
-                }
-            }
-        }
+    & .card {
+          
+    }
+    & .card-thumbnail {
+        flex-grow: 0;
     }
     & .sticky-post{
-        & article {
+        & .card {
             width: 100%;
             @include font-size(1);
             margin-bottom: 1rem;
-            @media (min-width: 768px) {
+            @media (min-width: 640px) {
                 display: flex;
+                flex-direction: row;
                 & .entry-text {
+                    flex-basis: 40%;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                 }
-                & .entry-title {
+                & .card-title {
                     @include font-size(1.75);
                 }
-                & .post-thumbnail {
-                    width: calc(50% + 2rem);
-                    padding-top: 37.5%;
-                    margin: -2rem 2rem -1rem -2rem;
-                    flex-shrink: 0;
-                    transform-origin: 100% 50%;
+                & .card-thumbnail {
+                    flex-basis: 60%;
                 }
-                & .post-info {
+                & .card-thumbnail img{
+                   width: 100%;
+                   height: auto; 
+                }
+                & .card-info {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -176,14 +99,10 @@
         }
     }
 }
-.pre-entry-meta {
-    @include font-size(.9);
-    color: #666;
-    margin-bottom: .5em;
-}
-.single .pre-entry-meta {
-    @include font-size(1);
-    margin-bottom: .2em;
+.blog .pre-entry-meta,
+.archive .pre-entry-meta {
+    font-size: .8rem;
+    margin: 1rem 1.5rem 0 1.5rem;
 }
 .discreet-checkmark {
     height: 24px;

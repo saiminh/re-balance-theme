@@ -27,7 +27,8 @@ if ( ! function_exists( 'rebalance_posted_on' ) ) :
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
 			esc_html_x( 'Posted on %s', 'post date', 'rebalance' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			$time_string
+			//'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
@@ -150,15 +151,13 @@ if ( ! function_exists( 'rebalance_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>)" class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-			<!-- <?php
+		<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
 					'echo' => false,
 				) ),
 			) );
-			?> -->
-		</a>
+			?> 
 
 		<?php
 		endif; // End is_singular().
