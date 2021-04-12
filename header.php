@@ -68,9 +68,9 @@
 					</div>
 					<div class="site-header-account">
 						<?php global $current_user; wp_get_current_user(); ?>
-						<?php if ( is_user_logged_in() ) { 
+						<?php if ( is_user_logged_in() ) {
 							//echo 'Username: ' . $current_user->user_login . "\n"; 
-							echo '<div class="user-name"><img style="height: 18px; width: auto" src="'.esc_url( home_url() ).'/wp-content/themes/rebalance-theme/img/ui-icon-user.svg" /> '.$current_user->display_name . "</div>";
+							echo '<div class="user-name"><img style="height: 18px; width: auto" src="'.get_template_directory_uri( ).'/img/ui-icon-user.svg" /> '.$current_user->display_name . "</div>";
 							echo '<div class="user-menu">'.							
 									 '<div class="user-menu-membership">Membership: <span class="user-menu-membership-name">';
 							if ( rebalance_membership_is_expired() ) { 
