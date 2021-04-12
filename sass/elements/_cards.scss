@@ -52,11 +52,11 @@
 }
 .card-thumbnail img {
   width: auto;
-  height: 20vh;
+  height: 80px;
   margin: 1rem;
   align-self: center;
   @media (min-width: 769px){
-    height: 25vh;
+    height: 175px;
   }
 }
 .card:nth-child(2n) .card-thumbnail {
