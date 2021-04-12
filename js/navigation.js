@@ -382,10 +382,7 @@ function insertAfter(referenceNode, newNode) {
 				greet = 'Good Evening';
 			document.querySelector('#lblGreetings').prepend(greet + ', ');
 		}
-		//position move menus
-		if (document.querySelector('#move-body-map')) {
-			positionMoveMenus();
-		}
+
 		document.querySelector("html").scrollTop = "0";
 		// initiate live search
 		if (typeof jQuery().searchwp_live_search == 'function') {
@@ -655,61 +652,7 @@ function insertAfter(referenceNode, newNode) {
 		$('.site-header-search--toggled .search-field').on('blur', function(){
 			$('.site-header-search--toggled').removeClass('site-header-search--toggled');
 		});
-	})
-
-
-	// Move Navigation stuff
-	
-	//Position sub menus
-	function positionMoveMenus() {
-		if ($('.move-bodyparts-map').length == 1) {
-
-			$("#move-body-map #head").on('click', function(){		
-				TweenLite.to('.move-bodypart-group', .5, {
-					autoAlpha: 0
-				});
-				TweenLite.to('.move-bodypart-group--head', .5, {
-					autoAlpha: 1
-				});
-			});
-		
-			$("#move-body-map #body").on('click', function(){		
-				TweenLite.to('.move-bodypart-group', .5, {
-					autoAlpha: 0
-				});
-				TweenLite.to('.move-bodypart-group--body', .5, {
-					autoAlpha: 1
-				});
-			});
-			$("#move-body-map #feet").on('click', function(){		
-				TweenLite.to('.move-bodypart-group', .5, {
-					autoAlpha: 0
-				});
-				TweenLite.to('.move-bodypart-group--feet', .5, {
-					autoAlpha: 1
-				});
-			});
-			$("#move-body-map #legs").on('click', function(){		
-				TweenLite.to('.move-bodypart-group', .5, {
-					autoAlpha: 0
-				});
-				TweenLite.to('.move-bodypart-group--legs', .5, {
-					autoAlpha: 1
-				});
-			});
-			$("#move-body-map #hands .hand").on('click', function(){		
-		
-				TweenLite.to('.move-bodypart-group', .5, {
-					autoAlpha: 0
-				});
-				TweenLite.to('.move-bodypart-group--hands', .5, {
-					autoAlpha: 1
-				});
-			});
-		} else {};
-	};
-	positionMoveMenus();
-		
+	})		
 
 } )( jQuery );
 
