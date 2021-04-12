@@ -316,25 +316,6 @@ function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 };
 
-//Home Tabbed for mobile navigation
-function homeNavTab(){
-	let tabs = document.querySelectorAll(".home-dashboard-tabs a");
-	tabs.forEach(tab => { tab.addEventListener("click", function(e){
-		let currentTab = document.querySelector(".home-dashboard-tab--active");
-		let tablink = tab.getAttribute('href');
-		let tablinkString = tablink.replace('#', '');
-		let target = document.getElementById(tablinkString);
-		if ( target.classList.contains("hidden-on-narrow") ){
-			document.querySelectorAll(".home-dashboard > div").forEach(div => { div.classList.add("hidden-on-narrow") });
-			target.classList.toggle("hidden-on-narrow");
-			currentTab.classList.remove("home-dashboard-tab--active");
-			tab.classList.add("home-dashboard-tab--active");
-		} else {
-
-		};
-	}) })
-};
-
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
 		//local storage functions
@@ -362,11 +343,6 @@ function homeNavTab(){
 					})
 				})
 			}
-		}
-
-		//homenavtab
-		if ($('.home-dashboard')){
-			homeNavTab();
 		}
 
 		// Notification
