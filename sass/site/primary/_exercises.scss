@@ -107,9 +107,10 @@
   font-size: .9rem;
   overflow-y: scroll;
   max-height: 100%;  
-  padding: 1.5rem 1rem;
+  padding: 5vw;
   border-radius: 5px;
   background-color: lighten($color__brand-primary, 20%);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   @media (min-width: 768px) {
     display: flex; 
     padding: 2rem;
@@ -117,8 +118,10 @@
     font-size: 1rem;
     overflow-y: hidden;
     max-height: auto;
-    max-width: 60rem;
     margin: 2rem 0;
+  }
+  @media (min-width: 900px) {
+    padding: 4.5vw;
   }
 }
 .notification-rebalance-mini .rebalance-mini {
@@ -132,6 +135,9 @@
 }
 .rebalance-mini-illustration {
   text-align: center;
+  margin: -5vw -5vw 5vw -5vw;
+  padding: 5vw;
+  background-color: lighten($color__brand-secondary, 10%);
   & svg {
     height: 25vh;
     margin: 10px;
@@ -140,8 +146,8 @@
     opacity: 0;
   }
   @media (min-width: 768px) {
-    flex-basis: 33.3%; 
-    padding: 1em 4em 1em 1em;
+    margin: -5vw 5vw -5vw -5vw;
+    flex-basis: 40%; 
     position: relative;
     text-align: left;
     display: flex;
@@ -159,20 +165,25 @@
 .rebalance-mini-illustration #again {
   cursor: pointer;
 }
-.rebalance-mini-instructions{  
+.rebalance-mini-instructions{ 
+  color: darken(desaturate($color__brand-primary, 50%), 15%); 
   align-self: center;
   & ul,
   & ol {
-    padding: 0 0 0 2em;
+    padding: 0 0 0 1.5rem;
   }
   & ul > li,
   & ol > li {
-    padding: 0.25em 0;
+    padding: 0.5em 0;
     font-style: italic;
+    &:first-child {
+      padding-top: 0;
+    }
   }
   & h1 {
     margin-top: 0;
     font-size: 1.5em;
+    color: $color__text-main;
   }
   @media (min-width: 768px) {
     flex-basis: 66.6%;
