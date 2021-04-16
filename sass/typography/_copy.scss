@@ -28,7 +28,7 @@ dfn, cite, em, i {
 blockquote {
 	margin: 0 0 0 2em;
 	color: $color__brand-primary;
-	@media(min-width: 768px) {
+	@media(min-width: 769px) {
 		margin: 0 -2em 0 2em;
 	}
 }

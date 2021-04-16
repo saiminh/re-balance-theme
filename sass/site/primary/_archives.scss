@@ -25,7 +25,6 @@
     width: 66%;
     margin-bottom: .5em;
     margin-right: .5em;
-    @include font-size(1);
     flex-shrink: 0;
     scroll-snap-align: start;
     position: relative;       
@@ -60,18 +59,14 @@
 .blog,
 .archive,
 .search-results {
-    & .card {
-          
-    }
     & .card-thumbnail {
         flex-grow: 0;
     }
     & .sticky-post{
         & .card {
             width: 100%;
-            @include font-size(1);
             margin-bottom: 1rem;
-            @media (min-width: 640px) {
+            @media (min-width: 769px) {
                 display: flex;
                 flex-direction: row;
                 & .entry-text {
@@ -85,6 +80,7 @@
                 }
                 & .card-thumbnail {
                     flex-basis: 60%;
+                    margin: -1.5rem 1.5rem -1.5rem -1.5rem;
                 }
                 & .card-thumbnail img{
                    width: 100%;
@@ -95,14 +91,13 @@
                     flex-direction: column;
                     justify-content: center;
                 }
-            }
+            }            
         }
     }
 }
 .blog .pre-entry-meta,
 .archive .pre-entry-meta {
-    font-size: .8rem;
-    margin: 1rem 1.5rem 0 1.5rem;
+    margin: 1rem 0 0 0;
 }
 .discreet-checkmark {
     height: 24px;

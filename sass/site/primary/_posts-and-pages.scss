@@ -29,13 +29,13 @@
 		@media (min-width: 480px) {
 			background-position: 50% bottom;
 		}
-		@media (min-width: 768px) {
+		@media (min-width: 769px) {
 			background-position: calc(80vw + 5.5rem) bottom, 30vw;
 			background-size: calc(50vw - 5.5rem), 100vw calc( ( 50vw - 5.5rem ) * 0.75 );
 			border-radius: 0 0 50% 50%;
 		}
 		& h1.entry-title {
-			@media (min-width: 768px) {
+			@media (min-width: 769px) {
 				font-size: 2.5rem;
 				padding-right: 33.3%;
 				margin: 0;
@@ -43,7 +43,7 @@
 			}
 		}
 		& .attachment-post-thumbnail {
-			@media (min-width: 768px) {
+			@media (min-width: 769px) {
 				position: absolute;
 				right: 0;
 				bottom: 0;
@@ -62,69 +62,53 @@
 		}
 	}
 	& .entry-header {
-		position: relative;
-		background-repeat: no-repeat;
-		background-position: 50% bottom;
-		background-size: 100%;
-		margin: -1rem -1rem 0 -1rem;
-		padding: 0rem 1rem;
-		min-height: 110vw;
+		margin: -1rem -1rem 1rem -1rem;
+		padding: 1rem;
 		@media (min-width: 480px) {
-			background-position: 50% bottom;
-			margin: -3rem -1.5rem 0 -1.5rem;
+			margin: -3rem -1.5rem 1rem -1.5rem;
+			padding: 1.5rem;
 		}
-		@media (min-width: 768px) {
+		@media (min-width: 769px) {
 			background-position: 70% bottom, 30vw;
 			background-size: auto 100%, 100vw 100%;
 			margin: -3rem calc(-80vw + 22.5rem) 2rem;
 			padding: 0 calc(80vw - 22.5rem) 0;
-			//min-height: calc( ( 50vw - 5.5rem ) * 0.75 );
-			min-height: calc(60vh - 80px);
 			border-radius: 0 0 50% 50%;
+			display: flex;
+			flex-direction: row-reverse;
 		}
 		@media (min-width: 1281px) {
 			background-position: calc(80vw + 5.5rem) bottom, 30vw;
 		}
+		& .entry-thumbnail {
+			margin: 0;
+			@media (min-width: 769px) {
+				flex-basis: 45%;
+				flex-grow: 0;
+				padding: 2rem 0;
+			}
+			& img {
+				width: auto;
+				max-height: 300px; 
+				margin: 0 auto;
+				display: block;
+				@media (min-width: 769px) {
+					width: 140%;
+					max-width: 140%;
+					margin: 0 auto -5rem auto;
+				}
+			}
+		}
 		& .entry-header-text {
-			position: -webkit-sticky;
-			position: sticky;
-			top: 70px;			
-			margin: 0 -1rem;
-			padding: 1rem 1.5rem;
-			background: linear-gradient(180deg, #ffe8e0 0%, #e3e5e7 80%, #d8e4eb00 100%);
-			@media (min-width: 768px) {
-				position: relative;
-				background: none;
-				top: 0;
-				margin: 0;
-				padding: 1rem 0;
-				height: calc(60vh - 80px);
+			@media (min-width: 769px) {
+				flex-grow: 1;
 				display: flex;
 				flex-direction: column;
-				justify-content: center;			
-				align-self: flex-start;
-			}
-			@media (min-width: 1281px) {
-				width: calc( 1280px - 3rem - 33.333%);
-				margin-left: calc( ( 1280px - 49rem ) / -2 );
-			}
-		}
-		& h1.entry-title {
-			@media (min-width: 768px) {
-				font-size: 2.5rem;
-				padding-right: 33.3%;
-				margin: 0;
-				padding-bottom: 1em;
-			}
-		}
-		& .posted-on {
-			color: #FFF;
-			& a{
-				color: #FFF;
+				justify-content: center;
 			}
 		}
 		& .attachment-post-thumbnail {
-			@media (min-width: 768px) {
+			@media (min-width: 769px) {
 				position: absolute;
 				right: 0;
 				bottom: 0;
@@ -135,6 +119,7 @@
 	}
 }
 .single .pre-entry-meta {
+	color: $color__brand-primary;
 	@include font-size(1);
-	margin-bottom: .2em;
+	margin-bottom: 1em;
 }

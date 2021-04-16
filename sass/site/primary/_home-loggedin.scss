@@ -7,7 +7,17 @@
     display: block;
   }
 }
-.headline-homenav {
-  font-size: 1.25rem;
+.home .headline-homenav {
+  font-size: 5.5vw;
   padding: 0 0 1rem 0;
+  & em {
+    color: $color__brand-primary;
+    display: block;
+  }  
+  @media (min-width: 769px) {
+    font-size: 1.5rem;
+    & em {
+      display: inline;
+    }
+  }
 }

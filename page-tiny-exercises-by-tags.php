@@ -8,32 +8,32 @@
 global $post;
 $post_slug = $post->post_name;
 if ( $post_slug == 'less-tense' ){
-  $headline = 'Exercises that will make you feel <strong>less tense</strong>:';
+  $headline = 'Exercises that will make you feel <em>less tense</em>';
   $recommended_exercise_post = get_page_by_path( 'eye-relaxation', OBJECT, 'exercises' );
   $tag_name = 'less-tense';
 } 
 elseif ($post_slug == 'immediate-relief') {
-  $headline = 'Exercises that will give you <strong>immediate relief</strong>:';
+  $headline = 'Exercises that will give you <em>immediate relief</em>';
   $recommended_exercise_post = get_page_by_path( 'emergency-breath', OBJECT, 'exercises' );
   $tag_name = 'immediate-relief';
 } 
 elseif ($post_slug == 'de-stressed') {
-  $headline = 'Exercises that will <strong>reduce stress</strong>:';
+  $headline = 'Exercises that will <em>reduce stress</em>';
   $recommended_exercise_post = get_page_by_path( 'calming-breath', OBJECT, 'exercises' );
   $tag_name = 'de-stress';
 } 
 elseif ($post_slug == 'focussed') {
-  $headline = 'Exercises that will feel <strong>focused</strong>:';
+  $headline = 'Exercises that will feel <em>focused</em>';
   $recommended_exercise_post = get_page_by_path( 'focussing-breaths', OBJECT, 'exercises' );
   $tag_name = 'focus';
 } 
 elseif ($post_slug == 'energised') {
-  $headline = 'Exercises that will make you feel <strong>energised</strong>:';
+  $headline = 'Exercises that will make you feel <em>energised</em>';
   $recommended_exercise_post = get_page_by_path( 'energising-breaths', OBJECT, 'exercises' );
   $tag_name = 'energise';
 } 
 elseif ($post_slug == 'tired-eyes') {
-  $headline = 'Exercises for <strong>tired eyes</strong>:';
+  $headline = 'Exercises for <em>tired eyes</em>';
   $recommended_exercise_post = get_page_by_path( 'blinking-practice', OBJECT, 'exercises' );
   $tag_name = 'tired-eyes';
 }

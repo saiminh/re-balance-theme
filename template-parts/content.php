@@ -11,11 +11,14 @@
 <?php if ( is_singular() ) : //The single blog post ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<!-- Blog post header:  -->
-		<header class="entry-header" style="background-image: url(<?php the_post_thumbnail_url('medium_large') ; ?>), linear-gradient(180deg, #ffe8e0 0%, #c4e3f2 80%, #9ACFE9 100%);">		
+		<header class="entry-header" style="background-image: linear-gradient(140deg, #ffe8e0 20%, #c4e3f2 80%, #9ACFE9 100%);">
+			<figure class="entry-thumbnail">
+				<?php the_post_thumbnail('medium_large') ; ?>
+			</figure>
 			<div class="entry-header-text">
 				<div class="pre-entry-meta">
 					<?php 
-						rebalance_posted_by();
+					//	rebalance_posted_by();
 						rebalance_posted_on();
 					?>
 				</div>
@@ -54,7 +57,7 @@
 			<header class="card-header">		
 				<div class="entry-header-text">				
 					<?php				
-							echo '<div class="pre-entry-meta">';							
+							echo '<div class="pre-entry-meta card-meta">';							
 									//rebalance_posted_by();
 									rebalance_posted_on();							
 							echo '</div>';
