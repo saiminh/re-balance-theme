@@ -80,6 +80,7 @@
 }
 .card-thumbnail img {
   width: auto;
+  max-width: calc(100% - 2rem);
   height: 30vw;
   margin: 1rem;
   align-self: center;

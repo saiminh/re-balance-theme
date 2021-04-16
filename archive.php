@@ -10,10 +10,11 @@
 get_header();
 ?>
 	<div id="primary" class="content-area">
-		
+
 		<?php if ( have_posts() ) : ?>			
 			
 			<main id="main" class="site-main">		
+				<h1 class="headline-homenav"><?php the_archive_title(); ?></h1>
 				<?php if ( is_tax( 'types' ) ) : 
 					$postCount = 1;
 					while ( have_posts() ) : $postCount++;

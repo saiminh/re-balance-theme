@@ -50,6 +50,9 @@
     @media (min-width: 769px) {
         grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
     }
+    @media (min-width: 1080px) {
+        grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);
+    }
 }
 .exercises-tag,
 .exercises-tag:visited {
