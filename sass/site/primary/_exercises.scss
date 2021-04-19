@@ -202,12 +202,17 @@
   width: calc(100% + 2rem);
   & a {
     flex-grow: 1;
-    //flex-basis: 50%;
     text-align: center;    
     margin-right: 1rem;
   }
+  & a.button.button-small {
+    font-size: 4vw;
+    @media (min-width: 480px) {
+      font-size: 1rem;
+    }
+  }
   @media (min-width: 769px) {
     width: calc(38% + 1rem);
-    margin: 1rem -1rem 0 auto;
+    margin: 1rem -1rem 0 auto;    
   }
 }
