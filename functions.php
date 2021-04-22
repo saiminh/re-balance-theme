@@ -302,11 +302,12 @@ function tiny_shortcode( $atts = array() ){
 		'post_type' => 'exercises'
 	) );
 	if ( $page ){
-		echo '<h4 class="notification-header">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
 		echo '<div class="rebalance-mini">';
 		echo '<div class="rebalance-mini-illustration">';
 		get_template_part( 'inc/inline', 'tiny-illu-'.$atts['name'].'.svg' );
-		echo '</div><div class="rebalance-mini-instructions">'.$page[0]->post_content.'<a class="button button-confetti" id="confetter" href="#confetti">Congratulate Yourself!</a></div>';
+		echo '</div><div class="rebalance-mini-instructions">';
+    echo '<h4 class="notification-header">Tiny Rebalance: '.get_the_title( $page[0]->ID ).'</h4>';
+    echo $page[0]->post_content.'<a class="button button-confetti" id="confetter" href="#confetti">Congratulate Yourself!</a></div>';
 		echo '</div>';
 	}
 }

@@ -1,11 +1,12 @@
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 	line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 
 h1 {
-	font-size: 2.25em;
+	font-size: 2em;
 	line-height: 1.4;
 }
 .headline-homenav {
@@ -21,6 +22,9 @@ h1 {
 }
 h2 {
 	font-size: 1.6666em;
+}
+.wp-block-column > h2:first-child {
+  margin-top: 0;
 }
 
 h3 {

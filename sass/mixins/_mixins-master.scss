@@ -56,12 +56,13 @@
 		z-index:-1; /* needed to keep in the background */
 		background-color: $color__brand-secondary;
 		background: linear-gradient(
-				180deg, 
+				140deg, 
 				$color__brand-secondary 0%, 
-				lighten($color__brand-secondary, 10%) 20%, 
+				lighten($color__brand-secondary, 15%) 20%, 
 				lighten($color__brand-primary, 20%) 80%, 
 				#FFF 100%
 		) no-repeat;
+    //background-image: linear-gradient(140deg, #ffe8e0 20%, #c4e3f2 80%, #9ACFE9 100%);
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;

@@ -45,7 +45,6 @@
   @media (min-width: 768px) {
     top: calc(50% - 3rem);
     margin: 2rem auto;
-    padding: 1.5rem;
     max-width: 53rem;
     max-height: calc(100vh - 200px);
   }
@@ -54,7 +53,10 @@
   }
 }
 .notification-rebalance-mini .notification-header {
-  margin-bottom: 0;
+  font-size: 1.25rem;
+  margin: 0 0 1rem 0;
+  padding: 0;
+  border-bottom: none;
 }
 
 //Modal oVerlay

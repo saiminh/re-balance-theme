@@ -103,10 +103,10 @@ get_header();
 						<div class="wp-block-group">
 							<div class="wp-block-group__inner-container">
 								<h1 class="hero-header">
-									Transform&nbsp;your work&nbsp;day. Find&nbsp;your&nbsp;balance.
+									Short,&nbsp;simple wellness&nbsp;exercises.
 								</h1>
 								<p class="hero-subheader">
-									Short and simple exercises to help you take better breaks at work.
+									Helping you de-stress, improve your mood, and transform your workday.
 								</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
@@ -121,67 +121,191 @@ get_header();
 					</div>
 				</div>
 				<div id="home-how-block">
-					<h2>
-						How can Rebalance help?
-					</h2>
-					<p class="has-medium-font-size">
-						Rebalance helps busy professionals improve and transform their workday. We have combined a simple and effective habit formation technique developed at Stanford University with mindful movement and breathwork exercises. This empowers our members to build a lasting habit of wellness into their day, improving their happiness, resilience and wellbeing.
-					</p>
+          <div class="fw-text-block">
+            <h2>
+              How can we help?
+            </h2>
+            <p>
+              <em>Are you the kind of professional who wants to feel calm, happy, and in balance both at work and at home?</em>
+            </p>
+            <p>
+              To become this version of yourself, you need simple exercises you can use to reduce stress, re-energise, and centre yourself when you need to.
+            </p>
+          </div>
 					<div class="wp-block-columns" style="align-items: center">
 						<div class="wp-block-column">
-							<img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
+              <img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits-bad.png" alt="A woman at her work desk being reminded to use rebalance">
 						</div>	
 						<div class="wp-block-column">							
+              <h3>But there’s a problem:</h3>
 							<ul>
-								<li>Start small with our Rebalance Tiny Habit® formation program.</li>
-								<li>Learn to take conscious and effective breaks to improve your productivity, focus and engagement</li>
-								<li>Improve your working environment for you or your whole business</li>
-								<li>Reduce work-related stress, and employee absenteeism and presenteeism</li>
-							</ul>
-							<div class="wp-block-buttons">
-								<div class="wp-block-button">
-									<a class="wp-block-button__link" href="/why-rebalance" data-no-swup="">Read More</a>
-								</div>
-							</div>
+                <li>Nobody has taught you practical tools you can easily use</li>
+								<li>Attending wellness classes is time consuming</li>
+								<li>Meditation and yoga classes can be challenging and intimidating </li>
+								<li>Taking a break at work can be difficult</li>
+							</ul>							
 						</div>		
+					</div>
+          <div class="wp-block-columns" style="align-items: center">
+            <div class="wp-block-column">		
+              <h3>Quick, doable, and effective</h3>
+              <p>We believe that everyone deserves to have access to the right tools to help improve their mood and their workday. That’s why Rebalance has made workplace wellness quick, doable, and effective.</p>
+              <p>Sign up to get access to our online platform and start practising our time-conscious wellness exercises. This way, you can stop feeling stressed and exhausted, and start to improve the way you feel, create better balance, and be happier after hours too.</p>
+              <div class="wp-block-buttons">
+                <div class="wp-block-button">
+                  <a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
+                </div>									
+              </div>
+            </div>
+            <div class="wp-block-column">
+              <img class="home-about-block-illu" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance">
+            </div>	
 					</div>
 				</div>
 				<div id="home-offer-block">
-					<h2>
-						What we Offer
-					</h2>
-					<p class="has-medium-font-size">
-						We will help bring wellness easily into your daily routine. Assisting you or your staff to reduce stress, improve focus, and increase innovative thinking.
-					</p>
+          <div class="wp-block-columns">
+            <div class="wp-block-column">
+              <h2>
+                What we Offer
+              </h2>
+              <p>
+                Rebalance provides short (as little as 30 seconds) movement, breathwork and reflection exercises. They are simple, can be performed discreetly at your desk.
+              </p>
+              <p> 
+                Exercises can be accessed via our on-demand platform with additional wellness and habit formation tips sent to your inbox. 
+              </p>
+            </div>
+            <div class="wp-block-column">
+              <h2>Backed by science</h2>
+              <p>
+                All of our exercises are based on traditional methods and backed by the latest scientific research.
+              </p>
+              <p>
+                This way you will be able to take effective and mindful breaks whenever you need to.
+              </p>
+            </div>
+          </div>
+					<div class="wp-block-columns featured-columns featured-columns-4">
+						<div class="wp-block-column featured">
+							<div class="featured-thumbnail">
+								<img class="" src="<?php echo get_template_directory_uri(); ?>/img/ui-home-breathe.svg" alt="A man breathing">
+							</div>
+              <div class="featured-text">
+                <h3>Breathe</h3>
+                <p>
+                  Breathwork techniques to de-stress and re-energise
+                </p>
+               </div>
+						</div>
+						<div class="wp-block-column featured">
+							<div class="featured-thumbnail">
+								<img class="" src="<?php echo get_template_directory_uri(); ?>/img/ui-home-move.svg" alt="A woman at her work desk">
+							</div>
+              <div class="featured-text">
+                <h3>Move</h3>
+                <p>
+                  Desk-based exercises to move more and reduce pain and tension
+                </p>
+              </div>
+						</div>
+						<div class="wp-block-column featured">
+							<div class="featured-thumbnail">
+								<img class="" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-reflect.svg" alt="A smile">
+							</div>
+              <div class="featured-text">
+                <h3>Reflect</h3>
+                <p>
+                  Reflection practices to improve mood and happiness
+                </p>
+              </div>
+						</div>
+						<div class="wp-block-column featured">
+							<div class="featured-thumbnail">
+								<img class="" src="<?php echo get_template_directory_uri(); ?>/img/home-feature-email.svg" alt="A woman at her work desk being reminded to use rebalance">
+							</div>
+              <div class="featured-text">
+                <h3>Learn</h3>
+                <p>
+                  Wellness and habit formation tips emailed to you twice a week
+                </p>
+              </div>
+						</div>
+					</div>          
+        </div>
+        <div id="home-yourplan-block">
+          <h2>Your plan to be a more balanced you</h2>
+          <div class="wp-block-columns">
+						<div class="wp-block-column step">
+              <h3 class="step-title">
+                <span>Step&nbsp;1:</span> Get Access
+              </h3>
+              <p>
+                Ongoing access with a monthly or annual membership
+              </p>
+            </div>
+						<div class="wp-block-column step">
+              <h3 class="step-title">
+                <span>Step&nbsp;2:</span> Practise the Exercises
+
+              </h3>
+              <p>
+                All wellness exercises are short, simple and effective
+              </p>
+            </div>
+						<div class="wp-block-column step">
+              <h3 class="step-title">
+                <span>Step&nbsp;3:</span> Achieve Results
+              </h3>
+              <p>
+                De-stress, improve your mood, and transform your workday
+              </p>
+            </div>
+          </div>
+          <div class="wp-block-buttons">
+            <div class="wp-block-button">
+              <a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Get Access</a>
+            </div>									
+          </div>
+        </div>
+        <div id="home-memberships">
+          <div class="fw-text-block">
+            <h2>Membership Solutions</h2>
+            <p>
+              We help you bring wellness into your daily routine to reduce stress, improve focus, and find your balance.
+            </p>
+          </div>
 					<div class="wp-block-columns">
-						<div class="wp-block-column">
-							<!-- <h3 class="eyebrow">The Benefits</h3> -->
+						<div class="wp-block-column step">
 							<h3>
 								Individual memberships</h3>
 							<p>
-								Struggle to find time for a break? Learn how to effortlessly fit mindful movement and breathing practices into your day and improve your work-life balance.</p>
-							<p>
-								Take the next step on your wellness journey and get started with our free trial today</p>
+                Would you like to better manage your mood and become a more balanced you?
+              </p>
+              <p>
+                Effortlessly incorporate mindful movement and breathwork practices into your day with our monthly or annual memberships. Take the next step on your wellness journey today!
+              </p>
 							<div class="wp-block-buttons">
 								<div class="wp-block-button">
-									<a class="wp-block-button__link" href="/register-for-free-trial" data-no-swup="">Free Trial</a>
+									<a class="wp-block-button__link" href="/pricing" data-no-swup="">Buy Now</a>
 								</div>
 							</div>
 						</div>	
-						<div class="wp-block-column">
+						<div class="wp-block-column step">
 							<h3>
 								Corporate Solutions</h3>
 							<p>
-								Are you looking to improve your company’s culture, increase your employees’ productivity, or reduce the rate of work-related health conditions?</p>
-							<p>
-								Learn more about how we can help you and enquire for your business today</p>
+                Are you looking to provide better support for your team? Or reduce work-related health conditions among your employees? 
+              </p>
+              <p>
+                Learn more about how we can help and enquire for your business today.
+              </p>
 							<div class="wp-block-buttons">
 								<div class="wp-block-button">
 									<a class="wp-block-button__link" href="/business-inquiry/" data-no-swup="">Enquire Now</a>
 								</div>
 							</div>
 						</div>		
-					</div>			
+					</div>		
 				</div>
 			</main><!-- #main -->
 		</div><!-- #primary -->
@@ -191,7 +315,7 @@ get_header();
 				<div class="close"><svg class="close-x" style="position: absolute; right: 1.5rem; top: 1.33rem; width: 1em; height: 1em;" x="0px" y="0px" viewBox="0 0 96 96" enable-background="new 0 0 96 96" xml:space="preserve"><polygon fill="#FF9B7A" points="96,14 82,0 48,34 14,0 0,14 34,48 0,82 14,96 48,62 82,96 96,82 62,48 "></polygon></svg></div>
 			</div>
 		</div>
-		<?php the_content(); // Only exists as a hook for the mailpoet popup boxes ?>
+		<?php //the_content(); // Only exists as a hook for the mailpoet popup boxes ?>
 		<?php endif; ?>
 <?php
 //get_sidebar();

@@ -137,7 +137,7 @@ function gsAnimations(){
     let trigger_woman_sunrise = { 
       trigger: "#section_about_habits", 
       start: "0% center", 
-      end: "100% center" };
+      end: "200% center" };
 
     let tl_woman_sunrise_sunriseloop = gsap.timeline({ 
       paused: true, 
@@ -183,9 +183,9 @@ function gsAnimations(){
     let rebalanceYourselfIn = gsap.timeline({ 
       paused: true, 
       scrollTrigger: triggerrebalanceYourselfIn })     
-    .fromTo("#illu-woman-rain-shine", 
-      { yPercent: 0, autoAlpha: 1 }, 
-      { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
+    // .fromTo("#illu-woman-rain-shine", 
+    //   { yPercent: 0, autoAlpha: 1 }, 
+    //   { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
       { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
       { y: 0, x: 0, rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)

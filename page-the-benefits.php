@@ -221,20 +221,7 @@ get_header();
         </svg> -->
         <!-- End Illustration mindfull break -->
         
-        <svg version="1.1" id="illu-logo" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 640 500" xml:space="preserve">
-          <g id="word" fill="#231f20">
-            <path id="letter-r" d="M5.7 198.9H13l1.1 11.7h.1c5-9.6 14.5-12.5 21-12.5 1.7 0 3.2.1 4.6.3v8.9c-1.5-.3-3.1-.4-4.7-.4-10 0-20.2 6.6-20.2 21V271H5.7v-72.1z"/>
-            <path id="letter-e-1" d="M110.9 238.4h-55c1.5 15.7 11.7 25.6 26.5 25.6 8.3 0 17.1-3.1 24.9-10.2V264c-7.4 5.8-15.9 8.6-25.3 8.6-21.4 0-35.3-14.8-35.3-37.3 0-23.5 16.1-37.8 34.2-37.8 16.7 0 30.3 12.4 30.3 36.1 0 1.8-.1 3.3-.3 4.8zm-8.6-8c-.4-17-10.8-24.5-21.5-24.5-12.2 0-23.1 9.4-24.8 24.5h46.3z"/>
-            <path id="letter-b" d="M139.4 212.4c5.1-9.8 15.6-14.9 25.8-14.9 17.1 0 33 14.4 33 37.5 0 23-16 37.5-33.1 37.5-10.2 0-20.6-5-26.4-15.6l-1.2 14.1h-7.3V163.7h9.1v48.7zm-.2 22.5c0 17.2 11 28.9 24.9 28.9 14 0 25-11.6 25-28.8 0-17.4-11-28.8-25-28.8-13.9 0-24.9 11.7-24.9 28.7z"/>
-            <path id="letter-a-1" d="M212.9 235c0-23.1 15.9-37.5 33-37.5 10.2 0 20.7 5 26.5 15.6l1.2-14.1h7.4v72h-7.4l-1.2-14.1c-5.8 10.6-16.3 15.6-26.5 15.6-17.1 0-33-14.5-33-37.5zm59.2-.1c0-17-11.2-28.7-25-28.7-14 0-25 11.4-25 28.8 0 17.2 11 28.8 25 28.8 13.8 0 25-11.7 25-28.9z"/>
-            <path id="letter-l" d="M305.3 163.7h9.2V271h-9.2V163.7z"/>
-            <path id="letter-a-2" d="M334.3 235c0-23.1 15.9-37.5 33-37.5 10.2 0 20.7 5 26.5 15.6L395 199h7.4v72H395l-1.2-14.1c-5.8 10.6-16.3 15.6-26.5 15.6-17.2 0-33-14.5-33-37.5zm59.2-.1c0-17-11.2-28.7-25-28.7-14 0-25 11.4-25 28.8 0 17.2 11 28.8 25 28.8 13.8 0 25-11.7 25-28.9z"/>
-            <path id="letter-n" d="M483.2 223.4V271H474v-43.7c0-14.1-6.5-20.9-18.6-20.9-11.2 0-19.9 8.3-19.9 20.1V271h-9.2v-72.1h7l1.2 11.2h.3c4-6.7 12-12.6 22.3-12.6 15.7-.1 26.1 10.2 26.1 25.9z"/>
-            <path id="letter-c" d="M537.4 263.8c6.1 0 13.6-1.3 19.6-6.1v10c-5.1 3-11.7 4.8-19.6 4.8-20.6 0-35.8-16.3-35.8-37.7 0-21 15.2-37.4 35.8-37.4 7.5 0 14 1.3 19.6 5.1v10c-6.1-4.6-12-6.3-19.8-6.3-13.5 0-26.5 10.8-26.5 28.7.1 18.3 13.1 28.9 26.7 28.9z"/>
-            <path id="letter-e-2" d="M634.4 238.4h-55c1.5 15.7 11.7 25.6 26.5 25.6 8.3 0 17.1-3.1 24.9-10.2V264c-7.4 5.8-15.9 8.6-25.3 8.6-21.4 0-35.3-14.8-35.3-37.3 0-23.5 16.1-37.8 34.2-37.8 16.7 0 30.3 12.4 30.3 36.1 0 1.8-.1 3.3-.3 4.8zm-8.6-8c-.4-17-10.8-24.5-21.5-24.5-12.2 0-23.1 9.4-24.8 24.5h46.3z"/>
-          </g>
-          <path d="M309.9 335.9c-35 0-56.1-25.8-57-26.9l6.3-5-3.2 2.5 3.1-2.5c.2.2 19.6 23.9 50.7 23.9s50.5-23.7 50.7-23.9l6.3 5c-.8 1.1-21.9 26.9-56.9 26.9z" fill="#fe9a79" id="smile"/>
-        </svg>
+        
 
         <!-- End Illustration mindfull break -->
       </div>
@@ -243,15 +230,15 @@ get_header();
             <?php // while ( have_posts() ) : the_post();the_content(); endwhile; ?>         
         <div class="wp-block-group section" id="section_why_reblance">
           <div class="wp-block-group__inner-container">
-          <h3 class="eyebrow">Improve your workday and build your wellness habit</h3>
+            <h3 class="eyebrow">Improve your workday and build your wellness habit</h3>
             <h1>
               Why Rebalance?
             </h1>
             <p>
-              Are your days so busy that you struggle to find time for a break? Feel exhausted and overwhelmed by a seemingly never ending to-do list? Perhaps you lose focus during the afternoon slump? Do you wish you could find the time for some wellbeing practices but struggle to fit them into your routine?
+              Are your days so busy that you struggle to find time for a break? Feel exhausted and overwhelmed by a seemingly never ending to-do list? Perhaps you lose focus during the afternoon slump? Wish you could find an effective way to de-stress? 
             </p>
             <p>
-              You’re not alone.
+              You are not alone.
             </p>
           </div>
         </div>
@@ -261,13 +248,16 @@ get_header();
               What’s Wrong With The Way We Work?
             </h2>
             <p>
-              As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related health conditions. These figures are worrying. The rates of work related stress and depression are on the rise, with 73% of Australian professionals experiencing a degree of stress in an average week<?php echo do_shortcode("[mfn]McMillan, L. (2016). 2016 Snapshot of the Australian Workplace. Reventure Ltd., Melbourne.[/mfn]"); ?>, and burnout has officially been labelled as an ‘occupational phenomenon’ by the WHO<?php echo do_shortcode("[mfn]WHO. (2019). Burn-out an 'occupational phenomenon': International Classification of Diseases. Retrieved from: <a href='https://www.who.int/mental_health/evidence/burn-out/en/'>https://www.who.int/mental_health/evidence/burn-out/en/</a>[/mfn]"); ?>.
+              As the pressures and responsibilities of the workplace and modern life have increased, so too has the incidence of work related mental and physical health conditions.
             </p>
             <p>
-              Similarly, science has shown prolonged periods of sitting are bad for us, which for those of us who work at a desk, is a pretty inconvenient truth! As we sit, blood flow slows in the body, meaning the organs and brain receive less oxygen, which in turn leads to reduced focus and concentration.
+              From a mental health perspective, the rates of work related stress and depression are on the rise. 73% of Australian professionals experience some degree of stress in an average week<?php echo do_shortcode("[mfn]McMillan, L. (2016). 2016 Snapshot of the Australian Workplace. Reventure Ltd., Melbourne.[/mfn]"); ?>, and burnout has officially been labelled as an ‘occupational phenomenon’ by the WHO.<?php echo do_shortcode("[mfn]WHO. (2019). Burn-out an 'occupational phenomenon': International Classification of Diseases. Retrieved from: <a href='https://www.who.int/mental_health/evidence/burn-out/en/'>https://www.who.int/mental_health/evidence/burn-out/en/</a>[/mfn]"); ?>
             </p>
             <p>
-              As stressed and stationary are rapidly becoming our new normal, many professionals are struggling to improve their work-life balance and find ways to support their physical and mental wellbeing.
+              Regarding our physical health, science has shown prolonged periods of sitting are bad for our health. That’s pretty inconvenient for those of us who work at a desk! As we sit, we move less. This causes blood flow in the body to slow, meaning the organs and brain receive less oxygen, which in turn leads to reduced focus and concentration over time.
+            </p>
+            <p>
+              Stressed and stationary are rapidly becoming our new normal. As a result, many professionals are struggling to manage stress, improve their work-life balance and find ways to support their physical and mental wellbeing.
             </p>
           </div>
         </div>
@@ -277,32 +267,46 @@ get_header();
               Bring balance back into your day
             </h2>    
             <p>
-              Despite our best intentions, taking a break at work to press pause, breathe or stretch can seem difficult or even impossible, let alone making a regular habit of it. Perhaps you can’t find the time, or are not sure where to begin. We know from experience that building any new habit is hard, and maintaining it is even harder.
+              Despite our best intentions, taking a break at work to press pause, breathe consciously, or stretch tired muscles can seem difficult or even impossible. 
             </p>
             <p>
-              What if there was a tool to help you take a break while boosting your mood, releasing tension and increasing your productivity? Introducing: Rebalance.
+              Perhaps you can’t find the time, or you’re not sure where to begin.
+            </p>
+            <p>
+              What if there was a tool to help you take tiny breaks while boosting your mood, releasing tension and increasing your productivity? 
             </p>
           </div>
         </div>
         <div class="wp-block-group section" id="section_about_habits">
-            <div class="wp-block-group__inner-container">
-              <p>
-                Rebalance helps busy professionals transform their workday by first teaching members a simple habit formation technique, so they learn how they can insert tiny movement and breathing exercises into their existing daily routine to support their wellbeing. This means your new wellness habit will be consistent and here to stay!
-              </p>
-              <p>
-                By starting with habit formation, we empower our members and your employees to thrive, as they incorporate wellness into their lives and transform their workday, improving their happiness, resilience and wellbeing.
-              </p>
+          <div class="wp-block-group__inner-container">
+            <h2>
+              Introducing: Rebalance
+            </h2>
+            <p>
+              Rebalance helps busy professionals like you to de-stress, improve your mood and transform your workday. We provide short, simple and effective movement, breathwork and reflection exercises so that you can feel happier and healthier at work. 
+            </p>            
           </div>
         </div>
         <div class="wp-block-group section" id="section_rebalanceYourself">
           <div class="wp-block-group__inner-container">
-            <h2>
-              Transform your workday today!
-            </h2>
             <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
+              <svg version="1.1" id="illu-logo" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 100 640 250" style="max-width: 280px; margin-bottom: 1rem" xml:space="preserve">
+                <g id="word" fill="#231f20">
+                  <path id="letter-r" d="M5.7 198.9H13l1.1 11.7h.1c5-9.6 14.5-12.5 21-12.5 1.7 0 3.2.1 4.6.3v8.9c-1.5-.3-3.1-.4-4.7-.4-10 0-20.2 6.6-20.2 21V271H5.7v-72.1z"/>
+                  <path id="letter-e-1" d="M110.9 238.4h-55c1.5 15.7 11.7 25.6 26.5 25.6 8.3 0 17.1-3.1 24.9-10.2V264c-7.4 5.8-15.9 8.6-25.3 8.6-21.4 0-35.3-14.8-35.3-37.3 0-23.5 16.1-37.8 34.2-37.8 16.7 0 30.3 12.4 30.3 36.1 0 1.8-.1 3.3-.3 4.8zm-8.6-8c-.4-17-10.8-24.5-21.5-24.5-12.2 0-23.1 9.4-24.8 24.5h46.3z"/>
+                  <path id="letter-b" d="M139.4 212.4c5.1-9.8 15.6-14.9 25.8-14.9 17.1 0 33 14.4 33 37.5 0 23-16 37.5-33.1 37.5-10.2 0-20.6-5-26.4-15.6l-1.2 14.1h-7.3V163.7h9.1v48.7zm-.2 22.5c0 17.2 11 28.9 24.9 28.9 14 0 25-11.6 25-28.8 0-17.4-11-28.8-25-28.8-13.9 0-24.9 11.7-24.9 28.7z"/>
+                  <path id="letter-a-1" d="M212.9 235c0-23.1 15.9-37.5 33-37.5 10.2 0 20.7 5 26.5 15.6l1.2-14.1h7.4v72h-7.4l-1.2-14.1c-5.8 10.6-16.3 15.6-26.5 15.6-17.1 0-33-14.5-33-37.5zm59.2-.1c0-17-11.2-28.7-25-28.7-14 0-25 11.4-25 28.8 0 17.2 11 28.8 25 28.8 13.8 0 25-11.7 25-28.9z"/>
+                  <path id="letter-l" d="M305.3 163.7h9.2V271h-9.2V163.7z"/>
+                  <path id="letter-a-2" d="M334.3 235c0-23.1 15.9-37.5 33-37.5 10.2 0 20.7 5 26.5 15.6L395 199h7.4v72H395l-1.2-14.1c-5.8 10.6-16.3 15.6-26.5 15.6-17.2 0-33-14.5-33-37.5zm59.2-.1c0-17-11.2-28.7-25-28.7-14 0-25 11.4-25 28.8 0 17.2 11 28.8 25 28.8 13.8 0 25-11.7 25-28.9z"/>
+                  <path id="letter-n" d="M483.2 223.4V271H474v-43.7c0-14.1-6.5-20.9-18.6-20.9-11.2 0-19.9 8.3-19.9 20.1V271h-9.2v-72.1h7l1.2 11.2h.3c4-6.7 12-12.6 22.3-12.6 15.7-.1 26.1 10.2 26.1 25.9z"/>
+                  <path id="letter-c" d="M537.4 263.8c6.1 0 13.6-1.3 19.6-6.1v10c-5.1 3-11.7 4.8-19.6 4.8-20.6 0-35.8-16.3-35.8-37.7 0-21 15.2-37.4 35.8-37.4 7.5 0 14 1.3 19.6 5.1v10c-6.1-4.6-12-6.3-19.8-6.3-13.5 0-26.5 10.8-26.5 28.7.1 18.3 13.1 28.9 26.7 28.9z"/>
+                  <path id="letter-e-2" d="M634.4 238.4h-55c1.5 15.7 11.7 25.6 26.5 25.6 8.3 0 17.1-3.1 24.9-10.2V264c-7.4 5.8-15.9 8.6-25.3 8.6-21.4 0-35.3-14.8-35.3-37.3 0-23.5 16.1-37.8 34.2-37.8 16.7 0 30.3 12.4 30.3 36.1 0 1.8-.1 3.3-.3 4.8zm-8.6-8c-.4-17-10.8-24.5-21.5-24.5-12.2 0-23.1 9.4-24.8 24.5h46.3z"/>
+                </g>
+                <path d="M309.9 335.9c-35 0-56.1-25.8-57-26.9l6.3-5-3.2 2.5 3.1-2.5c.2.2 19.6 23.9 50.7 23.9s50.5-23.7 50.7-23.9l6.3 5c-.8 1.1-21.9 26.9-56.9 26.9z" fill="#fe9a79" id="smile"/>
+              </svg>
               <h3>
-                Rebalance is here to help!
+                Get started with your free trial today!
               </h3>
               <div class="wp-block-buttons">
                 <div class="wp-block-button">

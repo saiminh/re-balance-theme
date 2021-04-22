@@ -14,3 +14,28 @@
 	clear: both;
 	@include center-block;
 }
+.span-8 {
+	@media (min-width: 769px) {
+		width: 66.6666%;
+	}
+}
+.span-9 {
+	@media (min-width: 769px) {
+		width: 75%;
+	}
+}
+.offset-1 {
+	@media (min-width: 769px) {
+		margin-left: 8.333333333%;
+	}
+}
+.offset-1p5 {
+	@media (min-width: 769px) {
+		margin-left: 12.5%;
+	}
+}
+.offset-2 {
+	@media (min-width: 769px) {
+		margin-left: 16.665%;
+	}
+}
