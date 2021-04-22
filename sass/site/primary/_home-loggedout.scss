@@ -140,9 +140,6 @@
     padding-top: 100%;
   }
 }
-.featured:nth-child(odd) .featured-thumbnail{
-  //background-color: lighten($color__brand-primary, 15%);
-}
 .featured-thumbnail img {
   padding: 1rem;
   position: absolute;
@@ -217,6 +214,10 @@
     @media (min-width: 769px) {
       left: -12.5%;
       width: 125%;
+    }
+    @media (min-width: 1281px) {
+      left: -10%;
+      width: 120%;
     }
   }
 }

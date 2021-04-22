@@ -19,6 +19,9 @@
     @media (min-width: 768px){
         width: 85%;
     }
+    @media (min-width: 1281px){
+        width: 100%;
+    }
 }
 .site-content {
     @include content-block;
