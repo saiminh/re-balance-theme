@@ -12,12 +12,12 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
       <article>
-        <?php 
-          while ( have_posts() ) :
-              the_post();
-              the_content(); 
-          endwhile; 
-        ?>
+        <h1 class="has-text-align-center">
+          Start your workday transformation today!
+        </h1>
+        <h2 class="has-text-align-center has-text-color" style="color:#ff9b7a">
+          All our content for little more than the price of a coffee
+        </h2>
         <div class="pricing">
           <div class="can-toggle can-toggle--size-large">
             <input id="a" type="checkbox">
@@ -146,6 +146,51 @@ get_header();
             </div>
           </div>          
         </div>
+        <h2>
+          What’s Included:
+        </h2>
+        <div class="wp-block-columns featured-columns featured-columns-4">
+          <div class="wp-block-column featured">
+            <div class="featured-thumbnail">
+              <img class="" src="<?php echo get_template_directory_uri(); ?>/img/pricing-calendar.svg" alt="A calendar">
+            </div>
+            <div class="featured-text">
+              <p>
+                First 14 days free              
+              </p>
+             </div>
+          </div>
+          <div class="wp-block-column featured">
+            <div class="featured-thumbnail">
+              <img class="" src="<?php echo get_template_directory_uri(); ?>/img/pricing-3breaths.svg" alt="A woman at her work desk">
+            </div>
+            <div class="featured-text">
+              <p>
+                Get started with a 5 day email challenge to take 3 stress-reducing  breaths
+              </p>
+            </div>
+          </div>
+          <div class="wp-block-column featured">
+            <div class="featured-thumbnail">
+              <img class="" src="<?php echo get_template_directory_uri(); ?>/img/pricing-computer.svg" alt="A computer">
+            </div>
+            <div class="featured-text">
+              <p>
+                Access exercises online 
+              </p>
+            </div>
+          </div>
+          <div class="wp-block-column featured">
+            <div class="featured-thumbnail">
+              <img class="" src="<?php echo get_template_directory_uri(); ?>/img/home-feature-email.svg" alt="An envelop">
+            </div>
+            <div class="featured-text">
+              <p>
+                Tips and challenges sent to your inbox twice a week
+              </p>
+            </div>
+          </div>
+        </div> 
       </article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
