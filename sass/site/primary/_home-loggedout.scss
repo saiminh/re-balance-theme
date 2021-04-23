@@ -100,6 +100,7 @@
 }
 .featured-text {
   text-align: center;
+  padding-top: 1rem;
   & p {
     margin-top: -.5rem;
     // color: $color__brand-primary;
@@ -147,10 +148,14 @@
 }
 .step {
   background: #FFF;
-  padding: 0 1.5rem 1rem 1.5rem;
+  padding: 1.5rem;
   border-radius: 10px;
   @media (max-width: 768px) {
     margin-bottom: 2rem;
+  }
+  & > :last-child,
+  & .wp-block-buttons > .wp-block-button {
+    margin-bottom: 0;
   }
 }
 .step-title {
@@ -202,5 +207,11 @@
       left: -10%;
       width: 120%;
     }
+  }
+}
+.wp-block-column + .wp-block-column {
+  margin-top: 1rem;
+  @media (min-width: 769px) {
+    margin-top: 0;
   }
 }
