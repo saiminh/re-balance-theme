@@ -18,12 +18,12 @@ textarea {
 	height: 45px;
 	width: 100%;
 	line-height: 45px;
-	color: #000;
+	color: darken(desaturate($color__brand-primary, 90%), 20%);
 	@include font-size(1.25);
 	border-radius: 3px;
 	padding: 0 .75rem;
-	background-color: #fff7f4;
-	border: 1px solid #ffe0d6;
+	background-color: lighten($color__brand-primary, 23%);
+	border: none;
 
 	&:focus {
 		color: $color__text-input-focus;
@@ -34,8 +34,9 @@ textarea {
 	}
 
 	&::placeholder {
-		color: $color__text-main;
+		color: desaturate(lighten($color__brand-primary, 10%), 40%);
 		opacity: 1;
+    //font-style: italic;
 	}
 
 	@media screen and (min-width: 480px) {

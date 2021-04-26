@@ -1,3 +1,73 @@
+.mobile-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFF;
+  box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+.mobile-nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0;
+  margin: 0;
+}
+.mobile-nav-list-item {
+  background-image: url('img/ui-icon-home.svg');
+  background-position: 50% 30%;
+  background-size: 1em;
+  background-repeat: no-repeat;
+  transition: background-color .2s ease-out;
+  background-color: #FFF;
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+  &:active {
+    background-color: lighten($color__brand-primary, 20%);
+  }
+}
+.mobile-nav-list-item-link {
+  font-size: 3.5vw;
+  padding: 3em 1em 1em 1em;
+  display: inline-block;
+  @media (min-width: 480px) {
+    font-size: 18px;
+  }
+}
+.mobile-nav-list-item-settings {
+  background-image: url('img/ui-icon-user.svg');
+}
+.mobile-nav-list-item-move {
+  background-image: url('img/ui-icon-move.svg');
+}
+.mobile-nav-list-item-breathe {
+  background-image: url('img/ui-icon-breathe.svg');
+}
+.mobile-nav-list-item-reflect {
+  background-image: url('img/ui-icon-reflect.svg');
+}
+.home .mobile-nav-list-item-home,
+.term-tiny-movements .mobile-nav-list-item-move,
+.term-tiny-breathwork .mobile-nav-list-item-breathe,
+.term-tiny-reflections .mobile-nav-list-item-reflect,
+body.page-template-page-settings .mobile-nav-list-item-settings{
+  background-color: lighten($color__brand-primary, 22%);
+}
+.mobile-nav-list-item-subnav-list {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  padding: 1em;
+  background: #FFF;
+  list-style: none;
+  transform: translateX(100%);
+}
 .site-header {
 	background: #FFF;
 	z-index: 1000;
@@ -18,6 +88,12 @@
 			box-shadow: 0 0 10px rgba(0,0,0,0.05);
 		}
 	}
+}
+.site-header--loggedin {
+  display: none;
+  @media (min-width: 769px) {
+    display: block;
+  }
 }
 .site-header-inner {
 	@include content-block;

@@ -1,0 +1,37 @@
+body.page-template-page-settings {
+  @include bg-gradient-01;
+}
+body.page-template-page-settings .hero-header {
+  margin-top: .5em;
+}
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+}
+.settings-membership {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+.settings-membership a.button.button-small {
+  align-self: center;
+  padding: 0 0.5em;
+}
+.settings-membership-header {
+  font-size: 1.25rem;
+  margin: 0;
+  align-self: center;
+}
+.user-menu-item {
+  display: block;
+  font-size: 1.25rem;
+  padding: 1rem 0;
+}
+.user-menu > :last-child {
+  margin-bottom: 0;
+}
+.user-menu-item-profile-info {
+  display: block;
+  font-size: .66em;
+  color: #999;  
+}
