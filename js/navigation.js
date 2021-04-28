@@ -579,7 +579,7 @@ function insertAfter(referenceNode, newNode) {
 
 
 	// Mobile Menu search
-	$('.toggle-search').on('click', function(e){
+	$('.search-toggle').on('click', function(e){
 		e.preventDefault;
 		if( $('.site-header-search--toggled').length > 0 ){
 			$('.site-header-search--toggled').removeClass('site-header-search--toggled');

@@ -20,7 +20,7 @@ li > ol {
 article ul > li,
 .home .site-content ul > li {
 	list-style: none;
-	padding-bottom: .75em;
+	padding-bottom: .5em;
 	&:before {
 		content: "•";
 		color: $color__brand-primary;

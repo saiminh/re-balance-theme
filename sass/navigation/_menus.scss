@@ -20,7 +20,7 @@
 }
 .mobile-nav-list-item {
   background-image: url('img/ui-icon-home.svg');
-  background-position: 50% 30%;
+  background-position: 50% 33%;
   background-size: 1em;
   background-repeat: no-repeat;
   transition: background-color .2s ease-out;
@@ -69,17 +69,16 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
   transform: translateX(100%);
 }
 .site-header {
-	background: #FFF;
-	z-index: 1000;
-	border-bottom: 1px solid $color__background-body;
+  z-index: 1000;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	height: 70px;
 	@media (min-width: 480px) {
-		height: 80px;
+    height: 80px;
 	}
 	@media (min-width:  800px) {
+    background: #FFF;
 		border-bottom: none;
 		transition: .1s all linear;
 	}
@@ -89,11 +88,19 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 		}
 	}
 }
-.site-header--loggedin {
+.site-header--loggedin .site-branding, 
+.site-header--loggedin .menu-container, 
+.site-header--loggedin .site-header-account{
   display: none;
   @media (min-width: 769px) {
     display: block;
   }
+}
+.site-header--loggedin .menu-toggle {
+  display: none;
+}
+.site-header--loggedin .main-navigation > .site-header-search {
+  display: flex;
 }
 .site-header-inner {
 	@include content-block;
@@ -488,20 +495,17 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 		overflow: hidden;
 		width: 100%;
 	}
-
 	.nav-previous {
 		float: right;
 		padding: .5rem 1rem;
 		background-color: lighten($color__brand-primary, 20%);
 		border-radius: 5px;
 	}
-
 	.nav-next {
 		float: left;
 		text-align: right;

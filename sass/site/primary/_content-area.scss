@@ -42,3 +42,12 @@
         padding-bottom: 0;
     }
 }
+.wpsmp-loggedout .site-content {
+  padding-top: 70px;
+  @media (min-width: 480px) {
+    padding-top: 80px;
+  }
+  @media (min-width: 769px) {
+    padding-top: 0;
+  }
+}

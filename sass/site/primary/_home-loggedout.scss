@@ -178,7 +178,7 @@
     max-width: 50%;
   }
 }
-.home .site-main > div:nth-child(even) {
+.home.wpsmp-loggedout .site-main > div:nth-child(even) {
   position: relative;
   padding: 3rem 0;
   margin: 3rem auto;  

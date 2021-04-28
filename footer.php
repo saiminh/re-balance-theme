@@ -15,13 +15,15 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-footer-container">
-			<div class="newsletter-signup-form">
-				<h3>Receive our fortnightly newsletter</h3>
-				<?php 
-					$form_widget = new \MailPoet\Form\Widget();
-					echo $form_widget->widget(array('form' => 1, 'form_type' => 'php'));
-				?>
-			</div>
+      <?php if(!rebalance_member_is_logged_in()) : ?>
+        <div class="newsletter-signup-form">
+          <h3>Receive our fortnightly newsletter</h3>
+          <?php 
+            $form_widget = new \MailPoet\Form\Widget();
+            echo $form_widget->widget(array('form' => 1, 'form_type' => 'php'));
+          ?>
+        </div>
+      <?php endif; ?>
 			<div class="site-info">	
 				<div>
 					<h3>Rebalance</h3>

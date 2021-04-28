@@ -18,27 +18,25 @@ textarea {
 	height: 45px;
 	width: 100%;
 	line-height: 45px;
-	color: darken(desaturate($color__brand-primary, 90%), 20%);
-	@include font-size(1.25);
+	color: $color__text-main;
 	border-radius: 3px;
 	padding: 0 .75rem;
 	background-color: lighten($color__brand-primary, 23%);
 	border: none;
-
 	&:focus {
 		color: $color__text-input-focus;
+    outline: none;
+    position: relative;
+    top: -2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	}
-
 	&.search-field--home {
 		width: 100%;
 	}
-
 	&::placeholder {
-		color: desaturate(lighten($color__brand-primary, 10%), 40%);
+		color: $color__brand-primary;
 		opacity: 1;
-    //font-style: italic;
 	}
-
 	@media screen and (min-width: 480px) {
 		padding: 1em;
 		line-height: 50px;

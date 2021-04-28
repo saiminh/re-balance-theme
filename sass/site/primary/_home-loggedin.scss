@@ -1,6 +1,18 @@
 .home.wpsmp-loggedin .statusbar {
   display: none;
 }
+.home.wpsmp-loggedin .home-branding-mobile {
+  height: 50px;
+  padding: 1rem 0 0 0;
+  text-align: center;
+  @media (min-width: 769px) {
+    display: none;
+  }
+  & svg {
+    height: 100%;
+    width: auto;
+  }
+}
 .hidden-on-narrow {
   display: none;
   @media screen and (min-width: 1100px) {
@@ -8,7 +20,7 @@
   }
 }
 .home .headline-homenav {
-  font-size: 5.5vw;
+  font-size: 1rem;
   padding: 0 0 1rem 0;
   & em {
     color: $color__brand-primary;

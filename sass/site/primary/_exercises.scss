@@ -167,7 +167,6 @@
   cursor: pointer;
 }
 .rebalance-mini-instructions{ 
-  color: darken(desaturate($color__brand-primary, 50%), 15%); 
   align-self: center;
   & ul,
   & ol {
@@ -175,7 +174,7 @@
   }
   & ul > li,
   & ol > li {
-    padding: 0.5em 0;
+    padding: 0.25em 0;
     font-style: italic;
     &:first-child {
       padding-top: 0;
@@ -184,7 +183,7 @@
   & h1 {
     margin-top: 0;
     font-size: 1.5em;
-    color: $color__text-main;
+    font-weight: 600;
   }
   @media (min-width: 768px) {
     flex-basis: 66.6%;

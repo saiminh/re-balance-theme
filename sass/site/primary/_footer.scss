@@ -1,9 +1,9 @@
 .site-footer {
   margin-top: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
   padding-top: 1rem;
-  background-color: #EEE;
-  color: #666;
+  background-color: #00000088;
+  color: #FFF;
   @include font-size(1);
   position: relative;
   z-index: 2;
@@ -47,7 +47,6 @@
   display: block; 
 }
 a.site-info-element {  
-  border-bottom: 1px solid #DFDFDF;
 }
 .site-info-element:last-child {
   margin-right: 0;

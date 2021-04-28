@@ -25,12 +25,6 @@
     }
   }
 }
-.mailpoet_submit {
-  margin-bottom: -.5rem;
-  @media (min-width: 480px) {
-    margin-bottom: -1rem;
-  }
-}
 .mailpoet-manage-subscription .mailpoet-submit-success {
   color: #4CAF50;
 }
@@ -44,6 +38,9 @@
     width: 1rem;
     margin-right: .4rem;
   }
+}
+.form-container > .wp-block-group__inner-container > :last-child > :last-child {
+  margin-bottom: 0;
 }
 .mailpoet_segment_label {
   margin-top: 1rem;

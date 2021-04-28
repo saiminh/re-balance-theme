@@ -55,6 +55,7 @@
         </ul>
       </div>
       <div class="site-header-search">
+        <a class="search-toggle"><img src="<?php echo get_template_directory_uri( ); ?>/img/ui-icon-magnifying-glass.svg" alt=""></a>
         <?php get_search_form( ); ?> 						
       </div>
       <div class="site-header-account">

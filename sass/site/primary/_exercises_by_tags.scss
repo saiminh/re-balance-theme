@@ -90,8 +90,7 @@
     flex-basis: calc(48% + 1rem);
   }
 }
-.exercises-by-tags-grid-column-body,
-.exercises-by-tags-grid-column-body > .card-container:last-child{
+.exercises-by-tags-grid-column-body {
   @media (min-width: 769px){
     position: sticky;
     top: calc(80px + 3.5rem);
