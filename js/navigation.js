@@ -395,6 +395,8 @@ function insertAfter(referenceNode, newNode) {
 			'a[href$="membership-registration"]', 
 			'a[href$="pricing"]',
 			'a[href$="pricing/"]', 
+			'a[href$="try-rebalance-for-free"]', 
+			'a[href$="try-rebalance-for-free/"]', 
 			'a[href*="/courses/"]',
 			'a[href*="/course/"]'
 		];
