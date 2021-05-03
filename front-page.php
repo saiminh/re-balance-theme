@@ -111,7 +111,7 @@ get_header();
 								</p>
 								<div class="wp-block-buttons">
 									<div class="wp-block-button">
-										<a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Free Trial</a>
+										<a class="wp-block-button__link" href="/try-rebalance-for-free" data-no-swup="">Free Trial</a>
 									</div>									
 								</div>
 								<p>
@@ -219,7 +219,7 @@ get_header();
           </div>
           <div class="wp-block-buttons">
             <div class="wp-block-button">
-              <a class="wp-block-button__link" href="/membership-registration" data-no-swup="">Get Access</a>
+              <a class="wp-block-button__link" href="/try-rebalance-for-free" data-no-swup="">Get Access</a>
             </div>									
           </div>
         </div>

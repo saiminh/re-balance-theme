@@ -219,7 +219,7 @@ get_header();
               Here’s how it works: sign up to our platform and get access to our exercises online and sent direct to your inbox, practise the exercises to improve your mood and transform your workday. This way, so you can stop feeling stressed and exhausted and start to improve the way you feel, become a more balanced professional, and be happier after hours too.
             </p>
             <p>
-              <a href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>">Get started with our free trial today!</a>
+              <a href="<?php echo esc_url( home_url( '/try-rebalance-for-free/' ) ); ?>">Get started with our free trial today!</a>
             </p>
             <p>
               Are you looking to improve your employees’ work-life balance and transform your company’s culture? <a href="<?php echo esc_url( home_url( '/business-inquiry/' ) ); ?>">Enquire for a business now</a>              
@@ -231,7 +231,7 @@ get_header();
               </h3>
               <div class="wp-block-buttons">
                 <div class="wp-block-button">
-                  <a href="<?php echo esc_url( home_url( '/register-for-free-trial/' ) ); ?>" class="wp-block-button__link">Start Your Free Trial</a>
+                  <a href="<?php echo esc_url( home_url( '/try-rebalance-for-free/' ) ); ?>" class="wp-block-button__link">Start Your Free Trial</a>
                 </div>
               </div>
               <p class="already-member">

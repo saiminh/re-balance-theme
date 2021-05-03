@@ -123,3 +123,10 @@
 	@include font-size(1);
 	margin-bottom: 1em;
 }
+.wp-block-group.has-background {
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+.wp-block-group.has-background .wp-block-group__inner-container > :last-child {
+  margin-bottom: 0;
+}
