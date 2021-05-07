@@ -4,10 +4,6 @@
 }
 .site-main {
     padding-top: 1rem;
-
-    .single-exercises & {
-        padding-top: 0;
-    }
 }
 .home.wpsmp-loggedout .site-main,
 .page-template-page-registration .site-main,
@@ -32,7 +28,7 @@
     @media (min-width: 480px) {
       min-height: calc(100vh - 360px - 1rem);
     }
-    @media (min-width: 769px) {
+    @media (min-width: 800px) {
       margin-top: 81px;
     }
 }
