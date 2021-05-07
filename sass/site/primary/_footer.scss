@@ -84,7 +84,7 @@ a.site-info-element {
     font-size: 1rem;
     height: 50px;
     @media (min-width: 768px) {
-      width: 30%!important;
+      width: auto!important;
       min-width: 115px;
       position: relative;
     }
