@@ -24,10 +24,10 @@
           echo $current_user->display_name . "!\n";
         endif;
         echo " <em>How would you like to feel?</em></div>";
-      // Courses
-        $profile       = learn_press_get_profile();
-        $filter_status = LP_Request::get_string( 'filter-status' );
-        $query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
+      // // Courses THROWS ERROR IF LEARNPRESS IS DEACTIVATED!!!
+      //   $profile       = learn_press_get_profile();
+      //   $filter_status = LP_Request::get_string( 'filter-status' );
+      //   $query         = $profile->query_courses( 'purchased', array( 'status' => $filter_status ) );		
               
       ?>
     <div class="card-grid card-grid-7cards card-nav">          
