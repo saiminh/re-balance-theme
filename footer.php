@@ -28,6 +28,7 @@
 				<div>
 					<h3>Rebalance</h3>
 					<a class="site-info-element" href="/contact/">Contact</a>
+					<a class="site-info-element" href="/blog-page/">Blog</a>
           <?php if(!rebalance_member_is_logged_in()) : ?>
 					<a class="site-info-element" href="/about/">About</a>
 					<a class="site-info-element" href="/why-rebalance/">Why rebalance?</a>
