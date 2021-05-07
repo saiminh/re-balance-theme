@@ -29,7 +29,7 @@ get_header();
             </ul>
           </div>
           <div class="wp-block-column">
-            <div class="wp-block-group has-white-background-color has-background">
+            <div class="wp-block-group has-white-background-color has-background rebalance-free-trial-radios">
               <div class="wp-block-group__inner-container">
                 <h3>Memberships:</h3>
                 <?php if (function_exists('geoip_detect2_get_info_from_current_ip')) {
@@ -39,37 +39,79 @@ get_header();
                   if ($userInfo->country->isoCode == "AU") {
                     //–––––––––––––––––––––––––––––––––––––––––
                     // IF GEO IS AUSTRALIA
-                    echo '<p>Annual Subscription: $60/year<br>Monthly Subscription: $6/month</p>';            
+                    //–––––––––––––––––––––––––––––––––––––––––
+                    echo '
+                      <input id="eur-annual" name="subscription" type="radio" class="radio-annual">
+                      <label for="eur-annual">Annual Subscription: $60/year</label>
+                      <input id="eur-monthly" name="subscription" type="radio" class="radio-monthly" checked>
+                      <label for="eur-monthly">Monthly Subscription: $6/month</label>';
                     if ($sandbox_enabled) {
-                      // IF AUSTRALIA MONTHLY SANDBOX
+                      //---------------------------------
+                      // IF AUSTRALIA SANDBOX ON
+                      //---------------------------------
                       echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
-                      echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1239 class=""]');
+                      
+                      echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1239 class=""]').'</div>';
+                      echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1238 class=""]').'</div>';
+                      echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
+                    
                     } else {
-                      // IF AUSTRALIA MONTHLY LIVE
-                      echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1241 class=""]');
+                      //---------------------------------
+                      // IF AUSTRALIA SANDBOX OFF
+                      //---------------------------------
+                      echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1241 class=""]').'</div>';
+                      echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1242 class=""]').'</div>';
                       echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                     }                        
 
                   } else {
                     //–––––––––––––––––––––––––––––––––––––––––
-                    // ELSE ALL OTHER COUNTRIES -> Euros
-                        echo '<p>Annual Subscription: <strong>€40/year</strong><br>Monthly Subscription: <strong>€4/month</strong></p>';
+                    // IF GEO IS ANY OTHER COUNTRY -> EUR
+                    //–––––––––––––––––––––––––––––––––––––––––
+                        echo '
+                          <input id="eur-annual" name="subscription" type="radio" class="radio-annual">
+                          <label for="eur-annual">Annual Subscription: €40/year</label>
+                          <input id="eur-monthly" name="subscription" type="radio" class="radio-monthly" checked>
+                          <label for="eur-monthly">Monthly Subscription: €4/month</label>';
+                        //---------------------------------
+                        // IF EUR SANDBOXMODE ON
+                        //---------------------------------
                         if ($sandbox_enabled) {
-                          // IF EUR MONTHLY SANDBOX
                           echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
-                          // Local site
+                          //---------------------------------
+                          // IF Local Dev site
+                          //---------------------------------
                           if ( get_site_url() == 'http://re-balance.local') {
-                            echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]');
+                            echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]').'</div>';
+                            echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1237 class=""]').'</div>';
                             echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
-                            // Live site
+                            //---------------------------------
+                            // IF Live site
+                            //---------------------------------
                           } else {
-                            echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1226 class=""]');
+                            echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1226 class=""]').'</div>';
+                            echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
                             echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                           }
+                        //---------------------------------
+                        // IF EUR SANDBOXMODE OFF
+                        //---------------------------------
                         } else {
-                          // IF EUR MONTHLY LIVE
-                          echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1243 class=""]');
-                          echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
+                          //---------------------------------
+                          // IF Local Dev site
+                          //---------------------------------
+                          if ( get_site_url() == 'http://re-balance.local') {
+                            echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]').'</div>';
+                            echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1237 class=""]').'</div>';
+                            echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
+                            //---------------------------------
+                            // IF Live site
+                            //---------------------------------
+                          } else {
+                            echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1243 class=""]').'</div>';
+                            echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
+                            echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
+                          }
                         }
                   }
                 };?>
