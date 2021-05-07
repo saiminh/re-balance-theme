@@ -9,13 +9,16 @@ body.page-template-page-settings .hero-header {
   justify-content: space-between;
 }
 .settings-membership {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: .5rem;
+  @media (min-width: 420px){
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .settings-membership a.button.button-small {
   align-self: center;
   padding: 0 0.5em;
+  margin-top: .5rem;
 }
 .settings-membership-header {
   font-size: 1.25rem;
