@@ -455,7 +455,7 @@ function show_breadcrumb() {
 // adding custom body classes
 function rebalance_bodyclass_names( $classes ) {
 	global $post;
-	if ( has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
+	if ( is_singular() && has_term( 'tiny', 'exercisetypes', $post->ID ) ) {
 			$classes[] = 'tiny-single';
 	}
 	$usypusy = SwpmAuth::get_instance();

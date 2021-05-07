@@ -32,7 +32,6 @@ get_header();
             <div class="wp-block-group has-white-background-color has-background">
               <div class="wp-block-group__inner-container">
                 <h3>Memberships:</h3>
-                <p>Annual Subscription: $60/ year<br>Monthly Subscription: $6/ year</p>
                 <?php if (function_exists('geoip_detect2_get_info_from_current_ip')) {
                   $userInfo = geoip_detect2_get_info_from_current_ip();
                   $settings = SwpmSettings::get_instance();
@@ -40,7 +39,7 @@ get_header();
                   if ($userInfo->country->isoCode == "AU") {
                     //–––––––––––––––––––––––––––––––––––––––––
                     // IF GEO IS AUSTRALIA
-            
+                    echo '<p>Annual Subscription: $60/year<br>Monthly Subscription: $6/month</p>';            
                     if ($sandbox_enabled) {
                       // IF AUSTRALIA MONTHLY SANDBOX
                       echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
@@ -48,24 +47,29 @@ get_header();
                     } else {
                       // IF AUSTRALIA MONTHLY LIVE
                       echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1241 class=""]');
+                      echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                     }                        
 
                   } else {
                     //–––––––––––––––––––––––––––––––––––––––––
                     // ELSE ALL OTHER COUNTRIES -> Euros
+                        echo '<p>Annual Subscription: <strong>€40/year</strong><br>Monthly Subscription: <strong>€4/month</strong></p>';
                         if ($sandbox_enabled) {
                           // IF EUR MONTHLY SANDBOX
                           echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                           // Local site
                           if ( get_site_url() == 'http://re-balance.local') {
                             echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]');
+                            echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                             // Live site
                           } else {
                             echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1226 class=""]');
+                            echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                           }
                         } else {
                           // IF EUR MONTHLY LIVE
                           echo do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1243 class=""]');
+                          echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                         }
                   }
                 };?>

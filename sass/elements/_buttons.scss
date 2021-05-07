@@ -85,3 +85,10 @@ a.wp-block-button__link {
 	left: 2px;
 	transform: rotate(180deg);
 }
+.button-info {
+  display: block;
+  margin: .5rem 0 0 0;
+  font-size: .9rem;
+  color: $color__brand-primary;
+  font-style: italic;
+}

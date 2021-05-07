@@ -108,6 +108,10 @@
   & p:first-child {
     margin-top: 1rem;
   }
+  .home .site-content & ul > li {
+    text-align: left;
+    padding-bottom: 0;
+  }
 }
 .featured-thumbnail {
   height: 0;
@@ -135,16 +139,25 @@
   margin: 0 auto;
 }
 //Breathe man is too big
-.featured:first-child .featured-thumbnail img {
+#home-offer-block .featured:first-child .featured-thumbnail img {
   padding: 2.5rem
 }
 //Smile is too big
-.featured:nth-child(3) .featured-thumbnail img {
+#home-offer-block .featured:nth-child(3) .featured-thumbnail img {
   padding: 2rem
 }
 //Mail is too big
-.featured:nth-child(4) .featured-thumbnail img {
+#home-offer-block .featured:nth-child(4) .featured-thumbnail img {
   padding: 1rem
+}
+#home-how-block .featured:nth-child(2) .featured-thumbnail img {
+  padding: 2rem;
+}
+#home-how-block .featured:nth-child(3) .featured-thumbnail img {
+  padding: 2.5rem;
+}
+#home-how-block .wp-block-buttons {
+  justify-content: space-around;
 }
 .step {
   background: #FFF;
