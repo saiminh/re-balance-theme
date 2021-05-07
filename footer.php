@@ -17,7 +17,8 @@
 		<div class="site-footer-container">
       <?php if(!rebalance_member_is_logged_in()) : ?>
         <div class="newsletter-signup-form">
-          <h3>Receive our fortnightly newsletter</h3>
+          <h3>Is your workday as good as it could be?</h3>
+          <p>Download our free guide to receive 5 tips to reduce stress, re-energise and have a better workday, every day</p>
           <?php 
             $form_widget = new \MailPoet\Form\Widget();
             echo $form_widget->widget(array('form' => 1, 'form_type' => 'php'));
