@@ -28,8 +28,10 @@
 				<div>
 					<h3>Rebalance</h3>
 					<a class="site-info-element" href="/contact/">Contact</a>
+          <?php if(!rebalance_member_is_logged_in()) : ?>
 					<a class="site-info-element" href="/about/">About</a>
 					<a class="site-info-element" href="/why-rebalance/">Why rebalance?</a>
+          <?php endif; ?>
 				</div>	
 				<div>
 					<h3>Legal</h3>

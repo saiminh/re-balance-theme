@@ -6,7 +6,7 @@
   background-color: #FFF;
   box-shadow: 0 -1px 10px rgba(0,0,0,0.1);
   z-index: 10;
-  @media (min-width: 769px) {
+  @media (min-width: 800px) {
     display: none;
   }
 }
@@ -68,6 +68,11 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
   list-style: none;
   transform: translateX(100%);
 }
+.wpsmp-loggedin .site-header {
+  @media (max-width: 799px){
+    background-color: transparent;
+  }
+}
 .site-header {
   z-index: 1000;
 	position: fixed;
@@ -92,7 +97,7 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 .site-header--loggedin .menu-container, 
 .site-header--loggedin .site-header-account{
   display: none;
-  @media (min-width: 769px) {
+  @media (min-width: 800px) {
     display: block;
   }
 }
@@ -285,7 +290,7 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 	}
 	li {
 		position: relative;		
-		@media screen and (min-width:  800px) {
+		@media (min-width:  800px) {
 			display: inline-block;
 			float: left;
 			&:after {
@@ -306,7 +311,7 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 		font-weight: 300;
 		min-width: 250px;
 		color: $color__text-main;
-		@media screen and (min-width:  800px) {
+		@media (min-width:  800px) {
 			display: inline-block;
 			padding: 0 .5rem;
 			margin-left: 0;
@@ -328,7 +333,7 @@ body.page-template-page-settings .mobile-nav-list-item-settings{
 		&:focus {
 			outline: none;
 		}
-		@media screen and (min-width:  800px) {
+		@media (min-width:  800px) {
 			background-color: lighten($color__brand-primary, 27%);
 			border-right: 5px solid $color__brand-primary;
 			color: $color__brand-primary;

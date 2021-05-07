@@ -1,7 +1,6 @@
 .home-search {
   margin-bottom: 1rem;
   position: relative; 
-
   @media (min-width:  1100px) {
     display: none;
   }
@@ -44,7 +43,7 @@
       z-index: 998;
       display: flex;
       transform: translateX(calc( -100% ));
-      @media (min-width: 769px) {
+      @media (min-width: 800px) {
         transform: none;
       }
       & form {
@@ -83,10 +82,8 @@
         @include font-size(0.9);
         top: 0;        
         @media (max-width: 481px) {
-            //display: inline;            
             background-color: transparent;
             box-shadow: none;           
-            //text-decoration: underline;
             padding: .75em 0 1.5em 0;
             @include font-size(0.8);
         }
