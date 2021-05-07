@@ -52,7 +52,7 @@ get_header();
                       echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                       
                       echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1239 class=""]').'</div>';
-                      echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1238 class=""]').'</div>';
+                      echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1238 class=""]').'</div>';
                       echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                     
                     } else {
@@ -60,7 +60,7 @@ get_header();
                       // IF AUSTRALIA SANDBOX OFF
                       //---------------------------------
                       echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1241 class=""]').'</div>';
-                      echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1242 class=""]').'</div>';
+                      echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1242 class=""]').'</div>';
                       echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                     }                        
 
@@ -90,7 +90,7 @@ get_header();
                             //---------------------------------
                           } else {
                             echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1226 class=""]').'</div>';
-                            echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
+                            echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
                             echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                           }
                         //---------------------------------
@@ -109,7 +109,7 @@ get_header();
                             //---------------------------------
                           } else {
                             echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1243 class=""]').'</div>';
-                            echo '<div class="annually-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
+                            echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1244 class=""]').'</div>';
                             echo '<span class="button-info">After your trial ends, you will be charged the monthly or annual rate. You can always cancel before then.</span>';
                           }
                         }
