@@ -316,8 +316,16 @@ function insertAfter(referenceNode, newNode) {
 	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
 };
 
+//Variable to count page inits with swup, mainly as a workaround to the payment buttons not being updated 
+let n_pagereloads = 0;
+
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
+    n_pagereloads = n_pagereloads + 1;
+    if ( n_pagereloads > 1 && document.querySelector('body').classList.contains('page-template-page-free-trial') ){
+      window.location.reload();
+    }
+
 		//local storage functions
 		if (sessionStorage.hasSeenPdfPopup) {
 			//do nothing

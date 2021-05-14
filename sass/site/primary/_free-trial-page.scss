@@ -23,3 +23,20 @@
 .rebalance-free-trial-radios input.radio-monthly:checked ~ .annual-button {
   display: none;
 }
+.modern-footnotes-footnote__note {
+  display: none;
+  font-size: 80%;
+  color: #777;
+}
+.modern-footnotes-footnote__note--tooltip {
+  position: absolute;
+  left: 0;
+  border: 1px solid #666;
+  background: #fff;
+  padding: .7em 1em;
+  border-radius: 3px;
+  max-width: 300px;
+  box-shadow: 1px 1px 1px #eee;
+  box-sizing: border-box;
+  z-index: 1;
+}
