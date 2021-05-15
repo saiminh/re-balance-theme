@@ -51,7 +51,8 @@ export default function gsAnimations(){
       end: "25% center", 
       id: "stress", 
       scrub: true,
-      markers: true };
+    //  markers: true 
+    };
 
     let tl_whatsWrong_in = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in })      
       .fromTo("#illu-woman-rain-shine", 
