@@ -23,20 +23,84 @@
 .rebalance-free-trial-radios input.radio-monthly:checked ~ .annual-button {
   display: none;
 }
+.modern-footnotes-footnote {
+  padding-left: 2px;
+  padding-right: 2px;
+  line-height: initial;
+}
+.modern-footnotes-footnote--selected {
+  background: #eee;
+  border-radius: 2px;
+}
+.modern-footnotes-footnote__connector {
+  background: #000;
+  position: absolute;
+  width: 0.9px; /* use 0.9px instead of 1px to ensure the element does not look 2 px thick in Firefox in some scenarios */
+}
+.modern-footnotes-footnote a {
+  text-decoration: none;
+}
 .modern-footnotes-footnote__note {
   display: none;
   font-size: 80%;
   color: #777;
 }
+.modern-footnotes-footnote__note a {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+}
+/* default tooltip style for desktop */
 .modern-footnotes-footnote__note--tooltip {
   position: absolute;
   left: 0;
   border: 1px solid #666;
   background: #fff;
-  padding: .7em 1em;
+  padding: 0.7em 1em;
   border-radius: 3px;
   max-width: 300px;
   box-shadow: 1px 1px 1px #eee;
   box-sizing: border-box;
   z-index: 1;
+}
+/* default expandable style for mobile */
+.modern-footnotes-footnote__note--expandable {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.modern-footnotes-list {
+  list-style-type: none;
+  font-size: 0.8em;
+  margin: 1em 0;
+  padding-left: 0;
+}
+
+.modern-footnotes-list li {
+  display: flex;
+  margin-bottom: 0.3em;
+}
+
+.modern-footnotes-list li > span { /* use specific selector so that spans created by shortcodes are not affected */
+  margin-right: 1.5em;
+  color: #777;
+  /* override CSS that would otherwise break the numbers onto separate lines */
+  word-wrap: normal;
+  word-break: normal;
+}
+
+.modern-footnotes-list--show-only-for-print {
+  display: none;
+}
+@media print {
+  .modern-footnotes-list--show-only-for-print {
+    display: block;
+  }
+  .modern-footnotes-list--hide-for-print {
+    display: none;
+  }
 }

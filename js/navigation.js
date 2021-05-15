@@ -24,7 +24,9 @@
   import SwupBodyClassPlugin from '@swup/body-class-plugin';
   import SwupJsPlugin from '@swup/js-plugin';
   
-  import gsAnimations from './gsapAnimations.js'
+  import gsAnimations from './gsapAnimations.js';
+ 
+  import reinitialize_modern_footnotes from './reinitialize_modern_footnotes.js';
   
   gsap.registerPlugin(DrawSVGPlugin);
 
@@ -333,12 +335,12 @@ let n_pagereloads = 0;
 	function init() {
     n_pagereloads = n_pagereloads + 1;
     if ( n_pagereloads > 1 ) {
-      if (
-        document.querySelector('body').classList.contains('page-template-page-free-trial') 
-        || 
-        document.querySelector('.modern-footnotes-footnote')){
+      if ( !document.querySelector('.modern-footnotes-footnote__note modern-footnotes-footnote__note--tooltip') ){
+        reinitialize_modern_footnotes();
+      };
+      if ( document.querySelector('body').classList.contains('page-template-page-free-trial') ) {
         window.location.reload();
-      }
+      };
     }
 
 		//local storage functions
