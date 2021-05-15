@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass sass/style.scss style.css --watch --style compressed"
+    "start": "sass sass/style.scss style.css --watch --style compressed && npx webpack "
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,11 @@
     "sass": "^1.32.13",
     "webpack": "^5.37.0",
     "webpack-cli": "^4.7.0"
+  },
+  "dependencies": {
+    "@swup/body-class-plugin": "^1.0.2",
+    "@swup/js-plugin": "^1.0.4",
+    "gsap": "npm:@gsap/shockingly@^3.6.1",
+    "swup": "^2.0.14"
   }
 }

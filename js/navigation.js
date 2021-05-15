@@ -16,7 +16,17 @@
 	// preload(
 	// 	"https://re-balance.io/wp-content/themes/rebalance-wptheme/img/benefits-galaxy-bg.jpg"
 	// );
-	
+
+  import { gsap } from "gsap";
+  import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+
+  import Swup from 'swup';
+  import SwupBodyClassPlugin from '@swup/body-class-plugin';
+  import SwupJsPlugin from '@swup/js-plugin';
+  
+  import gsAnimations from './gsapAnimations.js'
+  
+  gsap.registerPlugin(DrawSVGPlugin);
 
 ( function($) {
 	
@@ -276,7 +286,7 @@
 		dragFriction: 0.1,
 		random: Math.random
 	};
-
+  var config;
 	function backwardPatch(config) {
 		if (!config.stagger && config.delay) {
 			config.stagger = config.delay;
@@ -322,8 +332,13 @@ let n_pagereloads = 0;
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
     n_pagereloads = n_pagereloads + 1;
-    if ( n_pagereloads > 1 && document.querySelector('body').classList.contains('page-template-page-free-trial') ){
-      window.location.reload();
+    if ( n_pagereloads > 1 ) {
+      if (
+        document.querySelector('body').classList.contains('page-template-page-free-trial') 
+        || 
+        document.querySelector('.modern-footnotes-footnote')){
+        window.location.reload();
+      }
     }
 
 		//local storage functions

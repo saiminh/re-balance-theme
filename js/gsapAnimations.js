@@ -1,8 +1,15 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+
+gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MorphSVGPlugin);
+
 // ----------------------------------------------------------
-// Benefits page animations
+// Why Rebalance page animations
 // ----------------------------------------------------------
 
-function gsAnimations(){
+export default function gsAnimations(){
   ScrollTrigger.getAll().forEach(element => element.kill());
 
   if (document.querySelector(".rebalance-mini-illustration svg")) {
@@ -13,9 +20,6 @@ function gsAnimations(){
     // -------------------------
     // Animations for Home Page
     // -------------------------
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(DrawSVGPlugin);
-    gsap.registerPlugin(MorphSVGPlugin);
     ScrollTrigger.defaults({
       toggleActions: "restart complete restart reset"//,
     });
@@ -23,7 +27,9 @@ function gsAnimations(){
     let trigger_illu_woman_rain = { 
       trigger: "#section_why_reblance", 
       start: "0% center", 
-      end: "100% center" };
+      end: "100% center",
+      //markers: true 
+    };
     
     let tl_woman_rain_raindrops = gsap.timeline({ 
       paused: true,  
@@ -38,39 +44,14 @@ function gsAnimations(){
       .fromTo("#illu01-raindrop03, #illu01-raindrop05", 
         { yPercent: 0, scaleY: 1 },
         { yPercent: 550, scaleY: .5, repeat: -1, ease: "power3.inout", duration: .3 }, 1.85);
-    
-    let tl_woman_rain_in = gsap.timeline({ 
-      paused: true, 
-      scrollTrigger: trigger_illu_woman_rain })
-      .set("#illu01-head", 
-        { rotationZ: 0, y: 0, yPercent: 0 })
-      .set("#illu01-smile", 
-        { scaleY: 1 })
-      .fromTo("#illu-woman-rain-shine", 
-        { yPercent: 0, autoAlpha: 0 }, 
-        { yPercent: 0, autoAlpha: 1, duration: .7})
-      .fromTo("#cloudrain", 
-        { xPercent: -100, yPercent: 0, autoAlpha: 0 }, 
-        { xPercent: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 1.2)
-      .fromTo("#illu01-lightning-left", 
-        { y: -300, x: -100, autoAlpha: 0 }, 
-        { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .7)
-      .fromTo("#illu01-lightning-right", 
-        { y: -300, x: 100, autoAlpha: 0 }, 
-        { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .8)
-      .fromTo("#illu01-head", 
-        { rotationZ: 0, y: 0, yPercent: 0 }, 
-        { rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
-      .fromTo("#illu01-smile", 
-        { scaleY: 1, transformOrigin: "50% 50%" }, 
-        { scaleY: -1, duration: .5 }, .9);
 
     let trigger_whatsWrong_in = { 
       trigger: "#section_whatsWrong", 
       start: "0% center", 
       end: "25% center", 
       id: "stress", 
-      scrub: true };
+      scrub: true,
+      markers: true };
 
     let tl_whatsWrong_in = gsap.timeline({ paused: true, scrollTrigger: trigger_whatsWrong_in })      
       .fromTo("#illu-woman-rain-shine", 
@@ -183,9 +164,6 @@ function gsAnimations(){
     let rebalanceYourselfIn = gsap.timeline({ 
       paused: true, 
       scrollTrigger: triggerrebalanceYourselfIn })     
-    // .fromTo("#illu-woman-rain-shine", 
-    //   { yPercent: 0, autoAlpha: 1 }, 
-    //   { y: 0, yPercent: -110, autoAlpha: 0, duration: .3 }, 0)
     .fromTo("[id^='letter-']", 
       { y: 0, x: 0, rotationZ: function(){ return gsap.utils.random(-45, 45); }, xPercent: function(){ return gsap.utils.random(-33, 33); } }, 
       { y: 0, x: 0, rotationZ: 0, xPercent: 0, duration: 5, ease: "elastic.out(1.5,.1)" }, 0.1)
@@ -195,6 +173,32 @@ function gsAnimations(){
     .fromTo("#illu-logo", 
       { rotationZ: -25, transformOrigin: "50% 70%" }, 
       { rotationZ: 0, duration: 5, ease: "elastic.out(2, .3)" }, 0);    
+
+    let tl_woman_rain_in = gsap.timeline({ 
+      paused: true, 
+      scrollTrigger: trigger_illu_woman_rain })
+      .set("#illu01-head", 
+        { rotationZ: 0, y: 0, yPercent: 0 })
+      .set("#illu01-smile", 
+        { scaleY: 1 })
+      .fromTo("#illu-woman-rain-shine", 
+        { yPercent: 0, autoAlpha: 0 }, 
+        { yPercent: 0, autoAlpha: 1, duration: .7})
+      .fromTo("#cloudrain", 
+        { xPercent: -100, yPercent: 0, autoAlpha: 0 }, 
+        { xPercent: 0, yPercent: 0, autoAlpha: 1, duration: .5 }, 1.2)
+      .fromTo("#illu01-lightning-left", 
+        { y: -300, x: -100, autoAlpha: 0 }, 
+        { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .7)
+      .fromTo("#illu01-lightning-right", 
+        { y: -300, x: 100, autoAlpha: 0 }, 
+        { y: 0, x: 0, autoAlpha: 1, ease: "power4.inOut", duration: .5 }, .8)
+      .fromTo("#illu01-head", 
+        { rotationZ: 0, y: 0, yPercent: 0 }, 
+        { rotationZ: 2, y: 0, yPercent: 20, duration: 1 }, 1.5)
+      .fromTo("#illu01-smile", 
+        { scaleY: 1, transformOrigin: "50% 50%" }, 
+        { scaleY: -1, duration: .5 }, .9);
   }; 
   
   if (document.querySelector('#world')) { 
