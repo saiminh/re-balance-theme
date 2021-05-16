@@ -215,16 +215,20 @@ get_header();
             <h2>
               How it Works
             </h2>
+            <ul>
+              <li>Sign up to our platform and get access to our exercises online and sent direct to your inbox</li>
+              <li>Practise the exercises to improve your mood and transform your workday</li>
+              <li>Stop feeling stressed and exhausted, start to improve the way you feel, become a more balanced professional, and be happier after hours too</li>
+            </ul>
             <p>
-              Here’s how it works: sign up to our platform and get access to our exercises online and sent direct to your inbox, practise the exercises to improve your mood and transform your workday. This way, so you can stop feeling stressed and exhausted and start to improve the way you feel, become a more balanced professional, and be happier after hours too.
+              <a class="button" href="<?php echo esc_url( home_url( '/try-rebalance-for-free/' ) ); ?>">Start your free trial today!</a>
             </p>
             <p>
-              <a href="<?php echo esc_url( home_url( '/try-rebalance-for-free/' ) ); ?>">Get started with our free trial today!</a>
-            </p>
+              Are you looking to improve your employees’ work-life balance and transform your company’s culture?</p>
             <p>
-              Are you looking to improve your employees’ work-life balance and transform your company’s culture? <a href="<?php echo esc_url( home_url( '/business-inquiry/' ) ); ?>">Enquire for a business now</a>              
+              <a class="button button-secondary" href="<?php echo esc_url( home_url( '/business-inquiry/' ) ); ?>">Enquire for a business now</a>              
             </p>
-            <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
+            <!-- <?php if ( !SwpmMemberUtils::is_member_logged_in()) : ?>
             <div class="cta-block">
               <h3>
                 Rebalance is here to help!
@@ -240,7 +244,7 @@ get_header();
             </div>
             <?php else : ?>
               <a href="<?php echo esc_url( home_url( '/surprise/' ) ); ?>" class="wp-block-button__link">Try a random exercise</a>
-            <?php endif; ?>
+            <?php endif; ?> -->
             
           </div>
       </div>

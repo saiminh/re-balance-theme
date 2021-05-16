@@ -18,7 +18,8 @@ li > ol {
 }
 
 article ul > li,
-.home .site-content ul > li {
+.home .site-content ul > li,
+.page-template-page-about .site-content ul >li {
 	list-style: none;
 	padding-bottom: .5em;
 	&:before {

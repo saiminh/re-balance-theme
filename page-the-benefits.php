@@ -230,7 +230,7 @@ get_header();
             <p>
               Rebalance helps busy professionals like you to de-stress, improve your mood and transform your workday.</p>
             <p>
-              We provide short and simple mindful movement, breathwork and reflection exercises so that you can start to de-stress and improve the way you feel at works.</p>            
+              We provide short and simple mindful movement, breathwork and reflection exercises so that you can start to de-stress and improve the way you feel at work.</p>            
           </div>
         </div>
         <div class="wp-block-group section" id="section_rebalanceYourself">

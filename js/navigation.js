@@ -333,14 +333,26 @@ let n_pagereloads = 0;
 
 // Begin INIT - js that needs to load on each new swupped page
 	function init() {
+    //check if page has been swupped and then if elements exist 
     n_pagereloads = n_pagereloads + 1;
     if ( n_pagereloads > 1 ) {
       if ( !document.querySelector('.modern-footnotes-footnote__note modern-footnotes-footnote__note--tooltip') ){
+        //Modern footnotes shortcodes won't play with swup so have to manually reload script
         reinitialize_modern_footnotes();
       };
       if ( document.querySelector('body').classList.contains('page-template-page-free-trial') ) {
+        //In case someone accesses free trial page via back button from stripe payment portal, reload so formdata is refreshed
         window.location.reload();
       };
+    }
+
+    //hide the recpatcha badge on pages that don't have it...
+    if ( !document.querySelector('body').classList.contains('.page-template-page-pricing') && document.querySelector('.grecaptcha-badge') ){
+      document.querySelector('.grecaptcha-badge').style.display = 'none';
+    } else {
+      if ( document.querySelector('.grecaptcha-badge') ){
+        document.querySelector('.grecaptcha-badge').style.display = 'block';
+      }
     }
 
 		//local storage functions
