@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "sass sass/style.scss style.css --watch --style compressed && npx webpack "
+    "start": "sass sass/style.scss style.css --watch --style compressed & webpack --watch",
+    "production": "sass sass/style.scss style.css --style compressed & webpack --config webpack.prod.js"
   },
   "repository": {
     "type": "git",
