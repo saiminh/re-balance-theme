@@ -72,9 +72,6 @@ get_header();
                     // IF AUSTRALIA ANNUAL LIVE
                     echo do_shortcode('[swpm_payment_button id=1242 class=""]');
                   }
-                  echo '</div>
-                  </div>';
-
                 } else {
                   //–––––––––––––––––––––––––––––––––––––––––
                   // ELSE ALL OTHER COUNTRIES -> Euros
