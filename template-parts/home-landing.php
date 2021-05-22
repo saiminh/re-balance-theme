@@ -109,7 +109,7 @@
             <img class="" src="<?php echo get_template_directory_uri(); ?>/img/home-illu-benefits.png" alt="A woman at her work desk being reminded to use rebalance" />
           </div>
           <div class="featured-text">
-            <h3>Quick, doable, effective exercises</h3>
+            <h3>Quick, doable, effective</h3>
             <ul>
               <li>Short exercises (30 seconds to 1 minute)</li>
               <li>Performed discreetly at your desk</li>
@@ -125,7 +125,7 @@
           <div class="featured-text">
             <h3>Learn practical tools to:</h3>
             <ul>
-              <li>Improve your mood and workday</li>
+              <li>Improve your mood & workday</li>
               <li>De-stress, re-energise and get focussed</li>
               <li>Combat the effects of sitting and screen time</li>
               <li>Build a habit of taking tiny breaks</li>
