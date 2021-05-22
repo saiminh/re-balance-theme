@@ -123,16 +123,6 @@ function rebalance_scripts() {
 	wp_enqueue_style( 'new-hero', 'https://use.typekit.net/vzx1etu.css', false );
 	wp_enqueue_style('rebalance-style', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false);	
 	wp_enqueue_script( 'bundledJs', get_template_directory_uri() . '/js/bundle_compiled.js', array(), '2020', true );	
-	// wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js', array(), true );	
-	// wp_enqueue_script( 'gsapScrollTrigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js', array(), true );
-	// wp_enqueue_script( 'gsapDrawSVGPlugin', get_template_directory_uri() . '/js/DrawSVGPlugin.js', array(), true );
-	// wp_enqueue_script( 'gsapMorphSVGPlugin', get_template_directory_uri() . '/js/MorphSVGPlugin.min.js', array(), true );
-	// wp_enqueue_script( 'swup', get_template_directory_uri() . '/js/swup.js', array(), '20151215', true );
-	// wp_enqueue_script( 'swupbodyclass', get_template_directory_uri() . '/js/SwupBodyClassPlugin.min.js', array(), '20151215', true );
-	// wp_enqueue_script( 'swupjsplugin', get_template_directory_uri() . '/js/SwupJsPlugin.min.js', array(), '20151215', true );
-	// wp_enqueue_script( 'rebalance-animations', get_template_directory_uri() . '/js/gsapAnimations.js', array(), '2020', true );
-	// wp_enqueue_script( 'rebalance-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-	// wp_enqueue_script( 'rebalance-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -798,8 +788,8 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 		$output .= '<tr><td style="background-color: #ffe8e0; padding: 0; border-radius: 5px">';
 		$output .= '<div style="display: inline-block; max-width: 30%; vertical-align: middle; text-align: center; width: 100%; padding: 0">';
 		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
-		$output .= '<td style="padding: 15px; text-align: center">';
-		$output .= get_the_post_thumbnail( $page[0]->ID, array(150,150) );
+		$output .= '<td style="padding: 15px 0 15px 15px; text-align: center">';
+		$output .= get_the_post_thumbnail( $page[0]->ID, 'full', array( 'style' => 'width: 100%; height: auto' ) );
 		$output .= '</td></tr></table>';
 		$output .= '</div><div style="display: inline-block; max-width: 70%; vertical-align: middle; width: 100%; padding: 0; line-height: 1.5">';
 		$output .= '<table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0;mso-table-rspace:0" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>';
