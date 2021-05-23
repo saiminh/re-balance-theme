@@ -46,6 +46,7 @@
       rgba(0,0,0,0.1) 100%);
     left: 0;
     top: 0;
+    mix-blend-mode: overlay;
   }
 }
 .card-grid-7cards .card:last-child {

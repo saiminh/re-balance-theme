@@ -88,6 +88,7 @@
                 & .card-thumbnail img{
                    width: 100%;
                    height: auto; 
+                   max-height: 55vh;
                 }
                 & .card-info {
                     display: flex;
