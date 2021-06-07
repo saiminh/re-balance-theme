@@ -805,5 +805,30 @@ function mailpoet_custom_shortcode($shortcode, $newsletter, $subscriber, $queue,
 	return $output;
 }
 
+// After user registered unsubscribe them from the pdf mail list
+function after_registration_callback ($member_info)
+{
+  $userEmail = $member_info['email'];
+  if (class_exists(\MailPoet\API\API::class)) {
+    // Get MailPoet API instance
+    $mailpoet_api = \MailPoet\API\API::MP('v1');
+    try {
+      $the_subscriber = $mailpoet_api->getSubscriber($userEmail);
+    } catch (\Exception $e) {}
+    try {
+      if (!$the_subscriber) {
+        // Subscriber doesn't exist nothing needs to happen
+        //$mailpoet_api->addSubscriber($subscriber, $list_ids);
+      } else {
+        // In case subscriber exists just unsubscribe them from the PDF list with ID 7
+        $mailpoet_api->unsubscribeFromList($userEmail, 7);
+      }
+    } catch (\Exception $e) {
+      $error_message = $e->getMessage(); 
+    }
+  }
+}
+add_action('swpm_front_end_registration_complete_user_data', 'after_registration_callback');
+
 ?>
 
