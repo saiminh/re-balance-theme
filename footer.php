@@ -56,7 +56,7 @@
 			</svg>
 		</div>
 		<?php 
-			if ( get_site_url() == 'http://re-balance.local' ){
+			if ( get_site_url() == 'http://rebalance.local' ){
 				$pdfformid = 3;
 			} else {
 				$pdfformid = 3; //seem to be the same right now but maybe not in the future

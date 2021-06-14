@@ -91,7 +91,7 @@ get_header();
                         // IF EUR MONTHLY SANDBOX
                         echo '<div class="sandbox-warning">*Payment testing mode enabled, only use <a href="https://stripe.com/docs/testing#international-cards">test credit cards</a></div>';
                         // Local site
-                        if ( get_site_url() == 'http://re-balance.local') {
+                        if ( get_site_url() == 'http://rebalance.local') {
                           echo do_shortcode('[swpm_payment_button id=569 class=""]');
                           // Live site
                         } else {

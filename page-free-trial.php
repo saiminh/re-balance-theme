@@ -77,7 +77,7 @@ get_header();
                           //---------------------------------
                           // IF Local Dev site
                           //---------------------------------
-                          if ( get_site_url() == 'http://re-balance.local') {
+                          if ( get_site_url() == 'http://rebalance.local') {
                             echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]').'</div>';
                             echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=592 class=""]').'</div>';
                             //---------------------------------
@@ -94,7 +94,7 @@ get_header();
                           //---------------------------------
                           // IF Local Dev site
                           //---------------------------------
-                          if ( get_site_url() == 'http://re-balance.local') {
+                          if ( get_site_url() == 'http://rebalance.local') {
                             echo '<div class="monthly-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=569 class=""]').'</div>';
                             echo '<div class="annual-button">'.do_shortcode('[swpm_payment_button button_text="Try it free for 14 days" id=1237 class=""]').'</div>';
                             //---------------------------------
