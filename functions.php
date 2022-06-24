@@ -832,7 +832,7 @@ add_action('swpm_front_end_registration_complete_user_data', 'after_registration
 
 function wp_maintenance_mode() {
   if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-    wp_die('<h1>Rebalance is now offline</h1>');
+    wp_die('<h1 style="text-align: center">re-balance.io is now offline</h1><p style="text-align: center">If you have any questions, please <a href="mailto:emma@re-balance.io">email us</a>.');
   }
 }
 add_action('get_header', 'wp_maintenance_mode');
